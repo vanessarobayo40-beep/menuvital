@@ -1,0 +1,145 @@
+<?php
+require_once __DIR__ . '/../includes/auth.php';
+secure_session_start();
+send_security_headers();
+$user = require_login_page();
+$PAGE_TITLE = 'Hoy';
+$ACTIVE_NAV = 'hoy';
+require __DIR__ . '/../includes/layout_top.php';
+?>
+
+<h2 style="margin-bottom:2px;">Hola, <?= e(explode(' ', $user['name'])[0]) ?> 👋</h2>
+<p class="muted" id="today-date" style="margin-top:0;font-size:14px;"></p>
+
+<div id="coach-tip" class="card-soft" style="display:none;margin-bottom:18px;">
+  <div style="display:flex;gap:10px;align-items:flex-start;">
+    <span style="font-size:20px;">💬</span>
+    <p style="margin:0;font-size:14px;color:var(--t1);" id="coach-tip-text"></p>
+  </div>
+</div>
+
+<div id="pantry-empty" class="card text-center" style="display:none;margin-bottom:18px;">
+  <p style="margin:0 0 12px;font-size:14px;">Aún no has ingresado tu mercado. Agrega lo que tienes disponible y te armamos el menú de hoy.</p>
+  <a href="/app/mercado.php" class="btn btn-primary btn-sm">Ingresar mi mercado</a>
+</div>
+
+<div id="meals-container"></div>
+
+<div id="loading" class="fade-in">
+  <div class="skeleton" style="height:160px;margin-bottom:14px;"></div>
+  <div class="skeleton" style="height:160px;margin-bottom:14px;"></div>
+  <div class="skeleton" style="height:160px;"></div>
+</div>
+
+<button id="btn-regen" class="btn btn-outline btn-block" style="margin-top:8px;display:none;">
+  🔄 Quiero otro menú para hoy
+</button>
+
+<?php require __DIR__ . '/../includes/layout_bottom.php'; ?>
+
+<script>
+const MEAL_LABELS = { desayuno: 'Desayuno', almuerzo: 'Almuerzo', cena: 'Cena', snack: 'Snack' };
+const MEAL_ORDER = ['desayuno', 'almuerzo', 'cena', 'snack'];
+
+document.getElementById('today-date').textContent = new Date().toLocaleDateString('es-CO', {
+  weekday: 'long', day: 'numeric', month: 'long',
+});
+
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s ?? '';
+  return d.innerHTML;
+}
+
+function renderMeal(type, meal) {
+  const missingHtml = meal.missing.length
+    ? `<div style="margin-top:10px;"><span class="badge badge-warn">Te falta comprar</span>
+        <p style="font-size:13px;color:var(--t2);margin:6px 0 0;">${meal.missing.map(m => escapeHtml(m.item)).join(', ')}</p></div>`
+    : `<div style="margin-top:10px;"><span class="badge badge-green">Ya tienes todo</span></div>`;
+
+  return `
+    <div class="meal-card">
+      <span class="meal-tag">${MEAL_LABELS[type] || type}</span>
+      <h3>${escapeHtml(meal.name)}</h3>
+      <div class="meal-meta">
+        <span>⏱ ${meal.time_min} min</span>
+        <span>🔥 ${meal.kcal_porcion} kcal</span>
+        <span>💪 ${meal.protein_porcion} g prot.</span>
+      </div>
+      <button class="toggle-btn" data-target="body-${type}">Ver receta completa ▾</button>
+      <div class="meal-body" id="body-${type}" style="display:none;">
+        ${missingHtml}
+        <h4>Ingredientes</h4>
+        <ul>${meal.ingredients.map(i => `<li>${escapeHtml(i.item)}${i.qty ? ' — ' + escapeHtml(i.qty) : ''}</li>`).join('')}</ul>
+        <h4>Preparación</h4>
+        <ol>${meal.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>
+      </div>
+    </div>`;
+}
+
+function renderPlan(plan) {
+  const container = document.getElementById('meals-container');
+  const order = MEAL_ORDER.filter(t => plan.meals[t]);
+  container.innerHTML = order.map(t => renderMeal(t, plan.meals[t])).join('');
+  container.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = document.getElementById(btn.dataset.target);
+      const open = body.style.display !== 'none';
+      body.style.display = open ? 'none' : 'block';
+      btn.textContent = open ? 'Ver receta completa ▾' : 'Ocultar receta ▴';
+    });
+  });
+
+  if (plan.consejo_coach) {
+    document.getElementById('coach-tip-text').textContent = plan.consejo_coach;
+    document.getElementById('coach-tip').style.display = 'block';
+  }
+}
+
+async function loadToday() {
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('btn-regen').style.display = 'none';
+  try {
+    const res = await MV.api('/api/planner.php?action=today');
+    renderPlan(res.plan);
+    document.getElementById('btn-regen').style.display = 'block';
+    MV.saveLocal('today_plan', res.plan);
+  } catch (err) {
+    const cached = MV.loadLocal('today_plan');
+    if (cached) {
+      renderPlan(cached);
+      MV.toast('Mostrando tu último menú guardado (sin conexión).', true);
+    } else {
+      MV.toast(err.message, true);
+    }
+  } finally {
+    document.getElementById('loading').style.display = 'none';
+  }
+}
+
+document.getElementById('btn-regen').addEventListener('click', async () => {
+  const btn = document.getElementById('btn-regen');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner dark" style="display:inline-block;"></span> Generando...';
+  try {
+    const res = await MV.api('/api/planner.php?action=today_new', { method: 'POST' });
+    renderPlan(res.plan);
+    MV.saveLocal('today_plan', res.plan);
+    MV.toast('¡Listo! Aquí tienes un nuevo menú.');
+  } catch (err) {
+    MV.toast(err.message, true);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '🔄 Quiero otro menú para hoy';
+  }
+});
+
+// Verifica si hay mercado ingresado
+MV.api('/api/pantry.php?action=list').then(res => {
+  if (!res.items.length) {
+    document.getElementById('pantry-empty').style.display = 'block';
+  }
+}).catch(() => {});
+
+loadToday();
+</script>

@@ -1,0 +1,42 @@
+# ============================================
+# MenúVital — Seguridad del servidor (Apache)
+# ============================================
+
+Options -Indexes
+
+RewriteEngine On
+
+# Forzar HTTPS (Hostinger)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Bloquear acceso web a carpetas con código y datos sensibles
+RewriteRule ^(includes|database)(/|$) - [F,L]
+
+# Bloquear archivos que no deben servirse
+<FilesMatch "^(\.gitignore|\.env|INSTALACION\.md|README\.md|config\.sample\.php)$">
+  Require all denied
+</FilesMatch>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://connect.facebook.net; img-src 'self' data: https:; connect-src 'self' https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+</IfModule>
+
+# Cache de archivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+</IfModule>
+
+# UTF-8 por defecto
+AddDefaultCharset UTF-8

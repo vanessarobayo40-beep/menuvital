@@ -1,0 +1,163 @@
+<?php
+/**
+ * MenúVital — Instalador (ejecutar UNA sola vez)
+ * Uso: https://tudominio.com/install.php?key=TU_INSTALL_KEY
+ * Crea las tablas, carga las recetas y crea la cuenta de administradora.
+ * Es seguro volver a ejecutarlo: no borra ni duplica nada.
+ */
+
+if (!file_exists(__DIR__ . '/includes/config.php')) {
+    http_response_code(500);
+    exit('Falta includes/config.php — copia config.sample.php como config.php y llena tus datos.');
+}
+
+require_once __DIR__ . '/includes/db.php';
+require_once __DIR__ . '/includes/security.php';
+
+$key = $_GET['key'] ?? '';
+if (!defined('INSTALL_KEY') || INSTALL_KEY === '' || !is_string($key) || !hash_equals(INSTALL_KEY, $key)) {
+    http_response_code(403);
+    exit('Acceso denegado. Usa install.php?key=TU_INSTALL_KEY (la clave que pusiste en config.php).');
+}
+
+$pdo = db();
+$isMysql = (DB_DRIVER !== 'sqlite');
+$ai   = $isMysql ? 'INT AUTO_INCREMENT PRIMARY KEY' : 'INTEGER PRIMARY KEY AUTOINCREMENT';
+$tail = $isMysql ? ' ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci' : '';
+$log  = [];
+
+$tables = [
+    'users' => "CREATE TABLE IF NOT EXISTS users (
+        id $ai,
+        name VARCHAR(100) NOT NULL,
+        email VARCHAR(190) NOT NULL UNIQUE,
+        password_hash VARCHAR(255) NOT NULL,
+        is_admin TINYINT NOT NULL DEFAULT 0,
+        created_at DATETIME NOT NULL
+    )$tail",
+    'activation_codes' => "CREATE TABLE IF NOT EXISTS activation_codes (
+        id $ai,
+        code_hash CHAR(64) NOT NULL UNIQUE,
+        batch_label VARCHAR(100) NOT NULL DEFAULT '',
+        created_at DATETIME NOT NULL,
+        used_by INT NULL,
+        used_at DATETIME NULL
+    )$tail",
+    'profiles' => "CREATE TABLE IF NOT EXISTS profiles (
+        user_id INT PRIMARY KEY,
+        allergies TEXT,
+        dislikes TEXT,
+        goal VARCHAR(50) NOT NULL DEFAULT 'balance',
+        people INT NOT NULL DEFAULT 1,
+        meals_per_day INT NOT NULL DEFAULT 3,
+        updated_at DATETIME NOT NULL
+    )$tail",
+    'recipes' => "CREATE TABLE IF NOT EXISTS recipes (
+        id $ai,
+        name VARCHAR(150) NOT NULL,
+        meal_type VARCHAR(20) NOT NULL,
+        ingredients TEXT NOT NULL,
+        steps TEXT NOT NULL,
+        tags TEXT NOT NULL,
+        kcal INT NOT NULL DEFAULT 0,
+        protein INT NOT NULL DEFAULT 0,
+        time_min INT NOT NULL DEFAULT 0
+    )$tail",
+    'pantry_items' => "CREATE TABLE IF NOT EXISTS pantry_items (
+        id $ai,
+        user_id INT NOT NULL,
+        item VARCHAR(100) NOT NULL,
+        created_at DATETIME NOT NULL,
+        CONSTRAINT uq_pantry UNIQUE (user_id, item)
+    )$tail",
+    'meal_plans' => "CREATE TABLE IF NOT EXISTS meal_plans (
+        id $ai,
+        user_id INT NOT NULL,
+        plan_type VARCHAR(10) NOT NULL,
+        start_date VARCHAR(10) NOT NULL,
+        plan_json TEXT NOT NULL,
+        created_at DATETIME NOT NULL
+    )$tail",
+    'progress_logs' => "CREATE TABLE IF NOT EXISTS progress_logs (
+        id $ai,
+        user_id INT NOT NULL,
+        log_date VARCHAR(10) NOT NULL,
+        weight DECIMAL(5,2) NULL,
+        water INT NOT NULL DEFAULT 0,
+        habits TEXT,
+        note VARCHAR(300) NOT NULL DEFAULT '',
+        created_at DATETIME NOT NULL,
+        CONSTRAINT uq_progress UNIQUE (user_id, log_date)
+    )$tail",
+    'chat_messages' => "CREATE TABLE IF NOT EXISTS chat_messages (
+        id $ai,
+        user_id INT NOT NULL,
+        role VARCHAR(10) NOT NULL,
+        content TEXT NOT NULL,
+        created_at DATETIME NOT NULL
+    )$tail",
+    'rate_limits' => "CREATE TABLE IF NOT EXISTS rate_limits (
+        bucket VARCHAR(140) PRIMARY KEY,
+        window_start DATETIME NOT NULL,
+        hits INT NOT NULL DEFAULT 1
+    )$tail",
+];
+
+foreach ($tables as $name => $sql) {
+    $pdo->exec($sql);
+    $log[] = "Tabla lista: $name";
+}
+
+// ---------- Cargar recetas (solo si la tabla está vacía) ----------
+$count = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes')->fetch()['c'];
+if ($count === 0) {
+    $recipes = require __DIR__ . '/database/recipes_data.php';
+    $stmt = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+    $pdo->beginTransaction();
+    foreach ($recipes as $r) {
+        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time] = $r;
+        $stmt->execute([
+            $name, $type,
+            json_encode($ingredients, JSON_UNESCAPED_UNICODE),
+            json_encode($steps, JSON_UNESCAPED_UNICODE),
+            json_encode($tags, JSON_UNESCAPED_UNICODE),
+            $kcal, $protein, $time,
+        ]);
+    }
+    $pdo->commit();
+    $log[] = 'Recetas cargadas: ' . count($recipes);
+} else {
+    $log[] = "Recetas ya existentes: $count (no se duplican)";
+}
+
+// ---------- Cuenta de administradora ----------
+$stmt = $pdo->prepare('SELECT id FROM users WHERE email = ?');
+$stmt->execute([ADMIN_EMAIL]);
+if (!$stmt->fetch()) {
+    if (ADMIN_PASSWORD_INITIAL === 'CAMBIA-ESTA-CONTRASEÑA' || strlen(ADMIN_PASSWORD_INITIAL) < 8) {
+        $log[] = 'ATENCIÓN: no se creó la cuenta admin — pon una ADMIN_PASSWORD_INITIAL segura (mínimo 8 caracteres) en config.php y vuelve a ejecutar.';
+    } else {
+        $pdo->prepare('INSERT INTO users (name, email, password_hash, is_admin, created_at) VALUES (?, ?, ?, 1, ?)')
+            ->execute([ADMIN_NAME, ADMIN_EMAIL, password_hash(ADMIN_PASSWORD_INITIAL, PASSWORD_DEFAULT), db_now()]);
+        $log[] = 'Cuenta de administradora creada: ' . ADMIN_EMAIL;
+    }
+} else {
+    $log[] = 'Cuenta de administradora ya existe: ' . ADMIN_EMAIL;
+}
+
+// ---------- Resumen ----------
+header('Content-Type: text/html; charset=utf-8');
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Instalación — MenúVital</title>
+<style>body{font-family:system-ui,sans-serif;max-width:560px;margin:40px auto;padding:0 20px;color:#1f2937}
+h1{color:#059669}li{margin:6px 0}code{background:#f3f4f6;padding:2px 6px;border-radius:4px}
+.warn{background:#fef3c7;border-radius:8px;padding:12px 16px;margin-top:20px}</style></head>
+<body>
+<h1>✅ Instalación completada</h1>
+<ul><?php foreach ($log as $line): ?><li><?= e($line) ?></li><?php endforeach; ?></ul>
+<div class="warn"><strong>Importante:</strong> ya puedes entrar en <a href="/login.php">/login.php</a> con tu cuenta
+de administradora y generar códigos en <a href="/admin/">/admin</a>. Cambia tu contraseña inicial y no compartas tu INSTALL_KEY.</div>
+</body></html>

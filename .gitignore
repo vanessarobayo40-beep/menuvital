@@ -1,0 +1,13 @@
+# Credenciales y configuración real (NUNCA subir a GitHub)
+includes/config.php
+
+# Bases de datos locales
+database/*.db
+database/*.db-journal
+database/*.db-wal
+database/*.db-shm
+
+# Sistema
+*.log
+.DS_Store
+Thumbs.db

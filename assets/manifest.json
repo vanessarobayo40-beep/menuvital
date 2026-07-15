@@ -1,0 +1,19 @@
+{
+  "name": "MenúVital — Menú saludable y coach de nutrición",
+  "short_name": "MenúVital",
+  "description": "Tu menú diario saludable según lo que tienes en el mercado, con coach de nutrición incluido.",
+  "start_url": "/app/index.php",
+  "id": "/app/index.php",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0F9D6B",
+  "lang": "es-CO",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
