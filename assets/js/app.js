@@ -81,5 +81,56 @@ const MV = (() => {
     });
   }
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton };
+  // ---------- Instalación de la app (PWA), robusta y multiplataforma ----------
+  const install = (() => {
+    let deferred = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferred = e;
+      document.dispatchEvent(new CustomEvent('mv-installable'));
+    });
+    window.addEventListener('appinstalled', () => {
+      deferred = null;
+      document.dispatchEvent(new CustomEvent('mv-installed'));
+    });
+
+    function isStandalone() {
+      return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+    }
+
+    function platform() {
+      const ua = navigator.userAgent || '';
+      if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+      if (/android/i.test(ua)) return 'android';
+      return 'desktop';
+    }
+
+    // Instrucciones manuales cuando el navegador no ofrece el botón automático
+    function manualSteps() {
+      switch (platform()) {
+        case 'ios':
+          return 'En tu iPhone: toca el botón <strong>Compartir</strong> (el cuadro con la flecha ↑) en la barra de Safari y elige <strong>“Agregar a inicio”</strong>.';
+        case 'android':
+          return 'En tu celular: abre el menú <strong>⋮</strong> (arriba a la derecha del navegador) y toca <strong>“Instalar app”</strong> o <strong>“Agregar a pantalla de inicio”</strong>.';
+        default:
+          return 'En tu computador: toca el ícono de instalar <strong>⊕</strong> en la barra de direcciones, o abre el menú <strong>⋮</strong> del navegador y elige <strong>“Instalar MenúVital”</strong>.';
+      }
+    }
+
+    // Intenta instalar. Devuelve: 'installed' | 'dismissed' | 'manual'
+    async function trigger() {
+      if (deferred) {
+        deferred.prompt();
+        const choice = await deferred.userChoice;
+        deferred = null;
+        return choice.outcome === 'accepted' ? 'installed' : 'dismissed';
+      }
+      return 'manual';
+    }
+
+    return { trigger, isStandalone, platform, manualSteps, hasPrompt: () => !!deferred };
+  })();
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install };
 })();

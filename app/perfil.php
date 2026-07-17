@@ -17,20 +17,22 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 <?php endif; ?>
 
-<div id="install-banner" class="card" style="display:none;margin-bottom:18px;background:var(--grad-soft);border:none;">
+<div id="install-card" class="card" style="margin-bottom:18px;background:var(--grad-soft);border:none;">
   <div style="display:flex;align-items:center;gap:12px;">
     <span style="font-size:26px;">📲</span>
     <div style="flex:1;">
-      <p style="margin:0;font-size:14px;font-weight:600;">Lleva MenúVital en tu celular</p>
-      <p style="margin:2px 0 0;font-size:12px;color:var(--t2);">Instálala como app y ábrela con un toque.</p>
+      <p style="margin:0;font-size:14px;font-weight:600;">Descarga MenúVital en tu celular</p>
+      <p style="margin:2px 0 0;font-size:12px;color:var(--t2);">Instálala como app y ábrela con un solo toque, sin buscarla en el navegador.</p>
     </div>
     <button id="btn-install" class="btn btn-primary btn-sm">Instalar</button>
   </div>
+  <div id="install-steps" style="display:none;margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.06);">
+    <p style="margin:0;font-size:13px;color:var(--t1);" id="install-steps-text"></p>
+  </div>
 </div>
 
-<div id="ios-install-help" class="card-soft" style="display:none;margin-bottom:18px;">
-  <p style="margin:0;font-size:13px;">📲 <strong>Para instalar en iPhone:</strong> toca el botón de compartir
-  <span style="font-size:15px;">⎋</span> en Safari y elige <strong>"Agregar a inicio"</strong>.</p>
+<div id="install-done" class="card-soft" style="display:none;margin-bottom:18px;">
+  <p style="margin:0;font-size:13px;">✅ <strong>¡Ya tienes MenúVital instalada!</strong> Ábrela desde el ícono en tu pantalla de inicio.</p>
 </div>
 
 <h2 style="margin-bottom:4px;">Mis preferencias</h2>
@@ -102,30 +104,24 @@ require __DIR__ . '/../includes/layout_top.php';
 
 <script>
 // ---------- Instalación de la app (PWA) ----------
-let deferredPrompt = null;
-const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
-const isStandalone = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  if (!isStandalone) document.getElementById('install-banner').style.display = 'block';
-});
-
-if (isIos && !isStandalone) {
-  document.getElementById('ios-install-help').style.display = 'block';
+if (MV.install.isStandalone()) {
+  document.getElementById('install-card').style.display = 'none';
+  document.getElementById('install-done').style.display = 'block';
+} else {
+  document.getElementById('btn-install').addEventListener('click', async () => {
+    const result = await MV.install.trigger();
+    if (result === 'installed') {
+      document.getElementById('install-card').style.display = 'none';
+      document.getElementById('install-done').style.display = 'block';
+      MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
+    } else if (result === 'manual') {
+      const stepsEl = document.getElementById('install-steps');
+      document.getElementById('install-steps-text').innerHTML = MV.install.manualSteps();
+      stepsEl.style.display = stepsEl.style.display === 'none' ? 'block' : 'none';
+    }
+    // 'dismissed': la usuaria cerró el diálogo nativo, no hacemos nada.
+  });
 }
-
-document.getElementById('btn-install').addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const choice = await deferredPrompt.userChoice;
-  if (choice.outcome === 'accepted') {
-    document.getElementById('install-banner').style.display = 'none';
-    MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
-  }
-  deferredPrompt = null;
-});
 
 // ---------- Perfil ----------
 async function loadProfile() {
