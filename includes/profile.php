@@ -22,11 +22,15 @@ function load_profile(int $userId): array {
     $stmt->execute([$userId]);
     $row = $stmt->fetch();
     if (!$row) {
-        $row = ['user_id' => $userId, 'allergies' => '', 'dislikes' => '', 'goal' => 'balance', 'people' => 1, 'meals_per_day' => 3];
+        $row = ['user_id' => $userId, 'allergies' => '', 'dislikes' => '', 'favorites' => '',
+                'goal' => 'balance', 'people' => 1, 'meals_per_day' => 3,
+                'height_cm' => null, 'starting_weight' => null];
     }
+    $row['favorites'] = $row['favorites'] ?? '';
     $toList = fn($csv) => array_values(array_filter(array_map('trim', explode(',', (string)$csv))));
     $row['allergies_list'] = $toList($row['allergies']);
     $row['dislikes_list'] = $toList($row['dislikes']);
+    $row['favorites_list'] = $toList($row['favorites']);
     return $row;
 }
 
@@ -35,11 +39,11 @@ function save_profile(int $userId, array $data): void {
     $exists = $pdo->prepare('SELECT 1 FROM profiles WHERE user_id = ?');
     $exists->execute([$userId]);
     if ($exists->fetch()) {
-        $pdo->prepare('UPDATE profiles SET allergies=?, dislikes=?, goal=?, people=?, meals_per_day=?, updated_at=? WHERE user_id=?')
-            ->execute([$data['allergies'], $data['dislikes'], $data['goal'], $data['people'], $data['meals_per_day'], db_now(), $userId]);
+        $pdo->prepare('UPDATE profiles SET allergies=?, dislikes=?, favorites=?, goal=?, people=?, meals_per_day=?, height_cm=?, starting_weight=?, updated_at=? WHERE user_id=?')
+            ->execute([$data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], db_now(), $userId]);
     } else {
-        $pdo->prepare('INSERT INTO profiles (user_id, allergies, dislikes, goal, people, meals_per_day, updated_at) VALUES (?,?,?,?,?,?,?)')
-            ->execute([$userId, $data['allergies'], $data['dislikes'], $data['goal'], $data['people'], $data['meals_per_day'], db_now()]);
+        $pdo->prepare('INSERT INTO profiles (user_id, allergies, dislikes, favorites, goal, people, meals_per_day, height_cm, starting_weight, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)')
+            ->execute([$userId, $data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], db_now()]);
     }
 }
 

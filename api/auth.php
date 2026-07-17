@@ -77,7 +77,7 @@ if ($action === 'register') {
         }
 
         $codeHash = activation_code_hash($code);
-        $stmt = $pdo->prepare('SELECT id, used_by FROM activation_codes WHERE code_hash = ?');
+        $stmt = $pdo->prepare('SELECT id, used_by, is_active FROM activation_codes WHERE code_hash = ?');
         $stmt->execute([$codeHash]);
         $codeRow = $stmt->fetch();
 
@@ -88,6 +88,10 @@ if ($action === 'register') {
         if ($codeRow['used_by'] !== null) {
             $pdo->rollBack();
             json_error('Ese código ya fue usado. Si es un error, contáctanos.');
+        }
+        if ((int)$codeRow['is_active'] !== 1) {
+            $pdo->rollBack();
+            json_error('Ese código fue desactivado. Contáctanos para obtener uno nuevo.');
         }
 
         $pdo->prepare('INSERT INTO users (name, email, password_hash, is_admin, created_at) VALUES (?, ?, ?, 0, ?)')

@@ -1,7 +1,7 @@
 <?php
 /**
  * MenúVital — API de administración
- * Acciones: ?action=generate_codes | list_codes | list_users
+ * Acciones: ?action=generate_codes | list_codes | list_users | stats | toggle_code | delete_code
  * Todas requieren sesión de administradora.
  */
 
@@ -12,8 +12,20 @@ require_admin_api();
 
 $action = $_GET['action'] ?? '';
 
+if ($action === 'stats' && $_SERVER['REQUEST_METHOD'] === 'GET') {
+    $pdo = db();
+    $users = (int)$pdo->query('SELECT COUNT(*) AS c FROM users WHERE is_admin = 0')->fetch()['c'];
+    $total = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes')->fetch()['c'];
+    $used = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes WHERE used_by IS NOT NULL')->fetch()['c'];
+    $available = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes WHERE used_by IS NULL AND is_active = 1')->fetch()['c'];
+    json_response(['ok' => true, 'stats' => [
+        'users' => $users, 'codes_total' => $total, 'codes_available' => $available, 'codes_used' => $used,
+    ]]);
+}
+
 if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.created_at, ac.used_at, u.name AS used_by_name, u.email AS used_by_email
+    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.created_at, ac.used_at, ac.is_active,
+                                 u.name AS used_by_name, u.email AS used_by_email
                           FROM activation_codes ac
                           LEFT JOIN users u ON u.id = ac.used_by
                           ORDER BY ac.id DESC LIMIT 300');
@@ -23,6 +35,47 @@ if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 if ($action === 'list_users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt = db()->query('SELECT id, name, email, is_admin, created_at FROM users ORDER BY id DESC LIMIT 300');
     json_response(['ok' => true, 'users' => $stmt->fetchAll()]);
+}
+
+if ($action === 'toggle_code' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) {
+        json_error('Token inválido. Recarga la página.', 403);
+    }
+    $in = json_input();
+    $id = (int)($in['id'] ?? 0);
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT used_by, is_active FROM activation_codes WHERE id = ?');
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    if (!$row) {
+        json_error('Ese código no existe.', 404);
+    }
+    if ($row['used_by'] !== null) {
+        json_error('Ese código ya fue usado y no se puede desactivar.');
+    }
+    $newState = (int)$row['is_active'] === 1 ? 0 : 1;
+    $pdo->prepare('UPDATE activation_codes SET is_active = ? WHERE id = ?')->execute([$newState, $id]);
+    json_response(['ok' => true, 'is_active' => $newState]);
+}
+
+if ($action === 'delete_code' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) {
+        json_error('Token inválido. Recarga la página.', 403);
+    }
+    $in = json_input();
+    $id = (int)($in['id'] ?? 0);
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT used_by FROM activation_codes WHERE id = ?');
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    if (!$row) {
+        json_error('Ese código no existe.', 404);
+    }
+    if ($row['used_by'] !== null) {
+        json_error('Ese código ya fue usado y no se puede eliminar.');
+    }
+    $pdo->prepare('DELETE FROM activation_codes WHERE id = ?')->execute([$id]);
+    json_response(['ok' => true]);
 }
 
 if ($action === 'generate_codes' && $_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -17,9 +17,12 @@ if ($action === 'get' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     json_response(['ok' => true, 'profile' => [
         'allergies' => $profile['allergies'],
         'dislikes' => $profile['dislikes'],
+        'favorites' => $profile['favorites'],
         'goal' => $profile['goal'],
         'people' => (int)$profile['people'],
         'meals_per_day' => (int)$profile['meals_per_day'],
+        'height_cm' => $profile['height_cm'] !== null ? (int)$profile['height_cm'] : null,
+        'starting_weight' => $profile['starting_weight'] !== null ? (float)$profile['starting_weight'] : null,
     ]]);
 }
 
@@ -30,16 +33,26 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $in = json_input();
     $goal = in_array($in['goal'] ?? '', GOALS, true) ? $in['goal'] : 'balance';
     $people = max(1, min(12, (int)($in['people'] ?? 1)));
-    $meals = in_array((int)($in['meals_per_day'] ?? 3), [3, 4], true) ? (int)$in['meals_per_day'] : 3;
+    $mealsRaw = (int)($in['meals_per_day'] ?? 3);
+    $meals = in_array($mealsRaw, [3, 4], true) ? $mealsRaw : 3;
     $allergies = clean_text($in['allergies'] ?? '', 300);
     $dislikes = clean_text($in['dislikes'] ?? '', 300);
+    $favorites = clean_text($in['favorites'] ?? '', 500);
+
+    $height = $in['height_cm'] ?? null;
+    $height = ($height === null || $height === '') ? null : max(100, min(230, (int)$height));
+    $startWeight = $in['starting_weight'] ?? null;
+    $startWeight = ($startWeight === null || $startWeight === '') ? null : max(20, min(300, (float)$startWeight));
 
     save_profile((int)$user['id'], [
         'allergies' => $allergies,
         'dislikes' => $dislikes,
+        'favorites' => $favorites,
         'goal' => $goal,
         'people' => $people,
         'meals_per_day' => $meals,
+        'height_cm' => $height,
+        'starting_weight' => $startWeight,
     ]);
     json_response(['ok' => true]);
 }

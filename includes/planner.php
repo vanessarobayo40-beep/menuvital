@@ -96,6 +96,29 @@ function goal_bonus(array $recipe, string $goal): float {
     };
 }
 
+/** Bono si la receta coincide con los platos favoritos que la usuaria escribió. */
+function favorites_bonus(array $recipe, array $favorites): float {
+    if (empty($favorites)) {
+        return 0;
+    }
+    $recipeName = normalize_ingredient($recipe['name']);
+    foreach ($favorites as $fav) {
+        $favNorm = normalize_ingredient($fav);
+        if ($favNorm === '') continue;
+        // Coincidencia por nombre del plato...
+        if (str_contains($recipeName, $favNorm) || str_contains($favNorm, $recipeName)) {
+            return 0.35;
+        }
+        // ...o por ingrediente protagonista (ej: favorita "salmón" sube recetas con salmón)
+        foreach ($recipe['ingredients'] as $entry) {
+            if (ingredients_match(ingredient_name($entry), $fav)) {
+                return 0.2;
+            }
+        }
+    }
+    return 0;
+}
+
 /**
  * Candidatas ordenadas por afinidad para un tipo de comida.
  * $exclude: ids ya usados (para variar en la semana).
@@ -111,7 +134,9 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         if (recipe_is_blocked($r, $blocked)) {
             continue;
         }
-        $score = recipe_match_score($r, $pantryItems) + goal_bonus($r, $profile['goal'] ?? 'balance');
+        $score = recipe_match_score($r, $pantryItems)
+            + goal_bonus($r, $profile['goal'] ?? 'balance')
+            + favorites_bonus($r, $profile['favorites_list'] ?? []);
         $scored[] = ['recipe' => $r, 'score' => $score];
     }
     usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
@@ -197,8 +222,9 @@ function ai_pick_day(array $candidatesByType, array $profile, array $pantryItems
         'objetivo' => $profile['goal'] ?? 'balance',
         'personas' => (int)($profile['people'] ?? 1),
         'mercado_disponible' => array_values($pantryItems),
+        'platos_favoritos' => $profile['favorites_list'] ?? [],
         'candidatos' => $brief,
-        'instruccion' => 'Elige la mejor opción de cada tipo de comida priorizando lo que ya hay en el mercado, variedad y el objetivo. Si no hay candidatos de snack, pon null.',
+        'instruccion' => 'Elige la mejor opción de cada tipo de comida priorizando lo que ya hay en el mercado, los platos favoritos de la usuaria, variedad y el objetivo. Si no hay candidatos de snack, pon null.',
     ], JSON_UNESCAPED_UNICODE);
 
     $result = groq_chat_json([
@@ -227,6 +253,7 @@ function ai_pick_week(array $candidatesByDay, array $profile, array $pantryItems
         'objetivo' => $profile['goal'] ?? 'balance',
         'personas' => (int)($profile['people'] ?? 1),
         'mercado_disponible' => array_values($pantryItems),
+        'platos_favoritos' => $profile['favorites_list'] ?? [],
         'candidatos_por_tipo' => $brief,
     ], JSON_UNESCAPED_UNICODE);
 

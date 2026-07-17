@@ -41,15 +41,19 @@ $tables = [
         batch_label VARCHAR(100) NOT NULL DEFAULT '',
         created_at DATETIME NOT NULL,
         used_by INT NULL,
-        used_at DATETIME NULL
+        used_at DATETIME NULL,
+        is_active TINYINT NOT NULL DEFAULT 1
     )$tail",
     'profiles' => "CREATE TABLE IF NOT EXISTS profiles (
         user_id INT PRIMARY KEY,
         allergies TEXT,
         dislikes TEXT,
+        favorites TEXT,
         goal VARCHAR(50) NOT NULL DEFAULT 'balance',
         people INT NOT NULL DEFAULT 1,
         meals_per_day INT NOT NULL DEFAULT 3,
+        height_cm INT NULL,
+        starting_weight DECIMAL(5,2) NULL,
         updated_at DATETIME NOT NULL
     )$tail",
     'recipes' => "CREATE TABLE IF NOT EXISTS recipes (
@@ -106,6 +110,37 @@ $tables = [
 foreach ($tables as $name => $sql) {
     $pdo->exec($sql);
     $log[] = "Tabla lista: $name";
+}
+
+// ---------- Migración: agrega columnas nuevas a tablas ya existentes ----------
+function column_exists(PDO $pdo, bool $isMysql, string $table, string $column): bool {
+    if ($isMysql) {
+        $stmt = $pdo->prepare('SELECT COUNT(*) AS c FROM information_schema.columns
+                                WHERE table_schema = DATABASE() AND table_name = ? AND column_name = ?');
+        $stmt->execute([$table, $column]);
+    } else {
+        $stmt = $pdo->query("PRAGMA table_info($table)");
+        foreach ($stmt->fetchAll() as $col) {
+            if ($col['name'] === $column) return true;
+        }
+        return false;
+    }
+    return (int)$stmt->fetch()['c'] > 0;
+}
+
+if (!column_exists($pdo, $isMysql, 'activation_codes', 'is_active')) {
+    $pdo->exec('ALTER TABLE activation_codes ADD COLUMN is_active TINYINT NOT NULL DEFAULT 1');
+    $log[] = 'Migración: columna is_active agregada a activation_codes';
+}
+foreach ([
+    'favorites' => 'ALTER TABLE profiles ADD COLUMN favorites TEXT',
+    'height_cm' => 'ALTER TABLE profiles ADD COLUMN height_cm INT NULL',
+    'starting_weight' => 'ALTER TABLE profiles ADD COLUMN starting_weight DECIMAL(5,2) NULL',
+] as $col => $alterSql) {
+    if (!column_exists($pdo, $isMysql, 'profiles', $col)) {
+        $pdo->exec($alterSql);
+        $log[] = "Migración: columna $col agregada a profiles";
+    }
 }
 
 // ---------- Cargar recetas (solo si la tabla está vacía) ----------

@@ -15,6 +15,15 @@ require __DIR__ . '/../includes/layout_top.php';
   <div class="stat-tile"><div class="value" id="stat-streak">–</div><div class="label">días seguidos</div></div>
   <div class="stat-tile"><div class="value" id="stat-water">–</div><div class="label">vasos hoy</div></div>
   <div class="stat-tile"><div class="value" id="stat-weight">–</div><div class="label">peso actual (kg)</div></div>
+  <div class="stat-tile"><div class="value" id="stat-imc">–</div><div class="label">tu IMC</div></div>
+</div>
+
+<div id="progress-summary" class="card-soft" style="display:none;margin-bottom:18px;">
+  <p style="margin:0;font-size:14px;" id="progress-summary-text"></p>
+</div>
+
+<div id="profile-nudge" class="card-soft" style="display:none;margin-bottom:18px;">
+  <p style="margin:0;font-size:13px;">💡 Completa tu <a href="/app/perfil.php" style="color:var(--green-dark);font-weight:600;">estatura y peso inicial en tu perfil</a> para ver tu IMC y tu avance real.</p>
 </div>
 
 <div class="card" style="margin-bottom:18px;">
@@ -101,14 +110,56 @@ function drawChart(logs) {
   svg.innerHTML = `<path d="${path}" fill="none" stroke="#0F9D6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
 }
 
+function imcInfo(imc) {
+  if (imc < 18.5) return 'bajo peso';
+  if (imc < 25) return 'rango saludable 💚';
+  if (imc < 30) return 'sobrepeso leve';
+  return 'zona de cuidado';
+}
+
 async function loadProgress() {
   try {
-    const res = await MV.api('/api/progress.php?action=list');
+    const [res, prof] = await Promise.all([
+      MV.api('/api/progress.php?action=list'),
+      MV.api('/api/profile.php?action=get'),
+    ]);
     document.getElementById('stat-streak').textContent = res.streak;
     waterCount = res.today ? res.today.water : 0;
     document.getElementById('water-count').textContent = waterCount;
     document.getElementById('stat-water').textContent = waterCount;
-    document.getElementById('stat-weight').textContent = res.today && res.today.weight ? res.today.weight : '–';
+
+    const logged = res.logs.filter(l => l.weight !== null);
+    const lastWeight = (res.today && res.today.weight) ? res.today.weight
+      : (logged.length ? logged[logged.length - 1].weight : null);
+    document.getElementById('stat-weight').textContent = lastWeight ?? '–';
+
+    const height = prof.profile.height_cm;
+    const startWeight = prof.profile.starting_weight;
+
+    if (height && lastWeight) {
+      const imc = lastWeight / Math.pow(height / 100, 2);
+      document.getElementById('stat-imc').textContent = imc.toFixed(1);
+    } else {
+      document.getElementById('stat-imc').textContent = '–';
+    }
+
+    if (!height || !startWeight) {
+      document.getElementById('profile-nudge').style.display = 'block';
+    } else if (lastWeight) {
+      const diff = lastWeight - startWeight;
+      const imc = lastWeight / Math.pow(height / 100, 2);
+      let text;
+      if (Math.abs(diff) < 0.1) {
+        text = `⚖️ Estás igual que tu peso inicial (${startWeight} kg). Tu IMC es ${imc.toFixed(1)} (${imcInfo(imc)}).`;
+      } else if (diff < 0) {
+        text = `🎉 ¡Has bajado ${Math.abs(diff).toFixed(1)} kg desde que empezaste (${startWeight} kg)! Tu IMC es ${imc.toFixed(1)} (${imcInfo(imc)}).`;
+      } else {
+        text = `📈 Llevas ${diff.toFixed(1)} kg más que tu peso inicial (${startWeight} kg). Tu IMC es ${imc.toFixed(1)} (${imcInfo(imc)}). ¡Un día a la vez!`;
+      }
+      document.getElementById('progress-summary-text').textContent = text;
+      document.getElementById('progress-summary').style.display = 'block';
+    }
+
     selectedHabits = new Set(res.today ? res.today.habits : []);
     renderHabits();
     if (res.today) {

@@ -13,18 +13,27 @@ $user = require_login_api();
 $userId = (int)$user['id'];
 
 const FALLBACK_REPLIES = [
-    'Ahora mismo no tengo conexión con mi cerebro de IA, pero aquí va un consejo: toma agua antes de cada comida y sirve porciones moderadas. Intenta de nuevo en un momento.',
-    'No pude conectarme en este momento. Mientras tanto: intenta que la mitad de tu plato sean verduras, y camina un poco después de comer.',
-    'Se me dificultó responder ahora. Un tip rápido: dormir bien y comer despacio ayudan tanto como la comida misma. Vuelve a intentar en unos minutos.',
+    'Estoy teniendo un momentico de alta demanda 💚 Mientras tanto, un consejo que siempre sirve: toma un vaso de agua antes de cada comida y sirve porciones moderadas. Escríbeme de nuevo en unos minutos.',
+    'Dame unos minuticos y vuelve a escribirme 🙏 Mientras tanto: intenta que la mitad de tu plato sean verduras y camina un poco después de comer.',
+    'En este momento no puedo darte una respuesta completa, pero ya casi vuelvo 💪 Un tip rápido: dormir bien y comer despacio ayudan tanto como la comida misma.',
 ];
 
 function coach_system_prompt(array $profile): string {
     $allergies = implode(', ', $profile['allergies_list']) ?: 'ninguna registrada';
     $dislikes = implode(', ', $profile['dislikes_list']) ?: 'ninguno registrado';
+    $favorites = implode(', ', $profile['favorites_list'] ?? []) ?: 'ninguno registrado';
+    $body = '';
+    if (!empty($profile['height_cm'])) {
+        $body .= 'Estatura: ' . (int)$profile['height_cm'] . ' cm. ';
+    }
+    if (!empty($profile['starting_weight'])) {
+        $body .= 'Peso inicial registrado: ' . (float)$profile['starting_weight'] . ' kg. ';
+    }
     return "Eres la coach de nutrición de la app MenúVital: colombiana, cálida, cercana y motivadora, "
         . "como una nutricionista de confianza que habla en español natural (no robótico). "
         . "Objetivo de la usuaria: " . goal_label($profile['goal']) . ". "
-        . "Alergias: {$allergies}. No le gusta: {$dislikes}. Cocina para " . (int)$profile['people'] . " persona(s). "
+        . "Alergias: {$allergies}. No le gusta: {$dislikes}. Platos favoritos: {$favorites}. {$body}"
+        . "Cocina para " . (int)$profile['people'] . " persona(s). "
         . "Da consejos prácticos, breves (máximo 4-5 líneas) y realistas con comida colombiana/latina de mercado, "
         . "nunca dietas extremas ni productos raros. "
         . "IMPORTANTE: nunca des diagnósticos médicos ni reemplaces a un profesional de la salud; "
