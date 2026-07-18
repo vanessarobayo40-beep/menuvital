@@ -9,6 +9,13 @@
  *   require __DIR__ . '/../includes/layout_bottom.php';
  */
 
+/**
+ * Versión de los estáticos (app.js, style.css). Súbela cada vez que cambien
+ * para forzar que el navegador descargue la versión nueva de inmediato,
+ * en vez de esperar los 7 días de caché configurados en .htaccess.
+ */
+const ASSET_VER = '20260717b';
+
 function nav_icon(string $name): string {
     $icons = [
         'hoy' => '<path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3M5.6 18.4l2.1-2.1M12 18v3M16.3 16.3l2.1 2.1M18 12h3M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="4"/>',

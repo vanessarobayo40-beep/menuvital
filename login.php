@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/includes/layout.php';
 secure_session_start();
 send_security_headers();
 
@@ -21,7 +22,7 @@ $csrf = csrf_token();
 <link rel="icon" href="/assets/img/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=<?= ASSET_VER ?>">
 <style>
   body { background: var(--grad-soft); min-height: 100vh; }
   .auth-wrap { min-height: 100vh; display: flex; align-items: center; padding: 32px 0; }
@@ -98,7 +99,7 @@ $csrf = csrf_token();
   </div>
 </div>
 
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
 document.querySelectorAll('.switcher button').forEach(btn => {
   btn.addEventListener('click', () => {

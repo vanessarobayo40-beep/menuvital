@@ -20,7 +20,7 @@ $navItems = [
   </a>
   <?php endforeach; ?>
 </nav>
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));

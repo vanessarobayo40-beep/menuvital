@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/profile.php';
+require_once __DIR__ . '/../includes/layout.php';
 secure_session_start();
 send_security_headers();
 $user = require_login_page();
@@ -16,7 +17,7 @@ $csrf = csrf_token();
 <meta name="theme-color" content="#0F9D6B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=<?= ASSET_VER ?>">
 <style>
   body { background: var(--bg); min-height: 100vh; padding-bottom: 100px; }
   .ob-wrap { max-width: 460px; margin: 0 auto; padding: 24px 20px; }
@@ -121,7 +122,7 @@ $csrf = csrf_token();
   <button type="button" id="btn-next" class="btn btn-primary">Continuar</button>
 </div>
 
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
 let step = 1;
 const TOTAL_STEPS = 4;

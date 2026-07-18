@@ -258,25 +258,30 @@ MV.api('/api/pantry.php?action=list').then(res => {
   }
 }).catch(() => {});
 
-// ---------- Banner de instalar app (recordatorio breve, descartable) ----------
-if (!MV.install.isStandalone() && !MV.loadLocal('install_banner_dismissed')) {
-  document.getElementById('install-banner').style.display = 'block';
-}
-document.getElementById('btn-install-mini').addEventListener('click', async () => {
-  const result = await MV.install.trigger();
-  if (result === 'installed') {
-    document.getElementById('install-banner').style.display = 'none';
-    MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
-  } else if (result === 'manual') {
-    const el = document.getElementById('install-mini-steps');
-    el.innerHTML = MV.install.manualSteps() + ' (También puedes verla siempre en tu <a href="/app/perfil.php" style="color:var(--green-dark);font-weight:600;">Perfil</a>.)';
-    el.style.display = el.style.display === 'none' ? 'block' : 'none';
-  }
-});
-document.getElementById('btn-install-dismiss').addEventListener('click', () => {
-  document.getElementById('install-banner').style.display = 'none';
-  MV.saveLocal('install_banner_dismissed', true);
-});
-
+// Lo esencial de la página va primero: si algo de abajo falla (ej. una
+// función nueva en una versión vieja de app.js cacheada), el menú de
+// hoy ya se está cargando y no se queda pegado en el esqueleto de carga.
 loadToday();
+
+// ---------- Banner de instalar app (recordatorio breve, descartable) ----------
+try {
+  if (!MV.install.isStandalone() && !MV.loadLocal('install_banner_dismissed')) {
+    document.getElementById('install-banner').style.display = 'block';
+  }
+  document.getElementById('btn-install-mini').addEventListener('click', async () => {
+    const result = await MV.install.trigger();
+    if (result === 'installed') {
+      document.getElementById('install-banner').style.display = 'none';
+      MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
+    } else if (result === 'manual') {
+      const el = document.getElementById('install-mini-steps');
+      el.innerHTML = MV.install.manualSteps() + ' (También puedes verla siempre en tu <a href="/app/perfil.php" style="color:var(--green-dark);font-weight:600;">Perfil</a>.)';
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  });
+  document.getElementById('btn-install-dismiss').addEventListener('click', () => {
+    document.getElementById('install-banner').style.display = 'none';
+    MV.saveLocal('install_banner_dismissed', true);
+  });
+} catch (e) { /* el banner de instalación es secundario: nunca debe romper la página */ }
 </script>

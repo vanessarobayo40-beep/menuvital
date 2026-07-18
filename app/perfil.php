@@ -118,24 +118,26 @@ require __DIR__ . '/../includes/layout_top.php';
 
 <script>
 // ---------- Instalación de la app (PWA) ----------
-if (MV.install.isStandalone()) {
-  document.getElementById('install-card').style.display = 'none';
-  document.getElementById('install-done').style.display = 'block';
-} else {
-  document.getElementById('btn-install').addEventListener('click', async () => {
-    const result = await MV.install.trigger();
-    if (result === 'installed') {
-      document.getElementById('install-card').style.display = 'none';
-      document.getElementById('install-done').style.display = 'block';
-      MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
-    } else if (result === 'manual') {
-      const stepsEl = document.getElementById('install-steps');
-      document.getElementById('install-steps-text').innerHTML = MV.install.manualSteps();
-      stepsEl.style.display = stepsEl.style.display === 'none' ? 'block' : 'none';
-    }
-    // 'dismissed': la usuaria cerró el diálogo nativo, no hacemos nada.
-  });
-}
+try {
+  if (MV.install.isStandalone()) {
+    document.getElementById('install-card').style.display = 'none';
+    document.getElementById('install-done').style.display = 'block';
+  } else {
+    document.getElementById('btn-install').addEventListener('click', async () => {
+      const result = await MV.install.trigger();
+      if (result === 'installed') {
+        document.getElementById('install-card').style.display = 'none';
+        document.getElementById('install-done').style.display = 'block';
+        MV.toast('¡Listo! MenúVital quedó instalada en tu celular 🎉');
+      } else if (result === 'manual') {
+        const stepsEl = document.getElementById('install-steps');
+        document.getElementById('install-steps-text').innerHTML = MV.install.manualSteps();
+        stepsEl.style.display = stepsEl.style.display === 'none' ? 'block' : 'none';
+      }
+      // 'dismissed': la usuaria cerró el diálogo nativo, no hacemos nada.
+    });
+  }
+} catch (e) { /* el bloque de instalación es secundario: nunca debe romper el resto de la página */ }
 
 // ---------- Perfil ----------
 async function loadProfile() {

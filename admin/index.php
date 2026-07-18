@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../includes/layout.php';
 secure_session_start();
 send_security_headers();
 $user = require_admin_page();
@@ -204,7 +205,7 @@ $csrf = csrf_token();
   </div>
 </div>
 
-<script src="/assets/js/app.js"></script>
+<script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
 let allCodes = [];
 
