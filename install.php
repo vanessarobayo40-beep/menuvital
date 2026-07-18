@@ -72,7 +72,8 @@ $tables = [
         carbs INT NULL,
         fat INT NULL,
         sugar INT NULL,
-        fiber INT NULL
+        fiber INT NULL,
+        image_url TEXT NULL
     )$tail",
     'pantry_items' => "CREATE TABLE IF NOT EXISTS pantry_items (
         id $ai,
@@ -175,6 +176,7 @@ foreach ([
     'fat' => 'ALTER TABLE recipes ADD COLUMN fat INT NULL',
     'sugar' => 'ALTER TABLE recipes ADD COLUMN sugar INT NULL',
     'fiber' => 'ALTER TABLE recipes ADD COLUMN fiber INT NULL',
+    'image_url' => 'ALTER TABLE recipes ADD COLUMN image_url TEXT NULL',
 ] as $col => $alterSql) {
     if (!column_exists($pdo, $isMysql, 'recipes', $col)) {
         $pdo->exec($alterSql);
@@ -194,17 +196,17 @@ if (!column_exists($pdo, $isMysql, 'pantry_items', 'quantity')) {
 $count = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes')->fetch()['c'];
 if ($count === 0) {
     $recipes = require __DIR__ . '/database/recipes_data.php';
-    $stmt = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min, carbs, fat, sugar, fiber)
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min, carbs, fat, sugar, fiber, image_url)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $pdo->beginTransaction();
     foreach ($recipes as $r) {
-        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber] = $r;
+        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber, $image] = $r + [12 => null];
         $stmt->execute([
             $name, $type,
             json_encode($ingredients, JSON_UNESCAPED_UNICODE),
             json_encode($steps, JSON_UNESCAPED_UNICODE),
             json_encode($tags, JSON_UNESCAPED_UNICODE),
-            $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber,
+            $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber, $image,
         ]);
     }
     $pdo->commit();
@@ -224,6 +226,22 @@ if ($count === 0) {
             $updated += $upd->rowCount();
         }
         $log[] = "Nutrición actualizada en $updated recetas existentes";
+    }
+
+    // Backfill de foto (image_url) para recetas que ya existían sin este dato.
+    $missingImg = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes WHERE image_url IS NULL OR image_url = \'\'')->fetch()['c'];
+    if ($missingImg > 0) {
+        $recipes = require __DIR__ . '/database/recipes_data.php';
+        $updImg = $pdo->prepare("UPDATE recipes SET image_url=? WHERE name=? AND (image_url IS NULL OR image_url = '')");
+        $updatedImg = 0;
+        foreach ($recipes as $r) {
+            $name = $r[0];
+            $image = $r[12] ?? null;
+            if (!$image) continue;
+            $updImg->execute([$image, $name]);
+            $updatedImg += $updImg->rowCount();
+        }
+        $log[] = "Foto actualizada en $updatedImg recetas existentes";
     }
 }
 

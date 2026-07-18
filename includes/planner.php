@@ -186,13 +186,19 @@ function missing_ingredients(array $recipe, array $pantryItems, int $people): ar
     return $missing;
 }
 
-/** Presenta una receta lista para mostrar en la UI, escalada a N personas. */
-/** URL de foto del plato, generada por IA a partir del nombre (estable por receta gracias al seed). */
+/**
+ * URL de foto real del plato (banco de fotos Pexels, buscada y guardada una sola vez
+ * por receta — carga instantánea). Si por algún motivo una receta no tiene foto
+ * guardada, cae a una generada por IA como respaldo para que nunca falte imagen.
+ */
 function recipe_image_url(array $recipe): string {
+    if (!empty($recipe['image_url'])) {
+        return $recipe['image_url'];
+    }
     $prompt = 'fotografía profesional de comida, plato de ' . $recipe['name']
         . ', apetitoso, alta calidad, luz natural, vista superior, fondo simple';
     return 'https://image.pollinations.ai/prompt/' . rawurlencode($prompt)
-        . '?width=480&height=320&nologo=true&seed=' . (int)$recipe['id'];
+        . '?width=480&height=320&nologo=true&seed=' . (int)($recipe['id'] ?? 0);
 }
 
 function present_recipe(array $recipe, array $pantryItems, int $people): array {

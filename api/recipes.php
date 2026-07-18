@@ -15,7 +15,7 @@ $userId = (int)$user['id'];
 $action = $_GET['action'] ?? 'list';
 
 if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->query('SELECT id, name, meal_type, tags, kcal, protein, time_min FROM recipes ORDER BY name ASC');
+    $stmt = db()->query('SELECT id, name, meal_type, tags, kcal, protein, time_min, image_url FROM recipes ORDER BY name ASC');
     $favIds = load_favorite_recipe_ids($userId);
     $recipes = array_map(function ($r) use ($favIds) {
         return [
@@ -26,7 +26,7 @@ if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             'kcal' => (int)$r['kcal'],
             'protein' => (int)$r['protein'],
             'time_min' => (int)$r['time_min'],
-            'image_url' => recipe_image_url(['id' => $r['id'], 'name' => $r['name']]),
+            'image_url' => recipe_image_url(['id' => $r['id'], 'name' => $r['name'], 'image_url' => $r['image_url']]),
             'is_favorite' => in_array((int)$r['id'], $favIds, true),
         ];
     }, $stmt->fetchAll());
