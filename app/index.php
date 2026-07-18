@@ -21,6 +21,26 @@ require __DIR__ . '/../includes/layout_top.php';
   <p id="install-mini-steps" class="muted" style="display:none;margin:10px 0 0;font-size:12px;"></p>
 </div>
 
+<div id="nutrition-summary" class="card" style="display:none;margin-bottom:14px;">
+  <div style="display:flex;align-items:center;gap:16px;">
+    <svg width="68" height="68" viewBox="0 0 72 72" style="flex-shrink:0;">
+      <circle cx="36" cy="36" r="30" fill="none" stroke="var(--surface-2)" stroke-width="8"/>
+      <circle id="kcal-ring" cx="36" cy="36" r="30" fill="none" stroke="var(--green)" stroke-width="8"
+        stroke-linecap="round" transform="rotate(-90 36 36)" stroke-dasharray="188.5" stroke-dashoffset="188.5"
+        style="transition:stroke-dashoffset 0.4s ease, stroke 0.4s ease;"/>
+    </svg>
+    <div style="flex:1;">
+      <p style="margin:0;font-size:12px;color:var(--t2);">Tu menú de hoy</p>
+      <p style="margin:2px 0 0;font-size:19px;font-weight:700;" id="kcal-summary-text">–</p>
+      <p style="margin:2px 0 0;font-size:12px;color:var(--t3);" id="protein-summary-text"></p>
+    </div>
+  </div>
+</div>
+
+<div id="nutrition-nudge" class="card-soft" style="display:none;margin-bottom:14px;">
+  <p style="margin:0;font-size:13px;">💡 <a href="/app/perfil.php" style="color:var(--green-dark);font-weight:600;">Completa tu perfil</a> (sexo, edad, estatura y peso) para ver tu meta calórica del día.</p>
+</div>
+
 <div id="coach-tip" class="card-soft" style="display:none;margin-bottom:18px;">
   <div style="display:flex;gap:10px;align-items:flex-start;">
     <span style="font-size:20px;">💬</span>
@@ -77,7 +97,10 @@ function renderMeal(type, meal) {
 
   return `
     <div class="meal-card">
-      <span class="meal-tag">${MEAL_LABELS[type] || type}</span>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 14px 0;">
+        <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}</span>
+        <button class="btn-swap" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
+      </div>
       <h3>${escapeHtml(meal.name)}</h3>
       <div class="meal-meta">
         <span>⏱ ${meal.time_min} min</span>
@@ -118,7 +141,11 @@ async function markCooked(btn, recipeId) {
   }
 }
 
+let currentPlan = null;
+let kcalTarget = null;
+
 function renderPlan(plan) {
+  currentPlan = plan;
   const container = document.getElementById('meals-container');
   const order = MEAL_ORDER.filter(t => plan.meals[t]);
   container.innerHTML = order.map(t => renderMeal(t, plan.meals[t])).join('');
@@ -133,10 +160,52 @@ function renderPlan(plan) {
   container.querySelectorAll('.btn-cooked').forEach(btn => {
     btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.recipeId, 10)));
   });
+  container.querySelectorAll('.btn-swap').forEach(btn => {
+    btn.addEventListener('click', () => swapMeal(btn, btn.dataset.mealType));
+  });
 
   if (plan.consejo_coach) {
     document.getElementById('coach-tip-text').textContent = plan.consejo_coach;
     document.getElementById('coach-tip').style.display = 'block';
+  }
+  renderNutritionSummary(plan);
+}
+
+function renderNutritionSummary(plan) {
+  const meals = Object.values(plan.meals);
+  const totalKcal = meals.reduce((sum, m) => sum + (m.kcal_porcion || 0), 0);
+  const totalProtein = meals.reduce((sum, m) => sum + (m.protein_porcion || 0), 0);
+
+  if (!kcalTarget) {
+    document.getElementById('nutrition-summary').style.display = 'none';
+    document.getElementById('nutrition-nudge').style.display = 'block';
+    return;
+  }
+  document.getElementById('nutrition-nudge').style.display = 'none';
+  document.getElementById('nutrition-summary').style.display = 'block';
+  document.getElementById('kcal-summary-text').textContent = `${totalKcal} / ${kcalTarget} kcal`;
+  document.getElementById('protein-summary-text').textContent = `💪 ${totalProtein} g de proteína`;
+
+  const ratio = Math.min(1, totalKcal / kcalTarget);
+  const circumference = 188.5;
+  const ring = document.getElementById('kcal-ring');
+  ring.style.strokeDashoffset = String(circumference * (1 - ratio));
+  ring.style.stroke = totalKcal > kcalTarget * 1.1 ? 'var(--warn)' : 'var(--green)';
+}
+
+async function swapMeal(btn, type) {
+  btn.disabled = true;
+  btn.textContent = '...';
+  try {
+    const res = await MV.api('/api/planner.php?action=swap_meal', { method: 'POST', body: { meal_type: type } });
+    currentPlan.meals[type] = res.meal;
+    renderPlan(currentPlan);
+    MV.saveLocal('today_plan', currentPlan);
+    MV.toast('¡Listo! Cambiamos ese plato.');
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = '🔄 Cambiar plato';
+    MV.toast(err.message, true);
   }
 }
 
@@ -144,7 +213,11 @@ async function loadToday() {
   document.getElementById('loading').style.display = 'block';
   document.getElementById('btn-regen').style.display = 'none';
   try {
-    const res = await MV.api('/api/planner.php?action=today');
+    const [res, profRes] = await Promise.all([
+      MV.api('/api/planner.php?action=today'),
+      MV.api('/api/profile.php?action=get').catch(() => ({ profile: {} })),
+    ]);
+    kcalTarget = profRes.profile.kcal_target || null;
     renderPlan(res.plan);
     document.getElementById('btn-regen').style.display = 'block';
     MV.saveLocal('today_plan', res.plan);

@@ -5,8 +5,16 @@ send_security_headers();
 $user = require_login_page();
 $PAGE_TITLE = 'Mercado';
 $ACTIVE_NAV = 'mercado';
+$isWelcome = ($_GET['bienvenida'] ?? '') === '1';
 require __DIR__ . '/../includes/layout_top.php';
 ?>
+
+<?php if ($isWelcome): ?>
+<div class="card-soft" style="margin-bottom:18px;">
+  <p style="margin:0;font-size:14px;">🎉 <strong>¡Tu perfil está listo!</strong> Ahora ingresa lo que tienes disponible
+  —escribiendo, por voz o con foto de tu factura— y te armamos tu primer menú.</p>
+</div>
+<?php endif; ?>
 
 <h2 style="margin-bottom:4px;">Mi mercado</h2>
 <p class="muted" style="margin-top:0;font-size:14px;">Escribe lo que tienes disponible en casa. Con eso armamos tu menú.</p>

@@ -23,6 +23,9 @@ if ($action === 'get' && $_SERVER['REQUEST_METHOD'] === 'GET') {
         'meals_per_day' => (int)$profile['meals_per_day'],
         'height_cm' => $profile['height_cm'] !== null ? (int)$profile['height_cm'] : null,
         'starting_weight' => $profile['starting_weight'] !== null ? (float)$profile['starting_weight'] : null,
+        'sex' => $profile['sex'],
+        'age' => $profile['age'] !== null ? (int)$profile['age'] : null,
+        'kcal_target' => $profile['kcal_target'],
     ]]);
 }
 
@@ -43,6 +46,9 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $height = ($height === null || $height === '') ? null : max(100, min(230, (int)$height));
     $startWeight = $in['starting_weight'] ?? null;
     $startWeight = ($startWeight === null || $startWeight === '') ? null : max(20, min(300, (float)$startWeight));
+    $sex = in_array($in['sex'] ?? '', ['f', 'm'], true) ? $in['sex'] : null;
+    $age = $in['age'] ?? null;
+    $age = ($age === null || $age === '') ? null : max(12, min(100, (int)$age));
 
     save_profile((int)$user['id'], [
         'allergies' => $allergies,
@@ -53,8 +59,12 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         'meals_per_day' => $meals,
         'height_cm' => $height,
         'starting_weight' => $startWeight,
+        'sex' => $sex,
+        'age' => $age,
     ]);
-    json_response(['ok' => true]);
+    json_response(['ok' => true, 'kcal_target' => daily_kcal_target([
+        'sex' => $sex, 'age' => $age, 'height_cm' => $height, 'starting_weight' => $startWeight, 'goal' => $goal,
+    ])]);
 }
 
 json_error('Acción no reconocida.', 404);

@@ -29,6 +29,13 @@ function coach_system_prompt(array $profile): string {
     if (!empty($profile['starting_weight'])) {
         $body .= 'Peso inicial registrado: ' . (float)$profile['starting_weight'] . ' kg. ';
     }
+    if (!empty($profile['age'])) {
+        $body .= 'Edad: ' . (int)$profile['age'] . ' años. ';
+    }
+    if (!empty($profile['kcal_target'])) {
+        $body .= 'Su meta calórica diaria estimada es ' . (int)$profile['kcal_target'] . ' kcal — '
+            . 'usa esto como referencia si te pregunta sobre porciones o cantidades, sin sonar obsesiva con el número. ';
+    }
     return "Eres la coach de nutrición de la app MenúVital: colombiana, cálida, cercana y motivadora, "
         . "como una nutricionista de confianza que habla en español natural (no robótico). "
         . "Objetivo de la usuaria: " . goal_label($profile['goal']) . ". "

@@ -65,15 +65,29 @@ require __DIR__ . '/../includes/layout_top.php';
   <p class="section-title" style="margin-top:6px;">Tus datos para el progreso</p>
   <div style="display:flex;gap:12px;">
     <div class="field" style="flex:1;">
+      <label>Sexo</label>
+      <select id="pf-sex">
+        <option value="">Prefiero no decirlo</option>
+        <option value="f">Mujer</option>
+        <option value="m">Hombre</option>
+      </select>
+    </div>
+    <div class="field" style="flex:1;">
+      <label>Edad</label>
+      <input type="number" id="pf-age" min="12" max="100" placeholder="Ej: 32">
+    </div>
+  </div>
+  <div style="display:flex;gap:12px;">
+    <div class="field" style="flex:1;">
       <label>Estatura (cm)</label>
       <input type="number" id="pf-height" min="100" max="230" placeholder="Ej: 160">
     </div>
     <div class="field" style="flex:1;">
-      <label>Peso inicial (kg)</label>
+      <label>Peso actual (kg)</label>
       <input type="number" id="pf-weight" step="0.1" min="20" max="300" placeholder="Ej: 65.5">
     </div>
   </div>
-  <p class="hint" style="margin:-8px 0 16px;font-size:12px;color:var(--t3);">Con esto tu página de Progreso te muestra tu IMC y cuánto has avanzado desde que empezaste.</p>
+  <p class="hint" style="margin:-8px 0 16px;font-size:12px;color:var(--t3);">Con estos 4 datos calculamos tu meta calórica diaria y tu IMC en Progreso.</p>
 
   <p class="section-title" style="margin-top:6px;">Tus gustos</p>
   <div class="field">
@@ -135,6 +149,8 @@ async function loadProfile() {
     document.getElementById('pf-favorites').value = res.profile.favorites || '';
     document.getElementById('pf-height').value = res.profile.height_cm ?? '';
     document.getElementById('pf-weight').value = res.profile.starting_weight ?? '';
+    document.getElementById('pf-sex').value = res.profile.sex ?? '';
+    document.getElementById('pf-age').value = res.profile.age ?? '';
   } catch (err) {
     MV.toast(err.message, true);
   }
@@ -155,6 +171,8 @@ async function saveProfile() {
         favorites: document.getElementById('pf-favorites').value,
         height_cm: document.getElementById('pf-height').value,
         starting_weight: document.getElementById('pf-weight').value,
+        sex: document.getElementById('pf-sex').value,
+        age: document.getElementById('pf-age').value,
       },
     });
     MV.toast('Preferencias guardadas ✅');
@@ -170,7 +188,7 @@ document.getElementById('form-profile').addEventListener('submit', (e) => {
   e.preventDefault();
   saveProfile();
 });
-['pf-goal', 'pf-people', 'pf-meals'].forEach(id => {
+['pf-goal', 'pf-people', 'pf-meals', 'pf-sex'].forEach(id => {
   document.getElementById(id).addEventListener('change', autosave);
 });
 

@@ -148,7 +148,7 @@ document.getElementById('form-register').addEventListener('submit', async (e) =>
         password: document.getElementById('rg-pass').value,
       },
     });
-    window.location.href = '/app/perfil.php?bienvenida=1';
+    window.location.href = '/app/onboarding.php';
   } catch (err) {
     errEl.textContent = err.message;
     errEl.style.display = 'block';

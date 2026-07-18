@@ -100,6 +100,39 @@ if ($action === 'week_new' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     json_response(['ok' => true, 'start_date' => today_str(), 'plan' => $plan]);
 }
 
+// ---------- CAMBIAR UN SOLO PLATO ----------
+if ($action === 'swap_meal' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) {
+        json_error('Token inválido. Recarga la página.', 403);
+    }
+    if (!rate_limit_check('plan_regen:' . $userId, 15, 86400)) {
+        json_error('Ya hiciste varios cambios hoy. Intenta de nuevo más tarde.', 429);
+    }
+    $in = json_input();
+    $type = (string)($in['meal_type'] ?? '');
+    if (!in_array($type, MEAL_TYPES, true)) {
+        json_error('Tipo de comida no válido.');
+    }
+    $stored = get_stored_plan($userId, 'day');
+    if (!$stored || $stored['start_date'] !== today_str() || !isset($stored['data']['meals'][$type])) {
+        json_error('No encontramos el menú de hoy. Recarga la página.');
+    }
+
+    $profile = load_profile($userId);
+    $pantry = load_pantry($userId);
+    $currentId = (int)$stored['data']['meals'][$type]['id'];
+    $candidates = candidate_recipes($type, $pantry, $profile, [$currentId]);
+    if (empty($candidates)) {
+        json_error('No encontramos otra opción distinta para este tipo de comida.');
+    }
+    $newMeal = present_recipe($candidates[0], $pantry, max(1, (int)$profile['people']));
+
+    $plan = $stored['data'];
+    $plan['meals'][$type] = $newMeal;
+    store_plan($userId, 'day', today_str(), $plan);
+    json_response(['ok' => true, 'meal' => $newMeal]);
+}
+
 // ---------- LISTA DE MERCADO ----------
 if ($action === 'shopping_list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $profile = load_profile($userId);
