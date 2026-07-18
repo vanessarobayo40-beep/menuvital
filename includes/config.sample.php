@@ -34,6 +34,11 @@ define('DB_SQLITE_PATH', __DIR__ . '/../database/menuvital.db');
 define('GROQ_API_KEY', '');
 define('GROQ_MODEL', 'llama-3.3-70b-versatile');
 
+// ---------- Fotos reales de recetas (Pexels — gratis) ----------
+// Crea tu cuenta gratis en https://www.pexels.com/api y genera una API key.
+// Se usa para buscar la foto de cada receta nueva que se agregue al recetario.
+define('PEXELS_API_KEY', '');
+
 // ---------- Administradora ----------
 // Con estos datos se crea tu cuenta de administradora al instalar.
 // Desde /admin generas los códigos de activación para tus clientas.

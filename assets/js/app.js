@@ -288,5 +288,30 @@ const MV = (() => {
     render();
   }
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode };
+  // ---------- Modo claro / oscuro ----------
+  const theme = (() => {
+    // null/ausente = "automático" (sigue la preferencia del sistema operativo)
+    function get() {
+      try { return localStorage.getItem('mv_theme'); } catch (e) { return null; }
+    }
+    function set(value) {
+      try {
+        if (!value || value === 'auto') {
+          localStorage.removeItem('mv_theme');
+          document.documentElement.removeAttribute('data-theme');
+        } else {
+          localStorage.setItem('mv_theme', value);
+          document.documentElement.setAttribute('data-theme', value);
+        }
+      } catch (e) {}
+    }
+    function current() {
+      const saved = get();
+      if (saved === 'light' || saved === 'dark') return saved;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    return { get, set, current };
+  })();
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme };
 })();

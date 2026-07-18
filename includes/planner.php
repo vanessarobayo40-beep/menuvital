@@ -17,21 +17,60 @@ require_once __DIR__ . '/profile.php';
 
 const MEAL_TYPES = ['desayuno', 'almuerzo', 'cena', 'snack'];
 
-/** Todas las recetas de un tipo, con ingredientes/tags decodificados. Cache por request. */
+/** Decodifica los campos JSON de una fila de receta. */
+function decode_recipe_row(array $r): array {
+    $r['ingredients'] = json_decode($r['ingredients'], true) ?: [];
+    $r['steps'] = json_decode($r['steps'], true) ?: [];
+    $r['tags'] = json_decode($r['tags'], true) ?: [];
+    return $r;
+}
+
+/** Recetas OFICIALES (user_id NULL) de un tipo. Cache por request — no depende del usuario. */
 function get_recipes_by_type(string $type): array {
     static $cache = [];
     if (isset($cache[$type])) {
         return $cache[$type];
     }
-    $stmt = db()->prepare('SELECT * FROM recipes WHERE meal_type = ?');
+    $stmt = db()->prepare('SELECT * FROM recipes WHERE meal_type = ? AND user_id IS NULL');
     $stmt->execute([$type]);
-    $rows = $stmt->fetchAll();
-    foreach ($rows as &$r) {
-        $r['ingredients'] = json_decode($r['ingredients'], true) ?: [];
-        $r['steps'] = json_decode($r['steps'], true) ?: [];
-        $r['tags'] = json_decode($r['tags'], true) ?: [];
+    return $cache[$type] = array_map('decode_recipe_row', $stmt->fetchAll());
+}
+
+/** Recetas PROPIAS de la usuaria (creadas por ella) de un tipo. */
+function get_custom_recipes_by_type(int $userId, string $type): array {
+    $stmt = db()->prepare('SELECT * FROM recipes WHERE meal_type = ? AND user_id = ?');
+    $stmt->execute([$type, $userId]);
+    return array_map('decode_recipe_row', $stmt->fetchAll());
+}
+
+/** Crea una receta propia de la usuaria y devuelve su id. Queda en el mismo formato que las oficiales. */
+function create_custom_recipe(int $userId, array $data): int {
+    $pdo = db();
+    $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min,
+                                          carbs, fat, sugar, fiber, image_url, user_id)
+                   VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)')
+        ->execute([
+            $data['name'], $data['meal_type'],
+            json_encode($data['ingredients'], JSON_UNESCAPED_UNICODE),
+            json_encode($data['steps'], JSON_UNESCAPED_UNICODE),
+            json_encode($data['tags'], JSON_UNESCAPED_UNICODE),
+            $data['kcal'], $data['protein'], $data['time_min'],
+            $data['carbs'], $data['fat'], $data['sugar'], $data['fiber'],
+            $data['image_url'], $userId,
+        ]);
+    return (int)$pdo->lastInsertId();
+}
+
+/** Elimina una receta propia (solo si de verdad es de esa usuaria). Devuelve si se borró algo. */
+function delete_custom_recipe(int $userId, int $recipeId): bool {
+    $pdo = db();
+    $stmt = $pdo->prepare('DELETE FROM recipes WHERE id = ? AND user_id = ?');
+    $stmt->execute([$recipeId, $userId]);
+    if ($stmt->rowCount() > 0) {
+        $pdo->prepare('DELETE FROM favorite_recipes WHERE recipe_id = ?')->execute([$recipeId]);
+        return true;
     }
-    return $cache[$type] = $rows;
+    return false;
 }
 
 function recipe_by_id(int $id): ?array {
@@ -42,12 +81,7 @@ function recipe_by_id(int $id): ?array {
     $stmt = db()->prepare('SELECT * FROM recipes WHERE id = ?');
     $stmt->execute([$id]);
     $r = $stmt->fetch();
-    if ($r) {
-        $r['ingredients'] = json_decode($r['ingredients'], true) ?: [];
-        $r['steps'] = json_decode($r['steps'], true) ?: [];
-        $r['tags'] = json_decode($r['tags'], true) ?: [];
-    }
-    return $cache[$id] = ($r ?: null);
+    return $cache[$id] = ($r ? decode_recipe_row($r) : null);
 }
 
 /** Nombre del ingrediente sin la cantidad ("pollo|150 g" -> "pollo"). */
@@ -133,6 +167,16 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
     $blocked = array_merge($profile['allergies_list'] ?? [], $profile['dislikes_list'] ?? []);
     $favoriteIds = $profile['favorite_recipe_ids'] ?? [];
     $recipes = get_recipes_by_type($type);
+    if (!empty($profile['user_id'])) {
+        // Sus propias recetas creadas también compiten por un puesto en el menú,
+        // con un pequeño empujón: son suyas, seguro le gustan.
+        $custom = get_custom_recipes_by_type((int)$profile['user_id'], $type);
+        foreach ($custom as &$c) {
+            $c['_own'] = true;
+        }
+        unset($c);
+        $recipes = array_merge($recipes, $custom);
+    }
     $scored = [];
     foreach ($recipes as $r) {
         if (in_array((int)$r['id'], $exclude, true)) {
@@ -144,7 +188,8 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         $score = recipe_match_score($r, $pantryItems)
             + goal_bonus($r, $profile['goal'] ?? 'balance')
             + favorites_bonus($r, $profile['favorites_list'] ?? [])
-            + (in_array((int)$r['id'], $favoriteIds, true) ? 0.3 : 0);
+            + (in_array((int)$r['id'], $favoriteIds, true) ? 0.3 : 0)
+            + (!empty($r['_own']) ? 0.15 : 0);
         $scored[] = ['recipe' => $r, 'score' => $score];
     }
     usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);

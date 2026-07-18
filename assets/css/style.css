@@ -7,6 +7,7 @@
   --bg: #FFFFFF;
   --surface: #F7FAF9;
   --surface-2: #EFF6F3;
+  --card-bg: #FFFFFF;
   --border: #E3E9E6;
 
   --t1: #10201B;   /* texto principal */
@@ -18,20 +19,80 @@
   --green-light: #E4F6EE;
   --purple: #7C5CE0;
   --purple-dark: #5F3FD1;
+  --purple-light: #F1ECFC;
 
   --grad-v: linear-gradient(135deg, var(--green) 0%, var(--purple) 100%);
-  --grad-soft: linear-gradient(135deg, var(--green-light) 0%, #F1ECFC 100%);
+  --grad-soft: linear-gradient(135deg, var(--green-light) 0%, var(--purple-light) 100%);
 
   --danger: #E0473A;
   --danger-light: #FDEDEB;
   --warn: #E0A020;
   --warn-light: #FDF3DE;
+  --toast-bg: #10201B; /* fija a propósito: el toast siempre es una píldora oscura, en ambos temas */
 
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 2px 10px rgba(16, 32, 27, 0.06);
   --shadow-md: 0 8px 24px rgba(16, 32, 27, 0.10);
   --ease: 0.2s ease;
+}
+
+/* ---------- Modo oscuro ----------
+   Se activa por preferencia del sistema (prefers-color-scheme), a menos que
+   la usuaria haya elegido explícitamente un tema en la app (data-theme en <html>). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1310;
+    --surface: #161D19;
+    --surface-2: #1E2620;
+    --card-bg: #17201C;
+    --border: #2A332C;
+
+    --t1: #EDF2EE;
+    --t2: #A9B6AE;
+    --t3: #6C7A70;
+
+    --green: #22C983;
+    --green-dark: #5EE8A8;
+    --green-light: #14301F;
+    --purple: #9C8CF0;
+    --purple-dark: #C7B9FB;
+    --purple-light: #251E3D;
+
+    --danger: #F16B5E;
+    --danger-light: #3A1A17;
+    --warn: #E8B33D;
+    --warn-light: #3A2E10;
+
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1310;
+  --surface: #161D19;
+  --surface-2: #1E2620;
+  --card-bg: #17201C;
+  --border: #2A332C;
+
+  --t1: #EDF2EE;
+  --t2: #A9B6AE;
+  --t3: #6C7A70;
+
+  --green: #22C983;
+  --green-dark: #5EE8A8;
+  --green-light: #14301F;
+  --purple: #9C8CF0;
+  --purple-dark: #C7B9FB;
+  --purple-light: #251E3D;
+
+  --danger: #F16B5E;
+  --danger-light: #3A1A17;
+  --warn: #E8B33D;
+  --warn-light: #3A2E10;
+
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 * { box-sizing: border-box; }
@@ -43,6 +104,7 @@ body {
   color: var(--t1);
   -webkit-font-smoothing: antialiased;
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -105,7 +167,7 @@ input, textarea, select { font-family: inherit; }
 .bottom-nav {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  background: #fff;
+  background: var(--card-bg);
   border-top: 1px solid var(--border);
   display: flex;
   padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
@@ -159,7 +221,7 @@ input, textarea, select { font-family: inherit; }
 
 /* ---------- Cards ---------- */
 .card {
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px;
@@ -194,7 +256,7 @@ input, textarea, select { font-family: inherit; }
   border-radius: var(--radius-sm);
   font-size: 15px;
   color: var(--t1);
-  background: #fff;
+  background: var(--card-bg);
   transition: border-color var(--ease);
 }
 .field input:focus, .field select:focus, .field textarea:focus {
@@ -247,7 +309,7 @@ input, textarea, select { font-family: inherit; }
   position: absolute;
   top: calc(100% + 4px);
   left: 0; right: 0;
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
@@ -269,7 +331,7 @@ input, textarea, select { font-family: inherit; }
 
 /* ---------- Recetas / menú ---------- */
 .meal-card {
-  background: #fff;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
@@ -343,7 +405,7 @@ input, textarea, select { font-family: inherit; }
   transition: all var(--ease);
 }
 .tabs button:hover:not(.active) { color: var(--t1); }
-.tabs button.active { background: #fff; color: var(--green-dark); box-shadow: 0 1px 4px rgba(16,32,27,0.12); }
+.tabs button.active { background: var(--card-bg); color: var(--green-dark); box-shadow: 0 1px 4px rgba(16,32,27,0.12); }
 
 /* ---------- Empty states ---------- */
 .empty-state {
@@ -360,7 +422,7 @@ input, textarea, select { font-family: inherit; }
   bottom: 90px;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: var(--t1);
+  background: var(--toast-bg);
   color: #fff;
   padding: 12px 20px;
   border-radius: 999px;
@@ -403,7 +465,7 @@ input, textarea, select { font-family: inherit; }
 .chat-input-bar {
   position: fixed;
   bottom: 68px; left: 0; right: 0;
-  background: #fff;
+  background: var(--card-bg);
   border-top: 1px solid var(--border);
   padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
   display: flex; gap: 8px;
@@ -440,7 +502,7 @@ input, textarea, select { font-family: inherit; }
 .divider { height: 1px; background: var(--border); margin: 18px 0; border: none; }
 .badge { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 700; }
 .badge-green { background: var(--green-light); color: var(--green-dark); }
-.badge-purple { background: #F1ECFC; color: var(--purple-dark); }
+.badge-purple { background: var(--purple-light); color: var(--purple-dark); }
 .badge-warn { background: var(--warn-light); color: var(--warn); }
 
 /* ---------- Fade-in ---------- */

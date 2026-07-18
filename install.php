@@ -73,7 +73,8 @@ $tables = [
         fat INT NULL,
         sugar INT NULL,
         fiber INT NULL,
-        image_url TEXT NULL
+        image_url TEXT NULL,
+        user_id INT NULL
     )$tail",
     'pantry_items' => "CREATE TABLE IF NOT EXISTS pantry_items (
         id $ai,
@@ -177,6 +178,7 @@ foreach ([
     'sugar' => 'ALTER TABLE recipes ADD COLUMN sugar INT NULL',
     'fiber' => 'ALTER TABLE recipes ADD COLUMN fiber INT NULL',
     'image_url' => 'ALTER TABLE recipes ADD COLUMN image_url TEXT NULL',
+    'user_id' => 'ALTER TABLE recipes ADD COLUMN user_id INT NULL',
 ] as $col => $alterSql) {
     if (!column_exists($pdo, $isMysql, 'recipes', $col)) {
         $pdo->exec($alterSql);

@@ -207,3 +207,72 @@ function groq_extract_items_from_image(string $imageDataUri): array {
     $parsed = json_decode($text, true);
     return normalize_extracted_items($parsed['items'] ?? null, 40);
 }
+
+const RECIPE_TAG_OPTIONS = ['tradicional', 'ligero', 'alto en proteína', 'económico', 'rápido', 'vegetariano', 'sin gluten'];
+
+/**
+ * Para una receta que la usuaria está creando: estima su nutrición por porción,
+ * le asigna 1-3 tags de RECIPE_TAG_OPTIONS y da un término de búsqueda en inglés
+ * para encontrarle una foto real en Pexels. Devuelve null si la IA no está disponible.
+ */
+function groq_generate_recipe_details(string $name, string $mealType, array $ingredientNames): ?array {
+    $result = groq_chat_json([
+        ['role' => 'system', 'content' => 'Eres nutricionista y editora de contenido para una app de menús '
+            . 'saludables. Te dan el nombre, tipo de comida e ingredientes principales de un plato que una '
+            . 'usuaria acaba de crear. Estima su información nutricional POR PORCIÓN de forma realista '
+            . '(consistente: kcal ≈ carbs*4 + protein*4 + fat*9), asígnale 1 a 3 tags SOLO de esta lista: '
+            . '["tradicional","ligero","alto en proteína","económico","rápido","vegetariano","sin gluten"], '
+            . 'y da un término de búsqueda de 3 a 6 palabras EN INGLÉS para encontrar una foto de stock real '
+            . 'y apetitosa en Pexels (genérico, no el nombre propio del plato). '
+            . 'Responde SOLO JSON: {"kcal":N,"protein":N,"carbs":N,"fat":N,"sugar":N,"fiber":N,'
+            . '"tags":["..."],"search_query":"..."}'],
+        ['role' => 'user', 'content' => json_encode([
+            'nombre' => $name, 'tipo' => $mealType, 'ingredientes' => $ingredientNames,
+        ], JSON_UNESCAPED_UNICODE)],
+    ], 600);
+
+    if (!$result || !isset($result['kcal'])) {
+        return null;
+    }
+    $tags = is_array($result['tags'] ?? null)
+        ? array_values(array_intersect($result['tags'], RECIPE_TAG_OPTIONS))
+        : [];
+    return [
+        'kcal' => max(0, (int)$result['kcal']),
+        'protein' => max(0, (int)($result['protein'] ?? 0)),
+        'carbs' => max(0, (int)($result['carbs'] ?? 0)),
+        'fat' => max(0, (int)($result['fat'] ?? 0)),
+        'sugar' => max(0, (int)($result['sugar'] ?? 0)),
+        'fiber' => max(0, (int)($result['fiber'] ?? 0)),
+        'tags' => $tags,
+        'search_query' => is_string($result['search_query'] ?? null) ? $result['search_query'] : '',
+    ];
+}
+
+function pexels_available(): bool {
+    return defined('PEXELS_API_KEY') && PEXELS_API_KEY !== '';
+}
+
+/** Busca una foto real en Pexels para un término de búsqueda en inglés. Devuelve la URL o null. */
+function pexels_search_photo(string $query): ?string {
+    if (!pexels_available() || trim($query) === '') {
+        return null;
+    }
+    $ch = curl_init('https://api.pexels.com/v1/search?' . http_build_query([
+        'query' => $query, 'per_page' => 1, 'orientation' => 'landscape',
+    ]));
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER     => ['Authorization: ' . PEXELS_API_KEY],
+        CURLOPT_TIMEOUT        => 15,
+        CURLOPT_CONNECTTIMEOUT => 8,
+    ]);
+    $body = curl_exec($ch);
+    $status = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+    curl_close($ch);
+    if ($body === false || $status !== 200) {
+        return null;
+    }
+    $data = json_decode($body, true);
+    return $data['photos'][0]['src']['large'] ?? null;
+}

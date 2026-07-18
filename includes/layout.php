@@ -14,7 +14,17 @@
  * para forzar que el navegador descargue la versión nueva de inmediato,
  * en vez de esperar los 7 días de caché configurados en .htaccess.
  */
-const ASSET_VER = '20260718b';
+const ASSET_VER = '20260718c';
+
+/**
+ * Script mínimo e inline que aplica el tema guardado (claro/oscuro) ANTES de
+ * pintar la página, para que no haya parpadeo del tema equivocado al cargar.
+ * Debe ir en el <head>, antes del <link> de style.css.
+ */
+function theme_init_script(): string {
+    return '<script>(function(){try{var t=localStorage.getItem("mv_theme");'
+        . 'if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>';
+}
 
 function nav_icon(string $name): string {
     $icons = [

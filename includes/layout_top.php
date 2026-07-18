@@ -14,6 +14,7 @@ $csrf = csrf_token();
 <title><?= e($PAGE_TITLE ?? 'MenúVital') ?> — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
 <meta name="theme-color" content="#0F9D6B">
+<?= theme_init_script() ?>
 <link rel="manifest" href="/assets/manifest.json">
 <link rel="apple-touch-icon" href="/assets/img/icon-192.png">
 <link rel="icon" href="/assets/img/icon-192.png">

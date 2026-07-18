@@ -108,6 +108,16 @@ require __DIR__ . '/../includes/layout_top.php';
   <button type="submit" class="btn btn-primary btn-block" style="margin-top:8px;">Guardar preferencias</button>
 </form>
 
+<p class="section-title">Apariencia</p>
+<div class="card" style="margin-bottom:18px;">
+  <p style="margin:0 0 12px;font-size:14px;font-weight:600;">Tema de la app</p>
+  <div class="tabs" style="margin-bottom:0;">
+    <button type="button" data-theme-choice="light">☀️ Claro</button>
+    <button type="button" data-theme-choice="dark">🌙 Oscuro</button>
+    <button type="button" data-theme-choice="auto">⚙️ Automático</button>
+  </div>
+</div>
+
 <p class="section-title">Cuenta</p>
 <div class="card">
   <p style="margin:0 0 4px;font-size:14px;"><strong><?= e($user['name']) ?></strong></p>
@@ -139,6 +149,22 @@ try {
     });
   }
 } catch (e) { /* el bloque de instalación es secundario: nunca debe romper el resto de la página */ }
+
+// ---------- Apariencia (tema claro/oscuro) ----------
+try {
+  const themeButtons = document.querySelectorAll('[data-theme-choice]');
+  function markActiveTheme() {
+    const active = MV.theme.get() || 'auto';
+    themeButtons.forEach(b => b.classList.toggle('active', b.dataset.themeChoice === active));
+  }
+  themeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      MV.theme.set(btn.dataset.themeChoice);
+      markActiveTheme();
+    });
+  });
+  markActiveTheme();
+} catch (e) { /* la apariencia es secundaria: nunca debe romper el resto de la página */ }
 
 // ---------- Perfil ----------
 async function loadProfile() {

@@ -19,6 +19,7 @@ $csrf = csrf_token();
 <title>Entrar — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
 <meta name="theme-color" content="#0F9D6B">
+<?= theme_init_script() ?>
 <link rel="icon" href="/assets/img/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +38,7 @@ $csrf = csrf_token();
   .logo-big p { color: var(--t2); font-size: 14px; margin: 4px 0 0; }
   .switcher { display: flex; gap: 4px; background: var(--surface); padding: 4px; border-radius: 999px; margin-bottom: 22px; }
   .switcher button { flex: 1; padding: 10px; border: none; background: none; border-radius: 999px; font-weight: 600; font-size: 14px; color: var(--t2); }
-  .switcher button.active { background: #fff; color: var(--green-dark); box-shadow: var(--shadow); }
+  .switcher button.active { background: var(--card-bg); color: var(--green-dark); box-shadow: var(--shadow); }
   .form-panel { display: none; }
   .form-panel.active { display: block; }
 </style>

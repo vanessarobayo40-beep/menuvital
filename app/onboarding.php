@@ -15,6 +15,7 @@ $csrf = csrf_token();
 <title>Bienvenida — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
 <meta name="theme-color" content="#0F9D6B">
+<?= theme_init_script() ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=<?= ASSET_VER ?>">
@@ -38,7 +39,7 @@ $csrf = csrf_token();
   .sex-row { display: flex; gap: 10px; margin-bottom: 16px; }
   .sex-row .option-card { flex: 1; margin-bottom: 0; justify-content: center; }
   .ob-bottom {
-    position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid var(--border);
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--card-bg); border-top: 1px solid var(--border);
     padding: 14px 20px calc(14px + env(safe-area-inset-bottom)); display: flex; gap: 10px; max-width: 460px; margin: 0 auto;
   }
   .ob-bottom .btn { flex: 1; }

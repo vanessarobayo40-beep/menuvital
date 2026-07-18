@@ -13,7 +13,7 @@ $waMessage = rawurlencode('¡Hola! Quiero comprar MenúVital (' . APP_PRICE . ')
 $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=' . $waMessage;
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
