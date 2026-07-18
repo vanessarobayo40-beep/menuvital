@@ -11,11 +11,6 @@ require __DIR__ . '/../includes/layout_top.php';
 <h2 style="margin-bottom:4px;">Tu plan de la semana</h2>
 <p class="muted" style="margin-top:0;font-size:14px;">7 días de menú listo, hecho con lo que tienes disponible.</p>
 
-<div id="week-empty" class="card text-center" style="display:none;margin-bottom:18px;">
-  <p style="margin:0 0 12px;font-size:14px;">Agrega primero tu mercado disponible para generar el plan semanal.</p>
-  <a href="/app/mercado.php" class="btn btn-primary btn-sm">Ingresar mi mercado</a>
-</div>
-
 <div id="loading">
   <div class="skeleton" style="height:100px;margin-bottom:12px;"></div>
   <div class="skeleton" style="height:100px;margin-bottom:12px;"></div>
@@ -193,10 +188,6 @@ document.getElementById('btn-regen-week').addEventListener('click', async () => 
     btn.innerHTML = '🔄 Generar un nuevo plan semanal';
   }
 });
-
-MV.api('/api/pantry.php?action=list').then(res => {
-  if (!res.items.length) document.getElementById('week-empty').style.display = 'block';
-}).catch(() => {});
 
 loadWeek();
 </script>

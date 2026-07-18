@@ -57,11 +57,6 @@ require __DIR__ . '/../includes/layout_top.php';
   </div>
 </div>
 
-<div id="pantry-empty" class="card text-center" style="display:none;margin-bottom:18px;">
-  <p style="margin:0 0 12px;font-size:14px;">Aún no has ingresado tu mercado. Agrega lo que tienes disponible y te armamos el menú de hoy.</p>
-  <a href="/app/mercado.php" class="btn btn-primary btn-sm">Ingresar mi mercado</a>
-</div>
-
 <div id="meals-container"></div>
 
 <div id="loading" class="fade-in">
@@ -271,13 +266,6 @@ document.getElementById('btn-regen').addEventListener('click', async () => {
     btn.innerHTML = '🔄 Quiero otro menú para hoy';
   }
 });
-
-// Verifica si hay mercado ingresado
-MV.api('/api/pantry.php?action=list').then(res => {
-  if (!res.items.length) {
-    document.getElementById('pantry-empty').style.display = 'block';
-  }
-}).catch(() => {});
 
 // Si el Modo Cocina marca un plato como hecho, refleja el cambio en esta página
 document.addEventListener('mv-meal-cooked', (e) => {
