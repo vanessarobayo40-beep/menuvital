@@ -52,3 +52,34 @@ self.addEventListener('fetch', (event) => {
       .catch(() => caches.match(event.request))
   );
 });
+
+// ---------- Notificaciones push (recordatorios de agua) ----------
+// Los push que enviamos no traen contenido (por seguridad y simplicidad del
+// servidor), así que mostramos siempre el mismo mensaje de recordatorio.
+self.addEventListener('push', (event) => {
+  event.waitUntil(
+    self.registration.showNotification('MenúVital 💧', {
+      body: 'Hora de tomar un vaso de agua. ¡Tu cuerpo te lo agradece!',
+      icon: '/assets/img/icon-192.png',
+      badge: '/assets/img/icon-192.png',
+      tag: 'water-reminder',
+      renotify: true,
+    })
+  );
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
+      for (const client of clients) {
+        if (client.url.includes('/app/') && 'focus' in client) {
+          return client.focus();
+        }
+      }
+      if (self.clients.openWindow) {
+        return self.clients.openWindow('/app/progreso.php');
+      }
+    })
+  );
+});

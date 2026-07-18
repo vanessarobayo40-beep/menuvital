@@ -185,14 +185,27 @@ function missing_ingredients(array $recipe, array $pantryItems, int $people): ar
 }
 
 /** Presenta una receta lista para mostrar en la UI, escalada a N personas. */
+/** URL de foto del plato, generada por IA a partir del nombre (estable por receta gracias al seed). */
+function recipe_image_url(array $recipe): string {
+    $prompt = 'fotografía profesional de comida, plato de ' . $recipe['name']
+        . ', apetitoso, alta calidad, luz natural, vista superior, fondo simple';
+    return 'https://image.pollinations.ai/prompt/' . rawurlencode($prompt)
+        . '?width=480&height=320&nologo=true&seed=' . (int)$recipe['id'];
+}
+
 function present_recipe(array $recipe, array $pantryItems, int $people): array {
     return [
         'id' => (int)$recipe['id'],
         'name' => $recipe['name'],
         'meal_type' => $recipe['meal_type'],
+        'image_url' => recipe_image_url($recipe),
         'kcal_porcion' => (int)$recipe['kcal'],
         'kcal_total' => (int)$recipe['kcal'] * max(1, $people),
         'protein_porcion' => (int)$recipe['protein'],
+        'carbs_porcion' => (int)($recipe['carbs'] ?? 0),
+        'fat_porcion' => (int)($recipe['fat'] ?? 0),
+        'sugar_porcion' => (int)($recipe['sugar'] ?? 0),
+        'fiber_porcion' => (int)($recipe['fiber'] ?? 0),
         'time_min' => (int)$recipe['time_min'],
         'tags' => $recipe['tags'],
         'ingredients' => array_map(fn($e) => scale_ingredient($e, $people), $recipe['ingredients']),

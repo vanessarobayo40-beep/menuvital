@@ -59,12 +59,17 @@ function renderDay(day, idx) {
           const meal = day.meals[t];
           const done = consumedWeekIds.has(meal.id);
           return `
-          <div style="margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--border);">
-            <span class="badge badge-green">${MEAL_LABELS[t]}</span>
-            <h4 style="margin:8px 0 4px;font-size:15px;">${escapeHtml(meal.name)}</h4>
-            <p class="muted" style="font-size:12px;margin:0 0 8px;">⏱ ${meal.time_min} min · 🔥 ${meal.kcal_porcion} kcal</p>
-            <p style="font-size:13px;margin:0 0 8px;"><strong>Ingredientes:</strong> ${meal.ingredients.map(i => escapeHtml(i.item)).join(', ')}</p>
-            <button class="btn-cooked-week" data-recipe-id="${meal.id}" style="border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+          <div style="display:flex;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--border);">
+            <img src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.name)}" loading="lazy"
+                 style="width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--grad-soft);"
+                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2256%22 height=%2256%22%3E%3Crect width=%2256%22 height=%2256%22 rx=%2210%22 fill=%22%23EFF6F3%22/%3E%3C/svg%3E';">
+            <div style="flex:1;min-width:0;">
+              <span class="badge badge-green">${MEAL_LABELS[t]}</span>
+              <h4 style="margin:6px 0 4px;font-size:15px;">${escapeHtml(meal.name)}</h4>
+              <p class="muted" style="font-size:11px;margin:0 0 6px;">⏱ ${meal.time_min} min · 🔥 ${meal.kcal_porcion} kcal · 💪 ${meal.protein_porcion}g prot · 🌾 ${meal.carbs_porcion}g carbos · 🧈 ${meal.fat_porcion}g grasa</p>
+              <p style="font-size:13px;margin:0 0 8px;"><strong>Ingredientes:</strong> ${meal.ingredients.map(i => escapeHtml(i.item)).join(', ')}</p>
+              <button class="btn-cooked-week" data-recipe-id="${meal.id}" style="border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+            </div>
           </div>`;
         }).join('')}
         ${day.consejo_coach ? `<p style="font-size:13px;color:var(--t2);margin:0;">💬 ${escapeHtml(day.consejo_coach)}</p>` : ''}

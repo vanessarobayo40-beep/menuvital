@@ -88,6 +88,8 @@ function saveConsumed() {
   MV.saveLocal('consumed_' + todayKey, Array.from(consumedIds));
 }
 
+const MEAL_EMOJI = { desayuno: '🍳', almuerzo: '🍲', cena: '🥗', snack: '🍎' };
+
 function renderMeal(type, meal) {
   const missingHtml = meal.missing.length
     ? `<div style="margin-top:10px;"><span class="badge badge-warn">Te falta comprar</span>
@@ -97,6 +99,11 @@ function renderMeal(type, meal) {
 
   return `
     <div class="meal-card">
+      <div class="meal-photo-wrap">
+        <img src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.name)}" loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="meal-photo-fallback" style="display:none;">${MEAL_EMOJI[type] || '🍽️'}</div>
+      </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 14px 0;">
         <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}</span>
         <button class="btn-swap" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
@@ -105,8 +112,16 @@ function renderMeal(type, meal) {
       <div class="meal-meta">
         <span>⏱ ${meal.time_min} min</span>
         <span>🔥 ${meal.kcal_porcion} kcal</span>
-        <span>💪 ${meal.protein_porcion} g prot.</span>
       </div>
+      <div class="nutri-grid">
+        <div class="nutri-item"><div class="n-val">${meal.protein_porcion}g</div><div class="n-lbl">Proteína</div></div>
+        <div class="nutri-item"><div class="n-val">${meal.carbs_porcion}g</div><div class="n-lbl">Carbos</div></div>
+        <div class="nutri-item"><div class="n-val">${meal.fat_porcion}g</div><div class="n-lbl">Grasa</div></div>
+        <div class="nutri-item"><div class="n-val">${meal.sugar_porcion}g</div><div class="n-lbl">Azúcar</div></div>
+        <div class="nutri-item"><div class="n-val">${meal.fiber_porcion}g</div><div class="n-lbl">Fibra</div></div>
+        <div class="nutri-item"><div class="n-val">${meal.kcal_porcion}</div><div class="n-lbl">Kcal</div></div>
+      </div>
+      <p class="nutri-note">Valores estimados por porción.</p>
       <div style="display:flex;gap:8px;margin:0 14px 12px;">
         <button class="toggle-btn" data-target="body-${type}" style="flex:1;background:var(--surface);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">Ver receta completa ▾</button>
         <button class="btn-cooked" data-recipe-id="${meal.id}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>

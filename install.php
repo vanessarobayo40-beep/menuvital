@@ -67,7 +67,11 @@ $tables = [
         tags TEXT NOT NULL,
         kcal INT NOT NULL DEFAULT 0,
         protein INT NOT NULL DEFAULT 0,
-        time_min INT NOT NULL DEFAULT 0
+        time_min INT NOT NULL DEFAULT 0,
+        carbs INT NULL,
+        fat INT NULL,
+        sugar INT NULL,
+        fiber INT NULL
     )$tail",
     'pantry_items' => "CREATE TABLE IF NOT EXISTS pantry_items (
         id $ai,
@@ -106,6 +110,17 @@ $tables = [
         bucket VARCHAR(140) PRIMARY KEY,
         window_start DATETIME NOT NULL,
         hits INT NOT NULL DEFAULT 1
+    )$tail",
+    'push_subscriptions' => "CREATE TABLE IF NOT EXISTS push_subscriptions (
+        id $ai,
+        user_id INT NOT NULL,
+        endpoint_hash CHAR(64) NOT NULL,
+        endpoint TEXT NOT NULL,
+        p256dh VARCHAR(255) NOT NULL,
+        auth VARCHAR(255) NOT NULL,
+        created_at DATETIME NOT NULL,
+        last_sent_at DATETIME NULL,
+        CONSTRAINT uq_push_endpoint UNIQUE (user_id, endpoint_hash)
     )$tail",
 ];
 
@@ -146,28 +161,53 @@ foreach ([
         $log[] = "Migración: columna $col agregada a profiles";
     }
 }
+foreach ([
+    'carbs' => 'ALTER TABLE recipes ADD COLUMN carbs INT NULL',
+    'fat' => 'ALTER TABLE recipes ADD COLUMN fat INT NULL',
+    'sugar' => 'ALTER TABLE recipes ADD COLUMN sugar INT NULL',
+    'fiber' => 'ALTER TABLE recipes ADD COLUMN fiber INT NULL',
+] as $col => $alterSql) {
+    if (!column_exists($pdo, $isMysql, 'recipes', $col)) {
+        $pdo->exec($alterSql);
+        $log[] = "Migración: columna $col agregada a recipes";
+    }
+}
 
 // ---------- Cargar recetas (solo si la tabla está vacía) ----------
 $count = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes')->fetch()['c'];
 if ($count === 0) {
     $recipes = require __DIR__ . '/database/recipes_data.php';
-    $stmt = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min)
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min, carbs, fat, sugar, fiber)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $pdo->beginTransaction();
     foreach ($recipes as $r) {
-        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time] = $r;
+        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber] = $r;
         $stmt->execute([
             $name, $type,
             json_encode($ingredients, JSON_UNESCAPED_UNICODE),
             json_encode($steps, JSON_UNESCAPED_UNICODE),
             json_encode($tags, JSON_UNESCAPED_UNICODE),
-            $kcal, $protein, $time,
+            $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber,
         ]);
     }
     $pdo->commit();
     $log[] = 'Recetas cargadas: ' . count($recipes);
 } else {
     $log[] = "Recetas ya existentes: $count (no se duplican)";
+
+    // Backfill de nutrición (carbs/fat/sugar/fiber) para recetas que ya existían sin estos datos.
+    $missing = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes WHERE carbs IS NULL')->fetch()['c'];
+    if ($missing > 0) {
+        $recipes = require __DIR__ . '/database/recipes_data.php';
+        $upd = $pdo->prepare('UPDATE recipes SET carbs=?, fat=?, sugar=?, fiber=? WHERE name=? AND carbs IS NULL');
+        $updated = 0;
+        foreach ($recipes as $r) {
+            [$name, , , , , , , , $carbs, $fat, $sugar, $fiber] = $r;
+            $upd->execute([$carbs, $fat, $sugar, $fiber, $name]);
+            $updated += $upd->rowCount();
+        }
+        $log[] = "Nutrición actualizada en $updated recetas existentes";
+    }
 }
 
 // ---------- Cuenta de administradora ----------

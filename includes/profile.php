@@ -71,6 +71,20 @@ function daily_kcal_target(array $profile): ?int {
     return (int)round($target / 10) * 10;
 }
 
+/**
+ * Meta diaria de vasos de agua (vaso = 250 ml), según el peso (35 ml/kg,
+ * regla clínica estándar). Sin peso registrado, usa la recomendación
+ * general de 8 vasos (2 litros).
+ */
+function daily_water_target(array $profile): int {
+    $weight = $profile['starting_weight'] ?? null;
+    if (!$weight) {
+        return 8;
+    }
+    $ml = (float)$weight * 35;
+    return max(6, min(16, (int)round($ml / 250)));
+}
+
 /** Ítems de la despensa del usuario (solo nombres). */
 function load_pantry(int $userId): array {
     $stmt = db()->prepare('SELECT item FROM pantry_items WHERE user_id = ? ORDER BY id DESC');

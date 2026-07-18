@@ -27,13 +27,21 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 
 <div class="card" style="margin-bottom:18px;">
-  <h3 style="margin:0 0 4px;font-size:15px;">Agua de hoy</h3>
-  <p class="muted" style="margin:0 0 12px;font-size:13px;">Mantente hidratada durante el día.</p>
-  <div style="display:flex;align-items:center;gap:14px;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+    <h3 style="margin:0;font-size:15px;">Agua de hoy</h3>
+    <span class="muted" style="font-size:12px;" id="water-target-label">meta: 8 vasos</span>
+  </div>
+  <p class="muted" style="margin:0 0 10px;font-size:13px;">Mantente hidratada durante el día.</p>
+  <div style="height:8px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:14px;">
+    <div id="water-bar" style="height:100%;width:0%;background:var(--grad-v);border-radius:999px;transition:width 0.3s ease;"></div>
+  </div>
+  <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;">
     <button id="water-minus" class="btn btn-secondary btn-sm" aria-label="Quitar vaso">−</button>
     <span id="water-count" style="font-size:20px;font-weight:700;color:var(--green-dark);min-width:24px;text-align:center;">0</span>
     <button id="water-plus" class="btn btn-primary btn-sm" aria-label="Agregar vaso">+ 1 vaso</button>
   </div>
+  <button id="btn-water-reminders" class="btn btn-outline btn-block btn-sm">🔔 Activar recordatorios de agua</button>
+  <p id="water-reminders-status" class="muted" style="display:none;margin:8px 0 0;font-size:12px;text-align:center;">✅ Recordatorios activados — cada 2 horas entre 7am y 9pm. <a href="#" id="btn-water-test" style="color:var(--green-dark);font-weight:600;">Enviar una de prueba</a></p>
 </div>
 
 <div class="card" style="margin-bottom:18px;">
@@ -70,6 +78,13 @@ const HABIT_LABELS = {
 };
 let selectedHabits = new Set();
 let waterCount = 0;
+let waterTarget = 8;
+
+function renderWaterBar() {
+  document.getElementById('water-target-label').textContent = `meta: ${waterTarget} vasos`;
+  const pct = Math.min(100, Math.round((waterCount / waterTarget) * 100));
+  document.getElementById('water-bar').style.width = pct + '%';
+}
 
 function renderHabits() {
   const el = document.getElementById('habits-chips');
@@ -125,8 +140,10 @@ async function loadProgress() {
     ]);
     document.getElementById('stat-streak').textContent = res.streak;
     waterCount = res.today ? res.today.water : 0;
+    waterTarget = prof.profile.water_target || 8;
     document.getElementById('water-count').textContent = waterCount;
-    document.getElementById('stat-water').textContent = waterCount;
+    document.getElementById('stat-water').textContent = `${waterCount}/${waterTarget}`;
+    renderWaterBar();
 
     const logged = res.logs.filter(l => l.weight !== null);
     const lastWeight = (res.today && res.today.weight) ? res.today.weight
@@ -177,7 +194,8 @@ async function adjustWater(delta) {
     const res = await MV.api('/api/progress.php?action=water', { method: 'POST', body: { delta } });
     waterCount = res.water;
     document.getElementById('water-count').textContent = waterCount;
-    document.getElementById('stat-water').textContent = waterCount;
+    document.getElementById('stat-water').textContent = `${waterCount}/${waterTarget}`;
+    renderWaterBar();
   } catch (err) {
     MV.toast(err.message, true);
   }
@@ -208,4 +226,62 @@ document.getElementById('btn-save-log').addEventListener('click', async () => {
 });
 
 loadProgress();
+
+// ---------- Recordatorios de agua (notificaciones push) ----------
+const btnReminders = document.getElementById('btn-water-reminders');
+const remindersStatus = document.getElementById('water-reminders-status');
+
+async function refreshReminderUI() {
+  try {
+    const subscribed = await MV.push.isSubscribed();
+    if (subscribed) {
+      btnReminders.textContent = '🔕 Desactivar recordatorios';
+      remindersStatus.style.display = 'block';
+    } else {
+      btnReminders.textContent = '🔔 Activar recordatorios de agua';
+      remindersStatus.style.display = 'none';
+    }
+  } catch (e) { /* si algo falla aquí, el botón simplemente ofrece activar de nuevo */ }
+}
+
+btnReminders.addEventListener('click', async () => {
+  btnReminders.disabled = true;
+  try {
+    const alreadySubscribed = await MV.push.isSubscribed();
+    if (alreadySubscribed) {
+      await MV.push.unsubscribe();
+      MV.toast('Recordatorios desactivados.');
+    } else {
+      const result = await MV.push.subscribe();
+      if (result === 'subscribed') {
+        MV.toast('¡Listo! Te recordaremos tomar agua 💧');
+      } else if (result === 'denied') {
+        MV.toast('Bloqueaste los permisos de notificación. Actívalos en los ajustes de tu navegador.', true);
+      } else if (result === 'unsupported') {
+        MV.toast('Tu navegador no soporta notificaciones push.', true);
+      } else {
+        MV.toast('No pudimos activar los recordatorios. Intenta de nuevo.', true);
+      }
+    }
+  } finally {
+    btnReminders.disabled = false;
+    refreshReminderUI();
+  }
+});
+
+document.getElementById('btn-water-test').addEventListener('click', async (e) => {
+  e.preventDefault();
+  try {
+    await MV.api('/api/push.php?action=test', { method: 'POST' });
+    MV.toast('Notificación de prueba enviada — revisa tu celular 📲');
+  } catch (err) {
+    MV.toast(err.message, true);
+  }
+});
+
+if (MV.push.isSupported()) {
+  refreshReminderUI();
+} else {
+  btnReminders.style.display = 'none';
+}
 </script>

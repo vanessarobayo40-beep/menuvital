@@ -45,6 +45,15 @@ define('ADMIN_PASSWORD_INITIAL', 'CAMBIA-ESTA-CONTRASEÑA');
 // Clave secreta para poder ejecutar install.php (invéntate una larga).
 define('INSTALL_KEY', 'cambia-esta-clave-secreta-larga');
 
+// ---------- Notificaciones push (recordatorios de agua) ----------
+// Generadas una sola vez por Claude con openssl (par de llaves VAPID).
+// No necesitas tocarlas ni entenderlas — solo copiarlas tal cual.
+define('VAPID_PUBLIC_KEY', '');
+define('VAPID_PRIVATE_KEY_PEM', ''); // PEM codificado en base64
+define('VAPID_SUBJECT_EMAIL', 'vanessarobayo40@gmail.com');
+// Clave secreta para que el cron job de recordatorios pueda llamar cron_push.php
+define('CRON_KEY', 'cambia-esta-clave-secreta-para-el-cron');
+
 // ---------- Ventas ----------
 // Número de WhatsApp para el botón "Comprar" de la landing (con indicativo, sin +)
 define('WHATSAPP_NUMBER', '573001234567');

@@ -14,7 +14,7 @@
  * para forzar que el navegador descargue la versión nueva de inmediato,
  * en vez de esperar los 7 días de caché configurados en .htaccess.
  */
-const ASSET_VER = '20260717b';
+const ASSET_VER = '20260717c';
 
 function nav_icon(string $name): string {
     $icons = [

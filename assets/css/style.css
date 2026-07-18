@@ -281,6 +281,25 @@ input, textarea, select { font-family: inherit; }
   color: var(--t3);
 }
 .meal-card .meal-meta span { display: flex; align-items: center; gap: 4px; }
+
+.meal-photo-wrap { position: relative; width: 100%; aspect-ratio: 3 / 2; background: var(--grad-soft); overflow: hidden; }
+.meal-photo-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.meal-photo-fallback {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 40px; background: var(--grad-soft);
+}
+
+.nutri-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  margin: 0 14px 12px;
+}
+.nutri-item {
+  background: var(--surface); border-radius: var(--radius-sm);
+  padding: 8px 6px; text-align: center;
+}
+.nutri-item .n-val { font-size: 14px; font-weight: 700; color: var(--t1); }
+.nutri-item .n-lbl { font-size: 10px; color: var(--t3); text-transform: uppercase; letter-spacing: 0.2px; margin-top: 1px; }
+.nutri-note { margin: -6px 14px 12px; font-size: 11px; color: var(--t3); }
 .meal-card .meal-body { padding: 0 14px 14px; border-top: 1px dashed var(--border); }
 .meal-card .meal-body h4 { font-size: 12px; color: var(--t2); margin: 12px 0 6px; text-transform: uppercase; letter-spacing: 0.3px; }
 .meal-card .meal-body ul, .meal-card .meal-body ol { margin: 0; padding-left: 20px; font-size: 14px; color: var(--t1); }
@@ -296,19 +315,20 @@ input, textarea, select { font-family: inherit; }
 }
 
 /* ---------- Tabs ---------- */
-.tabs { display: flex; gap: 6px; background: var(--surface); padding: 4px; border-radius: 999px; margin-bottom: 16px; }
+.tabs { display: flex; gap: 3px; background: var(--surface-2); border: 1px solid var(--border); padding: 4px; border-radius: 999px; margin-bottom: 16px; }
 .tabs button {
   flex: 1;
   background: none;
   border: none;
-  padding: 9px 8px;
+  padding: 10px 8px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
   color: var(--t2);
   transition: all var(--ease);
 }
-.tabs button.active { background: #fff; color: var(--green-dark); box-shadow: var(--shadow); }
+.tabs button:hover:not(.active) { color: var(--t1); }
+.tabs button.active { background: #fff; color: var(--green-dark); box-shadow: 0 1px 4px rgba(16,32,27,0.12); }
 
 /* ---------- Empty states ---------- */
 .empty-state {

@@ -134,5 +134,73 @@ const MV = (() => {
     return { trigger, isStandalone, platform, manualSteps, hasPrompt: () => !!deferred };
   })();
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install };
+  // ---------- Notificaciones push (recordatorios de agua) ----------
+  const push = (() => {
+    function isSupported() {
+      return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+    }
+
+    function urlBase64ToUint8Array(base64url) {
+      const padding = '='.repeat((4 - (base64url.length % 4)) % 4);
+      const base64 = (base64url + padding).replace(/-/g, '+').replace(/_/g, '/');
+      const raw = atob(base64);
+      const arr = new Uint8Array(raw.length);
+      for (let i = 0; i < raw.length; i++) arr[i] = raw.charCodeAt(i);
+      return arr;
+    }
+
+    async function getSubscription() {
+      if (!isSupported()) return null;
+      const reg = await navigator.serviceWorker.ready;
+      return reg.pushManager.getSubscription();
+    }
+
+    async function isSubscribed() {
+      const sub = await getSubscription();
+      return !!sub;
+    }
+
+    // Devuelve: 'subscribed' | 'denied' | 'unsupported' | 'error'
+    async function subscribe() {
+      if (!isSupported()) return 'unsupported';
+      if (Notification.permission === 'denied') return 'denied';
+
+      const permission = await Notification.requestPermission();
+      if (permission !== 'granted') return 'denied';
+
+      try {
+        const { key } = await api('/api/push.php?action=vapid_key');
+        if (!key) return 'error';
+        const reg = await navigator.serviceWorker.ready;
+        let sub = await reg.pushManager.getSubscription();
+        if (!sub) {
+          sub = await reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(key),
+          });
+        }
+        const json = sub.toJSON();
+        await api('/api/push.php?action=subscribe', {
+          method: 'POST',
+          body: { endpoint: json.endpoint, p256dh: json.keys.p256dh, auth: json.keys.auth },
+        });
+        return 'subscribed';
+      } catch (e) {
+        return 'error';
+      }
+    }
+
+    async function unsubscribe() {
+      const sub = await getSubscription();
+      if (!sub) return true;
+      const endpoint = sub.endpoint;
+      try { await sub.unsubscribe(); } catch (e) {}
+      try { await api('/api/push.php?action=unsubscribe', { method: 'POST', body: { endpoint } }); } catch (e) {}
+      return true;
+    }
+
+    return { isSupported, isSubscribed, subscribe, unsubscribe };
+  })();
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push };
 })();
