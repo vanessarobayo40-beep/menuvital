@@ -126,6 +126,7 @@ function favorites_bonus(array $recipe, array $favorites): float {
  */
 function candidate_recipes(string $type, array $pantryItems, array $profile, array $exclude = [], int $limit = 8): array {
     $blocked = array_merge($profile['allergies_list'] ?? [], $profile['dislikes_list'] ?? []);
+    $favoriteIds = $profile['favorite_recipe_ids'] ?? [];
     $recipes = get_recipes_by_type($type);
     $scored = [];
     foreach ($recipes as $r) {
@@ -137,7 +138,8 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         }
         $score = recipe_match_score($r, $pantryItems)
             + goal_bonus($r, $profile['goal'] ?? 'balance')
-            + favorites_bonus($r, $profile['favorites_list'] ?? []);
+            + favorites_bonus($r, $profile['favorites_list'] ?? [])
+            + (in_array((int)$r['id'], $favoriteIds, true) ? 0.3 : 0);
         $scored[] = ['recipe' => $r, 'score' => $score];
     }
     usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
@@ -212,6 +214,7 @@ function present_recipe(array $recipe, array $pantryItems, int $people): array {
         'steps' => $recipe['steps'],
         'missing' => missing_ingredients($recipe, $pantryItems, $people),
         'match_pct' => (int)round(recipe_match_score($recipe, $pantryItems) * 100),
+        'done' => false,
     ];
 }
 
@@ -437,4 +440,45 @@ function consume_recipe_from_pantry(int $userId, int $recipeId): array {
         }
     }
     return array_values(array_unique($consumed));
+}
+
+/**
+ * Marca un plato como "hecho" en los planes guardados (día y semana) donde aparezca,
+ * para que el anillo de kcal de Hoy refleje lo realmente consumido, no solo lo planeado.
+ */
+function mark_meal_done(int $userId, int $recipeId): void {
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT id, plan_type, plan_json FROM meal_plans WHERE user_id = ?');
+    $stmt->execute([$userId]);
+    foreach ($stmt->fetchAll() as $row) {
+        $data = json_decode($row['plan_json'], true);
+        if (!is_array($data)) {
+            continue;
+        }
+        $changed = false;
+        if ($row['plan_type'] === 'day' && isset($data['meals'])) {
+            foreach ($data['meals'] as &$meal) {
+                if ((int)($meal['id'] ?? 0) === $recipeId && empty($meal['done'])) {
+                    $meal['done'] = true;
+                    $changed = true;
+                }
+            }
+            unset($meal);
+        } elseif ($row['plan_type'] === 'week' && isset($data['days'])) {
+            foreach ($data['days'] as &$day) {
+                foreach ($day['meals'] as &$meal) {
+                    if ((int)($meal['id'] ?? 0) === $recipeId && empty($meal['done'])) {
+                        $meal['done'] = true;
+                        $changed = true;
+                    }
+                }
+                unset($meal);
+            }
+            unset($day);
+        }
+        if ($changed) {
+            $pdo->prepare('UPDATE meal_plans SET plan_json = ? WHERE id = ?')
+                ->execute([json_encode($data, JSON_UNESCAPED_UNICODE), $row['id']]);
+        }
+    }
 }

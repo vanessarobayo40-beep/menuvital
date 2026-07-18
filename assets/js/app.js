@@ -202,5 +202,91 @@ const MV = (() => {
     return { isSupported, isSubscribed, subscribe, unsubscribe };
   })();
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push };
+  // ---------- Modo Cocina: overlay paso a paso, se puede abrir desde cualquier página ----------
+  function cookMode(meal) {
+    if (!meal || !meal.steps || !meal.steps.length) {
+      toast('Esta receta no tiene pasos para el Modo Cocina.', true);
+      return;
+    }
+    const esc = (s) => { const d = document.createElement('div'); d.textContent = s ?? ''; return d.innerHTML; };
+    let step = 0;
+    let wakeLock = null;
+    let doneClicked = false;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'cook-mode-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:#fff;z-index:90;display:flex;flex-direction:column;';
+    overlay.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);">
+        <button type="button" id="cm-close" aria-label="Cerrar" style="background:var(--surface-2);border:none;width:34px;height:34px;border-radius:50%;font-size:17px;color:var(--t2);">×</button>
+        <span style="font-weight:700;font-size:13px;color:var(--t2);">${esc(meal.name)}</span>
+        <button type="button" id="cm-ingredients-toggle" style="background:none;border:none;font-size:12px;font-weight:600;color:var(--green-dark);">Ingredientes</button>
+      </div>
+      <div id="cm-ingredients" style="display:none;padding:14px 18px;background:var(--surface);border-bottom:1px solid var(--border);max-height:35vh;overflow-y:auto;">
+        <ul style="margin:0;padding-left:20px;font-size:14px;">
+          ${meal.ingredients.map(i => `<li>${esc(i.item)}${i.qty ? ' — ' + esc(i.qty) : ''}</li>`).join('')}
+        </ul>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px;text-align:center;">
+        <p id="cm-counter" class="muted" style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;margin:0 0 18px;"></p>
+        <p id="cm-step-text" style="font-size:22px;line-height:1.5;font-weight:600;color:var(--t1);margin:0;max-width:440px;"></p>
+      </div>
+      <div style="display:flex;gap:10px;padding:16px 18px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--border);">
+        <button type="button" id="cm-prev" class="btn btn-secondary" style="flex:1;">← Atrás</button>
+        <button type="button" id="cm-next" class="btn btn-primary" style="flex:2;">Siguiente →</button>
+      </div>`;
+    document.body.appendChild(overlay);
+    document.body.style.overflow = 'hidden';
+
+    if ('wakeLock' in navigator) {
+      navigator.wakeLock.request('screen').then(lock => { wakeLock = lock; }).catch(() => {});
+    }
+
+    function render() {
+      const last = step === meal.steps.length - 1;
+      overlay.querySelector('#cm-counter').textContent = `Paso ${step + 1} de ${meal.steps.length}`;
+      overlay.querySelector('#cm-step-text').textContent = meal.steps[step];
+      overlay.querySelector('#cm-prev').disabled = step === 0;
+      const nextBtn = overlay.querySelector('#cm-next');
+      nextBtn.textContent = last ? '✅ ¡Listo, ya la hice!' : 'Siguiente →';
+      nextBtn.className = 'btn btn-primary';
+      nextBtn.style.flex = last ? '1' : '2';
+      overlay.querySelector('#cm-prev').style.display = last ? 'none' : 'inline-flex';
+    }
+
+    function close() {
+      if (wakeLock) { wakeLock.release().catch(() => {}); wakeLock = null; }
+      document.body.style.overflow = '';
+      overlay.remove();
+    }
+
+    overlay.querySelector('#cm-close').addEventListener('click', close);
+    overlay.querySelector('#cm-ingredients-toggle').addEventListener('click', () => {
+      const el = overlay.querySelector('#cm-ingredients');
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    });
+    overlay.querySelector('#cm-prev').addEventListener('click', () => {
+      if (step > 0) { step--; render(); }
+    });
+    overlay.querySelector('#cm-next').addEventListener('click', async () => {
+      if (step < meal.steps.length - 1) { step++; render(); return; }
+      if (doneClicked) { close(); return; }
+      doneClicked = true;
+      const btn = overlay.querySelector('#cm-next');
+      btn.disabled = true;
+      btn.textContent = 'Guardando...';
+      try {
+        const res = await api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: meal.id } });
+        toast(res.consumed && res.consumed.length ? `Descontamos de tu despensa: ${res.consumed.join(', ')}` : '¡Buen provecho! 🍽️');
+        document.dispatchEvent(new CustomEvent('mv-meal-cooked', { detail: { recipeId: meal.id } }));
+      } catch (err) {
+        toast(err.message, true);
+      }
+      close();
+    });
+
+    render();
+  }
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode };
 })();

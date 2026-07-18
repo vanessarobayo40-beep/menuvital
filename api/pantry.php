@@ -166,6 +166,7 @@ if ($action === 'consume_recipe' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         json_error('Receta no válida.');
     }
     $consumed = consume_recipe_from_pantry($userId, $recipeId);
+    mark_meal_done($userId, $recipeId);
     json_response(['ok' => true, 'consumed' => $consumed, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }
 

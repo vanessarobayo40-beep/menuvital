@@ -118,15 +118,15 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  padding: 6px 2px;
+  gap: 2px;
+  padding: 6px 1px;
   color: var(--t3);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   border-radius: var(--radius-sm);
   transition: color var(--ease), background var(--ease);
 }
-.bottom-nav a svg { width: 22px; height: 22px; stroke: currentColor; }
+.bottom-nav a svg { width: 20px; height: 20px; stroke: currentColor; }
 .bottom-nav a.active { color: var(--green-dark); background: var(--green-light); }
 .bottom-nav a:active { background: var(--surface-2); }
 
@@ -239,7 +239,8 @@ input, textarea, select { font-family: inherit; }
   font-size: 15px; line-height: 1; padding: 0; opacity: 0.6;
 }
 .chip button:hover { opacity: 1; }
-.chip.tag { background: var(--surface-2); color: var(--t2); font-weight: 500; }
+.chip.tag { background: var(--surface-2); color: var(--t2); font-weight: 500; border: none; }
+.chip.tag.active { background: var(--green-light); color: var(--green-dark); font-weight: 700; }
 
 .autocomplete-wrap { position: relative; }
 .autocomplete-list {

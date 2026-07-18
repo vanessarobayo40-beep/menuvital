@@ -124,6 +124,13 @@ $tables = [
         last_sent_at DATETIME NULL,
         CONSTRAINT uq_push_endpoint UNIQUE (user_id, endpoint_hash)
     )$tail",
+    'favorite_recipes' => "CREATE TABLE IF NOT EXISTS favorite_recipes (
+        id $ai,
+        user_id INT NOT NULL,
+        recipe_id INT NOT NULL,
+        created_at DATETIME NOT NULL,
+        CONSTRAINT uq_favorite UNIQUE (user_id, recipe_id)
+    )$tail",
 ];
 
 foreach ($tables as $name => $sql) {

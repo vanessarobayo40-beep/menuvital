@@ -30,7 +30,7 @@ require __DIR__ . '/../includes/layout_top.php';
         style="transition:stroke-dashoffset 0.4s ease, stroke 0.4s ease;"/>
     </svg>
     <div style="flex:1;">
-      <p style="margin:0;font-size:12px;color:var(--t2);">Tu menú de hoy</p>
+      <p style="margin:0;font-size:12px;color:var(--t2);">Lo que llevas comido hoy</p>
       <p style="margin:2px 0 0;font-size:19px;font-weight:700;" id="kcal-summary-text">–</p>
       <p style="margin:2px 0 0;font-size:12px;color:var(--t3);" id="protein-summary-text"></p>
     </div>
@@ -39,6 +39,15 @@ require __DIR__ . '/../includes/layout_top.php';
 
 <div id="nutrition-nudge" class="card-soft" style="display:none;margin-bottom:14px;">
   <p style="margin:0;font-size:13px;">💡 <a href="/app/perfil.php" style="color:var(--green-dark);font-weight:600;">Completa tu perfil</a> (sexo, edad, estatura y peso) para ver tu meta calórica del día.</p>
+</div>
+
+<div class="card-soft" style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+  <span style="font-size:22px;">💧</span>
+  <div style="flex:1;">
+    <p style="margin:0;font-size:13px;font-weight:600;">Agua de hoy</p>
+    <p class="muted" style="margin:1px 0 0;font-size:12px;" id="water-quick-label">– / – vasos</p>
+  </div>
+  <button id="btn-water-quick" class="btn btn-primary btn-sm">+ 1 vaso</button>
 </div>
 
 <div id="coach-tip" class="card-soft" style="display:none;margin-bottom:18px;">
@@ -81,13 +90,6 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
-const todayKey = new Date().toISOString().slice(0, 10);
-let consumedIds = new Set(MV.loadLocal('consumed_' + todayKey, []));
-
-function saveConsumed() {
-  MV.saveLocal('consumed_' + todayKey, Array.from(consumedIds));
-}
-
 const MEAL_EMOJI = { desayuno: '🍳', almuerzo: '🍲', cena: '🥗', snack: '🍎' };
 
 function renderMeal(type, meal) {
@@ -95,7 +97,7 @@ function renderMeal(type, meal) {
     ? `<div style="margin-top:10px;"><span class="badge badge-warn">Te falta comprar</span>
         <p style="font-size:13px;color:var(--t2);margin:6px 0 0;">${meal.missing.map(m => escapeHtml(m.item)).join(', ')}</p></div>`
     : `<div style="margin-top:10px;"><span class="badge badge-green">Ya tienes todo</span></div>`;
-  const done = consumedIds.has(meal.id);
+  const done = !!meal.done;
 
   return `
     <div class="meal-card">
@@ -122,9 +124,12 @@ function renderMeal(type, meal) {
         <div class="nutri-item"><div class="n-val">${meal.kcal_porcion}</div><div class="n-lbl">Kcal</div></div>
       </div>
       <p class="nutri-note">Valores estimados por porción.</p>
+      <div style="display:flex;gap:8px;margin:0 14px 8px;">
+        <button class="btn-cook-mode" data-meal-type="${type}" style="flex:1;background:var(--grad-soft);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--purple-dark);">👩‍🍳 Modo Cocina</button>
+        <button class="toggle-btn" data-target="body-${type}" style="flex:1;background:var(--surface);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">Ver receta ▾</button>
+      </div>
       <div style="display:flex;gap:8px;margin:0 14px 12px;">
-        <button class="toggle-btn" data-target="body-${type}" style="flex:1;background:var(--surface);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">Ver receta completa ▾</button>
-        <button class="btn-cooked" data-recipe-id="${meal.id}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+        <button class="btn-cooked" data-recipe-id="${meal.id}" data-meal-type="${type}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
       </div>
       <div class="meal-body" id="body-${type}" style="display:none;">
         ${missingHtml}
@@ -136,20 +141,14 @@ function renderMeal(type, meal) {
     </div>`;
 }
 
-async function markCooked(btn, recipeId) {
+async function markCooked(btn, recipeId, type) {
   btn.disabled = true;
   try {
     const res = await MV.api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: recipeId } });
-    consumedIds.add(recipeId);
-    saveConsumed();
-    btn.textContent = '✅ Hecha';
-    btn.style.background = 'var(--green-light)';
-    btn.style.color = 'var(--green-dark)';
-    if (res.consumed.length) {
-      MV.toast(`Descontamos de tu despensa: ${res.consumed.join(', ')}`);
-    } else {
-      MV.toast('¡Buen provecho! 🍽️');
-    }
+    if (currentPlan.meals[type]) currentPlan.meals[type].done = true;
+    renderPlan(currentPlan);
+    MV.saveLocal('today_plan', currentPlan);
+    MV.toast(res.consumed.length ? `Descontamos de tu despensa: ${res.consumed.join(', ')}` : '¡Buen provecho! 🍽️');
   } catch (err) {
     btn.disabled = false;
     MV.toast(err.message, true);
@@ -169,14 +168,17 @@ function renderPlan(plan) {
       const body = document.getElementById(btn.dataset.target);
       const open = body.style.display !== 'none';
       body.style.display = open ? 'none' : 'block';
-      btn.textContent = open ? 'Ver receta completa ▾' : 'Ocultar receta ▴';
+      btn.textContent = open ? 'Ver receta ▾' : 'Ocultar receta ▴';
     });
   });
   container.querySelectorAll('.btn-cooked').forEach(btn => {
-    btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.recipeId, 10)));
+    btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.recipeId, 10), btn.dataset.mealType));
   });
   container.querySelectorAll('.btn-swap').forEach(btn => {
     btn.addEventListener('click', () => swapMeal(btn, btn.dataset.mealType));
+  });
+  container.querySelectorAll('.btn-cook-mode').forEach(btn => {
+    btn.addEventListener('click', () => MV.cookMode(plan.meals[btn.dataset.mealType]));
   });
 
   if (plan.consejo_coach) {
@@ -188,8 +190,10 @@ function renderPlan(plan) {
 
 function renderNutritionSummary(plan) {
   const meals = Object.values(plan.meals);
-  const totalKcal = meals.reduce((sum, m) => sum + (m.kcal_porcion || 0), 0);
-  const totalProtein = meals.reduce((sum, m) => sum + (m.protein_porcion || 0), 0);
+  const eaten = meals.filter(m => m.done);
+  const eatenKcal = eaten.reduce((sum, m) => sum + (m.kcal_porcion || 0), 0);
+  const eatenProtein = eaten.reduce((sum, m) => sum + (m.protein_porcion || 0), 0);
+  const plannedKcal = meals.reduce((sum, m) => sum + (m.kcal_porcion || 0), 0);
 
   if (!kcalTarget) {
     document.getElementById('nutrition-summary').style.display = 'none';
@@ -198,14 +202,16 @@ function renderNutritionSummary(plan) {
   }
   document.getElementById('nutrition-nudge').style.display = 'none';
   document.getElementById('nutrition-summary').style.display = 'block';
-  document.getElementById('kcal-summary-text').textContent = `${totalKcal} / ${kcalTarget} kcal`;
-  document.getElementById('protein-summary-text').textContent = `💪 ${totalProtein} g de proteína`;
+  document.getElementById('kcal-summary-text').textContent = `${eatenKcal} / ${kcalTarget} kcal`;
+  document.getElementById('protein-summary-text').textContent = eaten.length
+    ? `💪 ${eatenProtein} g de proteína · plan del día: ${plannedKcal} kcal`
+    : `Aún no marcas ninguna comida como hecha hoy · plan del día: ${plannedKcal} kcal`;
 
-  const ratio = Math.min(1, totalKcal / kcalTarget);
+  const ratio = Math.min(1, eatenKcal / kcalTarget);
   const circumference = 188.5;
   const ring = document.getElementById('kcal-ring');
   ring.style.strokeDashoffset = String(circumference * (1 - ratio));
-  ring.style.stroke = totalKcal > kcalTarget * 1.1 ? 'var(--warn)' : 'var(--green)';
+  ring.style.stroke = eatenKcal > kcalTarget * 1.1 ? 'var(--warn)' : 'var(--green)';
 }
 
 async function swapMeal(btn, type) {
@@ -272,6 +278,47 @@ MV.api('/api/pantry.php?action=list').then(res => {
     document.getElementById('pantry-empty').style.display = 'block';
   }
 }).catch(() => {});
+
+// Si el Modo Cocina marca un plato como hecho, refleja el cambio en esta página
+document.addEventListener('mv-meal-cooked', (e) => {
+  if (!currentPlan) return;
+  for (const type of MEAL_ORDER) {
+    if (currentPlan.meals[type] && currentPlan.meals[type].id === e.detail.recipeId) {
+      currentPlan.meals[type].done = true;
+      renderPlan(currentPlan);
+      MV.saveLocal('today_plan', currentPlan);
+    }
+  }
+});
+
+// ---------- Agua rápida ----------
+let waterCount = 0;
+let waterTarget = 8;
+async function loadWaterQuick() {
+  try {
+    const [progress, prof] = await Promise.all([
+      MV.api('/api/progress.php?action=list'),
+      MV.api('/api/profile.php?action=get'),
+    ]);
+    waterCount = progress.today ? progress.today.water : 0;
+    waterTarget = prof.profile.water_target || 8;
+    document.getElementById('water-quick-label').textContent = `${waterCount} / ${waterTarget} vasos`;
+  } catch (err) { /* no crítico */ }
+}
+document.getElementById('btn-water-quick').addEventListener('click', async (e) => {
+  const btn = e.currentTarget;
+  btn.disabled = true;
+  try {
+    const res = await MV.api('/api/progress.php?action=water', { method: 'POST', body: { delta: 1 } });
+    waterCount = res.water;
+    document.getElementById('water-quick-label').textContent = `${waterCount} / ${waterTarget} vasos`;
+  } catch (err) {
+    MV.toast(err.message, true);
+  } finally {
+    btn.disabled = false;
+  }
+});
+loadWaterQuick();
 
 // Lo esencial de la página va primero: si algo de abajo falla (ej. una
 // función nueva en una versión vieja de app.js cacheada), el menú de

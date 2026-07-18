@@ -33,7 +33,28 @@ function load_profile(int $userId): array {
     $row['dislikes_list'] = $toList($row['dislikes']);
     $row['favorites_list'] = $toList($row['favorites']);
     $row['kcal_target'] = daily_kcal_target($row);
+    $row['favorite_recipe_ids'] = load_favorite_recipe_ids($userId);
     return $row;
+}
+
+/** Ids de recetas marcadas con ❤ en el recetario (no confundir con "favorites" de texto libre). */
+function load_favorite_recipe_ids(int $userId): array {
+    $stmt = db()->prepare('SELECT recipe_id FROM favorite_recipes WHERE user_id = ?');
+    $stmt->execute([$userId]);
+    return array_map('intval', array_column($stmt->fetchAll(), 'recipe_id'));
+}
+
+function toggle_favorite_recipe(int $userId, int $recipeId): bool {
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT id FROM favorite_recipes WHERE user_id = ? AND recipe_id = ?');
+    $stmt->execute([$userId, $recipeId]);
+    if ($stmt->fetch()) {
+        $pdo->prepare('DELETE FROM favorite_recipes WHERE user_id = ? AND recipe_id = ?')->execute([$userId, $recipeId]);
+        return false;
+    }
+    $pdo->prepare('INSERT INTO favorite_recipes (user_id, recipe_id, created_at) VALUES (?, ?, ?)')
+        ->execute([$userId, $recipeId, db_now()]);
+    return true;
 }
 
 function save_profile(int $userId, array $data): void {

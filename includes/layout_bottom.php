@@ -7,6 +7,7 @@ $navItems = [
     'hoy'      => ['href' => '/app/index.php',     'label' => 'Hoy'],
     'plan'     => ['href' => '/app/plan.php',      'label' => 'Semana'],
     'mercado'  => ['href' => '/app/mercado.php',   'label' => 'Mercado'],
+    'recetas'  => ['href' => '/app/recetas.php',   'label' => 'Recetas'],
     'coach'    => ['href' => '/app/coach.php',     'label' => 'Coach'],
     'progreso' => ['href' => '/app/progreso.php',  'label' => 'Progreso'],
 ];
