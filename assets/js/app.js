@@ -23,12 +23,14 @@ const MV = (() => {
   }
 
   async function api(url, options = {}) {
-    const opts = Object.assign({
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken() },
-      credentials: 'same-origin',
-    }, options);
-    if (opts.body && typeof opts.body !== 'string') {
+    const isFormData = options.body instanceof FormData;
+    const baseHeaders = Object.assign(
+      { 'X-CSRF-Token': csrfToken() },
+      isFormData ? {} : { 'Content-Type': 'application/json' },
+      options.headers || {}
+    );
+    const opts = Object.assign({ method: 'GET', credentials: 'same-origin' }, options, { headers: baseHeaders });
+    if (!isFormData && opts.body && typeof opts.body !== 'string') {
       opts.body = JSON.stringify(opts.body);
     }
     let res, data;

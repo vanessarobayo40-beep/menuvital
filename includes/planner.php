@@ -13,6 +13,7 @@
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/ingredients.php';
 require_once __DIR__ . '/groq.php';
+require_once __DIR__ . '/profile.php';
 
 const MEAL_TYPES = ['desayuno', 'almuerzo', 'cena', 'snack'];
 
@@ -361,12 +362,18 @@ function build_week_plan(array $profile, array $pantryItems): array {
     return ['days' => $days];
 }
 
-/** Lista de compras agrupada por sección: ingredientes del plan que NO están en la despensa. */
+/**
+ * Lista de compras agrupada por sección: ingredientes del plan que NO están en la despensa
+ * ACTUAL (se recalcula en vivo contra $pantryItems, no contra una foto vieja del plan) —
+ * así, si compras o cocinas algo, la lista se actualiza sola la próxima vez que la mires.
+ */
 function build_shopping_list(array $planDays, array $pantryItems, int $people): array {
     $needed = []; // normalizado => ['item'=>original, 'qty_notes'=>[]]
     foreach ($planDays as $day) {
         foreach ($day['meals'] as $meal) {
-            foreach ($meal['missing'] ?? [] as $ing) {
+            $recipe = recipe_by_id((int)($meal['id'] ?? 0));
+            $missing = $recipe ? missing_ingredients($recipe, $pantryItems, $people) : ($meal['missing'] ?? []);
+            foreach ($missing as $ing) {
                 $key = normalize_ingredient($ing['item']);
                 if ($key === '') continue;
                 if (!isset($needed[$key])) {
@@ -389,4 +396,32 @@ function build_shopping_list(array $planDays, array $pantryItems, int $people): 
     }
     ksort($grouped);
     return $grouped;
+}
+
+/**
+ * Marca una receta como "hecha": descuenta de la despensa los ingredientes que se usaron.
+ * Como la lista de compras se recalcula en vivo, esos ingredientes vuelven a aparecer ahí
+ * automáticamente la próxima vez que se necesiten en el plan.
+ * Devuelve los ítems de la despensa que se quitaron.
+ */
+function consume_recipe_from_pantry(int $userId, int $recipeId): array {
+    $recipe = recipe_by_id($recipeId);
+    if (!$recipe) {
+        return [];
+    }
+    $pantry = load_pantry($userId);
+    $consumed = [];
+    foreach ($recipe['ingredients'] as $entry) {
+        $name = ingredient_name($entry);
+        if (is_staple($name)) {
+            continue;
+        }
+        foreach ($pantry as $p) {
+            if (ingredients_match($name, $p)) {
+                remove_pantry_item($userId, $p);
+                $consumed[] = $p;
+            }
+        }
+    }
+    return array_values(array_unique($consumed));
 }

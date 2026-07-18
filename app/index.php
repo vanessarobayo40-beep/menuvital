@@ -61,11 +61,19 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+const todayKey = new Date().toISOString().slice(0, 10);
+let consumedIds = new Set(MV.loadLocal('consumed_' + todayKey, []));
+
+function saveConsumed() {
+  MV.saveLocal('consumed_' + todayKey, Array.from(consumedIds));
+}
+
 function renderMeal(type, meal) {
   const missingHtml = meal.missing.length
     ? `<div style="margin-top:10px;"><span class="badge badge-warn">Te falta comprar</span>
         <p style="font-size:13px;color:var(--t2);margin:6px 0 0;">${meal.missing.map(m => escapeHtml(m.item)).join(', ')}</p></div>`
     : `<div style="margin-top:10px;"><span class="badge badge-green">Ya tienes todo</span></div>`;
+  const done = consumedIds.has(meal.id);
 
   return `
     <div class="meal-card">
@@ -76,7 +84,10 @@ function renderMeal(type, meal) {
         <span>🔥 ${meal.kcal_porcion} kcal</span>
         <span>💪 ${meal.protein_porcion} g prot.</span>
       </div>
-      <button class="toggle-btn" data-target="body-${type}">Ver receta completa ▾</button>
+      <div style="display:flex;gap:8px;margin:0 14px 12px;">
+        <button class="toggle-btn" data-target="body-${type}" style="flex:1;background:var(--surface);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">Ver receta completa ▾</button>
+        <button class="btn-cooked" data-recipe-id="${meal.id}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+      </div>
       <div class="meal-body" id="body-${type}" style="display:none;">
         ${missingHtml}
         <h4>Ingredientes</h4>
@@ -85,6 +96,26 @@ function renderMeal(type, meal) {
         <ol>${meal.steps.map(s => `<li>${escapeHtml(s)}</li>`).join('')}</ol>
       </div>
     </div>`;
+}
+
+async function markCooked(btn, recipeId) {
+  btn.disabled = true;
+  try {
+    const res = await MV.api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: recipeId } });
+    consumedIds.add(recipeId);
+    saveConsumed();
+    btn.textContent = '✅ Hecha';
+    btn.style.background = 'var(--green-light)';
+    btn.style.color = 'var(--green-dark)';
+    if (res.consumed.length) {
+      MV.toast(`Descontamos de tu despensa: ${res.consumed.join(', ')}`);
+    } else {
+      MV.toast('¡Buen provecho! 🍽️');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    MV.toast(err.message, true);
+  }
 }
 
 function renderPlan(plan) {
@@ -98,6 +129,9 @@ function renderPlan(plan) {
       body.style.display = open ? 'none' : 'block';
       btn.textContent = open ? 'Ver receta completa ▾' : 'Ocultar receta ▴';
     });
+  });
+  container.querySelectorAll('.btn-cooked').forEach(btn => {
+    btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.recipeId, 10)));
   });
 
   if (plan.consejo_coach) {
