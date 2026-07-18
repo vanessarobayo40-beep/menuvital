@@ -7,6 +7,7 @@
  */
 
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/security.php';
 
 function groq_available(): bool {
     return defined('GROQ_API_KEY') && GROQ_API_KEY !== '';
@@ -114,41 +115,69 @@ function groq_transcribe_audio(string $tmpPath, string $filename, string $mimeTy
     return (is_string($text) && trim($text) !== '') ? trim($text) : null;
 }
 
-/** Extrae una lista de ingredientes de un texto libre (ej: transcripción de voz). */
-function groq_extract_items_from_text(string $text): ?array {
+/** Normaliza la respuesta de la IA a una lista limpia de [{item, quantity}], máx. $limit. */
+function normalize_extracted_items(?array $raw, int $limit = 40): array {
+    if (!is_array($raw)) {
+        return [];
+    }
+    $out = [];
+    $seen = [];
+    foreach ($raw as $entry) {
+        if (is_string($entry)) {
+            $item = clean_text($entry, 60);
+            $qty = '';
+        } elseif (is_array($entry)) {
+            $item = clean_text((string)($entry['item'] ?? ''), 60);
+            $qty = clean_text((string)($entry['quantity'] ?? $entry['cantidad'] ?? ''), 60);
+        } else {
+            continue;
+        }
+        if ($item === '' || isset($seen[mb_strtolower($item)])) {
+            continue;
+        }
+        $seen[mb_strtolower($item)] = true;
+        $out[] = ['item' => $item, 'quantity' => $qty];
+        if (count($out) >= $limit) break;
+    }
+    return $out;
+}
+
+/** Extrae ingredientes (con cantidad si se menciona) de un texto libre (ej: transcripción de voz). */
+function groq_extract_items_from_text(string $text): array {
     $result = groq_chat_json([
-        ['role' => 'system', 'content' => 'Extraes nombres de alimentos/ingredientes de un texto en español dicho '
-            . 'por voz para una app de menús. Responde SOLO JSON: {"items": ["item1", "item2", ...]}. '
-            . 'Usa nombres simples y en singular (ej: "tomate" no "tomates", "huevo" no "huevos"). '
-            . 'Ignora palabras que no sean alimentos o ingredientes de cocina.'],
+        ['role' => 'system', 'content' => 'Extraes alimentos/ingredientes de un texto en español dicho por voz '
+            . 'para la despensa de una app de menús, incluyendo la cantidad SOLO si la persona la menciona '
+            . 'claramente (ej: "2 kilos de arroz", "una docena de huevos", "medio kilo de pollo"). '
+            . 'Responde SOLO JSON: {"items": [{"item":"nombre simple en singular","quantity":"cantidad o cadena vacía"}]}. '
+            . 'Ejemplo: "tomate" no "tomates", "huevo" no "huevos". Ignora palabras que no sean alimentos.'],
         ['role' => 'user', 'content' => $text],
-    ], 512);
-    $items = $result['items'] ?? null;
-    return is_array($items) ? array_values(array_filter(array_map('strval', $items))) : null;
+    ], 700);
+    return normalize_extracted_items($result['items'] ?? null, 30);
 }
 
 /**
- * Extrae alimentos/ingredientes de una foto (ej: factura de mercado) con un modelo de visión.
- * $imageDataUri: "data:image/jpeg;base64,...."
+ * Extrae alimentos/ingredientes (con cantidad si aparece en la factura) de una foto,
+ * con un modelo de visión. $imageDataUri: "data:image/jpeg;base64,...."
  */
-function groq_extract_items_from_image(string $imageDataUri): ?array {
+function groq_extract_items_from_image(string $imageDataUri): array {
     if (!groq_available()) {
-        return null;
+        return [];
     }
     $payload = [
         'model' => 'qwen/qwen3.6-27b',
         'messages' => [
             ['role' => 'system', 'content' => 'Ves la foto de una factura o recibo de mercado colombiano. '
                 . 'Identifica los alimentos e ingredientes comprados (ignora precios, totales, impuestos, el nombre '
-                . 'del supermercado y productos que no sean comida). Responde SOLO JSON: '
-                . '{"items": ["item1", "item2", ...]}. Usa nombres simples en español, singular y sin marcas '
-                . '(ej: "arroz" no "Arroz Diana 500g").'],
+                . 'del supermercado y productos que no sean comida) y su cantidad/peso si aparece en la factura '
+                . '(ej: "1 kg", "500 g", "docena", "x6"). Responde SOLO JSON: '
+                . '{"items": [{"item":"nombre simple en singular, sin marca","quantity":"cantidad o cadena vacía"}]}. '
+                . 'Ejemplo: "arroz" no "Arroz Diana 500g" (la cantidad va aparte, en "quantity": "500 g").'],
             ['role' => 'user', 'content' => [
                 ['type' => 'text', 'text' => 'Extrae los alimentos de esta factura.'],
                 ['type' => 'image_url', 'image_url' => ['url' => $imageDataUri]],
             ]],
         ],
-        'max_tokens' => 1024,
+        'max_tokens' => 1400,
         'temperature' => 0.3,
         'response_format' => ['type' => 'json_object'],
     ];
@@ -167,15 +196,14 @@ function groq_extract_items_from_image(string $imageDataUri): ?array {
     curl_close($ch);
 
     if ($body === false || $status < 200 || $status >= 300) {
-        return null;
+        return [];
     }
     $data = json_decode($body, true);
     $text = $data['choices'][0]['message']['content'] ?? null;
     if (!is_string($text)) {
-        return null;
+        return [];
     }
     $text = preg_replace('/^```(?:json)?\s*|\s*```$/', '', trim($text));
     $parsed = json_decode($text, true);
-    $items = $parsed['items'] ?? null;
-    return is_array($items) ? array_values(array_filter(array_map('strval', $items))) : null;
+    return normalize_extracted_items($parsed['items'] ?? null, 40);
 }

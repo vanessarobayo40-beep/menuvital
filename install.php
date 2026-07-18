@@ -78,6 +78,7 @@ $tables = [
         id $ai,
         user_id INT NOT NULL,
         item VARCHAR(100) NOT NULL,
+        quantity VARCHAR(60) NOT NULL DEFAULT '',
         created_at DATETIME NOT NULL,
         CONSTRAINT uq_pantry UNIQUE (user_id, item)
     )$tail",
@@ -176,6 +177,10 @@ foreach ([
 if (!column_exists($pdo, $isMysql, 'users', 'is_blocked')) {
     $pdo->exec('ALTER TABLE users ADD COLUMN is_blocked TINYINT NOT NULL DEFAULT 0');
     $log[] = 'Migración: columna is_blocked agregada a users';
+}
+if (!column_exists($pdo, $isMysql, 'pantry_items', 'quantity')) {
+    $pdo->exec("ALTER TABLE pantry_items ADD COLUMN quantity VARCHAR(60) NOT NULL DEFAULT ''");
+    $log[] = 'Migración: columna quantity agregada a pantry_items';
 }
 
 // ---------- Cargar recetas (solo si la tabla está vacía) ----------

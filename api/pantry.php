@@ -19,7 +19,7 @@ $userId = (int)$user['id'];
 $action = $_GET['action'] ?? 'list';
 
 if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    json_response(['ok' => true, 'items' => load_pantry($userId)]);
+    json_response(['ok' => true, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }
 
 if ($action === 'search' && $_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -37,24 +37,39 @@ if ($action === 'search' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     json_response(['ok' => true, 'results' => $matches]);
 }
 
+/** Normaliza el body de "add": acepta item/quantity sueltos, o items[] como strings u objetos {item,quantity}. */
+function parse_add_items(array $in): array {
+    if (is_array($in['items'] ?? null)) {
+        $out = [];
+        foreach ($in['items'] as $entry) {
+            if (is_string($entry)) {
+                $out[] = ['item' => $entry, 'quantity' => ''];
+            } elseif (is_array($entry)) {
+                $out[] = ['item' => (string)($entry['item'] ?? ''), 'quantity' => (string)($entry['quantity'] ?? '')];
+            }
+        }
+        return $out;
+    }
+    return [['item' => (string)($in['item'] ?? ''), 'quantity' => (string)($in['quantity'] ?? '')]];
+}
+
 if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!csrf_verify()) {
         json_error('Token inválido. Recarga la página.', 403);
     }
     $in = json_input();
-    $items = is_array($in['items'] ?? null) ? $in['items'] : [(string)($in['item'] ?? '')];
+    $items = parse_add_items($in);
     $added = 0;
-    foreach ($items as $item) {
-        if (!is_string($item)) continue;
-        $item = clean_text($item, 60);
+    foreach ($items as $entry) {
+        $item = clean_text($entry['item'], 60);
         if ($item === '') continue;
-        add_pantry_item($userId, $item);
+        add_pantry_item($userId, $item, $entry['quantity']);
         $added++;
     }
     if ($added === 0) {
         json_error('Escribe al menos un ingrediente.');
     }
-    json_response(['ok' => true, 'items' => load_pantry($userId)]);
+    json_response(['ok' => true, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }
 
 if ($action === 'remove' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -67,7 +82,7 @@ if ($action === 'remove' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         json_error('Ingrediente no válido.');
     }
     remove_pantry_item($userId, $item);
-    json_response(['ok' => true, 'items' => load_pantry($userId)]);
+    json_response(['ok' => true, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }
 
 if ($action === 'clear' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -75,7 +90,7 @@ if ($action === 'clear' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         json_error('Token inválido. Recarga la página.', 403);
     }
     clear_pantry($userId);
-    json_response(['ok' => true, 'items' => []]);
+    json_response(['ok' => true, 'items' => [], 'grouped' => []]);
 }
 
 // ---------- Ingresar mercado por voz ----------
@@ -105,7 +120,6 @@ if ($action === 'voice' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($items)) {
         json_error('No identificamos ingredientes en el audio. Intenta hablar más claro.');
     }
-    $items = array_values(array_unique(array_map(fn($i) => clean_text($i, 60), $items)));
     json_response(['ok' => true, 'transcript' => $transcript, 'items' => array_slice($items, 0, 30)]);
 }
 
@@ -138,7 +152,6 @@ if ($action === 'photo' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($items)) {
         json_error('No pudimos leer la factura. Intenta con más luz o de más cerca.');
     }
-    $items = array_values(array_unique(array_map(fn($i) => clean_text($i, 60), $items)));
     json_response(['ok' => true, 'items' => array_slice($items, 0, 40)]);
 }
 
@@ -153,7 +166,7 @@ if ($action === 'consume_recipe' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         json_error('Receta no válida.');
     }
     $consumed = consume_recipe_from_pantry($userId, $recipeId);
-    json_response(['ok' => true, 'consumed' => $consumed, 'items' => load_pantry($userId)]);
+    json_response(['ok' => true, 'consumed' => $consumed, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }
 
 json_error('Acción no reconocida.', 404);

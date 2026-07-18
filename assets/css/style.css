@@ -207,6 +207,20 @@ input, textarea, select { font-family: inherit; }
 .checkbox-row { display: flex; align-items: center; gap: 10px; }
 .checkbox-row input { width: 18px; height: 18px; accent-color: var(--green); }
 
+/* ---------- Filas de despensa (agrupadas por categoría) ---------- */
+.pantry-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.pantry-row:last-child { border-bottom: none; }
+.pantry-row .pantry-name { font-size: 14px; font-weight: 600; color: var(--t1); }
+.pantry-row .pantry-qty { font-size: 12px; color: var(--t3); margin-top: 1px; }
+.pantry-row button {
+  background: var(--surface-2); border: none; color: var(--t3);
+  width: 26px; height: 26px; border-radius: 50%; font-size: 15px; line-height: 1; flex-shrink: 0;
+}
+.pantry-row button:hover { color: var(--danger); }
+
 /* ---------- Chips (mercado / tags) ---------- */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip {

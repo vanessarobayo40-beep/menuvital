@@ -4,6 +4,7 @@
  */
 
 require_once __DIR__ . '/security.php';
+require_once __DIR__ . '/ingredients.php';
 
 const GOALS = ['balance', 'bajar_peso', 'energia', 'familia'];
 
@@ -85,23 +86,41 @@ function daily_water_target(array $profile): int {
     return max(6, min(16, (int)round($ml / 250)));
 }
 
-/** Ítems de la despensa del usuario (solo nombres). */
+/** Ítems de la despensa del usuario (solo nombres, para el matching del planner). */
 function load_pantry(int $userId): array {
     $stmt = db()->prepare('SELECT item FROM pantry_items WHERE user_id = ? ORDER BY id DESC');
     $stmt->execute([$userId]);
     return array_column($stmt->fetchAll(), 'item');
 }
 
-function add_pantry_item(int $userId, string $item): void {
+/** Despensa con cantidad y categoría, agrupada por sección del supermercado, para la UI. */
+function load_pantry_detailed(int $userId): array {
+    $stmt = db()->prepare('SELECT item, quantity FROM pantry_items WHERE user_id = ? ORDER BY item ASC');
+    $stmt->execute([$userId]);
+    $grouped = [];
+    foreach ($stmt->fetchAll() as $row) {
+        $cat = ingredient_category($row['item']);
+        $grouped[$cat][] = ['item' => $row['item'], 'quantity' => $row['quantity']];
+    }
+    ksort($grouped);
+    return $grouped;
+}
+
+function add_pantry_item(int $userId, string $item, string $quantity = ''): void {
     $item = clean_text($item, 60);
+    $quantity = clean_text($quantity, 60);
     if ($item === '') {
         return;
     }
     try {
-        db()->prepare('INSERT INTO pantry_items (user_id, item, created_at) VALUES (?, ?, ?)')
-            ->execute([$userId, $item, db_now()]);
+        db()->prepare('INSERT INTO pantry_items (user_id, item, quantity, created_at) VALUES (?, ?, ?, ?)')
+            ->execute([$userId, $item, $quantity, db_now()]);
     } catch (PDOException $e) {
-        // Ya existe (UNIQUE user_id+item): no pasa nada.
+        // Ya existe (UNIQUE user_id+item): actualiza la cantidad si se dio una nueva.
+        if ($quantity !== '') {
+            db()->prepare('UPDATE pantry_items SET quantity = ? WHERE user_id = ? AND item = ?')
+                ->execute([$quantity, $userId, $item]);
+        }
     }
 }
 

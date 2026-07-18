@@ -25,10 +25,16 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 
 <div id="tab-despensa">
-  <div class="autocomplete-wrap field">
-    <input type="text" id="pantry-input" placeholder="Ej: pollo, arroz, tomate..." autocomplete="off">
-    <div id="autocomplete-list" class="autocomplete-list" style="display:none;"></div>
+  <div style="display:flex;gap:8px;margin-bottom:8px;">
+    <div class="autocomplete-wrap field" style="flex:2;margin-bottom:0;">
+      <input type="text" id="pantry-input" placeholder="Ej: pollo, arroz, tomate..." autocomplete="off">
+      <div id="autocomplete-list" class="autocomplete-list" style="display:none;"></div>
+    </div>
+    <div class="field" style="flex:1;margin-bottom:0;">
+      <input type="text" id="pantry-qty-input" placeholder="Cantidad" autocomplete="off">
+    </div>
   </div>
+  <button type="button" id="btn-add-item" class="btn btn-primary btn-sm btn-block" style="margin-bottom:16px;">+ Agregar a mi despensa</button>
 
   <div style="display:flex;gap:10px;margin-bottom:16px;">
     <button type="button" id="btn-voice" class="btn btn-secondary btn-sm" style="flex:1;">🎤 Por voz</button>
@@ -37,7 +43,7 @@ require __DIR__ . '/../includes/layout_top.php';
   </div>
 
   <div id="voice-recording" class="card-soft" style="display:none;margin-bottom:16px;text-align:center;">
-    <p style="margin:0 0 8px;font-size:14px;">🔴 Grabando... di los ingredientes que tienes</p>
+    <p style="margin:0 0 8px;font-size:14px;">🔴 Grabando... di los ingredientes que tienes (con cantidad si quieres)</p>
     <p class="muted" style="margin:0 0 12px;font-size:22px;font-weight:700;color:var(--t1);" id="voice-timer">0:00</p>
     <button type="button" id="btn-voice-stop" class="btn btn-primary btn-sm">Detener y enviar</button>
   </div>
@@ -47,7 +53,7 @@ require __DIR__ . '/../includes/layout_top.php';
     <p style="margin:0;font-size:13px;" id="scan-loading-text">Analizando...</p>
   </div>
 
-  <div class="chips" id="pantry-chips" style="margin-bottom:16px;"></div>
+  <div id="pantry-groups"></div>
 
   <div id="pantry-empty" class="empty-state" style="display:none;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h15l-1.5 8.5a2 2 0 0 1-2 1.5H8.5a2 2 0 0 1-2-1.5L4.5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
@@ -83,53 +89,74 @@ require __DIR__ . '/../includes/layout_top.php';
 
 <script>
 const input = document.getElementById('pantry-input');
+const qtyInput = document.getElementById('pantry-qty-input');
 const listEl = document.getElementById('autocomplete-list');
-const chipsEl = document.getElementById('pantry-chips');
+const groupsEl = document.getElementById('pantry-groups');
 let currentItems = [];
+let currentGrouped = {};
 let activeIndex = -1;
 
-function renderChips() {
-  document.getElementById('pantry-empty').style.display = currentItems.length ? 'none' : 'block';
-  document.getElementById('btn-clear').style.display = currentItems.length ? 'inline-flex' : 'none';
-  chipsEl.innerHTML = currentItems.map(item => `
-    <span class="chip">${escapeHtml(item)}<button type="button" data-item="${escapeHtml(item)}" aria-label="Quitar">×</button></span>
-  `).join('');
-  chipsEl.querySelectorAll('button').forEach(btn => {
+function escapeHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s ?? '';
+  return d.innerHTML;
+}
+
+function renderGroups() {
+  const categories = Object.keys(currentGrouped);
+  document.getElementById('pantry-empty').style.display = categories.length ? 'none' : 'block';
+  document.getElementById('btn-clear').style.display = categories.length ? 'inline-flex' : 'none';
+
+  groupsEl.innerHTML = categories.map(cat => `
+    <p class="section-title">${escapeHtml(cat)}</p>
+    <div class="card-soft" style="margin-bottom:14px;">
+      ${currentGrouped[cat].map(row => `
+        <div class="pantry-row">
+          <div>
+            <div class="pantry-name">${escapeHtml(row.item)}</div>
+            ${row.quantity ? `<div class="pantry-qty">${escapeHtml(row.quantity)}</div>` : ''}
+          </div>
+          <button type="button" data-item="${escapeHtml(row.item)}" aria-label="Quitar">×</button>
+        </div>`).join('')}
+    </div>`).join('');
+
+  groupsEl.querySelectorAll('button[data-item]').forEach(btn => {
     btn.addEventListener('click', () => removeItem(btn.dataset.item));
   });
 }
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s;
-  return d.innerHTML;
+function applyPantryResponse(res) {
+  currentItems = res.items;
+  currentGrouped = res.grouped || {};
+  renderGroups();
 }
 
 async function loadPantry() {
   const res = await MV.api('/api/pantry.php?action=list');
-  currentItems = res.items;
-  renderChips();
+  applyPantryResponse(res);
 }
 
-async function addItem(item) {
-  item = item.trim();
+async function addItem(item, quantity) {
+  item = (item || '').trim();
   if (!item) return;
   input.value = '';
+  qtyInput.value = '';
   listEl.style.display = 'none';
   try {
-    const res = await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item } });
-    currentItems = res.items;
-    renderChips();
+    const res = await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item, quantity: (quantity || '').trim() } });
+    applyPantryResponse(res);
   } catch (err) {
     MV.toast(err.message, true);
   }
 }
 
+document.getElementById('btn-add-item').addEventListener('click', () => addItem(input.value, qtyInput.value));
+qtyInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); addItem(input.value, qtyInput.value); } });
+
 async function removeItem(item) {
   try {
     const res = await MV.api('/api/pantry.php?action=remove', { method: 'POST', body: { item } });
-    currentItems = res.items;
-    renderChips();
+    applyPantryResponse(res);
   } catch (err) {
     MV.toast(err.message, true);
   }
@@ -142,7 +169,7 @@ const searchDebounced = MV.debounce(async (q) => {
     if (!res.results.length) { listEl.style.display = 'none'; return; }
     activeIndex = -1;
     listEl.innerHTML = res.results.map(r => `<button type="button" data-name="${escapeHtml(r)}">${escapeHtml(r)}</button>`).join('');
-    listEl.querySelectorAll('button').forEach(b => b.addEventListener('click', () => addItem(b.dataset.name)));
+    listEl.querySelectorAll('button').forEach(b => b.addEventListener('click', () => addItem(b.dataset.name, qtyInput.value)));
     listEl.style.display = 'block';
   } catch (err) { /* silencioso: autocompletado no es crítico */ }
 }, 200);
@@ -161,9 +188,9 @@ input.addEventListener('keydown', (e) => {
   } else if (e.key === 'Enter') {
     e.preventDefault();
     if (activeIndex >= 0 && options[activeIndex]) {
-      addItem(options[activeIndex].dataset.name);
+      addItem(options[activeIndex].dataset.name, qtyInput.value);
     } else {
-      addItem(input.value);
+      addItem(input.value, qtyInput.value);
     }
   } else if (e.key === 'Escape') {
     listEl.style.display = 'none';
@@ -176,8 +203,7 @@ document.addEventListener('click', (e) => {
 document.getElementById('btn-clear').addEventListener('click', async () => {
   if (!confirm('¿Vaciar toda tu despensa?')) return;
   const res = await MV.api('/api/pantry.php?action=clear', { method: 'POST' });
-  currentItems = res.items;
-  renderChips();
+  applyPantryResponse(res);
 });
 
 // ---------- Tabs ----------
@@ -188,6 +214,7 @@ document.querySelectorAll('.tabs button').forEach(btn => {
     document.getElementById('tab-despensa').style.display = btn.dataset.tab === 'tab-despensa' ? 'block' : 'none';
     document.getElementById('tab-compras').style.display = btn.dataset.tab === 'tab-compras' ? 'block' : 'none';
     if (btn.dataset.tab === 'tab-compras') loadShoppingList();
+    if (btn.dataset.tab === 'tab-despensa') loadPantry();
   });
 });
 
@@ -350,10 +377,11 @@ function compressImage(file, maxDim = 1600, quality = 0.75) {
 }
 
 // ---------- Modal de revisión (voz y foto comparten esto) ----------
+// items llega como [{item, quantity}] desde el backend.
 let reviewSelection = [];
 
 function openReview(items, subtitleText) {
-  reviewSelection = items.map(item => ({ item, on: true }));
+  reviewSelection = items.map(r => ({ name: r.item, quantity: r.quantity || '', on: true }));
   renderReviewChips();
   const subEl = document.getElementById('review-transcript');
   if (subtitleText) {
@@ -369,7 +397,7 @@ function renderReviewChips() {
   const el = document.getElementById('review-chips');
   el.innerHTML = reviewSelection.map((r, i) => `
     <span class="chip ${r.on ? '' : 'tag'}" data-review-idx="${i}" style="cursor:pointer;${r.on ? '' : 'opacity:0.45;text-decoration:line-through;'}">
-      ${escapeHtml(r.item)}
+      ${escapeHtml(r.name)}${r.quantity ? ' <span style="opacity:0.7;font-weight:500;">· ' + escapeHtml(r.quantity) + '</span>' : ''}
     </span>`).join('');
   el.querySelectorAll('[data-review-idx]').forEach(chip => {
     chip.addEventListener('click', () => {
@@ -385,7 +413,7 @@ document.getElementById('review-cancel').addEventListener('click', () => {
 });
 
 document.getElementById('review-confirm').addEventListener('click', async () => {
-  const items = reviewSelection.filter(r => r.on).map(r => r.item);
+  const items = reviewSelection.filter(r => r.on).map(r => ({ item: r.name, quantity: r.quantity }));
   if (!items.length) {
     MV.toast('Selecciona al menos un ingrediente.', true);
     return;
@@ -394,8 +422,7 @@ document.getElementById('review-confirm').addEventListener('click', async () => 
   btn.disabled = true;
   try {
     const res = await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { items } });
-    currentItems = res.items;
-    renderChips();
+    applyPantryResponse(res);
     document.getElementById('review-backdrop').style.display = 'none';
     MV.toast(`${items.length} ingrediente(s) agregado(s) a tu despensa ✅`);
   } catch (err) {
