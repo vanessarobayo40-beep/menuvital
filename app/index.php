@@ -35,6 +35,15 @@ require __DIR__ . '/../includes/layout_top.php';
       <p style="margin:2px 0 0;font-size:12px;color:var(--t3);" id="protein-summary-text"></p>
     </div>
   </div>
+  <div id="protein-bar-wrap" style="display:none;margin-top:12px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <span style="font-size:11px;font-weight:600;color:var(--t2);">💪 Proteína</span>
+      <span style="font-size:11px;color:var(--t3);" id="protein-bar-label"></span>
+    </div>
+    <div style="height:7px;background:var(--surface-2);border-radius:999px;overflow:hidden;">
+      <div id="protein-bar" style="height:100%;width:0%;background:var(--purple);border-radius:999px;transition:width 0.3s ease;"></div>
+    </div>
+  </div>
 </div>
 
 <div id="nutrition-nudge" class="card-soft" style="display:none;margin-bottom:14px;">
@@ -152,6 +161,7 @@ async function markCooked(btn, recipeId, type) {
 
 let currentPlan = null;
 let kcalTarget = null;
+let proteinTarget = null;
 
 function renderPlan(plan) {
   currentPlan = plan;
@@ -199,7 +209,7 @@ function renderNutritionSummary(plan) {
   document.getElementById('nutrition-summary').style.display = 'block';
   document.getElementById('kcal-summary-text').textContent = `${eatenKcal} / ${kcalTarget} kcal`;
   document.getElementById('protein-summary-text').textContent = eaten.length
-    ? `💪 ${eatenProtein} g de proteína · plan del día: ${plannedKcal} kcal`
+    ? `plan del día: ${plannedKcal} kcal`
     : `Aún no marcas ninguna comida como hecha hoy · plan del día: ${plannedKcal} kcal`;
 
   const ratio = Math.min(1, eatenKcal / kcalTarget);
@@ -207,6 +217,15 @@ function renderNutritionSummary(plan) {
   const ring = document.getElementById('kcal-ring');
   ring.style.strokeDashoffset = String(circumference * (1 - ratio));
   ring.style.stroke = eatenKcal > kcalTarget * 1.1 ? 'var(--warn)' : 'var(--green)';
+
+  const proteinWrap = document.getElementById('protein-bar-wrap');
+  if (proteinTarget) {
+    proteinWrap.style.display = 'block';
+    document.getElementById('protein-bar-label').textContent = `${eatenProtein} / ${proteinTarget} g`;
+    document.getElementById('protein-bar').style.width = Math.min(100, Math.round((eatenProtein / proteinTarget) * 100)) + '%';
+  } else {
+    proteinWrap.style.display = 'none';
+  }
 }
 
 async function swapMeal(btn, type) {
@@ -234,6 +253,7 @@ async function loadToday() {
       MV.api('/api/profile.php?action=get').catch(() => ({ profile: {} })),
     ]);
     kcalTarget = profRes.profile.kcal_target || null;
+    proteinTarget = profRes.profile.protein_target || null;
     renderPlan(res.plan);
     document.getElementById('btn-regen').style.display = 'block';
     MV.saveLocal('today_plan', res.plan);

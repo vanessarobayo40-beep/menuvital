@@ -26,6 +26,7 @@ if ($action === 'get' && $_SERVER['REQUEST_METHOD'] === 'GET') {
         'sex' => $profile['sex'],
         'age' => $profile['age'] !== null ? (int)$profile['age'] : null,
         'kcal_target' => $profile['kcal_target'],
+        'protein_target' => $profile['protein_target'],
         'water_target' => daily_water_target($profile),
     ]]);
 }

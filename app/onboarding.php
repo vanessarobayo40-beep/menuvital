@@ -58,6 +58,7 @@ $csrf = csrf_token();
     <p class="sub">¿Cuál es tu objetivo principal? Así ajustamos tu menú.</p>
     <div class="option-card" data-field="goal" data-value="balance"><span class="icon">⚖️</span><span class="label">Llevar una vida balanceada</span></div>
     <div class="option-card" data-field="goal" data-value="bajar_peso"><span class="icon">📉</span><span class="label">Bajar de peso</span></div>
+    <div class="option-card" data-field="goal" data-value="ganar_musculo"><span class="icon">💪</span><span class="label">Aumentar masa muscular</span></div>
     <div class="option-card" data-field="goal" data-value="energia"><span class="icon">⚡</span><span class="label">Tener más energía</span></div>
     <div class="option-card" data-field="goal" data-value="familia"><span class="icon">👨‍👩‍👧</span><span class="label">Alimentar bien a mi familia</span></div>
   </div>

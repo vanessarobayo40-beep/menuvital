@@ -6,11 +6,12 @@
 require_once __DIR__ . '/security.php';
 require_once __DIR__ . '/ingredients.php';
 
-const GOALS = ['balance', 'bajar_peso', 'energia', 'familia'];
+const GOALS = ['balance', 'bajar_peso', 'ganar_musculo', 'energia', 'familia'];
 
 function goal_label(string $goal): string {
     return match ($goal) {
         'bajar_peso' => 'Bajar de peso',
+        'ganar_musculo' => 'Aumentar masa muscular',
         'energia' => 'Más energía',
         'familia' => 'Alimentar a la familia',
         default => 'Vida balanceada',
@@ -33,6 +34,7 @@ function load_profile(int $userId): array {
     $row['dislikes_list'] = $toList($row['dislikes']);
     $row['favorites_list'] = $toList($row['favorites']);
     $row['kcal_target'] = daily_kcal_target($row);
+    $row['protein_target'] = daily_protein_target($row);
     $row['favorite_recipe_ids'] = load_favorite_recipe_ids($userId);
     return $row;
 }
@@ -87,10 +89,30 @@ function daily_kcal_target(array $profile): ?int {
     $maintenance = $bmr * 1.35; // actividad ligera-moderada
     $target = match ($profile['goal'] ?? 'balance') {
         'bajar_peso' => max(1200, $maintenance - 400),
+        'ganar_musculo' => $maintenance + 350, // superávit moderado: gana músculo sin acumular grasa de más
         'energia' => $maintenance + 150,
         default => $maintenance,
     };
     return (int)round($target / 10) * 10;
+}
+
+/**
+ * Meta diaria de proteína (g), según peso y objetivo — solo necesita el peso,
+ * a diferencia de la meta calórica. Rangos estándar de nutrición deportiva:
+ * 2.0 g/kg para ganar músculo, 1.6 g/kg bajando de peso (para no perder
+ * masa muscular en el déficit), 1.2 g/kg para el resto.
+ */
+function daily_protein_target(array $profile): ?int {
+    $weight = $profile['starting_weight'] ?? null;
+    if (!$weight) {
+        return null;
+    }
+    $perKg = match ($profile['goal'] ?? 'balance') {
+        'ganar_musculo' => 2.0,
+        'bajar_peso' => 1.6,
+        default => 1.2,
+    };
+    return (int)round((float)$weight * $perKg);
 }
 
 /**

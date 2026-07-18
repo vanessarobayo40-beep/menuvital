@@ -90,10 +90,15 @@ function recipe_match_score(array $recipe, array $pantryItems): float {
 function goal_bonus(array $recipe, string $goal): float {
     $tags = $recipe['tags'];
     return match ($goal) {
-        'bajar_peso' => (in_array('ligero', $tags, true) ? 0.15 : 0) + ($recipe['kcal'] <= 420 ? 0.1 : 0),
-        'energia'    => in_array('alto en proteína', $tags, true) ? 0.15 : 0,
-        'familia'    => in_array('tradicional', $tags, true) ? 0.1 : 0,
-        default      => 0,
+        'bajar_peso'     => (in_array('ligero', $tags, true) ? 0.15 : 0) + ($recipe['kcal'] <= 420 ? 0.1 : 0),
+        // Prioriza proteína (motor de la ganancia muscular) y evita platos "ligero"
+        // (pensados para déficit) — aquí sí conviene comida más contundente.
+        'ganar_musculo'  => (in_array('alto en proteína', $tags, true) ? 0.3 : 0)
+            + ((int)$recipe['protein'] >= 25 ? 0.15 : 0)
+            + ($recipe['kcal'] >= 400 ? 0.1 : 0),
+        'energia'        => in_array('alto en proteína', $tags, true) ? 0.15 : 0,
+        'familia'        => in_array('tradicional', $tags, true) ? 0.1 : 0,
+        default          => 0,
     };
 }
 
@@ -331,6 +336,7 @@ function default_coach_tip(array $profile): string {
     $tips = [
         'balance' => '¡Buen trabajo planeando tus comidas! Recuerda tomar agua durante el día y comer despacio.',
         'bajar_peso' => 'Vas muy bien. Intenta servir las porciones en platos más pequeños y camina 20 minutos hoy.',
+        'ganar_musculo' => 'Este menú te da la proteína que necesitas para crecer. Distribúyela en tus comidas del día y no olvides entrenar con carga y descansar bien — el músculo se construye descansando, no solo comiendo.',
         'energia' => 'Este menú te dará buena energía. No olvides dormir bien esta noche para rendir al máximo.',
         'familia' => 'Un menú pensado para toda la familia. Involucra a los niños en la cocina, ¡es un buen momento juntos!',
     ];

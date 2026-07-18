@@ -44,6 +44,7 @@ require __DIR__ . '/../includes/layout_top.php';
     <select id="pf-goal">
       <option value="balance">Llevar una vida balanceada</option>
       <option value="bajar_peso">Bajar de peso</option>
+      <option value="ganar_musculo">Aumentar masa muscular</option>
       <option value="energia">Tener más energía</option>
       <option value="familia">Alimentar bien a mi familia</option>
     </select>

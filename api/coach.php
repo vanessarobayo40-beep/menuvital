@@ -36,9 +36,24 @@ function coach_system_prompt(array $profile): string {
         $body .= 'Su meta calórica diaria estimada es ' . (int)$profile['kcal_target'] . ' kcal — '
             . 'usa esto como referencia si te pregunta sobre porciones o cantidades, sin sonar obsesiva con el número. ';
     }
+    if (!empty($profile['protein_target'])) {
+        $body .= 'Su meta diaria de proteína es ' . (int)$profile['protein_target'] . ' g. ';
+    }
+
+    $goal = $profile['goal'] ?? 'balance';
+    $goalGuidance = match ($goal) {
+        'ganar_musculo' => 'Su objetivo es AUMENTAR MASA MUSCULAR: prioriza que coma suficiente proteína repartida '
+            . 'en sus comidas (no toda de una vez), recuérdale mantener un ligero superávit calórico (no restringir), '
+            . 'e insiste en que el músculo se construye con entrenamiento de fuerza progresivo + buen descanso, no '
+            . 'solo con la comida — anímala a entrenar con pesas o resistencia si no lo está haciendo. ',
+        'bajar_peso' => 'Su objetivo es bajar de peso: enfócate en déficit calórico moderado y sostenible, '
+            . 'porciones controladas y actividad física regular, nunca dietas extremas. ',
+        default => '',
+    };
+
     return "Eres la coach de nutrición de la app MenúVital: colombiana, cálida, cercana y motivadora, "
         . "como una nutricionista de confianza que habla en español natural (no robótico). "
-        . "Objetivo de la usuaria: " . goal_label($profile['goal']) . ". "
+        . "Objetivo de la usuaria: " . goal_label($goal) . ". {$goalGuidance}"
         . "Alergias: {$allergies}. No le gusta: {$dislikes}. Platos favoritos: {$favorites}. {$body}"
         . "Cocina para " . (int)$profile['people'] . " persona(s). "
         . "Da consejos prácticos, breves (máximo 4-5 líneas) y realistas con comida colombiana/latina de mercado, "
