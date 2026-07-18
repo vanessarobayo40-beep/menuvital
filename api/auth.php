@@ -30,12 +30,15 @@ if ($action === 'login') {
         json_error('Ingresa tu correo y contraseña.');
     }
 
-    $stmt = db()->prepare('SELECT id, password_hash, is_admin FROM users WHERE email = ?');
+    $stmt = db()->prepare('SELECT id, password_hash, is_admin, is_blocked FROM users WHERE email = ?');
     $stmt->execute([mb_strtolower($email)]);
     $row = $stmt->fetch();
 
     if (!$row || !password_verify($password, $row['password_hash'])) {
         json_error('Correo o contraseña incorrectos.', 401);
+    }
+    if ((int)$row['is_blocked'] === 1) {
+        json_error('Tu cuenta fue desactivada. Contáctanos si crees que es un error.', 403);
     }
 
     login_user((int)$row['id']);

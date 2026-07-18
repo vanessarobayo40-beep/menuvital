@@ -33,6 +33,7 @@ $tables = [
         email VARCHAR(190) NOT NULL UNIQUE,
         password_hash VARCHAR(255) NOT NULL,
         is_admin TINYINT NOT NULL DEFAULT 0,
+        is_blocked TINYINT NOT NULL DEFAULT 0,
         created_at DATETIME NOT NULL
     )$tail",
     'activation_codes' => "CREATE TABLE IF NOT EXISTS activation_codes (
@@ -171,6 +172,10 @@ foreach ([
         $pdo->exec($alterSql);
         $log[] = "Migración: columna $col agregada a recipes";
     }
+}
+if (!column_exists($pdo, $isMysql, 'users', 'is_blocked')) {
+    $pdo->exec('ALTER TABLE users ADD COLUMN is_blocked TINYINT NOT NULL DEFAULT 0');
+    $log[] = 'Migración: columna is_blocked agregada a users';
 }
 
 // ---------- Cargar recetas (solo si la tabla está vacía) ----------

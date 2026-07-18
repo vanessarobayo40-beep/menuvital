@@ -1,7 +1,8 @@
 <?php
 /**
  * MenúVital — API de administración
- * Acciones: ?action=generate_codes | list_codes | list_users | stats | toggle_code | delete_code
+ * Acciones: ?action=generate_codes | list_codes | list_users | stats
+ *          | toggle_code | delete_code | toggle_user_block
  * Todas requieren sesión de administradora.
  */
 
@@ -25,7 +26,8 @@ if ($action === 'stats' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 
 if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.created_at, ac.used_at, ac.is_active,
-                                 u.name AS used_by_name, u.email AS used_by_email
+                                 u.id AS used_by_id, u.name AS used_by_name, u.email AS used_by_email,
+                                 u.is_blocked AS used_by_blocked
                           FROM activation_codes ac
                           LEFT JOIN users u ON u.id = ac.used_by
                           ORDER BY ac.id DESC LIMIT 300');
@@ -33,8 +35,29 @@ if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($action === 'list_users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->query('SELECT id, name, email, is_admin, created_at FROM users ORDER BY id DESC LIMIT 300');
+    $stmt = db()->query('SELECT id, name, email, is_admin, is_blocked, created_at FROM users ORDER BY id DESC LIMIT 300');
     json_response(['ok' => true, 'users' => $stmt->fetchAll()]);
+}
+
+if ($action === 'toggle_user_block' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) {
+        json_error('Token inválido. Recarga la página.', 403);
+    }
+    $in = json_input();
+    $id = (int)($in['id'] ?? 0);
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT is_admin, is_blocked FROM users WHERE id = ?');
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    if (!$row) {
+        json_error('Esa usuaria no existe.', 404);
+    }
+    if ((int)$row['is_admin'] === 1) {
+        json_error('No puedes bloquear una cuenta de administradora.');
+    }
+    $newState = (int)$row['is_blocked'] === 1 ? 0 : 1;
+    $pdo->prepare('UPDATE users SET is_blocked = ? WHERE id = ?')->execute([$newState, $id]);
+    json_response(['ok' => true, 'is_blocked' => $newState]);
 }
 
 if ($action === 'toggle_code' && $_SERVER['REQUEST_METHOD'] === 'POST') {

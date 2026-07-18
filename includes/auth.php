@@ -16,9 +16,13 @@ function current_user(): ?array {
     if (!$uid) {
         return $user = null;
     }
-    $stmt = db()->prepare('SELECT id, name, email, is_admin, created_at FROM users WHERE id = ?');
+    $stmt = db()->prepare('SELECT id, name, email, is_admin, is_blocked, created_at FROM users WHERE id = ?');
     $stmt->execute([$uid]);
     $row = $stmt->fetch();
+    if ($row && (int)$row['is_blocked'] === 1) {
+        logout_user();
+        return $user = null;
+    }
     return $user = ($row ?: null);
 }
 

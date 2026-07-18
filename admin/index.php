@@ -174,8 +174,8 @@ $csrf = csrf_token();
     <div class="card">
       <div class="table-wrap">
         <table id="table-users">
-          <thead><tr><th>Nombre</th><th>Correo</th><th>Registrada</th></tr></thead>
-          <tbody><tr class="empty-row"><td colspan="3">Cargando...</td></tr></tbody>
+          <thead><tr><th>Nombre</th><th>Correo</th><th>Estado</th><th>Registrada</th><th>Acción</th></tr></thead>
+          <tbody><tr class="empty-row"><td colspan="5">Cargando...</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -240,17 +240,25 @@ function renderCodes() {
     return;
   }
   tbody.innerHTML = filtered.map(c => {
-    const canManage = !c.used_at;
-    const actions = canManage ? `
-      <div class="row-actions">
-        <button class="btn btn-icon" data-toggle="${c.id}" title="${c.is_active ? 'Desactivar' : 'Activar'}">${c.is_active ? '⏸' : '▶'}</button>
-        <button class="btn btn-icon" data-delete="${c.id}" title="Eliminar">🗑</button>
-      </div>` : '<span class="muted">—</span>';
+    let actions;
+    if (!c.used_at) {
+      actions = `
+        <div class="row-actions">
+          <button class="btn btn-icon" data-toggle="${c.id}" title="${c.is_active ? 'Desactivar' : 'Activar'}">${c.is_active ? '⏸' : '▶'}</button>
+          <button class="btn btn-icon" data-delete="${c.id}" title="Eliminar">🗑</button>
+        </div>`;
+    } else {
+      actions = `<button class="btn btn-sm ${c.used_by_blocked ? 'btn-purple' : 'btn-danger'}" data-block-user="${c.used_by_id}">${c.used_by_blocked ? 'Desbloquear' : 'Bloquear cuenta'}</button>`;
+    }
+    const usedByLabel = c.used_by_name
+      ? escapeHtml(c.used_by_name) + ' <span class="muted">(' + escapeHtml(c.used_by_email) + ')</span>'
+        + (c.used_by_blocked ? ' <span class="badge badge-red">Bloqueada</span>' : '')
+      : '<span class="muted">—</span>';
     return `
       <tr>
         <td>${c.batch_label ? escapeHtml(c.batch_label) : '<span class="muted">—</span>'}</td>
         <td>${codeStatusBadge(c)}</td>
-        <td>${c.used_by_name ? escapeHtml(c.used_by_name) + ' <span class="muted">(' + escapeHtml(c.used_by_email) + ')</span>' : '<span class="muted">—</span>'}</td>
+        <td>${usedByLabel}</td>
         <td class="muted">${formatDate(c.created_at)}</td>
         <td>${actions}</td>
       </tr>`;
@@ -258,6 +266,7 @@ function renderCodes() {
 
   tbody.querySelectorAll('[data-toggle]').forEach(btn => btn.addEventListener('click', () => toggleCode(btn.dataset.toggle)));
   tbody.querySelectorAll('[data-delete]').forEach(btn => btn.addEventListener('click', () => deleteCode(btn.dataset.delete)));
+  tbody.querySelectorAll('[data-block-user]').forEach(btn => btn.addEventListener('click', () => toggleUserBlock(btn.dataset.blockUser, [loadCodes])));
 }
 
 async function loadStats() {
@@ -286,15 +295,31 @@ async function loadUsers() {
     const res = await MV.api('/api/admin.php?action=list_users');
     const rows = res.users.filter(u => !u.is_admin);
     if (!rows.length) {
-      tbody.innerHTML = '<tr class="empty-row"><td colspan="3">Aún no hay usuarias registradas.</td></tr>';
+      tbody.innerHTML = '<tr class="empty-row"><td colspan="5">Aún no hay usuarias registradas.</td></tr>';
       return;
     }
     tbody.innerHTML = rows.map(u => `
-      <tr><td>${escapeHtml(u.name)}</td><td>${escapeHtml(u.email)}</td><td class="muted">${formatDate(u.created_at)}</td></tr>
+      <tr>
+        <td>${escapeHtml(u.name)}</td>
+        <td>${escapeHtml(u.email)}</td>
+        <td>${u.is_blocked ? '<span class="badge badge-red">Bloqueada</span>' : '<span class="badge badge-green">Activa</span>'}</td>
+        <td class="muted">${formatDate(u.created_at)}</td>
+        <td><button class="btn btn-sm ${u.is_blocked ? 'btn-purple' : 'btn-danger'}" data-block-user="${u.id}">${u.is_blocked ? 'Desbloquear' : 'Bloquear'}</button></td>
+      </tr>
     `).join('');
+    tbody.querySelectorAll('[data-block-user]').forEach(btn => btn.addEventListener('click', () => toggleUserBlock(btn.dataset.blockUser, [loadUsers])));
   } catch (err) {
-    tbody.innerHTML = `<tr class="empty-row"><td colspan="3">${escapeHtml(err.message)}</td></tr>`;
+    tbody.innerHTML = `<tr class="empty-row"><td colspan="5">${escapeHtml(err.message)}</td></tr>`;
   }
+}
+
+async function toggleUserBlock(id, refreshFns) {
+  if (!confirm('¿Cambiar el acceso de esta cuenta?')) return;
+  try {
+    const res = await MV.api('/api/admin.php?action=toggle_user_block', { method: 'POST', body: { id: parseInt(id, 10) } });
+    MV.toast(res.is_blocked ? 'Cuenta bloqueada' : 'Cuenta desbloqueada');
+    for (const fn of refreshFns) await fn();
+  } catch (err) { MV.toast(err.message, true); }
 }
 
 async function toggleCode(id) {
