@@ -5,6 +5,7 @@
 
 require_once __DIR__ . '/security.php';
 require_once __DIR__ . '/ingredients.php';
+require_once __DIR__ . '/quantities.php';
 
 const GOALS = ['balance', 'bajar_peso', 'ganar_musculo', 'energia', 'familia'];
 
@@ -149,9 +150,22 @@ function load_pantry_detailed(int $userId): array {
     return $grouped;
 }
 
-function add_pantry_item(int $userId, string $item, string $quantity = ''): void {
-    $item = clean_text($item, 60);
+/**
+ * Agrega un ítem a la despensa. El nombre se normaliza al del catálogo
+ * (para que "pollo", "Pollo entero", etc. no queden como filas separadas).
+ * Si el ítem ya existe y $merge es true (por defecto), la cantidad nueva se
+ * SUMA a la que ya había en vez de reemplazarla; con $merge=false se
+ * reemplaza (útil cuando la usuaria edita la cantidad a mano).
+ */
+function add_pantry_item(int $userId, string $item, string $quantity = '', bool $merge = true): void {
+    $item = canonical_ingredient_name(clean_text($item, 60));
     $quantity = clean_text($quantity, 60);
+    if ($quantity !== '') {
+        $parsed = parse_qty($quantity);
+        if ($parsed !== null) {
+            $quantity = format_qty($parsed['num'], $parsed['unit']);
+        }
+    }
     if ($item === '') {
         return;
     }
@@ -159,11 +173,18 @@ function add_pantry_item(int $userId, string $item, string $quantity = ''): void
         db()->prepare('INSERT INTO pantry_items (user_id, item, quantity, created_at) VALUES (?, ?, ?, ?)')
             ->execute([$userId, $item, $quantity, db_now()]);
     } catch (PDOException $e) {
-        // Ya existe (UNIQUE user_id+item): actualiza la cantidad si se dio una nueva.
-        if ($quantity !== '') {
-            db()->prepare('UPDATE pantry_items SET quantity = ? WHERE user_id = ? AND item = ?')
-                ->execute([$quantity, $userId, $item]);
+        // Ya existe (UNIQUE user_id+item).
+        if ($quantity === '') {
+            return;
         }
+        if ($merge) {
+            $stmt = db()->prepare('SELECT quantity FROM pantry_items WHERE user_id = ? AND item = ?');
+            $stmt->execute([$userId, $item]);
+            $current = (string)($stmt->fetchColumn() ?: '');
+            $quantity = ($current !== '') ? qty_string_add($current, $quantity) : $quantity;
+        }
+        db()->prepare('UPDATE pantry_items SET quantity = ? WHERE user_id = ? AND item = ?')
+            ->execute([$quantity, $userId, $item]);
     }
 }
 

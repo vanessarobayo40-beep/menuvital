@@ -41,7 +41,7 @@ require __DIR__ . '/../includes/layout_top.php';
       <span style="font-size:11px;color:var(--t3);" id="protein-bar-label"></span>
     </div>
     <div style="height:7px;background:var(--surface-2);border-radius:999px;overflow:hidden;">
-      <div id="protein-bar" style="height:100%;width:0%;background:var(--purple);border-radius:999px;transition:width 0.3s ease;"></div>
+      <div id="protein-bar" style="height:100%;width:0%;background:var(--accent);border-radius:999px;transition:width 0.3s ease;"></div>
     </div>
   </div>
 </div>
@@ -59,6 +59,10 @@ require __DIR__ . '/../includes/layout_top.php';
   <button id="btn-water-quick" class="btn btn-primary btn-sm">+ 1 vaso</button>
 </div>
 
+<p id="water-reminder-link" class="muted" style="display:none;margin:-8px 0 14px;font-size:12px;text-align:right;">
+  <a href="#" id="btn-water-reminder-link" style="color:var(--green-dark);font-weight:600;">🔔 Activar recordatorios de agua</a>
+</p>
+
 <div id="coach-tip" class="card-soft" style="display:none;margin-bottom:18px;">
   <div style="display:flex;gap:10px;align-items:flex-start;">
     <span style="font-size:20px;">💬</span>
@@ -75,7 +79,7 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 
 <button id="btn-regen" class="btn btn-outline btn-block" style="margin-top:8px;display:none;">
-  🔄 Quiero otro menú para hoy
+  ✨ Sugerir menú de hoy
 </button>
 
 <?php require __DIR__ . '/../includes/layout_bottom.php'; ?>
@@ -83,6 +87,12 @@ require __DIR__ . '/../includes/layout_top.php';
 <script>
 const MEAL_LABELS = { desayuno: 'Desayuno', almuerzo: 'Almuerzo', cena: 'Cena', snack: 'Snack' };
 const MEAL_ORDER = ['desayuno', 'almuerzo', 'cena', 'snack'];
+const MEAL_EMOJI = { desayuno: '🍳', almuerzo: '🍲', cena: '🥗', snack: '🍎' };
+
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
 
 document.getElementById('today-date').textContent = new Date().toLocaleDateString('es-CO', {
   weekday: 'long', day: 'numeric', month: 'long',
@@ -93,8 +103,6 @@ function escapeHtml(s) {
   d.textContent = s ?? '';
   return d.innerHTML;
 }
-
-const MEAL_EMOJI = { desayuno: '🍳', almuerzo: '🍲', cena: '🥗', snack: '🍎' };
 
 function renderMeal(type, meal) {
   const missingHtml = meal.missing.length
@@ -111,8 +119,8 @@ function renderMeal(type, meal) {
         <div class="meal-photo-fallback" style="display:none;">${MEAL_EMOJI[type] || '🍽️'}</div>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 14px 0;">
-        <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}</span>
-        <button class="btn-swap" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
+        <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}${meal.servings > 1 ? ` · ${meal.servings} porciones` : ''}</span>
+        <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
       </div>
       <h3>${escapeHtml(meal.name)}</h3>
       <div class="meal-meta">
@@ -129,11 +137,11 @@ function renderMeal(type, meal) {
       </div>
       <p class="nutri-note">Valores estimados por porción.</p>
       <div style="display:flex;gap:8px;margin:0 14px 8px;">
-        <button class="btn-cook-mode" data-meal-type="${type}" style="flex:1;background:var(--grad-soft);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--purple-dark);">👩‍🍳 Modo Cocina</button>
+        <button class="btn-cook-mode" data-meal-type="${type}" style="flex:1;background:var(--grad-soft);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">👩‍🍳 Modo Cocina</button>
         <button class="toggle-btn" data-target="body-${type}" style="flex:1;background:var(--surface);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">Ver receta ▾</button>
       </div>
       <div style="display:flex;gap:8px;margin:0 14px 12px;">
-        <button class="btn-cooked" data-recipe-id="${meal.id}" data-meal-type="${type}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+        <button class="btn-cooked" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="flex:1;border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface-2);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
       </div>
       <div class="meal-body" id="body-${type}" style="display:none;">
         ${missingHtml}
@@ -145,13 +153,27 @@ function renderMeal(type, meal) {
     </div>`;
 }
 
-async function markCooked(btn, recipeId, type) {
+function renderEmptySlot(type) {
+  return `
+    <div class="card-soft" style="margin-bottom:14px;text-align:center;padding:22px 16px;">
+      <p style="margin:0 0 4px;font-weight:600;">${MEAL_LABELS[type] || type}</p>
+      <p class="muted" style="margin:0 0 14px;font-size:13px;">Aún no elegiste qué vas a comer.</p>
+      <div style="display:flex;gap:8px;">
+        <a href="/app/recetas.php" style="flex:1;background:var(--surface);border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);text-decoration:none;display:block;">🍽 Elegir del recetario</a>
+        <button class="btn-suggest-slot" data-meal-type="${type}" style="flex:1;background:var(--grad-soft);border:none;border-radius:var(--radius-sm);padding:9px;font-size:13px;font-weight:600;color:var(--green-dark);">✨ Sugerir</button>
+      </div>
+    </div>`;
+}
+
+async function markCooked(btn, entryId, type) {
+  const meal = currentMeals[type];
+  const portions = await MV.askPortions(meal ? meal.servings : 1);
+  if (portions === null) return;
   btn.disabled = true;
   try {
-    const res = await MV.api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: recipeId } });
-    if (currentPlan.meals[type]) currentPlan.meals[type].done = true;
-    renderPlan(currentPlan);
-    MV.saveLocal('today_plan', currentPlan);
+    const res = await MV.api('/api/menu.php?action=done', { method: 'POST', body: { entry_id: entryId, portions } });
+    if (currentMeals[type]) currentMeals[type].done = true;
+    renderMeals();
     MV.toast(res.consumed.length ? `Descontamos de tu despensa: ${res.consumed.join(', ')}` : '¡Buen provecho! 🍽️');
   } catch (err) {
     btn.disabled = false;
@@ -159,15 +181,16 @@ async function markCooked(btn, recipeId, type) {
   }
 }
 
-let currentPlan = null;
+let currentMeals = {};
+let mealTypesToday = [];
+let consejoCoach = '';
 let kcalTarget = null;
 let proteinTarget = null;
 
-function renderPlan(plan) {
-  currentPlan = plan;
+function renderMeals() {
   const container = document.getElementById('meals-container');
-  const order = MEAL_ORDER.filter(t => plan.meals[t]);
-  container.innerHTML = order.map(t => renderMeal(t, plan.meals[t])).join('');
+  container.innerHTML = mealTypesToday.map(t => currentMeals[t] ? renderMeal(t, currentMeals[t]) : renderEmptySlot(t)).join('');
+
   container.querySelectorAll('.toggle-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const body = document.getElementById(btn.dataset.target);
@@ -177,24 +200,27 @@ function renderPlan(plan) {
     });
   });
   container.querySelectorAll('.btn-cooked').forEach(btn => {
-    btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.recipeId, 10), btn.dataset.mealType));
+    btn.addEventListener('click', () => markCooked(btn, parseInt(btn.dataset.entryId, 10), btn.dataset.mealType));
   });
   container.querySelectorAll('.btn-swap').forEach(btn => {
-    btn.addEventListener('click', () => swapMeal(btn, btn.dataset.mealType));
+    btn.addEventListener('click', () => swapMeal(btn, parseInt(btn.dataset.entryId, 10), btn.dataset.mealType));
   });
   container.querySelectorAll('.btn-cook-mode').forEach(btn => {
-    btn.addEventListener('click', () => MV.cookMode(plan.meals[btn.dataset.mealType]));
+    btn.addEventListener('click', () => MV.cookMode(currentMeals[btn.dataset.mealType]));
+  });
+  container.querySelectorAll('.btn-suggest-slot').forEach(btn => {
+    btn.addEventListener('click', () => suggestSlot(btn));
   });
 
-  if (plan.consejo_coach) {
-    document.getElementById('coach-tip-text').textContent = plan.consejo_coach;
+  if (consejoCoach) {
+    document.getElementById('coach-tip-text').textContent = consejoCoach;
     document.getElementById('coach-tip').style.display = 'block';
   }
-  renderNutritionSummary(plan);
+  renderNutritionSummary();
 }
 
-function renderNutritionSummary(plan) {
-  const meals = Object.values(plan.meals);
+function renderNutritionSummary() {
+  const meals = Object.values(currentMeals);
   const eaten = meals.filter(m => m.done);
   const eatenKcal = eaten.reduce((sum, m) => sum + (m.kcal_porcion || 0), 0);
   const eatenProtein = eaten.reduce((sum, m) => sum + (m.protein_porcion || 0), 0);
@@ -228,14 +254,13 @@ function renderNutritionSummary(plan) {
   }
 }
 
-async function swapMeal(btn, type) {
+async function swapMeal(btn, entryId, type) {
   btn.disabled = true;
   btn.textContent = '...';
   try {
-    const res = await MV.api('/api/planner.php?action=swap_meal', { method: 'POST', body: { meal_type: type } });
-    currentPlan.meals[type] = res.meal;
-    renderPlan(currentPlan);
-    MV.saveLocal('today_plan', currentPlan);
+    const res = await MV.api('/api/menu.php?action=swap', { method: 'POST', body: { entry_id: entryId } });
+    currentMeals[type] = res.meal;
+    renderMeals();
     MV.toast('¡Listo! Cambiamos ese plato.');
   } catch (err) {
     btn.disabled = false;
@@ -244,23 +269,46 @@ async function swapMeal(btn, type) {
   }
 }
 
-async function loadToday() {
-  document.getElementById('loading').style.display = 'block';
-  document.getElementById('btn-regen').style.display = 'none';
+async function suggestSlot(btn) {
+  btn.disabled = true;
+  btn.textContent = '...';
   try {
+    const t = todayStr();
+    await MV.api('/api/menu.php?action=suggest', { method: 'POST', body: { from: t, to: t, replace_suggested: false } });
+    await loadToday(true);
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = '✨ Sugerir';
+    MV.toast(err.message, true);
+  }
+}
+
+async function loadToday(skipLoadingUi) {
+  if (!skipLoadingUi) {
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('btn-regen').style.display = 'none';
+  }
+  try {
+    const t = todayStr();
     const [res, profRes] = await Promise.all([
-      MV.api('/api/planner.php?action=today'),
+      MV.api(`/api/menu.php?action=list&from=${t}&to=${t}`),
       MV.api('/api/profile.php?action=get').catch(() => ({ profile: {} })),
     ]);
     kcalTarget = profRes.profile.kcal_target || null;
     proteinTarget = profRes.profile.protein_target || null;
-    renderPlan(res.plan);
+    mealTypesToday = res.meal_types;
+    currentMeals = res.entries[t] || {};
+    consejoCoach = res.consejo_coach || '';
+    renderMeals();
     document.getElementById('btn-regen').style.display = 'block';
-    MV.saveLocal('today_plan', res.plan);
+    MV.saveLocal('menu_today_v2', { mealTypesToday, currentMeals, consejoCoach });
   } catch (err) {
-    const cached = MV.loadLocal('today_plan');
+    const cached = MV.loadLocal('menu_today_v2');
     if (cached) {
-      renderPlan(cached);
+      mealTypesToday = cached.mealTypesToday;
+      currentMeals = cached.currentMeals;
+      consejoCoach = cached.consejoCoach;
+      renderMeals();
       MV.toast('Mostrando tu último menú guardado (sin conexión).', true);
     } else {
       MV.toast(err.message, true);
@@ -275,26 +323,25 @@ document.getElementById('btn-regen').addEventListener('click', async () => {
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner dark" style="display:inline-block;"></span> Generando...';
   try {
-    const res = await MV.api('/api/planner.php?action=today_new', { method: 'POST' });
-    renderPlan(res.plan);
-    MV.saveLocal('today_plan', res.plan);
+    const t = todayStr();
+    await MV.api('/api/menu.php?action=suggest', { method: 'POST', body: { from: t, to: t, replace_suggested: true } });
+    await loadToday(true);
     MV.toast('¡Listo! Aquí tienes un nuevo menú.');
   } catch (err) {
     MV.toast(err.message, true);
   } finally {
     btn.disabled = false;
-    btn.innerHTML = '🔄 Quiero otro menú para hoy';
+    btn.innerHTML = '✨ Sugerir menú de hoy';
   }
 });
 
 // Si el Modo Cocina marca un plato como hecho, refleja el cambio en esta página
 document.addEventListener('mv-meal-cooked', (e) => {
-  if (!currentPlan) return;
   for (const type of MEAL_ORDER) {
-    if (currentPlan.meals[type] && currentPlan.meals[type].id === e.detail.recipeId) {
-      currentPlan.meals[type].done = true;
-      renderPlan(currentPlan);
-      MV.saveLocal('today_plan', currentPlan);
+    const m = currentMeals[type];
+    if (m && (m.entry_id === e.detail.entryId || m.id === e.detail.recipeId)) {
+      m.done = true;
+      renderMeals();
     }
   }
 });
@@ -332,6 +379,31 @@ loadWaterQuick();
 // función nueva en una versión vieja de app.js cacheada), el menú de
 // hoy ya se está cargando y no se queda pegado en el esqueleto de carga.
 loadToday();
+
+// ---------- Enlace para activar recordatorios de agua (push) ----------
+try {
+  const waterReminderLink = document.getElementById('water-reminder-link');
+  const btnWaterReminderLink = document.getElementById('btn-water-reminder-link');
+  if (MV.push && MV.push.isSupported()) {
+    MV.push.isSubscribed().then((subscribed) => {
+      if (!subscribed) waterReminderLink.style.display = 'block';
+    });
+    btnWaterReminderLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const result = await MV.push.subscribe();
+      if (result === 'subscribed') {
+        waterReminderLink.style.display = 'none';
+        MV.toast('¡Listo! Te recordaremos tomar agua 💧');
+      } else if (result === 'denied') {
+        MV.toast('Bloqueaste los permisos de notificación. Actívalos en los ajustes de tu navegador.', true);
+      } else if (result === 'unsupported') {
+        MV.toast('Tu navegador no soporta notificaciones push.', true);
+      } else {
+        MV.toast('No pudimos activar los recordatorios. Intenta de nuevo.', true);
+      }
+    });
+  }
+} catch (e) { /* el enlace de recordatorios es secundario: nunca debe romper la página */ }
 
 // ---------- Banner de instalar app (recordatorio breve, descartable) ----------
 try {

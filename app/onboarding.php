@@ -14,7 +14,7 @@ $csrf = csrf_token();
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bienvenida — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
-<meta name="theme-color" content="#0F9D6B">
+<meta name="theme-color" content="#0E6B45">
 <?= theme_init_script() ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,8 +55,12 @@ $csrf = csrf_token();
 
   <!-- Paso 1: Objetivo -->
   <div class="ob-step active" data-step="1">
-    <h2>¡Hola, <?= e(explode(' ', $user['name'])[0]) ?>! 👋</h2>
-    <p class="sub">¿Cuál es tu objetivo principal? Así ajustamos tu menú.</p>
+    <h2>¡Hola! 👋</h2>
+    <p class="sub">Antes que nada, ¿cómo te llamas?</p>
+    <div class="field">
+      <input type="text" id="ob-name" maxlength="100" placeholder="Tu nombre" value="<?= $user['name'] === 'Usuaria' ? '' : e($user['name']) ?>">
+    </div>
+    <p class="sub" style="margin-top:20px;">¿Cuál es tu objetivo principal? Así ajustamos tu menú.</p>
     <div class="option-card" data-field="goal" data-value="balance"><span class="icon">⚖️</span><span class="label">Llevar una vida balanceada</span></div>
     <div class="option-card" data-field="goal" data-value="bajar_peso"><span class="icon">📉</span><span class="label">Bajar de peso</span></div>
     <div class="option-card" data-field="goal" data-value="ganar_musculo"><span class="icon">💪</span><span class="label">Aumentar masa muscular</span></div>
@@ -128,7 +132,7 @@ $csrf = csrf_token();
 <script>
 let step = 1;
 const TOTAL_STEPS = 4;
-const data = { goal: 'balance', sex: null, age: '', height_cm: '', starting_weight: '', people: 1, meals_per_day: 3, allergies: '', dislikes: '', favorites: '' };
+const data = { name: '', goal: 'balance', sex: null, age: '', height_cm: '', starting_weight: '', people: 1, meals_per_day: 3, allergies: '', dislikes: '', favorites: '' };
 
 document.querySelectorAll('.option-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -160,6 +164,7 @@ async function finishOnboarding() {
   const btn = document.getElementById('btn-next');
   btn.disabled = true;
   btn.textContent = 'Guardando...';
+  data.name = document.getElementById('ob-name').value.trim();
   data.age = document.getElementById('ob-age').value;
   data.height_cm = document.getElementById('ob-height').value;
   data.starting_weight = document.getElementById('ob-weight').value;

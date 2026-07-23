@@ -4,12 +4,12 @@
  * Las páginas y llamadas a /api/ siempre van primero a la red (datos frescos);
  * si no hay conexión, se sirve la última copia guardada cuando exista.
  */
-const CACHE_NAME = 'menuvital-v1';
+const CACHE_NAME = 'menuvital-v3';
 const STATIC_ASSETS = [
   '/assets/css/style.css',
   '/assets/js/app.js',
-  '/assets/img/icon-192.png',
-  '/assets/img/icon-512.png',
+  '/assets/img/icon-192-v3.png',
+  '/assets/img/icon-512-v3.png',
 ];
 
 self.addEventListener('install', (event) => {
@@ -53,22 +53,40 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// ---------- Notificaciones push (recordatorios de agua) ----------
+// ---------- Notificaciones push (recordatorios de agua y de mercado) ----------
 // Los push que enviamos no traen contenido (por seguridad y simplicidad del
-// servidor), así que mostramos siempre el mismo mensaje de recordatorio.
+// servidor): el mismo cron de cada 2h decide qué mostrar según el día en que
+// llega. Entre semana, recordatorio de agua; sábado y domingo (día de mercado),
+// recordatorio de la lista de compras — reutilizando la misma suscripción.
 self.addEventListener('push', (event) => {
+  const day = new Date().getDay(); // 0 = domingo, 6 = sábado
+  const isShoppingDay = day === 0 || day === 6;
+
+  const notification = isShoppingDay
+    ? {
+        title: 'MenúVital 🛒',
+        body: 'Antes de ir al mercado, revisa tu lista de compras de la semana — ya la calculamos con tu menú.',
+        tag: 'shopping-reminder',
+      }
+    : {
+        title: 'MenúVital 💧',
+        body: 'Hora de tomar un vaso de agua. ¡Tu cuerpo te lo agradece!',
+        tag: 'water-reminder',
+      };
+
   event.waitUntil(
-    self.registration.showNotification('MenúVital 💧', {
-      body: 'Hora de tomar un vaso de agua. ¡Tu cuerpo te lo agradece!',
-      icon: '/assets/img/icon-192.png',
-      badge: '/assets/img/icon-192.png',
-      tag: 'water-reminder',
+    self.registration.showNotification(notification.title, {
+      body: notification.body,
+      icon: '/assets/img/icon-192-v3.png',
+      badge: '/assets/img/icon-192-v3.png',
+      tag: notification.tag,
       renotify: true,
     })
   );
 });
 
 self.addEventListener('notificationclick', (event) => {
+  const targetPath = event.notification.tag === 'shopping-reminder' ? '/app/mercado.php' : '/app/progreso.php';
   event.notification.close();
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clients) => {
@@ -78,7 +96,7 @@ self.addEventListener('notificationclick', (event) => {
         }
       }
       if (self.clients.openWindow) {
-        return self.clients.openWindow('/app/progreso.php');
+        return self.clients.openWindow(targetPath);
       }
     })
   );

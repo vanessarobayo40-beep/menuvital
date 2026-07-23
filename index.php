@@ -19,10 +19,10 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MenúVital — Nunca más pienses qué cocinar hoy</title>
 <meta name="description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, y te acompaña como tu coach de nutrición. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
-<meta name="theme-color" content="#0F9D6B">
+<meta name="theme-color" content="#0E6B45">
 <link rel="manifest" href="/assets/manifest.json">
-<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
-<link rel="icon" href="/assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/icon-192-v3.png">
+<link rel="icon" href="/assets/img/icon-192-v3.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css?v=<?= ASSET_VER ?>">

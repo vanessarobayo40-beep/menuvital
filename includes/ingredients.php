@@ -178,3 +178,31 @@ function in_pantry(string $item, array $pantryItems): bool {
     }
     return false;
 }
+
+/**
+ * Nombre "canónico" de un ingrediente: si coincide con algo del catálogo,
+ * devuelve el nombre tal como está escrito en el catálogo (para que la
+ * despensa y las recetas usen siempre el mismo nombre y no se dupliquen
+ * ítems por variaciones de escritura). Si no coincide con nada, devuelve
+ * el texto original recortado.
+ */
+function canonical_ingredient_name(string $item): string {
+    $catalog = ingredient_catalog();
+    $norm = normalize_ingredient($item);
+    if ($norm === '') {
+        return trim($item);
+    }
+    // Coincidencia exacta primero.
+    foreach (array_keys($catalog) as $name) {
+        if (normalize_ingredient($name) === $norm) {
+            return $name;
+        }
+    }
+    // Coincidencia flexible después (ej. "pollo" -> "pechuga de pollo").
+    foreach (array_keys($catalog) as $name) {
+        if (ingredients_match($item, $name)) {
+            return $name;
+        }
+    }
+    return trim($item);
+}

@@ -118,10 +118,16 @@ require __DIR__ . '/../includes/layout_top.php';
   </div>
 </div>
 
+<p class="section-title">Ayuda</p>
+<div class="card" style="margin-bottom:18px;">
+  <p style="margin:0 0 12px;font-size:14px;">¿Tienes dudas sobre cómo usar la app? Aquí te explicamos todo paso a paso.</p>
+  <a href="/app/ayuda.php" class="btn btn-outline btn-block">❓ Ver ayuda de la app</a>
+</div>
+
 <p class="section-title">Cuenta</p>
 <div class="card">
   <p style="margin:0 0 4px;font-size:14px;"><strong><?= e($user['name']) ?></strong></p>
-  <p class="muted" style="margin:0 0 16px;font-size:13px;"><?= e($user['email']) ?></p>
+  <p class="muted" style="margin:0 0 16px;font-size:13px;"><?= $user['email'] ? e($user['email']) : 'Acceso con código' ?></p>
   <button id="btn-logout" class="btn btn-secondary btn-block">Cerrar sesión</button>
 </div>
 

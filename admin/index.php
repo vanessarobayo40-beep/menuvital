@@ -13,16 +13,20 @@ $csrf = csrf_token();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panel de administración — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
+<meta name="theme-color" content="#0B0F14">
+<link rel="manifest" href="/assets/manifest-admin.json">
+<link rel="apple-touch-icon" href="/assets/img/admin-icon-192.png">
+<link rel="icon" href="/assets/img/admin-icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0B0F14; --surface: #131922; --surface-2: #1A212C; --border: #232B38;
     --t1: #E6EAF0; --t2: #97A2B3; --t3: #5C6B80;
-    --purple: #7C5CE0; --purple-light: #2A2340;
     --green: #22C55E; --green-light: #16301F;
     --orange: #F0A020; --orange-light: #322611;
     --blue: #3B82F6; --blue-light: #16233F;
     --red: #EF4444; --red-light: #341717;
+    --teal: #14B8A6; --teal-light: #0F2C29;
     --radius: 14px; --radius-sm: 9px;
   }
   * { box-sizing: border-box; }
@@ -40,7 +44,7 @@ $csrf = csrf_token();
   }
   .btn:hover { opacity:0.85; }
   .btn:disabled { opacity:0.4; cursor:not-allowed; }
-  .btn-purple { background:var(--purple); color:#fff; }
+  .btn-green { background:var(--green); color:#fff; }
   .btn-ghost { background:var(--surface-2); color:var(--t1); border:1px solid var(--border); }
   .btn-danger { background:var(--red-light); color:var(--red); }
   .btn-icon { background:var(--surface-2); border:1px solid var(--border); color:var(--t2); width:30px; height:30px; border-radius:8px; padding:0; justify-content:center; }
@@ -50,8 +54,8 @@ $csrf = csrf_token();
 
   .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
   .stat-card {
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-    padding:16px; display:flex; align-items:center; gap:12px;
+    background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent, var(--border));
+    border-radius:var(--radius); padding:16px; display:flex; align-items:center; gap:12px;
   }
   .stat-icon { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
   .stat-card .value { font-size:22px; font-weight:800; line-height:1.1; }
@@ -62,7 +66,7 @@ $csrf = csrf_token();
     background:none; border:none; color:var(--t2); font-size:14px; font-weight:600;
     padding:0 0 12px; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px;
   }
-  .tabs button.active { color:var(--purple); border-bottom-color:var(--purple); }
+  .tabs button.active { color:var(--green); border-bottom-color:var(--green); }
 
   .toolbar { display:flex; gap:10px; margin-bottom:16px; }
   .toolbar input {
@@ -70,7 +74,7 @@ $csrf = csrf_token();
     padding:10px 14px; color:var(--t1); font-size:13px;
   }
   .toolbar input::placeholder { color:var(--t3); }
-  .toolbar input:focus { outline:none; border-color:var(--purple); }
+  .toolbar input:focus { outline:none; border-color:var(--green); }
 
   .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
   .table-wrap { overflow-x:auto; }
@@ -82,8 +86,7 @@ $csrf = csrf_token();
 
   .badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:11px; font-weight:700; }
   .badge-green { background:var(--green-light); color:var(--green); }
-  .badge-purple { background:var(--purple-light); color:#B49CF0; }
-  .badge-gray { background:var(--surface-2); color:var(--t2); }
+    .badge-gray { background:var(--surface-2); color:var(--t2); }
   .badge-red { background:var(--red-light); color:var(--red); }
 
   .row-actions { display:flex; gap:6px; }
@@ -106,7 +109,7 @@ $csrf = csrf_token();
     width:100%; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
     padding:10px 12px; color:var(--t1); font-size:14px;
   }
-  .field input:focus { outline:none; border-color:var(--purple); }
+  .field input:focus { outline:none; border-color:var(--green); }
   .modal-actions { display:flex; gap:10px; margin-top:18px; }
   .modal-actions .btn { flex:1; justify-content:center; }
 
@@ -114,39 +117,45 @@ $csrf = csrf_token();
   .code-pill {
     display:flex; align-items:center; justify-content:space-between; gap:8px;
     background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm);
-    padding:9px 12px; font-family:monospace; font-size:13px; margin-bottom:6px; color:var(--purple);
+    padding:9px 12px; font-family:monospace; font-size:13px; margin-bottom:6px; color:var(--green);
   }
   .code-pill button { background:none; border:none; color:var(--t2); cursor:pointer; font-size:12px; font-weight:600; }
   .code-pill button:hover { color:var(--t1); }
 
   .empty-row td { text-align:center; color:var(--t3); padding:28px; }
+  .code-plain { font-family:monospace; font-weight:700; color:var(--orange); letter-spacing:0.5px; }
+  .btn-copy { background:none; border:none; color:var(--t3); cursor:pointer; font-size:13px; padding:2px; margin-left:4px; }
+  .btn-copy:hover { color:var(--t1); }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>MenúVital <span>· Panel de administración</span></h1>
-  <button class="btn btn-ghost" id="btn-logout">Salir</button>
+  <div style="display:flex;gap:8px;">
+    <button class="btn btn-ghost" id="btn-install-admin" style="display:none;">📲 Instalar</button>
+    <button class="btn btn-ghost" id="btn-logout">Salir</button>
+  </div>
 </div>
 
 <div class="wrap">
 
   <div class="stats-row">
-    <div class="stat-card">
-      <div class="stat-icon" style="background:var(--purple-light);">👤</div>
+    <div class="stat-card" style="--accent:var(--blue);">
+      <div class="stat-icon" style="background:var(--blue-light);">👤</div>
       <div><div class="value" id="stat-users">–</div><div class="label">Usuarias</div></div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card" style="--accent:var(--orange);">
       <div class="stat-icon" style="background:var(--orange-light);">🔑</div>
       <div><div class="value" id="stat-total">–</div><div class="label">Códigos total</div></div>
     </div>
-    <div class="stat-card">
+    <div class="stat-card" style="--accent:var(--green);">
       <div class="stat-icon" style="background:var(--green-light);">✅</div>
-      <div><div class="value" id="stat-available">–</div><div class="label">Disponibles</div></div>
+      <div><div class="value" id="stat-active">–</div><div class="label">Códigos activos</div></div>
     </div>
-    <div class="stat-card">
-      <div class="stat-icon" style="background:var(--blue-light);">📬</div>
-      <div><div class="value" id="stat-used">–</div><div class="label">Usados</div></div>
+    <div class="stat-card" style="--accent:var(--teal);">
+      <div class="stat-icon" style="background:var(--teal-light);">📬</div>
+      <div><div class="value" id="stat-used">–</div><div class="label">Códigos usados</div></div>
     </div>
   </div>
 
@@ -158,13 +167,13 @@ $csrf = csrf_token();
   <div id="tab-codes">
     <div class="toolbar">
       <input type="text" id="search-codes" placeholder="Buscar por etiqueta o correo...">
-      <button class="btn btn-purple" id="btn-open-modal">+ Nuevo código</button>
+      <button class="btn btn-green" id="btn-open-modal">+ Nuevo código</button>
     </div>
     <div class="card">
       <div class="table-wrap">
         <table id="table-codes">
-          <thead><tr><th>Etiqueta</th><th>Estado</th><th>Usado por</th><th>Creado</th><th>Acciones</th></tr></thead>
-          <tbody><tr class="empty-row"><td colspan="5">Cargando...</td></tr></tbody>
+          <thead><tr><th>Código</th><th>Nombre / Email</th><th>Estado</th><th>Uso</th><th>Dispositivo</th><th>Creado</th><th>Acciones</th></tr></thead>
+          <tbody><tr class="empty-row"><td colspan="7">Cargando...</td></tr></tbody>
         </table>
       </div>
     </div>
@@ -198,7 +207,7 @@ $csrf = csrf_token();
       </div>
       <div class="modal-actions">
         <button type="button" class="btn btn-ghost" id="btn-close-modal">Cancelar</button>
-        <button type="submit" class="btn btn-purple">Generar</button>
+        <button type="submit" class="btn btn-green">Generar</button>
       </div>
     </form>
     <div class="codes-result" id="codes-result" style="display:none;"></div>
@@ -207,6 +216,28 @@ $csrf = csrf_token();
 
 <script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+}
+
+// ---------- Instalar el panel de admin como app aparte (ícono distinto) ----------
+try {
+  if (!MV.install.isStandalone()) {
+    const btnInstallAdmin = document.getElementById('btn-install-admin');
+    document.addEventListener('mv-installable', () => { btnInstallAdmin.style.display = 'inline-flex'; });
+    if (MV.install.hasPrompt()) btnInstallAdmin.style.display = 'inline-flex';
+    btnInstallAdmin.addEventListener('click', async () => {
+      const result = await MV.install.trigger();
+      if (result === 'installed') {
+        btnInstallAdmin.style.display = 'none';
+        MV.toast('¡Listo! El panel quedó instalado en tu celular 🎉');
+      } else if (result === 'manual') {
+        MV.toast('Desde el menú de tu navegador, busca "Agregar a pantalla de inicio" o "Instalar app".');
+      }
+    });
+  }
+} catch (e) { /* instalar es secundario: nunca debe romper el panel */ }
+
 let allCodes = [];
 
 function escapeHtml(s) {
@@ -221,44 +252,58 @@ function formatDate(s) {
   return d.toLocaleDateString('es-CO', { day: '2-digit', month: 'short', year: 'numeric' });
 }
 
-function codeStatusBadge(c) {
-  if (c.used_at) return '<span class="badge badge-purple">Usado</span>';
-  if (!c.is_active) return '<span class="badge badge-red">Desactivado</span>';
-  return '<span class="badge badge-green">Disponible</span>';
+function estadoBadge(c) {
+  return c.is_active ? '<span class="badge badge-green">Activo</span>' : '<span class="badge badge-red">Desactivado</span>';
+}
+function usoBadge(c) {
+  return c.used_at ? '<span class="badge badge-gray">Usado</span>' : '<span class="badge badge-green">Disponible</span>';
 }
 
 function renderCodes() {
   const q = document.getElementById('search-codes').value.trim().toLowerCase();
   const filtered = !q ? allCodes : allCodes.filter(c =>
     (c.batch_label || '').toLowerCase().includes(q) ||
+    (c.code_plain || '').toLowerCase().includes(q) ||
     (c.used_by_name || '').toLowerCase().includes(q) ||
     (c.used_by_email || '').toLowerCase().includes(q));
 
   const tbody = document.querySelector('#table-codes tbody');
   if (!filtered.length) {
-    tbody.innerHTML = '<tr class="empty-row"><td colspan="5">No hay códigos que coincidan.</td></tr>';
+    tbody.innerHTML = '<tr class="empty-row"><td colspan="7">No hay códigos que coincidan.</td></tr>';
     return;
   }
   tbody.innerHTML = filtered.map(c => {
-    let actions;
-    if (!c.used_at) {
-      actions = `
+    let actions = `
         <div class="row-actions">
-          <button class="btn btn-icon" data-toggle="${c.id}" title="${c.is_active ? 'Desactivar' : 'Activar'}">${c.is_active ? '⏸' : '▶'}</button>
-          <button class="btn btn-icon" data-delete="${c.id}" title="Eliminar">🗑</button>
-        </div>`;
+          <button class="btn btn-icon" data-toggle="${c.id}" title="${c.is_active ? 'Desactivar' : 'Activar'}">${c.is_active ? '⏸' : '▶'}</button>`;
+    if (!c.used_at) {
+      actions += `<button class="btn btn-icon" data-delete="${c.id}" title="Eliminar">🗑</button>`;
     } else {
-      actions = `<button class="btn btn-sm ${c.used_by_blocked ? 'btn-purple' : 'btn-danger'}" data-block-user="${c.used_by_id}">${c.used_by_blocked ? 'Desbloquear' : 'Bloquear cuenta'}</button>`;
+      actions += `<button class="btn btn-sm ${c.used_by_blocked ? 'btn-green' : 'btn-danger'}" data-block-user="${c.used_by_id}">${c.used_by_blocked ? 'Desbloquear' : 'Bloquear'}</button>`;
+      if (c.device_count > 0) {
+        actions += `<button class="btn btn-icon" data-reset-devices="${c.id}" title="Liberar dispositivos">🔄</button>`;
+      }
     }
-    const usedByLabel = c.used_by_name
-      ? escapeHtml(c.used_by_name) + ' <span class="muted">(' + escapeHtml(c.used_by_email) + ')</span>'
+    actions += `</div>`;
+
+    const codeCell = c.code_plain
+      ? `<span class="code-plain">${escapeHtml(c.code_plain)}</span><button type="button" class="btn-copy" data-copy="${escapeHtml(c.code_plain)}" title="Copiar">📋</button>`
+      : '<span class="muted" title="Generado antes de poder verse siempre">—</span>';
+
+    const nameCell = c.used_by_name
+      ? `${escapeHtml(c.used_by_name)}<br><span class="muted" style="font-size:11px;">${escapeHtml(c.used_by_email || '')}</span>`
         + (c.used_by_blocked ? ' <span class="badge badge-red">Bloqueada</span>' : '')
-      : '<span class="muted">—</span>';
+      : (c.batch_label ? escapeHtml(c.batch_label) : '<span class="muted">—</span>');
+
+    const deviceCell = c.used_at ? `${c.device_count}/2` : '<span class="muted">—</span>';
+
     return `
       <tr>
-        <td>${c.batch_label ? escapeHtml(c.batch_label) : '<span class="muted">—</span>'}</td>
-        <td>${codeStatusBadge(c)}</td>
-        <td>${usedByLabel}</td>
+        <td>${codeCell}</td>
+        <td>${nameCell}</td>
+        <td>${estadoBadge(c)}</td>
+        <td>${usoBadge(c)}</td>
+        <td class="muted">${deviceCell}</td>
         <td class="muted">${formatDate(c.created_at)}</td>
         <td>${actions}</td>
       </tr>`;
@@ -267,6 +312,11 @@ function renderCodes() {
   tbody.querySelectorAll('[data-toggle]').forEach(btn => btn.addEventListener('click', () => toggleCode(btn.dataset.toggle)));
   tbody.querySelectorAll('[data-delete]').forEach(btn => btn.addEventListener('click', () => deleteCode(btn.dataset.delete)));
   tbody.querySelectorAll('[data-block-user]').forEach(btn => btn.addEventListener('click', () => toggleUserBlock(btn.dataset.blockUser, [loadCodes])));
+  tbody.querySelectorAll('[data-reset-devices]').forEach(btn => btn.addEventListener('click', () => resetDevices(btn.dataset.resetDevices)));
+  tbody.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(btn.dataset.copy);
+    MV.toast('Código copiado');
+  }));
 }
 
 async function loadStats() {
@@ -274,7 +324,7 @@ async function loadStats() {
     const res = await MV.api('/api/admin.php?action=stats');
     document.getElementById('stat-users').textContent = res.stats.users;
     document.getElementById('stat-total').textContent = res.stats.codes_total;
-    document.getElementById('stat-available').textContent = res.stats.codes_available;
+    document.getElementById('stat-active').textContent = res.stats.codes_active;
     document.getElementById('stat-used').textContent = res.stats.codes_used;
   } catch (err) { MV.toast(err.message, true); }
 }
@@ -285,7 +335,7 @@ async function loadCodes() {
     allCodes = res.codes;
     renderCodes();
   } catch (err) {
-    document.querySelector('#table-codes tbody').innerHTML = `<tr class="empty-row"><td colspan="5">${escapeHtml(err.message)}</td></tr>`;
+    document.querySelector('#table-codes tbody').innerHTML = `<tr class="empty-row"><td colspan="7">${escapeHtml(err.message)}</td></tr>`;
   }
 }
 
@@ -304,7 +354,7 @@ async function loadUsers() {
         <td>${escapeHtml(u.email)}</td>
         <td>${u.is_blocked ? '<span class="badge badge-red">Bloqueada</span>' : '<span class="badge badge-green">Activa</span>'}</td>
         <td class="muted">${formatDate(u.created_at)}</td>
-        <td><button class="btn btn-sm ${u.is_blocked ? 'btn-purple' : 'btn-danger'}" data-block-user="${u.id}">${u.is_blocked ? 'Desbloquear' : 'Bloquear'}</button></td>
+        <td><button class="btn btn-sm ${u.is_blocked ? 'btn-green' : 'btn-danger'}" data-block-user="${u.id}">${u.is_blocked ? 'Desbloquear' : 'Bloquear'}</button></td>
       </tr>
     `).join('');
     tbody.querySelectorAll('[data-block-user]').forEach(btn => btn.addEventListener('click', () => toggleUserBlock(btn.dataset.blockUser, [loadUsers])));
@@ -336,6 +386,15 @@ async function deleteCode(id) {
     await MV.api('/api/admin.php?action=delete_code', { method: 'POST', body: { id: parseInt(id, 10) } });
     await loadCodes();
     await loadStats();
+  } catch (err) { MV.toast(err.message, true); }
+}
+
+async function resetDevices(id) {
+  if (!confirm('¿Liberar los dispositivos de este código? La usuaria podrá volver a entrar desde un dispositivo nuevo.')) return;
+  try {
+    await MV.api('/api/admin.php?action=reset_devices', { method: 'POST', body: { id: parseInt(id, 10) } });
+    MV.toast('Dispositivos liberados');
+    await loadCodes();
   } catch (err) { MV.toast(err.message, true); }
 }
 

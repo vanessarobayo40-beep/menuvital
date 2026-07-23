@@ -41,7 +41,7 @@ require __DIR__ . '/../includes/layout_top.php';
     <button id="water-plus" class="btn btn-primary btn-sm" aria-label="Agregar vaso">+ 1 vaso</button>
   </div>
   <button id="btn-water-reminders" class="btn btn-outline btn-block btn-sm">🔔 Activar recordatorios de agua</button>
-  <p id="water-reminders-status" class="muted" style="display:none;margin:8px 0 0;font-size:12px;text-align:center;">✅ Recordatorios activados — cada 2 horas entre 7am y 9pm. <a href="#" id="btn-water-test" style="color:var(--green-dark);font-weight:600;">Enviar una de prueba</a></p>
+  <p id="water-reminders-status" class="muted" style="display:none;margin:8px 0 0;font-size:12px;text-align:center;">✅ Recordatorios activados — de agua entre semana (cada 2 horas, 7am–9pm) y de tu lista de mercado los fines de semana. <a href="#" id="btn-water-test" style="color:var(--green-dark);font-weight:600;">Enviar una de prueba</a></p>
 </div>
 
 <div class="card" style="margin-bottom:18px;">
@@ -121,8 +121,8 @@ function drawChart(logs) {
     return [x, y];
   });
   const path = coords.map((c, i) => (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
-  const dots = coords.map(c => `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="2.5" fill="#0F9D6B"/>`).join('');
-  svg.innerHTML = `<path d="${path}" fill="none" stroke="#0F9D6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
+  const dots = coords.map(c => `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="2.5" fill="#0E6B45"/>`).join('');
+  svg.innerHTML = `<path d="${path}" fill="none" stroke="#0E6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
 }
 
 function imcInfo(imc) {

@@ -6,32 +6,38 @@ $user = require_login_page();
 $PAGE_TITLE = 'Mercado';
 $ACTIVE_NAV = 'mercado';
 $isWelcome = ($_GET['bienvenida'] ?? '') === '1';
+$initialTab = ($_GET['tab'] ?? '') === 'compras' ? 'compras' : 'despensa';
 require __DIR__ . '/../includes/layout_top.php';
 ?>
 
 <?php if ($isWelcome): ?>
 <div class="card-soft" style="margin-bottom:18px;">
   <p style="margin:0;font-size:14px;">🎉 <strong>¡Tu perfil está listo!</strong> Ahora ingresa lo que tienes disponible
-  —escribiendo, por voz o con foto de tu factura— y te armamos tu primer menú.</p>
+  —escribiendo, por voz o con foto de tu factura— y te armamos tu primer menú. Si quieres ajustarlo o pedir ideas
+  con lo que tienes, pregúntale a tu coach en el 💬 chat.</p>
 </div>
 <?php endif; ?>
 
 <h2 style="margin-bottom:4px;">Mi mercado</h2>
-<p class="muted" style="margin-top:0;font-size:14px;">Escribe lo que tienes disponible en casa. Con eso armamos tu menú.</p>
+<p class="muted" style="margin-top:0;font-size:14px;">Escribe lo que tienes disponible en casa. Con eso armamos tu menú
+— y si quieres revisarlo o ajustarlo, pregúntale a tu coach en el chat 💬.</p>
 
 <div class="tabs">
-  <button class="active" data-tab="tab-despensa">Mi despensa</button>
-  <button data-tab="tab-compras">Lista de compras</button>
+  <button class="<?= $initialTab === 'despensa' ? 'active' : '' ?>" data-tab="tab-despensa">Mi despensa</button>
+  <button class="<?= $initialTab === 'compras' ? 'active' : '' ?>" data-tab="tab-compras">Lista de compras</button>
 </div>
 
-<div id="tab-despensa">
+<div id="tab-despensa" style="<?= $initialTab === 'compras' ? 'display:none;' : '' ?>">
   <div style="display:flex;gap:8px;margin-bottom:8px;">
     <div class="autocomplete-wrap field" style="flex:2;margin-bottom:0;">
       <input type="text" id="pantry-input" placeholder="Ej: pollo, arroz, tomate..." autocomplete="off">
       <div id="autocomplete-list" class="autocomplete-list" style="display:none;"></div>
     </div>
-    <div class="field" style="flex:1;margin-bottom:0;">
-      <input type="text" id="pantry-qty-input" placeholder="Cantidad" autocomplete="off">
+    <div class="field" style="flex:0.6;margin-bottom:0;">
+      <input type="text" inputmode="decimal" id="pantry-qty-input" placeholder="Cant." autocomplete="off">
+    </div>
+    <div class="field" style="flex:0.85;margin-bottom:0;">
+      <select id="pantry-qty-unit"></select>
     </div>
   </div>
   <button type="button" id="btn-add-item" class="btn btn-primary btn-sm btn-block" style="margin-bottom:16px;">+ Agregar a mi despensa</button>
@@ -63,12 +69,26 @@ require __DIR__ . '/../includes/layout_top.php';
   <button id="btn-clear" class="btn btn-danger btn-sm" style="display:none;">Vaciar mi despensa</button>
 </div>
 
-<div id="tab-compras" style="display:none;">
-  <p class="muted" style="font-size:13px;margin-top:0;">Esto es lo que necesitas comprar para completar tu plan de la semana (o del día, si aún no generas la semana).</p>
+<div id="tab-compras" style="<?= $initialTab === 'compras' ? '' : 'display:none;' ?>">
+  <p class="muted" style="font-size:13px;margin-top:0;">Lo que necesitas comprar, calculado exacto según las recetas de tu menú y lo que ya tienes en la despensa.</p>
+
+  <div id="shopping-reminder-banner" class="card-soft" style="display:none;margin-bottom:14px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:20px;">🔔</span>
+      <p style="margin:0;flex:1;font-size:13px;" id="shopping-reminder-text">Actívanos para recordarte armar tu lista de compras los fines de semana.</p>
+      <button type="button" id="btn-shopping-reminder" class="btn btn-outline btn-sm">Activar</button>
+    </div>
+  </div>
+
+  <div class="chips" style="margin-bottom:14px;">
+    <button type="button" class="chip tag active" data-period="semana">Semana</button>
+    <button type="button" class="chip tag" data-period="quincena">Quincena</button>
+    <button type="button" class="chip tag" data-period="mes">Mes</button>
+  </div>
   <div id="shopping-list"></div>
   <div id="shopping-empty" class="empty-state" style="display:none;">
-    <p>Genera tu menú del día o de la semana para ver tu lista de compras.</p>
-    <a href="/app/plan.php" class="btn btn-primary btn-sm">Ver plan semanal</a>
+    <p>Agrega recetas a tu menú para ver tu lista de compras.</p>
+    <a href="/app/recetas.php" class="btn btn-primary btn-sm">Ir al recetario</a>
   </div>
 </div>
 
@@ -90,6 +110,10 @@ require __DIR__ . '/../includes/layout_top.php';
 <script>
 const input = document.getElementById('pantry-input');
 const qtyInput = document.getElementById('pantry-qty-input');
+const qtyUnitSelect = document.getElementById('pantry-qty-unit');
+// Mismas unidades que en "Agregar mi receta" y en la lista de compras.
+const PANTRY_UNITS = ['unidad', 'unidades', 'g', 'kg', 'libra', 'taza', 'cda', 'cdta', 'ml', 'litro', 'diente', 'rama', 'hoja', 'pizca', 'tajada', 'rebanada', 'tallo', 'lata', 'filete', 'trozo', 'paquete', 'al gusto'];
+qtyUnitSelect.innerHTML = PANTRY_UNITS.map(u => `<option value="${u}">${u}</option>`).join('');
 const listEl = document.getElementById('autocomplete-list');
 const groupsEl = document.getElementById('pantry-groups');
 let currentItems = [];
@@ -136,14 +160,16 @@ async function loadPantry() {
   applyPantryResponse(res);
 }
 
-async function addItem(item, quantity) {
+async function addItem(item, quantityNum) {
   item = (item || '').trim();
   if (!item) return;
+  const num = (quantityNum || '').trim();
+  const quantity = num ? `${num} ${qtyUnitSelect.value}` : '';
   input.value = '';
   qtyInput.value = '';
   listEl.style.display = 'none';
   try {
-    const res = await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item, quantity: (quantity || '').trim() } });
+    const res = await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item, quantity } });
     applyPantryResponse(res);
   } catch (err) {
     MV.toast(err.message, true);
@@ -213,16 +239,29 @@ document.querySelectorAll('.tabs button').forEach(btn => {
     btn.classList.add('active');
     document.getElementById('tab-despensa').style.display = btn.dataset.tab === 'tab-despensa' ? 'block' : 'none';
     document.getElementById('tab-compras').style.display = btn.dataset.tab === 'tab-compras' ? 'block' : 'none';
-    if (btn.dataset.tab === 'tab-compras') loadShoppingList();
+    if (btn.dataset.tab === 'tab-compras') { loadShoppingList(); refreshShoppingReminderUI(); }
     if (btn.dataset.tab === 'tab-despensa') loadPantry();
   });
 });
+
+document.querySelectorAll('[data-period]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-period]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    shoppingPeriod = btn.dataset.period;
+    loadShoppingList();
+  });
+});
+
+let shoppingPeriod = 'semana';
 
 async function loadShoppingList() {
   const el = document.getElementById('shopping-list');
   el.innerHTML = '<div class="skeleton" style="height:120px;"></div>';
   try {
-    const res = await MV.api('/api/planner.php?action=shopping_list');
+    const d = new Date();
+    const from = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const res = await MV.api(`/api/menu.php?action=shopping_list&period=${shoppingPeriod}&from=${from}`);
     const categories = Object.keys(res.list);
     if (!categories.length) {
       el.innerHTML = '';
@@ -235,7 +274,7 @@ async function loadShoppingList() {
       <div class="card-soft" style="margin-bottom:14px;">
         ${res.list[cat].map(i => `
           <label class="checkbox-row" style="padding:6px 0;" data-row>
-            <input type="checkbox" data-buy-item="${escapeHtml(i.item)}">
+            <input type="checkbox" data-buy-item="${escapeHtml(i.item)}" data-buy-qty="${escapeHtml(i.qty || '')}">
             <span data-label>${escapeHtml(i.item)}${i.qty ? ' <span class="muted">— ' + escapeHtml(i.qty) + '</span>' : ''}</span>
           </label>`).join('')}
       </div>`).join('');
@@ -250,11 +289,12 @@ async function loadShoppingList() {
 
 async function markAsBought(checkbox) {
   const item = checkbox.dataset.buyItem;
+  const quantity = checkbox.dataset.buyQty || '';
   const label = checkbox.closest('[data-row]').querySelector('[data-label]');
   checkbox.disabled = true;
   try {
     if (checkbox.checked) {
-      await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item } });
+      await MV.api('/api/pantry.php?action=add', { method: 'POST', body: { item, quantity, merge: true } });
       label.style.textDecoration = 'line-through';
       label.style.opacity = '0.55';
       MV.toast(`"${item}" agregado a tu despensa ✅`);
@@ -432,5 +472,60 @@ document.getElementById('review-confirm').addEventListener('click', async () => 
   }
 });
 
-loadPantry();
+const INITIAL_TAB = <?= json_encode($initialTab) ?>;
+
+// ---------- Recordatorio de lista de compras (push, fines de semana) ----------
+const shoppingReminderBanner = document.getElementById('shopping-reminder-banner');
+const shoppingReminderText = document.getElementById('shopping-reminder-text');
+const btnShoppingReminder = document.getElementById('btn-shopping-reminder');
+
+async function refreshShoppingReminderUI() {
+  if (!MV.push || !MV.push.isSupported()) { shoppingReminderBanner.style.display = 'none'; return; }
+  try {
+    const subscribed = await MV.push.isSubscribed();
+    shoppingReminderBanner.style.display = 'flex';
+    if (subscribed) {
+      shoppingReminderText.textContent = 'Recordatorios activados: te avisamos los fines de semana para armar tu lista de compras.';
+      btnShoppingReminder.textContent = 'Desactivar';
+    } else {
+      shoppingReminderText.textContent = 'Actívanos para recordarte armar tu lista de compras los fines de semana.';
+      btnShoppingReminder.textContent = 'Activar';
+    }
+  } catch (e) {
+    shoppingReminderBanner.style.display = 'none';
+  }
+}
+
+btnShoppingReminder.addEventListener('click', async () => {
+  btnShoppingReminder.disabled = true;
+  try {
+    const subscribed = await MV.push.isSubscribed();
+    if (subscribed) {
+      await MV.push.unsubscribe();
+      MV.toast('Recordatorios desactivados.');
+    } else {
+      const result = await MV.push.subscribe();
+      if (result === 'subscribed') {
+        MV.toast('¡Listo! Te recordaremos armar tu lista de compras 🛒');
+      } else if (result === 'denied') {
+        MV.toast('Bloqueaste los permisos de notificación. Actívalos en los ajustes de tu navegador.', true);
+      } else if (result === 'unsupported') {
+        MV.toast('Tu navegador no soporta notificaciones push.', true);
+      } else {
+        MV.toast('No pudimos activar los recordatorios. Intenta de nuevo.', true);
+      }
+    }
+  } finally {
+    btnShoppingReminder.disabled = false;
+    refreshShoppingReminderUI();
+  }
+});
+
+if (INITIAL_TAB === 'compras') {
+  loadShoppingList();
+  refreshShoppingReminderUI();
+  MV.toast('🛒 Aquí tienes tu lista de compras de la semana.');
+} else {
+  loadPantry();
+}
 </script>

@@ -14,7 +14,7 @@
  * para forzar que el navegador descargue la versión nueva de inmediato,
  * en vez de esperar los 7 días de caché configurados en .htaccess.
  */
-const ASSET_VER = '20260718c';
+const ASSET_VER = '20260720c';
 
 /**
  * Script mínimo e inline que aplica el tema guardado (claro/oscuro) ANTES de

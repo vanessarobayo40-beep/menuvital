@@ -12,6 +12,7 @@
 
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/ingredients.php';
+require_once __DIR__ . '/quantities.php';
 require_once __DIR__ . '/groq.php';
 require_once __DIR__ . '/profile.php';
 
@@ -185,16 +186,35 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         if (recipe_is_blocked($r, $blocked)) {
             continue;
         }
+        // Jitter pequeño para desempatar puntajes iguales de forma aleatoria en cada llamada
+        // (si no, con puntaje empatado siempre gana la misma receta por orden de la base de datos,
+        // y "Sugerir"/"Cambiar plato" terminan repitiendo siempre lo mismo). Es mucho más chico que
+        // cualquier diferencia real de coincidencia o afinidad, así que no afecta la calidad del match.
+        $jitter = mt_rand(0, 80) / 1000;
         $score = recipe_match_score($r, $pantryItems)
             + goal_bonus($r, $profile['goal'] ?? 'balance')
             + favorites_bonus($r, $profile['favorites_list'] ?? [])
             + (in_array((int)$r['id'], $favoriteIds, true) ? 0.3 : 0)
-            + (!empty($r['_own']) ? 0.15 : 0);
+            + (!empty($r['_own']) ? 0.15 : 0)
+            + $jitter;
         $scored[] = ['recipe' => $r, 'score' => $score];
     }
     usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
     $top = array_slice($scored, 0, $limit);
     return array_map(fn($s) => $s['recipe'], $top);
+}
+
+/**
+ * Elige una candidata al azar entre TODAS las que pasa candidate_recipes()
+ * (que ya excluyó alergias/no-me-gusta y lo ya usado) en vez de tomar
+ * siempre la primera: así "Sugerir" y "Cambiar plato" recorren de verdad
+ * todo el recetario disponible de ese tipo, no solo un puñado de favoritas.
+ */
+function pick_candidate(array $candidates): ?array {
+    if (empty($candidates)) {
+        return null;
+    }
+    return $candidates[array_rand($candidates)];
 }
 
 /** Tipos de comida a generar según cuántas veces al día come el usuario. */
@@ -472,31 +492,83 @@ function build_shopping_list(array $planDays, array $pantryItems, int $people): 
 }
 
 /**
- * Marca una receta como "hecha": descuenta de la despensa los ingredientes que se usaron.
- * Como la lista de compras se recalcula en vivo, esos ingredientes vuelven a aparecer ahí
- * automáticamente la próxima vez que se necesiten en el plan.
- * Devuelve los ítems de la despensa que se quitaron.
+ * Marca una receta como "hecha": descuenta de la despensa la cantidad usada
+ * (ingrediente × porciones). Si la cantidad de la receta o de la despensa no
+ * se puede interpretar, o las unidades no son compatibles, se quita el ítem
+ * completo (comportamiento de respaldo, igual que antes de tener cantidades).
+ * Como la lista de compras se recalcula en vivo, esos ingredientes vuelven a
+ * aparecer ahí automáticamente la próxima vez que se necesiten en el plan.
+ * Devuelve textos legibles de lo que se quitó/descontó, para el toast.
  */
-function consume_recipe_from_pantry(int $userId, int $recipeId): array {
+function consume_recipe_from_pantry(int $userId, int $recipeId, int $portions = 1): array {
     $recipe = recipe_by_id($recipeId);
     if (!$recipe) {
         return [];
     }
-    $pantry = load_pantry($userId);
-    $consumed = [];
+    $portions = max(1, $portions);
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT item, quantity FROM pantry_items WHERE user_id = ?');
+    $stmt->execute([$userId]);
+    // Mapa mutable item(normalizado) => ['item'=>original, 'quantity'=>string] para que,
+    // si varios ingredientes de la receta apuntan al mismo ítem de despensa, se descuente
+    // acumulado en vez de leer siempre el valor original de la BD.
+    $pantryByKey = [];
+    foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $pantryByKey[normalize_ingredient($row['item'])] = $row;
+    }
+
+    $consumedTexts = [];
+    $toRemove = [];   // item original => true
+    $toUpdate = [];   // item original => nueva cantidad
+
     foreach ($recipe['ingredients'] as $entry) {
-        $name = ingredient_name($entry);
-        if (is_staple($name)) {
+        [$name, $needQtyRaw] = array_pad(explode('|', $entry, 2), 2, '');
+        $name = trim($name);
+        if ($name === '' || is_staple($name)) {
             continue;
         }
-        foreach ($pantry as $p) {
-            if (ingredients_match($name, $p)) {
-                remove_pantry_item($userId, $p);
-                $consumed[] = $p;
+        $needParsed = trim($needQtyRaw) !== '' ? parse_qty($needQtyRaw) : null;
+
+        foreach ($pantryByKey as $key => $p) {
+            if (!ingredients_match($name, $p['item'])) {
+                continue;
+            }
+            $haveQty = trim((string)$p['quantity']);
+            $haveParsed = $haveQty !== '' ? parse_qty($haveQty) : null;
+
+            if ($needParsed === null || $haveParsed === null || $haveParsed['unit'] !== $needParsed['unit']) {
+                // No se puede calcular con precisión: se quita el ítem completo.
+                $toRemove[$p['item']] = true;
+                unset($toUpdate[$p['item']]);
+                unset($pantryByKey[$key]);
+                $consumedTexts[$p['item']] = $p['item'];
+                continue;
+            }
+
+            $left = $haveParsed['num'] - ($needParsed['num'] * $portions);
+            if ($left <= 0.001) {
+                $toRemove[$p['item']] = true;
+                unset($toUpdate[$p['item']]);
+                unset($pantryByKey[$key]);
+                $consumedTexts[$p['item']] = $p['item'];
+            } else {
+                $newQty = format_qty($left, $haveParsed['unit']);
+                $toUpdate[$p['item']] = $newQty;
+                $pantryByKey[$key]['quantity'] = $newQty;
+                $consumedTexts[$p['item']] = "{$p['item']} (quedan {$newQty})";
             }
         }
     }
-    return array_values(array_unique($consumed));
+
+    foreach (array_keys($toRemove) as $item) {
+        remove_pantry_item($userId, $item);
+    }
+    $updStmt = $pdo->prepare('UPDATE pantry_items SET quantity = ? WHERE user_id = ? AND item = ?');
+    foreach ($toUpdate as $item => $qty) {
+        $updStmt->execute([$qty, $userId, $item]);
+    }
+
+    return array_values($consumedTexts);
 }
 
 /**

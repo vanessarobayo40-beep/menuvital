@@ -271,14 +271,19 @@ const MV = (() => {
     overlay.querySelector('#cm-next').addEventListener('click', async () => {
       if (step < meal.steps.length - 1) { step++; render(); return; }
       if (doneClicked) { close(); return; }
+      const defaultPortions = (meal.kcal_total && meal.kcal_porcion) ? Math.round(meal.kcal_total / meal.kcal_porcion) : 1;
+      const portions = await askPortions(defaultPortions);
+      if (portions === null) return;
       doneClicked = true;
       const btn = overlay.querySelector('#cm-next');
       btn.disabled = true;
       btn.textContent = 'Guardando...';
       try {
-        const res = await api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: meal.id } });
+        const res = meal.entry_id
+          ? await api('/api/menu.php?action=done', { method: 'POST', body: { entry_id: meal.entry_id, portions } })
+          : await api('/api/pantry.php?action=consume_recipe', { method: 'POST', body: { recipe_id: meal.id, portions } });
         toast(res.consumed && res.consumed.length ? `Descontamos de tu despensa: ${res.consumed.join(', ')}` : '¡Buen provecho! 🍽️');
-        document.dispatchEvent(new CustomEvent('mv-meal-cooked', { detail: { recipeId: meal.id } }));
+        document.dispatchEvent(new CustomEvent('mv-meal-cooked', { detail: { recipeId: meal.id, entryId: meal.entry_id || null } }));
       } catch (err) {
         toast(err.message, true);
       }
@@ -313,5 +318,42 @@ const MV = (() => {
     return { get, set, current };
   })();
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme };
+  /** Pregunta cuántas porciones se cocinaron, para descontar la despensa exacta. */
+  function askPortions(defaultN = 1) {
+    return new Promise((resolve) => {
+      const old = document.getElementById('mv-portions-backdrop');
+      if (old) old.remove();
+      const backdrop = document.createElement('div');
+      backdrop.id = 'mv-portions-backdrop';
+      backdrop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:90;display:flex;align-items:flex-end;justify-content:center;';
+      backdrop.innerHTML = `
+        <div class="card" style="width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:20px;">
+          <h3 style="margin:0 0 4px;">¿Cuántas porciones hiciste?</h3>
+          <p class="muted" style="margin:0 0 16px;font-size:13px;">Así descontamos justo lo que usaste de tu despensa.</p>
+          <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:18px;">
+            <button type="button" id="mv-portions-minus" class="btn btn-secondary" style="width:44px;height:44px;padding:0;font-size:20px;">−</button>
+            <input type="number" id="mv-portions-input" min="1" max="50" value="${Math.max(1, defaultN)}" style="width:70px;text-align:center;font-size:20px;font-weight:700;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px;background:var(--card-bg);color:var(--t1);">
+            <button type="button" id="mv-portions-plus" class="btn btn-secondary" style="width:44px;height:44px;padding:0;font-size:20px;">+</button>
+          </div>
+          <button type="button" id="mv-portions-confirm" class="btn btn-primary btn-block">Listo, ya la hice</button>
+          <button type="button" id="mv-portions-cancel" class="btn btn-secondary btn-block" style="margin-top:8px;">Cancelar</button>
+        </div>`;
+      document.body.appendChild(backdrop);
+      const input = backdrop.querySelector('#mv-portions-input');
+      const finish = (value) => { backdrop.remove(); resolve(value); };
+      backdrop.querySelector('#mv-portions-minus').addEventListener('click', () => {
+        input.value = Math.max(1, (parseInt(input.value, 10) || 1) - 1);
+      });
+      backdrop.querySelector('#mv-portions-plus').addEventListener('click', () => {
+        input.value = Math.min(50, (parseInt(input.value, 10) || 1) + 1);
+      });
+      backdrop.querySelector('#mv-portions-confirm').addEventListener('click', () => {
+        finish(Math.max(1, Math.min(50, parseInt(input.value, 10) || 1)));
+      });
+      backdrop.querySelector('#mv-portions-cancel').addEventListener('click', () => finish(null));
+      backdrop.addEventListener('click', (e) => { if (e.target === backdrop) finish(null); });
+    });
+  }
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions };
 })();

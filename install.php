@@ -30,8 +30,8 @@ $tables = [
     'users' => "CREATE TABLE IF NOT EXISTS users (
         id $ai,
         name VARCHAR(100) NOT NULL,
-        email VARCHAR(190) NOT NULL UNIQUE,
-        password_hash VARCHAR(255) NOT NULL,
+        email VARCHAR(190) NULL UNIQUE,
+        password_hash VARCHAR(255) NULL,
         is_admin TINYINT NOT NULL DEFAULT 0,
         is_blocked TINYINT NOT NULL DEFAULT 0,
         created_at DATETIME NOT NULL
@@ -133,6 +133,28 @@ $tables = [
         created_at DATETIME NOT NULL,
         CONSTRAINT uq_favorite UNIQUE (user_id, recipe_id)
     )$tail",
+    'menu_entries' => "CREATE TABLE IF NOT EXISTS menu_entries (
+        id $ai,
+        user_id INT NOT NULL,
+        entry_date VARCHAR(10) NOT NULL,
+        meal_type VARCHAR(20) NOT NULL,
+        recipe_id INT NOT NULL,
+        servings INT NOT NULL DEFAULT 1,
+        done TINYINT NOT NULL DEFAULT 0,
+        done_at DATETIME NULL,
+        source VARCHAR(10) NOT NULL DEFAULT 'user',
+        created_at DATETIME NOT NULL,
+        CONSTRAINT uq_menu_slot UNIQUE (user_id, entry_date, meal_type)
+    )$tail",
+    'code_devices' => "CREATE TABLE IF NOT EXISTS code_devices (
+        id $ai,
+        code_id INT NOT NULL,
+        user_id INT NOT NULL,
+        device_token_hash CHAR(64) NOT NULL UNIQUE,
+        device_label VARCHAR(120) NOT NULL DEFAULT '',
+        created_at DATETIME NOT NULL,
+        last_seen_at DATETIME NULL
+    )$tail",
 ];
 
 foreach ($tables as $name => $sql) {
@@ -156,9 +178,60 @@ function column_exists(PDO $pdo, bool $isMysql, string $table, string $column): 
     return (int)$stmt->fetch()['c'] > 0;
 }
 
+/** ¿La columna admite NULL? (para saber si ya se migró a acceso solo con código) */
+function column_nullable(PDO $pdo, bool $isMysql, string $table, string $column): bool {
+    if ($isMysql) {
+        $stmt = $pdo->prepare('SELECT IS_NULLABLE FROM information_schema.columns
+                                WHERE table_schema = DATABASE() AND table_name = ? AND column_name = ?');
+        $stmt->execute([$table, $column]);
+        $row = $stmt->fetch();
+        return $row && $row['IS_NULLABLE'] === 'YES';
+    }
+    $stmt = $pdo->query("PRAGMA table_info($table)");
+    foreach ($stmt->fetchAll() as $col) {
+        if ($col['name'] === $column) {
+            return (int)$col['notnull'] === 0;
+        }
+    }
+    return false;
+}
+
+// Migración: permite acceso solo con código (sin correo/contraseña).
+if (!column_nullable($pdo, $isMysql, 'users', 'email')) {
+    if ($isMysql) {
+        $pdo->exec('ALTER TABLE users MODIFY email VARCHAR(190) NULL');
+        $pdo->exec('ALTER TABLE users MODIFY password_hash VARCHAR(255) NULL');
+    } else {
+        // SQLite no soporta MODIFY COLUMN: se reconstruye la tabla dentro de una transacción.
+        $pdo->beginTransaction();
+        $pdo->exec("CREATE TABLE users_new (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name VARCHAR(100) NOT NULL,
+            email VARCHAR(190) NULL,
+            password_hash VARCHAR(255) NULL,
+            is_admin TINYINT NOT NULL DEFAULT 0,
+            is_blocked TINYINT NOT NULL DEFAULT 0,
+            created_at DATETIME NOT NULL
+        )");
+        $pdo->exec('INSERT INTO users_new SELECT id, name, email, password_hash, is_admin, is_blocked, created_at FROM users');
+        $pdo->exec('DROP TABLE users');
+        $pdo->exec('ALTER TABLE users_new RENAME TO users');
+        $pdo->exec('CREATE UNIQUE INDEX IF NOT EXISTS uq_users_email ON users(email)');
+        $pdo->commit();
+    }
+    $log[] = 'Migración: users.email y password_hash ahora admiten NULL (acceso solo con código)';
+}
+
 if (!column_exists($pdo, $isMysql, 'activation_codes', 'is_active')) {
     $pdo->exec('ALTER TABLE activation_codes ADD COLUMN is_active TINYINT NOT NULL DEFAULT 1');
     $log[] = 'Migración: columna is_active agregada a activation_codes';
+}
+if (!column_exists($pdo, $isMysql, 'activation_codes', 'code_plain')) {
+    // Guarda el código en texto plano (además del hash) para poder verlo siempre
+    // en el panel de administración. Los códigos generados ANTES de esta
+    // columna no se pueden recuperar (el hash es de un solo sentido).
+    $pdo->exec('ALTER TABLE activation_codes ADD COLUMN code_plain VARCHAR(20) NULL');
+    $log[] = 'Migración: columna code_plain agregada a activation_codes';
 }
 foreach ([
     'favorites' => 'ALTER TABLE profiles ADD COLUMN favorites TEXT',
@@ -216,6 +289,31 @@ if ($count === 0) {
 } else {
     $log[] = "Recetas ya existentes: $count (no se duplican)";
 
+    // Inserta recetas oficiales nuevas de database/recipes_data.php que aún no
+    // existen en la tabla (comparando por nombre), sin tocar las que ya están.
+    $recipes = require __DIR__ . '/database/recipes_data.php';
+    $existingNames = $pdo->query('SELECT name FROM recipes WHERE user_id IS NULL')->fetchAll(PDO::FETCH_COLUMN);
+    $existingNames = array_flip($existingNames);
+    $insNew = $pdo->prepare('INSERT INTO recipes (name, meal_type, ingredients, steps, tags, kcal, protein, time_min, carbs, fat, sugar, fiber, image_url)
+                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $newCount = 0;
+    foreach ($recipes as $r) {
+        [$name, $type, $ingredients, $steps, $tags, $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber] = $r + [11 => null];
+        $image = $r[12] ?? null;
+        if (isset($existingNames[$name])) continue;
+        $insNew->execute([
+            $name, $type,
+            json_encode($ingredients, JSON_UNESCAPED_UNICODE),
+            json_encode($steps, JSON_UNESCAPED_UNICODE),
+            json_encode($tags, JSON_UNESCAPED_UNICODE),
+            $kcal, $protein, $time, $carbs, $fat, $sugar, $fiber, $image,
+        ]);
+        $newCount++;
+    }
+    if ($newCount > 0) {
+        $log[] = "Recetas oficiales nuevas insertadas: $newCount";
+    }
+
     // Backfill de nutrición (carbs/fat/sugar/fiber) para recetas que ya existían sin estos datos.
     $missing = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes WHERE carbs IS NULL')->fetch()['c'];
     if ($missing > 0) {
@@ -244,6 +342,23 @@ if ($count === 0) {
             $updatedImg += $updImg->rowCount();
         }
         $log[] = "Foto actualizada en $updatedImg recetas existentes";
+    }
+
+    // Resincroniza TODAS las fotos oficiales con database/recipes_data.php (incluye
+    // las que ya tenían una foto, para aplicar correcciones). Solo si se pide con
+    // ?resync_images=1, para no pisar datos sin querer en instalaciones normales.
+    if (($_GET['resync_images'] ?? '') === '1') {
+        $recipes = require __DIR__ . '/database/recipes_data.php';
+        $updImg2 = $pdo->prepare('UPDATE recipes SET image_url=? WHERE name=? AND user_id IS NULL');
+        $resynced = 0;
+        foreach ($recipes as $r) {
+            $name = $r[0];
+            $image = $r[12] ?? null;
+            if (!$image) continue;
+            $updImg2->execute([$image, $name]);
+            $resynced += $updImg2->rowCount();
+        }
+        $log[] = "Fotos resincronizadas (forzado): $resynced recetas";
     }
 }
 

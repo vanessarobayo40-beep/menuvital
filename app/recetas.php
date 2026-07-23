@@ -6,10 +6,11 @@ $user = require_login_page();
 $PAGE_TITLE = 'Recetas';
 $ACTIVE_NAV = 'recetas';
 require __DIR__ . '/../includes/layout_top.php';
+$officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user_id IS NULL')->fetchColumn();
 ?>
 
 <h2 style="margin-bottom:4px;">Recetario</h2>
-<p class="muted" style="margin-top:0;font-size:14px;">Explora las 105 recetas, marca tus favoritas, agrega las tuyas y cocínalas cuando quieras.</p>
+<p class="muted" style="margin-top:0;font-size:14px;">Explora las <?= $officialRecipeCount ?> recetas, marca tus favoritas, agrega las tuyas y cocínalas cuando quieras.</p>
 
 <button type="button" id="btn-open-create" class="btn btn-primary btn-block" style="margin-bottom:14px;">+ Agregar mi receta</button>
 
@@ -58,7 +59,8 @@ require __DIR__ . '/../includes/layout_top.php';
         <div class="stat-tile"><div class="value" id="detail-fat">–</div><div class="label">grasa g</div></div>
       </div>
 
-      <button type="button" id="detail-cook-mode" class="btn btn-primary btn-block" style="margin-bottom:10px;">👩‍🍳 Modo Cocina</button>
+      <button type="button" id="detail-add-menu" class="btn btn-primary btn-block" style="margin-bottom:10px;">📅 Agregar a mi menú</button>
+      <button type="button" id="detail-cook-mode" class="btn btn-secondary btn-block" style="margin-bottom:10px;">👩‍🍳 Modo Cocina</button>
       <button type="button" id="detail-delete" class="btn btn-danger btn-block" style="display:none;margin-bottom:18px;">🗑 Eliminar mi receta</button>
 
       <p class="section-title" style="margin-top:0;">Ingredientes</p>
@@ -67,6 +69,49 @@ require __DIR__ . '/../includes/layout_top.php';
       <p class="section-title">Preparación</p>
       <ol id="detail-steps" style="margin:0;padding-left:20px;font-size:14px;"></ol>
     </div>
+  </div>
+</div>
+
+<!-- ---------- Agregar a mi menú (hoja inferior) ---------- -->
+<div id="schedule-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:80;align-items:flex-end;justify-content:center;">
+  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:20px;">
+    <h3 style="margin:0 0 4px;font-size:17px;">Agregar a mi menú</h3>
+    <p class="muted" id="schedule-recipe-name" style="margin:0 0 16px;font-size:13px;"></p>
+
+    <div style="display:flex;gap:10px;margin-bottom:16px;">
+      <div class="field" style="flex:1;margin-bottom:0;">
+        <label>Comida</label>
+        <select id="sch-meal-type">
+          <option value="desayuno">Desayuno</option>
+          <option value="almuerzo">Almuerzo</option>
+          <option value="cena">Cena</option>
+          <option value="snack">Snack</option>
+        </select>
+      </div>
+      <div class="field" style="flex:1;margin-bottom:0;">
+        <label>Porciones</label>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button type="button" id="sch-servings-minus" class="btn btn-secondary" style="width:38px;height:38px;padding:0;">−</button>
+          <input type="number" id="sch-servings" min="1" max="12" value="1" style="width:50px;text-align:center;border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:8px;background:var(--card-bg);color:var(--t1);">
+          <button type="button" id="sch-servings-plus" class="btn btn-secondary" style="width:38px;height:38px;padding:0;">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;margin-bottom:12px;">
+      <button type="button" class="chip tag" data-quick="hoy">Hoy</button>
+      <button type="button" class="chip tag" data-quick="manana">Mañana</button>
+      <button type="button" class="chip tag" data-quick="semana">Toda la semana</button>
+    </div>
+
+    <p class="section-title" style="margin-top:0;">O elige los días</p>
+    <div id="sch-days-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px;"></div>
+
+    <button type="button" id="sch-view-more" class="btn btn-secondary btn-block" style="margin-bottom:14px;font-size:13px;">Ver 30 días</button>
+
+    <p id="schedule-error" class="field error-text" style="display:none;"></p>
+    <button type="button" id="sch-confirm" class="btn btn-primary btn-block">Agregar al menú</button>
+    <button type="button" id="sch-cancel" class="btn btn-secondary btn-block" style="margin-top:8px;">Cancelar</button>
   </div>
 </div>
 
@@ -148,7 +193,7 @@ function renderGrid() {
              style="width:100%;height:110px;object-fit:cover;background:var(--grad-soft);"
              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22110%22%3E%3Crect width=%22200%22 height=%22110%22 fill=%22%23EFF6F3%22/%3E%3C/svg%3E';">
         <span style="position:absolute;top:6px;left:6px;background:rgba(255,255,255,0.92);color:var(--green-dark);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;">${MEAL_LABELS[r.meal_type] || r.meal_type}</span>
-        ${r.is_own ? '<span style="position:absolute;bottom:6px;left:6px;background:rgba(255,255,255,0.92);color:var(--purple-dark);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;">👩‍🍳 Mía</span>' : ''}
+        ${r.is_own ? '<span style="position:absolute;bottom:6px;left:6px;background:rgba(255,255,255,0.92);color:var(--accent-dark);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;">👩‍🍳 Mía</span>' : ''}
         ${r.is_favorite ? '<span style="position:absolute;top:6px;right:6px;font-size:16px;">❤</span>' : ''}
       </div>
       <div style="padding:10px;">
@@ -239,6 +284,134 @@ document.getElementById('detail-cook-mode').addEventListener('click', () => {
   if (currentDetail) MV.cookMode(currentDetail);
 });
 
+// ---------- Agregar a mi menú ----------
+let scheduleDaysShown = 15;
+let selectedDates = new Set();
+let profilePeople = 1;
+
+function localDateStr(offsetDays) {
+  const d = new Date();
+  d.setDate(d.getDate() + offsetDays);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+
+const DAY_ABBR = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+
+function renderScheduleDays() {
+  const grid = document.getElementById('sch-days-grid');
+  let html = '';
+  for (let i = 0; i < scheduleDaysShown; i++) {
+    const dateStr = localDateStr(i);
+    const d = new Date();
+    d.setDate(d.getDate() + i);
+    const selected = selectedDates.has(dateStr);
+    html += `<button type="button" class="chip tag${selected ? ' active' : ''}" data-date="${dateStr}" style="flex-direction:column;padding:8px 4px;">
+      <span style="display:block;font-size:10px;">${DAY_ABBR[d.getDay()]}</span>
+      <span style="display:block;font-weight:700;">${d.getDate()}</span>
+    </button>`;
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll('[data-date]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const date = btn.dataset.date;
+      if (selectedDates.has(date)) selectedDates.delete(date); else selectedDates.add(date);
+      renderScheduleDays();
+    });
+  });
+}
+
+document.getElementById('sch-view-more').addEventListener('click', (e) => {
+  scheduleDaysShown = scheduleDaysShown === 15 ? 30 : 15;
+  e.target.textContent = scheduleDaysShown === 15 ? 'Ver 30 días' : 'Ver 15 días';
+  renderScheduleDays();
+});
+
+document.querySelectorAll('[data-quick]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const quick = btn.dataset.quick;
+    selectedDates = new Set();
+    if (quick === 'hoy') selectedDates.add(localDateStr(0));
+    if (quick === 'manana') selectedDates.add(localDateStr(1));
+    if (quick === 'semana') { for (let i = 0; i < 7; i++) selectedDates.add(localDateStr(i)); }
+    renderScheduleDays();
+  });
+});
+
+document.getElementById('sch-servings-minus').addEventListener('click', () => {
+  const input = document.getElementById('sch-servings');
+  input.value = Math.max(1, (parseInt(input.value, 10) || 1) - 1);
+});
+document.getElementById('sch-servings-plus').addEventListener('click', () => {
+  const input = document.getElementById('sch-servings');
+  input.value = Math.min(12, (parseInt(input.value, 10) || 1) + 1);
+});
+
+document.getElementById('detail-add-menu').addEventListener('click', async () => {
+  if (!currentDetail) return;
+  document.getElementById('detail-backdrop').style.display = 'none';
+  document.getElementById('schedule-recipe-name').textContent = currentDetail.name;
+  document.getElementById('sch-meal-type').value = currentDetail.meal_type;
+  try {
+    const res = await MV.api('/api/profile.php?action=get');
+    profilePeople = res.profile.people || 1;
+  } catch (err) { /* usa 1 por defecto si falla */ }
+  document.getElementById('sch-servings').value = profilePeople;
+  scheduleDaysShown = 15;
+  document.getElementById('sch-view-more').textContent = 'Ver 30 días';
+  selectedDates = new Set([localDateStr(0)]);
+  renderScheduleDays();
+  document.getElementById('schedule-error').style.display = 'none';
+  document.getElementById('schedule-backdrop').style.display = 'flex';
+});
+
+document.getElementById('sch-cancel').addEventListener('click', () => {
+  document.getElementById('schedule-backdrop').style.display = 'none';
+});
+document.getElementById('schedule-backdrop').addEventListener('click', (e) => {
+  if (e.target.id === 'schedule-backdrop') e.currentTarget.style.display = 'none';
+});
+
+async function submitSchedule(overwrite) {
+  const errEl = document.getElementById('schedule-error');
+  errEl.style.display = 'none';
+  const dates = Array.from(selectedDates);
+  if (!dates.length) {
+    errEl.textContent = 'Elige al menos un día.';
+    errEl.style.display = 'block';
+    return;
+  }
+  const btn = document.getElementById('sch-confirm');
+  btn.disabled = true;
+  try {
+    const res = await MV.api('/api/menu.php?action=add', {
+      method: 'POST',
+      body: {
+        recipe_id: currentDetail.id,
+        meal_type: document.getElementById('sch-meal-type').value,
+        servings: parseInt(document.getElementById('sch-servings').value, 10) || 1,
+        dates,
+        overwrite,
+      },
+    });
+    if (res.conflicts && res.conflicts.length) {
+      const names = res.conflicts.map(c => `${c.date} (ya tienes "${c.current_name}")`).join(', ');
+      if (confirm(`Ya tienes algo elegido para: ${names}. ¿Reemplazar?`)) {
+        await submitSchedule(true);
+      }
+      return;
+    }
+    document.getElementById('schedule-backdrop').style.display = 'none';
+    MV.toast(`"${currentDetail.name}" agregada a tu menú 🎉`);
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+document.getElementById('sch-confirm').addEventListener('click', () => submitSchedule(false));
+
 document.getElementById('detail-delete').addEventListener('click', async () => {
   if (!currentDetail || !confirm(`¿Eliminar "${currentDetail.name}" de tu recetario? No se puede deshacer.`)) return;
   try {
@@ -253,16 +426,24 @@ document.getElementById('detail-delete').addEventListener('click', async () => {
 });
 
 // ---------- Crear receta propia ----------
-function addIngredientRow(item, qty) {
+// Mismas unidades que se usan en las recetas oficiales y en la lista de compras.
+const CR_UNITS = ['unidad', 'unidades', 'g', 'kg', 'libra', 'taza', 'cda', 'cdta', 'ml', 'litro', 'diente', 'rama', 'hoja', 'pizca', 'tajada', 'rebanada', 'tallo', 'lata', 'filete', 'trozo', 'paquete', 'al gusto'];
+
+function addIngredientRow(item, qtyNum, qtyUnit) {
   const wrap = document.getElementById('cr-ingredients');
   const row = document.createElement('div');
-  row.style.cssText = 'display:flex;gap:8px;margin-bottom:8px;';
+  row.style.cssText = 'display:flex;gap:6px;margin-bottom:8px;';
+  const inputStyle = 'min-width:0;padding:11px 8px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--card-bg);color:var(--t1);';
   row.innerHTML = `
-    <input type="text" placeholder="Ingrediente" class="cr-ing-item" style="flex:2;padding:11px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:14px;background:var(--card-bg);color:var(--t1);">
-    <input type="text" placeholder="Cantidad" class="cr-ing-qty" style="flex:1;padding:11px 12px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:14px;background:var(--card-bg);color:var(--t1);">
-    <button type="button" class="cr-remove-row" aria-label="Quitar" style="background:var(--surface-2);border:none;width:38px;border-radius:var(--radius-sm);color:var(--t3);font-size:16px;">×</button>`;
+    <input type="text" placeholder="Ingrediente" class="cr-ing-item" style="flex:1.7;${inputStyle}">
+    <input type="text" inputmode="decimal" placeholder="Cant." class="cr-ing-num" style="flex:0.6;${inputStyle}">
+    <select class="cr-ing-unit" style="flex:0.95;${inputStyle}">
+      ${CR_UNITS.map(u => `<option value="${u}">${u}</option>`).join('')}
+    </select>
+    <button type="button" class="cr-remove-row" aria-label="Quitar" style="background:var(--surface-2);border:none;width:32px;flex:none;border-radius:var(--radius-sm);color:var(--t3);font-size:16px;">×</button>`;
   row.querySelector('.cr-ing-item').value = item || '';
-  row.querySelector('.cr-ing-qty').value = qty || '';
+  row.querySelector('.cr-ing-num').value = qtyNum || '';
+  if (qtyUnit) row.querySelector('.cr-ing-unit').value = qtyUnit;
   row.querySelector('.cr-remove-row').addEventListener('click', () => row.remove());
   wrap.appendChild(row);
 }
@@ -286,14 +467,14 @@ function resetCreateForm() {
   document.getElementById('cr-ingredients').innerHTML = '';
   document.getElementById('cr-steps').innerHTML = '';
   document.getElementById('cr-error').style.display = 'none';
-  addIngredientRow('', '');
-  addIngredientRow('', '');
-  addIngredientRow('', '');
+  addIngredientRow('', '', '');
+  addIngredientRow('', '', '');
+  addIngredientRow('', '', '');
   addStepRow('');
   addStepRow('');
 }
 
-document.getElementById('cr-add-ingredient').addEventListener('click', () => addIngredientRow('', ''));
+document.getElementById('cr-add-ingredient').addEventListener('click', () => addIngredientRow('', '', ''));
 document.getElementById('cr-add-step').addEventListener('click', () => addStepRow(''));
 
 document.getElementById('btn-open-create').addEventListener('click', () => {
@@ -314,10 +495,14 @@ document.getElementById('cr-submit').addEventListener('click', async () => {
   const name = document.getElementById('cr-name').value.trim();
   const mealType = document.getElementById('cr-meal-type').value;
   const timeMin = parseInt(document.getElementById('cr-time').value, 10) || 30;
-  const ingredients = Array.from(document.querySelectorAll('#cr-ingredients > div')).map(row => ({
-    item: row.querySelector('.cr-ing-item').value.trim(),
-    quantity: row.querySelector('.cr-ing-qty').value.trim(),
-  })).filter(i => i.item);
+  const ingredients = Array.from(document.querySelectorAll('#cr-ingredients > div')).map(row => {
+    const num = row.querySelector('.cr-ing-num').value.trim();
+    const unit = row.querySelector('.cr-ing-unit').value;
+    return {
+      item: row.querySelector('.cr-ing-item').value.trim(),
+      quantity: num ? `${num} ${unit}` : '',
+    };
+  }).filter(i => i.item);
   const steps = Array.from(document.querySelectorAll('#cr-steps > div')).map(row => row.querySelector('.cr-step-text').value.trim()).filter(s => s);
 
   if (!name) { errEl.textContent = 'Ponle un nombre a tu receta.'; errEl.style.display = 'block'; return; }

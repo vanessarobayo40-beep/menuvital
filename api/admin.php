@@ -18,16 +18,17 @@ if ($action === 'stats' && $_SERVER['REQUEST_METHOD'] === 'GET') {
     $users = (int)$pdo->query('SELECT COUNT(*) AS c FROM users WHERE is_admin = 0')->fetch()['c'];
     $total = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes')->fetch()['c'];
     $used = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes WHERE used_by IS NOT NULL')->fetch()['c'];
-    $available = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes WHERE used_by IS NULL AND is_active = 1')->fetch()['c'];
+    $active = (int)$pdo->query('SELECT COUNT(*) AS c FROM activation_codes WHERE is_active = 1')->fetch()['c'];
     json_response(['ok' => true, 'stats' => [
-        'users' => $users, 'codes_total' => $total, 'codes_available' => $available, 'codes_used' => $used,
+        'users' => $users, 'codes_total' => $total, 'codes_active' => $active, 'codes_used' => $used,
     ]]);
 }
 
 if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.created_at, ac.used_at, ac.is_active,
+    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.code_plain, ac.created_at, ac.used_at, ac.is_active,
                                  u.id AS used_by_id, u.name AS used_by_name, u.email AS used_by_email,
-                                 u.is_blocked AS used_by_blocked
+                                 u.is_blocked AS used_by_blocked,
+                                 (SELECT COUNT(*) FROM code_devices cd WHERE cd.code_id = ac.id) AS device_count
                           FROM activation_codes ac
                           LEFT JOIN users u ON u.id = ac.used_by
                           ORDER BY ac.id DESC LIMIT 300');
@@ -67,18 +68,34 @@ if ($action === 'toggle_code' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $in = json_input();
     $id = (int)($in['id'] ?? 0);
     $pdo = db();
-    $stmt = $pdo->prepare('SELECT used_by, is_active FROM activation_codes WHERE id = ?');
+    $stmt = $pdo->prepare('SELECT is_active FROM activation_codes WHERE id = ?');
     $stmt->execute([$id]);
     $row = $stmt->fetch();
     if (!$row) {
         json_error('Ese código no existe.', 404);
     }
-    if ($row['used_by'] !== null) {
-        json_error('Ese código ya fue usado y no se puede desactivar.');
-    }
+    // Un código ya usado ahora es la credencial de acceso: desactivarlo revoca
+    // el acceso de la usuaria (útil si hay que suspender una cuenta o el código
+    // se compartió de más), en vez de estar bloqueado como antes.
     $newState = (int)$row['is_active'] === 1 ? 0 : 1;
     $pdo->prepare('UPDATE activation_codes SET is_active = ? WHERE id = ?')->execute([$newState, $id]);
     json_response(['ok' => true, 'is_active' => $newState]);
+}
+
+if ($action === 'reset_devices' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!csrf_verify()) {
+        json_error('Token inválido. Recarga la página.', 403);
+    }
+    $in = json_input();
+    $id = (int)($in['id'] ?? 0);
+    $pdo = db();
+    $stmt = $pdo->prepare('SELECT id FROM activation_codes WHERE id = ?');
+    $stmt->execute([$id]);
+    if (!$stmt->fetch()) {
+        json_error('Ese código no existe.', 404);
+    }
+    $pdo->prepare('DELETE FROM code_devices WHERE code_id = ?')->execute([$id]);
+    json_response(['ok' => true]);
 }
 
 if ($action === 'delete_code' && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -114,7 +131,7 @@ if ($action === 'generate_codes' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $pdo = db();
-    $stmt = $pdo->prepare('INSERT INTO activation_codes (code_hash, batch_label, created_at) VALUES (?, ?, ?)');
+    $stmt = $pdo->prepare('INSERT INTO activation_codes (code_hash, code_plain, batch_label, created_at) VALUES (?, ?, ?, ?)');
     $generated = [];
     $pdo->beginTransaction();
     for ($i = 0; $i < $count; $i++) {
@@ -122,7 +139,7 @@ if ($action === 'generate_codes' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         for ($attempt = 0; $attempt < 5; $attempt++) {
             $code = generate_activation_code();
             try {
-                $stmt->execute([activation_code_hash($code), $label, db_now()]);
+                $stmt->execute([activation_code_hash($code), $code, $label, db_now()]);
                 $generated[] = $code;
                 break;
             } catch (PDOException $e) {

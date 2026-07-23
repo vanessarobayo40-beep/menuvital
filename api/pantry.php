@@ -59,11 +59,12 @@ if ($action === 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $in = json_input();
     $items = parse_add_items($in);
+    $merge = !array_key_exists('merge', $in) || (bool)$in['merge'];
     $added = 0;
     foreach ($items as $entry) {
         $item = clean_text($entry['item'], 60);
         if ($item === '') continue;
-        add_pantry_item($userId, $item, $entry['quantity']);
+        add_pantry_item($userId, $item, $entry['quantity'], $merge);
         $added++;
     }
     if ($added === 0) {
@@ -162,10 +163,11 @@ if ($action === 'consume_recipe' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $in = json_input();
     $recipeId = (int)($in['recipe_id'] ?? 0);
+    $portions = max(1, min(50, (int)($in['portions'] ?? 1)));
     if ($recipeId <= 0) {
         json_error('Receta no válida.');
     }
-    $consumed = consume_recipe_from_pantry($userId, $recipeId);
+    $consumed = consume_recipe_from_pantry($userId, $recipeId, $portions);
     mark_meal_done($userId, $recipeId);
     json_response(['ok' => true, 'consumed' => $consumed, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
 }

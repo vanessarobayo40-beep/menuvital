@@ -52,6 +52,11 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $age = $in['age'] ?? null;
     $age = ($age === null || $age === '') ? null : max(12, min(100, (int)$age));
 
+    $name = clean_text($in['name'] ?? '', 100);
+    if ($name !== '' && mb_strlen($name) >= 2) {
+        db()->prepare('UPDATE users SET name = ? WHERE id = ?')->execute([$name, (int)$user['id']]);
+    }
+
     save_profile((int)$user['id'], [
         'allergies' => $allergies,
         'dislikes' => $dislikes,
