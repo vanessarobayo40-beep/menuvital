@@ -19,6 +19,29 @@ function goal_label(string $goal): string {
     };
 }
 
+const ACTIVITY_LEVELS = ['sedentario', 'ligero', 'moderado', 'activo', 'muy_activo'];
+
+function activity_level_label(string $level): string {
+    return match ($level) {
+        'sedentario' => 'Sedentario (poco o nada de ejercicio)',
+        'ligero' => 'Ligero (ejercicio suave 1-3 días/semana)',
+        'activo' => 'Activo (ejercicio intenso 6-7 días/semana)',
+        'muy_activo' => 'Muy activo (entrenas 2 veces al día o trabajo físico exigente)',
+        default => 'Moderado (ejercicio 3-5 días/semana)',
+    };
+}
+
+/** Multiplicador de actividad de Mifflin-St Jeor sobre la tasa metabólica basal. */
+function activity_multiplier(string $level): float {
+    return match ($level) {
+        'sedentario' => 1.2,
+        'ligero' => 1.375,
+        'activo' => 1.725,
+        'muy_activo' => 1.9,
+        default => 1.55,
+    };
+}
+
 /** Perfil del usuario con listas separadas y listas para el planner. */
 function load_profile(int $userId): array {
     $stmt = db()->prepare('SELECT * FROM profiles WHERE user_id = ?');
@@ -27,9 +50,12 @@ function load_profile(int $userId): array {
     if (!$row) {
         $row = ['user_id' => $userId, 'allergies' => '', 'dislikes' => '', 'favorites' => '',
                 'goal' => 'balance', 'people' => 1, 'meals_per_day' => 3,
-                'height_cm' => null, 'starting_weight' => null, 'sex' => null, 'age' => null];
+                'height_cm' => null, 'starting_weight' => null, 'sex' => null, 'age' => null,
+                'activity_level' => 'moderado'];
     }
     $row['favorites'] = $row['favorites'] ?? '';
+    $row['activity_level'] = in_array($row['activity_level'] ?? null, ACTIVITY_LEVELS, true)
+        ? $row['activity_level'] : 'moderado';
     $toList = fn($csv) => array_values(array_filter(array_map('trim', explode(',', (string)$csv))));
     $row['allergies_list'] = $toList($row['allergies']);
     $row['dislikes_list'] = $toList($row['dislikes']);
@@ -65,11 +91,11 @@ function save_profile(int $userId, array $data): void {
     $exists = $pdo->prepare('SELECT 1 FROM profiles WHERE user_id = ?');
     $exists->execute([$userId]);
     if ($exists->fetch()) {
-        $pdo->prepare('UPDATE profiles SET allergies=?, dislikes=?, favorites=?, goal=?, people=?, meals_per_day=?, height_cm=?, starting_weight=?, sex=?, age=?, updated_at=? WHERE user_id=?')
-            ->execute([$data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], $data['sex'], $data['age'], db_now(), $userId]);
+        $pdo->prepare('UPDATE profiles SET allergies=?, dislikes=?, favorites=?, goal=?, people=?, meals_per_day=?, height_cm=?, starting_weight=?, sex=?, age=?, activity_level=?, updated_at=? WHERE user_id=?')
+            ->execute([$data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], $data['sex'], $data['age'], $data['activity_level'], db_now(), $userId]);
     } else {
-        $pdo->prepare('INSERT INTO profiles (user_id, allergies, dislikes, favorites, goal, people, meals_per_day, height_cm, starting_weight, sex, age, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)')
-            ->execute([$userId, $data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], $data['sex'], $data['age'], db_now()]);
+        $pdo->prepare('INSERT INTO profiles (user_id, allergies, dislikes, favorites, goal, people, meals_per_day, height_cm, starting_weight, sex, age, activity_level, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)')
+            ->execute([$userId, $data['allergies'], $data['dislikes'], $data['favorites'], $data['goal'], $data['people'], $data['meals_per_day'], $data['height_cm'], $data['starting_weight'], $data['sex'], $data['age'], $data['activity_level'], db_now()]);
     }
 }
 
@@ -87,7 +113,9 @@ function daily_kcal_target(array $profile): ?int {
         return null;
     }
     $bmr = 10 * (float)$weight + 6.25 * (float)$height - 5 * (int)$age + ($sex === 'm' ? 5 : -161);
-    $maintenance = $bmr * 1.35; // actividad ligera-moderada
+    $activityLevel = in_array($profile['activity_level'] ?? null, ACTIVITY_LEVELS, true)
+        ? $profile['activity_level'] : 'moderado';
+    $maintenance = $bmr * activity_multiplier($activityLevel);
     $target = match ($profile['goal'] ?? 'balance') {
         'bajar_peso' => max(1200, $maintenance - 400),
         'ganar_musculo' => $maintenance + 350, // superávit moderado: gana músculo sin acumular grasa de más

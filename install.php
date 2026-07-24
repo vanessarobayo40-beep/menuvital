@@ -57,6 +57,7 @@ $tables = [
         starting_weight DECIMAL(5,2) NULL,
         sex VARCHAR(1) NULL,
         age INT NULL,
+        activity_level VARCHAR(20) NOT NULL DEFAULT 'moderado',
         updated_at DATETIME NOT NULL
     )$tail",
     'recipes' => "CREATE TABLE IF NOT EXISTS recipes (
@@ -239,6 +240,7 @@ foreach ([
     'starting_weight' => 'ALTER TABLE profiles ADD COLUMN starting_weight DECIMAL(5,2) NULL',
     'sex' => 'ALTER TABLE profiles ADD COLUMN sex VARCHAR(1) NULL',
     'age' => 'ALTER TABLE profiles ADD COLUMN age INT NULL',
+    'activity_level' => "ALTER TABLE profiles ADD COLUMN activity_level VARCHAR(20) NOT NULL DEFAULT 'moderado'",
 ] as $col => $alterSql) {
     if (!column_exists($pdo, $isMysql, 'profiles', $col)) {
         $pdo->exec($alterSql);

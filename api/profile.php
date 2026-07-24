@@ -25,6 +25,7 @@ if ($action === 'get' && $_SERVER['REQUEST_METHOD'] === 'GET') {
         'starting_weight' => $profile['starting_weight'] !== null ? (float)$profile['starting_weight'] : null,
         'sex' => $profile['sex'],
         'age' => $profile['age'] !== null ? (int)$profile['age'] : null,
+        'activity_level' => $profile['activity_level'],
         'kcal_target' => $profile['kcal_target'],
         'protein_target' => $profile['protein_target'],
         'water_target' => daily_water_target($profile),
@@ -51,6 +52,7 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $sex = in_array($in['sex'] ?? '', ['f', 'm'], true) ? $in['sex'] : null;
     $age = $in['age'] ?? null;
     $age = ($age === null || $age === '') ? null : max(12, min(100, (int)$age));
+    $activityLevel = in_array($in['activity_level'] ?? '', ACTIVITY_LEVELS, true) ? $in['activity_level'] : 'moderado';
 
     $name = clean_text($in['name'] ?? '', 100);
     if ($name !== '' && mb_strlen($name) >= 2) {
@@ -68,9 +70,11 @@ if ($action === 'update' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         'starting_weight' => $startWeight,
         'sex' => $sex,
         'age' => $age,
+        'activity_level' => $activityLevel,
     ]);
     json_response(['ok' => true, 'kcal_target' => daily_kcal_target([
         'sex' => $sex, 'age' => $age, 'height_cm' => $height, 'starting_weight' => $startWeight, 'goal' => $goal,
+        'activity_level' => $activityLevel,
     ])]);
 }
 

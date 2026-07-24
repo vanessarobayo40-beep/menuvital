@@ -88,7 +88,17 @@ require __DIR__ . '/../includes/layout_top.php';
       <input type="number" id="pf-weight" step="0.1" min="20" max="300" placeholder="Ej: 65.5">
     </div>
   </div>
-  <p class="hint" style="margin:-8px 0 16px;font-size:12px;color:var(--t3);">Con estos 4 datos calculamos tu meta calórica diaria y tu IMC en Progreso.</p>
+  <div class="field">
+    <label>¿Qué tan activa eres?</label>
+    <select id="pf-activity">
+      <option value="sedentario">Sedentaria (poco o nada de ejercicio)</option>
+      <option value="ligero">Ligera (ejercicio suave 1-3 días/semana)</option>
+      <option value="moderado">Moderada (ejercicio 3-5 días/semana)</option>
+      <option value="activo">Activa (ejercicio intenso 6-7 días/semana)</option>
+      <option value="muy_activo">Muy activa (2 veces al día o trabajo físico exigente)</option>
+    </select>
+  </div>
+  <p class="hint" style="margin:-8px 0 16px;font-size:12px;color:var(--t3);">Con estos datos calculamos tu meta calórica diaria y tu IMC en Progreso.</p>
 
   <p class="section-title" style="margin-top:6px;">Tus gustos</p>
   <div class="field">
@@ -186,6 +196,7 @@ async function loadProfile() {
     document.getElementById('pf-weight').value = res.profile.starting_weight ?? '';
     document.getElementById('pf-sex').value = res.profile.sex ?? '';
     document.getElementById('pf-age').value = res.profile.age ?? '';
+    document.getElementById('pf-activity').value = res.profile.activity_level || 'moderado';
   } catch (err) {
     MV.toast(err.message, true);
   }
@@ -208,6 +219,7 @@ async function saveProfile() {
         starting_weight: document.getElementById('pf-weight').value,
         sex: document.getElementById('pf-sex').value,
         age: document.getElementById('pf-age').value,
+        activity_level: document.getElementById('pf-activity').value,
       },
     });
     MV.toast('Preferencias guardadas ✅');
@@ -223,7 +235,7 @@ document.getElementById('form-profile').addEventListener('submit', (e) => {
   e.preventDefault();
   saveProfile();
 });
-['pf-goal', 'pf-people', 'pf-meals', 'pf-sex'].forEach(id => {
+['pf-goal', 'pf-people', 'pf-meals', 'pf-sex', 'pf-activity'].forEach(id => {
   document.getElementById(id).addEventListener('change', autosave);
 });
 

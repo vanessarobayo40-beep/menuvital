@@ -84,6 +84,16 @@ $csrf = csrf_token();
       <div class="field" style="flex:1;"><label>Estatura (cm)</label><input type="number" id="ob-height" min="100" max="230" placeholder="Ej: 160"></div>
       <div class="field" style="flex:1;"><label>Peso actual (kg)</label><input type="number" id="ob-weight" step="0.1" min="20" max="300" placeholder="Ej: 65.5"></div>
     </div>
+    <div class="field mb-0">
+      <label>¿Qué tan activa eres?</label>
+      <select id="ob-activity">
+        <option value="sedentario">Sedentaria (poco o nada de ejercicio)</option>
+        <option value="ligero">Ligera (ejercicio suave 1-3 días/semana)</option>
+        <option value="moderado" selected>Moderada (ejercicio 3-5 días/semana)</option>
+        <option value="activo">Activa (ejercicio intenso 6-7 días/semana)</option>
+        <option value="muy_activo">Muy activa (2 veces al día o trabajo físico exigente)</option>
+      </select>
+    </div>
     <div class="skip-link"><a href="#" data-skip-to="3">Prefiero no decirlo, continuar →</a></div>
   </div>
 
@@ -132,7 +142,7 @@ $csrf = csrf_token();
 <script>
 let step = 1;
 const TOTAL_STEPS = 4;
-const data = { name: '', goal: 'balance', sex: null, age: '', height_cm: '', starting_weight: '', people: 1, meals_per_day: 3, allergies: '', dislikes: '', favorites: '' };
+const data = { name: '', goal: 'balance', sex: null, age: '', height_cm: '', starting_weight: '', activity_level: 'moderado', people: 1, meals_per_day: 3, allergies: '', dislikes: '', favorites: '' };
 
 document.querySelectorAll('.option-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -168,6 +178,7 @@ async function finishOnboarding() {
   data.age = document.getElementById('ob-age').value;
   data.height_cm = document.getElementById('ob-height').value;
   data.starting_weight = document.getElementById('ob-weight').value;
+  data.activity_level = document.getElementById('ob-activity').value;
   data.people = document.getElementById('ob-people').value;
   data.meals_per_day = document.getElementById('ob-meals').value;
   data.allergies = document.getElementById('ob-allergies').value;
