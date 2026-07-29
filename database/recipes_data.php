@@ -1121,4 +1121,162 @@ return [
  ['Ralla los calabacines y exprime el exceso de agua con un paño.', 'Sofríe la cebolla y el ajo picados en un poco de aceite de oliva hasta ablandar.', 'Agrega el calabacín rallado y cocina 3-4 minutos hasta que se ablande; deja enfriar.', 'Mezcla el calabacín cocido con el yogur griego y el orégano.', 'Sazona con sal y pimienta al gusto.', 'Sirve frío como aderezo o dip para vegetales.'],
  ['vegetariano', 'sin gluten'], 55, 3, 20, 6, 2, 4, 1, 'https://images.pexels.com/photos/35290605/pexels-photo-35290605.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
+// ==================== RECETARIO NUEVO (lote 1: recetas 1-31) — DESAYUNOS ====================
+['Crepes de garbanzo', 'desayuno',
+ ['harina de garbanzo|130 g', 'agua|1/4 taza', 'limón|1 cda', 'sal|1/2 cdta'],
+ ['En un bol, mezcla la harina de garbanzo, el agua, el zumo de limón y la sal con unas varillas o un tenedor hasta que no queden grumos.', 'Deja reposar la mezcla en la nevera 30 minutos para que la harina se hidrate bien.', 'Calienta una sartén antiadherente a fuego medio y vierte 1/4 de taza de la mezcla, girando la sartén para cubrir toda la base.', 'Cocina 2-3 minutos hasta que la superficie se vea seca y los bordes se despeguen, luego voltea con cuidado.', 'Dora el otro lado 1-2 minutos más y retira. Repite con el resto de la masa.', 'Sirve caliente con tus ingredientes preferidos, como tomate, aceitunas negras y orégano.'],
+ ['vegetariano', 'sin gluten'], 230, 13, 40, 34, 4, 4, 6],
+
+['Huevo horneado en aguacate', 'desayuno',
+ ['aguacate|1 unidad grande', 'huevos|2 unidades', 'sal|1 pizca', 'pimienta|1 pizca'],
+ ['Precalienta el horno a 180°C.', 'Corta el aguacate por la mitad a lo largo y retira la semilla, ahondando un poco el centro con una cucharita si es necesario.', 'Coloca las mitades en un molde apto para horno, apoyándolas sobre papel aluminio arrugado para que no se volteen.', 'Casca un huevo dentro de cada mitad, procurando que la yema quede entera.', 'Sazona con sal y pimienta al gusto y hornea 15 minutos, o hasta que la clara esté cuajada.', 'Sirve de inmediato.'],
+ ['alto en proteína', 'vegetariano', 'sin gluten'], 280, 12, 25, 9, 24, 1, 7],
+
+['Shakshuka', 'desayuno',
+ ['huevos|2 unidades', 'tomate|500 g', 'ajo|1 diente', 'cebolla|1/2 unidad', 'pimiento rojo|1/2 unidad', 'tomillo|1 pizca', 'laurel|1 hoja', 'comino|1 pizca', 'pimentón dulce|1 pizca', 'aceite de oliva|2 cdas', 'sal|1 pizca', 'cilantro|1 rama'],
+ ['Pica finamente el ajo, la cebolla y el pimiento rojo en juliana. Pela los tomates y córtalos en cubos.', 'Calienta el aceite de oliva en una sartén a fuego medio-alto y sofríe el ajo y la cebolla 5 minutos hasta que la cebolla esté transparente.', 'Agrega el pimiento rojo y cocina 6-7 minutos más hasta que esté blando.', 'Incorpora el tomillo, el laurel, el comino y el pimentón dulce, mezclando bien.', 'Añade el tomate picado y una pizca de sal, y cocina a fuego medio-bajo 30 minutos hasta formar una salsa espesa. Retira el laurel y rectifica la sal.', 'Haz huecos en la salsa con una cuchara y casca un huevo en cada uno. Tapa y cocina 5-8 minutos hasta que las claras cuajen y las yemas queden a tu gusto.', 'Decora con cilantro picado y sirve caliente, idealmente acompañado de pan.'],
+ ['vegetariano', 'sin gluten'], 260, 14, 45, 18, 15, 10, 5],
+
+['Smoothie de espinacas y aguacate', 'desayuno',
+ ['aguacate|1 unidad', 'espinacas|85 g', 'limón|1 unidad', 'jengibre|28 g', 'semillas de chía|1 cda', 'leche de almendras|1 taza'],
+ ['Pela el aguacate y retira la semilla. Pela el jengibre y exprime el jugo del limón.', 'Coloca el aguacate, las espinacas, el jugo de limón, el jengibre, las semillas de chía y la leche de almendras en la licuadora.', 'Licúa hasta obtener una consistencia suave y homogénea.', 'Si queda muy espeso, agrega más leche vegetal o agua hasta la consistencia deseada.', 'Sirve de inmediato.'],
+ ['vegetariano', 'sin gluten', 'rápido'], 190, 4, 10, 14, 14, 3, 8],
+
+['Muesli de avena con frutas', 'desayuno',
+ ['avena en hojuelas|30 g', 'leche de almendras|1 taza', 'manzana|1 unidad', 'limón|1 cda', 'nueces|10 g', 'arándanos|10 g', 'miel|1 cdta'],
+ ['Cubre la avena con agua suficiente y déjala en remojo toda la noche en la nevera para que se ablande.', 'Al día siguiente, pela la manzana y córtala en dados pequeños.', 'Coloca la fruta en un bol y rocíala con el zumo de limón para evitar que se oxide.', 'Escurre la avena remojada y mézclala con las nueces, los arándanos y la leche de almendras.', 'Sirve en un bol y agrega un chorrito de miel si lo deseas.'],
+ ['vegetariano', 'rápido'], 260, 7, 15, 38, 9, 16, 6],
+
+['Revuelta de huevo, champiñón y tomate', 'desayuno',
+ ['huevos|2 unidades grandes', 'cebolla|1 unidad', 'champiñones|1/2 taza', 'tomate|1/2 taza', 'jamón|1 tajada'],
+ ['Pica finamente la cebolla, los champiñones, el tomate y el jamón.', 'En una sartén con un poco de aceite, sofríe la cebolla y los champiñones a fuego medio hasta que doren.', 'Agrega el tomate picado y el jamón, y cocina hasta que el jamón esté dorado.', 'Rompe los huevos directamente sobre la mezcla y revuelve bien con una espátula.', 'Cocina 2-3 minutos hasta que los huevos cuajen a tu gusto. Sazona con sal y pimienta.', 'Retira del fuego y sirve de inmediato.'],
+ ['alto en proteína', 'rápido'], 240, 18, 15, 8, 15, 4, 2],
+
+['Panqueques de almendras', 'desayuno',
+ ['harina de almendras|1/2 taza', 'puré de manzana|1/2 taza', 'huevos|2 unidades grandes', 'agua|1/4 taza', 'aceite de coco|1/4 cdta', 'fresas|5 unidades', 'sal|1 pizca'],
+ ['En un bol, mezcla la harina de almendras, el puré de manzana (sin azúcar), los huevos, el agua y la sal con un tenedor hasta integrar bien.', 'Calienta una sartén o plancha engrasada a fuego medio-bajo.', 'Vierte porciones de aproximadamente 1/4 de taza de la mezcla en la sartén.', 'Cuando se formen burbujas en la superficie, voltea el panqueque y cocina 2 minutos más del otro lado.', 'Repite con el resto de la mezcla, agregando más aceite de coco si es necesario para que no se peguen.', 'Sirve con fresas frescas encima o la fruta de tu preferencia.'],
+ ['alto en proteína', 'sin gluten', 'vegetariano'], 300, 14, 20, 18, 20, 9, 5],
+
+['Tortilla con albahaca y mozzarella', 'desayuno',
+ ['huevos|2 unidades', 'albahaca|5 hojas', 'tomate|2 unidades', 'queso mozarella|10 g', 'canónigos|1 puñado', 'pimienta|1 pizca', 'sal|1 pizca', 'aceite de oliva|1 cda'],
+ ['En un bol, bate los huevos con una pizca de sal.', 'Trocea las hojas de albahaca con las manos y añádelas al huevo, batiendo de nuevo para repartirlas bien.', 'Calienta una sartén antiadherente de unos 20 cm con unas gotas de aceite de oliva.', 'Vierte la mezcla y cocina la tortilla dándole forma redonda, procurando que la albahaca quede bien repartida.', 'Retira del fuego cuando esté lista y pásala a un plato.', 'Lava y corta el tomate en rodajas. Dispón una capa de tomate y queso en la mitad de la tortilla y dobla para formar una media luna.', 'Sirve con un puñado de canónigos, pimienta recién molida y un chorrito de aceite de oliva.'],
+ ['vegetariano', 'alto en proteína', 'sin gluten'], 250, 16, 15, 8, 17, 5, 2],
+
+['Muesli de avena con arándanos', 'desayuno',
+ ['avena en hojuelas|30 g', 'manzana|1/2 unidad', 'pera|1 unidad', 'limón|1 cda', 'nueces|10 g', 'leche de almendras|150 ml', 'arándanos|10 g'],
+ ['La noche anterior, cubre la avena con agua suficiente y déjala en remojo para que se ablande.', 'Al día siguiente, pela la manzana y la pera, quita el corazón y córtalas en dados. Colócalas en un bol y rocíalas con zumo de limón.', 'Escurre la avena y mézclala con las nueces, los arándanos y la leche de almendras.', 'Sirve en un bol con la fruta encima.'],
+ ['vegetariano', 'sin gluten'], 240, 6, 10, 40, 7, 20, 7],
+
+['Avena con yogur y frutos rojos', 'desayuno',
+ ['avena en hojuelas|20 g', 'yogur griego|1 taza', 'frutos rojos|1/2 taza', 'nueces|1 puñado', 'semillas de chía|1 cda'],
+ ['Mezcla el yogur natural con la avena en un bol.', 'Si queda muy compacto, añade un chorrito de leche o bebida vegetal hasta la consistencia deseada.', 'Puedes prepararlo la noche anterior para que repose, o dejarlo reposar un par de horas antes de comerlo.', 'Justo antes de servir, agrega los frutos rojos, las nueces y las semillas de chía.'],
+ ['vegetariano', 'rápido', 'alto en proteína'], 260, 12, 10, 32, 9, 14, 7],
+
+['Batido de fresa y tostada mediterránea', 'desayuno',
+ ['leche de almendras|1 taza', 'fresas|1 puñado', 'avena en hojuelas|1 cda', 'nueces|1 puñado', 'pan integral|1 rebanada', 'jamón|1 tajada', 'tomate cherry|4 unidades', 'albahaca|1 puñado', 'aceite de oliva|1 cda'],
+ ['Para el batido: coloca la leche de almendras, las fresas, la avena y las nueces en la licuadora y licúa hasta obtener una mezcla suave.', 'Para el aceite aromatizado, machaca o licúa la albahaca con el aceite de oliva hasta integrar bien.', 'Tuesta la rebanada de pan por un solo lado, en la tostadora o bajo el grill del horno.', 'Riega la tostada con el aceite aromatizado de albahaca.', 'Coloca encima la tajada de jamón y los tomates cherry cortados por la mitad.', 'Sirve la tostada junto con el batido de fresa.'],
+ ['alto en proteína', 'rápido'], 320, 15, 15, 35, 14, 14, 5],
+
+['Huevos revueltos cremosos', 'desayuno',
+ ['huevos|2 unidades grandes', 'mantequilla|1 cda', 'sal|1 pizca', 'pimienta|1 pizca', 'cebolleta|1 tallo', 'aceite de oliva|1 cdta'],
+ ['Bate los huevos suavemente en un tazón pequeño.', 'Calienta una sartén antiadherente a fuego medio-alto con una cucharadita de aceite de oliva.', 'Vierte los huevos batidos y baja el fuego a medio.', 'Revuelve constantemente y con suavidad hasta que se formen cuajos blandos y cremosos; no cocines de más.', 'Sazona con sal y pimienta justo al final, cuando ya estén casi listos.', 'Sirve de inmediato con cebolleta picada por encima, si lo deseas.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 220, 14, 10, 2, 18, 1, 0],
+
+['Crepes sin huevo', 'desayuno',
+ ['bebida vegetal de avena|2 tazas', 'harina de avena|1 taza', 'stevia|1 cda', 'mantequilla|1 cda'],
+ ['En un recipiente, mezcla la harina de avena y la stevia.', 'Vierte la bebida vegetal y bate todo hasta integrar bien.', 'Derrite media cucharada de mantequilla clarificada y agrégala a la masa, mezclando bien. Deja reposar unos minutos.', 'Calienta una sartén untada con un poco de mantequilla a fuego medio-bajo.', 'Vierte un poco de masa con un cucharón y cocina hasta que la superficie se torne sólida y aparezcan burbujitas.', 'Voltea y deja dorar unos segundos más. Retira y repite hasta terminar la masa.', 'Decora con frutas bajas en índice glucémico y sirve, acompañado de una infusión si lo deseas.'],
+ ['vegetariano'], 220, 6, 25, 34, 6, 6, 4],
+
+// ==================== RECETARIO NUEVO (lote 1) — ALMUERZOS ====================
+['Tortitas de calabacín', 'almuerzo',
+ ['calabacín|1 unidad', 'huevos|1 unidad', 'harina de avena|6 cdas', 'levadura química|1 cdta', 'mantequilla|10 g', 'sal|1 pizca', 'pimienta|1 pizca', 'jamón serrano|1 tajada'],
+ ['Ralla el calabacín finamente y colócalo sobre un colador o papel de cocina para que suelte el exceso de agua.', 'En un bol, mezcla el huevo, la harina de avena, la levadura química y la sal.', 'Agrega el calabacín escurrido y mezcla bien. Si queda muy líquido, añade un poco más de harina.', 'Calienta un poco de aceite de oliva en una sartén y forma pequeñas tortitas con la mezcla.', 'Cocina a fuego medio 3-4 minutos por cada lado, sin subir demasiado el fuego, hasta que doren bien.', 'Sirve las tortitas coronadas con láminas de jamón serrano y un chorrito de aceite de oliva. Puedes acompañar con aguacate, tomate o huevo poché.'],
+ ['alto en proteína', 'económico'], 210, 12, 25, 20, 9, 2, 3],
+
+['Frittata de verduras', 'almuerzo',
+ ['aceite de oliva|1 cda', 'calabacín|1/2 unidad', 'pimiento rojo|1/2 unidad', 'cebolla|1/2 unidad', 'tomillo|1 cda', 'ajo|1 diente', 'tomate|1 unidad mediana', 'huevos|2 unidades', 'sal|1 pizca', 'pimienta|1 pizca'],
+ ['Calienta el aceite de oliva en una sartén apta para horno a fuego medio.', 'Agrega el calabacín, el pimiento, la cebolla, el tomillo y el ajo picado. Sazona con sal y pimienta.', 'Cubre y cocina 5-7 minutos, revolviendo ocasionalmente, hasta que las verduras estén tiernas.', 'Agrega el tomate picado y deja cocinar destapado hasta que el líquido se evapore.', 'Bate los huevos hasta que estén espumosos y viértelos sobre las verduras, revolviendo suavemente.', 'Reduce el fuego y cocina 15 minutos más hasta que cuaje. Sirve en un plato.'],
+ ['vegetariano', 'sin gluten'], 200, 12, 30, 10, 13, 5, 3],
+
+['Sandwich de pollo y aguacate', 'almuerzo',
+ ['pechuga de pollo|100 g', 'pan integral|2 tajadas', 'aguacate|1/2 unidad pequeño', 'jalapeño encurtido|1 rodaja', 'manzana verde|1/2 unidad', 'yogur griego|2 cdas', 'mostaza|1 cdta', 'limón|1 cda', 'cilantro|2 hojas', 'sal|1 pizca', 'aceite de oliva|1 cdta'],
+ ['Pica el pollo cocido en trozos pequeños que se noten al masticar y colócalo en un bol.', 'Pica el aguacate o macháncalo con un tenedor si está muy maduro, y añádelo al bol junto con el jalapeño picado fino.', 'Ralla o corta en dados finos la manzana verde y agrégala junto con el yogur griego, la mostaza, el zumo de limón y el cilantro picado.', 'Sazona con sal y un chorrito de aceite de oliva, y mezcla bien. Deja reposar tapado unos minutos.', 'Tuesta ligeramente las rebanadas de pan integral.', 'Rellena el sándwich con la mezcla de pollo y aguacate, y sirve.'],
+ ['alto en proteína', 'rápido'], 380, 30, 20, 35, 13, 10, 8],
+
+['Tortitas de atún y espinaca', 'almuerzo',
+ ['aceite de oliva|2 cdtas', 'ajo|2 dientes', 'espinacas|250 g', 'puré de tomate|1 cda', 'atún en lata|120 g', 'requesón|20 g', 'huevos|2 unidades grandes', 'harina de avena|4 cdas', 'cebolla morada|1 unidad pequeña', 'tomate cherry|5 unidades', 'albahaca|10 hojas', 'aceituna|10 g', 'vinagre balsámico|2 cdtas'],
+ ['Calienta 1 cucharadita de aceite en una sartén antiadherente y sofríe el ajo picado brevemente.', 'Agrega las espinacas hasta que se marchiten, luego mezcla el puré de tomate, el atún y el requesón. Retira del fuego y reserva.', 'Bate los huevos con la harina de avena y 2 cucharadas de agua.', 'Calienta el aceite restante en una sartén mediana, vierte la mitad de la masa y mueve la sartén para cubrir la base.', 'Cocina brevemente hasta que cuaje, voltea y cocina el otro lado 1 minuto más. Repite con el resto de la masa.', 'Rellena cada tortita con la mezcla de atún y espinaca, enrolla y coloca en un plato.', 'Prepara la ensalada mezclando la cebolla morada, los tomates cherry, la albahaca y las aceitunas, aliñada con vinagre balsámico. Sirve junto a las tortitas.'],
+ ['alto en proteína', 'rápido'], 320, 28, 25, 20, 14, 5, 5],
+
+['Salmorejo con tostada mediterránea', 'almuerzo',
+ ['tomate|2 unidades', 'aceite de oliva|20 ml', 'ajo|1/2 diente', 'sal|1 pizca', 'vinagre|1 pizca', 'pan|1 rebanada', 'jamón serrano|1 tajada'],
+ ['Lava los tomates y córtalos en trozos.', 'Coloca los tomates, el aceite de oliva, el ajo, la sal y el vinagre en la licuadora.', 'Bate hasta 2 minutos, empezando en velocidad baja y subiendo hasta que quede una crema homogénea.', 'Para la tostada, tritura un tomate adicional y úntalo sobre el pan tostado.', 'Agrega una pizca de sal y una tajada de jamón serrano con un chorrito de aceite de oliva encima.', 'Sirve el salmorejo bien frío junto con la tostada.'],
+ ['económico', 'rápido'], 230, 6, 15, 20, 15, 10, 3],
+
+['Ensalada Waldorf', 'almuerzo',
+ ['lechuga|1 cogollo', 'apio|1 rama', 'manzana verde|1 unidad', 'nueces|1 puñado', 'huevos|1 unidad', 'vinagre|10 ml', 'aceite de oliva|1 cda', 'sal|1 pizca'],
+ ['Tuesta ligeramente las nueces en una sartén hasta que doren. Deja enfriar y trocéalas.', 'Para la mayonesa casera, coloca la yema de huevo en un bol, sazona con sal y bate incorporando el aceite de oliva en un chorro fino hasta lograr la emulsión. Añade el vinagre y reserva en frío.', 'Pela y corta la manzana en dados o bastones, pica el apio en trozos pequeños y lava y centrifuga la lechuga.', 'En una ensaladera, mezcla el apio, la manzana y la mitad de las nueces con la mayonesa al gusto.', 'En la fuente de servicio, coloca una cama de lechuga troceada y encima la mezcla de apio, manzana y mayonesa.', 'Decora con el resto de las nueces y sirve de inmediato.'],
+ ['vegetariano', 'sin gluten'], 240, 5, 20, 18, 17, 13, 4],
+
+['Ensalada Shopska búlgara', 'almuerzo',
+ ['tomate|1 unidad', 'pepino|1 unidad pequeño', 'cebolla|1 unidad', 'queso feta|20 g', 'pimiento verde|1 unidad', 'aceite de oliva|1 cda', 'vinagre|1 cdta', 'pimienta|1 pizca', 'sal|1 pizca', 'perejil|1 rama'],
+ ['Lava bien las hortalizas. Corta el tomate en cubos pequeños y colócalo en una ensaladera.', 'Pela el pepino y córtalo en porciones similares. Agrégalo y mezcla.', 'Trocea el pimiento verde, desechando las semillas, y pica la cebolla finamente. Incorpora ambos a la ensaladera.', 'Desmenuza el queso feta con un tenedor por encima.', 'Pica el perejil y añádelo a la ensalada. Salpimienta al gusto y aliña con aceite de oliva y vinagre.', 'Mezcla bien y deja enfriar en la nevera antes de servir.'],
+ ['vegetariano', 'sin gluten', 'rápido'], 160, 6, 15, 12, 10, 7, 3],
+
+// ==================== RECETARIO NUEVO (lote 1) — SNACKS ====================
+['Batido Popeye', 'snack',
+ ['leche de almendras|1 taza', 'bayas mixtas|1/2 taza', 'espinaca|1/2 taza', 'frutos secos|1 puñado', 'semillas de chía|1 cda'],
+ ['Coloca la leche de almendras, las bayas mixtas, las hojas de espinaca, los frutos secos y las semillas de chía en la licuadora.', 'Licúa a velocidad alta hasta obtener una mezcla suave y homogénea.', 'Sirve de inmediato en un vaso frío.'],
+ ['vegetariano', 'rápido', 'sin gluten'], 220, 6, 5, 24, 12, 14, 7],
+
+['Batido SOP', 'snack',
+ ['bebida vegetal de coco|1 taza', 'almendras|1 puñado', 'yogur griego|1 unidad', 'avena en hojuelas|1/2 taza', 'fresas|1/4 taza'],
+ ['Coloca la bebida vegetal, las almendras, el yogur griego, la avena y las fresas en la licuadora.', 'Licúa hasta obtener una mezcla suave y cremosa.', 'Sirve de inmediato en un vaso frío.'],
+ ['alto en proteína', 'vegetariano'], 280, 15, 5, 30, 11, 10, 6],
+
+['Batido de kiwi', 'snack',
+ ['bebida vegetal de coco|1 taza', 'kiwi|1/2 unidad', 'cereza|1/4 taza', 'arándanos|1/4 taza', 'nueces|1 puñado', 'stevia|1 pizca'],
+ ['Pela el kiwi y coloca todos los ingredientes en la licuadora.', 'Licúa hasta obtener una mezcla suave.', 'Sirve de inmediato.'],
+ ['vegetariano', 'rápido', 'sin gluten'], 180, 4, 5, 22, 9, 14, 4],
+
+['Pudín de semillas de chía con pera', 'snack',
+ ['pera|2 unidades', 'semillas de chía|1 cda', 'bebida vegetal de avena|1 taza', 'canela|1 cdta', 'sal|1 pizca', 'coco rallado|1 puñado', 'frutos secos|1 puñado'],
+ ['Precalienta el horno a 180°C.', 'Hornea las peras (para la base y para el topping) durante 35 minutos con un poco de canela y una pizca de sal.', 'Licúa la bebida vegetal con una de las peras horneadas, la canela y las semillas de chía.', 'Deja reposar la mezcla en la nevera toda la noche para que se forme el pudín.', 'Al día siguiente, arma capas en un recipiente: pera horneada, un poco de pudín de chía, un poco de topping (coco y frutos secos), más pudín, y termina con topping.', 'Decora con frutos secos y sirve frío.'],
+ ['vegetariano', 'sin gluten'], 220, 5, 50, 34, 8, 20, 8],
+
+['Macedonia de frutas', 'snack',
+ ['avena en hojuelas|20 g', 'naranja|1 unidad', 'kiwi|1 unidad', 'frutos rojos|1 puñado', 'fresas|3 unidades', 'nueces|1 puñado', 'semillas de chía|1 cda'],
+ ['Pela y corta la naranja y el kiwi en trozos pequeños.', 'Coloca toda la fruta en una ensaladera junto con los frutos rojos y las fresas cortadas, mezclando con cuidado para no romperlas.', 'Espolvorea la avena, las semillas de chía y las nueces picadas por encima.', 'Sirve fría.'],
+ ['vegetariano', 'sin gluten', 'rápido'], 210, 6, 10, 32, 8, 20, 7],
+
+['Batido de cítricos', 'snack',
+ ['mandarina|1 unidad', 'aguacate|1/2 unidad', 'cúrcuma|1/2 cdta', 'agua de coco|250 ml', 'coco rallado|2 cdas', 'canela|1 pizca', 'jengibre|1 trozo', 'stevia|1/2 cdta'],
+ ['Pela la mandarina y el jengibre.', 'Coloca todos los ingredientes en la licuadora y tritura hasta obtener una textura homogénea.', 'Sirve con copos de coco y un poco de canela en polvo por encima.'],
+ ['vegetariano', 'rápido', 'sin gluten'], 200, 3, 5, 20, 13, 12, 6],
+
+['Muffins de avena con manzana y frutos rojos', 'snack',
+ ['avena en hojuelas|1/2 taza', 'levadura en polvo|1 sobre', 'canela|1 cdta', 'bebida vegetal de avena|470 ml', 'huevos|1 unidad', 'miel|1 cda', 'frutos rojos|1/2 taza', 'nueces|1 puñado', 'sal|1 pizca'],
+ ['Precalienta el horno a 190°C y prepara una bandeja para muffins con 12 moldes de papel o silicona.', 'En un bol grande, mezcla la avena con la levadura en polvo, la sal y la canela. Si usarás fruta o nueces, incorpóralas aquí.', 'En otro bol, bate la bebida vegetal, el huevo y la miel hasta integrar bien.', 'Mezcla los ingredientes húmedos con los secos hasta unir por completo.', 'Llena cada molde hasta 3/4 de su capacidad (la receta no lleva harina, así que puedes llenarlos más). Si quieres, decora con unos copos de avena encima.', 'Hornea 25-30 minutos, o hasta que al introducir un palillo en el centro salga limpio.', 'Deja enfriar antes de desmoldar.'],
+ ['vegetariano', 'económico'], 90, 3, 40, 14, 3, 6, 2],
+
+['Galletas de avena y calabaza', 'snack',
+ ['avena en hojuelas|180 g', 'levadura en polvo|1 1/2 cdtas', 'sal|1/2 cdta', 'canela|1 cdta', 'aceite de coco|2 cdas', 'puré de calabaza|225 g', 'huevos|1 unidad', 'vainilla|1 cdta', 'stevia|1 cda', 'miel|1 cda', 'nueces|125 g'],
+ ['Precalienta el horno a 175°C y cubre una bandeja con papel pergamino.', 'En la licuadora, pulveriza una taza de la avena hasta que quede como harina.', 'En un tazón grande, combina la harina de avena obtenida, el resto de la avena, la levadura, la sal y la canela.', 'En otro recipiente, mezcla el aceite de coco, el puré de calabaza, el huevo, la vainilla, la stevia y la miel hasta que quede suave.', 'Une los ingredientes húmedos con los secos hasta lograr una masa espesa. Incorpora las nueces picadas.', 'Forma bolitas con una cuchara, colócalas en la bandeja y aplánalas ligeramente.', 'Hornea 10 minutos hasta que doren. Retira y deja enfriar 5 minutos antes de servir.'],
+ ['vegetariano', 'económico'], 130, 3, 30, 12, 8, 5, 2],
+
+['Muffins de huevo y verduras', 'snack',
+ ['huevos|2 unidades', 'pimiento rojo|1/2 unidad', 'cebolla|1/2 unidad', 'aceite de oliva|1 cdta', 'sal|1 pizca', 'pimienta|1 pizca'],
+ ['Precalienta el horno a 180°C y engrasa los moldes para muffin con un poco de aceite de oliva.', 'Corta el pimiento y la cebolla en cubos pequeños.', 'Bate los huevos y mezcla con las verduras picadas. Salpimienta al gusto.', 'Llena cada molde hasta 3/4 de su capacidad con la mezcla.', 'Hornea 15-18 minutos, o hasta que estén cocidos y firmes al tacto.', 'Deja enfriar unos minutos antes de desmoldar y sirve.'],
+ ['vegetariano', 'alto en proteína', 'sin gluten'], 70, 5, 25, 3, 5, 1, 1],
+
+['Batido de coco y fresa', 'snack',
+ ['fresas|5 unidades', 'leche de coco|1 taza', 'hielo|1 taza', 'frutos secos|1 puñado', 'stevia|1 cda'],
+ ['Lava las fresas y quita el pedúnculo.', 'Coloca todos los ingredientes en la licuadora y tritura hasta obtener una mezcla suave.', 'Sirve de inmediato en un vaso frío.'],
+ ['vegetariano', 'rápido', 'sin gluten'], 210, 3, 5, 16, 15, 10, 3],
+
+['Batido de coco', 'snack',
+ ['coco|50 g', 'plátano|1 unidad', 'leche de avena|1 vaso', 'frutos secos|1 puñado', 'stevia|1 pizca'],
+ ['Coloca el coco, el plátano, la leche de avena y los frutos secos en la licuadora.', 'Licúa hasta obtener una mezcla suave y cremosa.', 'Endulza con stevia si lo deseas y sirve de inmediato.'],
+ ['vegetariano', 'rápido', 'sin gluten'], 260, 4, 5, 28, 15, 14, 4],
+
 ];
