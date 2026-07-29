@@ -32,7 +32,8 @@ define('DB_SQLITE_PATH', __DIR__ . '/../database/menuvital.db');
 // Crea tu cuenta gratis en https://console.groq.com y genera una API key.
 // Si se deja vacío, la app funciona igual con el motor de recetas (sin chat IA).
 define('GROQ_API_KEY', '');
-define('GROQ_MODEL', 'llama-3.3-70b-versatile');
+// Groq deprecó llama-3.3-70b-versatile (decomisionado el 16 ago 2026); este es su reemplazo.
+define('GROQ_MODEL', 'openai/gpt-oss-120b');
 
 // ---------- Fotos reales de recetas (Pexels — gratis) ----------
 // Crea tu cuenta gratis en https://www.pexels.com/api y genera una API key.
