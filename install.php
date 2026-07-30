@@ -269,6 +269,23 @@ if (!column_exists($pdo, $isMysql, 'pantry_items', 'quantity')) {
     $log[] = 'Migración: columna quantity agregada a pantry_items';
 }
 
+// ---------- Reinicio del recetario oficial (solo si se pide explícitamente) ----------
+// ?reset_recipes=1 además de la key: borra TODAS las recetas oficiales (user_id IS NULL)
+// y lo que dependa de ellas, para repoblar limpio desde database/recipes_data.php.
+// Las recetas propias de cada usuaria (user_id no nulo) NUNCA se tocan.
+if (($_GET['reset_recipes'] ?? '') === '1') {
+    $officialIds = $pdo->query('SELECT id FROM recipes WHERE user_id IS NULL')->fetchAll(PDO::FETCH_COLUMN);
+    if ($officialIds) {
+        $placeholders = implode(',', array_fill(0, count($officialIds), '?'));
+        $pdo->prepare("DELETE FROM menu_entries WHERE recipe_id IN ($placeholders)")->execute($officialIds);
+        $pdo->prepare("DELETE FROM favorite_recipes WHERE recipe_id IN ($placeholders)")->execute($officialIds);
+        $pdo->prepare('DELETE FROM recipes WHERE user_id IS NULL')->execute();
+        $log[] = 'Reinicio: ' . count($officialIds) . ' recetas oficiales borradas (y sus referencias en menú/favoritos). Las recetas propias de cada usuaria no se tocaron.';
+    } else {
+        $log[] = 'Reinicio: no había recetas oficiales que borrar.';
+    }
+}
+
 // ---------- Cargar recetas (solo si la tabla está vacía) ----------
 $count = (int)$pdo->query('SELECT COUNT(*) AS c FROM recipes')->fetch()['c'];
 if ($count === 0) {
