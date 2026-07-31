@@ -24,6 +24,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
   <button type="button" class="chip tag" data-filter="almuerzo">Almuerzo</button>
   <button type="button" class="chip tag" data-filter="cena">Cena</button>
   <button type="button" class="chip tag" data-filter="snack">Snack</button>
+  <button type="button" class="chip tag" data-filter="batidos">🥤 Batidos</button>
   <button type="button" class="chip tag" data-filter="rapidas">⏱ Rápidas</button>
   <button type="button" class="chip tag" data-filter="favoritas">❤ Favoritas</button>
   <button type="button" class="chip tag" data-filter="mias">👩‍🍳 Mías</button>
@@ -174,6 +175,7 @@ function escapeHtml(s) {
 
 function matchesFilter(r) {
   if (currentFilter === 'todas') return true;
+  if (currentFilter === 'batidos') return /batido|smoothie|licuado|jugo/i.test(r.name);
   if (currentFilter === 'rapidas') return r.time_min <= 25;
   if (currentFilter === 'favoritas') return r.is_favorite;
   if (currentFilter === 'mias') return r.is_own;
