@@ -318,6 +318,150 @@ const MV = (() => {
     return { get, set, current };
   })();
 
+  // ---------- Zoom de fotos: toca cualquier foto de receta para verla en grande ----------
+  // Soporta pellizcar para acercar (pinch), doble toque, arrastrar cuando está
+  // ampliada, y rueda del mouse en computador. Un solo overlay compartido por
+  // toda la app, creado la primera vez que se usa.
+  const imageZoom = (() => {
+    let overlay = null, imgEl = null, scale = 1, panX = 0, panY = 0;
+    const pointers = new Map();
+    let startDist = 0, startScale = 1, startMid = { x: 0, y: 0 }, startPan = { x: 0, y: 0 };
+    let dragging = false, dragStart = { x: 0, y: 0 };
+
+    function dist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+    function mid(a, b) { return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }; }
+
+    function applyTransform() {
+      imgEl.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+    }
+
+    function clampPan() {
+      const maxX = (imgEl.clientWidth * (scale - 1)) / 2 + 60;
+      const maxY = (imgEl.clientHeight * (scale - 1)) / 2 + 60;
+      panX = Math.max(-maxX, Math.min(maxX, panX));
+      panY = Math.max(-maxY, Math.min(maxY, panY));
+    }
+
+    function resetZoom(animate) {
+      scale = 1; panX = 0; panY = 0;
+      imgEl.style.transition = animate ? 'transform 0.2s ease' : 'none';
+      applyTransform();
+    }
+
+    function ensureOverlay() {
+      if (overlay) return;
+      overlay = document.createElement('div');
+      overlay.id = 'mv-zoom-overlay';
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:95;display:none;align-items:center;justify-content:center;overflow:hidden;touch-action:none;';
+      overlay.innerHTML = `
+        <button type="button" id="mv-zoom-close" aria-label="Cerrar" style="position:absolute;top:calc(14px + env(safe-area-inset-top));right:14px;background:rgba(255,255,255,0.15);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:20px;z-index:2;">×</button>
+        <p style="position:absolute;bottom:calc(16px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:rgba(255,255,255,0.7);font-size:12px;margin:0;pointer-events:none;">Pellizca o doble toque para acercar</p>
+        <img id="mv-zoom-img" src="" alt="" style="max-width:100%;max-height:100%;user-select:none;-webkit-user-drag:none;will-change:transform;">`;
+      document.body.appendChild(overlay);
+      imgEl = overlay.querySelector('#mv-zoom-img');
+
+      overlay.querySelector('#mv-zoom-close').addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      overlay.addEventListener('pointerdown', onPointerDown);
+      overlay.addEventListener('pointermove', onPointerMove);
+      overlay.addEventListener('pointerup', onPointerUp);
+      overlay.addEventListener('pointercancel', onPointerUp);
+      overlay.addEventListener('wheel', onWheel, { passive: false });
+      imgEl.addEventListener('dblclick', onDblClick);
+    }
+
+    function open(src, alt) {
+      if (!src) return;
+      ensureOverlay();
+      imgEl.src = src;
+      imgEl.alt = alt || '';
+      resetZoom(false);
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      if (!overlay || overlay.style.display === 'none') return;
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+      pointers.clear();
+      dragging = false;
+    }
+
+    function onPointerDown(e) {
+      overlay.setPointerCapture && overlay.setPointerCapture(e.pointerId);
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      imgEl.style.transition = 'none';
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        startDist = dist(a, b);
+        startScale = scale;
+        startMid = mid(a, b);
+        startPan = { x: panX, y: panY };
+      } else if (pointers.size === 1 && scale > 1) {
+        dragging = true;
+        dragStart = { x: e.clientX - panX, y: e.clientY - panY };
+      }
+    }
+
+    function onPointerMove(e) {
+      if (!pointers.has(e.pointerId)) return;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const newDist = dist(a, b) || 1;
+        scale = Math.max(1, Math.min(4, startScale * (newDist / (startDist || 1))));
+        const m = mid(a, b);
+        panX = startPan.x + (m.x - startMid.x);
+        panY = startPan.y + (m.y - startMid.y);
+        clampPan();
+        applyTransform();
+      } else if (dragging && pointers.size === 1) {
+        panX = e.clientX - dragStart.x;
+        panY = e.clientY - dragStart.y;
+        clampPan();
+        applyTransform();
+      }
+    }
+
+    function onPointerUp(e) {
+      pointers.delete(e.pointerId);
+      dragging = false;
+      imgEl.style.transition = 'transform 0.15s ease';
+      if (scale <= 1.02) resetZoom(true);
+    }
+
+    function onWheel(e) {
+      e.preventDefault();
+      scale = Math.max(1, Math.min(4, scale - e.deltaY * 0.0015));
+      if (scale <= 1.02) { resetZoom(false); return; }
+      clampPan();
+      imgEl.style.transition = 'none';
+      applyTransform();
+    }
+
+    function onDblClick() {
+      imgEl.style.transition = 'transform 0.2s ease';
+      if (scale > 1) {
+        scale = 1; panX = 0; panY = 0;
+      } else {
+        scale = 2.2;
+      }
+      applyTransform();
+    }
+
+    return { open, close };
+  })();
+
+  /** Vuelve una <img> existente "zoomeable": tocarla la abre en grande. Se le
+   * agrega un cursor de lupa como pista visual; no cambia el layout. */
+  function makeZoomable(imgEl) {
+    if (!imgEl || imgEl.dataset.mvZoomBound) return;
+    imgEl.dataset.mvZoomBound = '1';
+    imgEl.style.cursor = 'zoom-in';
+    imgEl.addEventListener('click', () => imageZoom.open(imgEl.currentSrc || imgEl.src, imgEl.alt));
+  }
+
   /** Pregunta cuántas porciones se cocinaron, para descontar la despensa exacta. */
   function askPortions(defaultN = 1) {
     return new Promise((resolve) => {
@@ -355,5 +499,5 @@ const MV = (() => {
     });
   }
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions };
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions, imageZoom, makeZoomable };
 })();

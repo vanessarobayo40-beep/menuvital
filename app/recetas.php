@@ -25,6 +25,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
   <button type="button" class="chip tag" data-filter="cena">Cena</button>
   <button type="button" class="chip tag" data-filter="snack">Snack</button>
   <button type="button" class="chip tag" data-filter="batidos">🥤 Batidos</button>
+  <button type="button" class="chip tag" data-filter="airfryer">🍳 Air Fryer</button>
   <button type="button" class="chip tag" data-filter="rapidas">⏱ Rápidas</button>
   <button type="button" class="chip tag" data-filter="favoritas">❤ Favoritas</button>
   <button type="button" class="chip tag" data-filter="mias">👩‍🍳 Mías</button>
@@ -173,12 +174,18 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+const BATIDO_RE = /batido|smoothie|licuado|jugo/i;
+
 function matchesFilter(r) {
   if (currentFilter === 'todas') return true;
-  if (currentFilter === 'batidos') return /batido|smoothie|licuado|jugo/i.test(r.name);
+  if (currentFilter === 'batidos') return BATIDO_RE.test(r.name);
+  if (currentFilter === 'airfryer') return !!r.is_airfryer;
   if (currentFilter === 'rapidas') return r.time_min <= 25;
   if (currentFilter === 'favoritas') return r.is_favorite;
   if (currentFilter === 'mias') return r.is_own;
+  // Desayuno/Almuerzo/Cena/Snack: exclusivo, no muestra los batidos (esos
+  // solo aparecen bajo el filtro "Batidos", aunque su meal_type sea ese).
+  if (MEAL_LABELS[currentFilter]) return r.meal_type === currentFilter && !BATIDO_RE.test(r.name);
   return r.meal_type === currentFilter;
 }
 
@@ -240,7 +247,10 @@ async function openDetail(id) {
   try {
     const res = await MV.api('/api/recipes.php?action=detail&id=' + id);
     currentDetail = res.recipe;
-    document.getElementById('detail-image').src = currentDetail.image_url;
+    const detailImg = document.getElementById('detail-image');
+    detailImg.src = currentDetail.image_url;
+    detailImg.alt = currentDetail.name;
+    MV.makeZoomable(detailImg);
     document.getElementById('detail-tag').textContent = MEAL_LABELS[currentDetail.meal_type] || currentDetail.meal_type;
     document.getElementById('detail-name').textContent = currentDetail.name;
     document.getElementById('detail-meta').textContent = `⏱ ${currentDetail.time_min} min de preparación`;

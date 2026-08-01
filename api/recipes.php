@@ -33,11 +33,13 @@ function visible_recipe_or_404(int $id, int $userId): array {
 $action = $_GET['action'] ?? 'list';
 
 if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->prepare('SELECT id, name, meal_type, tags, kcal, protein, time_min, image_url, user_id
+    $stmt = db()->prepare('SELECT id, name, meal_type, tags, kcal, protein, time_min, image_url, user_id,
+                                   ingredients, steps
                             FROM recipes WHERE user_id IS NULL OR user_id = ? ORDER BY name ASC');
     $stmt->execute([$userId]);
     $favIds = load_favorite_recipe_ids($userId);
     $recipes = array_map(function ($r) use ($favIds) {
+        $searchText = $r['name'] . ' ' . $r['ingredients'] . ' ' . $r['steps'];
         return [
             'id' => (int)$r['id'],
             'name' => $r['name'],
@@ -49,6 +51,9 @@ if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             'image_url' => recipe_image_url(['id' => $r['id'], 'name' => $r['name'], 'image_url' => $r['image_url']]),
             'is_favorite' => in_array((int)$r['id'], $favIds, true),
             'is_own' => $r['user_id'] !== null,
+            'is_airfryer' => stripos($searchText, 'air fryer') !== false
+                || stripos($searchText, 'airfryer') !== false
+                || stripos($searchText, 'freidora de aire') !== false,
         ];
     }, $stmt->fetchAll());
     json_response(['ok' => true, 'recipes' => $recipes]);

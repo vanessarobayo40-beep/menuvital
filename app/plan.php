@@ -89,7 +89,7 @@ function renderMealRow(type, meal, dateStr, idx) {
   const done = !!meal.done;
   return `
     <div style="display:flex;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px dashed var(--border);">
-      <img src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.name)}" loading="lazy"
+      <img class="meal-thumb-week" src="${escapeHtml(meal.image_url)}" alt="${escapeHtml(meal.name)}" loading="lazy"
            style="width:56px;height:56px;border-radius:10px;object-fit:cover;flex-shrink:0;background:var(--grad-soft);"
            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2256%22 height=%2256%22%3E%3Crect width=%2256%22 height=%2256%22 rx=%2210%22 fill=%22%23EFF6F3%22/%3E%3C/svg%3E';">
       <div style="flex:1;min-width:0;">
@@ -208,6 +208,7 @@ function renderWeek(keepOpen) {
   container.querySelectorAll('.btn-suggest-day').forEach(btn => {
     btn.addEventListener('click', () => suggestDay(btn));
   });
+  container.querySelectorAll('.meal-thumb-week').forEach(img => MV.makeZoomable(img));
 }
 
 document.addEventListener('mv-meal-cooked', (e) => {

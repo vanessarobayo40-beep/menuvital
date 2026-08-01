@@ -211,6 +211,7 @@ function renderMeals() {
   container.querySelectorAll('.btn-suggest-slot').forEach(btn => {
     btn.addEventListener('click', () => suggestSlot(btn));
   });
+  container.querySelectorAll('.meal-photo-wrap img').forEach(img => MV.makeZoomable(img));
 
   if (consejoCoach) {
     document.getElementById('coach-tip-text').textContent = consejoCoach;
