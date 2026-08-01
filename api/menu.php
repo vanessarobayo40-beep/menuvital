@@ -127,7 +127,7 @@ if ($action === 'swap' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!csrf_verify()) {
         json_error('Token inválido. Recarga la página.', 403);
     }
-    if (!rate_limit_check('plan_regen:' . $userId, 60, 86400)) {
+    if (!rate_limit_check('plan_regen:' . $userId, 150, 86400)) {
         json_error('Has cambiado muchos platos hoy. Intenta más tarde.', 429);
     }
     $in = json_input();
@@ -174,7 +174,7 @@ if ($action === 'suggest' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!csrf_verify()) {
         json_error('Token inválido. Recarga la página.', 403);
     }
-    if (!rate_limit_check('plan_regen:' . $userId, 60, 86400)) {
+    if (!rate_limit_check('plan_regen:' . $userId, 150, 86400)) {
         json_error('Has pedido muchas sugerencias hoy. Intenta más tarde.', 429);
     }
     $in = json_input();
