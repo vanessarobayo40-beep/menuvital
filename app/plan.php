@@ -184,6 +184,7 @@ async function removeWeekMeal(btn, entryId) {
     renderWeek(true);
     MV.toast('Listo, quitamos ese plato.');
   } catch (err) {
+    btn.disabled = false;
     MV.toast(err.message, true);
   }
 }
