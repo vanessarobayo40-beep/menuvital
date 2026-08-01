@@ -137,6 +137,29 @@ function goal_bonus(array $recipe, string $goal): float {
     };
 }
 
+/**
+ * Bono/penalización suave para que la cena tienda a platos más livianos y el
+ * almuerzo a platos más completos, aunque ambos midan parecido en promedio hoy
+ * (~309 kcal). No es un filtro duro: los platos más pesados de cena o más
+ * ligeros de almuerzo siguen pudiendo salir, solo quedan un poco menos arriba.
+ */
+function meal_weight_bonus(array $recipe, string $type): float {
+    $kcal = (int)($recipe['kcal'] ?? 0);
+    if ($type === 'cena') {
+        if ($kcal <= 350) return 0.15;
+        if ($kcal <= 450) return 0.05;
+        if ($kcal > 550) return -0.15;
+        return 0;
+    }
+    if ($type === 'almuerzo') {
+        if ($kcal >= 400) return 0.15;
+        if ($kcal >= 300) return 0.05;
+        if ($kcal < 200) return -0.15;
+        return 0;
+    }
+    return 0;
+}
+
 /** Bono si la receta coincide con los platos favoritos que la usuaria escribió. */
 function favorites_bonus(array $recipe, array $favorites): float {
     if (empty($favorites)) {
@@ -211,6 +234,7 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         $score = recipe_match_score($r, $pantryItems)
             + goal_bonus($r, $profile['goal'] ?? 'balance')
             + favorites_bonus($r, $profile['favorites_list'] ?? [])
+            + meal_weight_bonus($r, $type)
             + (in_array((int)$r['id'], $favoriteIds, true) ? 0.3 : 0)
             + (!empty($r['_own']) ? 0.15 : 0)
             + $jitter;
@@ -218,7 +242,24 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
     }
     usort($scored, fn($a, $b) => $b['score'] <=> $a['score']);
     $top = array_slice($scored, 0, $limit);
-    return array_map(fn($s) => $s['recipe'], $top);
+    $result = array_map(fn($s) => $s['recipe'], $top);
+
+    // "Cambiar plato" pide casi todo el recetario de ese tipo (límite 200) y
+    // pick_candidate() elige al azar de forma uniforme entre lo que reciba —
+    // ahí el puntaje por sí solo no alcanza a inclinar la balanza. Duplicar en
+    // la lista a los platos más livianos de cena / más completos de almuerzo
+    // les da el doble de chance en ese sorteo, sin quitarles la suya a los demás.
+    // Solo aplica cuando el límite es amplio (el caso "Cambiar plato"): con un
+    // límite chico (el top-8 que arma "Sugerir") ya lo resuelve el orden por
+    // puntaje, y duplicar aquí solo restaría variedad real a la IA.
+    if ($limit >= 50 && ($type === 'cena' || $type === 'almuerzo')) {
+        foreach ($result as $r) {
+            if (meal_weight_bonus($r, $type) > 0.1) {
+                $result[] = $r;
+            }
+        }
+    }
+    return $result;
 }
 
 /**
