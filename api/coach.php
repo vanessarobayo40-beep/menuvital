@@ -66,6 +66,10 @@ function coach_system_prompt(array $profile): string {
         . "Cocina para " . (int)$profile['people'] . " persona(s). "
         . "Da consejos prácticos, breves (máximo 4-5 líneas), con técnica culinaria real y fundamento nutricional, "
         . "siempre con comida colombiana/latina de mercado, nunca dietas extremas ni productos raros. "
+        . "FORMATO: este chat muestra texto plano, NUNCA uses Markdown — nada de '#', '##', '**', tablas con '|', "
+        . "ni líneas separadoras '---'. Escribe como en una conversación de WhatsApp: párrafos cortos y, si "
+        . "necesitas listar ingredientes o pasos, usa saltos de línea simples con un guion '- ' o un emoji al "
+        . "inicio de cada uno, nunca una tabla. "
         . "IMPORTANTE: nunca des diagnósticos médicos ni reemplaces a un profesional de la salud; "
         . "si la usuaria describe síntomas médicos o quiere perder mucho peso muy rápido, sugiere amablemente "
         . "consultar a un médico o nutricionista antes de continuar.";

@@ -36,11 +36,26 @@ function escapeHtml(s) {
   return d.innerHTML;
 }
 
+// Respaldo por si a la IA se le escapa Markdown (el chat solo muestra texto
+// plano): quita encabezados, negritas/cursivas, tablas y líneas separadoras,
+// dejando el contenido legible como texto normal.
+function cleanCoachText(s) {
+  return (s ?? '')
+    .replace(/^\s*#{1,6}\s*/gm, '')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/(?<!\w)\*(?!\s)(.+?)(?<!\s)\*(?!\w)/g, '$1')
+    .replace(/^\s*[-*_]{3,}\s*$/gm, '')
+    .replace(/^\s*\|?[\s:|-]+\|[\s:|-]+\|?\s*$/gm, '')
+    .replace(/^\s*\|(.+)\|\s*$/gm, (_, row) => row.split('|').map(c => c.trim()).filter(Boolean).join(' — '))
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
 function appendMessage(role, content) {
   document.getElementById('chat-empty').style.display = 'none';
   const div = document.createElement('div');
   div.className = 'msg ' + (role === 'user' ? 'user' : 'assistant');
-  div.textContent = content;
+  div.textContent = role === 'user' ? content : cleanCoachText(content);
   scrollEl.appendChild(div);
   window.scrollTo(0, document.body.scrollHeight);
   return div;
@@ -77,7 +92,7 @@ async function send() {
   const typing = appendMessage('assistant', 'Escribiendo...');
   try {
     const res = await MV.api('/api/coach.php?action=send', { method: 'POST', body: { message: text } });
-    typing.textContent = res.reply;
+    typing.textContent = cleanCoachText(res.reply);
   } catch (err) {
     typing.textContent = err.message;
   } finally {

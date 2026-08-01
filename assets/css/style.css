@@ -466,7 +466,7 @@ input, textarea, select { font-family: inherit; }
 
 /* ---------- Chat coach ---------- */
 .chat-scroll { display: flex; flex-direction: column; gap: 10px; padding: 16px 0 8px; }
-.msg { max-width: 82%; padding: 11px 15px; border-radius: 16px; font-size: 14px; line-height: 1.45; }
+.msg { max-width: 82%; padding: 11px 15px; border-radius: 16px; font-size: 14px; line-height: 1.45; white-space: pre-wrap; }
 .msg.assistant { background: var(--surface); color: var(--t1); align-self: flex-start; border-bottom-left-radius: 4px; }
 .msg.user { background: var(--grad-v); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
 .chat-input-bar {

@@ -11,6 +11,11 @@ require __DIR__ . '/../includes/layout_top.php';
 <h2 style="margin-bottom:2px;">Hola, <?= e(explode(' ', $user['name'])[0]) ?> 👋</h2>
 <p class="muted" id="today-date" style="margin-top:0;font-size:14px;"></p>
 
+<div class="card" style="background:var(--grad-v);border:none;margin-bottom:14px;padding:16px 18px;box-shadow:0 6px 16px -6px rgba(9,77,49,0.45);">
+  <p style="margin:0;font-size:15.5px;font-weight:700;line-height:1.35;color:#fff;">✨ Genera tu semana de comidas sin esfuerzo</p>
+  <p style="margin:4px 0 0;font-size:12.5px;color:rgba(255,255,255,0.88);">Sugerimos según lo que tienes en casa, tú confirmas y armamos tu lista de compras sola.</p>
+</div>
+
 <div id="install-banner" class="card-soft" style="display:none;margin-bottom:14px;">
   <div style="display:flex;align-items:center;gap:10px;">
     <span style="font-size:20px;">📲</span>
