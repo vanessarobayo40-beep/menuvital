@@ -125,7 +125,10 @@ function renderMeal(type, meal) {
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 14px 0;">
         <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}${meal.servings > 1 ? ` · ${meal.servings} porciones` : ''}</span>
-        <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
+        <div style="display:flex;gap:10px;">
+          <a href="/app/recetas.php" style="color:var(--green-dark);font-size:12px;font-weight:600;text-decoration:none;padding:4px;">🍽 Elegir</a>
+          <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
+        </div>
       </div>
       <h3>${escapeHtml(meal.name)}</h3>
       <div class="meal-meta">

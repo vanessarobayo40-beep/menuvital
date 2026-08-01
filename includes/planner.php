@@ -178,6 +178,23 @@ function candidate_recipes(string $type, array $pantryItems, array $profile, arr
         unset($c);
         $recipes = array_merge($recipes, $custom);
     }
+    if ($type === 'snack') {
+        // Los batidos no se sugieren solos como snack: de 221 snacks, 105 eran
+        // batidos (48%), así que casi la mitad de las sugerencias terminaban
+        // siendo un licuado. Misma detección de nombre que el filtro "🥤
+        // Batidos" del Recetario, para que el criterio sea el mismo en toda
+        // la app. Con red de seguridad: si el filtro dejara el pool vacío
+        // (poquísimos snacks cargados), se vuelve al pool completo — nunca
+        // debe faltar una sugerencia por esto. Los batidos siguen visibles y
+        // elegibles a mano en el Recetario.
+        $noBatidos = array_values(array_filter(
+            $recipes,
+            fn($r) => !preg_match('/batido|smoothie|licuado|jugo/i', $r['name'])
+        ));
+        if (!empty($noBatidos)) {
+            $recipes = $noBatidos;
+        }
+    }
     $scored = [];
     foreach ($recipes as $r) {
         if (in_array((int)$r['id'], $exclude, true)) {

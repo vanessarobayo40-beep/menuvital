@@ -95,7 +95,10 @@ function renderMealRow(type, meal, dateStr, idx) {
       <div style="flex:1;min-width:0;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;">
           <span class="badge badge-green">${MEAL_LABELS[type]}${meal.servings > 1 ? ` · ${meal.servings}p` : ''}</span>
-          <button class="btn-swap-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;flex-shrink:0;">🔄 Cambiar</button>
+          <div style="display:flex;gap:8px;flex-shrink:0;">
+            <a href="/app/recetas.php" style="color:var(--green-dark);font-size:11px;font-weight:600;text-decoration:none;padding:2px;">🍽 Elegir</a>
+            <button class="btn-swap-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;">🔄 Cambiar</button>
+          </div>
         </div>
         <h4 style="margin:6px 0 4px;font-size:15px;">${escapeHtml(meal.name)}</h4>
         <p class="muted" style="font-size:11px;margin:0 0 6px;">⏱ ${meal.time_min} min · 🔥 ${meal.kcal_porcion} kcal · 💪 ${meal.protein_porcion}g prot · 🌾 ${meal.carbs_porcion}g carbos · 🧈 ${meal.fat_porcion}g grasa</p>
