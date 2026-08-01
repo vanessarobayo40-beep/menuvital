@@ -98,6 +98,7 @@ function renderMealRow(type, meal, dateStr, idx) {
           <div style="display:flex;gap:8px;flex-shrink:0;">
             <a href="/app/recetas.php" style="color:var(--green-dark);font-size:11px;font-weight:600;text-decoration:none;padding:2px;">🍽 Elegir</a>
             <button class="btn-swap-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;">🔄 Cambiar</button>
+            <button class="btn-remove-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;">🗑 Quitar</button>
           </div>
         </div>
         <h4 style="margin:6px 0 4px;font-size:15px;">${escapeHtml(meal.name)}</h4>
@@ -170,6 +171,23 @@ async function swapWeekMeal(btn, entryId) {
   }
 }
 
+async function removeWeekMeal(btn, entryId) {
+  if (!confirm('¿Quitar este plato del menú? No afecta tu despensa ni lo que ya compraste — solo deja ese espacio libre para elegir o sugerir otro.')) return;
+  btn.disabled = true;
+  try {
+    await MV.api('/api/menu.php?action=remove', { method: 'POST', body: { entry_id: entryId } });
+    for (const date of Object.keys(currentEntries)) {
+      for (const type of Object.keys(currentEntries[date])) {
+        if (currentEntries[date][type].entry_id === entryId) delete currentEntries[date][type];
+      }
+    }
+    renderWeek(true);
+    MV.toast('Listo, quitamos ese plato.');
+  } catch (err) {
+    MV.toast(err.message, true);
+  }
+}
+
 async function suggestDay(btn) {
   btn.disabled = true;
   try {
@@ -204,6 +222,9 @@ function renderWeek(keepOpen) {
   });
   container.querySelectorAll('.btn-swap-week').forEach(btn => {
     btn.addEventListener('click', () => swapWeekMeal(btn, parseInt(btn.dataset.entryId, 10)));
+  });
+  container.querySelectorAll('.btn-remove-week').forEach(btn => {
+    btn.addEventListener('click', () => removeWeekMeal(btn, parseInt(btn.dataset.entryId, 10)));
   });
   container.querySelectorAll('.btn-cook-mode-week').forEach(btn => {
     btn.addEventListener('click', () => MV.cookMode(findMealByEntryId(parseInt(btn.dataset.entryId, 10))));

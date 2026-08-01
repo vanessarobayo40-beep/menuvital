@@ -64,7 +64,7 @@ define('CRON_KEY', 'cambia-esta-clave-secreta-para-el-cron');
 // Número de WhatsApp para el botón "Comprar" de la landing (con indicativo, sin +)
 define('WHATSAPP_NUMBER', '573001234567');
 // Precio mostrado en la landing
-define('APP_PRICE', '$19.900');
+define('APP_PRICE', '$12.900');
 // ID del Pixel de Facebook (Meta) para medir tus campañas. Vacío = desactivado.
 define('FB_PIXEL_ID', '');
 

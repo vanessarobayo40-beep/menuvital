@@ -128,6 +128,7 @@ function renderMeal(type, meal) {
         <div style="display:flex;gap:10px;">
           <a href="/app/recetas.php" style="color:var(--green-dark);font-size:12px;font-weight:600;text-decoration:none;padding:4px;">🍽 Elegir</a>
           <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
+          <button class="btn-remove" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🗑 Quitar</button>
         </div>
       </div>
       <h3>${escapeHtml(meal.name)}</h3>
@@ -213,6 +214,9 @@ function renderMeals() {
   container.querySelectorAll('.btn-swap').forEach(btn => {
     btn.addEventListener('click', () => swapMeal(btn, parseInt(btn.dataset.entryId, 10), btn.dataset.mealType));
   });
+  container.querySelectorAll('.btn-remove').forEach(btn => {
+    btn.addEventListener('click', () => removeMeal(btn, parseInt(btn.dataset.entryId, 10), btn.dataset.mealType));
+  });
   container.querySelectorAll('.btn-cook-mode').forEach(btn => {
     btn.addEventListener('click', () => MV.cookMode(currentMeals[btn.dataset.mealType]));
   });
@@ -274,6 +278,20 @@ async function swapMeal(btn, entryId, type) {
   } catch (err) {
     btn.disabled = false;
     btn.textContent = '🔄 Cambiar plato';
+    MV.toast(err.message, true);
+  }
+}
+
+async function removeMeal(btn, entryId, type) {
+  if (!confirm('¿Quitar este plato del menú? No afecta tu despensa ni lo que ya compraste — solo deja ese espacio libre para elegir o sugerir otro.')) return;
+  btn.disabled = true;
+  try {
+    await MV.api('/api/menu.php?action=remove', { method: 'POST', body: { entry_id: entryId } });
+    delete currentMeals[type];
+    renderMeals();
+    MV.toast('Listo, quitamos ese plato.');
+  } catch (err) {
+    btn.disabled = false;
     MV.toast(err.message, true);
   }
 }
