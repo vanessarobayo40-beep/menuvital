@@ -499,5 +499,30 @@ const MV = (() => {
     });
   }
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions, imageZoom, makeZoomable };
+  /**
+   * Confirmación con ventana propia (más confiable que confirm() nativo, que
+   * en apps instaladas en el celular a veces no aparece o se comporta raro).
+   */
+  function confirmDialog(message, opts = {}) {
+    return new Promise((resolve) => {
+      const old = document.getElementById('mv-confirm-backdrop');
+      if (old) old.remove();
+      const backdrop = document.createElement('div');
+      backdrop.id = 'mv-confirm-backdrop';
+      backdrop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:95;display:flex;align-items:flex-end;justify-content:center;';
+      backdrop.innerHTML = `
+        <div class="card" style="width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:20px;">
+          <p style="margin:0 0 18px;font-size:15px;line-height:1.4;">${message}</p>
+          <button type="button" id="mv-confirm-ok" class="btn btn-primary btn-block">${opts.confirmText || 'Sí, continuar'}</button>
+          <button type="button" id="mv-confirm-cancel" class="btn btn-secondary btn-block" style="margin-top:8px;">${opts.cancelText || 'Cancelar'}</button>
+        </div>`;
+      document.body.appendChild(backdrop);
+      const finish = (value) => { backdrop.remove(); resolve(value); };
+      backdrop.querySelector('#mv-confirm-ok').addEventListener('click', () => finish(true));
+      backdrop.querySelector('#mv-confirm-cancel').addEventListener('click', () => finish(false));
+      backdrop.addEventListener('click', (e) => { if (e.target === backdrop) finish(false); });
+    });
+  }
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions, imageZoom, makeZoomable, confirmDialog };
 })();

@@ -4,7 +4,7 @@
  * Las páginas y llamadas a /api/ siempre van primero a la red (datos frescos);
  * si no hay conexión, se sirve la última copia guardada cuando exista.
  */
-const CACHE_NAME = 'menuvital-v4';
+const CACHE_NAME = 'menuvital-v5';
 const STATIC_ASSETS = [
   '/assets/css/style.css',
   '/assets/js/app.js',

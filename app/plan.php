@@ -172,7 +172,8 @@ async function swapWeekMeal(btn, entryId) {
 }
 
 async function removeWeekMeal(btn, entryId) {
-  if (!confirm('¿Quitar este plato del menú? No afecta tu despensa ni lo que ya compraste — solo deja ese espacio libre para elegir o sugerir otro.')) return;
+  const ok = await MV.confirmDialog('¿Quitar este plato del menú? No afecta tu despensa ni lo que ya compraste — solo deja ese espacio libre para elegir o sugerir otro.', { confirmText: 'Sí, quitar' });
+  if (!ok) return;
   btn.disabled = true;
   try {
     await MV.api('/api/menu.php?action=remove', { method: 'POST', body: { entry_id: entryId } });
