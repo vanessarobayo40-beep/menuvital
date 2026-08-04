@@ -104,13 +104,18 @@ foreach ($pending as $r) {
     }
     $processed++;
 
+    // openai/gpt-oss-120b es un modelo "razonador": gasta tokens pensando
+    // (campo "reasoning" de la respuesta) antes de escribir el "content".
+    // Con max_tokens bajo, se le acaba el presupuesto pensando y el content
+    // vuelve vacío (finish_reason "length") — por eso 200 en vez de 25.
     $tags = json_decode($r['tags'], true) ?: [];
     $searchTerm = groq_chat([
         ['role' => 'system', 'content' => 'Da SOLO un término de búsqueda de 3 a 6 palabras en inglés '
             . '(sin comillas, sin explicación) para encontrar en un banco de fotos de stock una foto '
-            . 'real y apetitosa de este plato de comida. Sé genérico (tipo de plato, no el nombre propio).'],
+            . 'real y apetitosa de este plato de comida. Sé genérico (tipo de plato, no el nombre propio). '
+            . 'Responde directo, sin pensarlo mucho.'],
         ['role' => 'user', 'content' => "Plato: {$r['name']} ({$r['meal_type']}, " . implode(', ', $tags) . ')'],
-    ], false, 25, 0.4);
+    ], false, 200, 0.4);
 
     $searchTerm = $searchTerm ? trim(preg_replace('/["\r\n]/', '', $searchTerm)) : '';
     $photo = $searchTerm !== '' ? pexels_search_photo($searchTerm) : null;
