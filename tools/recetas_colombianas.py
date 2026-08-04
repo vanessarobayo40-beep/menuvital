@@ -17,8 +17,8 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_recipes import (parse_ingredients_cell, split_steps, parse_time_min,
-                            infer_servings, derive_tags, norm_name, load_existing_names)
+from build_recipes import (parse_ingredients_cell, build_display_ingredients, split_steps,
+                            parse_time_min, infer_servings, derive_tags, norm_name, load_existing_names)
 from nutrition_calc import sum_macros
 
 OUT_JSON = os.path.join(os.path.dirname(__file__), 'recipes_colombianas.json')
@@ -409,30 +409,32 @@ Sal al gusto
 3. Cocina 12-15 minutos más hasta que las verduras estén tiernas.
 4. Rectifica sal y sirve caliente.
 """),
-    dict(name='Ajiaco ligero de cena', meal_type='cena', time_min=35, servings=1, ingredients="""
-120 g de pechuga de pollo desmenuzada
-2 papas criollas
-1/4 mazorca en trozos
-2 cdas de guascas frescas
-1 taza de agua o caldo de pollo
-Sal al gusto
+    dict(name='Caldo de albóndigas ligero', meal_type='cena', time_min=30, servings=1, ingredients="""
+120 g de carne molida de res
+1/4 taza de avena en hojuelas
+1 huevo
+1/4 taza de cebolla picada
+1/2 zanahoria en cubos pequeños
+1 diente de ajo
+1 1/2 tazas de agua o caldo
+Sal y comino al gusto
 """, steps="""
-1. Cocina las papas criollas y la mazorca en el agua o caldo 15 minutos, deshaciendo un poco la papa para espesar.
-2. Agrega el pollo desmenuzado y las guascas.
-3. Cocina 5 minutos más y rectifica sal.
-4. Sirve caliente, sin crema, para una cena más liviana.
+1. Mezcla la carne molida con la avena, el huevo, sal y comino; forma bolitas pequeñas.
+2. Calienta el agua o caldo con la cebolla, el ajo y la zanahoria; cocina 8 minutos.
+3. Agrega las albóndigas al caldo hirviendo y cocina 10-12 minutos hasta que floten y estén firmes.
+4. Rectifica sal y sirve bien caliente.
 """),
-    dict(name='Pollo sudado ligero', meal_type='cena', time_min=30, servings=1, ingredients="""
-150 g de pechuga de pollo en presas
+    dict(name='Pescado sudado ligero', meal_type='cena', time_min=25, servings=1, ingredients="""
+180 g de pescado blanco en trozos
 1/4 taza de cebolla picada
 1/2 tomate picado
 1 diente de ajo
 1/4 taza de agua
 Sal y comino al gusto
 """, steps="""
-1. Sofríe la cebolla, el tomate y el ajo 3 minutos.
-2. Agrega el pollo y sella por ambos lados.
-3. Añade el agua, tapa y cocina a fuego medio-bajo 15-18 minutos hasta que esté bien cocido.
+1. Sofríe la cebolla, el tomate y el ajo 3 minutos hasta formar un guiso.
+2. Agrega el agua y deja hervir suave 2 minutos.
+3. Añade el pescado, tapa y cocina a fuego medio-bajo 8-10 minutos hasta que esté cocido, sin revolver mucho para que no se deshaga.
 4. Sazona con sal y comino; sirve con ensalada verde.
 """),
     dict(name='Sopa de lentejas', meal_type='cena', time_min=25, servings=1, ingredients="""
@@ -643,10 +645,11 @@ def main():
     seen_names = set()
     out = []
     for r in RECIPES:
-        display_ings, parsed_ings = parse_ingredients_cell(r['ingredients'])
+        parsed_ings = parse_ingredients_cell(r['ingredients'])
         steps = split_steps(r['steps'])
         servings = r['servings'] or infer_servings(parsed_ings)
         macros, stats = sum_macros(parsed_ings, servings)
+        display_ings = build_display_ingredients(parsed_ings, servings)
         match_names = [p['match_name'] for p in parsed_ings]
         tags = derive_tags(macros['kcal'], macros['protein'], r['time_min'], match_names,
                             is_colombian=True)

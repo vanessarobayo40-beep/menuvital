@@ -21,7 +21,7 @@ import unicodedata
 import openpyxl
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ingredient_parse import parse_ingredient_line, is_junk_line
+from ingredient_parse import parse_ingredient_line, is_junk_line, divide_display_qty
 from nutrition_calc import sum_macros
 from nutrition_flags import is_vegetarian, is_gluten_free, is_economical
 from normalize import normalize_ingredient
@@ -126,23 +126,46 @@ def infer_servings(parsed_ings):
     return max(1, min(4, servings))
 
 
+# Huecos reales del material fuente (no son errores del parser): estas
+# líneas de ingrediente venían sin nombre en el .xlsx original de Vanessa
+# ("- 3 tazas" a secas). Se completan a mano, con el contexto de la receta
+# (nombre del plato + último paso "Sirva sobre el arroz cocido").
+INGREDIENT_TEXT_FIXES = {
+    'Frijoles y arroz a la cubana': {'- 3 tazas': '- 3 tazas de arroz blanco cocido'},
+}
+
+
 def parse_ingredients_cell(cell_text):
-    """Devuelve (display_list, parsed_list) — display_list es ['nombre|qty', ...]."""
+    """Devuelve la lista de ingredientes ya parseados (parse_ingredient_line)."""
     if not cell_text:
-        return [], []
+        return []
     lines = [l.strip(' -\t*') for l in str(cell_text).split('\n') if l.strip(' -\t*')]
-    display, parsed = [], []
+    parsed = []
     for raw in lines:
         if is_junk_line(raw):
             continue
         p = parse_ingredient_line(raw)
         if not p or not p['display_name']:
             continue
-        name = p['display_name'][:60]
-        qty = p['display_qty']
-        display.append(f"{name}|{qty}" if qty and qty != 'al gusto' else f"{name}|al gusto")
         parsed.append(p)
-    return display, parsed
+    return parsed
+
+
+def build_display_ingredients(parsed_ings, servings=1):
+    """
+    ['nombre|qty', ...] — la cantidad se reparte entre `servings` para que
+    represente 1 sola porción, igual que las kcal/macros (ver
+    divide_display_qty(); scale_ingredient() en includes/planner.php
+    asume que la cantidad base YA es de 1 persona y la multiplica al
+    escalar la receta, así que guardar la receta completa aquí duplicaría
+    el efecto y mostraría cantidades varias veces más grandes de lo real).
+    """
+    display = []
+    for p in parsed_ings:
+        name = p['display_name'][:60]
+        qty = divide_display_qty(p['display_qty'], servings) if p['display_qty'] != 'al gusto' else 'al gusto'
+        display.append(f"{name}|{qty}")
+    return display
 
 
 def derive_tags(kcal, protein, time_min, match_names, is_colombian):
@@ -201,8 +224,20 @@ def build_from_row(name_raw, tipo_raw, img_raw, ing_raw, prep_raw, time_raw, ser
     if not meal_type:
         return None
 
-    display_ings, parsed_ings = parse_ingredients_cell(ing_raw)
-    if not display_ings:
+    if name in INGREDIENT_TEXT_FIXES and ing_raw:
+        for bad, good in INGREDIENT_TEXT_FIXES[name].items():
+            ing_raw = str(ing_raw).replace(bad, good)
+
+    parsed_ings = parse_ingredients_cell(ing_raw)
+    if not parsed_ings:
+        return None
+    # Señal de que la fuente venía con los ingredientes cortados a mitad de
+    # frase por un salto de línea mal puesto (p. ej. "- 2 tazas de harina
+    # de\n- almendra" quedó como dos ingredientes "harina de" y "almendra").
+    # No se puede reconstruir con confianza, se descarta la receta entera.
+    if any(re.search(r'\b(de|del|con|para|y|en)$', p['display_name'].strip(), re.IGNORECASE)
+           for p in parsed_ings):
+        warnings.append(f'[{source_tag}] descartada (ingredientes cortados a mitad de frase): {name!r}')
         return None
     steps = split_steps(prep_raw)
     if not steps:
@@ -213,6 +248,7 @@ def build_from_row(name_raw, tipo_raw, img_raw, ing_raw, prep_raw, time_raw, ser
     macros, stats = sum_macros(parsed_ings, servings)
     if macros['kcal'] <= 0:
         return None
+    display_ings = build_display_ingredients(parsed_ings, servings)
 
     match_names = [p['match_name'] for p in parsed_ings]
     tags = derive_tags(macros['kcal'], macros['protein'], time_min, match_names,
@@ -316,24 +352,35 @@ def process_leftovers(existing_names, seen_names, warnings):
         ws = openpyxl.load_workbook(path, data_only=True).active
         rows = list(ws.iter_rows(values_only=True))
         hdr = [str(h) for h in rows[0]]
+        # El orden de columnas Tipo/Imagen varía entre carpetas viejas
+        # (250recetas trae Tipo antes que Imagen) — se ubica por nombre de
+        # columna, nunca por posición fija, para no mezclar tipo con imagen.
+        ci_name = find_col(hdr, 'nombre')
+        ci_tipo = find_col(hdr, 'tipo')
+        ci_img = find_col(hdr, 'imagen')
         ci_ing = find_col(hdr, 'ingrediente')
         ci_prep = find_col(hdr, 'preparaci')
         ci_time = find_col(hdr, 'tiempo')
-        if ci_ing is None or ci_prep is None:
+        ci_serv = find_col(hdr, 'porcion')
+        if ci_name is None or ci_ing is None or ci_prep is None or ci_tipo is None:
             continue
         for r in rows[1:]:
-            if r[1] is None:
+            if r[ci_name] is None:
                 continue
-            if norm_name(r[1]) in existing_names:
+            if norm_name(r[ci_name]) in existing_names:
                 continue  # ya existe en el recetario actual, no es "sobra"
             ing_txt = str(r[ci_ing] or '')
             if len(ing_txt) <= 25 or 'ver preparaci' in ing_txt.lower():
                 continue  # sin ingredientes reales, no se puede reconstruir
-            img_raw = r[2] if len(r) > 2 else None
-            tipo_raw = r[3] if len(r) > 3 else None
+            img_raw = r[ci_img] if ci_img is not None else None
+            serv_hint = None
+            if ci_serv is not None and r[ci_serv]:
+                m = re.search(r'\d+', str(r[ci_serv]))
+                if m:
+                    serv_hint = int(m.group())
             rec = build_from_row(
-                r[1], tipo_raw, img_raw, r[ci_ing], r[ci_prep],
-                r[ci_time] if ci_time is not None else None, None,
+                r[ci_name], r[ci_tipo], img_raw, r[ci_ing], r[ci_prep],
+                r[ci_time] if ci_time is not None else None, serv_hint,
                 f'Recetas2026/{folder} (sobra)', images_dir, existing_names, seen_names, warnings,
             )
             if rec:

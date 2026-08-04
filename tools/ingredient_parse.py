@@ -20,7 +20,11 @@ from normalize import normalize_ingredient, ingredients_match
 from nutrition_data import NUTRITION, ALIASES
 from unit_weights import UNIT_GRAMS, UNIT_GRAMS_BY_CLASS, WHOLE_UNIT_GRAMS, SPICE_DEFAULT_GRAMS
 
-_FRACTIONS = {'½': 0.5, '¼': 0.25, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3}
+_FRACTIONS = {
+    '½': 0.5, '¼': 0.25, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3,
+    '⅛': 0.125, '⅜': 0.375, '⅝': 0.625, '⅞': 0.875,
+}
+_FRACTION_CHARS = ''.join(_FRACTIONS.keys())
 
 _NEGLIGIBLE = re.compile(
     r'^(al gusto|opcional|para (decorar|servir|acompañar|cocinar)|c/n|c\.n\.|'
@@ -52,9 +56,22 @@ _ADJ_STRIP = re.compile(
     r'batid[oa]s?|hervid[oa]s?|cocid[oa]s?|tostad[oa]s?|desmenuzad[oa]s?)\b',
     re.IGNORECASE)
 
+# Alternativa de unidades conocidas (no un genérico "cualquier palabra"): así
+# "¾ de cucharadita de vainilla" no confunde la palabra "de" con una unidad
+# (que quedaría capturando "de" y dejando el nombre roto en dos "de" sueltos).
+_UNIT_ALT = '|'.join(sorted((re.escape(u) for u in UNIT_GRAMS.keys()), key=len, reverse=True))
+
 _QTY_RE = re.compile(
-    r'^\(?\s*(?P<qty>\d+[\d.,]*\s*/\s*\d+|\d+[.,]?\d*\s*-\s*\d+[.,]?\d*|\d+[.,]?\d*|[½¼¾⅓⅔])\s*'
-    r'(?P<unit>[a-zA-Zñáéíóú/]+)?\.?\s*(?:de\s+|d[e]\s)?(?P<rest>.*)$'
+    r'^\(?\s*(?P<qty>'
+    r'\d+\s+\d+\s*/\s*\d+'          # mixto: "1 1/2", "3 1/4"
+    r'|\d+\s+[' + _FRACTION_CHARS + r']'  # mixto unicode: "3 ½"
+    r'|\d+[\d.,]*\s*/\s*\d+'        # fracción simple: "1/2"
+    r'|\d+[.,]?\d*\s*-\s*\d+[.,]?\d*'  # rango: "1-2"
+    r'|\d+[.,]?\d*'                 # entero o decimal: "3", "2.5"
+    r'|[' + _FRACTION_CHARS + r']'  # fracción unicode sola: "¾"
+    r')\s*(?:de\s+)?'  # "¾ DE cucharadita..." — a veces la unidad viene tras un "de".
+    r'(?:(?P<unit>' + _UNIT_ALT + r')(?![a-zñáéíóú]))?\.?\s*(?:de\s+|d[e]\s)?(?P<rest>.*)$',
+    re.IGNORECASE,
 )
 
 
@@ -62,6 +79,14 @@ def _parse_qty_number(txt: str):
     txt = txt.strip()
     if txt in _FRACTIONS:
         return _FRACTIONS[txt]
+    # Mixto "N N/D" o "N <fracción unicode>" (con espacio de por medio).
+    m = re.match(r'^(\d+)\s+(.+)$', txt)
+    if m:
+        whole, frac_part = m.groups()
+        frac_val = _parse_qty_number(frac_part)
+        if frac_val is not None:
+            return int(whole) + frac_val
+        return None
     if '-' in txt and '/' not in txt:
         a, b = txt.split('-', 1)
         try:
@@ -88,7 +113,15 @@ def _clean_name(rest: str) -> str:
 
 
 def _match_nutrition_name(name: str):
-    """Busca el nombre canónico en NUTRITION, vía alias o coincidencia flexible."""
+    """
+    Busca el nombre canónico en NUTRITION, vía alias o coincidencia flexible.
+    Entre varios candidatos flexibles se queda con el MÁS ESPECÍFICO (el de
+    más palabras) — si no, un alias corto y genérico como "pollo" (->
+    "pechuga de pollo") le ganaría por casualidad a uno más preciso como
+    "caldo de pollo" (-> "agua") cuando el texto real es "caldo de pollo
+    con bajo contenido graso", inflando la receta con 480 g de pollo que
+    en realidad es casi puro caldo.
+    """
     norm = normalize_ingredient(name)
     if not norm:
         return None
@@ -101,17 +134,65 @@ def _match_nutrition_name(name: str):
     for alias, canon in ALIASES.items():
         if normalize_ingredient(alias) == norm and canon in NUTRITION:
             return canon
-    # Coincidencia flexible tipo ingredients_match (mismas reglas que la app).
-    best = None
+
+    # Coincidencia flexible: entre TODOS los candidatos (llaves de NUTRITION
+    # y alias) que matchean, gana el de texto normalizado más largo (más
+    # específico), no el primero que aparezca.
+    best_key, best_len = None, -1
     for key in NUTRITION:
-        if ingredients_match(name, key) and (best is None or len(key) > len(best)):
-            best = key
-    if best:
-        return best
+        if ingredients_match(name, key):
+            l = len(normalize_ingredient(key))
+            if l > best_len:
+                best_key, best_len = key, l
     for alias, canon in ALIASES.items():
-        if ingredients_match(name, alias) and canon in NUTRITION:
-            return canon
-    return None
+        if canon in NUTRITION and ingredients_match(name, alias):
+            l = len(normalize_ingredient(alias))
+            if l > best_len:
+                best_key, best_len = canon, l
+    return best_key
+
+
+_QTY_PREFIX_RE = re.compile(
+    r'^(?P<num>\d+\s+\d+\s*/\s*\d+|\d+\s+[' + _FRACTION_CHARS + r']|\d+[\d.,]*\s*/\s*\d+|'
+    r'\d+[.,]?\d*\s*-\s*\d+[.,]?\d*|\d+[.,]?\d*|[' + _FRACTION_CHARS + r'])\s*(?P<rest>.*)$'
+)
+_NICE_FRACTIONS = [
+    (0.125, '1/8'), (0.25, '1/4'), (1 / 3, '1/3'), (0.375, '3/8'), (0.5, '1/2'),
+    (0.625, '5/8'), (2 / 3, '2/3'), (0.75, '3/4'), (0.875, '7/8'),
+]
+
+
+def _format_number(v: float) -> str:
+    whole = int(v)
+    frac = v - whole
+    if frac < 0.03:
+        return str(whole) if whole > 0 else ('0' if v < 0.03 else _format_number(v + 0.001))
+    for target, label in _NICE_FRACTIONS:
+        if abs(frac - target) < 0.035:
+            return f"{whole} {label}" if whole > 0 else label
+    s = f"{v:.1f}".rstrip('0').rstrip('.')
+    return s if s else '0'
+
+
+def divide_display_qty(qty_text: str, divisor: float) -> str:
+    """
+    Escala una cantidad ya mostrable ("700 g", "3 ½ tazas", "2") entre
+    `divisor` porciones — se usa para que la lista de ingredientes guardada
+    represente 1 sola porción, igual que kcal/macros, en vez de la receta
+    completa (ver scale_ingredient() en includes/planner.php, que asume que
+    la cantidad base YA es de 1 persona y la multiplica al escalar).
+    """
+    if not qty_text or qty_text == 'al gusto' or not divisor or divisor <= 1.0001:
+        return qty_text
+    m = _QTY_PREFIX_RE.match(qty_text)
+    if not m:
+        return qty_text
+    val = _parse_qty_number(m.group('num'))
+    if val is None:
+        return qty_text
+    rest = m.group('rest').strip()
+    new_val = _format_number(val / divisor)
+    return f"{new_val} {rest}".strip() if rest else new_val
 
 
 def default_portion_grams(match_name: str) -> float:

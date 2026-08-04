@@ -1,18 +1,20 @@
 # Informe de validación de recetas nuevas
 
-Aceptadas: **269** — Rechazadas: **49**
+Aceptadas: **268** — Rechazadas: **58**
 
 ## Aceptadas por tipo
 
-- cena: 61
-- almuerzo: 55
-- snack: 101
-- desayuno: 52
+- cena: 60
+- almuerzo: 54
+- snack: 103
+- desayuno: 51
 
 Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
 
 ## Rechazadas (no se insertan en el recetario)
 
+- **Milanesa de Pollo Crujiente** [Recetas2026/metodo_airfryer]
+  - kcal fuera de rango sensato para cena: 905 (esperado 80-900)
 - **Papitas Baby Crocantes** [Recetas2026/snacks_airfryer]
   - kcal fuera de rango sensato para snack: 512 (esperado 30-450)
 - **Chips de Tortilla** [Recetas2026/snacks_airfryer]
@@ -45,6 +47,8 @@ Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
   - no cuadra con Atwater: kcal=120 vs 4P+4C+9F=145 (21% de diferencia)
 - **Batido de Sandía y Limón** [Recetas2026/batidos_bono]
   - no cuadra con Atwater: kcal=164 vs 4P+4C+9F=197 (20% de diferencia)
+- **Torta de Chocolate Fit** [Recetas2026/tortas]
+  - no cuadra con Atwater: kcal=132 vs 4P+4C+9F=169 (28% de diferencia)
 - **Papas Fritas Perfectas** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 624 (esperado 30-450)
 - **Deditos de Queso Costeño** [Recetas2026/air_fryer]
@@ -58,7 +62,7 @@ Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
 - **Chicharrón de Cerdo Crujiente** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1098 (esperado 30-450)
 - **Croquetas de Papa y Queso** [Recetas2026/air_fryer]
-  - kcal fuera de rango sensato para snack: 828 (esperado 30-450)
+  - kcal fuera de rango sensato para snack: 924 (esperado 30-450)
 - **Arepa de Chócolo Rellena** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1026 (esperado 30-450)
 - **Mazorca Asada con Mantequilla** [Recetas2026/air_fryer]
@@ -69,6 +73,8 @@ Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
   - kcal fuera de rango sensato para almuerzo: 1306 (esperado 80-900)
 - **Arepa de Maíz con Queso Derretido** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para almuerzo: 1202 (esperado 80-900)
+- **Plátano Maduro Asado** [Recetas2026/air_fryer]
+  - kcal fuera de rango sensato para almuerzo: 954 (esperado 80-900)
 - **Churros con Chocolate** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1083 (esperado 30-450)
 - **Buñuelos Colombianos** [Recetas2026/air_fryer]
@@ -76,11 +82,11 @@ Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
 - **Galletas de Chocolate y Maní** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1745 (esperado 30-450)
 - **Manzanas Asadas con Panela y Canela** [Recetas2026/air_fryer]
-  - kcal fuera de rango sensato para snack: 831 (esperado 30-450)
+  - kcal fuera de rango sensato para snack: 814 (esperado 30-450)
 - **Torrejas con Arequipe** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1036 (esperado 30-450)
 - **Plátano Maduro con Bocadillo y Queso** [Recetas2026/air_fryer]
-  - kcal fuera de rango sensato para snack: 986 (esperado 30-450)
+  - kcal fuera de rango sensato para snack: 1038 (esperado 30-450)
 - **Donas Glaseadas** [Recetas2026/air_fryer]
   - kcal fuera de rango sensato para snack: 1809 (esperado 30-450)
 - **Brownie en Taza** [Recetas2026/air_fryer]
@@ -100,13 +106,25 @@ Con advertencia de confianza (aceptadas igual, revisar si se quiere): 0
 - **Arepa de Pabellón (Inspiración Venezolana)** [Recetas2026/desayunos_mundo]
   - kcal fuera de rango sensato para desayuno: 1002 (esperado 80-900)
 - **Sandwich Proteico de Pollo y Aguacate** [Recetas2026/desayunos_mundo]
-  - kcal fuera de rango sensato para desayuno: 1398 (esperado 80-900)
+  - kcal fuera de rango sensato para desayuno: 1446 (esperado 80-900)
 - **Crepes con Ricotta y Frutos Rojos** [Recetas2026/desayunos_mundo]
   - kcal fuera de rango sensato para desayuno: 1009 (esperado 80-900)
 - **Porridge de Chocolate y Maní** [Recetas2026/desayunos_mundo]
   - kcal fuera de rango sensato para desayuno: 903 (esperado 80-900)
-- **Flan de coco y vainilla** [Recetas2026/antiinflamatorias (sobra)]
-  - kcal fuera de rango sensato para snack: 1273 (esperado 30-450)
+- **Galleta de avena y calabaza con té** [Recetas2026/250recetas (sobra)]
+  - kcal fuera de rango sensato para desayuno: 1998 (esperado 80-900)
+- **Galleta de avena y Naranja** [Recetas2026/250recetas (sobra)]
+  - kcal fuera de rango sensato para desayuno: 2311 (esperado 80-900)
+- **Bizcochos de Té matcha** [Recetas2026/250recetas (sobra)]
+  - kcal fuera de rango sensato para desayuno: 2922 (esperado 80-900)
+- **Sandwich Portobello** [Recetas2026/250recetas (sobra)]
+  - kcal fuera de rango sensato para almuerzo: 2550 (esperado 80-900)
+- **Brownie de calabaza** [Recetas2026/250recetas (sobra)]
+  - kcal fuera de rango sensato para almuerzo: 929 (esperado 80-900)
+- **Salteado de camarones y espinacas** [Recetas2026/120recetas (sobra)]
+  - no cuadra con Atwater: kcal=323 vs 4P+4C+9F=406 (26% de diferencia)
+- **Pimientos Rellenos de Quinoa** [Recetas2026/120recetas (sobra)]
+  - nombre ya existe en recipes_data.php
 - **Té Helado de Frambuesa** [Recetas2026/diabeticos (sobra)]
   - no cuadra con Atwater: kcal=33 vs 4P+4C+9F=48 (45% de diferencia)
 - **Jugo verde saludable** [Recetas2026/higadograso (sobra)]
