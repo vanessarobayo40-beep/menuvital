@@ -36,6 +36,51 @@ if (!groq_available() || !pexels_available()) {
     exit;
 }
 
+// ---------- Modo diagnóstico: ?debug=1 — una llamada cruda a cada API,
+// mostrando código HTTP y respuesta completa, para ver el error real
+// cuando el backfill normal da "sin resultado" en todo. No toca la BD. ----------
+if (($_GET['debug'] ?? '') === '1') {
+    echo '<h2>Diagnóstico Groq</h2>';
+    $ch = curl_init('https://api.groq.com/openai/v1/chat/completions');
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Authorization: Bearer ' . GROQ_API_KEY],
+        CURLOPT_POSTFIELDS => json_encode([
+            'model' => GROQ_MODEL,
+            'messages' => [['role' => 'user', 'content' => 'Di solo la palabra: prueba']],
+            'max_tokens' => 10,
+        ]),
+        CURLOPT_TIMEOUT => 20,
+        CURLOPT_CONNECTTIMEOUT => 10,
+    ]);
+    $body = curl_exec($ch);
+    $err = curl_error($ch);
+    $status = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+    curl_close($ch);
+    echo '<p>Modelo configurado: <code>' . htmlspecialchars(GROQ_MODEL) . '</code></p>';
+    echo "<p>HTTP status: <strong>$status</strong>" . ($err ? " — curl error: $err" : '') . '</p>';
+    echo '<pre style="white-space:pre-wrap;background:#f3f4f6;padding:10px;border-radius:6px;">'
+        . htmlspecialchars(substr((string)$body, 0, 1500)) . '</pre>';
+
+    echo '<h2>Diagnóstico Pexels</h2>';
+    $ch2 = curl_init('https://api.pexels.com/v1/search?' . http_build_query(['query' => 'breakfast plate', 'per_page' => 1]));
+    curl_setopt_array($ch2, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => ['Authorization: ' . PEXELS_API_KEY],
+        CURLOPT_TIMEOUT => 15,
+        CURLOPT_CONNECTTIMEOUT => 8,
+    ]);
+    $body2 = curl_exec($ch2);
+    $err2 = curl_error($ch2);
+    $status2 = curl_getinfo($ch2, CURLINFO_RESPONSE_CODE);
+    curl_close($ch2);
+    echo "<p>HTTP status: <strong>$status2</strong>" . ($err2 ? " — curl error: $err2" : '') . '</p>';
+    echo '<pre style="white-space:pre-wrap;background:#f3f4f6;padding:10px;border-radius:6px;">'
+        . htmlspecialchars(substr((string)$body2, 0, 1500)) . '</pre>';
+    exit;
+}
+
 $pdo = db();
 $stmt = $pdo->query(
     "SELECT id, name, meal_type, tags FROM recipes
