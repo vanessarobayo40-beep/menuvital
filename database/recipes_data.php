@@ -1228,6 +1228,266 @@ return [
  ['Verter el yogur griego en un bol grande, asegurándose de que esté a temperatura ambiente para evitar que se corte al mezclar.', 'Agregar las almendras picadas y las nueces picadas al yogur, distribuyéndolas de manera uniforme.', 'Añadir las semillas de chía o lino, mezclando suavemente para que se integren sin formar grumos.', 'Espolvorear la canela molida sobre la mezcla, ajustando la cantidad al gusto personal, y mezclar de nuevo para distribuir la especia de forma homogénea.', 'Refrigerar el yogur preparado durante al menos 15 minutos para que los sabores se asienten y la textura sea más cremosa.', 'Servir el yogur en porciones individuales, decorando con un toque extra de canela o una pizca de semillas si se desea.'],
  ['vegetariano', 'ligero'], 206, 12, 5, 8, 14, 2, 4, '/assets/img/recetas/003-yogur-griego-con-frutos-secos-y-semillas.jpeg'],
 
+['Tostada con Aguacate y Huevo Revuelto', 'desayuno',
+ ['pan integral|2 rebanadas', 'huevos|2', 'aguacate|1/2', 'Sal|al gusto', 'Aceite de oliva|al gusto', 'Hojuelas de chile|al gusto'],
+ ['Tuesta el pan y machaca el aguacate con sal, limón y pimienta.', 'Unta el aguacate sobre las tostadas.', 'Revuelve los huevos en sartén con aceite a fuego medio 2 minutos.', 'Coloca los huevos sobre las tostadas y termina con chile.'],
+ ['rápido', 'económico'], 552, 23, 8, 34, 38, 5, 11, '/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpeg'],
+
+['Cottage Cheese Bowl con Fruta', 'desayuno',
+ ['queso cottage|200 g', 'fresas o arándanitos|1 taza', 'miel|1 cda', 'semillas de chía|1 cda', 'Canela|al gusto'],
+ ['Sirve el queso cottage en un tazón.', 'Distribuye la fruta encima.', 'Rocía con miel y espolvorea la canela y las semillas de chía.', 'Consume de inmediato.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 390, 25, 5, 48, 12, 34, 9],
+
+['Greek Yogurt Parfait Proteico', 'desayuno',
+ ['yogur griego natural|200 g', 'granola baja en azúcar|30 g', 'banano|1', 'mantequilla de maní|1 cda', 'semillas de lino|1 cda'],
+ ['Coloca el yogur en un vaso o tazón.', 'Agrega la granola y el banano en capas.', 'Añade la mantequilla de maní en un hilo.', 'Finaliza con semillas de lino.'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 518, 17, 5, 62, 25, 33, 9, '/assets/img/recetas/003-greek-yogurt-parfait-proteico.jpeg'],
+
+['Huevos Revueltos con Queso y Pan', 'desayuno',
+ ['huevos|3', 'queso mozarella o manchego|30 g', 'pan integral|2 rebanadas', 'mantequilla|1 cdta', 'Sal y pimienta|al gusto'],
+ ['Bate los huevos con sal y pimienta.', 'Calienta la mantequilla en sartén a fuego bajo.', 'Vierte los huevos y revuelve despacio hasta casi cuajar.', 'Agrega el queso, retira del fuego y sirve sobre el pan tostado.'],
+ ['alto en proteína', 'rápido', 'económico'], 498, 33, 7, 28, 29, 5, 4],
+
+['Perico Venezolano', 'desayuno',
+ ['huevos|3', 'tomate|1/2', 'cebolla cabezona|1/4', 'pimentón verde o rojo|1/4', 'Aceite vegetal|al gusto', 'Sal y pimienta|al gusto'],
+ ['Sofríe la cebolla y el pimentón en aceite a fuego medio 3 minutos.', 'Agrega el tomate y cocina 2 minutos más.', 'Bate los huevos, viértelos sobre el sofrito.', 'Revuelve a fuego bajo hasta cuajar. Sirve con arepa o pan.'],
+ ['rápido', 'sin gluten', 'económico'], 355, 21, 10, 9, 27, 6, 2],
+
+['Chía Pudding de Proteína', 'desayuno',
+ ['semillas de chía|3 cdas', 'leche|250 ml', 'scoop proteína en polvo sabor vainilla|1', 'miel o stevia|1 cda', 'Fruta para decorar|al gusto'],
+ ['Mezcla la leche, la proteína en polvo y la miel en un frasco.', 'Agrega las semillas de chía y revuelve bien.', 'Refrigerar al menos 4 horas o toda la noche.', 'Al servir, decora con fruta fresca.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 485, 39, 5, 33, 23, 13, 16, '/assets/img/recetas/006-chia-pudding-de-proteina.jpeg'],
+
+['Tostada Griega con Yogur y Huevo', 'desayuno',
+ ['pan integral|2 rebanadas', 'yogur griego natural|150 g', 'huevos|2', 'pepino|1/2', 'Eneldo o perejil|al gusto', 'Aceite de oliva|al gusto'],
+ ['Tuesta el pan hasta dorar.', 'Mezcla el yogur con sal, un chorrito de limón y eneldo.', 'Extiende el yogur sobre las tostadas.', 'Fríe los huevos y colócalos encima. Añade el pepino.'],
+ ['alto en proteína', 'rápido', 'económico'], 507, 27, 8, 39, 28, 14, 5, '/assets/img/recetas/007-tostada-griega-con-yogur-y-huevo.jpeg'],
+
+['Smoothie de Banano y Proteína', 'desayuno',
+ ['banano|1', 'scoop proteína en polvo|1', 'leche|250 ml', 'mantequilla de maní|1 cda', 'Hielo|al gusto'],
+ ['Coloca todos los ingredientes en la licuadora.', 'Licúa 30 segundos hasta obtener una mezcla suave.', 'Ajusta la consistencia con más leche si es necesario.', 'Sirve de inmediato en vaso grande.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 467, 37, 5, 45, 18, 29, 4, '/assets/img/recetas/008-smoothie-de-banano-y-proteina.jpeg'],
+
+['Pan con Jamón y Huevo Duro', 'desayuno',
+ ['pan integral|2 rebanadas', 'lonjas jamón de cerdo o pavo|3', 'huevos|2', 'Mostaza o mayonesa light|al gusto', 'Hojas de espinaca o lechuga|al gusto', 'Sal y pimienta|al gusto'],
+ ['Hierve los huevos 8 minutos. Pélalos y córtalos en rodajas.', 'Tuesta el pan ligeramente.', 'Unta la mostaza o mayonesa sobre el pan.', 'Arma el sandwich con el jamón, los huevos y las hojas verdes.'],
+ ['alto en proteína', 'rápido', 'económico'], 403, 51, 10, 22, 12, 5, 4, '/assets/img/recetas/009-pan-con-jamon-y-huevo-duro.jpeg'],
+
+['Arepa con Queso y Huevo', 'desayuno',
+ ['arepa precocida o hecha la noche anterior|1', 'queso blanco o mozzarella|50 g', 'huevos|2', 'aguacate|1/2', 'Aceite para la sartén|al gusto', 'Sal y pimienta|al gusto'],
+ ['Calienta la arepa en sartén o tostadora hasta dorar.', 'Fríe los huevos en aceite a fuego medio.', 'Abre la arepa por la mitad y rellena con el queso.', 'Sirve con los huevos fritos y el aguacate al lado.', 'CLÁSICOS ELEVADOS', 'Clásicos Elevados', 'Recetas de siempre, optimizadas para proteína'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 546, 26, 10, 11, 46, 2, 7, '/assets/img/recetas/010-arepa-con-queso-y-huevo.jpeg'],
+
+['Shakshuka Clásica', 'desayuno',
+ ['huevos|4', 'tomates triturados|400 g', 'pimentón rojo|1', 'cebolla mediana|1', 'ajo|3 dientes', 'Comino|al gusto', 'Aceite de oliva|al gusto'],
+ ['Sofríe la cebolla y el pimentón en aceite de oliva 5 minutos. Agrega el ajo y las especias 1 minuto más.', 'Incorpora los tomates triturados y cocina a fuego bajo 10 minutos hasta espesar.', 'Haz 4 huecos en la salsa y rompe un huevo en cada uno.', 'Cubre la sartén y cocina 5-7 minutos hasta que las claras estén firmes. Sirve con pan pita.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 578, 33, 25, 41, 34, 22, 10],
+
+['Frittata de Espinacas y Ricotta', 'desayuno',
+ ['huevos|4', 'ricotta o queso campesino|100 g', 'espinacas baby|100 g', 'queso parmesano o manchego|50 g', 'ajo|1 diente', 'Aceite de oliva|al gusto'],
+ ['Precalienta el horno a 180°C. Sofríe el ajo en aceite, agrega las espinacas 2 minutos.', 'Bate los huevos y mezcla con la ricotta, el parmesano y las espinacas. Sazona bien.', 'Vierte en una sartén apta para horno engrasada.', 'Hornea 12-15 minutos hasta que cuaje y dore. Corta en porciones.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 889, 65, 20, 12, 65, 3, 2],
+
+['Omelette Clásico con Queso y Jamón', 'desayuno',
+ ['huevos|3', 'jamón|50 g', 'queso|40 g', 'cebolla cabezona|1/4', 'pimentón|1/2', 'Mantequilla|al gusto'],
+ ['Bate los huevos con sal y pimienta. Sofríe la cebolla y el pimentón en mantequilla 2 minutos.', 'Vierte los huevos sobre el sofrito. No revolver — dejar cuajar los bordes.', 'Cuando el centro esté casi cuajado, agrega el jamón y el queso en un lado.', 'Dobla el omelette a la mitad y sirve de inmediato.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 489, 36, 10, 10, 34, 6, 2],
+
+['Tortilla Española', 'desayuno',
+ ['huevos|4', 'papas medianas peladas finas|2', 'cebolla en juliana|1/2', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
+ ['Fríe las papas y la cebolla en aceite a fuego bajo 15 minutos hasta blandas. Escurre el exceso de aceite.', 'Bate los huevos con sal y mezcla con las papas y la cebolla.', 'Cocina en sartén a fuego medio 3-4 minutos hasta cuajar el fondo.', 'Voltea con un plato y cocina el otro lado 3 minutos. Sirve tibia o fría.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 654, 33, 25, 60, 32, 7, 7],
+
+['Full English Saludable', 'desayuno',
+ ['huevos|4', 'salchichas pavo o pollo|4', 'champiñones|100 g', 'tomates en mitades|2', 'frijoles en salsa de tomate|200 g', 'Pan integral|al gusto', 'Aceite de oliva|al gusto'],
+ ['Saltea los champiñones y los tomates en aceite de oliva 5 minutos.', 'Cocina las salchichas en la misma sartén.', 'Calienta los frijoles en olla pequeña.', 'Fríe o pocha los huevos. Dispón todo en el plato con el pan tostado.'],
+ ['alto en proteína', 'económico'], 491, 66, 25, 19, 15, 10, 3, '/assets/img/recetas/015-full-english-saludable.jpeg'],
+
+['Huevos Benedictinos al Estilo Español', 'desayuno',
+ ['huevos|4', 'pan rústico|4 rebanadas', 'jamón serrano o jamón de pavo|100 g', 'tomates|2', 'ajo|2 dientes', 'Aceite de oliva extra virgen|al gusto', 'Vinagre blanco|al gusto'],
+ ['Frota el pan con ajo y tomate cortado. Rocía con aceite y tuesta hasta dorar.', 'Hierve agua con un chorrito de vinagre a fuego suave.', 'Rompe cada huevo en un cuenco pequeño y desliza al agua. Cocina 3-4 minutos.', 'Coloca el jamón sobre el pan y corona con el huevo pochado. Sazona.'],
+ ['alto en proteína', 'rápido', 'económico'], 864, 61, 20, 67, 39, 17, 11, '/assets/img/recetas/016-huevos-benedictinos-al-estilo-espanol.jpeg'],
+
+['Panneer Bhurji (Revuelto de Queso Indio)', 'desayuno',
+ ['queso campesino o paneer|200 g', 'huevos|2', 'cebolla|1', 'tomate|1', 'pimentón verde|1', 'Comino|al gusto', 'Aceite o mantequilla clarificada|al gusto'],
+ ['Sofríe la cebolla con el comino en aceite o mantequilla 3 minutos.', 'Agrega el tomate y el pimentón; cocina 4 minutos más.', 'Incorpora las especias y el queso desmenuzado.', 'Bate los huevos y vierte sobre la mezcla. Revuelve hasta cuajar.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 861, 53, 20, 30, 60, 14, 6],
+
+['Menemen Turco', 'desayuno',
+ ['huevos|4', 'tomates|2', 'pimientos verdes en aros|2', 'queso blanco|80 g', 'Mantequilla|al gusto', 'Sal y pimienta roja molida|al gusto'],
+ ['Saltea los pimientos en mantequilla 3 minutos.', 'Agrega los tomates y cocina 5 minutos hasta reducir.', 'Bate los huevos e incorpora a la sartén. Revuelve suavemente.', 'Cuando casi cuajen, agrega el queso desmenuzado. Retira del fuego y sirve.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 766, 48, 15, 28, 52, 19, 8],
+
+['Changua con Queso y Pan', 'desayuno',
+ ['leche entera|500 ml', 'huevos|2', 'queso blanco|50 g', 'pan o mogolla|2 rebanadas', 'Cilantro|al gusto', 'Sal|al gusto'],
+ ['Hierve la leche a fuego medio con sal.', 'Rompe los huevos directamente en la leche hirviendo y cocina 3-4 minutos.', 'Añade el queso en cubos y retira del fuego cuando empiece a ablandarse.', 'Sirve en un tazón con el pan y el cilantro fresco.'],
+ ['alto en proteína', 'rápido', 'económico'], 774, 48, 15, 51, 43, 29, 4],
+
+['Gallo Pinto Costarricense', 'desayuno',
+ ['arroz|1 taza', 'frijoles negros con caldo|1 taza', 'cebolla|1/4', 'pimentón|1/4', 'Salsa lizano o salsa inglesa|al gusto', 'Aceite|al gusto'],
+ ['Sofríe la cebolla y el pimentón en aceite 3 minutos.', 'Agrega los frijoles con un poco de caldo y cocina 2 minutos.', 'Incorpora el arroz y mezcla bien.', 'Añade la salsa lizano al gusto. Sirve con huevo frito y maduro.'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 616, 23, 15, 105, 12, 3, 15, '/assets/img/recetas/020-gallo-pinto-costarricense.jpeg'],
+
+['Calentado Bogotano Fitness', 'desayuno',
+ ['arroz y frijoles del día anterior|1 taza', 'huevos|2', 'de hogao|1/4', 'queso campesino|50 g', 'Aceite|al gusto'],
+ ['Calienta el hogao en sartén y agrega el arroz y los frijoles. Saltea 5 minutos.', 'Empuja la mezcla hacia los bordes y fríe los huevos en el centro.', 'Sirve con el queso campesino desmenuzado encima.', 'Acompaña con arepa o pan.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 639, 27, 15, 59, 32, 2, 1],
+
+['Chilaquiles Rojos con Huevo', 'desayuno',
+ ['tortillas maíz en triángulos y fritas o|2', 'salsa roja|200 ml', 'huevos|2', 'queso blanco|50 g', 'Crema agria o yogur griego|al gusto', 'Cebolla morada y cilantro|al gusto'],
+ ['Prepara la salsa roja licuando tomates, ajo, cebolla y chile. Cocina 10 minutos.', 'Agrega las tortillas a la salsa y deja que absorban 2-3 minutos.', 'Fríe los huevos aparte.', 'Sirve los chilaquiles con el huevo encima, queso, crema y cilantro.', 'PROTEICOS', 'Proteicos', 'Avena, quinoa y bases nutritivas que sacian'],
+ ['alto en proteína', 'rápido', 'económico'], 803, 40, 20, 86, 34, 31, 6],
+
+['Overnight Oats de Chocolate y Proteína', 'desayuno',
+ ['avena en hojuelas|80 g', 'leche|250 ml', 'scoop proteína en polvo sabor chocolate|1', 'cacao en polvo sin azúcar|1 cda', 'miel|1 cda', 'Fruta para servir|al gusto'],
+ ['Mezcla todos los ingredientes en un frasco con tapa.', 'Revuelve bien hasta integrar el cacao y la proteína sin grumos.', 'Cierra y refrigera mínimo 6 horas o toda la noche.', 'En la mañana agrega fruta fresca encima y consume.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 653, 47, 5, 88, 16, 31, 11, '/assets/img/recetas/023-overnight-oats-de-chocolate-y-proteina.jpeg'],
+
+['Açaí Bowl Proteico', 'desayuno',
+ ['pulpa de açaí|100 g', 'banano|1', 'yogur griego|150 g', 'scoop proteína en polvo|1', 'Granola|al gusto'],
+ ['Licúa el açaí, el banano, el yogur y la proteína con mínima cantidad de líquido.', 'La mezcla debe quedar espesa — consistencia de helado.', 'Sirve en un tazón amplio.', 'Decora con granola, fruta fresca y semillas de chía.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 719, 47, 10, 78, 26, 38, 10],
+
+['Quinoa Bowl Dulce con Frutas', 'desayuno',
+ ['quinoa|150 g', 'leche|400 ml', 'miel|2 cdas', 'Canela y vainilla|al gusto', 'nueces o almendras|50 g', 'Fruta de temporada|al gusto', 'Ralladura de naranja|al gusto'],
+ ['Enjuaga la quinoa y cocina en leche a fuego bajo 15 minutos.', 'Agrega miel, canela, vainilla y ralladura de naranja.', 'Cocina 5 minutos más hasta obtener consistencia cremosa.', 'Sirve con fruta fresca y los frutos secos picados.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 840, 31, 20, 95, 41, 54, 12],
+
+['Loaded Protein Bowl', 'desayuno',
+ ['huevos revueltos|3', 'frijoles negros|1/2 taza', 'aguacate|1/2', 'queso campesino|50 g', 'arroz integral|1/2 taza', 'Salsa|al gusto', 'Cilantro|al gusto'],
+ ['Calienta los frijoles y el arroz en sartén o microondas.', 'Revuelve los huevos en sartén con aceite.', 'Arma el bowl: arroz y frijoles de base, huevos encima.', 'Añade el aguacate, el queso y la salsa. Termina con cilantro.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 851, 44, 15, 78, 43, 15, 18],
+
+['Porridge de Quinoa con Canela', 'desayuno',
+ ['quinoa|150 g', 'leche|400 ml', 'canela molida|1 cdta', 'miel|2 cdas', 'arándanos o moras|50 g', 'almendras laminadas|30 g'],
+ ['Cocina la quinoa en leche con canela a fuego bajo 15 minutos.', 'Revuelve frecuentemente hasta obtener consistencia cremosa.', 'Endulza con miel y sirve en tazón.', 'Corona con los arándanos y las almendras.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 724, 26, 20, 92, 31, 52, 11, '/assets/img/recetas/030-porridge-de-quinoa-con-canela.jpeg'],
+
+['Skyr Bowl con Frutas y Granola', 'desayuno',
+ ['yogur griego o skyr|200 g', 'banano|1', 'fresas|100 g', 'granola sin azúcar|30 g', 'semillas de chía|1 cda', 'miel|1 cda'],
+ ['Sirve el yogur en un tazón amplio.', 'Distribuye la fruta por encima.', 'Agrega la granola y las semillas de chía.', 'Termina con un hilo de miel.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 587, 25, 5, 83, 20, 51, 11, '/assets/img/recetas/031-skyr-bowl-con-frutas-y-granola.jpeg'],
+
+['Avena con Proteína y Fresas', 'desayuno',
+ ['avena gruesa|70 g', 'leche|250 ml', 'proteína en polvo sabor fresa|2 cdas', 'fresas|100 g', 'mantequilla de maní|1 cda', 'semillas de lino|1 cdta'],
+ ['Cocina la avena en leche a fuego medio 5 minutos.', 'Retira del fuego y mezcla la proteína en polvo.', 'Agrega la mantequilla de maní y revuelve.', 'Sirve con las fresas cortadas y las semillas de lino.', 'CONTUNDENTES', 'Contundentes', 'Para días de gym, trabajo pesado o simplemente hambre de verdad'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 692, 49, 10, 73, 25, 20, 12],
+
+['Desayuno Costeño Completo', 'desayuno',
+ ['huevos fritos|2', 'arepa maíz blanco|1', 'queso costeño o blanco|100 g', 'banano asado|1 tajada', 'aguacate|1/2', 'Jugo de naranja o maracuyá|al gusto'],
+ ['Prepara la arepa en sartén caliente hasta dorar por ambos lados.', 'Asa el banano maduro en sartén con poco aceite.', 'Fríe los huevos al gusto.', 'Sirve todo junto con el queso y el aguacate al lado.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 898, 42, 25, 66, 53, 12, 10, '/assets/img/recetas/033-desayuno-costeno-completo.jpeg'],
+
+['Steak and Eggs', 'desayuno',
+ ['bistec de res o lomo de cerdo|150 g', 'huevos|3', 'espinacas o kale|1 taza', 'cebolla en aros|1/2', 'Aceite|al gusto'],
+ ['Sazona el bistec con sal, pimienta y ajo. Sella en sartén caliente 3 minutos por lado.', 'Deja reposar la carne 3 minutos antes de cortar.', 'En la misma sartén saltea las espinacas y la cebolla 2 minutos.', 'Fríe o revuelve los huevos. Sirve todo junto.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 564, 60, 20, 8, 32, 4, 2, '/assets/img/recetas/034-steak-and-eggs.jpeg'],
+
+['Breakfast Burrito Proteico', 'desayuno',
+ ['huevos revueltos|3', 'pechuga de pollo y|100 g', 'tortilla trigo integral|1', 'queso|50 g', 'aguacate|1/2', 'Salsa picante o salsa de tomate|al gusto', 'Sal|al gusto'],
+ ['Revuelve los huevos con sal, pimienta y comino.', 'Calienta la tortilla en sartén seca 30 segundos.', 'Coloca los huevos, el pollo y el queso en el centro de la tortilla.', 'Agrega el aguacate y la salsa. Dobla y sirve.'],
+ ['alto en proteína', 'rápido', 'económico'], 893, 67, 15, 50, 48, 15, 9],
+
+['Huevos con Salchicha y Batata', 'desayuno',
+ ['huevos|3', 'salchichas pollo o pavo|2', 'batata mediana|1', 'cebolla|1/4', 'Aceite|al gusto'],
+ ['Fríe los cubos de batata en aceite a fuego medio-alto 10 minutos hasta dorar.', 'Agrega la cebolla y las salchichas. Saltea 3-4 minutos.', 'Haz espacio en la sartén y agrega los huevos — revueltos o fritos.', 'Sazona con paprika y sirve en la misma sartén.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 519, 67, 20, 15, 20, 4, 2, '/assets/img/recetas/040-huevos-con-salchicha-y-batata.jpeg'],
+
+['Bowl de Huevo, Frijoles y Arroz', 'desayuno',
+ ['huevos fritos|2', 'frijoles negros o rojos|1 taza', 'arroz blanco|1/2 taza', 'hogao|1 cda', 'queso blanco|50 g', 'Aguacate y cilantro|al gusto'],
+ ['Calienta los frijoles con un poco de su caldo y el hogao.', 'Calienta el arroz.', 'Fríe los huevos.', 'Sirve en bowl con arroz y frijoles de base, huevos encima, queso, aguacate y cilantro.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 805, 45, 15, 81, 35, 3, 17, '/assets/img/recetas/042-bowl-de-huevo-frijoles-y-arroz.jpeg'],
+
+['Quiche de Verduras y Jamón', 'desayuno',
+ ['huevos|4', 'leche|200 ml', 'jamón|100 g', 'queso|80 g', 'espinacas o brócoli|1/2 taza', 'Base de masa para tarta|al gusto', 'Sal|al gusto'],
+ ['Precalienta horno a 180°C. Si usas base de masa, colócala en molde.', 'Bate los huevos con leche, sal, pimienta y nuez moscada.', 'Distribuye el jamón, las verduras y el queso sobre la base.', 'Vierte la mezcla de huevo y hornea 25 minutos hasta cuajar.', 'VERSIONES DULCES', 'Versiones Dulces', 'Sabor dulce sin comprometer la nutrición'],
+ ['alto en proteína', 'sin gluten', 'económico'], 746, 64, 30, 17, 47, 13, 0, '/assets/img/recetas/043-quiche-de-verduras-y-jamon.jpeg'],
+
+['Pancakes de Proteína (2 ingredientes)', 'desayuno',
+ ['bananos muy|2', 'huevos|3', 'scoop proteína en polvo|1', 'Canela|al gusto', 'Aceite de coco o mantequilla|al gusto'],
+ ['Aplasta los bananos en un tazón con un tenedor hasta obtener puré.', 'Agrega los huevos y la proteína en polvo si la usas. Mezcla bien.', 'Calienta una sartén con poco aceite a fuego medio.', 'Vierte porciones y cocina 2 minutos por lado hasta dorar.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 647, 45, 10, 60, 28, 32, 8],
+
+['French Toast Proteico', 'desayuno',
+ ['gruesas de pan integral o brioche|2 rebanadas', 'huevos|2', 'leche|100 ml', 'scoop proteína en polvo sabor vainilla|1', 'Canela y vainilla|al gusto', 'Fruta y miel para servir|al gusto'],
+ ['Bate los huevos con la leche, la proteína, la canela y la vainilla.', 'Sumerge el pan en la mezcla y deja que absorba 30 segundos por lado.', 'Cocina en sartén con mantequilla 3 minutos por lado hasta dorar.', 'Sirve con fruta fresca y un hilo de miel.'],
+ ['alto en proteína', 'rápido'], 755, 48, 12, 107, 18, 85, 5],
+
+['Pancakes de Avena y Proteína', 'desayuno',
+ ['avena en hojuelas|80 g', 'huevos|2', 'leche|150 ml', 'scoop proteína en polvo|1', 'polvo de hornear|1 cdta', 'Canela y vainilla|al gusto'],
+ ['Licúa la avena, los huevos, la leche, la proteína, el polvo de hornear y los aromatizantes.', 'Deja reposar la mezcla 5 minutos.', 'Cocina en sartén con poco aceite, porciones de 1/4 taza a fuego medio.', 'Voltea cuando aparezcan burbujas en la superficie. Sirve con fruta y miel.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 677, 55, 15, 65, 23, 10, 9],
+
+['Muffins de Huevo y Espinacas con Base Dulce', 'desayuno',
+ ['huevos|4', 'espinacas|100 g', 'queso|80 g', 'jamón o tocineta de pavo|50 g', 'Sal|al gusto', 'Spray antiadherente|al gusto'],
+ ['Precalienta horno a 180°C. Engrasa un molde de 6 muffins.', 'Bate los huevos con sal y pimienta.', 'Distribuye las espinacas, el jamón y el queso en los moldes.', 'Vierte la mezcla de huevo encima y hornea 18-20 minutos.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 594, 52, 25, 9, 39, 3, 2],
+
+['Banana Protein Pancakes con Mantequilla de Maní', 'desayuno',
+ ['banano|1', 'huevos|2', 'scoop proteína en polvo|1', 'mantequilla de maní|2 cdas', 'Fresas para servir|al gusto', 'Miel|al gusto'],
+ ['Aplasta el banano y mezcla con los huevos y la proteína hasta integrar.', 'Cocina en sartén con poco aceite a fuego medio-bajo.', 'Voltea cuando los bordes estén firmes.', 'Sirve con mantequilla de maní, fresas y un hilo de miel.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 848, 47, 12, 116, 28, 97, 7, '/assets/img/recetas/049-banana-protein-pancakes-con-mantequilla-de-mani.jpeg'],
+
+['Avena Colombiana Dulce con Proteína', 'desayuno',
+ ['leche|500 ml', 'avena en hojuelas|60 g', 'scoop proteína en polvo sabor vainilla|1', 'Canela|al gusto', 'panela o miel|2 cdas', 'Fruta de temporada|al gusto'],
+ ['Licúa la avena cruda con la mitad de la leche hasta que quede suave.', 'Calienta en olla a fuego medio con el resto de la leche y la panela.', 'Revuelve constantemente hasta espesar, 5 minutos.', 'Retira del fuego, agrega la proteína y la vainilla. Sirve fría o caliente.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 762, 50, 10, 95, 22, 50, 8],
+
+['Huevos En Cazuela', 'desayuno',
+ ['huevos|3', 'queso parmesano|½ cda', 'champiñones|1 taza', 'puño espárragos o green beans|½', 'cebolla|¼', 'pimentón|¼', 'Tomillo al|al gusto', 'Sal y pimienta|al gusto', 'Aceite de aguacate o coco|al gusto'],
+ ['Lava y pica los champiñones, cebolla, espár- ragos y pimentón según tu preferencia.', 'Coloca todos los vegetales en un bowl y re- serva.', 'Calienta un poco de aceite de aguacate en una sartén, a fuego medio, añade los vegetales y saltea durante 3-5 minutos, removiendo a menudo. Salpimienta al gusto. Reserva', 'Precalienta el horno a 160 - 180 °C.', 'Coloca en una cazuela o recipiente apto para horno los vegetales salteados.', 'Seguidamente, coloca los huevos sobre los vegetales procurando que la yema no se rompa; y espolvorea el queso parmesano por encima.', 'Introduce la cazuela en el horno y cocina de 10-12 minutos o hasta que el huevo esté cuaja- do según tu preferencia.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 417, 29, 4, 17, 28, 10, 5, '/assets/img/recetas/016-huevos-en-cazuela.jpeg'],
+
+['Changua santafereña', 'desayuno',
+ ['leche|1 taza', 'agua|1 taza', 'huevo|1', 'cebolla larga|1 rama', 'cilantro|1 cda', 'pan blanco|1 rebanada', 'Sal|al gusto'],
+ ['Pon a hervir el agua con la leche, la cebolla larga y sal.', 'Cuando rompa el hervor, baja el fuego y agrega el huevo entero con cuidado de no romper la yema.', 'Cocina 3-4 minutos a fuego suave hasta que la clara cuaje.', 'Retira del fuego y espolvorea el cilantro picado.', 'Sirve caliente con el pan tostado partido dentro o al lado.'],
+ ['tradicional', 'ligero', 'rápido', 'económico'], 307, 17, 15, 27, 14, 14, 1],
+
+['Calentado paisa aligerado', 'desayuno',
+ ['arroz blanco|1 taza', 'fríjol rojo|1/2 taza', 'huevo|1', 'arepa maíz|1', 'cebolla larga|1/4 taza', 'aceite|1 cdta', 'Sal|al gusto'],
+ ['Calienta el aceite en un sartén antiadherente a fuego medio.', 'Sofríe la cebolla larga 1 minuto.', 'Agrega el arroz y los fríjoles y revuelve 4-5 minutos hasta que se calienten parejo.', 'En otro sartén, cocina el huevo al gusto (de preferencia poché o frito con poco aceite).', 'Tuesta la arepa en un sartén seco o en el air fryer 4 minutos.', 'Sirve el arroz con fríjoles, el huevo encima y la arepa al lado.'],
+ ['tradicional', 'alto en proteína', 'rápido', 'sin gluten'], 716, 26, 15, 123, 13, 3, 11],
+
+['Arepa de huevo al horno', 'desayuno',
+ ['arepa maíz cruda|1', 'huevo|1', 'Aceite en spray|al gusto', 'Sal|al gusto'],
+ ['Precalienta el horno a 200°C.', 'Extiende la masa de arepa y forma un disco de 1 cm de grosor; sella los bordes dejando el centro más fino.', 'Cocina 6 minutos por cada lado en sartén caliente hasta que dore y se pueda abrir una bolsa por un costado.', 'Abre con cuidado un espacio en el centro y vierte el huevo crudo dentro.', 'Sella el borde y lleva al horno 10-12 minutos hasta que el huevo cuaje.', 'Sazona con sal y sirve caliente.'],
+ ['tradicional', 'sin gluten', 'económico'], 360, 11, 25, 41, 17, 1, 2],
+
+['Caldo de costilla', 'desayuno',
+ ['costilla de res|300 g', 'papa pastusa|1', 'arveja|1/2 taza', 'cebolla larga|1/4 taza', 'ajo|1 diente', 'cilantro|1 rama', 'agua|6 tazas', 'Sal|al gusto'],
+ ['En una olla, dora la costilla de res con el ajo 3-4 minutos.', 'Cubre con el agua y lleva a hervor; retira la espuma que suba.', 'Baja el fuego y cocina tapado 25 minutos hasta que la carne esté tierna.', 'Agrega la papa y la arveja y cocina 12 minutos más.', 'Rectifica sal, agrega la cebolla larga y el cilantro picados al final.', 'Sirve bien caliente.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 556, 35, 45, 25, 35, 5, 6],
+
+['Arepa boyacense con cuajada y miel', 'desayuno',
+ ['arepa maíz dulce|1', 'cuajada|80 g', 'miel|1 cda'],
+ ['Tuesta la arepa boyacense en sartén o air fryer 4-5 minutos por lado hasta dorar.', 'Corta la cuajada en tajadas delgadas.', 'Sirve la arepa caliente con la cuajada encima y un hilo de miel.'],
+ ['tradicional', 'rápido', 'vegetariano', 'sin gluten'], 498, 19, 15, 59, 21, 18, 2],
+
+['Huevos pericos con arepa', 'desayuno',
+ ['huevos|2', 'tomate|1/2', 'cebolla larga|2 cdas', 'aceite|1 cdta', 'arepa maíz|1', 'Sal|al gusto'],
+ ['Calienta el aceite en un sartén antiadherente y sofríe la cebolla y el tomate 3 minutos.', 'Bate los huevos con sal y viértelos en el sartén.', 'Revuelve a fuego medio-bajo hasta que cuajen sin secarse.', 'Tuesta la arepa aparte y sirve junto a los huevos.'],
+ ['tradicional', 'rápido', 'sin gluten', 'económico'], 414, 18, 12, 46, 18, 4, 3],
+
+['Tamal tolimense en porción', 'desayuno',
+ ['harina de maíz precocida|1 taza', 'pechuga de pollo|150 g', 'arveja|1/2 taza', 'papa criolla|1', 'aceite|1 cda', 'caldo de pollo|1/4 taza', 'Sal|al gusto'],
+ ['Cocina la pechuga de pollo en el caldo 15 minutos, desmenuza y reserva el líquido.', 'Mezcla la harina de maíz con el caldo reservado, el aceite y sal hasta formar una masa suave.', 'Sobre una hoja de plátano o papel aluminio, extiende una porción de masa.', 'Rellena con el pollo desmenuzado, la arveja y la papa criolla; envuelve bien.', 'Cocina al vapor 25-30 minutos hasta que la masa esté firme.', 'Deja reposar 5 minutos antes de abrir y servir.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 493, 32, 40, 63, 12, 4, 7],
+
+['Almojábana horneada', 'desayuno',
+ ['cuajada|200 g', 'harina de maíz precocida|1 taza', 'huevo|1', 'mantequilla|1 cda', 'polvo de hornear|1 cdta', 'azúcar|1 cda'],
+ ['Precalienta el horno a 190°C y engrasa una bandeja.', 'Desmenuza la cuajada con un tenedor hasta que quede cremosa.', 'Mezcla con la harina de maíz, el huevo, la mantequilla, el azúcar y el polvo de hornear hasta integrar.', 'Forma bolitas medianas y colócalas en la bandeja.', 'Hornea 15-18 minutos hasta que doren ligeramente por fuera.'],
+ ['tradicional', 'ligero', 'sin gluten', 'económico'], 217, 9, 25, 20, 11, 2, 1],
+
+['Chocolate santafereño con queso', 'desayuno',
+ ['leche|1 taza', 'cuadro chocolate de mesa|1/2', 'queso campesino|30 g', 'pan blanco|1 rebanada'],
+ ['Calienta la leche con el chocolate de mesa a fuego medio, batiendo con molinillo o batidor hasta disolver.', 'Deja hervir suave 3 minutos sin dejar de batir para que espume.', 'Sirve caliente con el queso en trozos para remojar y el pan al lado.'],
+ ['tradicional', 'rápido', 'vegetariano', 'económico'], 521, 18, 10, 55, 26, 34, 3],
+
+['Avena colombiana caliente', 'desayuno',
+ ['leche|1 taza', 'avena en hojuelas|2 cdas', 'panela raspada|1 cdta', 'astilla canela|1'],
+ ['Calienta la leche con la canela a fuego medio.', 'Agrega la avena y la panela raspada, revolviendo para que no se pegue.', 'Cocina 5 minutos a fuego suave hasta que espese ligeramente.', 'Retira la astilla de canela y sirve caliente.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 286, 13, 10, 38, 10, 16, 4],
+
 // ==================== ALMUERZOS ====================
 ['Berenjenas a la parmesana baja en carbohidratos', 'almuerzo',
  ['berenjena|2 unidades', 'salsa de tomate|1 1/2 taza', 'queso mozzarella|1 taza', 'queso parmesano|1/2 taza', 'aceite de oliva|1 cucharada', 'ajo|2 dientes', 'orégano|1 cucharadita', 'albahaca|1/2 cucharadita', 'sal|1/2 cucharadita', 'pimienta|1/4 cucharadita'],
@@ -3249,6 +3509,281 @@ return [
  ['Calienta una sartén antiadherente a fuego medio-alto y cocina las hamburguesas de carne de 150 g cada una durante 4‑5 minutos por lado, o hasta alcanzar el punto de cocción deseado.', 'Coloca una rebanada de queso cheddar sobre cada hamburguesa en el último minuto de cocción y deja que se derrita ligeramente.', 'Lava y corta las hojas grandes de lechuga en trozos que sirvan como “tortillas” de bajo carbohidrato.', 'En un tazón pequeño, mezcla el aguacate en rodajas con un chorrito de limón, sal y pimienta para realzar el sabor del guacamole.', 'Arma los tacos colocando una hamburguesa con queso sobre una hoja de lechuga, añade rodajas de tomate y una cucharada de guacamole.', 'Añade mostaza y mayonesa al gusto, y sirve inmediatamente para conservar la frescura de la lechuga.'],
  ['tradicional', 'ligero'], 424, 28, 15, 15, 28, 4, 5, '/assets/img/recetas/013-tacos-de-lechuga-con-carne-molida-y-guacamole.jpeg'],
 
+['Mexicano Saludable', 'almuerzo',
+ ['Carne molida|al gusto', 'Maíz|al gusto', 'Aguacate|al gusto', 'Arroz|al gusto', 'Tomate|al gusto', 'Yogur griego|al gusto'],
+ ['Cocina la carne con especias.', 'Coloca arroz en el bowl.', 'Agrega carne, maíz y tomate.', 'Añade aguacate encima.', 'Termina con yogur griego.', '(Tip: El limón hace que todos los sabores resalten más.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 825, 48, 15, 82, 34, 5, 8, '/assets/img/recetas/002-mexicano-saludable.jpeg'],
+
+['Tropical de Pollo y Mango', 'almuerzo',
+ ['Pollo desmechado|al gusto', 'Mango|al gusto', 'Arroz jazmín|al gusto', 'Pepino|al gusto', 'Aguacate|al gusto'],
+ ['Cocina el pollo en Air Fryer.', 'Coloca arroz caliente en la base.', 'Agrega mango y pepino.', 'Añade pollo y aguacate.', 'Sirve inmediatamente.', '(Tip: Combina increíble con salsa de yogur y limón.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 525, 51, 12, 46, 15, 14, 6, '/assets/img/recetas/003-tropical-de-pollo-y-mango.jpeg'],
+
+['Crispy Buffalo', 'almuerzo',
+ ['Pollo crispy Air Fryer|al gusto', 'Lechuga|al gusto', 'Zanahoria|al gusto', 'Maíz|al gusto', 'Salsa buffalo|al gusto'],
+ ['Cocina el pollo apanado en Air Fryer.', 'Mezcla el pollo con salsa buffalo.', 'Coloca vegetales en el bowl.', 'Añade el pollo encima.', 'Sirve tibio.', '(Tip: Puedes agregar queso parmesano encima.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 506, 53, 15, 56, 7, 4, 6, '/assets/img/recetas/004-crispy-buffalo.jpeg'],
+
+['Mediterráneo', 'almuerzo',
+ ['Pepino|al gusto', 'Tomate|al gusto', 'Queso feta|al gusto', 'Aceitunas|al gusto', 'Garbanzos|al gusto', 'Lechuga|al gusto'],
+ ['Lava y corta todos los vegetales.', 'Coloca lechuga como base.', 'Agrega garbanzos y vegetales.', 'Añade queso feta.', 'Termina con aceite de oliva.', '(Tip: El orégano seco le da muchísimo sabor.)'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 597, 35, 10, 32, 38, 6, 9, '/assets/img/recetas/005-mediterraneo.jpeg'],
+
+['Salmón y Aguacate', 'almuerzo',
+ ['Salmón Air Fryer|al gusto', 'Aguacate|al gusto', 'Arroz|al gusto', 'Pepino|al gusto', 'Ajonjolí|al gusto'],
+ ['Cocina el salmón en Air Fryer.', 'Coloca arroz en el bowl.', 'Agrega pepino y aguacate.', 'Añade salmón encima.', 'Termina con ajonjolí.', '(Tip: Un poco de salsa soya queda deliciosa.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 593, 36, 15, 35, 34, 2, 6, '/assets/img/recetas/006-salmon-y-aguacate.jpeg'],
+
+['Proteína Express', 'almuerzo',
+ ['Huevos|al gusto', 'Aguacate|al gusto', 'Tomate cherry|al gusto', 'Espinaca|al gusto', 'Queso|al gusto'],
+ ['Cocina los huevos.', 'Coloca espinaca en la base.', 'Agrega tomate y aguacate.', 'Añade huevo en mitades.', 'Termina con queso fresco.', '(Tip: Ideal para cenas rápidas y ligeras.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/007-proteina-express.jpeg'],
+
+['Crunchy Air Fryer', 'almuerzo',
+ ['Garbanzos crocantes|al gusto', 'Lechuga|al gusto', 'Pepino|al gusto', 'Zanahoria|al gusto', 'Salsa de yogur|al gusto'],
+ ['Cocina los garbanzos en Air Fryer.', 'Coloca vegetales en el bowl.', 'Agrega garbanzos calientes.', 'Termina con salsa cremosa.', '(Tip: Los garbanzos deben quedar MUY crocantes para que el bowl tenga la textura perfecta.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 185, 10, 12, 31, 4, 11, 8, '/assets/img/recetas/008-crunchy-air-fryer.jpeg'],
+
+['Dulce y Picante', 'almuerzo',
+ ['Pollo|al gusto', 'Salsa miel picante|al gusto', 'Arroz|al gusto', 'Zanahoria|al gusto', 'Pepino|al gusto'],
+ ['Cocina el pollo.', 'Mezcla con salsa miel picante.', 'Coloca arroz en el bowl.', 'Añade vegetales.', 'Termina con pollo encima.', '(Tip: El ajonjolí tostado queda perfecto aquí.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 677, 50, 15, 109, 6, 78, 3, '/assets/img/recetas/009-dulce-y-picante.jpeg'],
+
+['Veggie Crocante', 'almuerzo',
+ ['Coliflor Air Fryer|al gusto', 'Brócoli|al gusto', 'Zanahoria|al gusto', 'Aguacate|al gusto', 'Salsa de ajo|al gusto'],
+ ['Cocina la coliflor en Air Fryer.', 'Coloca vegetales en el bowl.', 'Agrega aguacate.', 'Termina con salsa cremosa.', '(Tip: La coliflor buffalo queda increíble aquí.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 173, 5, 12, 22, 9, 6, 9, '/assets/img/recetas/010-veggie-crocante.jpeg'],
+
+['César Saludable', 'almuerzo',
+ ['Pollo Air Fryer|al gusto', 'Lechuga romana|al gusto', 'Parmesano|al gusto', 'Crutones integrales|al gusto', 'Aderezo césar light|al gusto'],
+ ['Cocina el pollo y córtalo en tiras.', 'Coloca lechuga en el bowl.', 'Añade pollo y parmesano.', 'Agrega crutones.', 'Termina con aderezo.', '(Tip: Agrega pimienta recién molida para más sabor.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 893, 101, 10, 7, 49, 2, 1, '/assets/img/recetas/011-cesar-saludable.jpeg'],
+
+['BBQ Casero', 'almuerzo',
+ ['Carne|al gusto', 'Salsa BBQ|al gusto', 'Papitas Air Fryer|al gusto', 'Maíz|al gusto', 'Aguacate|al gusto'],
+ ['Cocina la carne en Air Fryer.', 'Mezcla con salsa BBQ.', 'Coloca papitas en la base.', 'Añade carne, maíz y aguacate.', '(Tip: Las papitas rústicas quedan perfectas aquí.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 792, 40, 15, 82, 31, 24, 8, '/assets/img/recetas/012-bbq-casero.jpeg'],
+
+['Atún y Aguacate', 'almuerzo',
+ ['Atún|al gusto', 'Aguacate|al gusto', 'Pepino|al gusto', 'Arroz|al gusto', 'Limón|al gusto'],
+ ['Coloca arroz en el bowl.', 'Añade pepino y aguacate.', 'Agrega atún encima.', 'Exprime limón.', 'Sirve fresco.', '(Tip: Puedes agregar semillas de chía para más nutrientes.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 418, 44, 8, 40, 11, 3, 7, '/assets/img/recetas/013-atun-y-aguacate.jpeg'],
+
+['Camarones Cremosos', 'almuerzo',
+ ['Camarones Air Fryer|al gusto', 'Arroz|al gusto', 'Aguacate|al gusto', 'Salsa cremosa de ajo|al gusto', 'Pepino|al gusto'],
+ ['Cocina los camarones.', 'Coloca arroz caliente.', 'Añade pepino y aguacate.', 'Agrega camarones.', 'Termina con salsa.', '(Tip: Queda delicioso con limón fresco.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 379, 40, 12, 35, 10, 2, 5, '/assets/img/recetas/014-camarones-cremosos.jpeg'],
+
+['Huevo y Aguacate', 'almuerzo',
+ ['Huevos|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Tomate|al gusto', 'Queso|al gusto'],
+ ['Cocina los huevos.', 'Coloca espinaca en el bowl.', 'Agrega tomate y aguacate.', 'Añade huevo en mitades.', 'Termina con queso fresco.', '(Tip: Perfecto para desayuno o cena ligera.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/015-huevo-y-aguacate.jpeg'],
+
+['Pollo Teriyaki', 'almuerzo',
+ ['Pollo|al gusto', 'Arroz blanco|al gusto', 'Zanahoria|al gusto', 'Pepino|al gusto', 'Salsa teriyaki|al gusto', 'Ajonjolí|al gusto'],
+ ['Cocina el pollo en Air Fryer a 200°C durante 10 minutos.', 'Mezcla el pollo caliente con salsa teriyaki.', 'Coloca arroz en la base del bowl.', 'Agrega zanahoria y pepino.', 'Añade el pollo encima y termina con ajonjolí.', '(Tip: El pepino frío crea un contraste delicioso con el pollo caliente.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 498, 57, 15, 40, 11, 5, 4, '/assets/img/recetas/016-pollo-teriyaki.jpeg'],
+
+['Fit de Carne y Vegetales', 'almuerzo',
+ ['Carne|al gusto', 'Brócoli|al gusto', 'Zanahoria|al gusto', 'Arroz integral|al gusto', 'Salsa de ajo|al gusto'],
+ ['Cocina la carne en Air Fryer.', 'Cocina ligeramente el brócoli.', 'Coloca arroz integral en el bowl.', 'Agrega vegetales y carne.', 'Termina con salsa cremosa.', '(Tip: La carne queda más jugosa si no llenas demasiado la canasta del Air Fryer.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 493, 38, 15, 36, 22, 5, 5, '/assets/img/recetas/017-fit-de-carne-y-vegetales.jpeg'],
+
+['Pavo y Aguacate', 'almuerzo',
+ ['Pavo|al gusto', 'Aguacate|al gusto', 'Lechuga|al gusto', 'Tomate cherry|al gusto', 'Maíz|al gusto'],
+ ['Cocina el pavo en Air Fryer.', 'Coloca lechuga en la base.', 'Añade tomate y maíz.', 'Agrega aguacate.', 'Termina con el pavo caliente.', '(Tip: El limón encima del aguacate realza muchísimo el sabor.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 541, 53, 12, 57, 12, 3, 9, '/assets/img/recetas/018-pavo-y-aguacate.jpeg'],
+
+['Arroz, Huevo y Vegetales', 'almuerzo',
+ ['Arroz|al gusto', 'Huevos|al gusto', 'Pepino|al gusto', 'Zanahoria|al gusto', 'Aguacate|al gusto'],
+ ['Cocina los huevos.', 'Coloca arroz caliente en el bowl.', 'Agrega vegetales frescos.', 'Añade huevo en mitades.', 'Termina con aguacate.', '(Tip: Puedes agregar salsa soya baja en sodio.)'],
+ ['ligero', 'rápido', 'sin gluten', 'económico'], 345, 13, 10, 40, 16, 6, 7, '/assets/img/recetas/019-arroz-huevo-y-vegetales.jpeg'],
+
+['Crunchy de Pollo Apanado', 'almuerzo',
+ ['Pollo apanado Air Fryer|al gusto', 'Lechuga|al gusto', 'Tomate|al gusto', 'Maíz|al gusto', 'Salsa honey mustard|al gusto'],
+ ['Cocina el pollo apanado hasta dorar.', 'Coloca vegetales en el bowl.', 'Corta el pollo en tiras.', 'Agrégalo encima.', 'Termina con salsa.', '(Tip: El pollo debe quedar MUY crocante para este bowl.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 529, 56, 15, 55, 9, 4, 7, '/assets/img/recetas/020-crunchy-de-pollo-apanado.jpeg'],
+
+['Batata y Pollo', 'almuerzo',
+ ['Batata|al gusto', 'Pollo|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Salsa de yogur|al gusto'],
+ ['Cocina la batata y el pollo en Air Fryer.', 'Coloca espinaca en la base.', 'Añade batata y pollo.', 'Agrega aguacate.', 'Termina con salsa.', '(Tip: La batata caramelizada queda deliciosa aquí.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 474, 53, 15, 29, 17, 7, 8, '/assets/img/recetas/021-batata-y-pollo.jpeg'],
+
+['Garbanzos Mediterráneo', 'almuerzo',
+ ['Garbanzos crocantes|al gusto', 'Pepino|al gusto', 'Tomate|al gusto', 'Aceitunas|al gusto', 'Queso feta|al gusto'],
+ ['Cocina los garbanzos en Air Fryer.', 'Coloca vegetales frescos en el bowl.', 'Agrega garbanzos calientes.', 'Añade queso feta.', 'Termina con aceite de oliva.', '(Tip: El orégano seco eleva muchísimo el sabor.)'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 586, 34, 12, 30, 38, 6, 8, '/assets/img/recetas/022-garbanzos-mediterraneo.jpeg'],
+
+['Salmón Honey Mustard', 'almuerzo',
+ ['Salmón Air Fryer|al gusto', 'Arroz|al gusto', 'Pepino|al gusto', 'Aguacate|al gusto', 'Salsa honey mustard|al gusto'],
+ ['Cocina el salmón.', 'Coloca arroz caliente en el bowl.', 'Añade pepino y aguacate.', 'Agrega el salmón encima.', 'Termina con salsa.', '(Tip: No cocines demasiado el salmón para mantenerlo jugoso.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 575, 37, 15, 36, 31, 3, 7, '/assets/img/recetas/023-salmon-honey-mustard.jpeg'],
+
+['Atún Picante', 'almuerzo',
+ ['Atún|al gusto', 'Aguacate|al gusto', 'Pepino|al gusto', 'Arroz|al gusto', 'Salsa picante|al gusto'],
+ ['Coloca arroz en el bowl.', 'Añade pepino y aguacate.', 'Agrega atún.', 'Termina con salsa picante.', 'Sirve inmediatamente.', '(Tip: El limón ayuda muchísimo a equilibrar el picante.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 398, 43, 8, 33, 10, 2, 5, '/assets/img/recetas/024-atun-picante.jpeg'],
+
+['Pollo BBQ y Maíz', 'almuerzo',
+ ['Pollo|al gusto', 'Salsa BBQ|al gusto', 'Maíz|al gusto', 'Arroz integral|al gusto', 'Aguacate|al gusto'],
+ ['Cocina el pollo en Air Fryer.', 'Mezcla con salsa BBQ.', 'Coloca arroz en la base.', 'Añade maíz y aguacate.', 'Termina con pollo BBQ.', '(Tip: Agrega cebolla morada para más sabor.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 828, 56, 15, 105, 17, 25, 9, '/assets/img/recetas/025-pollo-bbq-y-maiz.jpeg'],
+
+['Veggie Coliflor y Aguacate', 'almuerzo',
+ ['Coliflor Air Fryer|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Pepino|al gusto', 'Salsa de ajo|al gusto'],
+ ['Cocina la coliflor hasta dorar.', 'Coloca espinaca en el bowl.', 'Añade pepino y aguacate.', 'Agrega coliflor caliente.', 'Termina con salsa.', '(Tip: La coliflor buffalo queda espectacular aquí.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 148, 5, 12, 15, 9, 3, 7, '/assets/img/recetas/026-veggie-coliflor-y-aguacate.jpeg'],
+
+['Camarones Tropicales', 'almuerzo',
+ ['Camarones|al gusto', 'Mango|al gusto', 'Aguacate|al gusto', 'Arroz jazmín|al gusto', 'Pepino|al gusto'],
+ ['Cocina los camarones en Air Fryer.', 'Coloca arroz en la base.', 'Agrega mango y pepino.', 'Añade aguacate.', 'Termina con camarones calientes.', '(Tip: El mango bien frío crea un contraste delicioso.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 426, 41, 12, 47, 10, 14, 6, '/assets/img/recetas/027-camarones-tropicales.jpeg'],
+
+['Carne Picante y Arroz', 'almuerzo',
+ ['Carne|al gusto', 'Arroz|al gusto', 'Maíz|al gusto', 'Jalapeños|al gusto', 'Aguacate|al gusto'],
+ ['Cocina la carne con especias picantes.', 'Coloca arroz caliente.', 'Añade maíz y aguacate.', 'Agrega carne encima.', 'Termina con jalapeños.', '(Tip: Puedes agregar yogur griego para balancear el picante.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 754, 41, 15, 77, 31, 1, 7, '/assets/img/recetas/028-carne-picante-y-arroz.jpeg'],
+
+['Pollo César Crocante', 'almuerzo',
+ ['Pollo crispy|al gusto', 'Lechuga romana|al gusto', 'Parmesano|al gusto', 'Crutones integrales|al gusto', 'Aderezo césar light|al gusto'],
+ ['Cocina el pollo hasta dorar.', 'Coloca lechuga en el bowl.', 'Añade parmesano y crutones.', 'Agrega pollo caliente.', 'Termina con aderezo.', '(Tip: Sirve inmediatamente para mantener el crunch.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 893, 101, 15, 7, 49, 2, 1, '/assets/img/recetas/029-pollo-cesar-crocante.jpeg'],
+
+['Huevos, Papa y Aguacate', 'almuerzo',
+ ['Huevos|al gusto', 'Papitas Air Fryer|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Salsa de yogur|al gusto'],
+ ['Cocina las papitas en Air Fryer.', 'Cocina los huevos.', 'Coloca espinaca en el bowl.', 'Añade papitas y aguacate.', 'Agrega huevo en mitades y termina con salsa cremosa.', '(Tip: Perfecto para desayuno, brunch o cena rápida.)'],
+ ['ligero', 'rápido', 'sin gluten', 'económico'], 242, 13, 12, 11, 18, 4, 6, '/assets/img/recetas/030-huevos-papa-y-aguacate.jpeg'],
+
+['Coliflor Entera Asada', 'almuerzo',
+ ['coliflor mediana entera|1', 'aceite de oliva|2 cdas', 'cúrcuma|1 cdta', 'comino|1 cdta', 'ajo en polvo|1 cdta', 'Sal|al gusto', 'Yogur con limón y cilantro para servir|al gusto'],
+ ['Mezcla el aceite con todas las especias. Unta sobre toda la coliflor cubriendo bien entre los floretes.', 'Coloca con el tallo hacia arriba en la canasta.', 'Cocina a 190°C por 15 minutos, voltea.', 'Cocina 15 minutos más hasta exterior dorado y tallo tierno al pincharlo.'],
+ ['ligero', 'vegetariano', 'sin gluten', 'económico'], 326, 3, 30, 11, 32, 2, 3],
+
+['Champiñones Rellenos de Queso y Ajo', 'almuerzo',
+ ['champiñones portobello o champiñones|8', 'queso crema|100 g', 'ajo|2 dientes', 'queso parmesano|2 cdas', 'Perejil|al gusto', 'Aceite en spray|al gusto'],
+ ['Retira los tallos de los champiñones y pícalos fino.', 'Mezcla el queso crema con el ajo, los tallos picados, el parmesano y el perejil.', 'Rellena cada champiñón con la mezcla. Rocía con spray.', 'Cocina a 185°C por 12-15 minutos hasta que el relleno burbujee y dore.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 688, 35, 14, 27, 54, 15, 6],
+
+['Espárragos con Parmesano y Limón', 'almuerzo',
+ ['espárragos|400 g', 'aceite de oliva|1 cda', 'parmesano|3 cdas', 'Jugo de 1 limón|al gusto', 'Sal|al gusto'],
+ ['Mezcla los espárragos con el aceite, sal, pimienta y ajo.', 'Coloca en una sola capa — en tandas si es necesario.', 'Cocina a 200°C por 6-8 minutos según grosor.', 'Agrega el parmesano los últimos 2 minutos. Termina con limón.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 409, 26, 7, 24, 27, 10, 10],
+
+['Pimentones Asados', 'almuerzo',
+ ['pimentones colores en mitades sin semillas|3', 'aceite de oliva|2 cdas', 'ajo laminados|3 dientes', 'Sal y pimienta|al gusto', 'Vinagre balsámico|al gusto', 'Pan rústico para servir|al gusto'],
+ ['Coloca los pimentones con la piel hacia arriba en la canasta.', 'Rocía con aceite y agrega el ajo laminado dentro de cada mitad.', 'Cocina a 200°C por 15-18 minutos hasta que la piel se ennegrezca.', 'Cubre con papel de aluminio 10 minutos — la piel se pela sola. Sazona y sirve.'],
+ ['rápido', 'vegetariano', 'económico'], 629, 13, 16, 67, 33, 34, 12],
+
+['Zanahorias Glaseadas con Miel y Canela', 'almuerzo',
+ ['zanahorias en bastones|400 g', 'miel|1 cda', 'mantequilla|1 cda', 'canela|1 cdta', 'Sal|al gusto', 'Perejil para decorar|al gusto'],
+ ['Mezcla las zanahorias con la mantequilla, la miel, la canela y la sal.', 'Extiende en una capa en la canasta.', 'Cocina a 190°C por 10 minutos, sacude bien.', 'Cocina 8 minutos más hasta tiernas y caramelizadas en los bordes.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 336, 4, 10, 58, 12, 36, 13],
+
+['Plátano Maduro Asado', 'almuerzo',
+ ['plátanos|2', 'Aceite en spray|al gusto', 'Sal una pizca|al gusto', 'Queso blanco o crema de leche para servir|al gusto', 'Canela|al gusto'],
+ ['Pela los plátanos y córtalos en diagonal en tajadas de 1.5 cm.', 'Rocía con spray y espolvorea una pizca de sal.', 'Cocina a 185°C por 7 minutos, voltea con cuidado.', 'Cocina 5 minutos más hasta dorados y caramelizados. Sirve con queso.'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 635, 5, 7, 99, 29, 47, 8, '/assets/img/recetas/042-platano-maduro-asado.jpeg'],
+
+['Ensalada tibia de zucchini y champiñones', 'almuerzo',
+ ['zucchini|1', 'champiñones|1 taza', 'aceite de oliva|1 cucharada', 'ajo|1 diente', 'Sal y pimienta|al gusto'],
+ ['En una sartén, calienta el aceite y dora el ajo. Agrega el zucchini y los champiñones y saltea por 5 minutos.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 229, 10, 20, 16, 16, 10, 5, '/assets/img/recetas/087-ensalada-tibia-de-zucchini-y-champinones.jpeg'],
+
+['Brócoli salteado con ajo y frutos secos', 'almuerzo',
+ ['brócoli en floretes|1 taza', 'ajo|1 diente', 'frutos secos laminados|¼ taza', 'aceite de oliva|1 cucharada', 'Sal|al gusto'],
+ ['Saltea el ajo en aceite hasta dorar. Agrega el brócoli y cocina por 5 minutos. Añade los frutos secos y sirve caliente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 222, 7, 15, 17, 16, 4, 6, '/assets/img/recetas/094-brocoli-salteado-con-ajo-y-frutos-secos.jpeg'],
+
+['Brócoli con ajo y limón', 'almuerzo',
+ ['ramilletes de brócoli|4 tazas', 'aceite de oliva|1 cucharadita', 'ajo|1 cucharada', 'ralladura de limón|1 cucharadita', 'de cucharadita de sal|1/4', 'de cucharadita de pimienta negra molida|1/4'],
+ ['En una cacerola pequeña, pon a hervir 1 taza de agua. Agrega el brócoli al agua hirviendo y cocina durante 2 a 3 minutos o hasta que quede tierno. Escurre el agua del brócoli. En una sartén pequeña a fuego medio-alto, calienta el aceite. Agrega el ajo y sofríe durante 30 segundos. Agrega...'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 395, 28, 15, 69, 9, 17, 25, '/assets/img/recetas/076-brocoli-con-ajo-y-limon.jpeg'],
+
+['Frijoles y arroz a la cubana', 'almuerzo',
+ ['aceite de oliva|1 cucharadita', 'ajo|1 cucharada', 'cebolla|1 taza', 'pimiento verde en cubitos|1 taza', 'frijoles negros|3 tazas', 'caldo de pollo con bajo contenido graso|2 tazas', 'vinagre|1 cucharada', 'orégano seco|½ cucharadita', 'Pimienta negra a gusto|al gusto', '3 tazas|3 tazas'],
+ ['Caliente el aceite de oliva en una sartén grande antiadherente. Saltee el ajo, la cebolla y el pimiento verde hasta que se doren, cerca de 3 minutos. Mezcle los frijoles, el caldo, el vinagre y los condimentos; deje que hierva y después cocine a fuego lento; tape y cocine por 5 minutos. Sirva...'],
+ ['alto en proteína', 'sin gluten', 'económico'], 664, 73, 35, 72, 9, 8, 24, '/assets/img/recetas/116-frijoles-y-arroz-a-la-cubana.jpeg'],
+
+['Sopa de pollo con vegetales', 'almuerzo',
+ ['agua|1 litro', 'pollo|160 g', 'ajoporro|1', 'cebolla en dos|1', 'ajo machacados|2 dientes', 'pimentón rojo|¼', 'ajíes dulces|2', 'celery|1 rama', 'cebollín|1 rama', 'cilantro|1 rama', 'perejil|1 rama', 'auyama|140 g', 'zanahoria|1', 'aceite de oliva|2 cdas', 'Sal y pimienta|al gusto'],
+ ['Limpiar el pollo y colocarlo en una olla. Agregar, la cebolla, el ajo, las ramas verdes y cocinar a fuego medio una hora. Cortar en dados el pimentón y ají dulce en tiritas y agregarlos. Salpimentar y agregar las verduras picadas y déjalos cocinar suavemente hasta que estén tiernos, rectificar...'],
+ ['alto en proteína', 'sin gluten', 'económico'], 778, 57, 30, 55, 37, 26, 12, '/assets/img/recetas/004-sopa-de-pollo-con-vegetales.jpeg'],
+
+['Ensalada de pepino con yogurt', 'almuerzo',
+ ['pepino|½ kilo', 'yogurt griego descremado natural sin azúcar|½ taza', 'mostaza preparada|1 cucharadita', 'vinagre|2 cucharaditas', 'estevia|½ cucharada', 'eneldo|½ cucharada', 'ciboullete|½ cucharada', 'perejil|½ cucharada', 'sal y pimienta|1 cucharadita'],
+ ['Se pelan los pepinos, luego de lavar bien, y se cortan por la mitad verticalmente, se eliminan las semillas con una cuchara y se cortan en rebanadas finas. Se les agrega la sal y se colocan en un colador para desaguar por 1/2 hora. Se mezclan los ingredientes líquidos: yogurt, mostaza, vinagre y...'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 482, 4, 10, 122, 1, 109, 4, '/assets/img/recetas/033-ensalada-de-pepino-con-yogurt.jpeg'],
+
+['Ajiaco santafereño aligerado', 'almuerzo',
+ ['pechuga de pollo|200 g', 'papas criollas|2', 'papa pastusa|1', 'mazorca|1/2', 'guascas|1/4 taza', 'crema de leche|1 cda', 'aguacate en tajadas|1/4', 'agua o caldo de pollo|4 tazas', 'Sal|al gusto'],
+ ['Cocina la pechuga de pollo en el agua o caldo 20 minutos hasta que esté tierna; desmenuza y reserva.', 'En el mismo caldo, agrega las papas criollas, la papa pastusa y la mazorca.', 'Cocina 25 minutos a fuego medio, deshaciendo parte de la papa criolla para espesar el caldo.', 'Añade las guascas los últimos 5 minutos.', 'Regresa el pollo desmenuzado a la olla y rectifica sal.', 'Sirve con una cucharada de crema de leche y el aguacate al lado.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 364, 36, 50, 32, 10, 3, 6],
+
+['Sancocho de gallina valluno', 'almuerzo',
+ ['gallina criolla en presas|400 g', 'plátano verde|1', 'yuca|1', 'mazorca|1', 'papa pastusa|1', 'cebolla larga|1/4 taza', 'ajo|1 diente', 'agua|8 tazas', 'Sal y comino|al gusto'],
+ ['En una olla grande, cocina la gallina con el ajo y el agua durante 30 minutos, retirando la espuma.', 'Agrega el plátano verde y la mazorca; cocina 15 minutos más.', 'Añade la yuca y la papa; cocina 15 minutos hasta que todo esté tierno.', 'Sazona con sal y comino y agrega la cebolla larga al final.', 'Sirve caliente con arroz blanco aparte.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 579, 31, 60, 62, 24, 11, 5],
+
+['Sancocho trifásico', 'almuerzo',
+ ['pechuga de pollo|200 g', 'carne de res magra|150 g', 'costilla de res|100 g', 'plátano verde|1', 'yuca|1', 'mazorca|1', 'cilantro|1/4 taza', 'agua|8 tazas', 'Sal|al gusto'],
+ ['Cocina la costilla y la carne de res en el agua 25 minutos, retirando la espuma.', 'Agrega el pollo y cocina 15 minutos más.', 'Añade el plátano, la yuca y la mazorca; cocina 20 minutos hasta ablandar.', 'Rectifica sal y espolvorea el cilantro antes de servir.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 497, 44, 60, 51, 14, 10, 4],
+
+['Bandeja paisa en porción real', 'almuerzo',
+ ['fríjol rojo|1/3 taza', 'arroz blanco|1/3 taza', 'carne molida de res|70 g', 'huevo|1', 'plátano en tajadas|1/3', 'arepa maíz|1', 'aguacate en tajadas|1/4', 'aceite|1 cdta'],
+ ['Calienta el aceite y dora la carne molida sazonada con sal 6-8 minutos.', 'Hornea o cocina el plátano maduro en sartén antiadherente con muy poco aceite hasta dorar.', 'Fríe u hornea el huevo al gusto.', 'Calienta el arroz y los fríjoles por separado.', 'Sirve todo en un mismo plato: arroz, fríjoles, carne, huevo, plátano, arepa y aguacate.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 777, 36, 40, 94, 30, 9, 11],
+
+['Fríjoles antioqueños con garra', 'almuerzo',
+ ['fríjol cargamanto|1 taza', 'carne de res magra|100 g', 'plátano verde|1/2', 'cebolla|1/4 taza', 'ajo|1 diente', 'hogao|1 cda', 'agua|1 taza', 'Sal|al gusto'],
+ ['Sofríe la cebolla y el ajo con el hogao 3 minutos.', 'Agrega la carne y dora 5 minutos.', 'Añade los fríjoles, el plátano y el agua; cocina tapado 25 minutos a fuego medio, revolviendo de vez en cuando.', 'Rectifica sal y sirve con arroz blanco aparte.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 272, 23, 45, 39, 4, 8, 8],
+
+['Arroz atollado', 'almuerzo',
+ ['arroz blanco|1 taza', 'carne de res magra|150 g', 'papa criolla|100 g', 'cebolla|1/4 taza', 'ajo|1 diente', 'hogao|1 cda', 'caldo de res|2 tazas', 'Sal y comino|al gusto'],
+ ['Sofríe la cebolla, el ajo y el hogao 3 minutos.', 'Agrega la carne y dora 5 minutos.', 'Añade el caldo y la papa criolla; cocina 15 minutos.', 'Incorpora el arroz y cocina 8-10 minutos más hasta que quede cremoso, revolviendo seguido.', 'Sazona con sal y comino y sirve caliente.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 309, 24, 40, 41, 5, 2, 2],
+
+['Cazuela de mariscos costeña', 'almuerzo',
+ ['camarones|200 g', 'calamar|100 g', 'leche de coco|1/2 taza', 'cebolla|1/4 taza', 'pimentón|1/2', 'ajo|1 diente', 'pasta de tomate|1 cda', 'Sal|al gusto'],
+ ['Sofríe la cebolla, el pimentón y el ajo 3 minutos.', 'Agrega la pasta de tomate y cocina 2 minutos.', 'Añade la leche de coco y deja hervir suave 5 minutos.', 'Incorpora los camarones y el calamar; cocina 5-6 minutos hasta que estén firmes (no más, para que no queden duros).', 'Rectifica sal y sirve con arroz blanco.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 314, 34, 35, 12, 16, 5, 2],
+
+['Mote de queso cordobés', 'almuerzo',
+ ['ñame|1', 'queso costeño|100 g', 'cebolla larga|1/4 taza', 'ajo|1 diente', 'agua o caldo|2 tazas', 'Sal|al gusto'],
+ ['Cocina el ñame en el agua o caldo 20 minutos hasta ablandar.', 'Machaca parte del ñame contra la olla para espesar.', 'Agrega la cebolla y el ajo y cocina 5 minutos más.', 'Incorpora el queso costeño y deja derretir 3-4 minutos a fuego bajo.', 'Sirve caliente.'],
+ ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 267, 13, 35, 25, 13, 1, 4],
+
+['Sudado de pollo', 'almuerzo',
+ ['pechuga de pollo en presas|300 g', 'papa pastusa|1', 'arveja|1/2 taza', 'cebolla|1/4 taza', 'tomate|1/2', 'ajo|1 diente', 'agua|1/2 taza', 'Sal y comino|al gusto'],
+ ['Sofríe la cebolla, el tomate y el ajo 3-4 minutos hasta formar un guiso.', 'Agrega el pollo y dora por todos los lados 5 minutos.', 'Añade la papa, la arveja y el agua; tapa y cocina a fuego medio-bajo 20 minutos.', 'Sazona con sal y comino y sirve con arroz blanco.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 377, 52, 35, 27, 6, 6, 6],
+
+['Sudado de posta', 'almuerzo',
+ ['posta de res|300 g', 'papa pastusa|1', 'cebolla|1/4 taza', 'tomate|1/2', 'ajo|1 diente', 'agua o caldo|1/2 taza', 'Sal y comino|al gusto'],
+ ['Sofríe la cebolla, el tomate y el ajo hasta formar un guiso, 4 minutos.', 'Agrega la posta y sella por todos los lados.', 'Añade el agua o caldo, tapa y cocina a fuego bajo 30 minutos hasta ablandar.', 'Agrega la papa los últimos 15 minutos de cocción.', 'Rectifica sal y comino, sirve con arroz.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 339, 43, 45, 18, 10, 3, 3],
+
+['Pescado con patacón al horno', 'almuerzo',
+ ['mojarra o tilapia|200 g', 'plátano verde en tajadas|1/2', 'aceite|1 cdta', 'cebolla en pluma|1/4 taza', 'Limón|al gusto', 'Sal|al gusto'],
+ ['Precalienta el horno o air fryer a 200°C.', 'Sazona el pescado con sal, limón y la cebolla en pluma.', 'Hornea el pescado 12-15 minutos hasta que esté cocido y firme.', 'Aparte, aplana las tajadas de plátano, pincélalas con el aceite y hornea 15 minutos volteando a mitad de cocción hasta dorar.', 'Sirve el pescado con el patacón al horno.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 372, 43, 30, 36, 9, 16, 5],
+
+['Arroz con pollo', 'almuerzo',
+ ['arroz blanco|1 taza', 'pechuga de pollo|200 g', 'arveja|1/2 taza', 'zanahoria|1/2', 'cebolla|1/4 taza', 'pasta de tomate|1 cda', 'Sal|al gusto'],
+ ['Sofríe la cebolla con la pasta de tomate 3 minutos.', 'Agrega la zanahoria y la arveja; cocina 5 minutos.', 'Añade el pollo desmenuzado y mezcla bien.', 'Incorpora el arroz cocido y revuelve a fuego medio 4-5 minutos hasta integrar.', 'Rectifica sal y sirve caliente.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 366, 38, 35, 42, 4, 7, 5],
+
+['Mute santandereano', 'almuerzo',
+ ['carne de res magra|150 g', 'garbanzo|1/2 taza', 'arveja|1/2 taza', 'papa pastusa|1', 'cebolla|1/4 taza', 'ajo|1 diente', 'caldo de res|4 tazas', 'Sal|al gusto'],
+ ['Cocina la carne en el caldo 20 minutos.', 'Agrega la papa, el garbanzo y la arveja; cocina 20 minutos más.', 'Sofríe aparte la cebolla y el ajo y agrégalos a la olla los últimos 5 minutos.', 'Rectifica sal y sirve bien caliente.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 308, 29, 50, 37, 5, 7, 9],
+
+['Encocado de pescado del Pacífico', 'almuerzo',
+ ['pescado blanco|300 g', 'leche de coco|1/2 taza', 'cebolla|1/4 taza', 'pimentón|1/2', 'ajo|1 diente', 'cilantro|1/4 taza', 'Sal|al gusto'],
+ ['Sofríe la cebolla, el pimentón y el ajo 3-4 minutos.', 'Agrega la leche de coco y deja hervir suave 5 minutos.', 'Incorpora el pescado y cocina 8-10 minutos hasta que esté cocido, sin revolver mucho para que no se deshaga.', 'Espolvorea el cilantro y sirve con arroz de coco o arroz blanco.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 298, 31, 30, 9, 17, 5, 1],
+
 // ==================== CENAS ====================
 ['Brochetas de camarones y vegetales', 'cena',
  ['camarón|12 unidades', 'calabacín|1 unidad', 'pimiento rojo|1 unidad', 'cebolla roja|1 unidad', 'limón|1 unidad', 'aceite de oliva|2 cucharadas', 'diente de ajo|2 unidades', 'sal|al gusto', 'pimienta|al gusto', 'palito de brocheta|al gusto'],
@@ -3629,6 +4164,311 @@ return [
  ['salmon|2 filetes', 'mantequilla|2 cucharadas', 'ajo|2 dientes', 'limón|1/2', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precalienta el horno a 180 °C (350 °F) y coloca los filetes de salmón en una bandeja forrada con papel aluminio.', 'En un bol pequeño mezcla la mantequilla derretida, el ajo picado y el jugo de medio limón hasta que quede una emulsión.', 'Con una brocha, unta generosamente la mezcla sobre ambos lados del salmón; sazona con sal y pimienta al gusto.', 'Cubre la bandeja con otro trozo de papel aluminio formando un paquete hermético para retener la humedad.', 'Hornea 18‑20 min, o hasta que la carne del salmón se despegue fácilmente al pincharla con un tenedor y alcance 63 °C en el centro.', 'Retira del horno, abre el paquete, rocía con un chorrito extra de jugo de limón si lo deseas y sirve inmediatamente.'],
  ['alto en proteína', 'sin gluten'], 440, 36, 25, 2, 32, 1, 0, '/assets/img/recetas/014-salmon-al-horno-con-mantequilla-de-ajo-y-limon.jpeg'],
+
+['Alitas BBQ Extra Crujientes', 'cena',
+ ['alitas de pollo|700 g', 'aceite|1 cda', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'salsa BBQ|½ taza'],
+ ['Saca las alitas de la nevera y sécalas muy bien con papel absorbente hasta que la piel quede completamente seca.', 'Coloca en un bowl grande. Agrega aceite, sal, pimienta y ajo en polvo. Mezcla con las manos para cubrir bien todas las alitas.', 'Precalienta el Air Fryer 3 min a 200°C. Acomoda las alitas dejando espacio entre cada una. Cocina 15 min, voltea y cocina 15 min más.', 'Coloca las alitas en un bowl limpio, agrega la salsa BBQ y mezcla hasta cubrirlas completamente.', '(Tip: Si quieres piel MUY crujiente, déjalas destapadas en la nevera 1 hora antes de cocinarlas.)'],
+ ['alto en proteína', 'sin gluten', 'económico'], 397, 43, 30, 10, 18, 8, 0, '/assets/img/recetas/001-alitas-bbq-extra-crujientes.jpeg'],
+
+['Pechuga de Pollo Parmesana', 'cena',
+ ['pechugas pollo|2', 'huevo|1', 'Pan y queso parmesano|al gusto', 'Salsa de tomate|al gusto', 'Queso mozzarella|al gusto', 'Sal y pimienta|al gusto'],
+ ['Abre las pechugas por la mitad para hacerlas más delgadas.', 'Sazona ambos lados con sal y pimienta.', 'Pasa cada pechuga por huevo batido, luego por la mezcla de pan rallado y parmesano.', 'Precalienta el Air Fryer 3 min. Cocina 10 min, voltea.', 'Agrega salsa de tomate y mozzarella encima. Cocina 8 min más hasta gratinar.', '(Tip: No pongas demasiada salsa o el apanado perderá el crujiente.)'],
+ ['alto en proteína', 'sin gluten'], 878, 103, 22, 13, 44, 8, 1, '/assets/img/recetas/002-pechuga-de-pollo-parmesana.jpeg'],
+
+['Costillas BBQ', 'cena',
+ ['rack de costillas|1', 'Sal|al gusto', 'Ajo en polvo|al gusto', 'Salsa BBQ|al gusto'],
+ ['Retira el exceso de grasa y seca bien las costillas.', 'Mezcla sal, pimienta, paprika y ajo. Frota por ambos lados.', 'Corta el rack en partes que entren en la canasta.', 'Cocina 20 min, gira cada trozo, cocina 10 min más.', 'Barniza con salsa BBQ y cocina 5 min finales.', '(Tip: La salsa BBQ siempre se agrega al final para evitar que se queme.)'],
+ ['alto en proteína', 'sin gluten', 'económico'], 599, 31, 35, 31, 35, 23, 1, '/assets/img/recetas/003-costillas-bbq.jpeg'],
+
+['Nuggets Caseros de Pollo', 'cena',
+ ['pechugas pollo|2', 'huevo|1', 'Pan panko|al gusto', 'Ajo en polvo y paprika|al gusto'],
+ ['Corta el pollo en cubos medianos del mismo tamaño.', 'Sazona con sal, paprika y ajo.', 'Pasa cada cubo por huevo batido, luego cúbrelo completamente con panko.', 'Rocía aceite en spray. Precalienta el Air Fryer.', 'Cocina 9 min, gira todos los nuggets, cocina 8 min más.', '(Tip: El panko deja una textura mucho más crocante que el pan rallado tradicional.)'],
+ ['alto en proteína', 'rápido', 'económico'], 449, 63, 18, 22, 10, 2, 1, '/assets/img/recetas/004-nuggets-caseros-de-pollo.jpeg'],
+
+['Chicharrón Crujiente', 'cena',
+ ['panceta de cerdo|700 g', 'Sal gruesa|al gusto', 'Ajo en polvo|al gusto', 'Limón|al gusto'],
+ ['Lava y seca muy bien la panceta.', 'Con un cuchillo haz pequeños cortes sobre la piel.', 'Agrega bastante sal y ajo. Coloca con la piel hacia arriba.', 'Cocina 20 min a 180°C.', 'Sube a 200°C y cocina 15-20 min más hasta que la piel explote y quede crocante.', 'Sirve con limón.', '(Tip: Mientras más seca esté la piel, más fácil quedará crocante.)'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 257, 46, 40, 2, 6, 0, 1, '/assets/img/recetas/005-chicharron-crujiente.jpeg'],
+
+['Hamburguesas Caseras', 'cena',
+ ['carne molida|500 g', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'Queso cheddar|al gusto'],
+ ['Coloca la carne en un bowl. Agrega sal, pimienta y ajo. Mezcla con las manos.', 'Forma hamburguesas del mismo tamaño.', 'Precalienta el Air Fryer. Cocina 7 min.', 'Voltea cada hamburguesa. Coloca queso encima.', 'Cocina 5 min más.', '(Tip: No aplastes las hamburguesas mientras cocinan para que no pierdan jugos.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 558, 55, 15, 2, 36, 0, 0, '/assets/img/recetas/006-hamburguesas-caseras.jpeg'],
+
+['Chuletas de Cerdo Doradas', 'cena',
+ ['chuletas cerdo|2', 'Mostaza|al gusto', 'Ajo en polvo y paprika|al gusto', 'Sal y pimienta|al gusto'],
+ ['Seca las chuletas con papel absorbente.', 'Unta una capa ligera de mostaza.', 'Agrega las especias por ambos lados.', 'Precalienta el Air Fryer. Cocina 10 min.', 'Voltea cuidadosamente. Cocina 8 min más.', '(Tip: La mostaza ayuda a crear una costra dorada deliciosa.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 369, 39, 20, 2, 22, 1, 1, '/assets/img/recetas/007-chuletas-de-cerdo-doradas.jpeg'],
+
+['Milanesa de Pollo Crujiente', 'cena',
+ ['pechugas delgadas|2', 'huevo|1', 'Pan|al gusto', 'Queso parmesano|al gusto', 'Sal y pimienta|al gusto'],
+ ['Golpea las pechugas para dejarlas delgadas. Sazona.', 'Pasa por huevo, luego por pan rallado con parmesano.', 'Rocía aceite en spray.', 'Cocina 12 min, voltea, cocina 8 min más.', '(Tip: El parmesano ayuda a crear una capa más crocante y sabrosa.)'],
+ ['alto en proteína'], 833, 66, 22, 39, 46, 4, 5, '/assets/img/recetas/008-milanesa-de-pollo-crujiente.jpeg'],
+
+['Pinchos de Pollo', 'cena',
+ ['pechugas|2', 'Pimentón y cebolla|al gusto', 'Sal y pimienta|al gusto', 'Aceite de oliva|al gusto'],
+ ['Corta el pollo en cubos grandes. Corta los vegetales en tamaños similares.', 'Inserta pollo y vegetales en palillos alternando.', 'Agrega aceite y condimentos.', 'Cocina 10 min, gira cada pincho, cocina 8 min más.', '(Tip: Si usas palillos de madera, remójalos en agua antes para evitar que se quemen.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 353, 56, 18, 2, 12, 1, 1, '/assets/img/recetas/009-pinchos-de-pollo.jpeg'],
+
+['Carne en Cubos al Ajo', 'cena',
+ ['carne de res|500 g', 'Ajo|al gusto', 'Mantequilla|al gusto', 'Sal y pimienta|al gusto'],
+ ['Corta la carne en cubos medianos. Sécalos bien.', 'Agrega sal y pimienta. Coloca en la canasta.', 'Cocina 8 min. Abre y mezcla la carne.', 'Agrega mantequilla y ajo. Cocina 6 min más.', '(Tip: No llenes demasiado la canasta para que la carne dore y no se cocine al vapor.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 291, 44, 16, 1, 12, 0, 0, '/assets/img/recetas/010-carne-en-cubos-al-ajo.jpeg'],
+
+['Muslos de Pollo Crispy', 'cena',
+ ['muslos pollo|4', 'Paprika|al gusto', 'Ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
+ ['Seca el pollo completamente.', 'Agrega todos los condimentos. Frota bien cada muslo.', 'Cocina 15 min con la piel hacia arriba.', 'Voltea uno por uno. Cocina otros 15 min.', '(Tip: La piel debe quedar hacia arriba al iniciar para dorarse mejor.)'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 287, 40, 30, 1, 13, 0, 0, '/assets/img/recetas/011-muslos-de-pollo-crispy.jpeg'],
+
+['Albóndigas Caseras', 'cena',
+ ['carne molida|500 g', 'huevo|1', 'Pan|al gusto', 'Ajo y perejil|al gusto'],
+ ['Mezcla todos los ingredientes en un bowl.', 'Forma bolitas medianas del mismo tamaño.', 'Precalienta el Air Fryer. Coloca las albóndigas separadas.', 'Cocina 10 min. Sacude la canasta suavemente. Cocina 8 min más.', '(Tip: Hacerlas del mismo tamaño ayuda a que todas cocinen igual.)'],
+ ['alto en proteína', 'rápido', 'económico'], 440, 41, 18, 11, 26, 1, 2, '/assets/img/recetas/012-albondigas-caseras.jpeg'],
+
+['Pollo Miel Mostaza', 'cena',
+ ['pechugas|2', 'miel|2 cdas', 'mostaza|2 cdas', 'Sal y pimienta|al gusto'],
+ ['Mezcla miel y mostaza en un bowl.', 'Sazona las pechugas. Barniza con la mezcla.', 'Cocina 10 min. Voltea cuidadosamente.', 'Agrega más salsa. Cocina 8 min más.', '(Tip: Agregar la salsa en dos momentos da más sabor y mejor caramelización.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 354, 57, 20, 14, 7, 13, 1, '/assets/img/recetas/013-pollo-miel-mostaza.jpeg'],
+
+['Trocitos de Cerdo BBQ', 'cena',
+ ['cerdo|500 g', 'Salsa BBQ|al gusto', 'Paprika|al gusto', 'Sal y pimienta|al gusto'],
+ ['Sazona el cerdo con paprika, sal y pimienta.', 'Cocina 12 min. Mezcla los cubos.', 'Agrega salsa BBQ generosamente.', 'Cocina otros 10 min hasta caramelizar.', '(Tip: La salsa se espesa y carameliza mejor en los últimos minutos.)'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 292, 44, 24, 10, 6, 8, 1, '/assets/img/recetas/014-trocitos-de-cerdo-bbq.jpeg'],
+
+['Pollo Crocante Picante', 'cena',
+ ['pechugas|2', 'Harina|al gusto', 'Salsa picante|al gusto', 'Paprika|al gusto'],
+ ['Corta el pollo en tiras. Mezcla salsa picante con el huevo.', 'Pasa el pollo por harina, luego por huevo picante, finalmente por panko.', 'Cocina 12 min. Voltea cuidadosamente. Cocina 8 min más.', '(Tip: El panko grueso ayuda a lograr un efecto tipo pollo frito restaurante.)'],
+ ['alto en proteína', 'sin gluten', 'económico'], 408, 58, 22, 24, 7, 0, 2, '/assets/img/recetas/015-pollo-crocante-picante.jpeg'],
+
+['Salmón Miel Mostaza', 'cena',
+ ['filetes salmón|2', 'miel|2 cdas', 'mostaza|2 cdas', 'Sal|al gusto'],
+ ['Saca los filetes y sécalos muy bien con papel absorbente.', 'Agrega sal, pimienta y ajo en polvo por ambos lados.', 'Mezcla miel y mostaza. Cubre la parte superior del salmón.', 'Precalienta el Air Fryer 3 min a 190°C. Cocina 8 min.', 'Agrega segunda capa de salsa. Cocina 5-7 min más hasta dorar los bordes.', '(Tip: El salmón queda mucho más jugoso si lo retiras apenas el centro deje de verse completamente crudo.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 368, 31, 15, 13, 20, 13, 1, '/assets/img/recetas/016-salmon-miel-mostaza.jpeg'],
+
+['Camarones Ajo Mantequilla', 'cena',
+ ['camarones limpios|400 g', 'mantequilla|2 cdas', 'ajo|3 dientes', 'Sal|al gusto'],
+ ['Lava los camarones y retira el exceso de agua con papel absorbente.', 'Mezcla con mantequilla derretida, ajo, sal y pimienta.', 'Precalienta el Air Fryer 3 min. Coloca los camarones separados.', 'Cocina 5 min. Mueve con pinzas. Cocina 3-5 min más hasta que estén rosados.', 'Sirve inmediatamente con perejil encima.', '(Tip: Los camarones se endurecen si se cocinan demasiado tiempo, así que apenas estén rosados debes retirarlos.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 317, 49, 10, 3, 13, 0, 0, '/assets/img/recetas/017-camarones-ajo-mantequilla.jpeg'],
+
+['Tilapia Crocante', 'cena',
+ ['filetes tilapia|2', 'huevo|1', 'Pan|al gusto', 'Paprika y ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
+ ['Coloca los filetes sobre papel cocina y sécalos muy bien.', 'Agrega sal, pimienta, paprika y ajo en polvo sobre ambos lados.', 'Pasa cada filete por huevo batido, luego cúbrelo con pan rallado presionando suavemente.', 'Rocía con aceite en spray. Precalienta el Air Fryer 3 min.', 'Cocina 10 min. Voltea con espátula. Cocina 6-8 min más hasta dorar.', '(Tip: No voltees el pescado antes de tiempo porque el apanado todavía estará suave y puede despegarse.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'económico'], 297, 42, 18, 18, 6, 1, 3, '/assets/img/recetas/018-tilapia-crocante.jpeg'],
+
+['Calamares Apanados', 'cena',
+ ['anillos de calamar|300 g', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal|al gusto'],
+ ['Lava los calamares y sécalos completamente con papel absorbente.', 'Prepara tres bowls: harina, huevo batido y panko con especias.', 'Pasa cada anillo por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Colócalos separados en la canasta.', 'Cocina 6 min. Gira cada anillo con pinzas. Cocina 5 min más hasta dorar.', '(Tip: Los calamares deben cocinarse rápido; demasiado tiempo hará que queden duros y gomosos.)'],
+ ['alto en proteína', 'rápido'], 398, 33, 12, 50, 6, 2, 3, '/assets/img/recetas/019-calamares-apanados.jpeg'],
+
+['Filete de Pescado Limón Pimienta', 'cena',
+ ['filetes pescado blanco|2', 'limón|1', 'Sal y pimienta negra|al gusto', 'Aceite de oliva|al gusto'],
+ ['Lava los filetes y sécalos bien con papel absorbente.', 'Exprime el limón sobre ambos lados del pescado.', 'Agrega sal y bastante pimienta negra. Añade unas gotas de aceite de oliva.', 'Precalienta el Air Fryer 3 min. Coloca los filetes en la canasta.', 'Cocina 7 min. Voltea con espátula. Cocina 5-6 min más hasta dorar.', '(Tip: El pescado blanco se cocina rápido; si lo dejas demasiado tiempo puede quedar seco.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 189, 29, 14, 3, 7, 1, 1, '/assets/img/recetas/020-filete-de-pescado-limon-pimienta.jpeg'],
+
+['Camarones Coco Crunch', 'cena',
+ ['camarones|300 g', 'huevo|1', 'Coco|al gusto', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
+ ['Lava y seca completamente los camarones.', 'Mezcla coco rallado y panko en un bowl. En otro, coloca el huevo batido.', 'Pasa cada camarón por huevo, luego cúbrelo con la mezcla de coco y panko.', 'Presiona ligeramente para que la cobertura se pegue bien. Rocía aceite en spray.', 'Cocina 7 min. Voltea cada camarón. Cocina 5 min más hasta dorar.', '(Tip: El coco se dora muy rápido, así que revisa constantemente los últimos minutos.)'],
+ ['alto en proteína', 'rápido'], 460, 44, 15, 29, 19, 5, 5, '/assets/img/recetas/021-camarones-coco-crunch.jpeg'],
+
+['Salmón Parmesano', 'cena',
+ ['filetes salmón|2', 'queso parmesano|½ taza', 'Ajo en polvo y perejil|al gusto', 'Sal y pimienta|al gusto'],
+ ['Seca bien los filetes con papel absorbente. Agrega sal y pimienta por ambos lados.', 'Mezcla parmesano, perejil y ajo en un bowl.', 'Coloca la mezcla sobre la parte superior del salmón. Presiona suavemente para fijarla.', 'Precalienta el Air Fryer. Cocina 8 min.', 'Revisa que el queso esté dorándose. Cocina 5-7 min más hasta formar costra crujiente.', '(Tip: El parmesano ayuda a proteger el salmón para que quede jugoso por dentro.)'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 412, 39, 16, 1, 26, 0, 0, '/assets/img/recetas/022-salmon-parmesano.jpeg'],
+
+['Brochetas de Camarón', 'cena',
+ ['camarones|400 g', 'pimentón|1', 'cebolla|½', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
+ ['Corta el pimentón y la cebolla en cuadros medianos.', 'Inserta camarones y vegetales alternando en los palillos.', 'Agrega aceite de oliva, sal y pimienta sobre las brochetas.', 'Precalienta el Air Fryer. Coloca las brochetas en la canasta.', 'Cocina 6 min. Gira cada brocheta. Cocina 5 min más.', '(Tip: No pegues demasiado las brochetas para que el aire caliente circule bien.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 273, 49, 12, 7, 6, 4, 2, '/assets/img/recetas/023-brochetas-de-camaron.jpeg'],
+
+['Atún Sellado con Ajonjolí', 'cena',
+ ['filetes atún|2', 'Salsa soya|al gusto', 'Ajonjolí|al gusto', 'Sal y pimienta|al gusto'],
+ ['Coloca los filetes en un recipiente. Agrega salsa soya y deja marinar 10 min.', 'Añade sal y pimienta. Cubre los bordes del atún con ajonjolí.', 'Precalienta el Air Fryer. Cocina 6 min.', 'Voltea cuidadosamente con espátula. Cocina 5 min más.', '(Tip: El atún queda mejor cuando el centro aún está ligeramente rosado.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 222, 43, 14, 3, 4, 0, 1, '/assets/img/recetas/024-atun-sellado-con-ajonjoli.jpeg'],
+
+['Palitos de Pescado Caseros', 'cena',
+ ['Filetes de pescado blanco|al gusto', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal y ajo en polvo|al gusto'],
+ ['Corta el pescado en tiras gruesas del mismo tamaño. Agrega sal y ajo en polvo.', 'Prepara tres bowls: harina, huevo batido y panko.', 'Pasa cada tira por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Cocina 10 min.', 'Voltea cada palito cuidadosamente. Cocina 6 min más hasta dorar.', '(Tip: El pescado debe estar bien seco antes de apanarlo para que quede crujiente.)'],
+ ['alto en proteína', 'rápido', 'económico'], 663, 48, 18, 92, 11, 4, 5, '/assets/img/recetas/025-palitos-de-pescado-caseros.jpeg'],
+
+['Pulpo Crocante al Ajo', 'cena',
+ ['pulpo|400 g', 'Ajo|al gusto', 'Aceite de oliva|al gusto', 'Paprika y sal|al gusto'],
+ ['Corta el pulpo en trozos medianos. Sécalo completamente con papel absorbente.', 'Colócalo en un bowl. Agrega aceite, ajo, paprika y sal. Mezcla bien.', 'Precalienta el Air Fryer. Cocina 10 min.', 'Abre la canasta y mueve el pulpo cuidadosamente.', 'Cocina 6 min más hasta dorar los bordes.', '(Tip: El pulpo ya debe venir cocido para evitar que quede duro.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 212, 30, 18, 5, 7, 0, 0, '/assets/img/recetas/026-pulpo-crocante-al-ajo.jpeg'],
+
+['Pescado BBQ Picante', 'cena',
+ ['filetes pescado|2', 'Salsa BBQ|al gusto', 'Salsa picante|al gusto', 'Sal y pimienta|al gusto'],
+ ['Mezcla salsa BBQ y salsa picante en un bowl pequeño.', 'Sazona el pescado con sal y pimienta.', 'Usa una brocha para cubrir el pescado con la salsa.', 'Precalienta el Air Fryer. Cocina 8 min. Voltea cuidadosamente.', 'Agrega más salsa encima. Cocina 5 min más.', '(Tip: La salsa carameliza mejor cuando se agrega también al final.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 214, 29, 15, 15, 3, 12, 1, '/assets/img/recetas/027-pescado-bbq-picante.jpeg'],
+
+['Camarones Picantes', 'cena',
+ ['camarones|400 g', 'Paprika picante|al gusto', 'Ajo en polvo|al gusto', 'Mantequilla y sal|al gusto'],
+ ['Lava y seca muy bien los camarones.', 'Colócalos en un bowl. Agrega mantequilla derretida y especias.', 'Mezcla hasta cubrirlos completamente.', 'Precalienta el Air Fryer. Cocina 5 min.', 'Sacude ligeramente la canasta. Cocina 4 min más hasta dorar.', '(Tip: No sobrellenes la canasta para evitar que los camarones se cocinen al vapor.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 238, 48, 10, 1, 5, 0, 0, '/assets/img/recetas/028-camarones-picantes.jpeg'],
+
+['Merluza Dorada', 'cena',
+ ['filetes merluza|2', 'Limón|al gusto', 'Sal y pimienta|al gusto', 'Aceite de oliva|al gusto'],
+ ['Exprime limón sobre ambos lados de la merluza.', 'Agrega sal y pimienta. Añade unas gotas de aceite de oliva.', 'Precalienta el Air Fryer. Coloca los filetes cuidadosamente.', 'Cocina 8 min. Voltea usando una espátula ancha.', 'Cocina 6 min más hasta dorar ligeramente.', '(Tip: La merluza es delicada; muévela con cuidado para que no se rompa.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 185, 27, 16, 4, 7, 1, 1, '/assets/img/recetas/029-merluza-dorada.jpeg'],
+
+['Camarones Empanizados', 'cena',
+ ['camarones|300 g', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
+ ['Lava y seca completamente los camarones.', 'Prepara tres bowls: harina, huevo batido y panko.', 'Pasa cada camarón por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Precalienta el Air Fryer.', 'Cocina 7 min. Voltea con pinzas. Cocina 5 min más hasta dorados y crocantes.', '(Tip: El aceite en spray ayuda muchísimo a lograr color dorado tipo frito tradicional.)'],
+ ['alto en proteína', 'rápido'], 410, 45, 14, 46, 5, 2, 3, '/assets/img/recetas/030-camarones-empanizados.jpeg'],
+
+['Pollo Entero Estilo Rotisserie', 'cena',
+ ['pollo de 1.2 kg|1', 'aceite de oliva|1 cda', 'paprika ahumada|1 cdta', 'ajo en polvo|1 cdta', 'cebolla en polvo|1 cdta', 'Tomillo|al gusto', 'limón para el interior|1'],
+ ['Seca el pollo completamente por dentro y por fuera. Mezcla el aceite con todas las especias.', 'Frota la mezcla por todo el pollo incluyendo debajo de la piel de la pechuga.', 'Coloca el limón cortado dentro del pollo. Cocina a 180°C con la pechuga hacia abajo 30 minutos.', 'Voltea y cocina 30 minutos más hasta piel dorada y temperatura interna de 74°C.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 459, 57, 60, 8, 22, 2, 2],
+
+['Chuletas de Cerdo con Ajo y Limón', 'cena',
+ ['chuletas cerdo de 200g c/u|2', 'ajo machacados|3 dientes', 'Jugo de 1 limón|al gusto', 'tomillo|1 cdta', 'Sal y pimienta negra|al gusto', 'Aceite en spray|al gusto'],
+ ['Marina las chuletas en ajo, limón, tomillo, sal y pimienta mínimo 30 minutos.', 'Seca el exceso de marinada con papel antes de cocinar.', 'Rocía con spray y cocina a 195°C por 8 minutos.', 'Voltea y cocina 8 minutos más. Temperatura interna: 63°C. Reposa 3 minutos.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 420, 39, 30, 8, 26, 1, 2],
+
+['Hamburguesa Clásica de Res', 'cena',
+ ['carne molida 80/20|400 g', 'Sal gruesa y pimienta negra|al gusto', 'queso americano o mozarela|2 rebanadas', 'Pan para hamburgues a|al gusto', 'Lechuga|al gusto'],
+ ['Forma 2 hamburguesas sin amasar demasiado — eso las endurece. Haz un hueco en el centro de cada una.', 'Sazona generosamente con sal gruesa y pimienta.', 'Cocina a 190°C por 6 minutos. Voltea, agrega el queso y cocina 5-6 minutos más.', 'Reposa 2 minutos. Arma con los acompañamientos.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 516, 50, 12, 2, 34, 0, 1, '/assets/img/recetas/013-hamburguesa-clasica-de-res.jpeg'],
+
+['Pechuga Rellena de Jamón y Queso', 'cena',
+ ['pechugas de pollo|2', 'lonjas jamón|4', 'queso mozarela en lonjas|80 g', 'Sal|al gusto', 'Palillos de madera|al gusto', 'Aceite en spray|al gusto'],
+ ['Abre cada pechuga en mariposa sin cortar del todo. Aplana ligeramente.', 'Rellena con el jamón y el queso. Cierra y asegura con palillos.', 'Sazona el exterior con sal, pimienta y ajo. Rocía con spray.', 'Cocina a 185°C por 22 minutos hasta temperatura interna de 74°C.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 372, 57, 22, 4, 13, 2, 0],
+
+['Bistec Apanado Estilo Milanesa', 'cena',
+ ['bisteces res delgados|2', 'huevos|2', 'pan sazonado|100 g', 'Sal|al gusto', 'Aceite en spray|al gusto', 'Limón para servir|al gusto'],
+ ['Sazona los bisteces con sal, pimienta y ajo. Pasa por huevo y luego por pan rallado presionando bien.', 'Rocía con spray generosamente por ambos lados.', 'Cocina a 200°C por 7 minutos.', 'Voltea con cuidado y cocina 6-7 minutos más hasta cobertura dorada. Sirve con limón.'],
+ ['alto en proteína', 'rápido', 'económico'], 566, 53, 7, 40, 21, 4, 3],
+
+['Alitas Teriyaki', 'cena',
+ ['alitas de pollo|500 g', 'soja baja en sodio|3 cdas', 'miel|1 cda', 'jengibre|1 cdta', 'ajo|1 diente', 'maicena|1 cdta', 'Sésamo y cebollín para decorar|al gusto'],
+ ['Seca las alitas y cocina a 200°C por 12 minutos. Voltea y cocina 10 minutos más.', 'Mientras tanto cocina la salsa teriyaki en olla pequeña hasta espesar.', 'Baña las alitas en la salsa teriyaki caliente.', 'Devuelve al air fryer 3 minutos para que la salsa caramelice.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 351, 43, 12, 9, 15, 6, 1],
+
+['Lomo de Cerdo con Mostaza y Panela', 'cena',
+ ['lomo de cerdo magro|600 g', 'mostaza Dijon|2 cdas', 'panela raspada o miel|1 cda', 'tomillo|1 cdta', 'Sal y pimienta|al gusto', 'Aceite en spray|al gusto'],
+ ['Mezcla la mostaza con la panela y el tomillo formando un glaseado.', 'Cubre todo el lomo con la mezcla y marina 20 minutos.', 'Cocina a 185°C por 12 minutos.', 'Voltea, aplica más glaseado y cocina 12 minutos más. Temperatura interna 63°C. Reposa 5 minutos antes de cortar.'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 345, 53, 20, 6, 11, 4, 1],
+
+['Pollo al Curry Colombiano', 'cena',
+ ['muslos de pollo sin piel|500 g', 'curry en polvo|2 cdas', 'cúrcuma|1 cdta', 'yogur natural|150 g', 'ajo|2 dientes', 'jengibre en polvo|1 cdta', 'Sal y aceite en spray|al gusto'],
+ ['Mezcla el yogur con el curry, la cúrcuma, el ajo, el jengibre y la sal.', 'Marina el pollo mínimo 2 horas — overnight es ideal.', 'Rocía con spray y cocina a 190°C por 12 minutos. Voltea.', 'Cocina 10 minutos más hasta bordes dorados. Sirve con arroz blanco.'],
+ ['alto en proteína', 'sin gluten', 'económico'], 370, 45, 22, 10, 17, 3, 4],
+
+['Pernil de Cerdo Crujiente', 'cena',
+ ['pernil de cerdo con piel|800 g', 'ajo|4 dientes', 'Jugo de 1 naranja|al gusto', 'comino|1 cdta', 'Orégano|al gusto', 'Aceite en spray|al gusto'],
+ ['Marina el pernil en ajo machacado, naranja, comino, orégano, sal y pimienta mínimo 4 horas.', 'Seca bien el exceso de marinada. Rocía con spray.', 'Cocina a 180°C por 25 minutos, voltea y cocina 20 minutos más.', 'Sube a 200°C los últimos 5 minutos para que la piel quede completamente crujiente.'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 329, 53, 25, 4, 10, 2, 0],
+
+['Deditos de Pollo Estilo KFC', 'cena',
+ ['pechuga de pollo|400 g', 'huevos|2', 'harina de trigo|100 g', 'pan o panko|80 g', 'paprika|1 cdta', 'Sal y pimienta|al gusto', 'Aceite en spray|al gusto'],
+ ['Sazona el pollo. Pasa por harina, luego huevo, luego pan rallado mezclado con las especias.', 'Refrigera 10 minutos antes de cocinar.', 'Rocía con spray y cocina a 200°C por 9 minutos.', 'Voltea, rocía nuevamente y cocina 8 minutos más. Sirve con salsa de tu elección.'],
+ ['alto en proteína', 'rápido', 'económico'], 791, 79, 10, 69, 20, 3, 4],
+
+['Carne Desmechada para Arepas', 'cena',
+ ['carne de res y desmechada|400 g', 'hogao|1 taza', 'Sal|al gusto', 'Aceite en spray|al gusto', 'Arepas para servir|al gusto'],
+ ['Mezcla la carne desmechada con el hogao, sal, pimienta y color.', 'Extiende en la canasta del air fryer en capa delgada.', 'Cocina a 200°C por 10 minutos, remueve bien.', 'Cocina 10 minutos más hasta que los bordes estén dorados y caramelizados. Sirve sobre arepas.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 426, 54, 20, 7, 19, 5, 1, '/assets/img/recetas/022-carne-desmechada-para-arepas.jpeg'],
+
+['Salmón con Mantequilla y Eneldo', 'cena',
+ ['filetes salmón de 200g c/u|2', 'mantequilla|1 cda', 'Eneldo o seco|al gusto', 'Jugo de 1 limón|al gusto', 'Sal y pimienta|al gusto', 'Rodajas de limón para servir|al gusto'],
+ ['Sazona el salmón con sal y pimienta. Unta la mantequilla derretida sobre la parte superior.', 'Espolvorea el eneldo generosamente.', 'Coloca con la piel hacia abajo. Cocina a 180°C por 10-12 minutos sin voltear.', 'El salmón está listo cuando se separa en capas al tocarlo. Sirve con limón.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 384, 31, 12, 7, 25, 2, 2],
+
+['Mojarra Frita Entera', 'cena',
+ ['mojarras 300g c/u|2', 'ajo machacados|3 dientes', 'Jugo de 1 limón|al gusto', 'comino|1 cdta', 'Sal|al gusto', 'Aceite en spray|al gusto', 'Patacones y ensalada para acompañar|al gusto'],
+ ['Haz 3-4 cortes profundos en cada lado de las mojarras. Marina en ajo, limón, comino, sal y color 30 minutos.', 'Seca bien el exceso de marinada. Rocía con spray por todos los lados.', 'Cocina a 200°C por 11 minutos, voltea con cuidado.', 'Cocina 11 minutos más hasta piel dorada y crujiente.'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 212, 33, 30, 5, 7, 1, 1],
+
+['Camarones Empanizados con Coco', 'cena',
+ ['camarones|300 g', 'claras huevo|2', 'coco sin azúcar|50 g', 'panko|50 g', 'Sal y pimienta|al gusto', 'Aceite en spray|al gusto', 'Salsa de mango y ají para servir|al gusto'],
+ ['Pasa los camarones por clara de huevo y luego por mezcla de panko y coco. Presiona bien.', 'Refrigera 10 minutos antes de cocinar.', 'Rocía con spray y cocina a 200°C por 6 minutos.', 'Voltea con cuidado y cocina 5-6 minutos más hasta dorados.'],
+ ['alto en proteína', 'rápido'], 428, 43, 10, 51, 7, 33, 2],
+
+['Tilapia con Costra de Ajo y Hierbas', 'cena',
+ ['filetes tilapia de 180g c/u|2', 'mantequilla|2 cdas', 'ajo muy fino|3 dientes', 'pan|2 cdas', 'Perejil y cilantro|al gusto', 'Sal|al gusto'],
+ ['Sazona los filetes con sal y pimienta.', 'Mezcla la mantequilla con el ajo, el pan rallado y las hierbas. Extiende sobre la parte superior de cada filete.', 'Cocina a 195°C por 12-14 minutos sin voltear.', 'La costra debe estar dorada. Sirve con limón.'],
+ ['alto en proteína', 'ligero', 'rápido', 'económico'], 333, 38, 13, 11, 16, 1, 1],
+
+['Brochetas de Camarón y Chorizo', 'cena',
+ ['camarones pelados|200 g', 'chorizo colombiano|150 g', 'pimentón rojo en cuadros|1', 'aceite de oliva|1 cda', 'Ajo|al gusto', 'Palitos remojados 30 minutos|al gusto'],
+ ['Marina los camarones y el chorizo en aceite, ajo, comino y sal 15 minutos.', 'Ensarta alternando camarón, chorizo y pimentón.', 'Cocina a 195°C por 6 minutos, voltea.', 'Cocina 5-6 minutos más hasta que el chorizo esté dorado y los camarones rosados.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 439, 38, 12, 7, 29, 3, 1],
+
+['Pulpo a la Gallega Express', 'cena',
+ ['pulpo|400 g', 'aceite de oliva|2 cdas', 'Paprika ahumada abundante|al gusto', 'Sal gruesa|al gusto', 'papas|2', 'Perejil|al gusto'],
+ ['Corta el pulpo cocido en trozos gruesos. Mezcla con aceite y sal.', 'Cocina a 200°C por 8 minutos, remueve.', 'Cocina 6 minutos más hasta bordes ligeramente chamuscados.', 'Sirve sobre las papas en rodajas. Espolvorea paprika abundante y perejil.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 413, 33, 8, 31, 17, 1, 3],
+
+['Bagre Apanado con Limón', 'cena',
+ ['filetes de bagre o pescado de río|400 g', 'huevos|2', 'harina de maíz o pan|100 g', 'ajo en polvo|1 cdta', 'comino|1 cdta', 'Sal|al gusto', 'Aceite en spray|al gusto'],
+ ['Sazona el bagre con sal, pimienta, ajo y comino. Pasa por huevo y luego por harina de maíz.', 'Rocía con spray generosamente.', 'Cocina a 200°C por 8 minutos, voltea con cuidado.', 'Cocina 7-8 minutos más hasta cobertura dorada. Sirve con limón y patacones.'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 497, 49, 8, 42, 15, 1, 3],
+
+['Langostinos con Mantequilla de Ajo', 'cena',
+ ['langostinos con cáscara|400 g', 'mantequilla|3 cdas', 'ajo|4 dientes', 'Jugo de 1 limón|al gusto', 'Perejil|al gusto', 'Sal y pimienta|al gusto', 'Pan para el jugo|al gusto'],
+ ['Haz un corte en el lomo de cada langostino sin retirar la cáscara.', 'Mezcla la mantequilla con el ajo, el limón y la sal. Unta sobre los langostinos.', 'Cocina a 200°C por 5 minutos, bañalos con el jugo que queda en la canasta.', 'Cocina 4-5 minutos más. Sirve con pan para mojar en el jugo.'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 387, 49, 5, 7, 19, 1, 1],
+
+['Tacos de Pescado con Repollo', 'cena',
+ ['tilapia o corvina|400 g', 'comino|1 cdta', 'Aceite en spray|al gusto', 'tortillas maíz|8', 'Repollo morado|al gusto', 'Yogur griego|al gusto'],
+ ['Sazona el pescado con las especias y rocía con spray.', 'Cocina a 200°C por 7 minutos por lado hasta dorado.', 'Calienta las tortillas en el air fryer 1 minuto.', 'Arma los tacos con el pescado, el repollo, el yogur y la salsa. Exprime limón.'],
+ ['alto en proteína', 'rápido', 'económico'], 804, 58, 14, 91, 23, 6, 7, '/assets/img/recetas/032-tacos-de-pescado-con-repollo.jpeg'],
+
+['Caldo de papa', 'cena',
+ ['papas pastusas|2', 'cebolla larga|1/4 taza', 'cilantro|1 cda', 'queso campesino|30 g', 'agua o caldo|2 tazas', 'Sal|al gusto'],
+ ['Cocina las papas en el agua o caldo 15 minutos hasta que estén blandas.', 'Machaca parte de la papa contra la olla para espesar el caldo.', 'Agrega la cebolla larga y cocina 3 minutos más.', 'Sirve caliente con el queso en trocitos y el cilantro por encima.'],
+ ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 333, 13, 25, 58, 6, 4, 8],
+
+['Sopa de verduras con carne', 'cena',
+ ['carne de res magra|100 g', 'zanahoria|1/2', 'habichuela|1/2 taza', 'arveja|1/4 taza', 'papa criolla|1', 'agua o caldo|2 tazas', 'Sal|al gusto'],
+ ['Cocina la carne en el agua o caldo 15 minutos.', 'Agrega la papa criolla, la zanahoria, la habichuela y la arveja.', 'Cocina 12-15 minutos más hasta que las verduras estén tiernas.', 'Rectifica sal y sirve caliente.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 292, 33, 30, 28, 6, 10, 9],
+
+['Ajiaco ligero de cena', 'cena',
+ ['pechuga de pollo|120 g', 'papas criollas|2', 'mazorca|1/4', 'guascas|2 cdas', 'agua o caldo de pollo|1 taza', 'Sal|al gusto'],
+ ['Cocina las papas criollas y la mazorca en el agua o caldo 15 minutos, deshaciendo un poco la papa para espesar.', 'Agrega el pollo desmenuzado y las guascas.', 'Cocina 5 minutos más y rectifica sal.', 'Sirve caliente, sin crema, para una cena más liviana.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 312, 41, 35, 24, 5, 2, 4],
+
+['Pollo sudado ligero', 'cena',
+ ['pechuga de pollo en presas|150 g', 'cebolla|1/4 taza', 'tomate|1/2', 'ajo|1 diente', 'agua|1/4 taza', 'Sal y comino|al gusto'],
+ ['Sofríe la cebolla, el tomate y el ajo 3 minutos.', 'Agrega el pollo y sella por ambos lados.', 'Añade el agua, tapa y cocina a fuego medio-bajo 15-18 minutos hasta que esté bien cocido.', 'Sazona con sal y comino; sirve con ensalada verde.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 294, 48, 30, 10, 6, 4, 2],
+
+['Crema de ahuyama', 'cena',
+ ['1/2 tazas de ahuyama|1', 'cebolla|1/4 taza', 'ajo|1 diente', 'leche|1/4 taza', 'agua o caldo|1 taza', 'Sal|al gusto'],
+ ['Cocina la ahuyama con la cebolla y el ajo en el agua o caldo 15 minutos hasta ablandar.', 'Licúa todo hasta obtener una crema suave.', 'Regresa a la olla, agrega la leche y calienta 3 minutos sin dejar hervir fuerte.', 'Rectifica sal y sirve caliente.'],
+ ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 86, 4, 25, 15, 2, 7, 1],
+
+['Sopa de arroz con pollo', 'cena',
+ ['arroz blanco|1/2 taza', 'pechuga de pollo|100 g', 'cebolla larga|1/4 taza', 'zanahoria|1/2', '1/2 tazas de caldo de pollo|1', 'Sal|al gusto'],
+ ['Calienta el caldo y agrega la zanahoria; cocina 8 minutos.', 'Añade el arroz cocido y el pollo desmenuzado.', 'Cocina 5 minutos más hasta que todo esté caliente y el arroz suelte un poco de almidón.', 'Espolvorea la cebolla larga y sirve.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 622, 91, 25, 35, 11, 3, 3],
+
+['Trucha al ajillo del Eje Cafetero', 'cena',
+ ['filete trucha|1', 'ajo|1 diente', 'aceite de oliva|1 cdta', 'perejil|1 cda', 'Limón|al gusto', 'Sal|al gusto'],
+ ['Sazona la trucha con sal y limón.', 'Calienta el aceite en un sartén y dora el ajo 30 segundos sin quemar.', 'Agrega la trucha y cocina 3-4 minutos por lado hasta que esté firme.', 'Espolvorea perejil fresco y sirve con ensalada.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'rápido'], 315, 43, 20, 9, 12, 2, 3],
+
+['Mojarra al vapor con ensalada', 'cena',
+ ['mojarra entera|1', 'cebolla en pluma|1/4 taza', 'tomate|1/2', 'Limón|al gusto', 'lechuga|1 taza', 'Sal|al gusto'],
+ ['Sazona la mojarra por dentro y por fuera con sal y limón.', 'Coloca la cebolla y el tomate sobre el pescado y envuelve en papel aluminio.', 'Cocina al vapor o al horno a 190°C durante 18-20 minutos hasta que esté cocida.', 'Sirve con la lechuga fresca al lado.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 306, 51, 25, 16, 6, 6, 4],
+
+['Pechuga a la plancha con patacón al horno', 'cena',
+ ['pechuga de pollo|150 g', 'plátano verde en tajadas|1/2', 'aceite|1 cdta', 'Sal y limón|al gusto'],
+ ['Sazona la pechuga con sal y limón y cocina en plancha caliente 4-5 minutos por lado.', 'Aplana las tajadas de plátano, pincela con el aceite y hornea a 200°C 15 minutos, volteando a mitad de cocción.', 'Sirve la pechuga con el patacón al horno y ensalada si se desea.'],
+ ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 404, 48, 25, 30, 11, 13, 4],
+
+['Sopa de guineo santandereana', 'cena',
+ ['guineo verde|1', 'carne de res magra|80 g', 'cebolla|1/4 taza', 'ajo|1 diente', '1/2 tazas de agua o caldo|1', 'Sal|al gusto'],
+ ['Sofríe la cebolla y el ajo 2 minutos.', 'Agrega la carne y dora 3-4 minutos.', 'Añade el agua o caldo y el guineo; cocina 15-18 minutos hasta que el guineo esté tierno.', 'Rectifica sal y sirve caliente.'],
+ ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 265, 23, 25, 35, 5, 17, 4],
+
+['Bistec a caballo en porción', 'cena',
+ ['posta de res delgada|120 g', 'huevo|1', 'cebolla en pluma|1/4 taza', 'aceite|1 cdta', 'Sal|al gusto'],
+ ['Sazona la posta con sal y cocina en sartén caliente con la mitad del aceite, 3 minutos por lado.', 'Retira y en el mismo sartén sofríe la cebolla 2 minutos.', 'Con el aceite restante, fríe el huevo al gusto.', 'Sirve el bistec con la cebolla encima y el huevo montado arriba.'],
+ ['tradicional', 'alto en proteína', 'rápido', 'sin gluten'], 352, 40, 15, 6, 18, 3, 1],
 
 // ==================== SNACKS ====================
 ['Aderezo de Atún, Aguacate y Maíz', 'snack',
@@ -4795,5 +5635,510 @@ return [
  ['chocolate negro|100 g', 'crema espesa|1/4 taza', 'avellanas molidas|1/2 taza', 'eritritol|1 cucharada', 'extracto de vainilla|1 cucharadita', 'cacao en polvo|al gusto'],
  ['Derretir el chocolate negro a baño María o en el microondas en intervalos de 20 segundos, revolviendo cada vez hasta que quede completamente líquido.', 'Añadir la crema espesa al chocolate derretido y mezclar vigorosamente con una espátula hasta obtener una mezcla homogénea y sin grumos.', 'Incorporar el eritritol en polvo, el extracto de vainilla y las avellanas molidas; mezclar bien hasta que todos los ingredientes estén bien integrados.', 'Refrigerar la mezcla en un recipiente tapado durante 30 minutos, o hasta que la masa esté firme y se pueda manejar sin que se derrame.', 'Con las manos húmedas, formar pequeñas bolitas de la masa, del tamaño de una nuez, y luego pasarlas por cacao en polvo para cubrirlas uniformemente.', 'Colocar las trufas en una bandeja forrada con papel pergamino y refrigerar nuevamente al menos 30 minutos para que se endurezcan completamente.', 'Servir las trufas frías, decorando con un poco de cacao en polvo adicional si se desea.'],
  ['sin gluten', 'ligero'], 288, 6, 15, 12, 24, 0, 3, '/assets/img/recetas/024-trufas-de-chocolate-y-avellanas.jpeg'],
+
+['Garbanzos Crocantes Especiados', 'snack',
+ ['garbanzos|1 taza', 'aceite de oliva|1 cda', 'Paprika|al gusto', 'Ajo en polvo|al gusto'],
+ ['Escurre muy bien los garbanzos.', 'Sécalos con papel absorbente.', 'Mézclalos con aceite, sal, paprika y ajo.', 'Llévalos al Air Fryer.', 'Cocina 15 minutos, sacudiendo la canasta a mitad de tiempo.', '(Tip: Mientras más secos estén antes de cocinar, más crocantes quedan.)'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 413, 15, 15, 47, 19, 8, 13, '/assets/img/recetas/001-garbanzos-crocantes-especiados.jpeg'],
+
+['Chips de Banano Verde', 'snack',
+ ['bananos verdes|2', 'Aceite en spray|al gusto'],
+ ['Pela los bananos.', 'Córtalos en rodajas muy delgadas.', 'Rocía un poco de aceite.', 'Colócalos separados en la canasta.', 'Cocina 12 minutos, volteando a mitad de cocción.', '(Tip: Usa mandolina si quieres chips más finos y parejos.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 302, 3, 12, 55, 11, 29, 6, '/assets/img/recetas/002-chips-de-banano-verde.jpeg'],
+
+['Manzana con Canela', 'snack',
+ ['manzanas|2', 'Canela|al gusto', 'miel|1 cdta'],
+ ['Lava las manzanas.', 'Córtalas en medias lunas.', 'Espolvorea canela.', 'Llévalas al Air Fryer.', 'Cocina hasta que estén suaves y doraditas.', '(Tip: Perfectas cuando quieres algo dulce sin caer en ultraprocesados.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 207, 1, 10, 55, 1, 42, 10, '/assets/img/recetas/003-manzana-con-canela.jpeg'],
+
+['Zanahorias Doradas', 'snack',
+ ['zanahorias|3', 'aceite de oliva|1 cdta', 'Canela|al gusto'],
+ ['Pela las zanahorias.', 'Córtalas en bastones.', 'Mézclalas con aceite, sal y canela.', 'Llévalas al Air Fryer.', 'Cocina hasta que estén doradas.', '(Tip: La canela ayuda a dar sensación dulce sin necesidad de azúcar.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 135, 2, 15, 22, 5, 10, 7, '/assets/img/recetas/005-zanahorias-doradas.jpeg'],
+
+['Batatas Crocantes', 'snack',
+ ['batatas|2', 'Aceite de oliva|al gusto', 'Canela|al gusto'],
+ ['Pela las batatas.', 'Córtalas en bastones.', 'Sécalas bien.', 'Mézclalas con aceite, canela y sal.', 'Cocina 18 minutos, sacudiendo a mitad de tiempo.', '(Tip: No las amontones para que no queden blandas.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 317, 4, 18, 54, 10, 11, 9, '/assets/img/recetas/006-batatas-crocantes.jpeg'],
+
+['Coliflor Buffalo Saludable', 'snack',
+ ['coliflor|1', 'Salsa buffalo|al gusto', 'Aceite de oliva|al gusto', 'Ajo en polvo|al gusto'],
+ ['Corta la coliflor en trozos.', 'Mezcla con aceite, sal y ajo.', 'Cocina 10 minutos.', 'Agrega salsa buffalo.', 'Cocina 8 minutos más.', '(Tip: Agrega la salsa a mitad de cocción para que no se queme.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 113, 2, 18, 5, 10, 1, 2, '/assets/img/recetas/012-coliflor-buffalo-saludable.jpeg'],
+
+['Tostadas de Garbanzo y Aguacate', 'snack',
+ ['Pan integral|al gusto', 'Aguacate|al gusto', 'Garbanzos|al gusto', 'Limón|al gusto'],
+ ['Tuesta el pan en el Air Fryer.', 'Tritura el aguacate con limón y sal.', 'Agrega garbanzos encima.', 'Sirve inmediatamente.', '(Tip: Puedes machacar algunos garbanzos para textura más cremosa.)'],
+ ['rápido', 'vegetariano', 'económico'], 363, 15, 6, 53, 13, 8, 15, '/assets/img/recetas/013-tostadas-de-garbanzo-y-aguacate.jpeg'],
+
+['Chips de Manzana', 'snack',
+ ['manzanas|2', 'Canela|al gusto'],
+ ['Corta las manzanas en rodajas finas.', 'Retira las semillas.', 'Espolvorea canela.', 'Cocina a baja temperatura.', 'Voltea a mitad de tiempo.', '(Tip: Déjalas enfriar para que terminen de ponerse crocantes.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 192, 1, 18, 51, 1, 37, 10, '/assets/img/recetas/014-chips-de-manzana.jpeg'],
+
+['Bolitas de Avena y Banano', 'snack',
+ ['banano|1', 'avena|½ taza', 'Canela|al gusto', 'mantequilla de maní|1 cda'],
+ ['Tritura el banano.', 'Mezcla con avena, canela y mantequilla de maní.', 'Forma bolitas pequeñas.', 'Cocina hasta que estén firmes y doradas.', '(Tip: Son ideales cuando quieres algo dulce y saciante.)'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 381, 13, 10, 62, 11, 16, 10, '/assets/img/recetas/015-bolitas-de-avena-y-banano.jpeg'],
+
+['Hojuelas de Yuca Saludables', 'snack',
+ ['yuca|1', 'Aceite en spray|al gusto', 'Ajo en polvo|al gusto'],
+ ['Corta la yuca cocida en láminas o bastones.', 'Retira la vena central.', 'Agrega sal y ajo.', 'Rocía aceite.', 'Cocina hasta que dore.', '(Tip: La yuca fría del día anterior queda más crocante.)'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 416, 3, 15, 78, 11, 3, 4, '/assets/img/recetas/017-hojuelas-de-yuca-saludables.jpeg'],
+
+['Champiñones Rellenos Fit', 'snack',
+ ['Champiñones|al gusto', 'Queso crema bajo en grasa|al gusto', 'Espinaca|al gusto', 'Ajo en polvo|al gusto'],
+ ['Limpia los champiñones.', 'Retira el centro.', 'Mezcla queso crema, espinaca y ajo.', 'Rellena cada champiñón.', 'Cocina hasta que estén suaves.', '(Tip: No los laves demasiado; absorben mucha agua.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 244, 8, 12, 9, 21, 4, 2, '/assets/img/recetas/018-champinones-rellenos-fit.jpeg'],
+
+['Brochetas de Fruta Tibia', 'snack',
+ ['Piña|al gusto', 'Banano|al gusto', 'Fresas|al gusto', 'Canela|al gusto'],
+ ['Corta las frutas en trozos.', 'Insértalas en palillos.', 'Espolvorea canela.', 'Cocina hasta que estén tibias y ligeramente doradas.', '(Tip: Perfectas para calmar antojo dulce de forma natural.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 142, 2, 8, 37, 1, 21, 6, '/assets/img/recetas/020-brochetas-de-fruta-tibia.jpeg'],
+
+['Chips de Remolacha', 'snack',
+ ['remolacha|1', 'Aceite en spray|al gusto'],
+ ['Pela la remolacha.', 'Córtala en láminas finas.', 'Seca con papel absorbente.', 'Rocía aceite.', 'Cocina hasta que seque y dore.', '(Tip: Córtalas finas para que queden crocantes y no blandas.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 131, 2, 15, 10, 10, 7, 3, '/assets/img/recetas/025-chips-de-remolacha.jpeg'],
+
+['Huevitos de Codorniz Crocantes', 'snack',
+ ['Huevos de codorniz|al gusto', 'huevo|1', 'Pan integral|al gusto'],
+ ['Pela los huevos de codorniz.', 'Pásalos por huevo batido.', 'Cúbrelos con pan rallado.', 'Rocía aceite.', 'Cocina hasta dorar.', '(Tip: Son perfectos como snack alto en proteína.)'],
+ ['ligero', 'rápido', 'económico'], 319, 22, 8, 26, 14, 5, 4, '/assets/img/recetas/026-huevitos-de-codorniz-crocantes.jpeg'],
+
+['Chips de Plátano Maduro', 'snack',
+ ['plátano firme|1', 'Aceite en spray|al gusto', 'Canela|al gusto'],
+ ['Pela el plátano.', 'Córtalo en rodajas delgadas.', 'Rocía aceite.', 'Agrega canela.', 'Cocina hasta dorar.', '(Tip: Usa plátano maduro pero firme para que no se deshaga.)'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 276, 2, 12, 49, 11, 23, 5, '/assets/img/recetas/028-chips-de-platano-maduro.jpeg'],
+
+['Tostaditas de Pan Integral con Ricotta', 'snack',
+ ['Pan integral|al gusto', 'Queso ricotta|al gusto', 'Tomate cherry|al gusto', 'Orégano|al gusto'],
+ ['Corta el pan en cuadros pequeños.', 'Unta ricotta encima.', 'Agrega tomate cherry en rodajas.', 'Espolvorea orégano.', 'Cocina hasta que el pan esté crocante.', '(Tip: Agrega la ricotta después si prefieres una textura más fresca.)'],
+ ['ligero', 'rápido', 'vegetariano', 'económico'], 268, 15, 6, 30, 10, 5, 5, '/assets/img/recetas/030-tostaditas-de-pan-integral-con-ricotta.jpeg'],
+
+['Barras de Avena y Banano', 'snack',
+ ['bananos|2', 'avena|1 taza', 'canela|1 cdta', 'mantequilla de maní|2 cdas'],
+ ['Tritura los bananos hasta formar puré.', 'Agrega avena, canela y mantequilla de maní.', 'Mezcla muy bien.', 'Coloca la mezcla en molde pequeño de silicona.', 'Lleva al Air Fryer.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 93, 3, 12, 15, 3, 4, 2, '/assets/img/recetas/001-barras-de-avena-y-banano.jpeg'],
+
+['Barras de Chocolate y Avena', 'snack',
+ ['avena|1 taza', 'cacao sin azúcar|2 cdas', 'bananos|2', 'vainilla|1 cdta'],
+ ['Tritura los bananos.', 'Mezcla con avena, cacao y vainilla.', 'Coloca la mezcla en molde pequeño.', 'Cocina en Air Fryer durante 12 minutos.', 'Deja enfriar antes de desmoldar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 87, 2, 12, 18, 1, 7, 2, '/assets/img/recetas/002-barras-de-chocolate-y-avena.jpeg'],
+
+['Barras de Coco y Almendras', 'snack',
+ ['coco|1 taza', 'almendras|½ taza', 'claras huevo|2', 'miel|2 cdas'],
+ ['Mezcla todos los ingredientes.', 'Coloca en molde apto para Air Fryer.', 'Cocina durante 10 minutos.', 'Retira cuando estén ligeramente doradas.', 'Deja enfriar antes de cortar.'],
+ ['ligero', 'rápido', 'sin gluten'], 156, 3, 10, 9, 13, 5, 3, '/assets/img/recetas/003-barras-de-coco-y-almendras.jpeg'],
+
+['Barras de Manzana y Canela', 'snack',
+ ['manzana|1', 'avena|1 taza', 'Canela|al gusto', 'miel|2 cdas'],
+ ['Ralla la manzana.', 'Mezcla con avena, canela y miel.', 'Coloca en molde pequeño.', 'Cocina durante 12 minutos.', 'Deja reposar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 67, 2, 12, 14, 1, 5, 2, '/assets/img/recetas/004-barras-de-manzana-y-canela.jpeg'],
+
+['Barras de Mantequilla de Maní', 'snack',
+ ['mantequilla de maní|½ taza', 'avena|1 taza', 'miel|2 cdas', 'vainilla|1 cdta'],
+ ['Mezcla todos los ingredientes.', 'Presiona la mezcla dentro del molde.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 145, 6, 10, 14, 8, 5, 2, '/assets/img/recetas/005-barras-de-mantequilla-de-mani.jpeg'],
+
+['Barras de Arándanos y Avena', 'snack',
+ ['avena|1 taza', 'arándanos|½ taza', 'bananos|2', 'Canela|al gusto'],
+ ['Tritura los bananos.', 'Mezcla con avena y canela.', 'Incorpora arándanos suavemente.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 80, 2, 12, 17, 1, 5, 2, '/assets/img/recetas/006-barras-de-arandanos-y-avena.jpeg'],
+
+['Barras de Zanahoria y Coco', 'snack',
+ ['zanahoria|1', 'avena|1 taza', 'Coco|al gusto', 'Canela|al gusto', 'miel|2 cdas'],
+ ['Mezcla todos los ingredientes.', 'Coloca la mezcla en molde pequeño.', 'Cocina durante 12 minutos.', 'Retira y deja enfriar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 99, 2, 12, 13, 5, 4, 3, '/assets/img/recetas/007-barras-de-zanahoria-y-coco.jpeg'],
+
+['Barras de Café y Cacao', 'snack',
+ ['avena|1 taza', 'café instantáneo|1 cda', 'cacao|2 cdas', 'bananos|2'],
+ ['Tritura el banano.', 'Agrega avena, café y cacao.', 'Mezcla muy bien.', 'Cocina durante 11 minutos.', 'Deja reposar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 79, 3, 11, 16, 1, 4, 3, '/assets/img/recetas/008-barras-de-cafe-y-cacao.jpeg'],
+
+['Barras de Chía y Limón', 'snack',
+ ['avena|1 taza', 'chía|1 cda', 'Jugo de 1 limón|al gusto', 'miel|2 cdas'],
+ ['Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 64, 2, 10, 12, 1, 3, 2, '/assets/img/recetas/009-barras-de-chia-y-limon.jpeg'],
+
+['Barras de Fresa y Yogur', 'snack',
+ ['fresas|½ taza', 'yogur griego|1', 'avena|1 taza', 'miel|2 cdas'],
+ ['Corta las fresas en trozos pequeños.', 'Mezcla todos los ingredientes.', 'Cocina durante 12 minutos.', 'Enfría antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 67, 3, 12, 12, 1, 4, 2, '/assets/img/recetas/010-barras-de-fresa-y-yogur.jpeg'],
+
+['Barras de Nueces y Canela', 'snack',
+ ['avena|1 taza', 'nueces|½ taza', 'Canela|al gusto', 'miel|2 cdas'],
+ ['Pica las nueces.', 'Mezcla todos los ingredientes.', 'Coloca en molde.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 97, 3, 10, 12, 5, 3, 2, '/assets/img/recetas/011-barras-de-nueces-y-canela.jpeg'],
+
+['Barras Tropicales de Mango', 'snack',
+ ['mango|½ taza', 'avena|1 taza', 'Coco|al gusto', 'miel|2 cdas'],
+ ['Tritura ligeramente el mango.', 'Mezcla todos los ingredientes.', 'Cocina durante 12 minutos.', 'Retira y deja enfriar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 104, 2, 12, 15, 5, 6, 2, '/assets/img/recetas/012-barras-tropicales-de-mango.jpeg'],
+
+['Barras de Almendras y Vainilla', 'snack',
+ ['almendras|½ taza', 'avena|1 taza', 'vainilla|1 cdta', 'miel|2 cdas'],
+ ['Pica las almendras.', 'Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 10 minutos.', 'Enfría antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 91, 3, 10, 12, 4, 3, 2, '/assets/img/recetas/013-barras-de-almendras-y-vainilla.jpeg'],
+
+['Barras de Batata y Canela', 'snack',
+ ['puré de batata|1 taza', 'avena|1 taza', 'Canela|al gusto', 'miel|2 cdas'],
+ ['Tritura la batata cocida.', 'Mezcla con avena y canela.', 'Coloca en molde.', 'Cocina durante 12 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 82, 2, 12, 17, 1, 4, 2, '/assets/img/recetas/014-barras-de-batata-y-canela.jpeg'],
+
+['Barras de Mora y Avena', 'snack',
+ ['moras|½ taza', 'avena|1 taza', 'bananos|2'],
+ ['Tritura los bananos.', 'Mezcla con avena.', 'Agrega las moras suavemente.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 77, 2, 12, 16, 1, 4, 3, '/assets/img/recetas/015-barras-de-mora-y-avena.jpeg'],
+
+['Barras de Piña y Coco', 'snack',
+ ['piña|½ taza', 'Coco|al gusto', 'avena|1 taza', 'miel|2 cdas'],
+ ['Corta la piña en cubitos pequeños.', 'Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 11 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 102, 2, 11, 14, 5, 5, 2, '/assets/img/recetas/016-barras-de-pina-y-coco.jpeg'],
+
+['Barras de Yogur y Chocolate', 'snack',
+ ['yogur griego|1', 'avena|1 taza', 'cacao|2 cdas', 'miel|2 cdas'],
+ ['Mezcla todos los ingredientes.', 'Coloca en molde apto para Air Fryer.', 'Cocina durante 12 minutos.', 'Deja reposar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 71, 3, 12, 13, 2, 3, 3, '/assets/img/recetas/017-barras-de-yogur-y-chocolate.jpeg'],
+
+['Barras de Avena y Pera', 'snack',
+ ['pera|1', 'avena|1 taza', 'Canela|al gusto', 'miel|2 cdas'],
+ ['Ralla la pera.', 'Mezcla con avena, miel y canela.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 69, 2, 10, 14, 1, 5, 2, '/assets/img/recetas/018-barras-de-avena-y-pera.jpeg'],
+
+['Barras de Cacao y Almendras', 'snack',
+ ['avena|1 taza', 'cacao|2 cdas', 'almendras|½ taza', 'bananos|2'],
+ ['Tritura los bananos.', 'Mezcla con cacao y avena.', 'Agrega almendras picadas.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 113, 4, 12, 18, 4, 4, 4, '/assets/img/recetas/019-barras-de-cacao-y-almendras.jpeg'],
+
+['Barras de Banano y Chía', 'snack',
+ ['bananos|2', 'avena|1 taza', 'semillas de chía|1 cda', 'Canela|al gusto'],
+ ['Tritura los bananos.', 'Mezcla con avena, chía y canela.', 'Coloca la mezcla en molde pequeño.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente antes de cortar.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 77, 2, 10, 15, 1, 4, 3, '/assets/img/recetas/020-barras-de-banano-y-chia.jpeg'],
+
+['Batido de Banano y Avena', 'snack',
+ ['banano|1', 'avena|3 cdas', 'vaso leche vegetal o leche normal|1', 'canela|1 cdta', 'Hielo|al gusto'],
+ ['Pela el banano y córtalo en trozos.', 'Agrega el banano, la avena, la leche, la canela y el hielo a la licuadora.', 'Licúa durante 1 minuto o hasta que quede cremoso.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 325, 11, 1, 62, 5, 18, 9, '/assets/img/recetas/001-batido-de-banano-y-avena.jpeg'],
+
+['Batido de Fresa Cremosa', 'snack',
+ ['fresas|1 taza', 'yogur griego natural|1', 'vaso leche|½', 'miel o endulzante natural|1 cdta', 'Hielo|al gusto'],
+ ['Lava muy bien las fresas.', 'Retira las hojas.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta obtener una textura suave y cremosa.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 147, 5, 10, 27, 4, 20, 5, '/assets/img/recetas/002-batido-de-fresa-cremosa.jpeg'],
+
+['Batido Tropical de Mango y Piña', 'snack',
+ ['mango|½ taza', 'piña|½ taza', 'vaso agua de coco|1', 'Hielo|al gusto'],
+ ['Corta el mango y la piña en cubos.', 'Coloca la fruta en la licuadora.', 'Agrega agua de coco y hielo.', 'Licúa durante 1 minuto.', 'Sirve y disfruta.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 145, 2, 1, 36, 1, 30, 4, '/assets/img/recetas/003-batido-tropical-de-mango-y-pina.jpeg'],
+
+['Batido de Chocolate y Banano', 'snack',
+ ['banano|1', 'cacao sin azúcar|1 cda', 'vaso leche|1', 'mantequilla de maní|1 cdta', 'Hielo|al gusto'],
+ ['Pela el banano.', 'Córtalo en trozos.', 'Agrega todos los ingredientes a la licuadora.', 'Licúa hasta que quede espeso y cremoso.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 219, 4, 10, 43, 5, 30, 3, '/assets/img/recetas/005-batido-de-chocolate-y-banano.jpeg'],
+
+['Batido de Café Cremoso', 'snack',
+ ['café frío|1 taza', 'banano|1', 'vaso leche|½', 'canela|1 cdta', 'Hielo|al gusto'],
+ ['Prepara el café y déjalo enfriar.', 'Pela y corta el banano congelado.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta lograr una textura cremosa.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 136, 3, 10, 32, 1, 16, 5, '/assets/img/recetas/006-batido-de-cafe-cremoso.jpeg'],
+
+['Batido de Piña y Pepino', 'snack',
+ ['piña|1 taza', 'pepino|½', 'vaso agua fría|1', 'Jugo de ½ limón|al gusto', 'Hielo|al gusto'],
+ ['Pela y corta la piña.', 'Lava y corta el pepino.', 'Coloca todo en la licuadora.', 'Agrega agua, limón y hielo.', 'Licúa durante 1 minuto.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 163, 3, 1, 43, 1, 28, 6, '/assets/img/recetas/008-batido-de-pina-y-pepino.jpeg'],
+
+['Batido de Arándanos y Yogur', 'snack',
+ ['arándanos|½ taza', 'yogur natural|1', 'vaso leche|½', 'miel|1 cdta', 'Hielo|al gusto'],
+ ['Lava los arándanos.', 'Coloca el yogur, la leche, los arándanos, la miel y el hielo en la licuadora.', 'Licúa hasta obtener una mezcla cremosa.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 138, 4, 10, 26, 3, 20, 3, '/assets/img/recetas/009-batido-de-arandanos-y-yogur.jpeg'],
+
+['Batido de Durazno Cremoso', 'snack',
+ ['duraznos|2', 'yogur natural|1', 'vaso leche|½', 'Hielo|al gusto'],
+ ['Lava los duraznos.', 'Retira la semilla.', 'Corta la fruta en trozos.', 'Agrega todos los ingredientes a la licuadora.', 'Licúa durante 1 minuto.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 172, 6, 1, 33, 4, 29, 4, '/assets/img/recetas/010-batido-de-durazno-cremoso.jpeg'],
+
+['Batido de Papaya y Naranja', 'snack',
+ ['papaya|1 taza', 'Jugo de 2 naranjas|al gusto', 'vaso agua fría|½', 'Hielo|al gusto'],
+ ['Pela la papaya y retira las semillas.', 'Corta la papaya en cubos.', 'Exprime las naranjas.', 'Coloca todo en la licuadora.', 'Licúa hasta que quede suave.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 135, 2, 10, 33, 1, 25, 4, '/assets/img/recetas/011-batido-de-papaya-y-naranja.jpeg'],
+
+['Batido de Mora y Banano', 'snack',
+ ['moras|½ taza', 'banano|1', 'vaso leche|1', 'miel|1 cdta', 'Hielo|al gusto'],
+ ['Lava muy bien las moras.', 'Pela el banano y córtalo.', 'Agrega todos los ingredientes a la licuadora.', 'Licúa hasta que la mezcla quede cremosa.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 210, 5, 10, 46, 3, 28, 9, '/assets/img/recetas/012-batido-de-mora-y-banano.jpeg'],
+
+['Batido de Coco y Piña', 'snack',
+ ['piña|1 taza', 'leche de coco|½ taza', 'vaso agua fría|½', 'coco sin azúcar|1 cda', 'Hielo|al gusto'],
+ ['Corta la piña en cubos.', 'Coloca la piña en la licuadora.', 'Agrega leche de coco, agua, coco rallado y hielo.', 'Licúa hasta que quede cremoso.', 'Sirve inmediatamente.'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 442, 4, 10, 50, 29, 40, 3, '/assets/img/recetas/013-batido-de-coco-y-pina.jpeg'],
+
+['Batido de Avena y Mantequilla de Maní', 'snack',
+ ['banano|1', 'avena|2 cdas', 'mantequilla de maní|1 cda', 'vaso leche|1', 'Canela|al gusto', 'Hielo|al gusto'],
+ ['Pela el banano.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta lograr una textura espesa.', 'Sirve frío.'],
+ ['rápido', 'vegetariano', 'sin gluten', 'económico'], 359, 12, 10, 55, 12, 19, 8, '/assets/img/recetas/015-batido-de-avena-y-mantequilla-de-mani.jpeg'],
+
+['Batido de Frutos Rojos', 'snack',
+ ['fresas|½ taza', 'moras|½ taza', 'arándanos|½ taza', 'yogur natural|1', 'vaso leche|½', 'Hielo|al gusto'],
+ ['Lava muy bien todas las frutas.', 'Colócalas en la licuadora.', 'Agrega yogur, leche y hielo.', 'Licúa hasta obtener una textura cremosa.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 213, 6, 10, 42, 4, 28, 12, '/assets/img/recetas/016-batido-de-frutos-rojos.jpeg'],
+
+['Batido de Mango Cremoso', 'snack',
+ ['mango|1 taza', 'yogur griego natural|1', 'vaso leche|½', 'Hielo|al gusto'],
+ ['Pela el mango.', 'Córtalo en cubos.', 'Coloca el mango, el yogur, la leche y el hielo en la licuadora.', 'Licúa hasta que quede cremoso.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 199, 5, 10, 40, 4, 37, 4, '/assets/img/recetas/017-batido-de-mango-cremoso.jpeg'],
+
+['Batido Verde de Banano y Espinaca', 'snack',
+ ['banano|1', 'espinaca|1 puñado', 'vaso leche vegetal|1', 'semillas de chía|1 cdta', 'Hielo|al gusto'],
+ ['Lava la espinaca.', 'Pela el banano.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta que el color quede uniforme.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 175, 5, 10, 33, 4, 18, 6, '/assets/img/recetas/018-batido-verde-de-banano-y-espinaca.jpeg'],
+
+['Batido de Pera y Vainilla', 'snack',
+ ['pera|1', 'vaso leche|1', 'vainilla|1 cdta', 'avena|2 cdas', 'Hielo|al gusto'],
+ ['Lava la pera.', 'Córtala en trozos y retira las semillas.', 'Agrega todos los ingredientes a la licuadora.', 'Licúa hasta que quede cremoso.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 270, 8, 10, 51, 4, 21, 9, '/assets/img/recetas/020-batido-de-pera-y-vainilla.jpeg'],
+
+['Batido de Aguacate Cremoso', 'snack',
+ ['aguacate|½', 'vaso leche|1', 'miel|1 cdta', 'Hielo|al gusto'],
+ ['Parte el aguacate por la mitad.', 'Retira la semilla.', 'Saca la pulpa con una cuchara.', 'Coloca el aguacate, la leche, la miel y el hielo en la licuadora.', 'Licúa hasta que quede muy cremoso.', 'Sirve inmediatamente.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 212, 4, 10, 16, 17, 8, 7, '/assets/img/recetas/021-batido-de-aguacate-cremoso.jpeg'],
+
+['Batido de Melón y Yogur', 'snack',
+ ['melón|1 taza', 'yogur natural|1', 'vaso agua fría|½', 'Hielo|al gusto'],
+ ['Pela el melón.', 'Retira las semillas.', 'Corta en cubos.', 'Coloca todo en la licuadora.', 'Licúa hasta que quede suave.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 118, 4, 10, 22, 2, 22, 2, '/assets/img/recetas/022-batido-de-melon-y-yogur.jpeg'],
+
+['Batido de Cacao y Almendras', 'snack',
+ ['vaso leche de almendras|1', 'cacao sin azúcar|1 cda', 'banano|1', 'almendras|1 cda', 'Hielo|al gusto', 'Elijo placer|al gusto', 'Bienestar|al gusto'],
+ ['Pela el banano.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta que las almendras se integren bien.', 'Sirve frío. Placer Nutrición Equilibrio.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 252, 5, 10, 43, 9, 28, 5, '/assets/img/recetas/023-batido-de-cacao-y-almendras.jpeg'],
+
+['Batido de Maracuyá y Mango', 'snack',
+ ['Pulpa de 1 maracuyá|al gusto', 'mango|½ taza', 'vaso agua fría|1', 'Hielo|al gusto'],
+ ['Parte el maracuyá y retira la pulpa.', 'Corta el mango en cubos.', 'Coloca todo en la licuadora.', 'Licúa durante 1 minuto.', 'Cuela si deseas una textura más suave.', 'Sirve frío.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 159, 3, 1, 39, 1, 27, 11, '/assets/img/recetas/024-batido-de-maracuya-y-mango.jpeg'],
+
+['Batido de Vainilla, Banano y Chía', 'snack',
+ ['banano|1', 'vaso leche|1', 'vainilla|1 cdta', 'semillas de chía|1 cda', 'Hielo|al gusto'],
+ ['Pela el banano.', 'Coloca todos los ingredientes en la licuadora.', 'Licúa hasta que quede cremoso.', 'Deja reposar 3 minutos para que la chía espese un poco.', 'Sirve y disfruta.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 206, 5, 3, 35, 5, 18, 7, '/assets/img/recetas/025-batido-de-vainilla-banano-y-chia.jpeg'],
+
+['Torta de Banano y Avena', 'snack',
+ ['bananos|3', 'huevos|2', 'avena en hojuelas|1 taza', 'harina de avena|½ taza', 'canela|1 cdta', 'polvo para hornear|1 cdta', 'esencia de vainilla|1 cdta', 'miel o endulzante natural|2 cdas'],
+ ['Precalienta el horno a 180°C.', 'Pela los bananos y tritúralos con un tenedor hasta formar un puré suave.', 'Agrega los huevos y mezcla muy bien.', 'Añade la vainilla y la miel.', 'Incorpora la avena, harina de avena, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar todo.', 'Engrasa un molde, vierte la mezcla y hornea 35-40 minutos.', 'Inserta un palillo; si sale limpio, está lista. Deja enfriar antes de cortar.'],
+ ['ligero', 'sin gluten', 'económico'], 139, 5, 38, 25, 3, 9, 3, '/assets/img/recetas/001-torta-de-banano-y-avena.jpeg'],
+
+['Torta de Zanahoria Saludable', 'snack',
+ ['zanahorias|2', 'huevos|3', 'aceite de coco|½ taza', 'harina de avena|1 taza', 'avena|½ taza', 'canela|1 cdta', 'vainilla|1 cdta', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno a 180°C.', 'Lava, pela y ralla las zanahorias.', 'En un bowl agrega huevos, miel, vainilla y aceite. Mezcla con batidor manual.', 'Añade la zanahoria rallada.', 'Incorpora la harina de avena, avena en hojuelas, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar.', 'Coloca en molde engrasado y hornea 35-40 minutos. Deja enfriar.'],
+ ['ligero', 'sin gluten'], 250, 5, 38, 17, 18, 4, 2, '/assets/img/recetas/002-torta-de-zanahoria-saludable.jpeg'],
+
+['Torta de Chocolate Fit', 'snack',
+ ['huevos|2', 'banano|1', 'cacao sin azúcar|½ taza', 'harina de avena|1 taza', 'yogur griego natural|½ taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno a 180°C.', 'Tritura el banano hasta formar un puré.', 'Agrega los huevos y mezcla bien.', 'Añade yogur y miel.', 'Incorpora cacao y harina de avena.', 'Agrega el polvo para hornear y mezcla hasta obtener una masa homogénea.', 'Engrasa un molde mediano, vierte la mezcla y hornea 30-35 minutos. Deja reposar.'],
+ ['ligero', 'sin gluten', 'económico'], 146, 4, 32, 27, 3, 18, 2, '/assets/img/recetas/003-torta-de-chocolate-fit.jpeg'],
+
+['Torta de Manzana y Canela', 'snack',
+ ['manzanas|2', 'huevos|2', 'avena|1 taza', 'harina integral|½ taza', 'canela|1 cdta', 'vainilla|1 cdta', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Pela y corta las manzanas en cubos pequeños.', 'Precalienta el horno a 180°C.', 'En un bowl mezcla huevos, miel y vainilla.', 'Agrega avena y harina integral.', 'Añade canela y polvo para hornear.', 'Incorpora las manzanas y mezcla suavemente.', 'Vierte en molde engrasado y hornea 35 minutos. Deja enfriar antes de desmoldar.'],
+ ['ligero', 'económico'], 126, 5, 35, 23, 2, 8, 3, '/assets/img/recetas/004-torta-de-manzana-y-canela.jpeg'],
+
+['Torta de Coco y Almendras', 'snack',
+ ['huevos|3', 'harina de almendras|1 taza', 'coco sin azúcar|½ taza', 'leche de coco|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno.', 'En un bowl bate los huevos.', 'Añade leche de coco, vainilla y miel.', 'Agrega harina de almendras y coco rallado.', 'Incorpora polvo para hornear y mezcla lentamente.', 'Coloca la mezcla en un molde pequeño.', 'Hornea durante 303-5 minutos. Retira y deja enfriar.'],
+ ['ligero', 'sin gluten'], 194, 5, 154, 19, 12, 17, 1, '/assets/img/recetas/005-torta-de-coco-y-almendras.jpeg'],
+
+['Torta Integral de Yogur', 'snack',
+ ['yogur griego natural|1', 'huevos|2', 'harina integral|1 taza', 'avena|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno a 180°C.', 'Coloca el yogur en un bowl.', 'Agrega huevos y mezcla bien.', 'Añade miel y vainilla.', 'Incorpora harina integral y avena.', 'Agrega polvo para hornear y mezcla hasta integrar.', 'Vierte en molde engrasado y hornea 35 minutos. Deja reposar antes de cortar.'],
+ ['ligero', 'económico'], 110, 5, 35, 18, 2, 4, 2, '/assets/img/recetas/006-torta-integral-de-yogur.jpeg'],
+
+['Torta de Naranja Casera Saludable', 'snack',
+ ['naranjas|2', 'huevos|3', 'harina de avena|1 taza', 'avena|½ taza', 'miel|2 cdas', 'aceite de coco|½ taza', 'polvo para hornear|1 cdta'],
+ ['Lava bien las naranjas. Extrae el jugo y un poco de ralladura.', 'Precalienta el horno.', 'Mezcla huevos, miel y aceite.', 'Agrega jugo de naranja.', 'Incorpora harina y avena.', 'Añade polvo para hornear y mezcla suavemente.', 'Hornea durante 35-40 minutos.'],
+ ['ligero', 'sin gluten'], 261, 6, 38, 20, 18, 8, 3, '/assets/img/recetas/007-torta-de-naranja-casera-saludable.jpeg'],
+
+['Torta de Avena y Arándanos', 'snack',
+ ['huevos|2', 'avena|1 taza', 'harina de avena|½ taza', 'arándanos|½ taza', 'yogur natural|1', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno.', 'Mezcla huevos, yogur y miel.', 'Añade avena y harina.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Vierte en un molde y hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
+ ['ligero', 'sin gluten', 'económico'], 110, 5, 35, 17, 3, 5, 2, '/assets/img/recetas/008-torta-de-avena-y-arandanos.jpeg'],
+
+['Torta de Calabaza y Canela', 'snack',
+ ['puré de calabaza|1 taza', 'huevos|2', 'harina integral|1 taza', 'canela|1 cdta', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Cocina la calabaza hasta que esté suave y tritúrala formando puré.', 'Mezcla con huevos, miel y vainilla.', 'Agrega harina y canela.', 'Incorpora polvo para hornear.', 'Coloca en molde engrasado.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 92, 4, 35, 16, 2, 4, 2, '/assets/img/recetas/009-torta-de-calabaza-y-canela.jpeg'],
+
+['Torta de Café y Cacao', 'snack',
+ ['huevos|2', 'harina de avena|1 taza', 'café instantáneo|1 cda', 'cacao sin azúcar|2 cdas', 'yogur natural|½ taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno.', 'Mezcla huevos y yogur.', 'Agrega miel.', 'Disuelve el café en una cucharada de agua caliente y añádelo a la mezcla.', 'Incorpora cacao y harina.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 99, 4, 35, 15, 3, 8, 1, '/assets/img/recetas/010-torta-de-cafe-y-cacao.jpeg'],
+
+['Torta de Limón y Yogur', 'snack',
+ ['huevos|2', 'yogur griego natural|1', 'harina de avena|1 taza', 'Jugo de 2 limones|al gusto', 'Ralladura de limón|al gusto', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno a 180°C.', 'Coloca los huevos en un bowl grande.', 'Agrega el yogur y mezcla muy bien.', 'Añade miel, jugo y ralladura de limón.', 'Incorpora harina de avena.', 'Agrega polvo para hornear y mezcla hasta eliminar grumos.', 'Engrasa un molde y hornea 35 minutos. Deja enfriar antes de servir.'],
+ ['ligero', 'sin gluten', 'económico'], 84, 4, 35, 13, 2, 4, 2, '/assets/img/recetas/011-torta-de-limon-y-yogur.jpeg'],
+
+['Torta de Fresas Saludable', 'snack',
+ ['fresas|1 taza', 'huevos|2', 'harina integral|1 taza', 'avena|½ taza', 'yogur natural|1', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Lava y corta las fresas.', 'Mezcla huevos, yogur y miel.', 'Añade harina integral y avena.', 'Agrega polvo para hornear.', 'Incorpora las fresas suavemente.', 'Vierte en un molde y hornea 35 minutos.', 'Deja reposar antes de cortar.'],
+ ['ligero', 'económico'], 118, 5, 35, 21, 2, 5, 3, '/assets/img/recetas/012-torta-de-fresas-saludable.jpeg'],
+
+['Torta de Pera y Canela', 'snack',
+ ['peras|2', 'huevos|2', 'harina de avena|1 taza', 'canela|1 cdta', 'miel|2 cdas', 'yogur natural|½ taza', 'polvo para hornear|1 cdta'],
+ ['Pela y corta las peras en cubos.', 'Mezcla huevos, yogur y miel.', 'Añade harina y canela.', 'Agrega polvo para hornear.', 'Incorpora las peras y mezcla suavemente.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 110, 4, 35, 19, 3, 8, 3, '/assets/img/recetas/013-torta-de-pera-y-canela.jpeg'],
+
+['Torta de Avena y Nueces', 'snack',
+ ['huevos|2', 'avena|1 taza', 'harina integral|½ taza', 'nueces|½ taza', 'miel|2 cdas', 'canela|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Precalienta el horno.', 'Mezcla huevos y miel.', 'Añade avena y harina.', 'Incorpora nueces y canela.', 'Agrega polvo para hornear.', 'Coloca la mezcla en un molde.', 'Hornea durante 35-40 minutos.'],
+ ['ligero', 'económico'], 142, 5, 38, 17, 6, 3, 3, '/assets/img/recetas/014-torta-de-avena-y-nueces.jpeg'],
+
+['Torta Marmoleada Fit', 'snack',
+ ['huevos|3', 'harina de avena|1 taza', 'cacao sin azúcar|2 cdas', 'yogur natural|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos, yogur y miel.', 'Añade harina y polvo para hornear.', 'Divide la mezcla en dos bowls.', 'En uno agrega cacao.', 'Vierte ambas mezclas alternando en el molde.', 'Usa un cuchillo para hacer movimientos suaves y crear el efecto marmoleado.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 110, 5, 35, 15, 3, 8, 1, '/assets/img/recetas/015-torta-marmoleada-fit.jpeg'],
+
+['Torta de Piña y Coco', 'snack',
+ ['piña|1 taza', 'coco|½ taza', 'huevos|2', 'harina integral|1 taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Seca ligeramente la piña.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Incorpora la piña.', 'Hornea durante 35 minutos.'],
+ ['ligero'], 150, 4, 35, 20, 7, 7, 3, '/assets/img/recetas/016-torta-de-pina-y-coco.jpeg'],
+
+['Torta de Almendras y Vainilla', 'snack',
+ ['huevos|3', 'harina de almendras|1 taza', 'yogur griego|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos, yogur y miel.', 'Agrega vainilla.', 'Incorpora harina de almendras.', 'Añade polvo para hornear.', 'Hornea durante 30 minutos.'],
+ ['ligero', 'sin gluten'], 126, 6, 30, 7, 9, 4, 1, '/assets/img/recetas/017-torta-de-almendras-y-vainilla.jpeg'],
+
+['Torta de Avena y Cacao', 'snack',
+ ['huevos|2', 'avena|1 taza', 'cacao|2 cdas', 'banano|1', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Tritura el banano.', 'Mezcla con huevos y miel.', 'Añade avena y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 97, 4, 35, 16, 3, 5, 3, '/assets/img/recetas/018-torta-de-avena-y-cacao.jpeg'],
+
+['Torta de Mandarina', 'snack',
+ ['mandarinas|2', 'huevos|3', 'harina integral|1 taza', 'miel|2 cdas', 'yogur|½ taza', 'polvo para hornear|1 cdta'],
+ ['Extrae el jugo de las mandarinas.', 'Mezcla huevos, yogur y miel.', 'Agrega jugo de mandarina.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 114, 5, 35, 18, 3, 7, 2, '/assets/img/recetas/019-torta-de-mandarina.jpeg'],
+
+['Torta de Yogur y Arándanos', 'snack',
+ ['yogur natural|1', 'huevos|2', 'harina de avena|1 taza', 'arándanos|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Mezcla yogur, huevos y miel.', 'Añade harina y vainilla.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 90, 4, 35, 13, 2, 5, 2, '/assets/img/recetas/020-torta-de-yogur-y-arandanos.jpeg'],
+
+['Torta de Ciruelas y Canela', 'snack',
+ ['ciruelas|1 taza', 'huevos|2', 'harina integral|1 taza', 'canela|1 cdta', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Lava y corta las ciruelas.', 'Mezcla huevos y miel.', 'Añade harina y canela.', 'Incorpora ciruelas y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 155, 4, 35, 34, 2, 15, 4, '/assets/img/recetas/021-torta-de-ciruelas-y-canela.jpeg'],
+
+['Torta de Batata y Coco', 'snack',
+ ['puré de batata|1 taza', 'huevos|2', 'coco|½ taza', 'harina de avena|1 taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Cocina y tritura la batata.', 'Mezcla con huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten'], 154, 5, 35, 19, 7, 5, 3, '/assets/img/recetas/022-torta-de-batata-y-coco.jpeg'],
+
+['Torta de Maracuyá Saludable', 'snack',
+ ['Pulpa de 2 maracuyás|al gusto', 'huevos|2', 'yogur natural|1', 'harina integral|1 taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos, yogur y miel.', 'Agrega pulpa de maracuyá.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 98, 4, 35, 17, 2, 5, 3, '/assets/img/recetas/023-torta-de-maracuya-saludable.jpeg'],
+
+['Torta de Cacao y Café', 'snack',
+ ['huevos|2', 'harina de avena|1 taza', 'cacao|2 cdas', 'café instantáneo|1 cda', 'miel|2 cdas', 'yogur natural|1', 'polvo para hornear|1 cdta'],
+ ['Disuelve el café en poca agua caliente.', 'Mezcla huevos, yogur y miel.', 'Agrega café y cacao.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 88, 5, 35, 13, 3, 4, 3, '/assets/img/recetas/024-torta-de-cacao-y-cafe.jpeg'],
+
+['Torta de Mango y Coco', 'snack',
+ ['mango|1 taza', 'coco|½ taza', 'huevos|2', 'harina integral|1 taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Tritura ligeramente el mango.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Incorpora mango y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero'], 153, 4, 35, 21, 7, 8, 3, '/assets/img/recetas/025-torta-de-mango-y-coco.jpeg'],
+
+['Torta de Chía y Limón', 'snack',
+ ['huevos|2', 'harina de avena|1 taza', 'semillas de chía|2 cdas', 'Jugo de 1 limón|al gusto', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos y miel.', 'Agrega limón y chía.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten', 'económico'], 96, 4, 35, 13, 3, 3, 3, '/assets/img/recetas/026-torta-de-chia-y-limon.jpeg'],
+
+['Torta de Durazno Casera', 'snack',
+ ['duraznos|2', 'huevos|2', 'harina integral|1 taza', 'avena|½ taza', 'miel|2 cdas', 'vainilla|1 cdta', 'polvo para hornear|1 cdta'],
+ ['Lava y corta los duraznos.', 'Mezcla huevos, miel y vainilla.', 'Agrega harina y avena.', 'Incorpora duraznos y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 120, 5, 35, 22, 2, 7, 3, '/assets/img/recetas/027-torta-de-durazno-casera.jpeg'],
+
+['Torta Integral de Banano y Chocolate', 'snack',
+ ['bananos|2', 'huevos|2', 'harina integral|1 taza', 'cacao|2 cdas', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Tritura los bananos.', 'Mezcla con huevos y miel.', 'Añade harina y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'económico'], 117, 5, 35, 23, 2, 7, 4, '/assets/img/recetas/028-torta-integral-de-banano-y-chocolate.jpeg'],
+
+['Torta de Coco y Limón', 'snack',
+ ['coco|½ taza', 'Jugo de 1 limón|al gusto', 'huevos|2', 'harina de avena|1 taza', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos y miel.', 'Añade limón y coco.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
+ ['ligero', 'sin gluten'], 130, 4, 35, 14, 7, 4, 3, '/assets/img/recetas/029-torta-de-coco-y-limon.jpeg'],
+
+['Torta de Vainilla y Canela', 'snack',
+ ['huevos|3', 'harina integral|1 taza', 'yogur natural|½ taza', 'vainilla|1 cdta', 'canela|1 cdta', 'miel|2 cdas', 'polvo para hornear|1 cdta'],
+ ['Mezcla huevos, yogur y miel.', 'Agrega vainilla y canela.', 'Incorpora harina y polvo para hornear.', 'Mezcla lentamente.', 'Coloca en un molde engrasado.', 'Hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
+ ['ligero', 'económico'], 103, 5, 35, 15, 3, 4, 2, '/assets/img/recetas/030-torta-de-vainilla-y-canela.jpeg'],
+
+['Alitas de Pollo Buffalo', 'snack',
+ ['alitas de pollo|500 g', 'Aceite en spray|al gusto', 'Sal y pimienta|al gusto', 'Salsa buffalo: 4 cdas de salsa picante|al gusto'],
+ ['Seca las alitas muy bien con papel absorbente. Sazona con sal y pimienta.', 'Rocía con spray. Cocina a 200°C por 12 minutos, voltea.', 'Cocina 12 minutos más hasta piel crujiente.', 'Mezcla los ingredientes de la salsa buffalo y baña las alitas calientes. Sirve de inmediato.'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 325, 41, 25, 0, 17, 0, 0, '/assets/img/recetas/004-alitas-de-pollo-buffalo.jpeg'],
+
+['Chips de kale al horno', 'snack',
+ ['hojas de kale|1 taza', 'aceite de oliva|1 cucharada', 'sal marina|½ cucharadita'],
+ ['Precalienta el horno a 180°C. Mezcla las hojas de kale con el aceite y la sal. Extiende en una bandeja y hornea por 10-12 minutos hasta que estén crujientes.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 250, 10, 15, 21, 17, 6, 9, '/assets/img/recetas/029-chips-de-kale-al-horno.jpeg'],
+
+['Chips de calabacín al horno', 'snack',
+ ['calabacín|1', 'aceite de oliva|1 cucharada', 'Sal y pimienta|al gusto'],
+ ['Corta el calabacín en rodajas finas. Mezcla con aceite de oliva, sal y pimienta. Hornea a 180°C por 15-20 minutos hasta que estén crujientes.'],
+ ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 169, 3, 20, 7, 16, 5, 2, '/assets/img/recetas/035-chips-de-calabacin-al-horno.jpeg'],
+
+['Chips de zanahoria crocantes', 'snack',
+ ['zanahorias|2', 'aceite de oliva|1 cucharada', 'Sal y pimienta|al gusto'],
+ ['Preparación: Corta las zanahorias en rodajas finas. Mezcla con el aceite, la sal y la pimienta. Hornea a 180°C por 20-25 minutos hasta que estén crujientes.'],
+ ['ligero', 'vegetariano', 'sin gluten', 'económico'], 193, 1, 25, 14, 15, 7, 4, '/assets/img/recetas/041-chips-de-zanahoria-crocantes.jpeg'],
+
+['Leche de avena casero', 'snack',
+ ['½ tazas de agua fría|3', 'avena en hojuelas tradicional|½ taza', 'de cucharadita de extracto de vainilla|¾', 'de cucharadita de canela molida|¼', '⅛ de cucharadita de sal|al gusto'],
+ ['Coloca el agua, la avena, el dátil, la vainilla, la canela (si la usas) y la sal en una licuadora; procesa hasta que quede suave, aproximadamente 1 minuto. Vierte la mezcla a través de un colador de malla fina en un tazón grande; deja reposar hasta que se drene, dejando que el líquido pase por...'],
+ ['ligero', 'vegetariano', 'sin gluten', 'económico'], 179, 8, 32, 30, 3, 0, 5, '/assets/img/recetas/168-leche-de-avena-casero.jpeg'],
+
+['Patacón con hogao al horno', 'snack',
+ ['plátano verde en tajadas|1/2', 'hogao|1 cda', 'aceite|1 cdta', 'Sal|al gusto'],
+ ['Precalienta el horno o air fryer a 200°C.', 'Aplana las tajadas de plátano y pincélalas con el aceite.', 'Hornea 15 minutos, volteando a mitad de cocción, hasta dorar y crocante.', 'Sirve caliente con el hogao encima.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 144, 1, 20, 25, 6, 12, 2],
+
+['Aborrajado al horno', 'snack',
+ ['plátano|1/2', 'queso campesino|30 g', 'huevo|1', 'harina de trigo|2 cdas', 'Aceite en spray|al gusto'],
+ ['Precalienta el horno a 190°C.', 'Corta el plátano maduro a lo largo y rellena con el queso.', 'Pasa por harina y luego por huevo batido.', 'Coloca en bandeja, rocía con aceite en spray y hornea 15-18 minutos volteando a la mitad, hasta dorar.'],
+ ['tradicional', 'económico'], 446, 16, 25, 48, 22, 12, 3],
+
+['Empanada de pipián en air fryer', 'snack',
+ ['empanada de masa de maíz rellena de pipián|1', 'Aceite en spray|al gusto', 'Ají|al gusto'],
+ ['Precalienta el air fryer a 190°C.', 'Coloca la empanada en la canasta y rocía con aceite en spray.', 'Cocina 10 minutos, voltea con cuidado y cocina 5-8 minutos más hasta dorar.', 'Sirve con ají al gusto.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 304, 5, 20, 44, 12, 3, 3],
+
+['Carimañola', 'snack',
+ ['yuca|110 g', 'queso costeño|25 g', 'huevo|1', 'Aceite en spray|al gusto', 'Sal|al gusto'],
+ ['Machaca la yuca cocida caliente hasta formar una masa suave; sazona con sal.', 'Forma un óvalo con la masa y rellena con el queso costeño.', 'Sella bien la forma de carimañola.', 'Pasa por huevo batido, rocía con aceite en spray y hornea o cocina en air fryer a 200°C 12-15 minutos hasta dorar.'],
+ ['tradicional', 'sin gluten', 'económico'], 424, 14, 30, 43, 22, 2, 2],
+
+['Pandebono', 'snack',
+ ['cuajada|150 g', 'harina de maíz precocida|1 taza', 'huevo|1', 'queso costeño|30 g', 'polvo de hornear|1 cdta'],
+ ['Precalienta el horno a 190°C.', 'Desmenuza la cuajada y mezcla con el queso rallado.', 'Agrega la harina de maíz, el huevo y el polvo de hornear; amasa hasta integrar.', 'Forma bolitas u óvalos y colócalos en una bandeja.', 'Hornea 15-18 minutos hasta que doren por fuera.'],
+ ['tradicional', 'ligero', 'sin gluten', 'económico'], 276, 13, 25, 27, 13, 0, 2],
+
+['Mazamorra con panela', 'snack',
+ ['maíz trillado|1/2 taza', 'leche|1 taza', 'panela raspada|1 cda', 'astilla canela|1'],
+ ['Cocina el maíz trillado en agua hasta que esté muy blando (o usa maíz ya cocido).', 'Agrega la leche, la panela y la canela; cocina a fuego bajo 8-10 minutos revolviendo.', 'Retira la canela y sirve tibia o fría.'],
+ ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 154, 6, 30, 25, 5, 14, 2],
+
+['Salpicón de frutas', 'snack',
+ ['piña|1/2 taza', 'papaya|1/2 taza', 'banano|1/2', 'sandía|1/2 taza', 'agua|1/2 taza', 'miel|1 cdta'],
+ ['Pica todas las frutas en cubos pequeños.', 'Mezcla en un bol con el agua y la miel.', 'Refrigera 10 minutos antes de servir bien frío.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 108, 1, 15, 28, 0, 20, 3],
+
+['Lulada vallecaucana', 'snack',
+ ['lulos|2', 'agua|1 taza', 'azúcar|1 cdta', 'Hielo|al gusto'],
+ ['Pela los lulos y licúa la pulpa con el agua unos segundos (sin triturar del todo las semillas).', 'Cuela ligeramente si se prefiere menos pulpa, o deja entera al estilo tradicional.', 'Endulza con el azúcar y sirve bien fría con hielo.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 45, 1, 10, 11, 0, 8, 4],
+
+['Chontaduro con miel', 'snack',
+ ['chontaduros|2', 'miel|1 cdta', 'Sal|al gusto'],
+ ['Pela los chontaduros cocidos y córtalos por la mitad, retirando la semilla.', 'Sirve con un hilo de miel y una pizca de sal al gusto, al estilo tradicional del Pacífico.'],
+ ['tradicional', 'ligero', 'rápido', 'vegetariano'], 208, 3, 5, 37, 6, 11, 8],
 
 ];

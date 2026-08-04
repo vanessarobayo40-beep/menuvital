@@ -18,3 +18,11 @@ Recetas2026/
 *.docx
 *.xlsx
 cookies_*.txt
+
+# Artefactos regenerables del pipeline de recetas (tools/build_recipes.py y
+# afines) — se reconstruyen corriendo los scripts, no hace falta versionarlos.
+tools/__pycache__/
+tools/recipes_build.json
+tools/recipes_colombianas.json
+tools/recipes_validated.json
+tools/_build_warnings.txt
