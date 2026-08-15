@@ -30,11 +30,6 @@ require __DIR__ . '/../includes/layout_top.php';
 <script>
 const scrollEl = document.getElementById('chat-scroll');
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s ?? '';
-  return d.innerHTML;
-}
 
 // Respaldo por si a la IA se le escapa Markdown (el chat solo muestra texto
 // plano): quita encabezados, negritas/cursivas, tablas y líneas separadoras,

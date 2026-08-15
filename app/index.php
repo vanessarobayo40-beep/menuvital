@@ -103,11 +103,6 @@ document.getElementById('today-date').textContent = new Date().toLocaleDateStrin
   weekday: 'long', day: 'numeric', month: 'long',
 });
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s ?? '';
-  return d.innerHTML;
-}
 
 function renderMeal(type, meal) {
   const missingHtml = meal.missing.length

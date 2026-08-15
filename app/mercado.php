@@ -120,11 +120,6 @@ let currentItems = [];
 let currentGrouped = {};
 let activeIndex = -1;
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s ?? '';
-  return d.innerHTML;
-}
 
 function renderGroups() {
   const categories = Object.keys(currentGrouped);

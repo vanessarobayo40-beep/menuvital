@@ -13,6 +13,7 @@ if (!file_exists(__DIR__ . '/includes/config.php')) {
 
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/security.php';
+require_once __DIR__ . '/includes/auth.php';
 
 $key = $_GET['key'] ?? '';
 if (!defined('INSTALL_KEY') || INSTALL_KEY === '' || !is_string($key) || !hash_equals(INSTALL_KEY, $key)) {
@@ -228,11 +229,41 @@ if (!column_exists($pdo, $isMysql, 'activation_codes', 'is_active')) {
     $log[] = 'Migración: columna is_active agregada a activation_codes';
 }
 if (!column_exists($pdo, $isMysql, 'activation_codes', 'code_plain')) {
-    // Guarda el código en texto plano (además del hash) para poder verlo siempre
-    // en el panel de administración. Los códigos generados ANTES de esta
-    // columna no se pueden recuperar (el hash es de un solo sentido).
+    // Histórico: en una versión anterior esto guardaba el código en texto
+    // plano. Ya no se escribe aquí (ver code_enc abajo) — se deja la columna
+    // para no romper instalaciones viejas, pero queda sin usar.
     $pdo->exec('ALTER TABLE activation_codes ADD COLUMN code_plain VARCHAR(20) NULL');
-    $log[] = 'Migración: columna code_plain agregada a activation_codes';
+    $log[] = 'Migración: columna code_plain agregada a activation_codes (en desuso)';
+}
+if (!column_exists($pdo, $isMysql, 'activation_codes', 'code_enc')) {
+    // El código se guarda CIFRADO (no en texto plano) para poder mostrárselo
+    // más adelante a la administradora sin exponerlo si se filtra la base de
+    // datos — ver encrypt_activation_code()/decrypt_activation_code() en
+    // includes/auth.php. 190 caracteres sobran para nonce+cifrado en base64.
+    $pdo->exec('ALTER TABLE activation_codes ADD COLUMN code_enc VARCHAR(190) NULL');
+    $log[] = 'Migración: columna code_enc agregada a activation_codes';
+}
+// Migra los códigos que quedaron en texto plano de la versión anterior: los
+// cifra y borra el texto plano. Solo puede hacerlo si CODE_ENCRYPTION_KEY ya
+// está configurada en config.php — si no, se avisa y se reintenta la próxima vez.
+$pendingPlain = (int)$pdo->query("SELECT COUNT(*) AS c FROM activation_codes
+                                   WHERE code_plain IS NOT NULL AND code_plain <> ''")->fetch()['c'];
+if ($pendingPlain > 0) {
+    if (!code_encryption_available()) {
+        $log[] = "ATENCIÓN: hay $pendingPlain códigos guardados en texto plano de una versión "
+            . 'anterior. Agrega CODE_ENCRYPTION_KEY en config.php (ver config.sample.php) y vuelve '
+            . 'a entrar a esta página para cifrarlos y borrar el texto plano.';
+    } else {
+        $rows = $pdo->query("SELECT id, code_plain FROM activation_codes
+                              WHERE code_plain IS NOT NULL AND code_plain <> ''")->fetchAll();
+        $upd = $pdo->prepare('UPDATE activation_codes SET code_enc = ?, code_plain = NULL WHERE id = ?');
+        $migrated = 0;
+        foreach ($rows as $r) {
+            $upd->execute([encrypt_activation_code($r['code_plain']), $r['id']]);
+            $migrated++;
+        }
+        $log[] = "Migración: $migrated códigos cifrados y borrados de texto plano";
+    }
 }
 foreach ([
     'favorites' => 'ALTER TABLE profiles ADD COLUMN favorites TEXT',

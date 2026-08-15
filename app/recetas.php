@@ -168,11 +168,6 @@ let currentFilter = 'todas';
 let currentQuery = '';
 let currentDetail = null;
 
-function escapeHtml(s) {
-  const d = document.createElement('div');
-  d.textContent = s ?? '';
-  return d.innerHTML;
-}
 
 const BATIDO_RE = /batido|smoothie|licuado|jugo/i;
 

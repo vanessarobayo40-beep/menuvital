@@ -12,11 +12,21 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteCond %{HTTP_HOST} !^localhost [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Bloquear acceso web a carpetas con código y datos sensibles
-RewriteRule ^(includes|database)(/|$) - [F,L]
+# Bloquear acceso web a carpetas con código y datos sensibles.
+# .git/ expondría todo el código y el historial si alguna vez se despliega
+# tal cual (aunque no debería subirse al servidor); tools/ son los scripts
+# y JSON del pipeline de recetas, no hace falta que estén en la web.
+RewriteRule ^(includes|database|\.git|tools)(/|$) - [F,L]
 
-# Bloquear archivos que no deben servirse
+# Bloquear archivos sueltos que no deben servirse. Ojo: .json NO está en la
+# lista porque assets/manifest.json (el manifest de la PWA) sí debe cargar.
 <FilesMatch "^(\.gitignore|\.env|INSTALACION\.md|README\.md|config\.sample\.php)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "\.(py|db|db-journal|db-wal|db-shm|md|docx|xlsx)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^cookies_.*\.txt$">
   Require all denied
 </FilesMatch>
 

@@ -51,6 +51,18 @@ define('ADMIN_PASSWORD_INITIAL', 'CAMBIA-ESTA-CONTRASEÑA');
 // Clave secreta para poder ejecutar install.php (invéntate una larga).
 define('INSTALL_KEY', 'cambia-esta-clave-secreta-larga');
 
+// ---------- Cifrado de los códigos de activación ----------
+// El código que le vendes a cada clienta se guarda CIFRADO con esta clave
+// (nunca en texto plano) para poder mostrártelo en /admin sin que quede
+// expuesto si alguna vez se filtrara la base de datos.
+// Genera una clave nueva UNA sola vez y pégala aquí tal cual (no la cambies
+// después o dejarás de poder ver los códigos ya generados):
+//   php -r "echo base64_encode(random_bytes(32));"
+// Si la dejas vacía, la app sigue funcionando igual de bien para tus
+// clientas — simplemente no vas a poder volver a ver un código ya generado
+// en el panel de administración.
+define('CODE_ENCRYPTION_KEY', '');
+
 // ---------- Notificaciones push (recordatorios de agua) ----------
 // Generadas una sola vez por Claude con openssl (par de llaves VAPID).
 // No necesitas tocarlas ni entenderlas — solo copiarlas tal cual.

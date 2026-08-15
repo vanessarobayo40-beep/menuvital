@@ -2,6 +2,23 @@
  * MenúVital — Utilidades JS compartidas
  */
 
+/**
+ * Escapa texto para insertarlo en HTML de forma segura, tanto en contexto de
+ * texto como de ATRIBUTO (`data-item="${escapeHtml(x)}"`, `alt="..."`, etc).
+ * OJO: la versión anterior (que vivía duplicada en cada página) usaba un
+ * <div>.textContent -> innerHTML, que escapa &/</> pero NO escapa comillas —
+ * un nombre de receta o de ingrediente con una comilla doble podía cerrar el
+ * atributo y ejecutar HTML/JS propio (XSS). Esta sí escapa las 5 entidades.
+ */
+function escapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const MV = (() => {
   function toast(message, isError = false) {
     let el = document.getElementById('toast');

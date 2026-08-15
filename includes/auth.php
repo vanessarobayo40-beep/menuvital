@@ -124,6 +124,57 @@ function activation_code_hash(string $code): string {
     return hash('sha256', strtoupper(trim($code)));
 }
 
+// ---------- Cifrado del código en claro (para poder mostrarlo en el panel) ----------
+// El hash de arriba sirve para VALIDAR un código que la usuaria escribe, pero
+// no permite recuperar el texto original — así que para poder reenviárselo
+// por WhatsApp más adelante se guarda también una copia CIFRADA (no en texto
+// plano) con la clave de includes/config.php. Si esa clave no está puesta,
+// simplemente no se guarda copia legible — nunca se cae de vuelta a texto plano.
+
+/** ¿Hay clave de cifrado configurada y disponible la extensión sodium? */
+function code_encryption_available(): bool {
+    return function_exists('sodium_crypto_secretbox')
+        && defined('CODE_ENCRYPTION_KEY') && CODE_ENCRYPTION_KEY !== '';
+}
+
+function code_encryption_key(): ?string {
+    $key = base64_decode(CODE_ENCRYPTION_KEY, true);
+    return ($key !== false && strlen($key) === SODIUM_CRYPTO_SECRETBOX_KEYBYTES) ? $key : null;
+}
+
+/** Cifra un código de activación para guardarlo. Devuelve null si no se puede cifrar. */
+function encrypt_activation_code(string $code): ?string {
+    if (!code_encryption_available()) {
+        return null;
+    }
+    $key = code_encryption_key();
+    if ($key === null) {
+        return null;
+    }
+    $nonce = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+    $cipher = sodium_crypto_secretbox($code, $nonce, $key);
+    return base64_encode($nonce . $cipher);
+}
+
+/** Descifra un código guardado con encrypt_activation_code(). Devuelve null si falla. */
+function decrypt_activation_code(?string $encoded): ?string {
+    if ($encoded === null || $encoded === '' || !code_encryption_available()) {
+        return null;
+    }
+    $key = code_encryption_key();
+    if ($key === null) {
+        return null;
+    }
+    $raw = base64_decode($encoded, true);
+    if ($raw === false || strlen($raw) <= SODIUM_CRYPTO_SECRETBOX_NONCEBYTES) {
+        return null;
+    }
+    $nonce = substr($raw, 0, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+    $cipher = substr($raw, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
+    $plain = sodium_crypto_secretbox_open($cipher, $nonce, $key);
+    return $plain === false ? null : $plain;
+}
+
 /**
  * Genera un código de activación corto y legible: MV-XXX-XXX (sin caracteres
  * confusos). Con este alfabeto de 33 caracteres, 6 posiciones dan más de

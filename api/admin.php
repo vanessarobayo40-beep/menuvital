@@ -25,14 +25,21 @@ if ($action === 'stats' && $_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 if ($action === 'list_codes' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.code_plain, ac.created_at, ac.used_at, ac.is_active,
+    $stmt = db()->query('SELECT ac.id, ac.batch_label, ac.code_enc, ac.created_at, ac.used_at, ac.is_active,
                                  u.id AS used_by_id, u.name AS used_by_name, u.email AS used_by_email,
                                  u.is_blocked AS used_by_blocked,
                                  (SELECT COUNT(*) FROM code_devices cd WHERE cd.code_id = ac.id) AS device_count
                           FROM activation_codes ac
                           LEFT JOIN users u ON u.id = ac.used_by
                           ORDER BY ac.id DESC LIMIT 300');
-    json_response(['ok' => true, 'codes' => $stmt->fetchAll()]);
+    // El código solo se guarda CIFRADO (ver includes/auth.php); se descifra
+    // aquí, en memoria, únicamente para mostrárselo a la administradora.
+    $codes = array_map(function ($row) {
+        $row['code_plain'] = decrypt_activation_code($row['code_enc']);
+        unset($row['code_enc']);
+        return $row;
+    }, $stmt->fetchAll());
+    json_response(['ok' => true, 'codes' => $codes]);
 }
 
 if ($action === 'list_users' && $_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -131,7 +138,12 @@ if ($action === 'generate_codes' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $pdo = db();
-    $stmt = $pdo->prepare('INSERT INTO activation_codes (code_hash, code_plain, batch_label, created_at) VALUES (?, ?, ?, ?)');
+    // El código NUNCA se guarda en texto plano: code_enc va cifrado con la
+    // clave de config.php (ver encrypt_activation_code() en includes/auth.php).
+    // Si esa clave no está configurada, se guarda NULL — el código se puede
+    // seguir usando para activar (eso lo valida code_hash), simplemente no
+    // se podrá volver a mostrar en el panel más adelante.
+    $stmt = $pdo->prepare('INSERT INTO activation_codes (code_hash, code_enc, batch_label, created_at) VALUES (?, ?, ?, ?)');
     $generated = [];
     $pdo->beginTransaction();
     for ($i = 0; $i < $count; $i++) {
@@ -139,7 +151,7 @@ if ($action === 'generate_codes' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         for ($attempt = 0; $attempt < 5; $attempt++) {
             $code = generate_activation_code();
             try {
-                $stmt->execute([activation_code_hash($code), $code, $label, db_now()]);
+                $stmt->execute([activation_code_hash($code), encrypt_activation_code($code), $label, db_now()]);
                 $generated[] = $code;
                 break;
             } catch (PDOException $e) {

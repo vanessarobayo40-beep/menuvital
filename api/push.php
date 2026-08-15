@@ -26,7 +26,7 @@ if ($action === 'subscribe' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $endpoint = (string)($in['endpoint'] ?? '');
     $p256dh = (string)($in['p256dh'] ?? '');
     $auth = (string)($in['auth'] ?? '');
-    if ($endpoint === '' || $p256dh === '' || $auth === '' || mb_strlen($endpoint) > 2000) {
+    if ($endpoint === '' || $p256dh === '' || $auth === '' || !is_valid_push_endpoint($endpoint)) {
         json_error('Suscripción no válida.');
     }
 
