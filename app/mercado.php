@@ -151,8 +151,14 @@ function applyPantryResponse(res) {
 }
 
 async function loadPantry() {
-  const res = await MV.api('/api/pantry.php?action=list');
-  applyPantryResponse(res);
+  try {
+    const res = await MV.api('/api/pantry.php?action=list');
+    applyPantryResponse(res);
+  } catch (err) {
+    // Sin esto, si la API fallaba la despensa se quedaba vacía y en
+    // silencio — la usuaria podía pensar que perdió sus datos guardados.
+    MV.toast(err.message, true);
+  }
 }
 
 async function addItem(item, quantityNum) {

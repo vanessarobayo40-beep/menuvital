@@ -32,6 +32,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
 </div>
 
 <div id="recipe-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;"></div>
+<button type="button" id="recipe-load-more" class="btn btn-secondary btn-block" style="display:none;margin-top:14px;">Ver más recetas</button>
 
 <div id="recipe-empty" class="empty-state" style="display:none;">
   <p>No encontramos recetas con ese filtro.</p>
@@ -184,13 +185,18 @@ function matchesFilter(r) {
   return r.meal_type === currentFilter;
 }
 
-function renderGrid() {
-  const q = currentQuery.trim().toLowerCase();
-  const filtered = allRecipes.filter(r => matchesFilter(r) && (!q || r.name.toLowerCase().includes(q)));
-  const grid = document.getElementById('recipe-grid');
-  document.getElementById('recipe-empty').style.display = filtered.length ? 'none' : 'block';
+// Render por páginas: con 1200+ recetas, reconstruir las tarjetas de TODAS
+// en cada tecleo del buscador (antes) volvía a montar >1000 nodos y a
+// enlazar >1000 listeners cada vez — se sentía trabado en un celular medio.
+// Ahora se pintan de a PAGE_SIZE y "Ver más" agrega el siguiente bloque; el
+// click se maneja con UN solo listener delegado en el contenedor, no uno
+// por tarjeta.
+const PAGE_SIZE = 60;
+let currentFiltered = [];
+let renderedCount = 0;
 
-  grid.innerHTML = filtered.map(r => `
+function cardHtml(r) {
+  return `
     <div class="card" style="padding:0;overflow:hidden;cursor:pointer;" data-open-recipe="${r.id}">
       <div style="position:relative;">
         <img src="${escapeHtml(r.image_url)}" alt="${escapeHtml(r.name)}" loading="lazy"
@@ -204,12 +210,40 @@ function renderGrid() {
         <h3 style="margin:0 0 4px;font-size:13px;line-height:1.3;">${escapeHtml(r.name)}</h3>
         <p class="muted" style="margin:0;font-size:11px;">⏱ ${r.time_min} min · 🔥 ${r.kcal} kcal</p>
       </div>
-    </div>`).join('');
-
-  grid.querySelectorAll('[data-open-recipe]').forEach(card => {
-    card.addEventListener('click', () => openDetail(parseInt(card.dataset.openRecipe, 10)));
-  });
+    </div>`;
 }
+
+function updateLoadMoreButton() {
+  const btn = document.getElementById('recipe-load-more');
+  btn.style.display = renderedCount < currentFiltered.length ? 'block' : 'none';
+}
+
+function renderGrid() {
+  const q = currentQuery.trim().toLowerCase();
+  currentFiltered = allRecipes.filter(r => matchesFilter(r) && (!q || r.name.toLowerCase().includes(q)));
+  const grid = document.getElementById('recipe-grid');
+  document.getElementById('recipe-empty').style.display = currentFiltered.length ? 'none' : 'block';
+
+  renderedCount = Math.min(PAGE_SIZE, currentFiltered.length);
+  grid.innerHTML = currentFiltered.slice(0, renderedCount).map(cardHtml).join('');
+  updateLoadMoreButton();
+}
+
+function loadMoreCards() {
+  const grid = document.getElementById('recipe-grid');
+  const next = currentFiltered.slice(renderedCount, renderedCount + PAGE_SIZE);
+  grid.insertAdjacentHTML('beforeend', next.map(cardHtml).join(''));
+  renderedCount += next.length;
+  updateLoadMoreButton();
+}
+
+document.getElementById('recipe-load-more').addEventListener('click', loadMoreCards);
+
+// Un solo listener delegado para toda la grilla, en vez de uno por tarjeta.
+document.getElementById('recipe-grid').addEventListener('click', (e) => {
+  const card = e.target.closest('[data-open-recipe]');
+  if (card) openDetail(parseInt(card.dataset.openRecipe, 10));
+});
 
 document.getElementById('recipe-search').addEventListener('input', MV.debounce((e) => {
   currentQuery = e.target.value;

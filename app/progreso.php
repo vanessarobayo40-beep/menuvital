@@ -121,8 +121,11 @@ function drawChart(logs) {
     return [x, y];
   });
   const path = coords.map((c, i) => (i === 0 ? 'M' : 'L') + c[0].toFixed(1) + ',' + c[1].toFixed(1)).join(' ');
-  const dots = coords.map(c => `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="2.5" fill="#0E6B45"/>`).join('');
-  svg.innerHTML = `<path d="${path}" fill="none" stroke="#0E6B45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
+  // var(--green) en vez de un hex fijo: en modo oscuro es un verde más claro
+  // (#2FB37E) hecho a propósito para verse sobre fondo casi negro — con el
+  // hex de modo claro (#0E6B45) la gráfica quedaba invisible de noche.
+  const dots = coords.map(c => `<circle cx="${c[0].toFixed(1)}" cy="${c[1].toFixed(1)}" r="2.5" fill="var(--green)"/>`).join('');
+  svg.innerHTML = `<path d="${path}" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>${dots}`;
 }
 
 function imcInfo(imc) {

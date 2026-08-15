@@ -131,7 +131,9 @@ input, textarea, select { font-family: inherit; }
   z-index: 20;
   background: var(--grad-v);
   color: #fff;
-  padding: 14px 18px;
+  /* env(safe-area-inset-top) evita que el notch/Dynamic Island tape la marca
+     cuando la PWA corre a pantalla completa (viewport-fit=cover). */
+  padding: calc(14px + env(safe-area-inset-top)) 18px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -199,7 +201,7 @@ input, textarea, select { font-family: inherit; }
 .bottom-nav a.active { color: var(--green-dark); background: var(--green-light); }
 .bottom-nav a:active { background: var(--surface-2); }
 
-.page-with-nav { padding-bottom: 84px; }
+.page-with-nav { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
 
 /* ---------- Botones ---------- */
 .btn {
@@ -471,10 +473,16 @@ input, textarea, select { font-family: inherit; }
 .msg.user { background: var(--grad-v); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
 .chat-input-bar {
   position: fixed;
-  bottom: 68px; left: 0; right: 0;
+  /* Debe quedar justo encima de .bottom-nav, cuya altura real es
+     6px (padding-top) + 20px (ícono) + 2px (gap) + ~12px (etiqueta) +
+     6px (padding-bottom) + el safe-area del home indicator del iPhone.
+     El "68px" fijo de antes no contaba ese safe-area y la barra terminaba
+     tapando los tabs Coach/Progreso en iPhone con home indicator. */
+  bottom: calc(46px + env(safe-area-inset-bottom));
+  left: 0; right: 0;
   background: var(--card-bg);
   border-top: 1px solid var(--border);
-  padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  padding: 10px 14px;
   display: flex; gap: 8px;
 }
 .chat-input-bar textarea {

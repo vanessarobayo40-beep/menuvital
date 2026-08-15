@@ -4,12 +4,13 @@
  * Las páginas y llamadas a /api/ siempre van primero a la red (datos frescos);
  * si no hay conexión, se sirve la última copia guardada cuando exista.
  */
-const CACHE_NAME = 'menuvital-v6';
+const CACHE_NAME = 'menuvital-v7';
 const STATIC_ASSETS = [
   '/assets/css/style.css',
   '/assets/js/app.js',
   '/assets/img/icon-192-v3.png',
   '/assets/img/icon-512-v3.png',
+  '/offline.html',
 ];
 
 self.addEventListener('install', (event) => {
@@ -35,13 +36,27 @@ self.addEventListener('fetch', (event) => {
   const isStatic = STATIC_ASSETS.some((a) => url.pathname === a);
 
   if (isStatic) {
+    // ignoreSearch es la parte que faltaba: style.css/app.js se piden con
+    // ?v=<versión> para romper caché en cada deploy, pero se precachearon
+    // en install() SIN ese query — sin ignoreSearch, caches.match() nunca
+    // encontraba la entrada guardada y la app quedaba sin CSS/JS offline.
     event.respondWith(
-      caches.match(event.request).then((cached) => cached || fetch(event.request))
+      caches.match(event.request, { ignoreSearch: true }).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return res;
+        });
+      })
     );
     return;
   }
 
-  // Páginas y APIs: red primero, caché de respaldo si falla
+  // Páginas y APIs: red primero, caché de respaldo si falla. Si es una
+  // navegación de página (no una llamada a /api/) y tampoco hay copia en
+  // caché, se muestra la página de sin-conexión en vez del error genérico
+  // del navegador.
   event.respondWith(
     fetch(event.request)
       .then((res) => {
@@ -49,7 +64,13 @@ self.addEventListener('fetch', (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
         return res;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() => caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        if (event.request.mode === 'navigate') {
+          return caches.match('/offline.html');
+        }
+        return new Response('', { status: 503, statusText: 'Sin conexión' });
+      }))
   );
 });
 

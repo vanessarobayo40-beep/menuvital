@@ -33,13 +33,19 @@ function visible_recipe_or_404(int $id, int $userId): array {
 $action = $_GET['action'] ?? 'list';
 
 if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
-    $stmt = db()->prepare('SELECT id, name, meal_type, tags, kcal, protein, time_min, image_url, user_id,
-                                   ingredients, steps
-                            FROM recipes WHERE user_id IS NULL OR user_id = ? ORDER BY name ASC');
+    // is_airfryer se calcula en el propio SQL (antes se traía el texto
+    // completo de ingredients/steps de las ~1200 recetas a PHP solo para
+    // buscar "air fryer" ahí y descartarlos — más lento y más JSON de lo
+    // necesario para la usuaria, que igual nunca ve esos campos).
+    $stmt = db()->prepare("SELECT id, name, meal_type, tags, kcal, protein, time_min, image_url, user_id,
+            CASE WHEN name LIKE '%air fryer%' OR name LIKE '%airfryer%' OR name LIKE '%freidora de aire%'
+                   OR ingredients LIKE '%air fryer%' OR ingredients LIKE '%airfryer%' OR ingredients LIKE '%freidora de aire%'
+                   OR steps LIKE '%air fryer%' OR steps LIKE '%airfryer%' OR steps LIKE '%freidora de aire%'
+                 THEN 1 ELSE 0 END AS is_airfryer
+        FROM recipes WHERE user_id IS NULL OR user_id = ? ORDER BY name ASC");
     $stmt->execute([$userId]);
     $favIds = load_favorite_recipe_ids($userId);
     $recipes = array_map(function ($r) use ($favIds) {
-        $searchText = $r['name'] . ' ' . $r['ingredients'] . ' ' . $r['steps'];
         return [
             'id' => (int)$r['id'],
             'name' => $r['name'],
@@ -51,9 +57,7 @@ if ($action === 'list' && $_SERVER['REQUEST_METHOD'] === 'GET') {
             'image_url' => recipe_image_url(['id' => $r['id'], 'name' => $r['name'], 'image_url' => $r['image_url']]),
             'is_favorite' => in_array((int)$r['id'], $favIds, true),
             'is_own' => $r['user_id'] !== null,
-            'is_airfryer' => stripos($searchText, 'air fryer') !== false
-                || stripos($searchText, 'airfryer') !== false
-                || stripos($searchText, 'freidora de aire') !== false,
+            'is_airfryer' => (bool)$r['is_airfryer'],
         ];
     }, $stmt->fetchAll());
     json_response(['ok' => true, 'recipes' => $recipes]);
