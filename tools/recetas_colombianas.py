@@ -651,8 +651,9 @@ def main():
         macros, stats = sum_macros(parsed_ings, servings)
         display_ings = build_display_ingredients(parsed_ings, servings)
         match_names = [p['match_name'] for p in parsed_ings]
+        raw_names = [p['display_name'] for p in parsed_ings]
         tags = derive_tags(macros['kcal'], macros['protein'], r['time_min'], match_names,
-                            is_colombian=True)
+                            is_colombian=True, raw_names=raw_names)
         nm = norm_name(r['name'])
         if nm in existing_names or nm in seen_names:
             print(f"SALTADA (nombre duplicado): {r['name']}")

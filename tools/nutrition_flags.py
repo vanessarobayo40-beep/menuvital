@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """MenúVital — Clasificación de ingredientes para derivar tags automáticos
 (vegetariano, sin gluten, económico) a partir de sus llaves en NUTRITION."""
+from normalize import normalize_ingredient
 
 ANIMAL_PROTEIN_KEYS = {
     'pechuga de pollo', 'muslo de pollo', 'pollo entero', 'gallina criolla',
@@ -30,12 +31,57 @@ EXPENSIVE_KEYS = {
 }
 
 
-def is_vegetarian(match_names) -> bool:
-    return not any(m in ANIMAL_PROTEIN_KEYS for m in match_names if m)
+# Palabras que delatan carne/pescado/huevo con solo verlas en el nombre CRUDO
+# del ingrediente, no solo en el match_name que quedó guardado. Hace falta
+# porque cuando una línea nombra dos alimentos a la vez ("Pan y queso
+# parmesano", "Pasta ... con salsa de albahaca, queso cottage y pollo"), el
+# emparejador solo guarda UN match_name — si escoge "queso parmesano" o
+# "queso cottage", el "pan" o el "pollo" de la misma línea desaparece por
+# completo del match_name y la receta queda mal marcada "vegetariano"/
+# "sin gluten" aunque sí lleve carne o trigo.
+_MEAT_WORDS = {
+    'pollo', 'res', 'cerdo', 'carne', 'tocineta', 'tocino', 'jamon', 'chorizo',
+    'pavo', 'pescado', 'atun', 'salmon', 'camaron', 'camarones', 'mariscos',
+    'mojarra', 'tilapia', 'trucha', 'gallina', 'costilla', 'costillas', 'posta',
+    'lomo', 'bistec', 'panceta', 'chicharron', 'albondigas', 'salchicha',
+    'anchoas', 'sardinas', 'pulpo', 'calamares', 'langostinos', 'gambas',
+    'cordero', 'ternera', 'morcilla', 'bacon', 'pechuga', 'pechugas', 'muslos',
+    'muslo', 'alitas', 'nuggets', 'hamburguesa', 'huevo', 'huevos', 'clara',
+    'yema', 'bagre', 'merluza', 'pargo', 'bacalao', 'anchoa',
+}
+_GLUTEN_WORDS = {
+    'pan', 'panko', 'espagueti', 'macarrones', 'macarron', 'galleta', 'galletas',
+    'cuscus', 'cebada', 'centeno', 'croissant', 'bagel', 'baguette', 'semola',
+    'fideos', 'raviolis', 'noquis', 'pita', 'wrap', 'empanizado', 'apanado',
+    'rebozado', 'cerveza', 'espelta', 'malta', 'trigo', 'harina',
+}
+# Frases que SÍ contienen una palabra de la lista de arriba pero no tienen
+# gluten (o no son carne) de verdad — se descartan antes de buscar palabras.
+_GLUTEN_SAFE_PHRASES = [
+    'trigo sarraceno', 'pasta tomate', 'harina almendra', 'harina coco',
+    'harina maiz', 'harina arroz', 'harina garbanzo', 'harina quinua',
+    'harina yuca', 'harina platano', 'harina linaza', 'harina avena',
+    'harina lino',
+]
 
 
-def is_gluten_free(match_names) -> bool:
-    return not any(m in GLUTEN_KEYS for m in match_names if m)
+def _text_has_word(text: str, word_set: set, safe_phrases=()) -> bool:
+    norm = ' ' + normalize_ingredient(text) + ' '
+    for phrase in safe_phrases:
+        norm = norm.replace(' ' + phrase + ' ', ' ')
+    return bool(set(norm.split()) & word_set)
+
+
+def is_vegetarian(match_names, raw_names=()) -> bool:
+    if any(m in ANIMAL_PROTEIN_KEYS for m in match_names if m):
+        return False
+    return not any(_text_has_word(n, _MEAT_WORDS) for n in raw_names if n)
+
+
+def is_gluten_free(match_names, raw_names=()) -> bool:
+    if any(m in GLUTEN_KEYS for m in match_names if m):
+        return False
+    return not any(_text_has_word(n, _GLUTEN_WORDS, _GLUTEN_SAFE_PHRASES) for n in raw_names if n)
 
 
 def is_economical(match_names) -> bool:

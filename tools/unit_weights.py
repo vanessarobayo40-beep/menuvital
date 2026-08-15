@@ -85,3 +85,16 @@ SPICE_DEFAULT_GRAMS = {
     'polvo de hornear': 3, 'maicena': 5, 'curry en polvo': 2, 'hierbabuena': 2,
     'cilantro': 5, 'perejil': 5, 'albahaca': 3, 'ajo': 5,
 }
+
+# Guarniciones/toppings sin cantidad en la fuente ("queso al gusto") que la
+# regla genérica de default_portion_grams() sobrestima mucho: por proteína o
+# grasa caen en el balde de "porción de proteína" (150 g), pero en la
+# práctica se usan como acompañamiento, no como plato principal — 150 g de
+# queso parmesano rallado (392 kcal/100g) es casi media taza, cuando en la
+# cocina real es un par de cucharadas. Esto fue justo lo que infló
+# "Pechuga de Pollo Parmesana" a 878 kcal por porción.
+GARNISH_DEFAULT_GRAMS = {
+    'queso parmesano': 20, 'pan rallado': 25, 'panko': 25,
+    'crema de leche': 30, 'salsa bbq': 30, 'salsa de tomate': 60,
+    'mostaza': 10, 'queso mozzarella': 80,
+}

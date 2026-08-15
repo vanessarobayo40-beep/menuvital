@@ -18,7 +18,8 @@ import re
 
 from normalize import normalize_ingredient, ingredients_match
 from nutrition_data import NUTRITION, ALIASES
-from unit_weights import UNIT_GRAMS, UNIT_GRAMS_BY_CLASS, WHOLE_UNIT_GRAMS, SPICE_DEFAULT_GRAMS
+from unit_weights import (UNIT_GRAMS, UNIT_GRAMS_BY_CLASS, WHOLE_UNIT_GRAMS,
+                           SPICE_DEFAULT_GRAMS, GARNISH_DEFAULT_GRAMS)
 
 _FRACTIONS = {
     '½': 0.5, '¼': 0.25, '¾': 0.75, '⅓': 1 / 3, '⅔': 2 / 3,
@@ -174,6 +175,43 @@ def _format_number(v: float) -> str:
     return s if s else '0'
 
 
+_GRAM_UNITS = {'g', 'gr', 'gramo', 'gramos'}
+_COUNTABLE_UNITS = {'diente', 'dientes', 'unidad', 'unidades', 'huevo', 'huevos'}
+_TAZA_UNITS = {'taza', 'tazas'}
+
+
+def _round_grams(v: float) -> float:
+    """Redondea a múltiplos de 5 g (nadie pesa 166.67 g de carne), mínimo 5 g."""
+    if v <= 0:
+        return 0
+    r = round(v / 5) * 5
+    return r if r >= 5 else 5
+
+
+def _format_scaled_qty(val: float, rest: str) -> tuple:
+    """
+    Formatea una cantidad YA dividida por porciones con sentido culinario,
+    en vez de dejar fracciones como '166 2/3 g' o '1 1/2 dientes' que nadie
+    mide así en la cocina.
+    """
+    unit = rest.lower().strip()
+    if unit in _GRAM_UNITS:
+        return _format_number(_round_grams(val)), rest
+    # Menos de 1/5 de taza no se mide en la práctica: se pasa a cucharadas,
+    # redondeando a cuartos de cucharada (nadie mide "5/8 cda").
+    if unit in _TAZA_UNITS and 0 < val < 0.24:
+        cda_val = val * 240 / 15  # taza genérica (240 g) -> cda (15 g)
+        cda_val = max(round(cda_val * 4) / 4, 0.25)
+        new_unit = 'cda' if abs(cda_val - 1) < 0.01 else 'cdas'
+        return _format_number(cda_val), new_unit
+    # Dientes de ajo, huevos, unidades sueltas (o sin unidad explícita, como
+    # "2" cuando la palabra ya quedó en el nombre): no existe "1 1/2 dientes"
+    # en la práctica, se redondea al entero más cercano, mínimo 1.
+    if unit in _COUNTABLE_UNITS or unit == '':
+        return str(max(1, round(val))), rest
+    return _format_number(val), rest
+
+
 def divide_display_qty(qty_text: str, divisor: float) -> str:
     """
     Escala una cantidad ya mostrable ("700 g", "3 ½ tazas", "2") entre
@@ -191,8 +229,8 @@ def divide_display_qty(qty_text: str, divisor: float) -> str:
     if val is None:
         return qty_text
     rest = m.group('rest').strip()
-    new_val = _format_number(val / divisor)
-    return f"{new_val} {rest}".strip() if rest else new_val
+    new_val, new_rest = _format_scaled_qty(val / divisor, rest)
+    return f"{new_val} {new_rest}".strip() if new_rest else new_val
 
 
 def default_portion_grams(match_name: str) -> float:
@@ -206,6 +244,8 @@ def default_portion_grams(match_name: str) -> float:
     """
     if match_name in SPICE_DEFAULT_GRAMS:
         return SPICE_DEFAULT_GRAMS[match_name]
+    if match_name in GARNISH_DEFAULT_GRAMS:
+        return GARNISH_DEFAULT_GRAMS[match_name]
     kcal, prot, carbs, fat = NUTRITION[match_name][:4]
     if fat >= 40 and kcal >= 300:
         return 10.0
@@ -236,10 +276,21 @@ def parse_ingredient_line(raw: str):
     if _NEGLIGIBLE.match(raw):
         name = _clean_name(_NEGLIGIBLE.sub('', raw).strip()) or raw
         match = _match_nutrition_name(name)
+        # "Al gusto" solo significa 0 g de verdad para especias/sal/pimienta
+        # (SPICE_DEFAULT_GRAMS) — para algo calórico como "queso al gusto" o
+        # "salsa BBQ al gusto" contar 0 kcal mientras la carne de la misma
+        # receta sí suma, inflaba artificialmente la proteína aparente y
+        # subestimaba las kcal reales (ver Pechuga de Pollo Parmesana: 878
+        # kcal / 103 g de proteína contando solo el pollo). Se le asigna la
+        # porción típica del ingrediente, igual que cuando no hay cantidad.
+        is_spice = bool(match) and match in SPICE_DEFAULT_GRAMS
+        grams = default_portion_grams(match) if match else 0.0
         return {
             'display_name': name or raw, 'display_qty': 'al gusto',
-            'match_name': match, 'grams': 0.0, 'quantified': True,
-            'unit_kind': 'negligible', 'raw_qty': None,
+            'match_name': match, 'grams': round(grams, 1),
+            'quantified': is_spice or not match,
+            'unit_kind': 'negligible' if (is_spice or not match) else 'estimated',
+            'raw_qty': None,
         }
 
     m = _QTY_RE.match(raw)

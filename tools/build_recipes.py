@@ -168,7 +168,7 @@ def build_display_ingredients(parsed_ings, servings=1):
     return display
 
 
-def derive_tags(kcal, protein, time_min, match_names, is_colombian):
+def derive_tags(kcal, protein, time_min, match_names, is_colombian, raw_names=()):
     tags = []
     if is_colombian:
         tags.append('tradicional')
@@ -178,9 +178,9 @@ def derive_tags(kcal, protein, time_min, match_names, is_colombian):
         tags.append('ligero')
     if time_min <= 20:
         tags.append('rápido')
-    if is_vegetarian(match_names):
+    if is_vegetarian(match_names, raw_names):
         tags.append('vegetariano')
-    if is_gluten_free(match_names):
+    if is_gluten_free(match_names, raw_names):
         tags.append('sin gluten')
     if is_economical(match_names):
         tags.append('económico')
@@ -251,8 +251,9 @@ def build_from_row(name_raw, tipo_raw, img_raw, ing_raw, prep_raw, time_raw, ser
     display_ings = build_display_ingredients(parsed_ings, servings)
 
     match_names = [p['match_name'] for p in parsed_ings]
+    raw_names = [p['display_name'] for p in parsed_ings]
     tags = derive_tags(macros['kcal'], macros['protein'], time_min, match_names,
-                        is_colombian=False)
+                        is_colombian=False, raw_names=raw_names)
 
     image_url = None
     if img_raw and str(img_raw).strip().lower() != 'none':

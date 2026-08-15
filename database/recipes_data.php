@@ -28,7 +28,7 @@ return [
  ['Precalienta el horno a 200°C (392°F).', 'Corta el aguacate por la mitad y quita la semilla.', 'Con una cuchara, saca un poco de la pulpa del aguacate para hacer espacio para los huevos.', 'Coloca las mitades de aguacate en una fuente apta para horno para que queden estables.', 'Rompe un huevo en cada mitad de aguacate.', 'Espolvorea sal y pimienta al gusto sobre los huevos.', 'Distribuye el queso desmenuzado sobre los huevos.', 'Hornea los aguacates rellenos en el horno precalentado durante 12-15 minutos o hasta que las claras de los huevos estén cocidas pero las yemas aún estén líquidas.', 'Retira los aguacates rellenos del horno y decora con perejil picado si lo deseas.'],
  ['alto en proteína', 'rápido', 'sin gluten'], 475, 21, 25, 14, 38, 2, 9, 'https://images.pexels.com/photos/31823015/pexels-photo-31823015.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
-['Huevos revueltos con espinacas y', 'desayuno',
+['Huevos revueltos con espinacas y tomate', 'desayuno',
  ['tomate|1 unidad', 'huevo|4 unidades', 'espinaca fresca|2 tazas', 'aceite de oliva|1/2 cdas', 'sal|al gusto', 'pimienta|al gusto', 'queso rallado bajo en grasa|2 cdas', 'perejil fresco|al gusto'],
  ['Lava y escurre bien las espinacas y córtalas en tiras finas.', 'Lava el tomate y córtalo en cubos pequeños.', 'En un bol, bate los huevos y sazónalos con sal y pimienta al gusto.', 'Calienta el aceite de oliva en una sartén antiadherente a fuego medio.', 'Agrega las espinacas y los tomates a la sartén y saltea durante unos minutos hasta que las espinacas se marchiten y los tomates se ablanden.', 'Vierte los huevos batidos sobre la sartén caliente.', 'Cocina a fuego medio-bajo, revolviendo constantemente, hasta que los huevos estén cocidos, pero aún ligeramente húmedos.', 'Si lo deseas, puedes agregar el queso rallado y revolver hasta que se derrita y se integre en los huevos revueltos.', 'Puedes espolvorear perejil fresco picado sobre los huevos revueltos antes de servir.'],
  ['alto en proteína', 'ligero', 'vegetariano'], 235, 20, 15, 6, 16, 3, 2, 'https://images.pexels.com/photos/5639286/pexels-photo-5639286.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
@@ -48,7 +48,7 @@ return [
  ['Tuesta ligeramente las dos rebanadas de pan integral en una sartén o tostadora para aportar textura crujiente', 'Unta una capa fina de mostaza Dijon sobre una de las rebanadas, según tu preferencia', 'Coloca la hoja de lechuga sobre la rebanada con mostaza, presionando ligeramente para que quede adherida', 'Añade las dos rodajas finas de tomate sobre la lechuga y sazona con una pizca de sal', 'Distribuye uniformemente las lonchas de pechuga de pavo sobre el tomate', 'Corta el aguacate a la mitad, retira el hueso, saca la pulpa y córtala en láminas; coloca las láminas sobre el pavo', 'Si decides usar cebolla roja, distribuye las rodajas finas encima del aguacate y sazona con sal y pimienta', 'Cubre con la segunda rebanada de pan integral, presiona ligeramente y sirve inmediatamente'],
  ['ligero', 'alto en proteína', 'rápido'], 425, 35, 15, 38, 15, 5, 8, '/assets/img/recetas/sandwich-de-pavo-y-aguacate.jpeg'],
 
-['Tortilla de calabacín rellena de jamón y', 'desayuno',
+['Tortilla de calabacín rellena de jamón y queso', 'desayuno',
  ['calabacín|2 pequeños', 'huevo|4 unidades', 'jamón cocido|2 lonchas', 'queso|2 lonchas', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|al gusto'],
  ['Lava los calabacines, córtalos a lo largo y rállalos; exprime el exceso de agua con un paño limpio o papel de cocina.', 'En un bol, bate los 4 huevos, incorpora el calabacín rallado, sal y pimienta, y mezcla bien hasta obtener una masa uniforme.', 'Calienta una cucharada de aceite de oliva en una sartén antiadherente a fuego medio (≈150‑160 °C).', 'Vierte la mezcla de huevo y calabacín, extendiéndola en una capa fina; cocina 3‑4 min hasta que los bordes se despeguen y la base esté dorada.', 'Coloca una loncha de queso y una de jamón cocido sobre la mitad de la tortilla, luego dobla la otra mitad para cubrir el relleno, formando un paquete.', 'Cocina 1‑2 min más para fundir el queso, retira del fuego y sirve caliente.'],
  ['alto en proteína', 'rápido', 'económico'], 275, 25, 10, 7, 17, 2, 2, 'https://images.pexels.com/photos/11654228/pexels-photo-11654228.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
@@ -601,7 +601,7 @@ return [
 ['Tosta con Salmón, aguacate y huevo', 'desayuno',
  ['salmón ahumado|50 g', 'huevo|2 unidades', 'lechuga|al gusto', 'aguacate|1 unidad', 'cebolla|1 unidad', 'limón|1/2 unidad', 'pipas|al gusto', 'salsa nórdica|al gusto'],
  ['Enjuagamos muy bien la lechuga, escurrimos y secamos muy bien con papel de cocina.', 'Picamos la cebolla en rodajas muy finas y reservamos junto a la lechuga.', 'Cortamos el aguacate haciendo una incisión en vertical, a lo largo de toda la pieza, separamos las dos mitades y, con ayuda de una cuchara, separamos la carne de la piel.', 'Cortamos en rodajas, añadimos unas gotas de limón para que no se oxide y lo tapamos.', 'En el caso de querer una tosta de salmón ahumado con huevo y aguacate , ponemos el pan a tostar (en tostadora o al horno) y ponemos a calentar una sartén o plancha con un poquito de aceite de oliva.', 'Cuando esté caliente, echamos el huevo y, solo si queremos que se haga la yema, volteamos.', 'Colocamos el pan sobre un plato llano y vamos superponiendo los ingredientes por orden.', 'Pan crujiente, aliño o salsa, lechuga, rodajas de aguacate, salmón ahumado y, por último, el huevo.', 'Para decorar podemos utilizar: pipas, sésamo tostado.', 'Ya tenemos lista nuestra tosta de salmón ahumado con aguacate y huevo para disfrutar.', 'Acompañamos con una infusión de tu preferencia.'],
- ['alto en proteína', 'ligero', 'rápido'], 290, 18, 10, 5, 22, 2, 6, '/assets/img/recetas/tosta-con-salmon-aguacate-y-huevo.jpeg'],
+ ['alto en proteína', 'ligero', 'rápido'], 294, 18, 10, 6, 22, 2, 6, '/assets/img/recetas/tosta-con-salmon-aguacate-y-huevo.jpeg'],
 
 ['Tostada con Hunmus de aguacate', 'desayuno',
  ['garbanzos cocidos|80 g', 'aguacate|1 unidad', 'limón|1 unidad', 'semilla de sésamo|2 cucharadas', 'tahini|1 cucharada', 'aceite de oliva|3 cucharadas', 'ajo|1/2 diente', 'comino|1/2 cucharadita', 'sal|al gusto', 'pimienta|al gusto', 'cayena|al gusto', 'cilantro|al gusto', 'pan integral|2 rebanadas', 'pimentón dulce|al gusto'],
@@ -626,12 +626,12 @@ return [
 ['Tostadas de centeno con rúcula y hummus de garbanzos', 'desayuno',
  ['pan|1 rebanada', 'pan integral|1 rebanada', 'rúcula|al gusto', 'hummus|4 cucharadas', 'aceitunas|1 puñado'],
  ['Tuesta la rebanada de pan integral o de semillas en la tostadora o bajo el grill hasta que esté dorada y crujiente.', 'Extiende uniformemente 4 cucharadas soperas de hummus de garbanzos sobre la superficie tostada.', 'Distribuye una capa de rúcula fresca al gusto sobre el hummus, presionando ligeramente para que se adhiera.', 'Añade un puñado de aceitunas, cortadas en rodajas o en mitades, distribuyéndolas por toda la tostada.', 'Opcional: rocía ligeramente con aceite de oliva virgen extra y una pizca de sal para realzar sabores.', 'Sirve la tostada acompañada de una infusión caliente.'],
- ['vegetariano', 'sin gluten'], 322, 10, 10, 30, 18, 3, 6, '/assets/img/recetas/tostadas-de-centeno-con-rucula-y-hummus-de-garbanzos.jpeg'],
+ ['vegetariano'], 322, 10, 10, 30, 18, 3, 6, '/assets/img/recetas/tostadas-de-centeno-con-rucula-y-hummus-de-garbanzos.jpeg'],
 
 ['Té verde con desayuno mediterráneo', 'desayuno',
  ['té verde|1 saquito', 'pan integral|1 rebanada', 'tomate|1 unidad', 'aceite de oliva|al gusto', 'jamón|1 loncha'],
  ['Tosta la rebanada de pan integral en la tostadora hasta que esté dorada y crujiente.', 'Prepara una taza de té verde siguiendo las instrucciones del paquete y endúlzalo con una cucharadita de stevia si lo prefieres.', 'Corta el tomate en cubos pequeños y colócalos sobre la tostada.', 'Añade una loncha de jamón, pavo o serrano sobre el tomate y sirve el té verde al lado.'],
- ['ligero', 'vegetariano'], 220, 8, 10, 20, 12, 4, 3, '/assets/img/recetas/te-verde-con-desayuno-mediterraneo.jpeg'],
+ ['ligero'], 220, 8, 10, 20, 12, 4, 3, '/assets/img/recetas/te-verde-con-desayuno-mediterraneo.jpeg'],
 
 ['Yogurt Casero de coco y granada', 'desayuno',
  ['coco|3', 'agua de coco|1 taza', 'probióticos|1/8 cucharadita', 'granada|1', 'mango|1'],
@@ -786,7 +786,7 @@ return [
 ['Bocaditos De Atún Con Salsa De Yogurt', 'desayuno',
  ['atún|3 onz', 'huevo|1 unidad', 'harina|3 cdas', 'zucchini|½ unidad', 'queso|1 cda', 'ajo|2 dientes', 'yogur|2 cucharadas', 'mostaza|½ cda', 'apio|al gusto', 'aceituna|al gusto', 'perejil|al gusto', 'menta|al gusto'],
  ['Ralla ½ zucchini y colócalo en un recipiente; espolvorea sal y deja reposar 10 min para que libere líquido.', 'Pasado el tiempo, cuela el zucchini con una tela o colador para eliminar la mayor cantidad de agua posible; vuelve a colocar el zucchini seco en el recipiente.', 'En un bol, combina 3 onz de atún en vidrio, 1 huevo, 3 cdas de harina de avena o arroz, 1 cda de queso mozzarella rallado, 2 dientes de ajo triturados, ½ cda de mostaza orgánica, 2 cucharadas de yogur griego plain, y salpimienta al gusto.', 'Añade el zucchini colado a la mezcla y revuelve hasta obtener una masa homogénea; incorpora perejil picado y, si lo deseas, un par de hojitas de menta para aroma fresco.', 'Forma pequeñas bolitas o empanadillas con la masa, asegurándote de que tengan un grosor uniforme (aprox. 2 cm).', 'Precalienta una air fryer a 200 °C o prepara una plancha a fuego medio; cocina los bocaditos durante 8‑10 min, volteándolos a mitad de tiempo, hasta que estén dorados y crujientes por fuera.', 'Mientras se cocinan, prepara la salsa mezclando el yogur griego con los ingredientes restantes de la salsa (mostaza, ajo, sal, pimienta) hasta que quede suave y sin grumos.', 'Sirve los bocaditos calientes acompañados de la salsa de yogurt, decorando con un poco de perejil fresco.'],
- ['ligero', 'vegetariano'], 228, 18, 20, 12, 12, 4, 3, '/assets/img/recetas/011-bocaditos-de-atun-con-salsa-de-yogurt.jpeg'],
+ ['ligero'], 228, 18, 20, 12, 12, 4, 3, '/assets/img/recetas/011-bocaditos-de-atun-con-salsa-de-yogurt.jpeg'],
 
 ['Bombas De Yuca', 'desayuno',
  ['yuca|8 onz', 'huevo|1 unidad', 'pollo|8 onz', 'cebolla|½ unidad', 'pimentón|½ unidad', 'ajo|2 dientes', 'tomate|1 unidad', 'aceite|al gusto'],
@@ -801,7 +801,7 @@ return [
 ['Creps De Avena Con Queso Y Jamón', 'desayuno',
  ['avena|1 taza', 'agua|1 ¼ taza', 'aceite|1 cda', 'sal|pizca', 'aceite|al gusto', 'queso|2 cdas', 'jamón|2 lonjas', 'vegetal|al gusto'],
  ['En la licuadora, combina las hojuelas de avena y el agua, dejando reposar 15‑20 minutos para hidratar la avena.', 'Añade el aceite de oliva, la sal y las especias opcionales; licúa a máxima potencia hasta obtener una masa líquida y homogénea. Si está muy espesa, agrega un chorrito de agua.', 'Calienta una sartén antiadherente a fuego medio y engrasa con un poco de aceite de coco o aguacate.', 'Vierte una porción de la mezcla en la sartén, extendiéndola con una espátula para que quede fina (≈0.5 cm).', 'Cocina 2‑3 minutos o hasta que se formen burbujas en la superficie y los bordes se despeguen; voltea con cuidado y cocina 1‑2 minutos más.', 'Repite con el resto de la mezcla, manteniendo la sartén ligeramente aceitada entre cada crepe.', 'Sirve caliente, rellenando con 2 cdas de queso cottage y lonjas de jamón de pavo, enrollando o doblando según preferencia.'],
- ['ligero', 'vegetariano'], 182, 12, 15, 20, 6, 4, 3, '/assets/img/recetas/038-creps-de-avena-con-queso-y-jamon.jpeg'],
+ ['ligero'], 182, 12, 15, 20, 6, 4, 3, '/assets/img/recetas/038-creps-de-avena-con-queso-y-jamon.jpeg'],
 
 ['Donas De Manzana', 'desayuno',
  ['manzana|1 unidad', 'huevo|2 unidades', 'harina|½ taza', 'polvo|1 cdita', 'vainilla|1 cda', 'canela|al gusto', 'mantequilla|1 cda'],
@@ -818,7 +818,7 @@ return [
  ['En un bowl grande, mezclar el yogur griego, la harina de avena, la sal, el aceite de oliva y el polvo de hornear hasta obtener una masa homogénea y compacta.', 'Espolvorear un poco de harina de avena sobre la mesa de trabajo y colocar la masa sobre ella. Amasar ligeramente con las manos hasta que la masa deje de pegarse y se vuelva elástica.', 'Dividir la masa en tres porciones iguales (o en seis si prefieres golfeados más pequeños). Formar cada porción en un rollo largo de aproximadamente 2 cm de ancho.', 'En cada rollo, colocar tres lonjas de jamón de pavo y tres lonjas de queso mozzarella. Enrollar con cuidado desde el extremo inferior hasta el superior, sin apretar demasiado para conservar la textura aireada.', 'Engrasar un molde para hornear con aceite de coco o mantequilla ghee y colocar los golfeados en la bandeja, dejando espacio entre ellos.', 'Batir el huevo en un recipiente pequeño y, con una brocha de cocina, barnizar cada golfeado con la mezcla de huevo para obtener una corteza dorada.', 'Precalentar el horno a 160 °C y hornear los golfeados durante 25–30 minutos, o hasta que la superficie esté firme y ligeramente dorada.', 'Retirar del horno y dejar reposar 5 minutos antes de servir.'],
  ['ligero', 'alto en proteína'], 432, 28, 25, 35, 20, 5, 4, '/assets/img/recetas/019-enrollado-de-jamon-y-queso-estilo-golfeados.jpeg'],
 
-['Fritatta Génova', 'desayuno',
+['Frittata Génova', 'desayuno',
  ['huevo|4 claras', 'bacon|2 lonjas', 'pimentón|¼ pieza', 'espinaca|1 puño', 'cebolla|¼', 'orégano|pizca', 'sal|al gusto', 'pimienta|al gusto'],
  ['Cortar el pimentón, la cebolla y las espinacas en juliana fina para asegurar una cocción uniforme.', 'Calentar una sartén antiadherente a fuego medio y añadir el bacon troceado. Saltear hasta que el bacon esté crujiente y haya liberado su grasa.', 'Incorporar la cebolla y el pimentón a la sartén, cocinando hasta que la cebolla esté translúcida y los pimentones ligeramente tiernos.', 'Añadir las espinacas y salpimentar al gusto, cocinando hasta que las hojas se marchiten y reduzcan su volumen.', 'En un bowl, batir las claras de huevo con una pizca de orégano y otras especias al gusto hasta que formen una espuma ligera.', 'Verter las claras batidas sobre la mezcla de vegetales en la sartén, asegurándose de que se distribuyan de manera uniforme.', 'Cocinar a fuego medio-bajo, girando la sartén ocasionalmente, hasta que la superficie esté cuajada y los bordes comiencen a dorarse (aprox. 5–7 minutos).', 'Dar la vuelta a la frittata con la ayuda de un plato grande o una tapa, y cocinar el otro lado hasta que esté completamente cuajada y dorada (aprox. 3–4 minutos).', 'Retirar del fuego, dejar reposar 2 minutos y servir caliente.'],
  ['ligero', 'alto en proteína'], 243, 22, 15, 5, 15, 3, 2, '/assets/img/recetas/012-fritatta-genova.jpeg'],
@@ -853,7 +853,7 @@ return [
  ['Lava bien y elimina la piel de la sweet potato, córtala en ruedas y cocínalas en el horno o air fryer hasta que ablanden.', 'Coloca las ruedas de sweet potato en un bowl y con ayuda de un tenedor conviértelas en un puré. Espera que enfríen un poco y agrega el polvo de hornear, la sal y el huevo. Mezcla bien con la ayuda de una paleta, hasta que todos los ingredientes se hayan combinado.', 'Agrega la harina de avena y mezcla hasta integrar por completo. La masa es pegajosa, así que será suficiente combinarla con la paleta, no la amases.', 'Coloca la masa en una sartén previamente engrasada con aceite de aguacate. Dale forma de rebanada de pan del tamaño y grosor de tu preferencia. La mezcla debe alcanzar para obtener 6 rebanadas (3 raciones).', 'Cocina a fuego muy lento y tapado para crear un horno y que se cocine bien por dentro. Dóralo por ambos lados.', 'Para los huevos, calienta una sartén antiadherente con un poco de aceite de aguacate y cocina los huevos “tipo fritos”, tapa para que la yema tome consistencia.', 'Para emplatar, coloca una de las rebanadas de pan en el plato, sobre ella coloca los huevos tipo fritos y finaliza con los vegetales, cierra con la otra rebanada de pan.'],
  ['ligero', 'vegetariano'], 323, 12, 30, 35, 15, 6, 5, '/assets/img/recetas/008-pan-de-sweet-potato-con-huevo-y-vegetales.jpeg'],
 
-['Pan De Zuccchini Con Huevos Revueltos', 'desayuno',
+['Pan De Zucchini Con Huevos Revueltos', 'desayuno',
  ['huevo|2 unidades', 'harina de almendras|1 cda', 'harina de avena|2 cdas', 'zucchini|2 cdas', 'aceite de oliva|1 cda', 'polvo de hornear|½ cdita', 'sal|al gusto', 'pimienta|al gusto', 'tomate|1 unidad', 'cebolla|¼ unidad', 'perejil|al gusto'],
  ['Precalienta el horno o air fryer a 180°C durante 5 minutos.', 'En un tazón grande, mezcla todos los ingredientes secos (harina de almendras, harina de avena, polvo de hornear, sal y pimienta) hasta obtener una mezcla homogénea.', 'Agrega el aceite de oliva, el zucchini rallado y los huevos a la mezcla seca, y revuelve hasta obtener una masa compacta y uniforme.', 'Vierte la masa en una taza apta para microondas y cocina en el microondas durante 1 minuto, o hasta que esté cocida y suave.', 'Retira la taza del microondas y coloca la masa en una rejilla para enfriar.', 'Mientras tanto, pica los vegetales (tomate, cebolla y perejil) en pequeños cubitos y sofríelos en una sartén con un poco de aceite de aguacate durante 2-3 minutos.', 'Agrega los huevos batidos a la sartén y cocina hasta que estén revueltos y tengan la consistencia deseada.', 'Sirve el pan de zucchini acompañado de los huevos revueltos y decora con perejil fresco.'],
  ['ligero', 'rápido'], 300, 18, 20, 30, 12, 4, 5, '/assets/img/recetas/004-pan-de-zuccchini-con-huevos-revueltos.jpeg'],
@@ -933,7 +933,7 @@ return [
  ['Precalienta el horno a 180°C.', 'Lava la sweet potato o batata y córtala por la mitad a lo largo.', 'Hazle unos cortes a la pulpa para que penetre mejor el calor y hornea durante unos 25 minutos o hasta que esté tierna.', 'Mientras la sweet potato se hornea, lava y pica la cebolla y la zanahoria en pequeños cubitos.', 'Sofríe la cebolla y la zanahoria en una sartén previamente engrasada con aceite de aguacate o coco hasta que estén suaves.', 'Una vez que la sweet potato esté lista, retira la pulpa con cuidado de no dañar la cáscara y conviértela en puré con la ayuda de un tenedor.', 'Incorpora el atún bien escurrido, los vegetales sofritos, el ajo en polvo, el pimentón, el perejil, la sal y la pimienta al gusto al puré de sweet potato y mezcla hasta integrar todos los ingredientes.', 'Agrega el yogurt griego plain y mezcla un poco más.', 'Rellena las cáscaras de sweet potato con la mezcla anterior y hornea durante 5-7 minutos.'],
  ['ligero', 'alto en proteína'], 360, 28, 30, 35, 12, 6, 5, '/assets/img/recetas/014-sweet-potato-romana-rellena-de-atun.jpeg'],
 
-['Sándwich Capresse', 'desayuno',
+['Sándwich Caprese', 'desayuno',
  ['queso mozzarella|3 cdas', 'pan integral|2 rebanadas', 'tomate|1', 'rúcula|al gusto', 'albahaca|al gusto', 'ajo|2 dientes', 'queso parmesano|½ cda', 'aceite de oliva|4 cdas', 'piñones|½ puño', 'sal|al gusto', 'pimienta negra|al gusto'],
  ['Lava las hojas de albahaca y sécalas bien para evitar cualquier exceso de humedad.', 'Pela los dientes de ajo y colócalos en el vaso de la batidora junto con las hojas de albahaca, los piñones, el queso parmesano, el aceite de oliva, y una pizca de sal y pimienta.', 'Tritura la mezcla durante unos 2 minutos hasta lograr una textura suave y homogénea, añadiendo un poco más de aceite de oliva si se prefiere un pesto menos denso.', 'Rectifica los sabores según sea necesario y vierte la salsa pesto en un frasco de vidrio con tapa para reservar.', 'Toma una de las rebanadas de pan integral y coloca sobre ella 1 cucharada de la salsa pesto preparada.', 'Agrega sobre el pesto una capa de tomate en ruedas, seguida de una capa de arúgula fresca.', 'Finalmente, coloca sobre la arúgula el queso mozzarella rallado y cubre con la otra rebanada de pan integral.', 'Lleva el sándwich a una plancha o tostadora precalentada a una temperatura moderada durante unos minutos, hasta que el queso derrita y el pan esté ligeramente tostado.'],
  ['tradicional', 'ligero'], 480, 22, 15, 35, 28, 4, 5, '/assets/img/recetas/009-sandwich-capresse.jpeg'],
@@ -1016,7 +1016,7 @@ return [
 ['Batida de fresa con yogurt', 'desayuno',
  ['fresa|6 unidades', 'yogur|2 unidades', 'edulcorante|al gusto'],
  ['Lava bien las fresas, retira los tallos y córtalas por la mitad.', 'Coloca las fresas, los dos yogures sin azúcar y el edulcorante en la licuadora; licúa a velocidad alta durante 45‑60 segundos hasta obtener una textura homogénea y sin grumos.', 'Prueba la batida; si está muy espesa añade un chorrito de leche desnatada y licúa 10 segundos más, o ajusta el dulzor añadiendo más edulcorante al gusto.', 'Vierte la batida en copas o vasos, decora con una rodajita de fresa y sirve inmediatamente.'],
- ['ligero', 'vegetariano'], 80, 6, 5, 8, 2, 22, 5, '/assets/img/recetas/030-batida-de-fresa-con-yogurt.jpeg'],
+ ['ligero', 'vegetariano'], 136, 6, 5, 22, 2, 22, 5, '/assets/img/recetas/030-batida-de-fresa-con-yogurt.jpeg'],
 
 ['Bocaditos Salados de Dátil y Pistacho.', 'desayuno',
  ['dátil|2 tazas', 'pistacho|1 taza', 'pasas|1 taza', 'semilla de hinojo|1 cucharadita', 'pimienta|1/4 cucharadita'],
@@ -1269,9 +1269,9 @@ return [
  ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 467, 37, 5, 45, 18, 29, 4, '/assets/img/recetas/008-smoothie-de-banano-y-proteina.jpeg'],
 
 ['Pan con Jamón y Huevo Duro', 'desayuno',
- ['pan integral|1 rebanadas', 'lonjas de jamón de cerdo o pavo|1 1/2', 'huevos|1', 'Mostaza o mayonesa light|al gusto', 'Hojas de espinaca o lechuga|al gusto', 'Sal y pimienta|al gusto'],
+ ['pan integral|1 rebanadas', 'lonjas de jamón de cerdo o pavo|2', 'huevos|1', 'Mostaza o mayonesa light|al gusto', 'Hojas de espinaca o lechuga|al gusto', 'Sal y pimienta|al gusto'],
  ['Hierve los huevos 8 minutos. Pélalos y córtalos en rodajas.', 'Tuesta el pan ligeramente.', 'Unta la mostaza o mayonesa sobre el pan.', 'Arma el sandwich con el jamón, los huevos y las hojas verdes.'],
- ['alto en proteína', 'rápido', 'económico'], 403, 51, 10, 22, 12, 5, 4, '/assets/img/recetas/009-pan-con-jamon-y-huevo-duro.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 387, 50, 10, 20, 11, 5, 3, '/assets/img/recetas/009-pan-con-jamon-y-huevo-duro.jpeg'],
 
 ['Arepa con Queso y Huevo', 'desayuno',
  ['arepa precocida o hecha la noche anterior|1', 'queso blanco o mozzarella|50 g', 'huevos|2', 'aguacate|1/2', 'Aceite para la sartén|al gusto', 'Sal y pimienta|al gusto'],
@@ -1299,7 +1299,7 @@ return [
  ['alto en proteína', 'sin gluten', 'económico'], 654, 33, 25, 60, 32, 7, 7],
 
 ['Full English Saludable', 'desayuno',
- ['huevos|1', 'salchichas de pavo o pollo|1', 'champiñones|25 g', 'tomates en mitades|1/2', 'frijoles en salsa de tomate|50 g', 'Pan integral|al gusto', 'Aceite de oliva|al gusto'],
+ ['huevos|1', 'salchichas de pavo o pollo|1', 'champiñones|25 g', 'tomates en mitades|1', 'frijoles en salsa de tomate|50 g', 'Pan integral|al gusto', 'Aceite de oliva|al gusto'],
  ['Saltea los champiñones y los tomates en aceite de oliva 5 minutos.', 'Cocina las salchichas en la misma sartén.', 'Calienta los frijoles en olla pequeña.', 'Fríe o pocha los huevos. Dispón todo en el plato con el pan tostado.'],
  ['alto en proteína', 'económico'], 491, 66, 25, 19, 15, 10, 3, '/assets/img/recetas/015-full-english-saludable.jpeg'],
 
@@ -1356,7 +1356,7 @@ return [
 ['Loaded Protein Bowl', 'desayuno',
  ['huevos revueltos|3', 'frijoles negros|1/2 taza', 'aguacate|1/2', 'queso campesino|50 g', 'arroz integral|1/2 taza', 'Salsa|al gusto', 'Cilantro|al gusto'],
  ['Calienta los frijoles y el arroz en sartén o microondas.', 'Revuelve los huevos en sartén con aceite.', 'Arma el bowl: arroz y frijoles de base, huevos encima.', 'Añade el aguacate, el queso y la salsa. Termina con cilantro.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 817, 45, 15, 64, 45, 5, 19],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 784, 43, 15, 61, 43, 3, 17],
 
 ['Porridge de Quinoa con Canela', 'desayuno',
  ['quinoa|150 g', 'leche|400 ml', 'canela molida|1 cdta', 'miel|2 cdas', 'arándanos o moras|50 g', 'almendras laminadas|30 g'],
@@ -1384,7 +1384,7 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 564, 60, 20, 8, 32, 4, 2, '/assets/img/recetas/034-steak-and-eggs.jpeg'],
 
 ['Huevos con Salchicha y Batata', 'desayuno',
- ['huevos|1 1/2', 'salchichas de pollo o pavo|1', 'batata mediana|1/2', 'cebolla|1/8', 'Aceite|al gusto'],
+ ['huevos|2', 'salchichas de pollo o pavo|1', 'batata mediana|1', 'cebolla|1', 'Aceite|al gusto'],
  ['Fríe los cubos de batata en aceite a fuego medio-alto 10 minutos hasta dorar.', 'Agrega la cebolla y las salchichas. Saltea 3-4 minutos.', 'Haz espacio en la sartén y agrega los huevos — revueltos o fritos.', 'Sazona con paprika y sirve en la misma sartén.'],
  ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 519, 67, 20, 15, 20, 4, 2, '/assets/img/recetas/040-huevos-con-salchicha-y-batata.jpeg'],
 
@@ -1449,7 +1449,7 @@ return [
  ['tradicional', 'sin gluten', 'económico'], 360, 11, 25, 41, 17, 1, 2],
 
 ['Caldo de costilla', 'desayuno',
- ['costilla de res|150 g', 'papa pastusa|1/2', 'arveja|1/4 taza', 'cebolla larga|1/8 taza', 'ajo|1/2 diente', 'cilantro|1/2 rama', 'agua|3 tazas', 'Sal|al gusto'],
+ ['costilla de res|150 g', 'papa pastusa|1', 'arveja|1/4 taza', 'cebolla larga|2 cdas', 'ajo|1 diente', 'cilantro|1/2 rama', 'agua|3 tazas', 'Sal|al gusto'],
  ['En una olla, dora la costilla de res con el ajo 3-4 minutos.', 'Cubre con el agua y lleva a hervor; retira la espuma que suba.', 'Baja el fuego y cocina tapado 25 minutos hasta que la carne esté tierna.', 'Agrega la papa y la arveja y cocina 12 minutos más.', 'Rectifica sal, agrega la cebolla larga y el cilantro picados al final.', 'Sirve bien caliente.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 556, 35, 45, 25, 35, 5, 6],
 
@@ -1464,12 +1464,12 @@ return [
  ['tradicional', 'rápido', 'sin gluten', 'económico'], 414, 18, 12, 46, 18, 4, 3],
 
 ['Tamal tolimense en porción', 'desayuno',
- ['harina de maíz precocida|1/2 taza', 'pechuga de pollo|75 g', 'arveja|1/4 taza', 'papa criolla|1/2', 'aceite|1/2 cda', 'caldo de pollo|1/8 taza', 'Sal|al gusto'],
+ ['harina de maíz precocida|1/2 taza', 'pechuga de pollo|75 g', 'arveja|1/4 taza', 'papa criolla|1', 'aceite|1/2 cda', 'caldo de pollo|2 cdas', 'Sal|al gusto'],
  ['Cocina la pechuga de pollo en el caldo 15 minutos, desmenuza y reserva el líquido.', 'Mezcla la harina de maíz con el caldo reservado, el aceite y sal hasta formar una masa suave.', 'Sobre una hoja de plátano o papel aluminio, extiende una porción de masa.', 'Rellena con el pollo desmenuzado, la arveja y la papa criolla; envuelve bien.', 'Cocina al vapor 25-30 minutos hasta que la masa esté firme.', 'Deja reposar 5 minutos antes de abrir y servir.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 493, 32, 40, 63, 12, 4, 7],
 
 ['Almojábana horneada', 'desayuno',
- ['cuajada|33 1/3 g', 'harina de maíz precocida|0.2 taza', 'huevo|0.2', 'mantequilla|0.2 cda', 'polvo de hornear|0.2 cdta', 'azúcar|0.2 cda'],
+ ['cuajada|35 g', 'harina de maíz precocida|2 3/4 cdas', 'huevo|1', 'mantequilla|0.2 cda', 'polvo de hornear|0.2 cdta', 'azúcar|0.2 cda'],
  ['Precalienta el horno a 190°C y engrasa una bandeja.', 'Desmenuza la cuajada con un tenedor hasta que quede cremosa.', 'Mezcla con la harina de maíz, el huevo, la mantequilla, el azúcar y el polvo de hornear hasta integrar.', 'Forma bolitas medianas y colócalas en la bandeja.', 'Hornea 15-18 minutos hasta que doren ligeramente por fuera.'],
  ['tradicional', 'ligero', 'sin gluten', 'económico'], 217, 9, 25, 20, 11, 2, 1],
 
@@ -1584,7 +1584,7 @@ return [
  ['Seca los 4 muslos de pollo deshuesados con papel de cocina y sazónalos con sal y pimienta negra al gusto.', 'Calienta 1 cda de aceite de oliva en una sartén grande a fuego medio‑alto y dora los muslos 4‑5 min por cada lado, hasta que estén bien sellados; retíralos y reserva.', 'En la misma sartén agrega la segunda cucharada de aceite y sofríe 1 cebolla grande en rodajas y los pimientos rojo y verde en tiras 6‑8 min, hasta que estén tiernos y ligeramente caramelizados.', 'Incorpora 2 dientes de ajo picados y 1 cdita de pimentón dulce; cocina 1‑2 min sin que se quemen, removiendo constantemente.', 'Vuelve a colocar los muslos de pollo en la sartén, reduce el fuego a medio y cocina 5‑7 min más, tapado, para que el pollo termine de cocinarse y absorba los sabores de las verduras.', 'Retira del fuego, deja reposar 2 min y sirve los muslos acompañados de la mezcla de pimientos y cebolla.'],
  ['alto en proteína', 'tradicional', 'rápido'], 325, 33, 40, 7, 18, 3, 2, '/assets/img/recetas/muslos-de-pollo-deshuesados-con-pimientos-y-cebolla.jpeg'],
 
-['Panninis de Atún y Bacon', 'almuerzo',
+['Paninis de Atún y Bacon', 'almuerzo',
  ['atún al natural|1 lata', 'pan integral|4 rebanadas', 'bacon magro|4 lonchas', 'tomate|1 unidad', 'hoja de lechuga|al gusto', 'mostaza dijon|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precaliente la Air Fryer a 180 °C durante 3 minutos', 'En un bol mezcle el atún escurrido con sal, pimienta y mostaza Dijon opcional hasta integrar', 'Coloque las lonchas de bacon en la cesta de la Air Fryer y cocine 3‑5 minutos hasta que estén crujientes; reserve', 'Sobre dos rebanadas de pan distribuya una capa uniforme de la mezcla de atún', 'Añada rodajas finas de tomate, hojas de lechuga o espinaca y el bacon crujiente', 'Cubra con las otras dos rebanadas de pan y presione ligeramente', 'Coloque los paninis en la cesta y cocine 3‑5 minutos hasta que el pan esté dorado y el interior caliente; sirva inmediatamente'],
  ['alto en proteína', 'económico', 'rápido'], 300, 25, 10, 26, 11, 4, 4, '/assets/img/recetas/panninis-de-atun-y-bacon.jpeg'],
@@ -1739,12 +1739,12 @@ return [
  ['Precalienta el horno a 190 °C (375 °F).', 'Calienta el aceite de oliva en una sartén grande a fuego medio.', 'Añade la cebolla picada y sofríe 3 minutos hasta que esté transparente.', 'Incorpora los champiñones y cocina 5 minutos, hasta que estén ligeramente dorados.', 'Agrega las espinacas y los chiles verdes asados, cocinando 2‑3 minutos más hasta que las espinacas se marchiten.', 'Salpimienta al gusto y retira el exceso de líquido con una espumadera.', 'Vierte la mezcla en un molde para horno engrasado y distribúyela uniformemente.', 'Hornea 10 minutos, hasta que la clara de los huevos esté cuajada pero la yema aún líquida.', 'Sirve caliente, acompañando con una ensalada fresca si lo deseas.'],
  ['vegetariano', 'ligero', 'rápido'], 300, 18, 10, 12, 20, 5, 4, '/assets/img/recetas/champinones-y-espinacas.jpeg'],
 
-['Compota de mandarina con queso fresco y nueces', 'almuerzo',
+['Compota de mandarina con queso fresco y nueces', 'snack',
  ['mandarina|300 g', 'limón|150 g', 'queso fresco|100 g', 'nuez|100 g', 'hoja de menta|1 unidad'],
  ['Pela las mandarinas y retira las fibras y la parte blanca con un cuchillo afilado.', 'Ralla finamente la piel de una mandarina y de un limón, reservando las virutas para decorar.', 'Corta las mandarinas en trozos pequeños y colócalas en un cazo junto con las virutas de piel y 2 cucharadas de azúcar.', 'Cocina a fuego lento, removiendo, durante 15‑20 minutos hasta que la fruta se haya ablandado y el azúcar se haya disuelto.', 'Deja enfriar la compota a temperatura ambiente.', 'Corta el queso fresco en cubos de 2 cm y trocea las nueces en pedazos medianos.', 'En un plato, coloca los cubos de queso, distribuye la compota de mandarina y espolvorea las nueces troceadas.', 'Decora con hojas de menta fresca y virutas de piel de mandarina para un toque cítrico y aromático.'],
  ['ligero', 'vegetariano', 'rápido'], 363, 12, 10, 45, 15, 30, 6, '/assets/img/recetas/compota-de-mandarina-con-queso-fresco-y-nueces.jpeg'],
 
-['Compota de manzana con queso Fresco', 'almuerzo',
+['Compota de manzana con queso Fresco', 'snack',
  ['manzana golden|2 unidades', 'naranja|1 unidad', 'queso fresco batido|100 g', 'yogur natural desnatado|4 cucharadas', 'stevia|1 cucharada', 'canela en polvo|1 pizca'],
  ['Pela las manzanas, córtalas en cuartos, retírales el corazón y pártelas en gajos.', 'Exprime las naranjas, vierte el zumo en un cazo y añade unas tiras de piel de naranja lavadas.', 'Agrega las manzanas, tapa y deja cocer durante 15 minutos hasta obtener una compota. Retírala y déjala enfriar.', 'En un bol, echa el queso con 100 ml de agua, el yogur y el azúcar.', 'A continuación, con las varillas manuales, bate la mezcla hasta conseguir una crema espesa y de textura homogénea.', 'Echa la compota en unos cuencos individuales.', 'Cubre con crema de queso fresco, espolvorea con canela en polvo y sirve.'],
  ['ligero', 'vegetariano', 'rápido'], 305, 10, 10, 55, 5, 45, 7, '/assets/img/recetas/compota-de-manzana-con-queso-fresco.jpeg'],
@@ -1757,7 +1757,7 @@ return [
 ['Cous- Cous', 'almuerzo',
  ['cuscús|50 g', 'pasas|10 g', 'almendra|10 g', 'piñón|10 g', 'pistacho|10 g', 'canela|1 pizca', 'agua|1 cdita', 'naranja|1 unidad', 'bebida de avena|100 ml'],
  ['Combine cubitos de hielo, yogur, plátano, avena, miel, mantequilla de almendras y extracto de almendras en una licuadora; mezclar hasta que esté suave.', 'Vierta en un vaso o un bolw para servir.'],
- ['vegetariano', 'sin gluten', 'ligero'], 267, 6, 15, 45, 7, 20, 5, '/assets/img/recetas/cous-cous.jpeg'],
+ ['vegetariano', 'ligero'], 267, 6, 15, 45, 7, 20, 5, '/assets/img/recetas/cous-cous.jpeg'],
 
 ['Crackers de garbanzo al curry', 'almuerzo',
  ['harina de garbanzo|8 cucharadas', 'chia|5 cucharadas', 'semilla de sésamo|2 cucharadas', 'semilla de lino|1 cucharada', 'agua|3-4 cucharadas', 'aceite de oliva|1 cucharada', 'sal|1 cucharadita'],
@@ -1782,7 +1782,7 @@ return [
 ['Ensalada Saludable', 'almuerzo',
  ['aguacate|1 unidad', 'quesito fresco|10 g', 'anchoas|1 lata', 'sal|al gusto', 'semilla de chía|1 cucharada'],
  ['Pela el aguacate, retira el hueso y córtalo en cubos de tamaño uniforme.', 'Corta el queso fresco en cubos pequeños y reserva.', 'En un tazón, combina el aguacate, el queso fresco y las anchoas, mezclando suavemente para que los sabores se integren.', 'Añade sal al gusto y una cucharada de semillas de chía para aportar textura y nutrientes.', 'Revuelve todo con una cuchara de madera hasta que la mezcla quede homogénea.', 'Sirve inmediatamente como entrante fresco o como acompañamiento ligero.'],
- ['ligero', 'alto en proteína', 'vegetariano'], 176, 12, 5, 5, 12, 1, 4, '/assets/img/recetas/ensalada-saludable.jpeg'],
+ ['ligero', 'alto en proteína'], 176, 12, 5, 5, 12, 1, 4, '/assets/img/recetas/ensalada-saludable.jpeg'],
 
 ['Ensalada Shopska búlgara', 'almuerzo',
  ['tomate|1 unidad', 'pepino|1 unidad', 'cebolla|1 unidad', 'queso feta|20 g', 'pimiento verde|1 unidad', 'aceite de oliva|c/n', 'vinagre|al gusto', 'pimienta negra|al gusto', 'sal|al gusto', 'perejil fresco|al gusto'],
@@ -1874,7 +1874,7 @@ return [
  ['En una sartén mediana, cocine el brocoli, tapada, en aceite caliente a fuego medio-bajo durante 10 minutos, revolviendo ocasionalmente.', 'Agrega el pimiento verde, el pimentón y la mitad de la sal.', 'Cocine, sin tapar, durante 5 a 7 minutos más o hasta que las verduras estén tiernas, revolviendo ocasionalmente.', 'Retire las verduras de la sartén; dejar de lado.', 'Rompe con cuidado un huevo en cada uno de los agujeros.', 'Espolvorea los huevos con la sal restante y un poco de pimienta negra.', 'Cubrir; cocina de 2 a 3 minutos o hasta que las claras de huevo estén completamente cuajadas y las yemas estén al punto deseado.', 'Divide el picadillo y los huevos entre dos platos para servir.', 'Si lo desea, cubra con salsa y cilantro.'],
  ['rápido', 'ligero', 'alto en proteína'], 316, 28, 15, 6, 20, 2, 3, '/assets/img/recetas/hash-de-pavo-y-brocoli.jpeg'],
 
-['Hummus de aguacate', 'almuerzo',
+['Hummus de aguacate', 'snack',
  ['aceite de oliva|2 cucharadas', 'cilantro|½ puñado', 'zumo de limón|3 cucharadas', 'agua|1-2 cucharadas', 'comino|½ cucharadita', 'garbanzo|100 g', 'tahini|3 cucharadas', 'aguacate|2 unidades', 'ajo|1-2 dientes', 'sal|al gusto'],
  ['Lava los garbanzos cocidos bajo el grifo y escúrrelos en un colador para descartar las pieles', 'Introduce en el procesador los garbanzos, el tahini, el diente de ajo, el zumo de limón, el comino, una pizca de sal y la mitad del cilantro, y tritura a gran velocidad hasta obtener una mezcla homogénea', 'Raspa las paredes del procesador con una espátula para integrar todos los ingredientes correctamente', 'Agrega el aguacate y sigue mezclando hasta que se haya integrado completamente', 'Agrega el aceite de oliva y sigue mezclando hasta que esté bien incorporado', 'Rectifica el punto de sal, comino y zumo de limón al gusto', 'Si el hummus está muy espeso, agrega una o dos cucharadas de agua fría y sigue triturando hasta lograr la consistencia deseada', 'Sirve el hummus en un recipiente y decora con el cilantro restante'],
  ['vegetariano', 'alto en proteína', 'ligero'], 416, 12, 10, 20, 32, 2, 10, '/assets/img/recetas/hummus-de-aguacate.jpeg'],
@@ -2192,7 +2192,7 @@ return [
 ['Pasta cottahaca (con salsa de albahaca, queso cottage y pollo)', 'almuerzo',
  ['pasta|3/4 taza', 'queso cottage|2-3 cdas', 'queso parmesano|1 cda', 'champiñones|1 taza', 'brócoli|1 taza', 'tomate cherry|1 taza', 'albahaca|1 puño', 'ajo|3 dientes', 'nueces|1/2 puño', 'aceite de aguacate|1 cda', 'aceite de oliva|1/4 taza', 'sal|al gusto', 'pimienta|al gusto', 'ajo en polvo|al gusto', 'orégano|al gusto', 'pechuga de pollo|6 onz', 'quinoa|1/2 taza'],
  ['Corta la pechuga de pollo en cubos, sazona con sal, pimienta, orégano y ajo en polvo; precalienta una sartén con 1 cda de aceite de aguacate y dora el pollo 6‑8 min; reserva.', 'En una bandeja para horno distribuye los champiñones, brócoli, tomates cherry y los dientes de ajo enteros; rocía con aceite de aguacate, sal, pimienta y orégano; hornea a 180 °C 12‑15 min, removiendo a mitad de cocción.', 'Mientras se hornean los vegetales, prepara la salsa de albahaca: licúa la albahaca, los ajos asados, nueces, queso parmesano, sal y pimienta, añadiendo el aceite de oliva en hilo hasta obtener una emulsión cremosa; ajusta de sal y reserva.', 'Cuece la pasta de legumbres según indicaciones, escúrrela y enjuágala con agua fría para detener la cocción; reserva la quinoa cocida si la vas a usar.', 'En un bowl grande combina la pasta cocida, los vegetales asados, el pollo dorado, el queso cottage y 2 cdas de la salsa de albahaca; mezcla suavemente para integrar todos los componentes.', 'Rectifica de sal y pimienta, sirve en platos y decora con un chorrito extra de salsa de albahaca y unas hojas de albahaca fresca.'],
- ['alto en proteína', 'vegetariano'], 470, 32, 35, 45, 18, 6, 8, '/assets/img/recetas/044-pasta-cottahaca-con-salsa-de-albahaca-queso-cottage-y-pollo.jpeg'],
+ ['alto en proteína'], 470, 32, 35, 45, 18, 6, 8, '/assets/img/recetas/044-pasta-cottahaca-con-salsa-de-albahaca-queso-cottage-y-pollo.jpeg'],
 
 ['Pasta mar (con camarones)', 'almuerzo',
  ['pasta|1 1/2 taza', 'camarones|12 onz', 'ajo|2-3 dientes', 'tomate cherry|2 tazas', 'sal|al gusto', 'pimienta|al gusto', 'alcaparras|1 cda', 'aceitunas|1 cda', 'caldo de pescado|1 taza', 'aceite de aguacate|2 cdas', 'perejil|al gusto', 'queso parmesano|2 cdas'],
@@ -2207,7 +2207,7 @@ return [
 ['Pasta ﬂorencia (crema de pollo y espinacas)', 'almuerzo',
  ['pasta de legumbres|1 ½ taza', 'pollo|12 onz', 'jengibre|al gusto', 'cebolla|½', 'espinaca|2 puños', 'ajo|2 dientes', 'nuez moscada|una pizca', 'leche de almendras|1 taza', 'aceite de aguacate|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'orégano|al gusto', 'queso parmesano|1 cda'],
  ['Corta la pechuga de pollo en cubos de 2‑3 cm, mézclala con 2 dientes de ajo triturados, sal, pimienta y orégano; deja reposar 5 minutos para que se impregnen los sabores.', 'Calienta una cucharada de aceite de aguacate en una sartén a fuego medio‑alto y cocina el pollo hasta que esté dorado por todos lados, unos 5‑6 minutos; retira y reserva.', 'En la misma sartén, reduce el fuego a medio, agrega 1 trozo de jengibre fresco picado y ½ cebolla picada; sofríe 3‑4 minutos hasta que la cebolla esté translúcida y el jengibre aromático.', 'Mientras tanto, cocina 1 ½ taza de pasta de legumbres en agua con sal siguiendo el tiempo del paquete; cuando esté al dente, escúrrela y reserva.', 'Añade a la sartén 1 taza de leche de almendras, una pizca de nuez moscada, sal y pimienta; remueve y deja hervir a fuego bajo 3‑4 minutos hasta que la salsa espese ligeramente.', 'Incorpora la pasta cocida y 2 puños de espinaca fresca; tapa la sartén y cocina 2 minutos más, hasta que la espinaca se marchite y se integre con la crema.', 'Vuelve a agregar el pollo dorado, mezcla suavemente y cocina 1 minuto más para que todo quede bien caliente y unido.', 'Sirve la pasta en platos hondos, espolvorea 1 cda de queso parmesano rallado y decora con un chorrito de aceite de aguacate si lo deseas.'],
- ['tradicional', 'alto en proteína', 'vegetariano'], 540, 50, 30, 40, 20, 5, 5, '/assets/img/recetas/004-pasta-florencia-crema-de-pollo-y-espinacas.jpeg'],
+ ['tradicional', 'alto en proteína'], 540, 50, 30, 40, 20, 5, 5, '/assets/img/recetas/004-pasta-florencia-crema-de-pollo-y-espinacas.jpeg'],
 
 ['Pastel de sushi', 'almuerzo',
  ['atún|12 onz', 'aguacate|½', 'cebollín|al gusto', 'vinagre de arroz|2 cdas', 'monk fruit|una pizca', 'papel film|al gusto', 'ajonjolí|2 cdas', 'lentejas|1 taza'],
@@ -2222,7 +2222,7 @@ return [
 ['Pavo al curry con batata especiada', 'almuerzo',
  ['pavo|6 onz', 'batata|4 onz', 'cebolla|¼', 'pimentón|¼', 'coliflor|1 taza', 'ajo|2 dientes', 'sal|al gusto', 'pimienta|al gusto', 'curry|al gusto', 'comino|al gusto', 'limón|al gusto', 'leche de coco|½ taza', 'cilantro|al gusto', 'aceite de aguacate|al gusto'],
  ['Corta la pechuga de pavo (o pollo) en cubos de 2‑3 cm y marínala 10 min con los dientes de ajo triturados, sal y pimienta; reserva.', 'Pela y corta la batata cocida en cubos pequeños, luego hiérvela en una olla con agua y sal a fuego medio hasta que esté tierna pero firme, unos 6‑8 min; escúrrela y reserva.', 'En una sartén grande calienta una cucharada de aceite de aguacate a fuego medio; sofríe la cebolla y el pimentón picados junto con los ramitos de coliflor hasta que estén ligeramente dorados, 5‑6 min.', 'Añade al sartén curry en polvo, comino, ralladura de limón, sal y pimienta al gusto; remueve 1‑2 min para que liberen sus aromas.', 'Vierte la leche de coco, incorpora la batata y el pavo marinados; cocina a fuego medio‑bajo 8‑10 min, removiendo ocasionalmente, hasta que el pavo esté cocido y la salsa espese ligeramente.', 'Apaga el fuego, espolvorea cilantro picado y sirve caliente, acompañando con arroz o quinoa si lo deseas.'],
- ['tradicional', 'alto en proteína', 'vegetariano'], 500, 40, 30, 40, 20, 5, 5, '/assets/img/recetas/005-pavo-al-curry-con-batata-especiada.jpeg'],
+ ['tradicional', 'alto en proteína'], 500, 40, 30, 40, 20, 5, 5, '/assets/img/recetas/005-pavo-al-curry-con-batata-especiada.jpeg'],
 
 ['Pescado al limón con crema de pistachos', 'almuerzo',
  ['pescado|6 onz', 'limón|2', 'pistachos|½ puño', 'leche de almendra|¼ taza', 'queso parmesano|1 cda', 'sal|al gusto', 'pimienta|al gusto', 'aceite de aguacate|1 cda'],
@@ -2319,7 +2319,7 @@ return [
  ['En una sartén a fuego medio, saltea los champiñones hasta que suelten su jugo y se doren ligeramente, unos 5‑7 min.', 'Mientras tanto, asa el diente de ajo envuelto en papel aluminio a 200°C durante 15 min o hasta que esté tierno y fragante.', 'Transfiere los champiñones, el ajo asado y la crema de coco a una licuadora; añade sal y pimienta al gusto.', 'Procesa a alta velocidad hasta obtener una salsa lisa; si queda muy espesa, agrega una cucharada de agua caliente.', 'Vierte la crema en una cacerola y caliéntala a fuego bajo 3‑4 min, removiendo constantemente, sin que llegue a hervir.', 'Sirve caliente como acompañamiento o base para platos principales.'],
  ['vegetariano', 'ligero'], 270, 6, 15, 12, 22, 3, 4, '/assets/img/recetas/111-crema-de-hongos-y-ajo-asado.jpeg'],
 
-['Dip de queso crema y ciboulette', 'almuerzo',
+['Dip de queso crema y ciboulette', 'snack',
  ['queso crema|½ taza', 'ciboulette|1 cucharada', 'jugo de limón|1 cucharada'],
  ['Coloca el queso crema a temperatura ambiente en un bol mediano y, con una espátula, suavízalo hasta que quede sin grumos.', 'Añade la cucharada de ciboulette picado y la cucharada de jugo de limón; mezcla enérgicamente hasta que el cilantro esté bien distribuido y la mezcla adquiera una consistencia cremosa.', 'Sazona con una pizca de sal y, si lo deseas, una pizca de pimienta negra recién molida; prueba y ajusta el nivel de acidez añadiendo unas gotas más de limón si es necesario.', 'Transfiere el dip a un recipiente de presentación, cubre con film y refrigera al menos 15 minutos para que los sabores se integren.', 'Sirve frío como acompañamiento de bagels, tostadas o vegetales crudos.'],
  ['ligero', 'rápido'], 126, 4, 5, 5, 10, 4, 1, '/assets/img/recetas/112-dip-de-queso-crema-y-ciboulette.jpeg'],
@@ -2389,22 +2389,22 @@ return [
  ['En un bol, combina la harina de almendras, el huevo, la sal y el aceite de oliva; bate hasta obtener una masa homogénea.', 'Extiende la masa sobre una superficie ligeramente enharinada con un rodillo hasta que quede fina, de unos 2 mm de grosor.', 'Corta la masa en tiras finas con un cuchillo o cortador de pasta.', 'Calienta agua con sal en una olla hasta que hierva; agrega las tiras de fideos y cocina por 3 minutos, o hasta que floten y estén tiernos.', 'Escurre los fideos y sirve inmediatamente, acompañados de tu salsa o condimento favorito.'],
  ['sin gluten', 'económico'], 295, 10, 40, 30, 15, 2, 5, '/assets/img/recetas/159-fideos-de-harina-de-almendras.jpeg'],
 
-['Guacamole con un toque de lima', 'almuerzo',
+['Guacamole con un toque de lima', 'snack',
  ['palta|2', 'jugo de lima|1', 'cebolla morada|½', 'tomate|½', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pela y deshuesa las 2 paltas maduras.', 'En un tazón grande, pisa las paltas con un tenedor hasta obtener una textura suave.', 'Agrega el jugo de 1 lima, la ½ cebolla morada picada y el ½ tomate picado al tazón.', 'Mezcla todos los ingredientes hasta que estén bien combinados.', 'Agrega sal y pimienta al gusto, y mezcla nuevamente.', 'Prueba y ajusta la sazón si es necesario.', 'Cubre y refrigera el guacamole por al menos 30 minutos para que los sabores se mezclen.'],
  ['vegetariano', 'ligero'], 246, 3, 15, 18, 18, 5, 4, '/assets/img/recetas/105-guacamole-con-un-toque-de-lima.jpeg'],
 
-['Hummus clásico de garbanzos', 'almuerzo',
+['Hummus clásico de garbanzos', 'snack',
  ['garbanzos|1 taza', 'tahini|1 cucharada', 'jugo de limón|1 cucharada', 'ajo|1 diente', 'aceite de oliva|1 cucharada', 'sal|al gusto'],
  ['Coloca los garbanzos cocidos, el tahini, el jugo de limón, el diente de ajo, el aceite de oliva y la sal en el vaso de una licuadora o procesador de alimentos.', 'Procesa a velocidad media hasta obtener una mezcla homogénea y cremosa, deteniéndote para raspar los lados cuando sea necesario.', 'Prueba y ajusta la sal o el jugo de limón según tu preferencia.', 'Sirve el hummus en un plato, haciendo un pequeño surco en la superficie y vertiendo un chorrito de aceite de oliva extra virgen.', 'Decora con un toque de pimentón dulce o paprika si lo deseas y acompaña con pan de pita, verduras crudas o palitos de zanahoria.'],
  ['tradicional'], 304, 10, 15, 30, 16, 5, 5, '/assets/img/recetas/103-hummus-clasico-de-garbanzos.jpeg'],
 
-['Hummus de remolacha y comino', 'almuerzo',
+['Hummus de remolacha y comino', 'snack',
  ['garbanzo|1 taza', 'remolacha|½', 'tahini|1 cucharada', 'comino|½ cucharadita', 'limón|½', 'aceite de oliva|1 cucharada'],
  ['En el vaso de la licuadora, combina los garbanzos cocidos, la remolacha cocida, el tahini, el comino, el jugo de limón y el aceite de oliva.', 'Procesa a velocidad media hasta que la mezcla quede suave y homogénea, raspando los lados cuando sea necesario para asegurar una textura uniforme.', 'Prueba y ajusta la sal o el jugo de limón según tu gusto.', 'Sirve el hummus en un plato, creando un surco en la superficie y añadiendo un chorrito de aceite de oliva extra virgen.', 'Decora con semillas de sésamo tostado o un poco de pimentón ahumado y acompaña con pan de pita o bastones de verduras.'],
  ['ligero', 'vegetariano', 'sin gluten'], 233, 8, 15, 30, 9, 5, 6, '/assets/img/recetas/106-hummus-de-remolacha-y-comino.jpeg'],
 
-['Hummus de zapallo asado y cúrcuma', 'almuerzo',
+['Hummus de zapallo asado y cúrcuma', 'snack',
  ['zapallo|1 taza', 'garbanzo|½ taza', 'tahini|1 cucharada', 'cúrcuma|½ cucharadita', 'limón|½', 'sal|al gusto', 'pimienta|al gusto'],
  ['En la licuadora, coloca el zapallo asado, los garbanzos cocidos, el tahini, la cúrcuma, el jugo de limón, la sal y la pimienta al gusto.', 'Procesa a velocidad media hasta obtener una crema suave y homogénea, deteniéndote para raspar los lados cuando sea necesario.', 'Prueba y ajusta la sal o la pimienta según tu preferencia.', 'Sirve el hummus en un plato, haciendo un surco en la superficie y vertiendo un chorrito de aceite de oliva extra virgen.', 'Decora con un poco de cúrcuma en polvo o cilantro fresco picado y acompaña con pan de pita o bastones de zanahoria.'],
  ['ligero', 'vegetariano', 'sin gluten'], 212, 7, 15, 28, 8, 4, 5, '/assets/img/recetas/104-hummus-de-zapallo-asado-y-curcuma.jpeg'],
@@ -2477,7 +2477,7 @@ return [
 ['Pan de centeno sin gluten', 'almuerzo',
  ['harina de centeno|1 taza', 'semilla de girasol|½ taza', 'bicarbonato de sodio|1 cucharadita', 'agua|1 taza', 'rebanada|10 unidades'],
  ['En un recipiente, mezcla la harina de centeno sin gluten, las semillas de girasol y el bicarbonato de sodio.', 'Agrega el agua poco a poco, revolviendo con una cuchara de madera hasta que la masa quede homogénea y sin grumos.', 'Cubre la masa con film transparente y deja reposar 10 min para que el bicarbonato actúe y la masa se asiente.', 'Precalienta el horno a 180 °C y engrasa una bandeja de horno o coloca papel vegetal.', 'Extiende la masa sobre la bandeja con una espátula, logrando un grosor de 1 cm.', 'Hornea 45 min o hasta que la superficie esté dorada y al golpear suene a hueco.', 'Deja enfriar 10 min antes de cortar en 10 rebanadas.'],
- ['sin gluten', 'vegetariano'], 168, 5, 50, 28, 4, 2, 3, '/assets/img/recetas/146-pan-de-centeno-sin-gluten.jpeg'],
+ ['vegetariano'], 168, 5, 50, 28, 4, 2, 3, '/assets/img/recetas/146-pan-de-centeno-sin-gluten.jpeg'],
 
 ['Pan de garbanzo sin harina', 'almuerzo',
  ['garbanzo|1 taza', 'huevo|2', 'aceite de oliva|1 cucharada', 'polvo de hornear|½ cucharadita', 'sal|al gusto'],
@@ -2529,7 +2529,7 @@ return [
  ['En un bol grande, combina la harina de arroz integral, el huevo, el aceite de oliva y la sal.', 'Mezcla con las manos o una cuchara de madera hasta que la masa quede homogénea y firme, sin grumos.', 'Coloca la masa sobre una superficie ligeramente enharinada y estírala con un rodillo hasta obtener un grosor de 2‑3 mm.', 'Corta la lámina con un cortador o cuchillo en tiras finas de 1 cm de ancho.', 'Lleva a ebullición una olla grande con agua salada y agrega las tiras de pasta.', 'Cocina 3 minutos, removiendo ocasionalmente, hasta que la pasta flote y esté al dente.', 'Escurre y sirve inmediatamente, acompañada de tu salsa favorita.'],
  ['sin gluten'], 196, 6, 40, 25, 8, 2, 3, '/assets/img/recetas/165-pasta-de-harina-de-arroz-integral.jpeg'],
 
-['Pesto de albahaca y almendras', 'almuerzo',
+['Pesto de albahaca y almendras', 'snack',
  ['albahaca|1 taza', 'almendra|¼ taza', 'aceite de oliva|¼ taza', 'ajo|1 diente', 'limón|½', 'sal|al gusto', 'frasco|1'],
  ['Lava y seca las hojas de albahaca fresca.', 'Tuesta ligeramente las almendras en una sartén sin aceite hasta que desprendan aroma.', 'Coloca la albahaca, las almendras tostadas, el diente de ajo, el jugo de limón y la sal en un procesador de alimentos.', 'Procesa a velocidad media hasta obtener una pasta homogénea, añadiendo el aceite de oliva poco a poco hasta alcanzar la consistencia deseada.', 'Prueba y ajusta la sal o el jugo de limón según tu preferencia.', 'Sirve el pesto sobre pasta, pizza o como acompañamiento de carnes y verduras.'],
  ['vegetariano', 'ligero'], 296, 6, 5, 5, 28, 2, 2, '/assets/img/recetas/107-pesto-de-albahaca-y-almendras.jpeg'],
@@ -2564,12 +2564,12 @@ return [
  ['Calienta el aceite de oliva en una sartén grande a fuego medio. Añade la cebolla picada y sofríe 3‑4 minutos hasta que esté transparente.', 'Incorpora el ajo picado y cocina 30 segundos más, removiendo constantemente para evitar que se queme.', 'Agrega los champiñones en rodajas y cocina 5 minutos, removiendo, hasta que suelten su jugo y empiecen a dorarse.', 'Añade la quinoa y revuelve 1 minuto para que se impregne de los aromáticos.', 'Vierte el caldo de verduras, lleva a ebullición, reduce el fuego a medio-bajo y cocina tapado 15‑20 minutos, o hasta que la quinoa esté tierna y el líquido se haya absorbido.'],
  ['tradicional', 'vegetariano'], 435, 15, 30, 60, 15, 5, 5, '/assets/img/recetas/092-risotto-de-quinoa-con-champinones.jpeg'],
 
-['Salsa criolla argentina', 'almuerzo',
+['Salsa criolla argentina', 'snack',
  ['tomate|1', 'cebolla morada|½', 'pimiento rojo|½', 'aceite de oliva|2 cucharadas', 'limón|½', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pica el tomate, la cebolla morada y el pimiento rojo en cubos pequeños y colócalos en un tazón grande.', 'Añade las dos cucharadas de aceite de oliva y el jugo de medio limón, mezclando bien para que los ingredientes se impregnen con el aceite y el ácido cítrico.', 'Sazona con sal y pimienta al gusto, ajustando la cantidad según tu preferencia de sabor.', 'Cubre el tazón con film transparente y refrigera durante al menos 10 minutos para que los sabores se integren y la salsa adquiera una textura más homogénea.', 'Antes de servir, revuelve suavemente la salsa para redistribuir los ingredientes y verifica la sazón, añadiendo más sal o pimienta si es necesario.'],
  ['ligero', 'vegetariano'], 120, 2, 10, 10, 8, 5, 2, '/assets/img/recetas/108-salsa-criolla-argentina.jpeg'],
 
-['Salsa de yogur con eneldo', 'almuerzo',
+['Salsa de yogur con eneldo', 'snack',
  ['yogur|½ taza', 'eneldo|1 cucharada', 'limón|½', 'sal|al gusto', 'pimienta|al gusto'],
  ['Vierte la taza de yogur natural en un tazón mediano, asegurándote de que esté a temperatura ambiente para evitar grumos al mezclar.', 'Incorpora la cucharada de eneldo fresco picado, distribuyéndolo uniformemente por todo el yogur.', 'Añade el jugo de medio limón, que aportará acidez y ayudará a equilibrar la riqueza del yogur.', 'Sazona con sal y pimienta al gusto, mezclando con una cuchara de madera hasta que la salsa quede homogénea.', 'Cubre el tazón con film transparente y refrigera al menos 30 minutos antes de servir para que el eneldo libere sus aromas y la salsa se enfríe.'],
  ['ligero', 'vegetariano'], 73, 4, 5, 3, 5, 2, 1, '/assets/img/recetas/109-salsa-de-yogur-con-eneldo.jpeg'],
@@ -2612,7 +2612,7 @@ return [
 ['Ensalada fresca con pescado dorado', 'almuerzo',
  ['filete de pescado|120 g', 'lechuga|50 g', 'repollo morado|50 g', 'zanahoria|25 g', 'tomate cherry|30 g', 'aceite de oliva|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto', 'pimentón|1/2 cucharadita', 'jugo de limón|1 cucharada'],
  ['Sazona los filetes de pescado blanco con sal, pimienta y una pizca de pimentón; deja reposar 5 minutos.', 'Calienta una sartén con un chorrito de aceite de oliva a fuego medio‑alto y dora los filetes 3‑4 minutos por cada lado, hasta que estén dorados por fuera y aún jugosos por dentro.', 'En un bowl, combina lechuga, repollo morado rallado, zanahoria rallada y tomates cherry; revuelve ligeramente.', 'Prepara el aderezo mezclando 2 cucharadas de aceite de oliva, 1 cucharada de jugo de limón, sal y pimienta; bate hasta que quede brillante y ligeramente espeso.', 'Vierte el aderezo sobre la ensalada y mezcla suavemente.', 'Coloca los filetes dorados encima o al lado de la ensalada y sirve de inmediato.'],
- ['ligero', 'vegetariano'], 230, 20, 12, 15, 10, 5, 4, '/assets/img/recetas/ensalada-fresca-con-pescado-dorado.jpeg'],
+ ['ligero'], 230, 20, 12, 15, 10, 5, 4, '/assets/img/recetas/ensalada-fresca-con-pescado-dorado.jpeg'],
 
 ['Ensalada power de pollo, huevo y vegetales', 'almuerzo',
  ['pechuga de pollo|120 g', 'huevo|1 unidad', 'espinaca|50 g', 'tomate cherry|30 g', 'cebolla morada|25 g', 'aceite de oliva|1 cucharadita', 'limón|1 cucharada', 'mostaza|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
@@ -2622,7 +2622,7 @@ return [
 ['Aguacate relleno de atún', 'almuerzo',
  ['atún|3 tazas', 'cebolla morada|½ taza', 'apio|½ taza', 'perejil|¼ taza', 'lechuga|1 taza', 'mayonesa|¼ taza', 'mostaza|1 cucharada', 'sal|al gusto', 'pimienta|al gusto', 'aguacate|al gusto', 'jitomate cherry|al gusto'],
  ['En un tazón grande, mezcla el atún enlatado escurrido, la cebolla morada picada, el apio picado, el perejil picado y la lechuga en tiras delgadas.', 'Agrega la mayonesa Balance con Aceite de oliva y la mostaza al gusto a la mezcla de atún. Revuelve hasta que todos los ingredientes estén bien integrados.', 'Sazona con sal y pimienta al gusto, y ajusta la cantidad de mostaza según preferencia.', 'Corta los aguacates por la mitad y retira el carozo. Corta un poco de la parte inferior de cada mitad para crear una base estable.', 'Rellena cada mitad de aguacate con la mezcla de atún preparada, colocando una cama de lechuga debajo de cada aguacate relleno para decorar.', 'Decora con jitomate cherry picado encima de cada aguacate relleno y sirve fresco.'],
- ['ligero', 'alto en proteína'], 200, 17, 15, 3, 13, 5, 3, '/assets/img/recetas/075-aguacate-relleno-de-atun.jpeg'],
+ ['ligero', 'alto en proteína'], 208, 17, 15, 5, 13, 5, 3, '/assets/img/recetas/075-aguacate-relleno-de-atun.jpeg'],
 
 ['Albóndigas de verduras', 'almuerzo',
  ['coliflor|450 g', 'cebolla|1 unidad', 'seta|4 unidades', 'zanahoria|2 unidades', 'queso|80 g', 'ajo|1 diente', 'huevo|1 unidad', 'harina|al gusto', 'arroz|150 g', 'sal|al gusto'],
@@ -2659,10 +2659,10 @@ return [
  ['Precalienta el horno a 200 °C y engrasa una bandeja para hornear.', 'En una sartén, calienta el aceite de aguacate a fuego medio; sofríe la cebolla picada hasta que esté transparente, unos 3‑4 min.', 'Añade las verduras congeladas y cocina, removiendo, hasta que se descongelen y el líquido se evapore, aproximadamente 5‑6 min.', 'En un recipiente, mezcla la crema media con el queso parmesano rallado y la sal con cebolla en polvo; bate hasta que la salsa quede homogénea.', 'Incorpora la salsa a la sartén con las verduras y cocina 5‑6 min más, hasta que la salsa espese y las verduras estén tiernas.', 'Corta las calabazas en mitades a lo largo y retira el centro con una cuchara, creando un hueco de unos 5 cm de profundidad.', 'Rellena cada calabaza con la mezcla de verduras y cúbrela con queso manchego rallado.', 'Coloca las calabazas rellenas en la bandeja y hornea 15‑20 min, o hasta que el queso se dore ligeramente.'],
  ['vegetariano', 'ligero'], 250, 13, 35, 15, 15, 5, 4, '/assets/img/recetas/084-calabacitas-rellenas-de-verduras.jpeg'],
 
-['Camarrones con coco', 'almuerzo',
+['Camarones con coco', 'almuerzo',
  ['coco|1/4 taza', 'pan molido|1/4 taza', 'sal|1/2 cucharadita', 'leche de coco|1/2 taza', 'camarón|12 unidades'],
  ['Precalienta el horno a 190 °C y engrasa una bandeja con spray de aceite.', 'En un procesador de alimentos, combina el coco sin azúcar, el pan molido sin azúcar y la sal; pulsa hasta obtener una mezcla uniforme y ligeramente arenosa.', 'En un tazón aparte, bate la leche de coco hasta que esté bien mezclada.', 'Sumérgete cada camarón pelado y desvenado primero en la leche de coco, asegurándote de cubrirlo por completo, y luego pásalo por la mezcla de coco y panko, presionando ligeramente para que se adhiera.', 'Coloca los camarones empanizados sobre la bandeja preparada, dejando espacio entre ellos.', 'Rocía ligeramente la parte superior de cada camarón con spray de aceite para favorecer el dorado.', 'Hornea durante 10‑15 min, o hasta que los camarones estén dorados y crujientes.', 'Retira del horno, deja reposar 2 min y sirve caliente con una salsa de tu elección.'],
- ['alto en proteína', 'sin gluten'], 270, 24, 25, 17, 12, 1, 1, '/assets/img/recetas/119-camarrones-con-coco.jpeg'],
+ ['alto en proteína'], 270, 24, 25, 17, 12, 1, 1, '/assets/img/recetas/119-camarrones-con-coco.jpeg'],
 
 ['Chips vegetales crujientes', 'almuerzo',
  ['camote|1 unidad', 'papa|1 unidad', 'zanahoria|1 unidad', 'aceite de aerosol|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'paprika|al gusto', 'aceite de aguacate|al gusto'],
@@ -2784,12 +2784,12 @@ return [
  ['Precalienta el horno a 200°C/180°C con ventilador/Gas.', 'Saca 1 cucharada de pulpa de cada mitad de aguacate, sacándola de manera uniforme sobre la superficie en lugar de hacia abajo.', 'Deja de lado las mitades de aguacate. (Utiliza las 4 cucharadas de pulpa de aguacate retirada para hacer guacamole o simplemente sazónala con jugo de limón y aceite de oliva y úsala para untar en pan tostado).', 'Trabajando con cada mitad de aguacate reservada por turno, utiliza un ramekin o una taza para mantener la mitad de aguacate estable y con el lado cortado hacia arriba mientras agregas el relleno.', 'Sazona con sal y pimienta antes de agregar 1 cucharadita de crema a la mitad de aguacate. Rompe un huevo dentro de la mitad.', 'Cubre con un cuarto de tomate, queso y cebolla de verdeo, y una pizca de copos de chile.', 'Repite para las otras mitades de aguacate, luego transfiere los ramekins a una bandeja para hornear, ¡asegurándote de no derramar ningún huevo!', 'Alternativamente, puedes equilibrar los aguacates en un molde para muffins.', 'Hornea en el horno en el estante medio durante aproximadamente 10-12 minutos o hasta que las claras estén apenas cocidas. Sirve inmediatamente.'],
  ['alto en proteína', 'vegetariano'], 280, 7, 20, 7, 25, 3, 4, 'https://images.pexels.com/photos/31823015/pexels-photo-31823015.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
-['Hummurs', 'almuerzo',
+['Hummus', 'almuerzo',
  ['garbanzos|2 latas', 'aceite de oliva|1 cucharada', 'jugo de limón|¼ taza', 'ajo|2 dientes', 'pimienta negra|¼ cucharadita', 'pimentón|¼ cucharadita', 'tahini|3 cucharadas', 'perejil|2 cucharadas'],
  ['Enjuaga y escurre bien los garbanzos; reserva 1/4 de taza del líquido de cocción y desecha el resto', 'Coloca los garbanzos en la licuadora o procesador, agrega el aceite de oliva, jugo de limón, ajo picado, pimienta negra, pimentón, tahini y el perejil; procesa hasta obtener una masa homogénea', 'Con la máquina en marcha, incorpora el líquido reservado cucharada a cucharada hasta lograr una textura cremosa y espesa, similar a un puré suave', 'Prueba y ajusta de sal o limón si es necesario; transfiere a un recipiente, cubre con film y refrigera si no se sirve de inmediato'],
  ['vegetariano', 'sin gluten'], 150, 4, 15, 14, 8, 3, 4, '/assets/img/recetas/112-hummurs.jpeg'],
 
-['Hummus de mantequilla de mani', 'almuerzo',
+['Hummus de mantequilla de mani', 'snack',
  ['garbanzos|2 tazas', 'agua|1 taza', 'mantequilla de maní en polvo|½ taza', 'mantequilla de maní natural|¼ taza', 'stevia|2 cucharadas', 'extracto de vainilla|1 cucharadita'],
  ['Enjuaga y escurre los garbanzos; colócalos en el vaso del procesador de alimentos junto con el agua', 'Añade la mantequilla de maní en polvo, la mantequilla de maní natural, la stevia (o fruta del monje) y el extracto de vainilla; procesa a alta velocidad hasta obtener una crema lisa sin grumos', 'Detén el procesador, raspa los lados y vuelve a procesar unos segundos para asegurar una textura ultra suave', 'Transfiere el hummus a un recipiente hermético, deja enfriar a temperatura ambiente y luego refrigera; conservar hasta 7 días'],
  ['vegetariano', 'sin gluten'], 220, 8, 10, 19, 12, 2, 4, '/assets/img/recetas/120-hummus-de-mantequilla-de-mani.jpeg'],
@@ -2837,7 +2837,7 @@ return [
 ['Pepinos rellenos', 'almuerzo',
  ['pollo|2 tazas', 'apio|1/4 taza', 'cebolla morada|1/8 taza', 'elote amarillo|1/4 taza', 'perejil|1/4 taza', 'curry en polvo|1 cucharada', 'cebollín|1 cucharada', 'queso feta|1/4 taza', 'jugo de limón|1 cucharada', 'yogur griego|1/2 taza', 'polvo de ajo|1 cucharada', 'mostaza|1 cucharada', 'sal|1 cucharada', 'pimienta|1 pizca', 'pepino|2', 'aceite de oliva|2 cucharadas', 'chile serrano|1', 'rábano|1', 'cebolla cambray|1', 'cilantro fresco|al gusto'],
  ['Para la ensalada de pollo, en un bowl mezcla todos los ingredientes de la ensalada, sazona a tu gusto con sal y pimienta m ma y reserva.', 'Con ayuda de un pelador, retira la cáscara de los pepinos y córtalos a la mitad.', 'Con una cuchara ahuécalos, baña con un poco de aceite de oliva, sazona con sal y pimienta a tu gusto y rellena con la ensalada de pollo.', 'Decora con las rodajas de chile serrano, la cebolla cambray, el rábano y las hojas de cilantro. Sirve.'],
- ['vegetariano', 'ligero'], 210, 18, 20, 12, 12, 6, 5, '/assets/img/recetas/046-pepinos-rellenos.jpeg'],
+ ['ligero'], 210, 18, 20, 12, 12, 6, 5, '/assets/img/recetas/046-pepinos-rellenos.jpeg'],
 
 ['Perchuga con patata', 'almuerzo',
  ['pechuga de pollo|3 medias', 'panceta fresca|1 loncha', 'patata|2', 'brócoli|1 pequeño', 'champiñón|8', 'ajo|1 diente', 'mantequilla|15 g', 'vino blanco|150 ml', 'aceite de oliva virgen extra|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'cebollino|15 hojas', 'perejil|al gusto'],
@@ -2877,7 +2877,7 @@ return [
 ['Pizza blanca con salchicha', 'almuerzo',
  ['salchicha|2 unidades', 'queso ricotta|1 taza', 'ajo en polvo|1/4 cucharadita', 'pan pita integral|1 unidad', 'pimiento rojo|1 unidad', 'cebolla|1 unidad', 'condimento italiano|1/2 cucharadita', 'pimienta|1/4 cucharadita', 'hojuelas de pimiento rojo|1/4 cucharadita', 'queso mozzarella|1/2 taza', 'rúcula o espinaca bebé|2 tazas'],
  ['Precalienta el horno a 450°. En una sartén grande, cocina y desmenuza las salchichas a fuego medio-alto hasta que ya no estén rosadas, de 4 a 6 minutos.', 'Mezcla el queso ricotta y el ajo en polvo.', 'Coloca el pan pita integral en una bandeja para hornear; extiende la mezcla de queso ricotta sobre ella.', 'Agrega la salchicha, el pimiento rojo y la cebolla; espolvorea con las especias y luego con el queso mozzarella.', 'Hornea en la rejilla inferior del horno hasta que el borde esté ligeramente dorado y el queso esté derretido, de 8 a 10 minutos. Decora con rúcula por encima.'],
- ['rápido', 'vegetariano'], 380, 31, 30, 31, 15, 6, 5, '/assets/img/recetas/061-pizza-blanca-con-salchicha.jpeg'],
+ ['rápido'], 380, 31, 30, 31, 15, 6, 5, '/assets/img/recetas/061-pizza-blanca-con-salchicha.jpeg'],
 
 ['Pizza de 2 quesos', 'almuerzo',
  ['pan pita integral|1 unidad', 'aceite vegetal|al gusto', 'aceite de oliva|2 cucharadas', 'queso ricota|1/2 taza', 'albahaca seca|1/2 cucharadita', 'cebolla|1 unidad', 'ajo|2 dientes', 'sal|1/4 cucharadita', 'queso mozzarella|4 onzas', 'champiñones|2 tazas', 'pimiento rojo|1 unidad'],
@@ -2919,17 +2919,17 @@ return [
  ['Precalienta el horno a 375° F (190°C). Coloca el salmón en una bandeja para hornear de 15x10x1 pulgadas previamente engrasada.', 'Rocía con aceite; espolvorea con ralladura de limón, sal, pimienta y 2 cucharadas de albahaca; cubre con rodajas de limón.', 'Hornea de 15 a 20 minutos o hasta que el pescado se deshaga fácilmente con un tenedor.', 'Si deseas, agrega albahaca adicional por encima.'],
  ['alto en proteína', 'sin gluten'], 290, 31, 20, 5, 17, 1, 1, '/assets/img/recetas/053-salmon-con-limon.jpeg'],
 
-['Salsa de espinaca con champiñones', 'almuerzo',
+['Salsa de espinaca con champiñones', 'snack',
  ['espinaca|280 g', 'crema agria|1 1/2 taza', 'mayonesa|1 taza', 'champiñón|1 taza', 'cebolla verde|3 cebolletas'],
  ['En un bol mediano, combina todos los ingredientes.', 'Mezcla bien, cubre y lleva al refrigerador.', 'Sirve frío con una variedad de vegetales crudos.'],
  ['ligero', 'vegetariano'], 150, 3, 15, 9, 12, 3, 3, '/assets/img/recetas/085-salsa-de-espinaca-con-champinones.jpeg'],
 
-['Salsa de fritas con nachos dulces', 'almuerzo',
+['Salsa de fritas con nachos dulces', 'snack',
  ['tortilla de maíz|8', 'aceite de oliva|1 cucharada', 'stevia|1 cucharada', 'canela|1/2 cucharada', 'fruta fresca|3 tazas', 'mermelada sin azúcar|2 cucharadas', 'néctar de agave o stevia|1 cucharada', 'jugo de naranja|2 cucharadas'],
  ['Precalienta el horno a 350 °F (175 °C). Corta cada tortilla en 8 trozos triangulares.', 'Coloca las piezas sobre dos bandejas de horno. Asegúrate de que no se superpongan.', 'Rocía los trozos de tortilla con aceite de oliva.', 'En un bol pequeño, coloca el agua y la canela.', 'Espolvorea de manera uniforme sobre los trozos de tortilla.', 'Hornéalos durante 10 a 12 minutos o hasta que los trozos estén crocantes.', 'Colócalos sobre una rejilla y déjalos enfriar. Corta las frutas en cubitos. Mezcla suavemente las frutas en un bol.', 'En otro bol, bate la mermelada, néctar de agave o stevia en gotas y el jugo de naranja.', 'Vierte esta mezcla sobre la fruta en cubos. Mezcla suavemente.', 'Cubre el bol con un papel film plástico y refrigera durante 2 a 3 horas.', 'Sírvelas como salsa o sobre los nachos de canela.'],
  ['ligero', 'vegetariano'], 140, 1, 15, 21, 6, 21, 5, '/assets/img/recetas/091-salsa-de-fritas-con-nachos-dulces.jpeg'],
 
-['Salsa de mango', 'almuerzo',
+['Salsa de mango', 'snack',
  ['mango|1', 'pimiento verde|1/4 taza', 'cebollín|1', 'limón verde|1', 'almendra|10'],
  ['Pele y pique el mango; asegúrese de quitar la semilla.', 'Corte el pimiento y el cebollín en trozos pequeños. Mezcle todos los ingredientes.'],
  ['ligero', 'vegetariano'], 120, 1, 15, 15, 6, 14, 3, 'https://images.pexels.com/photos/34520947/pexels-photo-34520947.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
@@ -2944,10 +2944,10 @@ return [
  ['Con ayuda de un tenedor tritura el aguacate y agrega el chile serrano, la cebolla, el jitomate, el cilantro, sazona con limón sal y pimienta. Reserva.', 'En un bowl mezcla el aceite de oliva con el ajo, y el orégano, con ayuda de una brocha, barniza los hongos portobello por todos lados.', 'Calienta una parrilla a fuego medio coloca los hongos y cocina 2 minutos por cada lado. En la misma parrilla, coloca el pollo, barniza con el resto del aceite de oliva con orégano y cocina hasta que esté cocido.', 'Corta en tiras. Unta un poco de guacamole en un hongo portobello, agrega el pollo parrillado, espinacas, jitomate y tapa con otro portobello. Sirve con calabacitas asadas.'],
  ['alto en proteína'], 250, 18, 35, 9, 16, 7, 4, '/assets/img/recetas/127-sandwich-de-portabello-y-pollo.jpeg'],
 
-['Sopa de acelga con queso y aguacte', 'almuerzo',
+['Sopa de acelga con queso y aguacate', 'almuerzo',
  ['aceite de aguacate|1 cucharada', 'cebolla|2 cucharadas', 'ajo|1 cucharada', 'acelga|2 tazas', 'calabaza|1', 'puré de tomate|1 taza', 'agua|1 litro', 'chile pasilla|2', 'concentrado de tomate con pollo|2 cubos', 'queso oaxaca|250 g'],
  ['Calienta el aceite, fríe la cebolla y el ajo hasta que cambien de color.', 'Agrega las acelgas, las espinacas, la calabaza y cocina por 5 minutos; reserva.', 'Licúa el puré de tomate con la mitad del agua, los chiles y el Concentrado de Tomate con Pollo, cuela.', 'Vierte lo que licuaste sobre la mezcla de acelgas, añade el agua restante y cocina por 10 minutos.', 'Sirve la sopa con un poco de queso Oaxaca y ofrece.'],
- ['vegetariano', 'ligero'], 250, 10, 30, 20, 12, 8, 5, '/assets/img/recetas/096-sopa-de-acelga-con-queso-y-aguacte.jpeg'],
+ ['ligero'], 250, 10, 30, 20, 12, 8, 5, '/assets/img/recetas/096-sopa-de-acelga-con-queso-y-aguacte.jpeg'],
 
 ['Sopa de calabacín y cebolla', 'almuerzo',
  ['queso crema|50 g', 'mantequilla|10 g', 'cebolla|1', 'calabacín|2', 'agua|250 ml'],
@@ -2982,7 +2982,7 @@ return [
 ['Tacos de lechuga con pescado', 'almuerzo',
  ['filete de pescado|4 unidades', 'zanahoria|1 unidad', 'jícama|1 unidad', 'col morada|1/2 taza', 'granos de elote amarillo|1/4 taza', 'yogurt griego|1/2 taza', 'lechuga|1 unidad'],
  ['En una sartén sin aceite, precalentada a fuego bajo durante 1 minuto, coloca el filete; tapa y cocina a fuego bajo durante 4 minutos por cada lado., corta los filetes en tiras y reserva.', 'Para la ensalada, mezcla la zanahoria con la jícama, la col y el elote; reserva.', 'Toma una hoja de lechuga, unta un poco de yogurt, coloca tiras de pescado y un poco de ensalada.'],
- ['ligero', 'vegetariano'], 300, 30, 15, 30, 5, 4, 3, '/assets/img/recetas/090-tacos-de-lechuga-con-pescado.jpeg'],
+ ['ligero'], 300, 30, 15, 30, 5, 4, 3, '/assets/img/recetas/090-tacos-de-lechuga-con-pescado.jpeg'],
 
 ['Tacos saludables', 'almuerzo',
  ['cebolla|1 unidad', 'pimiento verde|2 unidades', 'pimiento rojo|2 unidades', 'cilantro|1 taza', 'aguacate|1 unidad', 'tortilla|12 unidades', 'aceite vegetal|al gusto', 'salsa de tomate|1 ½ taza', 'tomate|1 taza', 'cebolla|⅓ taza', 'ajo|½ diente', 'cilantro|2 cucharaditas', 'ají|⅓ cucharadita', 'jalapeño|al gusto', 'jugo de limón|½ cucharadita', 'comino|una pizca'],
@@ -3012,19 +3012,19 @@ return [
 ['Tostada de salmón con huacamole', 'almuerzo',
  ['pan multigrano|4 rebanadas', 'salmón ahumado|350 g', 'cebolla morada|2 unidades', 'rúcula|50 g', 'aguacate|2 unidades', 'tomate|1 unidad', 'guindilla|1 unidad', 'huevo|1 unidad', 'huevas de salmón|al gusto', 'albahaca|al gusto', 'lima|1 unidad', 'aceite de oliva|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['lavar y cortar el tomate en forma de dados. Reservar. Pelar y picar la cebolleta.', 'Trocear parte de una guindilla y cortar también en rodajas.', 'Retirar el hueso del aguacate, extraer la pulpa y exprimir el zumo de una lima.', 'Machacar el aguacate y aliñar bien con aceite y sal.', 'Incorporar el tomate, la cebolleta, la guindilla y la albahaca.', 'Pelar la cebolla morada y cortar en juliana.', 'Aliñar la cebolla con aceite de oliva y sal, y reservar.', 'Tostar las rebanadas de pan en el horno.', 'Untar las tostadas con bastante guacamole, agregar las lonchas de salmón y espolvorear con pimienta.', 'Terminar de decorar la tostada con la cebolla morada aliñada, las huevas de salmón y un poco de aceite de oliva.'],
- ['alto en proteína', 'sin gluten'], 350, 14, 20, 18, 25, 3, 2, '/assets/img/recetas/101-tostada-de-salmon-con-huacamole.jpeg'],
+ ['alto en proteína'], 350, 14, 20, 18, 25, 3, 2, '/assets/img/recetas/101-tostada-de-salmon-con-huacamole.jpeg'],
 
 ['Vegetales salteados', 'almuerzo',
  ['aceite|1 cucharadita', 'cebolla|1 mediana', 'pimiento|1 rojo', 'pimiento|1 verde', 'jengibre|2 cucharaditas', 'champiñón|225 g', 'cebolla|1 verde', 'ajo|2 cucharaditas', 'brócoli|1', 'zanahoria|1 grande', 'mirin|1 cucharada', 'salsa|1 cucharada', 'nuez|2 cucharadas'],
  ['Calienta una sartén antiadherente a fuego medio y añade 1 tsp de aceite de sésamo.', 'Cuando el aceite esté caliente, incorpora la cebolla en rodajas, los pimientos rojo y verde, y el jengibre picado. Sofríe 2‑3 min, removiendo constantemente.', 'Añade los champiñones en rodajas, la cebolla verde y el ajo picado. Cocina 2‑3 min hasta que los champiñones comiencen a dorarse.', 'Incorpora el brócoli en ramilletes y la zanahoria en rodajas. Cubre la sartén y cocina al vapor 2‑3 min, hasta que los vegetales estén tiernos pero aún crujientes.', 'Retira la tapa y añade el mirin y la salsa de soja baja en sodio. Revuelve bien para combinar los sabores.', 'Espolvorea los marañones picados, mezcla y cocina 1 min más para que los frutos secos se tuesten ligeramente.', 'Ajusta la sazón con sal y pimienta al gusto y sirve caliente.'],
  ['vegetariano', 'ligero'], 120, 4, 20, 15, 5, 6, 5, '/assets/img/recetas/081-vegetales-salteados.jpeg'],
 
-['Zanahoriias con miel y salvia', 'almuerzo',
+['Zanahorias con miel y salvia', 'almuerzo',
  ['jugo|¼ taza', 'jugo|2 cucharadas', 'aceite|1 cucharada', 'stevia|2 ¼ cucharaditas', 'mostaza|½ cucharadita', 'especia|¼ cucharadita', 'manzana|1 mediana', 'hortaliza|8 tazas'],
  ['En un bol grande para ensalada, mezcla el jugo de manzana, el jugo de limón, el aceite, stevia o fruta del monje natural, la mostaza y las especias para tarta de manzana.', 'Añade la manzana y revuelve para cubrir.', 'Añade los vegetales de hoja verde y revuelve para mezclar justo antes de servir.'],
  ['vegetariano', 'ligero'], 80, 1, 15, 12, 3, 10, 4, '/assets/img/recetas/106-zanahoriias-con-miel-y-salvia.jpeg'],
 
-['Zanahoriias gourmet', 'almuerzo',
+['Zanahorias gourmet', 'almuerzo',
  ['zanahoria|2 tazas', 'mantequilla|2 cucharaditas', 'stevia|2 cucharadas', 'salvia|1 cucharada', 'pimienta|¼ cucharadita', 'sal|1/8 cucharadita'],
  ['Llena una olla mediana con agua y ponla a hervir.', 'Agrega zanahorias y hierve durante aproximadamente 5 minutos hasta que estén tiernas al pincharlas con un tenedor. Cuela y reserva.', 'Precalienta una sartén mediana y agrega mantequilla.', 'Una vez que se caliente la sartén y se derrita la mantequilla, agrega las zanahorias, la stevia, la salvia, la pimienta y la sal.', 'Saltea durante 3 minutos; revuelve con frecuencia. Retira del calor y sirve.'],
  ['vegetariano', 'ligero'], 80, 1, 20, 12, 4, 3, 4, '/assets/img/recetas/100-zanahoriias-gourmet.jpeg'],
@@ -3044,252 +3044,252 @@ return [
  ['Calienta el agua en una olla grande hasta que hierva.', 'Agrega el apio, el rábano, el perejil, el repollo, el pimiento verde, el ajo y el puerro. Tapa y cocina a fuego lento.', 'En otra olla, calienta el aceite de oliva y sofríe los tomates picados sin semilla ni piel hasta obtener una salsa espesa.', 'Incorpora la salsa de tomate al caldo y deja hervir unos minutos más.', 'Sazona con sal al gusto y sirve caliente.'],
  ['vegetariano', 'ligero'], 80, 1, 45, 6, 6, 4, 4, '/assets/img/recetas/070-sopa-especial.jpeg'],
 
-['7 Sabores', 'almuerzo',
+['Ensalada 7 Sabores', 'almuerzo',
  ['camarón|4-5 onzas', 'tomate|1', 'aguacate|½', 'pepino|½', 'pimentón|¼', 'cebolla|¼', 'cilantro|al gusto', 'yogur griego|2 cdas', 'aceite de oliva|1 cda', 'zumo de limón|un chorrito', 'sal|al gusto', 'pimienta|al gusto'],
  ['Para comenzar marina los camarones con un chorrito de limón, sal y pimienta.', 'Lleva al grill y cocina un par de minutos por cada lado hasta que cambien de color.', 'Retira, pica en trozos más pequeños y reserva.', 'Por otro lado, en un bowl mezcla el tomate, el aguacate, el pepino, pimenton, cebolla y cilantro; todos previamente picados en pequeños cuadritos (tratando que tengan un tamaño similar, para así darle mejor apariencia al resultado final).', 'Para el aderezo mezcla todos los ingredientes hasta integrar muy bien.', 'Luego, agrega los camarones troceados al bowl junto con el aderezo.', 'Revuelve muy bien hasta que todos los ingredientes queden impregnados.', 'Cúbrela con papel film y refrigérala durante al menos una hora antes de servir.', 'Si gustas puedes decorar con un poco más de cilantro fresco picadito al momento de servir.'],
- ['ligero', 'vegetariano'], 282, 12, 15, 18, 18, 6, 5, '/assets/img/recetas/040-7-sabores.jpeg'],
+ ['ligero'], 282, 12, 15, 18, 18, 6, 5, '/assets/img/recetas/040-7-sabores.jpeg'],
 
-['Altamar', 'almuerzo',
+['Ensalada Altamar', 'almuerzo',
  ['atún|3-4 onzas', 'huevo|1', 'arroz integral|½ taza', 'tomate|1', 'cebolla|¼', 'maíz|¼ taza', 'sal|1 pizca', 'pimienta|1 pizca', 'aceite de oliva|2 cdas', 'alcaparra|opcional', 'perejil|al gusto'],
  ['Para iniciar lleva a cocinar en una ollita con agua y sal el huevo.', 'Una vez cocido, retira deja enfriar y pela. Reserva Pica el huevo en cubos o trozos.', 'En un bowl coloca el arroz cocido. **Recuerda que las ensaladas de arroz como esta se pueden hacer con arroz que te haya sobrado del día anterior.', 'Añade la cebolla picadita, el tomate picadito, el maíz desgranado, recuerda que es mejor que todo este frío o a temperatura ambiente antes de mezclar, porque esta ensalada de atún y arroz es una ensalada fría.', 'Ahora añade el atún desmenuzado, previamente escurrido, junto con el huevo picado, aceite de oliva, sal y pimienta.', 'Revuelve bien hasta conseguir que los ingredientes se repartan de forma uniforme.', 'Prueba de sal y corrige si es necesario. Sirve y decora con el perejil picadito.'],
  ['ligero', 'alto en proteína'], 348, 28, 20, 32, 12, 4, 4, '/assets/img/recetas/016-altamar.jpeg'],
 
-['Americana Ligera', 'almuerzo',
+['Ensalada Americana Ligera', 'almuerzo',
  ['repollo morado|1 taza', 'repollo blanco|½ taza', 'zanahoria|½ unidad', 'cilantro|al gusto', 'yogur griego|2 cdas', 'mostaza|½-1 cda', 'vinagre de vino blanco|1 cda', 'aceite de oliva|1 cda', 'monk fruit|una pizca', 'semilla de mostaza|1 cda', 'sal|al gusto', 'pimienta|al gusto'],
  ['Para comenzar en una sartén a fuego medio, añadir las semillas de mostaza y saltear durante un minuto, esto con el fin de activar su sabor. Reserva.', 'Para el aderezo, en un bowl mezcla todos los ingredientes junto con las semillas de mostaza tostadas, mezcla muy bien hasta integrar. Reserva.', 'Para seguir la preparación, en un bowl añadir el repollo blanco y morado cortado en tiras delgadas, la zanahoria rallada, el cilantro picadito y el aderezo previamente preparado.', 'Mezclar todo muy bien, lleva a la nevera un par de minutos antes de servir.'],
  ['ligero', 'vegetariano'], 194, 6, 15, 20, 10, 4, 4, '/assets/img/recetas/006-americana-ligera.jpeg'],
 
-['Asiática de Pepino', 'almuerzo',
+['Ensalada Asiática de Pepino', 'almuerzo',
  ['pepino|1', 'apio|½ tallo', 'sal|una pizca', 'aceite de sésamo|1 cucharada', 'aceite de oliva|1 cda', 'coconut aminos|1 cda', 'vinagre de arroz|2 cucharadas', 'monk fruit|una pizca', 'semilla de sésamo|1 cda'],
  ['Pelamos los pepinos, quitamos las semillas y los cortamos en bastones.', 'Aparte, cortamos el apio en láminas muy finas.', 'Colocamos los pepinos en el escurridor, añadimos la sal, removemos y dejamos escurrir aproximadamente 20 minutos.', 'Calentamos una sartén sin engrasar y tostamos las semillas de sésamo hasta que se doren.', 'Hacemos una vinagreta con el aceite de sésamo, el aceite de oliva, el vinagre de arroz, coconut aminos, el monk fruit y las semillas de sésamo tostadas.', 'Pasada una hora lavamos los pepinos para eliminar la sal y dejamos que se sequen encima de papel de cocina.', 'De esta forma la ensalada de pepino asiática tomará mejor el sabor de la vinagreta.', 'Agregamos los pepinos en un bowl, añadimos el apio y vertemos la vinagreta.'],
  ['ligero', 'vegetariano'], 120, 2, 10, 10, 8, 2, 2, '/assets/img/recetas/009-asiatica-de-pepino.jpeg'],
 
-['Atardecer', 'almuerzo',
+['Ensalada Atardecer', 'almuerzo',
  ['queso cottage|2-3 cdas', 'bacon|2 lonjas', 'pan integral|1 rebanada', 'espinaca|2 puños', 'tomate|1', 'champiñón|1 taza', 'piña|2 onzas', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|2 cdas', 'vinagre de manzana|2 cdas'],
  ['Limpiamos las hojas de espinacas y colocamos en la ensaladera en la que vayamos a servir.', 'Partimos el tomate en trozos pequeños y lo añadimos a la ensaladera.', 'En una sartén colocamos a cocinar el bacon troceado, y seguidamente agregamos los champiñones con una pizca de sal. Dejamos cocinar un par de minutos. Retiramos y dejamos que se enfríe.', 'Picamos el pan en pequeños cuadritos y los tostamos levemente en la sartén donde hemos salteado los champiñones y el bacon.', 'Una vez fríos los cubos de pan los agregamos a la ensaladera junto con el bacon y los champiñones. Añadimos luego el queso troceado.', 'Para finalizar elaboramos una vinagreta con el vinagre de manzana, aceite de oliva, la piña cortada en trozos muy finos, sal y pimienta.', 'Mezclamos bien y bañamos con ella la ensalada.'],
  ['ligero', 'alto en proteína'], 322, 18, 20, 22, 18, 8, 3, '/assets/img/recetas/031-atardecer.jpeg'],
 
-['Caliente de Repollo con Manzana', 'almuerzo',
+['Ensalada Caliente de Repollo con Manzana', 'almuerzo',
  ['repollo morado|2-3 tazas', 'manzana|½', 'pasita|¼ taza', 'vinagre de manzana|2-3 cdas', 'cebolla|½', 'sal|1 pizca', 'pimienta negra|1 pizca', 'agua|1 ½ taza', 'aceite de oliva|al gusto'],
  ['Para comenzar sofreímos la cebolla cortada en juliana con un poco de aceite de oliva.', 'Dejamos que se cocine 4 minutos a fuego suave.', 'Agregamos el repollo morado cortado en tiras finas y aderezamos con sal y pimienta negra molida al gusto.', 'Dejamos que se cocine otros 4 minutos más.', 'Ahora es el momento de añadir la manzana pelada y cortada en cuadraditos pequeños.', 'Movemos bien para que se integren los sabores.', 'Luego Incorporamos el vinagre de manzana, dejamos que se evapore durante un par de minutos y añadimos el agua.', 'Cocinamos durante 15 minutos y añadimos las pasitas.', 'Dejamos cocinar 5 minutos más y retiramos del fuego. Rectificar sabores.'],
  ['ligero', 'vegetariano'], 156, 2, 10, 28, 4, 12, 4, '/assets/img/recetas/007-caliente-de-repollo-con-manzana.jpeg'],
 
-['Caponnata', 'almuerzo',
+['Ensalada Caponata', 'almuerzo',
  ['berenjena|1', 'cebolla|½', 'apio|½ rama', 'ajo|1-2 dientes', 'tomate|2 pequeños', 'alcaparra|½ cucharada', 'aceituna|½ cucharada', 'pasita|1 cucharada', 'vinagre de vino tinto|1 cucharada', 'piñón|1 puño', 'albahaca|al gusto', 'aceite de oliva|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pica la cebolla. Pela el ajo. Corta las berenjenas en cuartos a lo largo y después en rodajas. Pela los tomates y córtalos en trozos.', 'En una olla sofríe la cebolla con una pizca de sal unos 10 minutos.', 'Añade el ajo picado, las berenjenas, sal, un poco más de aceite y saltea unos 15 minutos hasta que las berenjenas estén doradas.', 'Añade los tomates, las alcaparras, las aceitunas , las pasas y el vinagre; cocina a fuego lento unos 20 minutos removiendo de vez en cuando con cuidado para que las berenjenas no se rompan.', 'Sirve espolvoreando los piñones tostados y la albahaca fresca picadita.'],
  ['ligero', 'vegetariano'], 200, 5, 25, 18, 12, 6, 4, '/assets/img/recetas/028-caponnata.jpeg'],
 
-['Capresse Clásica', 'almuerzo',
+['Ensalada Caprese Clásica', 'almuerzo',
  ['tomate|2', 'queso mozzarella|2-3 lonjas', 'albahaca|dos puños', 'queso parmesano|dos cucharadas', 'almendra|1 puño', 'ajo|2 dientes', 'aceite de oliva|½ taza', 'sal|al gusto', 'pimienta|al gusto'],
  ['Comenzaremos preparando el pesto: separamos las hojas de albahaca del tallo (no lo utilizamos porque amarga y estropea el resultado), las lavamos y secamos.', 'Para ello, las extendemos sobre una hoja de papel absorbente de cocina, colocamos otra hoja encima y presionamos ligeramente con la palma de la mano.', 'La albahaca es una planta muy delicada que tiene a oxidarse con facilidad.', 'Cualquier gota de agua o cualquier desgarro de las hojas producirá un cambio en el color de nuestro pesto, volviéndolo oscuro en lugar de quedar verde brillante y claro.', 'Mientras las hojas de albahaca se secan, pelamos los dientes de ajo.', 'Tostamos las almendras o piñones en una sartén, sin aceite.', 'Colocamos todos los ingredientes en el vaso de la licuadora, junto con la mitad del aceite y una pizca de sal, y trituramos.', 'Cuando hayamos obtenido una papilla y no se aprecien trozos de piñones ni de albahaca, añadimos el resto del aceite e integramos. ** De ser necesario agregar un poco más de aceite para suavizar la preparación.', 'Seguidamente cortamos los tomates en ruedas del grosor de su preferencia.', 'En un plato vamos a armar la ensalada intercalando ruedas de tomate con trozos de queso mozzarella, al finalizar bañamos con un par de cucharadas de la salsa pesto. ** La salsa pesto sobrante la puedes guardar sin problemas dentro de la nevera en un envase hermético para cualquier otra preparación en la que la desees utilizar. Para el pesto:.'],
  ['ligero', 'vegetariano'], 306, 15, 10, 12, 22, 4, 3, '/assets/img/recetas/011-capresse-clasica.jpeg'],
 
-['Caribeña', 'almuerzo',
+['Ensalada Caribeña', 'almuerzo',
  ['camarón|4-5 onz', 'lechuga|un par de hojas', 'pepino|¼', 'piña|2 onzas', 'mandarina|½', 'ajo|1 diente', 'cúrcuma|al gusto', 'aceite de aguacate|para cocinar', 'naranja|½', 'limón|½', 'monk fruit|al gusto', 'mostaza|1 cda', 'aceite de oliva|2 cdas', 'sal|al gusto', 'pimienta|al gusto'],
  ['En una sartén con aceite de aguacate, salteamos los camarones (previamente marinados con sal, pimienta, ajo y cúrcuma), dejamos cocinar hasta que cambien de color. Reserva.', 'Picamos el pepino en cuadritos pequeños. Picamos la piña en cubos tamaño bocado.', 'Pelamos la naranja y sacamos los gajos de mandarina.', 'Ahora elaboramos la vinagreta mezclando en un bowl: el aceite de oliva, el zumo de media naranja, el zumo de ½ limón, la mostaza, el monk fruit, sal y pimienta al gusto. Mezclamos bien.', 'Para finalizar en una ensaladera colocamos: las hojas de lechuga, los camarones asados, el pepino, la piña, la mandarina y agregamos la vinagreta. Mezclar bien hasta integrar.'],
  ['ligero', 'alto en proteína'], 375, 25, 25, 35, 15, 12, 5, '/assets/img/recetas/027-caribena.jpeg'],
 
-['Carpaccio de Tomate', 'almuerzo',
+['Ensalada Carpaccio de Tomate', 'almuerzo',
  ['tomate|2', 'aceituna|un par', 'queso parmesano|2 cdas', 'albahaca|un puño', 'ajo|1-2 dientes', 'nuez|un puño', 'aceite de oliva|2 cdas', 'sal|al gusto', 'pimienta|al gusto'],
  ['Para preparar un Carpaccio tenemos que utilizar un cuchillo muy afilado o una mandolina para cortar los tomates.', 'Es muy importante que seamos muy cuidadosos y que las lonjas o rebanadas queden lo más finas posible (unos 3 milímetros aproximadamente).', 'Lavamos muy bien los tomates, cortamos y colocamos en un plato aparte.', 'Reservamos para el montaje final y salpimentamos las lonjas de tomate. ** Ten mucho cuidado con la sal, ya que el queso parmesano es de gusto fuerte y algo salado.', 'Machacar en un mortero la albahaca, el ajo, los piñones y 1 cda de queso parmesano.', 'No tiene que estar muy picado, de manera que se encuentren trocitos al probarla.', 'Agregar sal y pimienta al gusto y por último, mezclar con el aceite de oliva.', 'En un plato llano colocar las rebanadas de tomate una al lado de la otra haciendo la decoración que prefieras, sobre ellas agregar un poco de pesto y encima rociar el queso parmesano restante. Decorar con aceitunas picaditas.', 'Servimos a temperatura ambiente o bien dejamos enfriar un poco en la nevera antes de servir.'],
  ['vegetariano', 'ligero'], 210, 10, 15, 20, 10, 5, 4, '/assets/img/recetas/038-carpaccio-de-tomate.jpeg'],
 
-['Catar', 'almuerzo',
+['Ensalada Catar', 'almuerzo',
  ['espárrago|un puño', 'coliflor|1 taza', 'zanahoria|½', 'yogur griego|2-3 cdas', 'pepino|½', 'eneldo|al gusto', 'menta|al gusto', 'limón|1', 'ajo|1 diente', 'aceite de oliva|2 cdas', 'paprika|al gusto'],
  ['Lava muy bien y pica los vegetales según tu preferencia.', 'Cocina por separado cada uno de los vegetales.', 'Bien sea al vapor o al grill, utiliza el método de cocción que prefieras. Reserva.', 'Para el aderezo; ralla el pepino con la parte más gruesa del rallo.', 'Coloca un colador encima de un bowl y agrega el pepino encima, espolvorea la sal y deja reposar 10 minutos para que se escurra su jugo.', 'Aprieta con las manos para retirar el exceso de líquido y colócalo en un tazón aparte.', 'Agrega allí el yogurt, el eneldo, la menta, el zumo de limón, el puré de ajo, sal y pimienta al gusto. Integra todo muy bien.', 'Sirve los vegetales en un plato llano y baña con el aderezo de yogurt y pepino.', 'Para finalizar espolvorea paprika para decorar.'],
  ['vegetariano', 'ligero'], 182, 8, 20, 15, 10, 4, 3, '/assets/img/recetas/045-catar.jpeg'],
 
-['Cesar con Frutos Rojos', 'almuerzo',
+['Ensalada Cesar con Frutos Rojos', 'almuerzo',
  ['pechuga de pollo|3-4 onz', 'queso parmesano|1 cda', 'bacon|2 lonjas', 'pan integral|1 rebanada', 'lechuga|mix', 'ajo|1 diente', 'anchoa|½ cda', 'fruto rojo|½ taza', 'limón|1', 'vinagre balsámico|1 cda', 'mostaza|1 cda', 'yogur griego|2 cdas', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|al gusto'],
  ['Para comenzar salpimentaremos los cubos de pollo, y vamos a cocinar en un wok hasta que estén bien cocidos y dorados. Reservar.', 'Por otro lado, machacar con un mortero o picar finamente las anchoas junto con el diente de ajo hasta tener una pasta.', 'Añadir la mostaza, el vinagre, el zumo de limón, los frutos rojos y el yogurt.', 'Batir muy bien con un tenedor o varillas.', 'Agregar un chorrito de aceite de oliva sin dejar de batir hasta emulsionar y tener una salsa homogénea.', 'Añadir el de queso parmesano y mezclar bien.', 'Probar y ajustar los ingredientes si fuera necesario.', 'En una sarten caliente Cocinar las lonjas de bacon hasta que estén bien tostadas o crujientes, retirar, colocar en papel absorbente y luego picar en trocitos pequeños. Reserva.', 'En una ensaladera colocar el mix de lechugas (previamente lavadas y cortadas en julianas) , seguidamente incorporar los cubos de pollo cocidos, el bacon picadito, el aderezo y mezclar muy bien hasta integrar.', 'Agregar por último ralladura de limón, pimienta negra recién molida y más queso parmesano al gusto, junto con los cubos o tropezones de pan integral tostado.'],
  ['alto en proteína', 'ligero'], 362, 30, 30, 20, 18, 6, 3, '/assets/img/recetas/050-cesar-con-frutos-rojos.jpeg'],
 
-['Chik', 'almuerzo',
+['Ensalada Chik', 'almuerzo',
  ['queso ricota|2-3 cdas', 'quinoa|½ taza', 'pimentón|¼', 'brócoli|1 ½ tazas', 'tomate|1', 'almendra|½ puño', 'ajo|2 dientes', 'limón|1', 'aceite de oliva|2 cdas', 'sal|al gusto', 'pimienta|al gusto'],
  ['Hierve la quínoa y espera hasta que los granos estén blanditos.', 'Tampoco te excedas con el tiempo para que no queden apelmazados. Déjalos enfriar en el escurridor. Reserva.', 'Haz lo mismo con el brócoli e intenta que quede crujiente, entero.', 'Ten en cuenta que será la base de la ensalada.', 'Cuando esté frío, mézclalo con la quínoa que has dejado apartada.', 'Durante el enfriamiento puedes aprovechar para trocear en pequeños dados el pimenton y el tomate.', 'Añádelos a la mezcla anterior y espolvorea el queso por encima.', 'Elabora un picadillo con los ajos, las almendras, el zumo de limón, aceite, sal y pimienta.', 'Vierte este marinaje sobre la quínoa con vegetales y mezcla todo hasta integrar muy bien.', 'Si deseas lleva a la nevera un par de minutos antes de servir.'],
  ['alto en proteína', 'vegetariano'], 276, 12, 25, 30, 12, 4, 5, '/assets/img/recetas/044-chik.jpeg'],
 
-['China Cruda', 'almuerzo',
+['Ensalada China Cruda', 'almuerzo',
  ['repollo|2 tazas', 'zanahoria|½', 'brotes de germinados|un puño', 'vinagre de arroz|2 cucharadas', 'aceite de sésamo|1 cucharada', 'aceite de oliva|1 cda', 'coconut aminos|1 cda', 'semilla de sésamo|2 cucharaditas', 'jengibre|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pica en finas julianas el repollo. Rallar la zanahoria.', 'Mezcla en un bowl todos los vegetales y añade el aderezo hasta integrar todos los ingredientes. Sírvelo inmediatamente.'],
  ['vegetariano', 'ligero'], 146, 3, 15, 20, 6, 5, 4, '/assets/img/recetas/035-china-cruda.jpeg'],
 
-['Coliflor con Langostinos', 'almuerzo',
+['Ensalada Coliflor con Langostinos', 'almuerzo',
  ['langostino|4-5 onzas', 'coliflor|½', 'tomate|1', 'cebolla morada|¼', 'limón|1', 'aguacate|½', 'hierba fresca|al gusto', 'especie|al gusto', 'ajo|1 diente', 'alcaparra|½ cda', 'mostaza|½ cda', 'perejil|al gusto', 'aceite de aguacate|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|al gusto'],
  ['Lo más práctico es usar directamente langostinos cocidos, incluso podemos comprar colas cocidas y peladas ya listas para consumir.', 'Lavar con agua fría los langostinos y secar bien, depositar en un bowl.', 'Salpimentar ligeramente, añadir la ralladura del limón y un puñado de hierbas frescas al gusto picaditas.', 'Agregar la mostaza, el zumo de limón, el ajo machacado y aceite de oliva. Mezclar bien y dejar marinar. Separar los ramilletes de la coliflor.', 'Lavar bien y triturar con un procesador de alimentos o picadora, o hacerlo a cuchillo, hasta dejar una textura de grano fino (tipo cuscús).', 'Calentar una sartén antiadherente y añadir un poco de aceite de aguacate.', 'Agregar los langostinos y dejar cocinar.', 'Seguidamente agregar la coliflor, salpimentar y agregar las especias elegidas.', 'Saltear a fuego medio sin dejar de remover hasta que la preparación tome algo de color. Una vez lista, retirar.', 'Por otro lado: picar el tomate, cebolla y aguacate en cuadritos.', 'Para el montaje: coloca el salteado de coliflor y langostinos como base del plato, encima agrega los cubos de aguacate, cebolla y tomate, por último, las alcaparras y perejil picadito.', 'Rocía un chorrito de zumo de limón fresco, aceite de oliva, sal y pimienta.'],
  ['alto en proteína', 'ligero'], 295, 22, 30, 18, 15, 6, 4, '/assets/img/recetas/024-coliflor-con-langostinos.jpeg'],
 
-['De Berenjena con Salsa de Yogurt', 'almuerzo',
+['Ensalada De Berenjena con Salsa de Yogurt', 'almuerzo',
  ['yogur griego|5 onz', 'berenjena|1', 'pimentón|¼', 'ajo|1 diente', 'tomillo|al gusto', 'perejil|al gusto', 'aceite de oliva|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'limón|1'],
  ['Trocear la berenjena en cubos pequeños, más o menos del mismo tamaño.', 'Si molestan las semillas, retirarlas, aunque suelen ser muy pequeñas y no se notan al comer.', 'Cortar el pimentón en tiras, desechando las semillas.', 'Calentar el aceite de oliva en una sartén antiadherente.', 'Saltear el pimentón unos minutos, hasta que empiece a ablandarse.', 'Añadir la berenjena, agregar un chorrito de agua y dar unas vueltas.', 'Añadir el ajo machacado y la ralladura de limón. Saltear y añadir el tomillo al final.', 'Retirar del fuego, llevar a un bowl donde vamos a añadir el yogurt griego plain, el zumo de 1 limón, 1-2 cdas de aceite de oliva, el perejil picadito, sal y pimienta al gusto.', 'Llevar unos 15 minutos a la nevera antes de servir.'],
  ['vegetariano', 'ligero'], 190, 10, 25, 15, 10, 4, 3, '/assets/img/recetas/022-de-berenjena-con-salsa-de-yogurt.jpeg'],
 
-['De Brocoli Y Atún', 'almuerzo',
+['Ensalada De Brocoli Y Atún', 'almuerzo',
  ['atún|4-5 onz', 'brócoli|½ unidad', 'tomate|1 unidad', 'cebolla|¼ unidad', 'zanahoria|¼ unidad', 'lechuga|un par de hojas', 'pimentón|¼ unidad', 'perejil|al gusto', 'aceite de oliva|2 cdas', 'mostaza|1 cda', 'limón|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Colocar a cocinar el brócoli en el microondas solo un par de segundos (30-40 segundos aprox), solo queremos suavizar un poco, pero aun conservar tu textura. Reserva.', 'Picar la cebolla, tomate y pimenton en pequeños cuadritos.', 'Por su parte rallar la zanahoria y la lechuga en finas tiras.', 'En un bowl mezclar: el atún desmenuzado, el brócoli y el resto de los vegetales.', 'Para marinar agrega el aceite de oliva, mostaza, zumo de limón, sal y pimienta al gusto. Mezclar hasta integrar sabores.', 'Para finalizar perejil picadito para decorar.'],
- ['ligero', 'vegetariano'], 287, 20, 15, 18, 15, 6, 5, '/assets/img/recetas/008-de-brocoli-y-atun.jpeg'],
+ ['ligero'], 287, 20, 15, 18, 15, 6, 5, '/assets/img/recetas/008-de-brocoli-y-atun.jpeg'],
 
-['De Green Beans y Salmón', 'almuerzo',
+['Ensalada De Green Beans y Salmón', 'almuerzo',
  ['salmón ahumado|4-5 onz', 'green beans|2 puños', 'fresas|4-5 unidades', 'semillas de girasol|1 cucharada', 'monk fruit|al gusto', 'vinagre de manzana|2 cdas', 'aceite de oliva|2 cdas', 'sal|al gusto', 'pimienta|al gusto', 'cebollín|un tallo'],
  ['En primer lugar, lava las Green beans, córtalas por la mitad y cuécelas de 6-8 minutos al vapor.', 'Al estar listas; retira y déjalas refrescar.', 'Mientras se cocinan, lava las fresas, retírales el pedúnculo, sécalas, trocéalas y reserva.', 'Para la vinagreta: Mezcla el vinagre, el aceite, el monk fruit, sal y pimienta al gusto; hasta integrar. Remueve hasta que emulsione bien.', 'Y, por último lava el cebollín, pícalo y agrégalo a la vinagreta.', 'Luego en un bowl agrega el salmón ahumado previamente picado en tiras alargadas.', 'Agrega las Green beans cocidas, las fresas troceadas y baña con la vinagreta, remover hasta integrar todo.', 'Sirve y decora con las semillas de girasol espolvoreadas por encima.'],
- ['ligero', 'vegetariano'], 243, 15, 10, 12, 15, 8, 4, '/assets/img/recetas/026-de-green-beans-y-salmon.jpeg'],
+ ['ligero'], 243, 15, 10, 12, 15, 8, 4, '/assets/img/recetas/026-de-green-beans-y-salmon.jpeg'],
 
-['De Pollo con Jengibre', 'almuerzo',
+['Ensalada De Pollo con Jengibre', 'almuerzo',
  ['pechuga de pollo|4-5 onzas', 'jengibre|al gusto', 'lechuga|un par de hojas', 'kale|un par de hojas', 'aguacate|½ unidad', 'naranja|½ unidad', 'tomate|1 unidad', 'limón|1 unidad', 'aceite de oliva|al gusto', 'aceite de aguacate|al gusto', 'sal|1 pizca', 'pimienta|1 pizca'],
  ['Cocinar los cubos de pechuga de pollo en el aceite aromatizado, previamente salpimentadas, durante 5 minutos por cada lado hasta que estén cocinados y jugosos.', 'Luego, añadir nuevamente el jengibre sobre las pechugas de pollo, dorar un poco y reservar.', 'Por otro lado, retira la piel de la naranja y con un cuchillo con filo sacar los gajos para la ensalada fresca de pollo.', 'En un bowl o plato hondo: colocar como base la lechuga y kale troceada con las manos, el tomate cortado en medialuna o cubos y los gajos de naranja.', 'Mezclar todo, aderezar con unas gotas de limón, añade también un chorrito de aceite de oliva, sal y pimienta.', 'Finalmente agrega los cubos de pollo cocidos y el aguacate también en trozos. Rectifica sabores.'],
  ['ligero', 'alto en proteína'], 340, 28, 20, 12, 20, 9, 4, '/assets/img/recetas/019-de-pollo-con-jengibre.jpeg'],
 
-['De Repollo Agridulce', 'almuerzo',
+['Ensalada De Repollo Agridulce', 'almuerzo',
  ['repollo|2 tazas', 'cebolla|¼ unidad', 'almendra|½ puño', 'semilla de girasol|un puñado', 'aceite de oliva|2 cdas', 'vinagre de vino tinto|2 cdas', 'monk fruit|al gusto', 'coconut aminos|2 cdas', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pica el repollo y la cebolla en juliana y mézclalo en un bol con las almendras y las semillas de girasol.', 'Coloca los ingredientes del marinaje en un bowl y mezcla hasta integrar muy bien.', 'Vierte el marinaje sobre la ensalada hasta que todos los ingredientes estén impregnados.'],
  ['ligero', 'vegetariano'], 192, 6, 12, 15, 12, 4, 5, '/assets/img/recetas/025-de-repollo-agridulce.jpeg'],
 
-['De Salmón Y Maní', 'almuerzo',
+['Ensalada De Salmón Y Maní', 'almuerzo',
  ['salmón ahumado|4-5 onzas', 'pepino|½ unidad', 'lechuga|un par de hojas', 'tomate|1 unidad', 'limón|1 unidad', 'cebollín|1 cucharada', 'maní|½ puño', 'sal|1 pizca', 'pimienta|1 pizca', 'vinagre balsámico|2 cdas', 'coconut aminos|1 cda', 'aceite de oliva|2 cucharadas'],
  ['En un bowl agregar el salmón cortado cubos tamaño bocado, añadir el zumo de limón, sal y pimienta.', 'Dejar el salmón marinando durante 10 minutos hasta que cambie de color.', 'A continuación, mezclar las hojas de lechuga cortadas finamente, el pepino cortado en medias lunas sin cáscara y el tomate cortados según su preferencia, salpimentar. Aparte preparar la vinagreta.', 'Para ello, mezclar en un bowl el aceite de oliva, coconut aminos y el vinagre balsámico, salpimentar.', 'Agregar a la ensalada la vinagreta y el salmón marinado, mezclar todo muy bien.', 'Finalmente servir la ensalada y terminar el plato espolvoreando cebollín finamente picado y el maní.'],
  ['ligero', 'alto en proteína'], 290, 22, 15, 10, 18, 5, 3, '/assets/img/recetas/018-de-salmon-y-mani.jpeg'],
 
-['De Salmón con Salsa Roquefort', 'almuerzo',
+['Ensalada De Salmón con Salsa Roquefort', 'almuerzo',
  ['salmón ahumado|4-5 onzas', 'alcaparras|½ cucharada', 'lechuga|al gusto', 'brócoli|al gusto', 'yogur griego|3 cdas', 'queso roquefort|½ cucharada', 'leche de almendras|un chorrito', 'sal|al gusto', 'pimienta|al gusto'],
  ['En primer lugar, vamos a cocinar el brócoli en una ollita con agua y sal solo un par de minutos, no queremos que quede muy suave.', 'Una vez listo; retirar, colar y dejar refrescar. Reserva.', 'Seguidamente vamos a preparar la salsa de roquefort.', 'En un bowl mezclar: el yogurt, el queso ayudándote con un tenedor para ir desmenuzándolo, sal, pimienta y la cantidad de leche necesaria para obtener la consistencia de tu preferencia (todo depende si prefieres la salsa gruesa o más fluida).', 'Para el montaje de la ensalada: coloca como base del plato las hojas de lechuga, luego el salmón cortado en cubos tamaño bocado, los ramitos de brócoli, las alcaparras picaditas y por ultimo bañar con la salsa roquefort. Para la salsa de roquefort.'],
  ['ligero', 'alto en proteína'], 239, 18, 10, 8, 15, 4, 2, '/assets/img/recetas/037-de-salmon-con-salsa-roquefort.jpeg'],
 
-['De Tallarines de Zanahoria con Ricota y Nueces', 'almuerzo',
+['Ensalada De Tallarines de Zanahoria con Ricota y Nueces', 'almuerzo',
  ['ricotta|3 cdas', 'zanahoria|1 unidad', 'nueces|1 puño', 'cilantro|al gusto', 'limón|1 unidad', 'jengibre|al gusto', 'aceite de oliva|2 cdas', 'vinagre balsámico|2 cdas', 'monk fruit|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'tomillo|al gusto'],
  ['Lavar y secar las zanahorias, pelar ligeramente y cortar la punta del tallo.', 'Cortar en tiras finas, imitando los fideos o tallarines delgados, con la herramienta que más nos guste: mandolina, cortador especial, rallador, pelador en juliana, espiralizador, a cuchillo, etc.', 'Mezclar la zanahoria con el zumo de la mitad del limón para que no se oxide.', 'Podemos darle un golpe de vapor, blanquearla en agua hirviendo o en el microondas si preferimos una textura más tierna, pero que sea muy breve.', 'Colocar en un plato hondo y mezclar con las nueces partidas y la ricota.', 'En un bowl pequeño rallar el jengibre, añadir el aceite de oliva, el monk fruit, el vinagre balsámico, un poco de zumo de limón, la sal, tomillo y pimienta al gusto.', 'Batir bien hasta tener una vinagreta emulsionada.', 'Bañar con la vinagreta la ensalada, servir y decorar con el cilantro picadito.'],
  ['ligero', 'vegetariano'], 215, 8, 18, 12, 15, 3, 4, '/assets/img/recetas/021-de-tallarines-de-zanahoria-con-ricota-y-nueces.jpeg'],
 
-['De Verano', 'almuerzo',
+['Ensalada De Verano', 'almuerzo',
  ['pepino|½ unidad', 'mango|1 unidad', 'palmito|2-3 bastones', 'yogur griego|2-3 cdas', 'limón|½ unidad', 'cilantro|al gusto', 'menta|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Para comenzar pica el pepino, mango y palmito en cuadritos de tamaño mediano, tratando que todos tengas un tamaño similar.', 'En un recipiente mezcla el palmito, el pepino y el mango, agrega el yogurt, el zumo de limón, sal, pimienta y el cilantro picadito.', 'Por ultimo añade las hojitas de menta o hierbabuena picaditas.', 'Revuelve hasta que todo se integre muy bien.', 'Lleva la ensalada a la nevera antes de servir para refrescar.'],
  ['ligero', 'vegetariano'], 150, 4, 10, 20, 6, 12, 3, '/assets/img/recetas/029-de-verano.jpeg'],
 
-['De Zucchini Asado', 'almuerzo',
+['Ensalada De Zucchini Asado', 'almuerzo',
  ['queso parmesano|1 cda', 'zucchini|1 mediano', 'almendra|1 puño', 'aceite de oliva|2 cucharadas', 'vinagre balsámico|1-2 cucharadas', 'albahaca|1 cda', 'orégano|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precalienta el horno a 180 ºC y coloca las almendras en una bandeja para tostar durante 10-15 minutos, hasta que estén doradas y fragantes.', 'Mientras tanto, corta el zucchini en rodajas de un centímetro de grosor, colócalas en un bowl y rocíalas con un poco de aceite de oliva, sal y pimienta. Deja marinar durante al menos 15 minutos.', 'Calienta una parrilla o sartén a fuego fuerte hasta que esté muy caliente, luego coloca las rodajas de zucchini y ásalas por ambos lados hasta que estén tiernas y ligeramente caramelizadas.', 'Una vez asado el zucchini, colócalo en un bowl y agrega el vinagre balsámico por encima. Mezcla suavemente y reserva.', 'Cuando el zucchini se haya enfriado, agrega un poco más de aceite de oliva, la albahaca fresca picada, el orégano fresco y las almendras machacadas. Mezcla con cuidado para no aplastar los ingredientes.', 'Sirve la ensalada en un plato y espolvorea el queso parmesano por encima para darle un toque final.'],
  ['ligero', 'vegetariano'], 215, 8, 20, 12, 15, 3, 4, '/assets/img/recetas/015-de-zucchini-asado.jpeg'],
 
-['Del Campo con Huevo', 'almuerzo',
+['Ensalada Del Campo con Huevo', 'almuerzo',
  ['huevo|2 unidades', 'lechuga|2 hojas', 'kale|2 hojas', 'tomate|1 unidad', 'zanahoria|¼ unidad', 'cebolla|¼ unidad', 'pepino|¼ unidad', 'palmito|2 bastones', 'apio|al gusto', 'pimentón|¼ unidad', 'yogurt griego|2 cdas', 'orégano|1 pizca', 'sal|1 pizca', 'pimienta negra|al gusto', 'aceite de oliva|½ cda', 'cilantro|al gusto'],
  ['Coloca los huevos en una olla con agua, agrega un chorrito de vinagre blanco y sal para evitar que se partan. Lleva a ebullición y cocina durante 12 minutos.', 'Mientras se cocinan los huevos, pica el resto de los vegetales (lechuga, kale, tomate, zanahoria, cebolla, pepino y pimentón verde) en trozos pequeños según tu preferencia.', 'Una vez cocidos los huevos, retíralos del agua, déjalos refrescar y pélalos. Corta en rodajas o cubos y reserva.', 'En un bowl pequeño, mezcla todos los ingredientes para el aderezo (yogurt griego, orégano, sal, pimienta negra y aceite de oliva) hasta integrar bien.', 'Coloca todos los ingredientes en un bowl grande o ensaladera, incluyendo los huevos cortados. Agrega el aderezo preparado y mezcla suavemente hasta que todos los ingredientes estén bien combinados.', 'Finalmente, espolvorea cilantro picadito al gusto y sirve.'],
  ['ligero', 'vegetariano'], 380, 20, 15, 30, 20, 8, 5, '/assets/img/recetas/001-del-campo-con-huevo.jpeg'],
 
-['Espinaca con Pollo y Mango', 'almuerzo',
+['Ensalada Espinaca con Pollo y Mango', 'almuerzo',
  ['pechuga de pollo|4-5 oz', 'mango|1 unidad', 'espinaca|2 puños', 'cebolla morada|¼ unidad', 'apio|al gusto', 'nuez|1 puño', 'sal|al gusto', 'pimienta|al gusto', 'romero|al gusto', 'ajo|al gusto', 'aceite de aguacate|al gusto', 'aceite de oliva|2 cucharadas', 'vinagre de manzana|1 cucharada', 'coconut aminos|1 cucharada', 'monk fruit|un toque', 'semilla de amapola|1 cda'],
  ['Corta el pollo en cubos y sazona con pimienta, romero y ajo al gusto. Calienta un poco de aceite de aguacate en un wok o sartén a fuego medio-alto y cocina el pollo hasta que esté dorado y cocido.', 'Lava las espinacas con abundante agua y reserva. Puedes picarlas si es necesario, especialmente si no usas espinacas baby.', 'Pela y pica el mango en cubitos pequeños. De igual manera, pica la cebolla morada y el celery en trozos pequeños.', 'Prepara una cama de espinacas en un plato o ensaladera, coloca encima los cubos de pollo cocido, el mango picado, la cebolla, el celery y las nueces troceadas.', 'En un bowl pequeño, mezcla los ingredientes para el aderezo (aceite de oliva, vinagre de manzana, coconut aminos, monk fruit, sal y pimienta) hasta integrar bien.', 'Vierte el aderezo sobre la ensalada y mezcla suavemente para combinar. Espolvorea semillas de amapola por encima y sirve.'],
  ['alto en proteína', 'rápido'], 505, 35, 20, 35, 25, 12, 6, '/assets/img/recetas/004-espinaca-con-pollo-y-mango.jpeg'],
 
-['Express de Coliflor', 'almuerzo',
+['Ensalada Express de Coliflor', 'almuerzo',
  ['coliflor|½ unidad', 'pepino|½ unidad', 'tomate|1 unidad', 'pimentón|¼ unidad', 'apio|al gusto', 'cebolla morada|¼ unidad', 'aceituna|2 unidades', 'menta|al gusto', 'orégano|al gusto', 'limón|1 unidad', 'aceite de oliva|2-3 cdas', 'sal|al gusto', 'pimienta|al gusto'],
  ['Pica la coliflor lo más fino que puedas y colócala en un bowl. Agrega el zumo de limón y el aceite de oliva, mezclando bien. Ajusta la cantidad de limón al gusto.', 'Pica el tomate, el pepino, el pimentón, la cebolla morada y el celery en cuadritos pequeños. Agrega estos ingredientes al bowl con la coliflor.', 'Incorpora las aceitunas picaditas, la menta o hierbabuena fresca picada y el orégano fresco al bowl. Mezcla bien para combinar.', 'Ajusta la sal y la pimienta al gusto, y si es necesario, agrega un poco más de aceite de oliva o zumo de limón para lograr el equilibrio de sabores deseado.', 'Sirve la ensalada fresca y disfruta.'],
  ['ligero', 'vegetariano'], 235, 5, 15, 20, 15, 4, 4, '/assets/img/recetas/034-express-de-coliflor.jpeg'],
 
-['Florida', 'almuerzo',
+['Ensalada Florida', 'almuerzo',
  ['pechuga de pollo|3-4 oz', 'queso cottage|2 cdas', 'espinaca|2 puños', 'fresa|6 unidades', 'aguacate|½ unidad', 'cebolla blanca|¼ unidad', 'semilla de hemp|1 cda', 'aceite de oliva|3 cdas', 'vinagre balsámico|3 cdas', 'monk fruit|al gusto', 'estragón|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'aceite de aguacate|al gusto'],
  ['Mezcla en un bol pequeño el aceite de oliva, vinagre balsámico, monk fruit, estragón picado, sal y pimienta hasta emulsionar; reserva la mitad del aderezo y utiliza la otra mitad para el aliño final.', 'Coloca las tiras de pechuga de pollo en un recipiente amplio, vierte la mitad del aderezo, cubre con film y deja marinar 30 minutos en refrigeración.', 'Calienta una sartén a fuego alto, agrega una cucharada de aceite de aguacate y cocina las tiras de pollo hasta que se doren, luego reduce a fuego medio‑bajo y continúa cocinando 15‑20 minutos hasta que el interior alcance 75 °C; retira y reserva.', 'En un bowl grande combina la espinaca fresca, las fresas troceadas, el aguacate en cubos, la cebolla picada y el queso cottage; agrega el pollo cocido y el resto del aderezo, mezcla suavemente hasta integrar.', 'Espolvorea las semillas de hemp por encima y sirve inmediatamente, ajustando de sal o pimienta si es necesario.'],
  ['alto en proteína', 'ligero'], 405, 30, 20, 15, 25, 6, 5, '/assets/img/recetas/047-florida.jpeg'],
 
-['Fresca de Garbanzos', 'almuerzo',
+['Ensalada Fresca de Garbanzos', 'almuerzo',
  ['garbanzos|½ taza', 'cebolla|¼ unidad', 'pimentón verde|¼ unidad', 'tomate|1 unidad', 'perejil|al gusto', 'hierbabuena|al gusto', 'aceituna|al gusto', 'limón|1 unidad', 'aceite de oliva|2 cucharadas', 'sal|1 pizca', 'pimienta|al gusto'],
  ['Si usas garbanzos secos, enjuágalos, remójalos toda la noche y cocínalos en agua abundante hasta que estén tiernos (aprox. 45 min); si son enlatados, simplemente enjuágalos bajo agua corriente y escúrrelos.', 'Pica finamente la cebolla, el pimentón verde, el tomate, el perejil y la hierbabuena, reservando en un bol pequeño.', 'En un bowl grande combina los garbanzos cocidos con todos los vegetales picados, añade el jugo de limón, el aceite de oliva, una pizca de sal y pimienta; mezcla hasta que todo quede bien integrado.', 'Refrigera la ensalada al menos 10 min para que los sabores se asienten, prueba y corrige la sazón antes de servir.'],
  ['vegetariano', 'ligero'], 296, 12, 15, 35, 12, 5, 7, '/assets/img/recetas/010-fresca-de-garbanzos.jpeg'],
 
-['Fria de Coliflor con Mayonesa Casera', 'almuerzo',
+['Ensalada Fria de Coliflor con Mayonesa Casera', 'almuerzo',
  ['coliflor|½ unidad', 'zanahoria|½ unidad', 'cebolla morada|¼-½ unidad', 'pasita|½ puño', 'perejil|al gusto', 'sal|al gusto', 'pimienta negra|al gusto', 'aceite de oliva|100-150 ml', 'huevo|1 unidad', 'limón|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Lava la coliflor y separa los floretes; corta la zanahoria en cubos del mismo tamaño que la coliflor para asegurar una cocción uniforme.', 'En una olla con agua hirviendo y ligeramente salada, cocina la coliflor y la zanahoria 5‑10 min, hasta que estén tiernos pero firmes; escúrrelos y pásalos bajo agua helada para detener la cocción.', 'En un bol grande mezcla la coliflor, la zanahoria, la cebolla morada picada, el perejil, sal y pimienta al gusto; reserva.', 'Para la mayonesa, coloca en la licuadora el huevo, el jugo de limón, una pizca de sal y pimienta; mientras licúas, vierte el aceite de oliva en hilo fino hasta emulsionar y obtener una crema espesa y brillante.', 'Incorpora una cucharada de la mayonesa al bowl de vegetales y mezcla suavemente hasta cubrir; ajusta con más limón, sal o pimienta si lo deseas y sirve fresca.'],
  ['ligero', 'vegetariano'], 282, 10, 20, 20, 18, 4, 4, '/assets/img/recetas/005-fria-de-coliflor-con-mayonesa-casera.jpeg'],
 
-['Garbanzo y Mar', 'almuerzo',
+['Ensalada Garbanzo y Mar', 'almuerzo',
  ['pulpo|4-5 oz', 'garbanzos|½ taza', 'lechuga|mix', 'cebolla|¼ unidad', 'tomate|1 unidad', 'pimentón verde|¼ unidad', 'apio|al gusto', 'perejil|al gusto', 'limón|1 unidad', 'aceite de oliva|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Llena una olla grande con agua, lleva a ebullición y agrega el pulpo; cuando el agua vuelva a hervir, reduce el fuego y repite tres veces el proceso de sumergir 5 s y retirar 5 s para “asustar” el pulpo, luego cocina a fuego lento 25 min o hasta que esté tierno (≈ 85 °C interno).', 'Escurre el pulpo, déjalo reposar 2 min y corta en cubos pequeños; reserva.', 'Enjuaga y corta la cebolla, el pimentón verde, el tomate, el apio y el perejil en dados uniformes; lava la mezcla de lechugas y córtalas en tiras finas.', 'En un bowl grande combina el pulpo picado, los garbanzos cocidos, las lechugas y todos los vegetales picados; añade el jugo de limón, un buen chorro de aceite de oliva, sal y pimienta al gusto.', 'Mezcla suavemente hasta que todo quede bien integrado, prueba y ajusta la sazón; sirve la ensalada fresca, acompañada de rodajas de limón si lo deseas.'],
- ['alto en proteína', 'vegetariano'], 367, 28, 25, 30, 15, 6, 5, '/assets/img/recetas/046-garbanzo-y-mar.jpeg'],
+ ['alto en proteína'], 367, 28, 25, 30, 15, 6, 5, '/assets/img/recetas/046-garbanzo-y-mar.jpeg'],
 
-['Griega', 'almuerzo',
+['Ensalada Griega', 'almuerzo',
  ['queso cottage|2-3 cdas', 'pepino|½', 'pimenton verde|¼', 'cebolla morada|¼', 'aceituna negra|Un par', 'pimenton rojo|¼', 'tomate|1', 'orégano|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|2 cdas'],
  ['Lavar y picar todos los vegetales en pequeños cuadritos. Picar las aceitunas también.', 'En un bowl verter todos los vegetales junto con el queso. Mezclar muy bien.', 'Marinar con aceite de oliva, sal, pimienta y orégano. Rectificar sabores.'],
  ['ligero', 'vegetariano'], 231, 9, 10, 15, 15, 6, 4, '/assets/img/recetas/013-griega.jpeg'],
 
-['Italiana', 'almuerzo',
+['Ensalada Italiana', 'almuerzo',
  ['atún|4-5 onz', 'lechuga|Un par', 'arúgula|Un par', 'tomate|1', 'cebolla|¼', 'apio|al gusto', 'aceituna negra|4', 'albahaca fresca|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|2 cdas', 'vinagre de vino|2 cdas'],
  ['Picar el tomate , cebolla y celery en cuadritos.', 'Lavar y picar la lechuga y arugula en julianas o tiras delgadas. Desmenuzar el atún.', 'Luego en un bowl mezclar: las hojas verdes, el atún desmenuzado, el tomate, cebolla, celery, aceitunas picaditas, albahaca fresca picadita, sal, pimienta, aceite de oliva y el vinagre de vino.', 'Revolver muy bien hasta integrar todos los sabores.', 'Dejar la ensalada en la nevera por 10 minutos antes de servir.'],
  ['ligero', 'alto en proteína'], 306, 28, 12, 8, 18, 4, 2, '/assets/img/recetas/039-italiana.jpeg'],
 
-['Kikiriki', 'almuerzo',
+['Ensalada Kikiriki', 'almuerzo',
  ['huevo|2', 'pan integral|1 rebanada', 'arúgula|Un puño', 'lechuga|Un par', 'tomate|1', 'cebolla morada|¼', 'maíz desgranado|¼ taza', 'kiwi|1', 'semilla de girasol|1 cucharada', 'vinagre blanco|al gusto', 'aceite de oliva|2 cucharadas', 'vinagre balsámico|2 cdas', 'limón|1 unidad', 'sal|al gusto', 'pimienta|al gusto'],
  ['Colocar en una ollita con agua, sal y un chorrito de vinagre blanco a cocinar los huevos aproximadamente 12-15 minutos.', 'Una vez listos, retirar, dejar refrescar y pelar. Reserva.', 'Pelar y cortar el kiwi en pequeños cuadritos o rebanadas.', 'Recuerda que una forma muy fácil de pelarlo es cortando las puntas y despegando la piel con una cuchara.', 'Pica los vegetales según tu preferencia en julianas o cuadritos.', 'Lleva el pan a una tostadora o a la plancha hasta que quede bien tostado, corta en cuadritos pequeños y reserva.', 'Para hacer el montaje de la ensalada, lleva a un bowl las hojas verdes, luego agrega el maíz, los vegetales ya picados, los cubos de pan tostado y el kiwi.', 'Marina la ensalada con: el aceite de oliva, vinagre balsámico, limón, sal y pimenta.', 'Sirve la ensalada decorando con las semillas de girasol.'],
  ['ligero', 'alto en proteína'], 330, 20, 15, 22, 18, 10, 5, '/assets/img/recetas/042-kikiriki.jpeg'],
 
-['Ligera Con Aderezo De Maní', 'almuerzo',
+['Ensalada Ligera Con Aderezo De Maní', 'almuerzo',
  ['kale|1 puño', 'coliflor|1 taza', 'repollo morado|1 taza', 'zanahoria|¼', 'apio|al gusto', 'mantequilla de maní|1 cda', 'zumo de limón|1 cucharada', 'coconut aminos|2 cucharadas', 'ajo en polvo|al gusto', 'leche de coco|1-2 cdas', 'sal|al gusto', 'aceite de oliva|1 cda'],
  ['Para comenzar coloca en un bowl la mantequilla de maní, aceite de oliva, el zumo de limón, el coconut aminos, el ajo en polvo, la leche de coco y sal.', 'Mezcla hasta que todo quede bien incorporado.', 'Debe quedar un aderezo cremoso y espeso; si lo quieres más ligero, agrega un poco más de leche o agua.', 'Seguidamente lleva al microondas la coliflor a cocinar uno 30 segundos, es solo un toque de calor para quitar la rigidez del vegetal, no queremos que se cocine o quede muy suave. Reserva.', 'Pica el repollo y el kale en finas tiras. Ralla la zanahoria. Pica el celery en pequeños cuadritos.', 'En un bowl combina el kale, el coliflor, el repollo, la zanahoria y el celery; vierte el aderezo y mezcla hasta integrar todo muy bien.'],
  ['ligero', 'vegetariano'], 260, 8, 12, 12, 20, 4, 3, '/assets/img/recetas/049-ligera-con-aderezo-de-mani.jpeg'],
 
-['Love', 'almuerzo',
+['Ensalada Love', 'almuerzo',
  ['rúcula|1 puñado', 'lechuga|Un par', 'hongo|1 taza', 'palmito|2 bastones', 'aceituna|Un par', 'fresa|6', 'semilla de girasol|1 cda', 'yogur griego plain|2 cdas', 'aceite de oliva|1-2 cdas', 'queso azul|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Para iniciar procedemos a lavar y desinfectar tanto los vegetales como la fruta.', 'Cuando las frutas y los vegetales están bien desinfectados, los escurrimos y empezamos a montar la ensalada.', 'En un bowl o plato hondo colocamos como base una cama de hojas verdes, que en este caso será la arugula y lechuga.', 'Sobre las hojas verdes vamos a colocar los hongos rebanados (crudos o cocidos según su preferencia) de preferir cocidos en una plancha colocar las lonjas solo un par de minutos por cada lado. Reserva.', 'Luego repartimos de manera uniforme el palmito picado en rebanadas delgadas, así como también las aceitunas y por ultimo las fresas laminadas o en cubos.', 'Seguidamente agregamos las semillas de girasol.', 'Para el aderezo: en un bowl mezclar bien todos los ingredientes hasta integrar y obtener una “crema suave” (es importante triturar bien el queso).', 'Para finalizar baña la ensalada con el aderezo.'],
  ['ligero', 'vegetariano'], 232, 12, 10, 10, 16, 6, 3, '/assets/img/recetas/017-love.jpeg'],
 
-['Mediterránea de Atún', 'almuerzo',
+['Ensalada Mediterránea de Atún', 'almuerzo',
  ['atún|4-5 onz', 'aceituna|Un par', 'cebolla morada|¼', 'pimenton rojo|½', 'tomate|1', 'alcaparra|½ cda', 'albahaca|al gusto', 'aceite de aguacate|al gusto', 'zumo de limón|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'yogur griego plain|2 cdas'],
  ['Para iniciar vamos a asar el pimentón. Pícalo en tiras delgadas y llévalo a saltear en una sarten con un poco de aceite de aguacate.', 'Solo vamos a cocinar un poco no queremos que quede muy suave.', 'Luego en un bowl: Mezcla el atún desmenuzado, las aceitunas picaditas, la cebolla picada, el tomate picadito, las tiras de pimentón asadas, las alcaparras, la albahaca, el zumo de limón, el yogurt griego, sal y pimienta.', 'Mezcla muy bien hasta integrar todos los ingredientes.'],
  ['ligero', 'alto en proteína'], 294, 27, 12, 6, 18, 4, 1, '/assets/img/recetas/023-mediterranea-de-atun.jpeg'],
 
-['Oriental con Aderezo de Cilantro', 'almuerzo',
+['Ensalada Oriental con Aderezo de Cilantro', 'almuerzo',
  ['pechuga de pollo|4-5 onzas', 'lechuga|Un par', 'repollo morado|1 taza', 'pimenton rojo|¼', 'cebolla|¼', 'semilla de calabaza|1 cda', 'hoja de laurel|1', 'sal|al gusto', 'pimienta|al gusto', 'ajo|1 diente', 'cilantro|2 puños', 'zumo de limón|2 limones', 'aceite de oliva|3 cdas'],
  ['Procesa en la licuadora el cilantro, el zumo de limón y el aceite; salpimienta y reserva. ** de ser necesario agregar un chorrito más de aceite de oliva.', 'Para el pollo en una ollita con agua, colocar a cocinar la pechuga con ajo, sal y el laurel.', 'Una vez lista, retira, desmecha y reserva.', 'Picar el repollo y la lechuga en finas julianas.', 'Picar el pimenton y la cebolla en finas julianas también.', 'Seguidamente en un bowl grande agregar todos los ingredientes junto con el aderezo de cilantro, revuele muy bien hasta integrar todos los sabores.', 'Sirve y decora con las semillas de calabaza.'],
  ['ligero', 'alto en proteína'], 312, 25, 15, 8, 20, 3, 2, '/assets/img/recetas/030-oriental-con-aderezo-de-cilantro.jpeg'],
 
-['Otoño', 'almuerzo',
+['Ensalada Otoño', 'almuerzo',
  ['kale|2 puños', 'pera|1', 'champiñón|1 taza', 'piñón|Un puño', 'zumo de limón|al gusto', 'aceite de oliva|2 cucharadas', 'vinagre de manzana|1 cucharada', 'cúrcuma|al gusto', 'mostaza orgánica|1 cda', 'sal|al gusto', 'pimienta|al gusto'],
  ['Quita los troncos de la kale y córtala en trozos. Reserva.', 'Pela la pera y córtala en dados tamaño bocado.', 'Rocía sobre ella un poco de zumo de limón para evitar que se oscurezca. Reserva.', 'Para los champiñones tienes dos opciones comerlos crudos o cocidos.', 'De preferir cocidos en una plancha colocar las lonjas solo un par de minutos por cada lado. Reserva.', 'Para el aderezo solo mezcla todos sus ingredientes hasta integrar muy bien. Reserva.', 'Para finalizar en un bowl mezcla: las hojas de kale, los cubos de pera, los champiñones rebanados y el puño de frutos secos.', 'Por ultimo agregar el aderezo, mezcla y Sírvela inmediatamente.'],
  ['ligero', 'vegetariano'], 240, 6, 12, 18, 16, 8, 4, '/assets/img/recetas/041-otono.jpeg'],
 
-['Picnic', 'almuerzo',
+['Ensalada Picnic', 'almuerzo',
  ['pechuga de pavo|4-5 onz', 'pasta de lentejas|½ taza', 'tomate cherry|1 taza', 'zanahoria|¼', 'brócoli|1 taza', 'cebolla|¼', 'perejil|al gusto', 'ajo|1 diente', 'hoja de laurel|1', 'limón|1', 'yogurt griego plain|2 cdas', 'mostaza orgánica|1 cda', 'aceite de oliva|2 cdas'],
  ['Coloca la pechuga de pavo en una olla, rocíela con el jugo de limón y condimente con sal.', 'Vierta un poco de agua, agregue la hoja de laurel, tape la olla y cocine a fuego medio hasta quede suave y cocida.', 'Deje enfriar y corte en cubos tamaño bocado.', 'Luego lo que debemos hacer es lavar los ramitos de brócoli y hervirlos o mejor, cocinarlos al vapor hasta que estén tiernos. Reserva.', 'Una vez cocidos reservamos y hervimos en abundante agua la pasta hasta que quede al dente. Colamos y dejamos refrescar.', 'Picamos los tomates cherry a la mitad y la cebolla en pequeños cuadritos.', 'Por otro lado, en un recipiente aparte mezclamos todos los ingredientes del aderezo hasta integrar.', 'Finalmente, en un bowl mezclamos: la pasta cocida, los cubos de pollo cocidos, los tomate cherry, la zanahoria rallada, el brócoli, la cebolla picadita y el perejil.', 'Agregamos el aderezo y revolvemos bien hasta que todo quede impregnado.', 'Si gusta decorar con un poco más de perejil picadito.'],
  ['ligero', 'alto en proteína'], 380, 30, 20, 20, 20, 5, 4, '/assets/img/recetas/033-picnic.jpeg'],
 
-['Pipirrana', 'almuerzo',
+['Ensalada Pipirrana', 'almuerzo',
  ['pulpo|4-5 onz', 'tomate|1 grande', 'pimentón rojo|¼', 'pimentón verde|¼', 'cebolla|¼', 'pepino|¼ – ½', 'aceite de oliva|al gusto', 'vinagre de vino|2-3 cdas', 'sal|pizca', 'pimienta negra|pizca'],
  ['Comenzaremos con el pulpo: para iniciar escoge una olla adecuada, debe ser lo suficientemente grande para que el agua cubra totalmente al pulpo.', 'Recuerda que el pulpo, durante su cocción, suelta su propio jugo.', 'Un consejo, una vez comience a hervir el agua, baja el fuego para que no borbotee demasiado.', 'El pulpo ha de introducirse en el agua cuando esté hirviendo.', 'Has de sacarlo totalmente del agua para volverlo a meter.', 'Repite este paso tres veces, dejándolo 5 segundos dentro y otros 5 fuera del agua.', 'Es lo que se conoce como “asustar el pulpo”, así quedará terso y evitarás que la piel del pulpo se despegue durante la cocción.', 'Cocina aproximadamente 25 minutos o hasta que este suave.', 'Una vez listo, apaga y deja reposar un par de minutos más.', 'Ahora si puedes retirarlo, y picarlo según tu preferencia (para esta preparación es ideal que sean cubos pequeños). Reservar.', 'Lavamos y picamos todos los vegetales (el pepino, el pimentón, la cebolla y el tomate) en trocitos pequeños del mismo tamaño.', 'Para finalizar en un bowl mezcla todos los ingredientes; aliña la ensalada con un buen chorro de aceite de oliva, vinagre, sal y pimienta. Mezcla muy bien hasta integrar sabores. Refrigera uno minutos antes de servir.'],
- ['ligero', 'vegetariano'], 208, 10, 15, 15, 12, 4, 3, '/assets/img/recetas/002-pipirrana.jpeg'],
+ ['ligero'], 208, 10, 15, 15, 12, 4, 3, '/assets/img/recetas/002-pipirrana.jpeg'],
 
-['Primavera', 'almuerzo',
+['Ensalada Primavera', 'almuerzo',
  ['aguacate|½', 'champiñones|1 taza', 'tomate cherry|1 taza', 'espárragos|1 puño', 'kale|un par de hojas', 'ajo|1 diente', 'aceite de aguacate|al gusto', 'yogurt griego plain|2 cdas', 'mostaza orgánica|1 cda', 'curry|al gusto', 'limón|al gusto'],
  ['Limpiar y trocear los espárragos. En un sarten con un poco de aceite de aguacate, sal y ajo saltearlos hasta dorar y tengan la consistencia de su preferencia.', 'Retirarlos y reservarlos para más adelante.', 'Lavar bien los champiñones y laminarlos finamente.', 'Cortar el aguacate en cuadraditos y cortar las hojas de kale en tiras. Picar los tomates a la mitad.', 'Mezclar el kale con los champiñones, tomate y el aguacate.', 'Colocarlo todo en el plato donde se va a servir y cubrirlo con los espárragos tibios. Para finalizar bañar con el aderezo.'],
  ['ligero', 'vegetariano'], 266, 8, 20, 18, 18, 5, 5, '/assets/img/recetas/036-primavera.jpeg'],
 
-['Relax', 'almuerzo',
+['Ensalada Relax', 'almuerzo',
  ['queso mozarella|2-3 lonjas', 'bacon|2 lonjas', 'lechuga|1 puño', 'espárragos|1 puño', 'champiñones|1 taza', 'zanahoria|½', 'aceite de oliva|2 cdas', 'mostaza orgánica|1 cda', 'orégano|al gusto', 'cúrcuma|al gusto'],
  ['Para iniciar lavamos bien los champiñones y los cortamos en láminas, la zanahoria deberá ir rallada y la lechuga la troceamos con la mano.', 'Para desinfectar la lechuga, la colocamos en un bowl y la lavamos con agua y una cucharada de vinagre blanco.', 'Dejamos en remojo durante 10 minutos y luego escurrimos bien.', 'Aparte, cortamos el bacon en trozos pequeños o cubos y salteamos en la sartén a fuego medio durante un par de minutos hasta que esté crujiente. Reserva sobre papel absorbente.', 'Recuerda que no hace falta añadir aceite, pues el mismo bacon irá soltando su grasa al calor.', 'Ahora, para empezar a armar la ensalada colocamos la lechuga escurrida en un plato hondo, y mezclamos con la zanahoria rallada.', 'Seguimos incorporando los champiñones frescos laminados y añadimos también el queso mozzarella cortado en tiras o cubos. Mezclamos y revolvemos todo bien.', 'Para cocinar los espárragos, los colocamos en agua hirviendo durante 10 minutos máximo.', 'Cuando estén listos, escurrimos, dejamos refrescar y cortamos en trozos para luego mezclar con el resto de la ensalada verde.', 'Añade también el bacon y vuelve a mezclar todo hasta repartir los ingredientes de forma uniforme. Baña la ensalada con el aderezo.'],
  ['ligero', 'alto en proteína'], 388, 22, 25, 12, 28, 4, 3, '/assets/img/recetas/020-relax.jpeg'],
 
-['Sifrina', 'almuerzo',
+['Ensalada Sifrina', 'almuerzo',
  ['salmón ahumado|4-5 onzas', 'lechuga|un par de hojas', 'arúgula|un par de hojas', 'aguacate|½', 'palmitos|2-3 bastones', 'cebollín|al gusto', 'aceite de oliva|1 cda', 'limón|1', 'vinagre de manzana|1 cucharadita', 'kiwi|1', 'tomate|1', 'mostaza orgánica|1 cucharada', 'monk fruit|una pizca', 'vinagre balsámico|1 cucharadita'],
  ['Prepara la crema de aguacate: pela el aguacate, córtalo en cubos y tritúralo con un tenedor hasta obtener una pasta gruesa.', 'Añade el zumo de limón, el cebollín picado, una pizca de sal, pimienta, aceite de oliva y vinagre de manzana; bate con una batidora de mano o cuchara hasta que la mezcla quede homogénea y sin grumos.', 'Reserva la crema en un recipiente hermético y déjala a temperatura ambiente mientras preparas el resto de la ensalada.', 'Para la vinagreta de kiwi, pela el kiwi y córtalo en cubos pequeños junto con el tomate; reserva.', 'En un tazón pequeño, mezcla la mostaza, monk fruit, una pizca de sal, vinagre balsámico y una cucharada de aceite de oliva; bate hasta emulsionar.', 'Incorpora el kiwi y el tomate a la mezcla anterior y revuelve bien para integrar todos los sabores.', 'En un plato grande, coloca una cama de lechuga y arúgula.', 'Distribuye los cubos de salmón ahumado sobre las hojas verdes y coloca rebanadas finas de palmito encima.', 'Con una cuchara, agrega la crema de aguacate sobre el salmón y el palmito.', 'Vierte la vinagreta de kiwi sobre todo el plato y decora con cebollín picado adicional.'],
- ['ligero', 'vegetariano'], 290, 12, 15, 20, 18, 12, 5, '/assets/img/recetas/012-sifrina.jpeg'],
+ ['ligero'], 290, 12, 15, 20, 18, 12, 5, '/assets/img/recetas/012-sifrina.jpeg'],
 
-['Sorpresa de Atún', 'almuerzo',
+['Ensalada Sorpresa de Atún', 'almuerzo',
  ['atún en vidrio|4-5 onz', 'pasta de arvejas|½ taza', 'maíz|¼ taza', 'tomate|1', 'zanahoria|¼', 'perejil|al gusto', 'yogurt griego plain|2 cdas', 'aceite de oliva|1 cda', 'mostaza orgánica|1 cucharada', 'sal|pizca', 'pimienta|pizca'],
  ['Cocina la pasta (o legumbres) con agua salada hasta que esté al dente; escúrrela y déjala enfriar completamente a temperatura ambiente.', 'En un tazón grande, combina el atún en lata, el maíz desgranado, el tomate picado, la zanahoria rallada y el perejil picado.', 'Prepara el aderezo mezclando el yogur griego, aceite de oliva, mostaza, sal y pimienta hasta obtener una salsa homogénea.', 'Vierte el aderezo sobre la pasta fría y mezcla con movimientos circulares para que la pasta se impregne bien.', 'Incorpora el atún y los demás vegetales al tazón; mezcla suavemente hasta que todos los ingredientes estén uniformemente cubiertos.', 'Ajusta la sazón con más sal, pimienta o mostaza si lo consideras necesario.', 'Sirve la ensalada fría, decorada con un chorrito de aceite de oliva extra virgen si lo deseas.'],
  ['ligero', 'alto en proteína'], 240, 18, 20, 15, 12, 4, 3, '/assets/img/recetas/003-sorpresa-de-atun.jpeg'],
 
-['Thai', 'almuerzo',
+['Ensalada Thai', 'almuerzo',
  ['camarones|4-5 onzas', 'lechuga|al gusto', 'brotes de soja|un puño', 'cebolla|¼', 'pepino|½', 'zanahoria|¼', 'jengibre|al gusto', 'limón|1', 'coconut aminos|2 cdas', 'aceite de oliva|2 cdas', 'aceite de sésamo|1 cda', 'monk fruit|al gusto', 'semillas de sésamo|1 cda'],
  ['Marina los camarones con sal, jengibre fresco rallado y el zumo de limón; deja reposar 10 minutos.', 'Calienta una sartén a fuego medio-alto con un chorrito de aceite de oliva y cocina los camarones 2-3 minutos por cada lado hasta que cambien de color y estén rosados.', 'Retira los camarones, déjalos enfriar y reserva.', 'En un tazón grande, mezcla la lechuga, los brotes de soja, la cebolla y el pepino troceados, y la zanahoria rallada.', 'Prepara la salsa combinando el coconut aminos, aceite de oliva, monk fruit, zumo de limón, semillas de sésamo, sal y pimienta; bate hasta emulsionar.', 'Incorpora los camarones cocidos y el jugo de la marinada al tazón de vegetales.', 'Vierte la salsa sobre la ensalada y mezcla con movimientos suaves para integrar todos los sabores.', 'Sirve inmediatamente, decorado con semillas de sésamo adicionales si lo deseas.'],
- ['ligero', 'vegetariano'], 234, 15, 20, 12, 14, 3, 4, '/assets/img/recetas/043-thai.jpeg'],
+ ['ligero'], 234, 15, 20, 12, 14, 3, 4, '/assets/img/recetas/043-thai.jpeg'],
 
-['Tricolor', 'almuerzo',
+['Ensalada Tricolor', 'almuerzo',
  ['brócoli|1 taza', 'maíz|½ taza', 'cebolla morada|¼', 'yogurt griego plain|2-3 cdas', 'aceite de oliva|1 cda', 'ajo|1 diente', 'cilantro|1 cda', 'limón|al gusto', 'sal|al gusto', 'pimienta|al gusto'],
  ['Cocina los ramitos de brócoli al vapor durante 3-4 minutos hasta que estén tiernos pero aún crujientes; escúrrelos y déjalos enfriar a temperatura ambiente.', 'Pica finamente la cebolla morada y el cilantro; reserva.', 'En un tazón pequeño, combina el yogur griego, aceite de oliva, ajo machacado, cilantro picado, zumo de limón, sal y pimienta; bate con una cuchara hasta obtener una salsa homogénea.', 'En un bowl grande, coloca el brócoli cocido, el maíz desgranado y la cebolla picada.', 'Vierte la salsa de yogur sobre los vegetales y mezcla con movimientos circulares hasta que todo quede bien incorporado.', 'Ajusta la sazón con más sal, pimienta o limón si lo consideras necesario.', 'Sirve la ensalada fresca, decorada con un chorrito de aceite de oliva extra virgen y un poco de cilantro fresco.'],
  ['ligero', 'vegetariano'], 198, 9, 15, 18, 10, 4, 5, '/assets/img/recetas/048-tricolor.jpeg'],
 
-['UvaPollo', 'almuerzo',
+['Ensalada Uva y Pollo', 'almuerzo',
  ['pechuga de pollo|4-5 onzas', 'lechuga|un par de hojas', 'uva|6', 'limón|1', 'sal|al gusto', 'pimienta|al gusto', 'perejil|al gusto', 'hoja de laurel|1', 'nuez|un puño', 'yogur griego|2-3 cdas', 'zumo de naranja|2 cdas', 'apio|al gusto', 'eneldo|al gusto'],
  ['Coloca la pechuga de pollo en una olla, cúbrela con el jugo de limón y sazona con sal; añade suficiente agua para apenas cubrir y una hoja de laurel', 'Cocina a fuego medio, tapada, durante 12‑15 minutos o hasta que el pollo esté tierno y se deshaga al pincharlo con un tenedor', 'Retira la olla, deja enfriar el pollo y córtalo en cubos de 2‑3 cm', 'Mientras el pollo se enfría, corta las uvas en cuartos y trocea las nueces; pica finamente el perejil y el celery', 'En un bol grande combina el pollo, las uvas, las nueces, el perejil y el celery', 'Prepara el aderezo mezclando el yogurt griego, el zumo de naranja, una pizca de sal y eneldo; bate hasta obtener una crema homogénea', 'Vierte el aderezo sobre la mezcla de pollo y revuelve suavemente hasta que todo quede bien integrado', 'Dispón una hoja de lechuga como base en cada plato y coloca encima la ensalada de pollo, uvas y nueces', 'Sirve inmediatamente y, si lo deseas, adorna con una ramita de perejil fresco'],
  ['ligero', 'alto en proteína'], 400, 30, 20, 25, 20, 12, 5, '/assets/img/recetas/032-uvapollo.jpeg'],
 
-['Verde con Jamón Serrano', 'almuerzo',
+['Ensalada Verde con Jamón Serrano', 'almuerzo',
  ['jamón serrano|3-4 onzas', 'lechuga|mix', 'hongo|1 taza', 'maíz|¼ taza', 'nuez|un puño', 'semilla de calabaza|1 cda', 'aceite de oliva|2 cdas', 'vinagre balsámico|1-2 cdas', 'sal|al gusto', 'pimiento|al gusto'],
  ['En un bowl grande mezcla el maíz desgranado, el jamón serrano troceado, las nueces y las semillas de calabaza; reserva la mezcla', 'Lava y seca el mix de lechugas y colócalas como cama en el plato de emplatar', 'Corta los hongos en láminas de 3‑4 mm; si prefieres cocidos, calienta una plancha a fuego medio‑alto y saltea los hongos 2 minutos por lado hasta que estén dorados y tiernos', 'Distribuye las láminas de hongos (crudos o salteados) sobre la cama de lechugas', 'Añade la mezcla de maíz, jamón y semillas sobre los hongos, distribuyendo de manera uniforme', 'En un vaso pequeño emulsiona el aceite de oliva, el vinagre balsámico, sal y pimienta hasta obtener un aderezo brillante', 'Rocía el aderezo sobre toda la ensalada justo antes de servir para que mantenga frescura y textura'],
  ['ligero', 'alto en proteína'], 283, 22, 15, 15, 15, 4, 3, '/assets/img/recetas/014-verde-con-jamon-serrano.jpeg'],
@@ -3352,7 +3352,7 @@ return [
 ['Crema de auyama', 'almuerzo',
  ['auyama|½ kg', 'ajo|2 dientes', 'cebolla|½ taza', 'ajo porro|¼ taza', 'consomé de pollo|2 tazas', 'aceite de oliva|1 cucharada', 'sal|1 cucharadita', 'pimienta|¼ cucharadita'],
  ['Se corta la auyama en trozos grandes, se le coloca un poco de sal marina, que se envuelven en papel de aluminio bien tapados y se hornea a 350° hasta que se ablanden.', 'En una olla se coloca el aceite de oliva, se agrega el ajo la cebolla y el ajo porro todo picado hasta marchitar unos 5 minutos.', 'Se agrega el consomé y se lleva a hervor unos minutos.', 'Se baja del fuego y se deja reposar hasta enfriar.', 'Se coloca el caldo en la trituradora (licuadora) y se le agrega la auyama asada sin concha y se le agrega sal y pimienta al gusto.', 'Listo para servir Esta receta se puede utilizar de referencia para preparar crema de papa, apio o cualquier otro tubérculo.'],
- ['vegetariano', 'ligero'], 160, 3, 20, 26, 5, 6, 4, '/assets/img/recetas/003-crema-de-auyama.jpeg'],
+ ['ligero'], 160, 3, 20, 26, 5, 6, 4, '/assets/img/recetas/003-crema-de-auyama.jpeg'],
 
 ['Crema de brócoli y acelgas', 'almuerzo',
  ['aceite de oliva|1 cucharada', 'ajo|1 diente', 'cebolla|½', 'brócoli|1 cabeza mediana', 'agua o caldo de vegetales|2 ½ tazas', 'sal|¼ cucharada', 'pimienta negra|¼ cucharada', 'tomillo seco|¼ cucharada', 'acelga|1 taza', 'limón|½'],
@@ -3467,7 +3467,7 @@ return [
 ['Tortilla integral de pollo con aguacate', 'almuerzo',
  ['pollo|80 g', 'cebolla morada|1', 'ajo|al gusto', 'hongos|1/3 taza', 'aguacate|3 rebanadas', 'lechuga|2 hojas', 'hierbas provenzales|al gusto', 'aceite de oliva extra virgen|1 cucharada', 'vinagre balsámico|al gusto'],
  ['Corta el pollo en tiras, sazona con hierbas provenzales, sal y pimienta al gusto.', 'Sofríe la cebolla y un diente de ajo hasta marchitar en un poquito de aceite de oliva, agrega los hongos rebanados y luego el pollo.', 'Calienta la tortilla, agrega el pollo con cebolla y hongos.', 'Coloca, luego, las lechugas mixtas previamente bien lavadas, el aguacate y un poquito de reducción de vinagre balsámico.', 'Rica receta de Alimentación RFS para el desayuno, almuerzo o cena, sobre todo en vacaciones. ¡Muy fácil de preparar!'],
- ['ligero', 'vegetariano'], 322, 17, 20, 14, 22, 6, 4, '/assets/img/recetas/025-tortilla-integral-de-pollo-con-aguacate.jpeg'],
+ ['ligero'], 322, 17, 20, 14, 22, 6, 4, '/assets/img/recetas/025-tortilla-integral-de-pollo-con-aguacate.jpeg'],
 
 ['Tostadas de lentejas con rúcula, tomate y pepino', 'almuerzo',
  ['lentejas|½ kg', 'caldo de verduras|6 tazas', 'papa|½ taza', 'zanahoria|½ taza', 'cebolla|1 entera', 'ajo|2 dientes', 'canela|1 rama', 'aceite de oliva|2 cdas', 'sal|al gusto', 'pimienta|al gusto'],
@@ -3552,12 +3552,12 @@ return [
 ['César Saludable', 'almuerzo',
  ['Pollo Air Fryer|al gusto', 'Lechuga romana|al gusto', 'Parmesano|al gusto', 'Crutones integrales|al gusto', 'Aderezo césar light|al gusto'],
  ['Cocina el pollo y córtalo en tiras.', 'Coloca lechuga en el bowl.', 'Añade pollo y parmesano.', 'Agrega crutones.', 'Termina con aderezo.', '(Tip: Agrega pimienta recién molida para más sabor.)'],
- ['alto en proteína', 'rápido', 'sin gluten'], 893, 101, 10, 7, 49, 2, 1, '/assets/img/recetas/011-cesar-saludable.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 383, 55, 10, 3, 16, 1, 1, '/assets/img/recetas/011-cesar-saludable.jpeg'],
 
 ['BBQ Casero', 'almuerzo',
  ['Carne|al gusto', 'Salsa BBQ|al gusto', 'Papitas Air Fryer|al gusto', 'Maíz|al gusto', 'Aguacate|al gusto'],
  ['Cocina la carne en Air Fryer.', 'Mezcla con salsa BBQ.', 'Coloca papitas en la base.', 'Añade carne, maíz y aguacate.', '(Tip: Las papitas rústicas quedan perfectas aquí.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 682, 46, 15, 75, 19, 24, 7, '/assets/img/recetas/012-bbq-casero.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 579, 46, 15, 55, 19, 9, 6, '/assets/img/recetas/012-bbq-casero.jpeg'],
 
 ['Atún y Aguacate', 'almuerzo',
  ['Atún|al gusto', 'Aguacate|al gusto', 'Pepino|al gusto', 'Arroz|al gusto', 'Limón|al gusto'],
@@ -3597,7 +3597,7 @@ return [
 ['Crunchy de Pollo Apanado', 'almuerzo',
  ['Pollo apanado Air Fryer|al gusto', 'Lechuga|al gusto', 'Tomate|al gusto', 'Maíz|al gusto', 'Salsa honey mustard|al gusto'],
  ['Cocina el pollo apanado hasta dorar.', 'Coloca vegetales en el bowl.', 'Corta el pollo en tiras.', 'Agrégalo encima.', 'Termina con salsa.', '(Tip: El pollo debe quedar MUY crocante para este bowl.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 505, 55, 15, 48, 10, 4, 6, '/assets/img/recetas/020-crunchy-de-pollo-apanado.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 472, 53, 15, 45, 8, 3, 4, '/assets/img/recetas/020-crunchy-de-pollo-apanado.jpeg'],
 
 ['Batata y Pollo', 'almuerzo',
  ['Batata|al gusto', 'Pollo|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Salsa de yogur|al gusto'],
@@ -3612,7 +3612,7 @@ return [
 ['Salmón Honey Mustard', 'almuerzo',
  ['Salmón Air Fryer|al gusto', 'Arroz|al gusto', 'Pepino|al gusto', 'Aguacate|al gusto', 'Salsa honey mustard|al gusto'],
  ['Cocina el salmón.', 'Coloca arroz caliente en el bowl.', 'Añade pepino y aguacate.', 'Agrega el salmón encima.', 'Termina con salsa.', '(Tip: No cocines demasiado el salmón para mantenerlo jugoso.)'],
- ['alto en proteína', 'rápido', 'sin gluten'], 575, 37, 15, 36, 31, 3, 7, '/assets/img/recetas/023-salmon-honey-mustard.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 542, 35, 15, 34, 29, 2, 5, '/assets/img/recetas/023-salmon-honey-mustard.jpeg'],
 
 ['Atún Picante', 'almuerzo',
  ['Atún|al gusto', 'Aguacate|al gusto', 'Pepino|al gusto', 'Arroz|al gusto', 'Salsa picante|al gusto'],
@@ -3622,7 +3622,7 @@ return [
 ['Pollo BBQ y Maíz', 'almuerzo',
  ['Pollo|al gusto', 'Salsa BBQ|al gusto', 'Maíz|al gusto', 'Arroz integral|al gusto', 'Aguacate|al gusto'],
  ['Cocina el pollo en Air Fryer.', 'Mezcla con salsa BBQ.', 'Coloca arroz en la base.', 'Añade maíz y aguacate.', 'Termina con pollo BBQ.', '(Tip: Agrega cebolla morada para más sabor.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 803, 55, 15, 98, 17, 25, 8, '/assets/img/recetas/025-pollo-bbq-y-maiz.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 700, 55, 15, 78, 17, 9, 8, '/assets/img/recetas/025-pollo-bbq-y-maiz.jpeg'],
 
 ['Veggie Coliflor y Aguacate', 'almuerzo',
  ['Coliflor Air Fryer|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Pepino|al gusto', 'Salsa de ajo|al gusto'],
@@ -3642,7 +3642,7 @@ return [
 ['Pollo César Crocante', 'almuerzo',
  ['Pollo crispy|al gusto', 'Lechuga romana|al gusto', 'Parmesano|al gusto', 'Crutones integrales|al gusto', 'Aderezo césar light|al gusto'],
  ['Cocina el pollo hasta dorar.', 'Coloca lechuga en el bowl.', 'Añade parmesano y crutones.', 'Agrega pollo caliente.', 'Termina con aderezo.', '(Tip: Sirve inmediatamente para mantener el crunch.)'],
- ['alto en proteína', 'rápido', 'sin gluten'], 893, 101, 15, 7, 49, 2, 1, '/assets/img/recetas/029-pollo-cesar-crocante.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 383, 55, 15, 3, 16, 1, 1, '/assets/img/recetas/029-pollo-cesar-crocante.jpeg'],
 
 ['Huevos, Papa y Aguacate', 'almuerzo',
  ['Huevos|al gusto', 'Papitas Air Fryer|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Salsa de yogur|al gusto'],
@@ -3664,6 +3664,11 @@ return [
  ['Mezcla los espárragos con el aceite, sal, pimienta y ajo.', 'Coloca en una sola capa — en tandas si es necesario.', 'Cocina a 200°C por 6-8 minutos según grosor.', 'Agrega el parmesano los últimos 2 minutos. Termina con limón.'],
  ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 409, 26, 7, 24, 27, 10, 10],
 
+['Berenjena a la Parmigiana', 'almuerzo',
+ ['berenjenas de 1 cm|2', 'Sal para purgar|al gusto', 'salsa de tomate|1 taza', 'queso mozarela en lonjas|150 g', 'Parmesano|al gusto', 'Albahaca y aceite en spray|al gusto'],
+ ['Espolvorea sal sobre las rodajas de berenjena y deja 20 minutos. Seca bien.', 'Rocía con spray y cocina a 185°C por 8 minutos por lado.', 'Arma en capas: berenjena, salsa de tomate, mozarela, parmesano.', 'Cocina 8 minutos más hasta que el queso burbujee. Decora con albahaca.'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'sin gluten'], 797, 43, 20, 80, 37, 49, 19],
+
 ['Pimentones Asados', 'almuerzo',
  ['pimentones de colores en mitades sin semillas|3', 'aceite de oliva|2 cdas', 'ajo laminados|3 dientes', 'Sal y pimienta|al gusto', 'Vinagre balsámico|al gusto', 'Pan rústico para servir|al gusto'],
  ['Coloca los pimentones con la piel hacia arriba en la canasta.', 'Rocía con aceite y agrega el ajo laminado dentro de cada mitad.', 'Cocina a 200°C por 15-18 minutos hasta que la piel se ennegrezca.', 'Cubre con papel de aluminio 10 minutos — la piel se pela sola. Sazona y sirve.'],
@@ -3675,12 +3680,12 @@ return [
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 336, 4, 10, 58, 12, 36, 13],
 
 ['Ensalada tibia de zucchini y champiñones', 'almuerzo',
- ['zucchini|1/2', 'champiñones|1/2 taza', 'aceite de oliva|1/2 cucharada', 'ajo|1/2 diente', 'Sal y pimienta|al gusto'],
+ ['zucchini|1', 'champiñones|1/2 taza', 'aceite de oliva|1/2 cucharada', 'ajo|1 diente', 'Sal y pimienta|al gusto'],
  ['En una sartén, calienta el aceite y dora el ajo. Agrega el zucchini y los champiñones y saltea por 5 minutos.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 115, 5, 20, 8, 8, 5, 2, '/assets/img/recetas/087-ensalada-tibia-de-zucchini-y-champinones.jpeg'],
 
 ['Brócoli salteado con ajo y frutos secos', 'almuerzo',
- ['brócoli en floretes|1/2 taza', 'ajo|1/2 diente', 'frutos secos laminados|1/8 taza', 'aceite de oliva|1/2 cucharada', 'Sal|al gusto'],
+ ['brócoli en floretes|1/2 taza', 'ajo|1 diente', 'frutos secos laminados|2 cdas', 'aceite de oliva|1/2 cucharada', 'Sal|al gusto'],
  ['Saltea el ajo en aceite hasta dorar. Agrega el brócoli y cocina por 5 minutos. Añade los frutos secos y sirve caliente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 111, 4, 15, 9, 8, 2, 3, '/assets/img/recetas/094-brocoli-salteado-con-ajo-y-frutos-secos.jpeg'],
 
@@ -3692,10 +3697,10 @@ return [
 ['Frijoles y arroz a la cubana', 'almuerzo',
  ['aceite de oliva|1/4 cucharadita', 'ajo|1/4 cucharada', 'cebolla|1/4 taza', 'pimiento verde en cubitos|1/4 taza', 'arroz blanco de frijoles negros|3/4 tazas', 'caldo de pollo con bajo contenido graso|1/2 tazas', 'vinagre|1/4 cucharada', 'orégano seco|1/8 cucharadita', 'Pimienta negra a gusto|al gusto', 'arroz blanco|3/4 tazas'],
  ['Caliente el aceite de oliva en una sartén grande antiadherente. Saltee el ajo, la cebolla y el pimiento verde hasta que se doren, cerca de 3 minutos. Mezcle los frijoles, el caldo, el vinagre y los condimentos; deje que hierva y después cocine a fuego lento; tape y cocine por 5 minutos. Sirva...'],
- ['vegetariano', 'sin gluten', 'económico'], 525, 22, 35, 103, 3, 6, 15, '/assets/img/recetas/116-frijoles-y-arroz-a-la-cubana.jpeg'],
+ ['sin gluten', 'económico'], 525, 22, 35, 103, 3, 6, 15, '/assets/img/recetas/116-frijoles-y-arroz-a-la-cubana.jpeg'],
 
 ['Sopa de pollo con vegetales', 'almuerzo',
- ['agua|1/2 litro', 'pollo|80 g', 'ajoporro|1/2', 'cebolla en dos|1/2', 'ajo machacados|1 dientes', 'pimentón rojo|1/8', 'ajíes dulces|1', 'celery|1/2 rama', 'cebollín|1/2 rama', 'cilantro|1/2 rama', 'perejil|1/2 rama', 'auyama|70 g', 'zanahoria|1/2', 'aceite de oliva|1 cdas', 'Sal y pimienta|al gusto'],
+ ['agua|1/2 litro', 'pollo|80 g', 'ajoporro|1', 'cebolla en dos|1', 'ajo machacados|1 dientes', 'pimentón rojo|1', 'ajíes dulces|1', 'celery|1/2 rama', 'cebollín|1/2 rama', 'cilantro|1/2 rama', 'perejil|1/2 rama', 'auyama|70 g', 'zanahoria|1', 'aceite de oliva|1 cdas', 'Sal y pimienta|al gusto'],
  ['Limpiar el pollo y colocarlo en una olla. Agregar, la cebolla, el ajo, las ramas verdes y cocinar a fuego medio una hora. Cortar en dados el pimentón y ají dulce en tiritas y agregarlos. Salpimentar y agregar las verduras picadas y déjalos cocinar suavemente hasta que estén tiernos, rectificar...'],
  ['alto en proteína', 'sin gluten', 'económico'], 389, 29, 30, 28, 19, 13, 6, '/assets/img/recetas/004-sopa-de-pollo-con-vegetales.jpeg'],
 
@@ -3705,17 +3710,17 @@ return [
  ['alto en proteína', 'ligero', 'rápido', 'vegetariano'], 106, 8, 10, 13, 3, 7, 2, '/assets/img/recetas/033-ensalada-de-pepino-con-yogurt.jpeg'],
 
 ['Ajiaco santafereño aligerado', 'almuerzo',
- ['pechuga de pollo|100 g', 'papas criollas|1', 'papa pastusa|1/2', 'mazorca|1/4', 'guascas|1/8 taza', 'crema de leche|1/2 cda', 'aguacate en tajadas|1/8', 'agua o caldo de pollo|2 tazas', 'Sal|al gusto'],
+ ['pechuga de pollo|100 g', 'papas criollas|1', 'papa pastusa|1', 'mazorca|1', 'guascas|2 cdas', 'crema de leche|1/2 cda', 'aguacate en tajadas|1', 'agua o caldo de pollo|2 tazas', 'Sal|al gusto'],
  ['Cocina la pechuga de pollo en el agua o caldo 20 minutos hasta que esté tierna; desmenuza y reserva.', 'En el mismo caldo, agrega las papas criollas, la papa pastusa y la mazorca.', 'Cocina 25 minutos a fuego medio, deshaciendo parte de la papa criolla para espesar el caldo.', 'Añade las guascas los últimos 5 minutos.', 'Regresa el pollo desmenuzado a la olla y rectifica sal.', 'Sirve con una cucharada de crema de leche y el aguacate al lado.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 364, 36, 50, 32, 10, 3, 6],
 
 ['Sancocho de gallina valluno', 'almuerzo',
- ['gallina criolla en presas|133 1/3 g', 'plátano verde|1/3', 'yuca|1/3', 'mazorca|1/3', 'papa pastusa|1/3', 'cebolla larga|0.1 taza', 'ajo|1/3 diente', 'agua|2 2/3 tazas', 'Sal y comino|al gusto'],
+ ['gallina criolla en presas|135 g', 'plátano verde|1', 'yuca|1', 'mazorca|1', 'papa pastusa|1', 'cebolla larga|1 1/4 cdas', 'ajo|1 diente', 'agua|2 2/3 tazas', 'Sal y comino|al gusto'],
  ['En una olla grande, cocina la gallina con el ajo y el agua durante 30 minutos, retirando la espuma.', 'Agrega el plátano verde y la mazorca; cocina 15 minutos más.', 'Añade la yuca y la papa; cocina 15 minutos hasta que todo esté tierno.', 'Sazona con sal y comino y agrega la cebolla larga al final.', 'Sirve caliente con arroz blanco aparte.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 579, 31, 60, 62, 24, 11, 5],
 
 ['Sancocho trifásico', 'almuerzo',
- ['pechuga de pollo|66 2/3 g', 'carne de res magra|50 g', 'costilla de res|33 1/3 g', 'plátano verde|1/3', 'yuca|1/3', 'mazorca|1/3', 'cilantro|0.1 taza', 'agua|2 2/3 tazas', 'Sal|al gusto'],
+ ['pechuga de pollo|65 g', 'carne de res magra|50 g', 'costilla de res|35 g', 'plátano verde|1', 'yuca|1', 'mazorca|1', 'cilantro|1 1/4 cdas', 'agua|2 2/3 tazas', 'Sal|al gusto'],
  ['Cocina la costilla y la carne de res en el agua 25 minutos, retirando la espuma.', 'Agrega el pollo y cocina 15 minutos más.', 'Añade el plátano, la yuca y la mazorca; cocina 20 minutos hasta ablandar.', 'Rectifica sal y espolvorea el cilantro antes de servir.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 497, 44, 60, 51, 14, 10, 4],
 
@@ -3725,32 +3730,32 @@ return [
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 777, 36, 40, 94, 30, 9, 11],
 
 ['Fríjoles antioqueños con garra', 'almuerzo',
- ['fríjol cargamanto|1/2 taza', 'carne de res magra|50 g', 'plátano verde|1/4', 'cebolla|1/8 taza', 'ajo|1/2 diente', 'hogao|1/2 cda', 'agua|1/2 taza', 'Sal|al gusto'],
+ ['fríjol cargamanto|1/2 taza', 'carne de res magra|50 g', 'plátano verde|1', 'cebolla|2 cdas', 'ajo|1 diente', 'hogao|1/2 cda', 'agua|1/2 taza', 'Sal|al gusto'],
  ['Sofríe la cebolla y el ajo con el hogao 3 minutos.', 'Agrega la carne y dora 5 minutos.', 'Añade los fríjoles, el plátano y el agua; cocina tapado 25 minutos a fuego medio, revolviendo de vez en cuando.', 'Rectifica sal y sirve con arroz blanco aparte.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 272, 23, 45, 39, 4, 8, 8],
 
 ['Arroz atollado', 'almuerzo',
- ['arroz blanco|1/2 taza', 'carne de res magra|75 g', 'papa criolla|50 g', 'cebolla|1/8 taza', 'ajo|1/2 diente', 'hogao|1/2 cda', 'caldo de res|1 tazas', 'Sal y comino|al gusto'],
+ ['arroz blanco|1/2 taza', 'carne de res magra|75 g', 'papa criolla|50 g', 'cebolla|2 cdas', 'ajo|1 diente', 'hogao|1/2 cda', 'caldo de res|1 tazas', 'Sal y comino|al gusto'],
  ['Sofríe la cebolla, el ajo y el hogao 3 minutos.', 'Agrega la carne y dora 5 minutos.', 'Añade el caldo y la papa criolla; cocina 15 minutos.', 'Incorpora el arroz y cocina 8-10 minutos más hasta que quede cremoso, revolviendo seguido.', 'Sazona con sal y comino y sirve caliente.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 309, 24, 40, 41, 5, 2, 2],
 
 ['Cazuela de mariscos costeña', 'almuerzo',
- ['camarones|100 g', 'calamar|50 g', 'leche de coco|1/4 taza', 'cebolla|1/8 taza', 'pimentón|1/4', 'ajo|1/2 diente', 'pasta de tomate|1/2 cda', 'Sal|al gusto'],
+ ['camarones|100 g', 'calamar|50 g', 'leche de coco|1/4 taza', 'cebolla|2 cdas', 'pimentón|1', 'ajo|1 diente', 'pasta de tomate|1/2 cda', 'Sal|al gusto'],
  ['Sofríe la cebolla, el pimentón y el ajo 3 minutos.', 'Agrega la pasta de tomate y cocina 2 minutos.', 'Añade la leche de coco y deja hervir suave 5 minutos.', 'Incorpora los camarones y el calamar; cocina 5-6 minutos hasta que estén firmes (no más, para que no queden duros).', 'Rectifica sal y sirve con arroz blanco.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 314, 34, 35, 12, 16, 5, 2],
 
 ['Mote de queso cordobés', 'almuerzo',
- ['ñame|1/2', 'queso costeño|50 g', 'cebolla larga|1/8 taza', 'ajo|1/2 diente', 'agua o caldo|1 tazas', 'Sal|al gusto'],
+ ['ñame|1', 'queso costeño|50 g', 'cebolla larga|2 cdas', 'ajo|1 diente', 'agua o caldo|1 tazas', 'Sal|al gusto'],
  ['Cocina el ñame en el agua o caldo 20 minutos hasta ablandar.', 'Machaca parte del ñame contra la olla para espesar.', 'Agrega la cebolla y el ajo y cocina 5 minutos más.', 'Incorpora el queso costeño y deja derretir 3-4 minutos a fuego bajo.', 'Sirve caliente.'],
  ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 267, 13, 35, 25, 13, 1, 4],
 
 ['Sudado de pollo', 'almuerzo',
- ['pechuga de pollo en presas|150 g', 'papa pastusa|1/2', 'arveja|1/4 taza', 'cebolla|1/8 taza', 'tomate|1/4', 'ajo|1/2 diente', 'agua|1/4 taza', 'Sal y comino|al gusto'],
+ ['pechuga de pollo en presas|150 g', 'papa pastusa|1', 'arveja|1/4 taza', 'cebolla|2 cdas', 'tomate|1', 'ajo|1 diente', 'agua|1/4 taza', 'Sal y comino|al gusto'],
  ['Sofríe la cebolla, el tomate y el ajo 3-4 minutos hasta formar un guiso.', 'Agrega el pollo y dora por todos los lados 5 minutos.', 'Añade la papa, la arveja y el agua; tapa y cocina a fuego medio-bajo 20 minutos.', 'Sazona con sal y comino y sirve con arroz blanco.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 377, 52, 35, 27, 6, 6, 6],
 
 ['Sudado de posta', 'almuerzo',
- ['posta de res|150 g', 'papa pastusa|1/2', 'cebolla|1/8 taza', 'tomate|1/4', 'ajo|1/2 diente', 'agua o caldo|1/4 taza', 'Sal y comino|al gusto'],
+ ['posta de res|150 g', 'papa pastusa|1', 'cebolla|2 cdas', 'tomate|1', 'ajo|1 diente', 'agua o caldo|1/4 taza', 'Sal y comino|al gusto'],
  ['Sofríe la cebolla, el tomate y el ajo hasta formar un guiso, 4 minutos.', 'Agrega la posta y sella por todos los lados.', 'Añade el agua o caldo, tapa y cocina a fuego bajo 30 minutos hasta ablandar.', 'Agrega la papa los últimos 15 minutos de cocción.', 'Rectifica sal y comino, sirve con arroz.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 339, 43, 45, 18, 10, 3, 3],
 
@@ -3760,17 +3765,17 @@ return [
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 372, 43, 30, 36, 9, 16, 5],
 
 ['Arroz con pollo', 'almuerzo',
- ['arroz blanco|1/2 taza', 'pechuga de pollo|100 g', 'arveja|1/4 taza', 'zanahoria|1/4', 'cebolla|1/8 taza', 'pasta de tomate|1/2 cda', 'Sal|al gusto'],
+ ['arroz blanco|1/2 taza', 'pechuga de pollo|100 g', 'arveja|1/4 taza', 'zanahoria|1', 'cebolla|2 cdas', 'pasta de tomate|1/2 cda', 'Sal|al gusto'],
  ['Sofríe la cebolla con la pasta de tomate 3 minutos.', 'Agrega la zanahoria y la arveja; cocina 5 minutos.', 'Añade el pollo desmenuzado y mezcla bien.', 'Incorpora el arroz cocido y revuelve a fuego medio 4-5 minutos hasta integrar.', 'Rectifica sal y sirve caliente.'],
  ['tradicional', 'alto en proteína', 'sin gluten', 'económico'], 366, 38, 35, 42, 4, 7, 5],
 
 ['Mute santandereano', 'almuerzo',
- ['carne de res magra|75 g', 'garbanzo|1/4 taza', 'arveja|1/4 taza', 'papa pastusa|1/2', 'cebolla|1/8 taza', 'ajo|1/2 diente', 'caldo de res|2 tazas', 'Sal|al gusto'],
+ ['carne de res magra|75 g', 'garbanzo|1/4 taza', 'arveja|1/4 taza', 'papa pastusa|1', 'cebolla|2 cdas', 'ajo|1 diente', 'caldo de res|2 tazas', 'Sal|al gusto'],
  ['Cocina la carne en el caldo 20 minutos.', 'Agrega la papa, el garbanzo y la arveja; cocina 20 minutos más.', 'Sofríe aparte la cebolla y el ajo y agrégalos a la olla los últimos 5 minutos.', 'Rectifica sal y sirve bien caliente.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 308, 29, 50, 37, 5, 7, 9],
 
 ['Encocado de pescado del Pacífico', 'almuerzo',
- ['pescado blanco|150 g', 'leche de coco|1/4 taza', 'cebolla|1/8 taza', 'pimentón|1/4', 'ajo|1/2 diente', 'cilantro|1/8 taza', 'Sal|al gusto'],
+ ['pescado blanco|150 g', 'leche de coco|1/4 taza', 'cebolla|2 cdas', 'pimentón|1', 'ajo|1 diente', 'cilantro|2 cdas', 'Sal|al gusto'],
  ['Sofríe la cebolla, el pimentón y el ajo 3-4 minutos.', 'Agrega la leche de coco y deja hervir suave 5 minutos.', 'Incorpora el pescado y cocina 8-10 minutos hasta que esté cocido, sin revolver mucho para que no se deshaga.', 'Espolvorea el cilantro y sirve con arroz de coco o arroz blanco.'],
  ['tradicional', 'alto en proteína', 'ligero', 'sin gluten'], 298, 31, 30, 9, 17, 5, 1],
 
@@ -3998,7 +4003,7 @@ return [
 ['Barquitas de Pepino con Pollo y Tzatziki', 'cena',
  ['pepino|1 unidad', 'yogur|1/4 taza', 'mayonesa|1 cucharada', 'sal|1/4 cucharadita', 'eneldo|1 1/2 cucharaditas', 'pollo|1/2 taza', 'tomate|1/2 taza', 'guisante|1/4 taza'],
  ['Corta cada pepino mediano longitudinalmente por la mitad y saca la pulpa, dejando una cáscara de aproximadamente 1/4 de pulgada de grosor.', 'En un tazón, mezcla el yogur griego natural sin grasa, la mayonesa, la sal de ajo y 1 cucharadita de eneldo fresco picado hasta obtener una mezcla suave y homogénea.', 'Revuelve suavemente el pollo cocido picado, 3/4 de taza de tomate picado y sin semillas, y los guisantes frescos o congelados descongelados en la mezcla de yogur.', 'Llena las cáscaras de pepino con la mezcla de pollo y yogur, asegurándote de llenarlas generosamente pero sin desbordar.', 'Cubre cada barquita de pepino con el tomate picado y el eneldo fresco restantes.', 'Sirve inmediatamente y disfruta como una refrescante y saludable cena.'],
- ['ligero', 'vegetariano'], 110, 8, 10, 6, 6, 4, 2, '/assets/img/recetas/133-barquitas-de-pepino-con-pollo-y-tzatziki.jpeg'],
+ ['ligero'], 110, 8, 10, 6, 6, 4, 2, '/assets/img/recetas/133-barquitas-de-pepino-con-pollo-y-tzatziki.jpeg'],
 
 ['Berenjenas rellenas', 'cena',
  ['berenjena|2 unidades', 'pimiento rojo|1 unidad', 'pimiento amarillo|1 unidad', 'pimiento verde|1 unidad', 'calabacín|1 unidad', 'cebolla|1 cebolleta', 'salsa de tomate|100 ml', 'huevo|4 unidades', 'queso|50 g', 'aceite|al gusto', 'sal|al gusto'],
@@ -4040,7 +4045,7 @@ return [
  ['En lugar de pasta, utiliza láminas de calabacín o berenjena para hacer las capas de la lasaña.', 'Rellena con espinacas, champiñones, queso ricotta bajo en grasa y salsa de tomate baja en sodio.', 'Hornea a 180°C durante 30-40 minutos, o hasta que la lasaña esté caliente y dorada.'],
  ['vegetariano', 'ligero'], 120, 2, 60, 11, 8, 5, 3, '/assets/img/recetas/144-lasana-de-vegetales.jpeg'],
 
-['Moiss de chocolate', 'cena',
+['Mousse de chocolate', 'cena',
  ['crema de almendra|1 taza', 'chocolate amargo|1 ½ tazas', 'mora azul|al gusto', 'frambuesa|al gusto', 'fresa|al gusto', 'menta|al gusto'],
  ['En una ollita a fuego bajo cocina la crema para batir por 2 minutos (sin dejar que hierva) y luego añade el chocolate amargo sin azúcar; mezcla con ayuda de un globo hasta que el chocolate se derrita y se integre uniformemente, cocina 2 minutos más y retira del fuego.', 'Vierte la mezcla en un bowl, tapa con plástico adherente y refrigera por al menos 2 horas.', 'Saca del refrigerador y bate con un globo hasta que la consistencia se vuelva esponjosa.', 'Sirve en copas y decora con frutos rojos y hojas de menta.'],
  ['vegetariano', 'ligero'], 250, 4, 120, 15, 20, 10, 4, '/assets/img/recetas/134-moiss-de-chocolate.jpeg'],
@@ -4118,7 +4123,7 @@ return [
 ['Tacos de lechuga con carne de res', 'cena',
  ['carne molida|500 g', 'cebolla|1 unidad', 'ajo|2 dientes', 'comino|1 cucharadita', 'pimienta|1/2 cucharadita', 'sal|al gusto', 'hoja de lechuga|8 unidades', 'tomate|2 unidades', 'aguacate|1 unidad', 'cilantro|al gusto', 'salsa de yogur bajo en grasa|al gusto'],
  ['Cocina carne molida magra con cebolla, ajo, comino, pimienta y sal.', 'Rellena hojas de lechuga con el picadillo, y agrega tomate picado, aguacate en rodajas y cilantro al gusto. Sirve con salsa de yogur bajo en grasa.'],
- ['ligero', 'vegetariano'], 250, 29, 30, 10, 11, 4, 5, '/assets/img/recetas/142-tacos-de-lechuga-con-carne-de-res.jpeg'],
+ ['ligero'], 250, 29, 30, 10, 11, 4, 5, '/assets/img/recetas/142-tacos-de-lechuga-con-carne-de-res.jpeg'],
 
 ['Tarta de espinacas y queso', 'cena',
  ['masa de hojaldre|1 lámina', 'espinaca|250 g', 'ajo|2 dientes', 'aceite de oliva|1 cucharada', 'queso ricotta|200 g', 'sal|al gusto', 'pimienta|al gusto'],
@@ -4156,24 +4161,24 @@ return [
  ['alto en proteína', 'sin gluten'], 440, 36, 25, 2, 32, 1, 0, '/assets/img/recetas/014-salmon-al-horno-con-mantequilla-de-ajo-y-limon.jpeg'],
 
 ['Alitas BBQ Extra Crujientes', 'cena',
- ['alitas de pollo|175 g', 'aceite|1/4 cda', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'salsa BBQ|1/8 taza'],
+ ['alitas de pollo|175 g', 'aceite|1/4 cda', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'salsa BBQ|2 cdas'],
  ['Saca las alitas de la nevera y sécalas muy bien con papel absorbente hasta que la piel quede completamente seca.', 'Coloca en un bowl grande. Agrega aceite, sal, pimienta y ajo en polvo. Mezcla con las manos para cubrir bien todas las alitas.', 'Precalienta el Air Fryer 3 min a 200°C. Acomoda las alitas dejando espacio entre cada una. Cocina 15 min, voltea y cocina 15 min más.', 'Coloca las alitas en un bowl limpio, agrega la salsa BBQ y mezcla hasta cubrirlas completamente.', '(Tip: Si quieres piel MUY crujiente, déjalas destapadas en la nevera 1 hora antes de cocinarlas.)'],
  ['alto en proteína', 'sin gluten', 'económico'], 397, 43, 30, 10, 18, 8, 0, '/assets/img/recetas/001-alitas-bbq-extra-crujientes.jpeg'],
 
 ['Pechuga de Pollo Parmesana', 'cena',
- ['pechugas de pollo|1', 'huevo|1/2', 'Pan y queso parmesano|al gusto', 'Salsa de tomate|al gusto', 'Queso mozzarella|al gusto', 'Sal y pimienta|al gusto'],
+ ['pechugas de pollo|1', 'huevo|1', 'Pan y queso parmesano|al gusto', 'Salsa de tomate|al gusto', 'Queso mozzarella|al gusto', 'Sal y pimienta|al gusto'],
  ['Abre las pechugas por la mitad para hacerlas más delgadas.', 'Sazona ambos lados con sal y pimienta.', 'Pasa cada pechuga por huevo batido, luego por la mezcla de pan rallado y parmesano.', 'Precalienta el Air Fryer 3 min. Cocina 10 min, voltea.', 'Agrega salsa de tomate y mozzarella encima. Cocina 8 min más hasta gratinar.', '(Tip: No pongas demasiada salsa o el apanado perderá el crujiente.)'],
- ['alto en proteína', 'sin gluten'], 878, 103, 22, 13, 44, 8, 1, '/assets/img/recetas/002-pechuga-de-pollo-parmesana.jpeg'],
+ ['alto en proteína'], 513, 72, 22, 7, 20, 5, 1, '/assets/img/recetas/002-pechuga-de-pollo-parmesana.jpeg'],
 
 ['Costillas BBQ', 'cena',
  ['rack de costillas|1', 'Sal|al gusto', 'Ajo en polvo|al gusto', 'Salsa BBQ|al gusto'],
  ['Retira el exceso de grasa y seca bien las costillas.', 'Mezcla sal, pimienta, paprika y ajo. Frota por ambos lados.', 'Corta el rack en partes que entren en la canasta.', 'Cocina 20 min, gira cada trozo, cocina 10 min más.', 'Barniza con salsa BBQ y cocina 5 min finales.', '(Tip: La salsa BBQ siempre se agrega al final para evitar que se queme.)'],
- ['alto en proteína', 'sin gluten', 'económico'], 599, 31, 35, 31, 35, 23, 1, '/assets/img/recetas/003-costillas-bbq.jpeg'],
+ ['alto en proteína', 'sin gluten', 'económico'], 496, 31, 35, 12, 35, 8, 0, '/assets/img/recetas/003-costillas-bbq.jpeg'],
 
 ['Nuggets Caseros de Pollo', 'cena',
- ['pechugas de pollo|1', 'huevo|1/2', 'Pan panko|al gusto', 'Ajo en polvo y paprika|al gusto'],
+ ['pechugas de pollo|1', 'huevo|1', 'Pan panko|al gusto', 'Ajo en polvo y paprika|al gusto'],
  ['Corta el pollo en cubos medianos del mismo tamaño.', 'Sazona con sal, paprika y ajo.', 'Pasa cada cubo por huevo batido, luego cúbrelo completamente con panko.', 'Rocía aceite en spray. Precalienta el Air Fryer.', 'Cocina 9 min, gira todos los nuggets, cocina 8 min más.', '(Tip: El panko deja una textura mucho más crocante que el pan rallado tradicional.)'],
- ['alto en proteína', 'rápido', 'económico'], 449, 63, 18, 22, 10, 2, 1, '/assets/img/recetas/004-nuggets-caseros-de-pollo.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 384, 61, 18, 10, 10, 1, 1, '/assets/img/recetas/004-nuggets-caseros-de-pollo.jpeg'],
 
 ['Chicharrón Crujiente', 'cena',
  ['panceta de cerdo|175 g', 'Sal gruesa|al gusto', 'Ajo en polvo|al gusto', 'Limón|al gusto'],
@@ -4181,14 +4186,19 @@ return [
  ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 257, 46, 40, 2, 6, 0, 1, '/assets/img/recetas/005-chicharron-crujiente.jpeg'],
 
 ['Hamburguesas Caseras', 'cena',
- ['carne molida|166 2/3 g', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'Queso cheddar|al gusto'],
+ ['carne molida|165 g', 'Sal y pimienta|al gusto', 'Ajo en polvo|al gusto', 'Queso cheddar|al gusto'],
  ['Coloca la carne en un bowl. Agrega sal, pimienta y ajo. Mezcla con las manos.', 'Forma hamburguesas del mismo tamaño.', 'Precalienta el Air Fryer. Cocina 7 min.', 'Voltea cada hamburguesa. Coloca queso encima.', 'Cocina 5 min más.', '(Tip: No aplastes las hamburguesas mientras cocinan para que no pierdan jugos.)'],
- ['alto en proteína', 'rápido', 'sin gluten'], 558, 55, 15, 2, 36, 0, 0, '/assets/img/recetas/006-hamburguesas-caseras.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten'], 388, 39, 15, 1, 25, 0, 0, '/assets/img/recetas/006-hamburguesas-caseras.jpeg'],
 
 ['Chuletas de Cerdo Doradas', 'cena',
  ['chuletas de cerdo|1', 'Mostaza|al gusto', 'Ajo en polvo y paprika|al gusto', 'Sal y pimienta|al gusto'],
  ['Seca las chuletas con papel absorbente.', 'Unta una capa ligera de mostaza.', 'Agrega las especias por ambos lados.', 'Precalienta el Air Fryer. Cocina 10 min.', 'Voltea cuidadosamente. Cocina 8 min más.', '(Tip: La mostaza ayuda a crear una costra dorada deliciosa.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 369, 39, 20, 2, 22, 1, 1, '/assets/img/recetas/007-chuletas-de-cerdo-doradas.jpeg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 352, 38, 20, 1, 21, 0, 0, '/assets/img/recetas/007-chuletas-de-cerdo-doradas.jpeg'],
+
+['Milanesa de Pollo Crujiente', 'cena',
+ ['pechugas delgadas|2', 'huevo|1', 'Pan|al gusto', 'Queso parmesano|al gusto', 'Sal y pimienta|al gusto'],
+ ['Golpea las pechugas para dejarlas delgadas. Sazona.', 'Pasa por huevo, luego por pan rallado con parmesano.', 'Rocía aceite en spray.', 'Cocina 12 min, voltea, cocina 8 min más.', '(Tip: El parmesano ayuda a crear una capa más crocante y sabrosa.)'],
+ ['ligero'], 257, 17, 22, 20, 12, 2, 1, '/assets/img/recetas/008-milanesa-de-pollo-crujiente.jpeg'],
 
 ['Pinchos de Pollo', 'cena',
  ['pechugas|1', 'Pimentón y cebolla|al gusto', 'Sal y pimienta|al gusto', 'Aceite de oliva|al gusto'],
@@ -4196,19 +4206,19 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 353, 56, 18, 2, 12, 1, 1, '/assets/img/recetas/009-pinchos-de-pollo.jpeg'],
 
 ['Carne en Cubos al Ajo', 'cena',
- ['carne de res|166 2/3 g', 'Ajo|al gusto', 'Mantequilla|al gusto', 'Sal y pimienta|al gusto'],
+ ['carne de res|165 g', 'Ajo|al gusto', 'Mantequilla|al gusto', 'Sal y pimienta|al gusto'],
  ['Corta la carne en cubos medianos. Sécalos bien.', 'Agrega sal y pimienta. Coloca en la canasta.', 'Cocina 8 min. Abre y mezcla la carne.', 'Agrega mantequilla y ajo. Cocina 6 min más.', '(Tip: No llenes demasiado la canasta para que la carne dore y no se cocine al vapor.)'],
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 291, 44, 16, 1, 12, 0, 0, '/assets/img/recetas/010-carne-en-cubos-al-ajo.jpeg'],
 
 ['Muslos de Pollo Crispy', 'cena',
- ['muslos de pollo|1 1/3', 'Paprika|al gusto', 'Ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
+ ['muslos de pollo|1', 'Paprika|al gusto', 'Ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
  ['Seca el pollo completamente.', 'Agrega todos los condimentos. Frota bien cada muslo.', 'Cocina 15 min con la piel hacia arriba.', 'Voltea uno por uno. Cocina otros 15 min.', '(Tip: La piel debe quedar hacia arriba al iniciar para dorarse mejor.)'],
  ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 287, 40, 30, 1, 13, 0, 0, '/assets/img/recetas/011-muslos-de-pollo-crispy.jpeg'],
 
 ['Albóndigas Caseras', 'cena',
- ['carne molida|166 2/3 g', 'huevo|1/3', 'Pan|al gusto', 'Ajo y perejil|al gusto'],
+ ['carne molida|165 g', 'huevo|1', 'Pan|al gusto', 'Ajo y perejil|al gusto'],
  ['Mezcla todos los ingredientes en un bowl.', 'Forma bolitas medianas del mismo tamaño.', 'Precalienta el Air Fryer. Coloca las albóndigas separadas.', 'Cocina 10 min. Sacude la canasta suavemente. Cocina 8 min más.', '(Tip: Hacerlas del mismo tamaño ayuda a que todas cocinen igual.)'],
- ['alto en proteína', 'rápido', 'económico'], 464, 41, 18, 15, 26, 1, 1, '/assets/img/recetas/012-albondigas-caseras.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 418, 40, 18, 6, 26, 1, 0, '/assets/img/recetas/012-albondigas-caseras.jpeg'],
 
 ['Pollo Miel Mostaza', 'cena',
  ['pechugas|1', 'miel|1 cdas', 'mostaza|1 cdas', 'Sal y pimienta|al gusto'],
@@ -4216,14 +4226,14 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 354, 57, 20, 14, 7, 13, 1, '/assets/img/recetas/013-pollo-miel-mostaza.jpeg'],
 
 ['Trocitos de Cerdo BBQ', 'cena',
- ['cerdo|166 2/3 g', 'Salsa BBQ|al gusto', 'Paprika|al gusto', 'Sal y pimienta|al gusto'],
+ ['cerdo|165 g', 'Salsa BBQ|al gusto', 'Paprika|al gusto', 'Sal y pimienta|al gusto'],
  ['Sazona el cerdo con paprika, sal y pimienta.', 'Cocina 12 min. Mezcla los cubos.', 'Agrega salsa BBQ generosamente.', 'Cocina otros 10 min hasta caramelizar.', '(Tip: La salsa se espesa y carameliza mejor en los últimos minutos.)'],
- ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 292, 44, 24, 10, 6, 8, 1, '/assets/img/recetas/014-trocitos-de-cerdo-bbq.jpeg'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 257, 44, 24, 4, 6, 3, 0, '/assets/img/recetas/014-trocitos-de-cerdo-bbq.jpeg'],
 
 ['Pollo Crocante Picante', 'cena',
  ['pechugas|1', 'Harina|al gusto', 'Salsa picante|al gusto', 'Paprika|al gusto'],
  ['Corta el pollo en tiras. Mezcla salsa picante con el huevo.', 'Pasa el pollo por harina, luego por huevo picante, finalmente por panko.', 'Cocina 12 min. Voltea cuidadosamente. Cocina 8 min más.', '(Tip: El panko grueso ayuda a lograr un efecto tipo pollo frito restaurante.)'],
- ['alto en proteína', 'sin gluten', 'económico'], 408, 58, 22, 24, 7, 0, 2, '/assets/img/recetas/015-pollo-crocante-picante.jpeg'],
+ ['alto en proteína', 'económico'], 408, 58, 22, 24, 7, 0, 2, '/assets/img/recetas/015-pollo-crocante-picante.jpeg'],
 
 ['Salmón Miel Mostaza', 'cena',
  ['filetes de salmón|1', 'miel|1 cdas', 'mostaza|1 cdas', 'Sal|al gusto'],
@@ -4231,29 +4241,29 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten'], 368, 31, 15, 13, 20, 13, 1, '/assets/img/recetas/016-salmon-miel-mostaza.jpeg'],
 
 ['Camarones Ajo Mantequilla', 'cena',
- ['camarones limpios|200 g', 'mantequilla|1 cdas', 'ajo|1 1/2 dientes', 'Sal|al gusto'],
+ ['camarones limpios|200 g', 'mantequilla|1 cdas', 'ajo|2 dientes', 'Sal|al gusto'],
  ['Lava los camarones y retira el exceso de agua con papel absorbente.', 'Mezcla con mantequilla derretida, ajo, sal y pimienta.', 'Precalienta el Air Fryer 3 min. Coloca los camarones separados.', 'Cocina 5 min. Mueve con pinzas. Cocina 3-5 min más hasta que estén rosados.', 'Sirve inmediatamente con perejil encima.', '(Tip: Los camarones se endurecen si se cocinan demasiado tiempo, así que apenas estén rosados debes retirarlos.)'],
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 317, 49, 10, 3, 13, 0, 0, '/assets/img/recetas/017-camarones-ajo-mantequilla.jpeg'],
 
 ['Tilapia Crocante', 'cena',
- ['filetes de tilapia|1', 'huevo|1/2', 'Pan|al gusto', 'Paprika y ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
+ ['filetes de tilapia|1', 'huevo|1', 'Pan|al gusto', 'Paprika y ajo en polvo|al gusto', 'Sal y pimienta|al gusto'],
  ['Coloca los filetes sobre papel cocina y sécalos muy bien.', 'Agrega sal, pimienta, paprika y ajo en polvo sobre ambos lados.', 'Pasa cada filete por huevo batido, luego cúbrelo con pan rallado presionando suavemente.', 'Rocía con aceite en spray. Precalienta el Air Fryer 3 min.', 'Cocina 10 min. Voltea con espátula. Cocina 6-8 min más hasta dorar.', '(Tip: No voltees el pescado antes de tiempo porque el apanado todavía estará suave y puede despegarse.)'],
- ['alto en proteína', 'ligero', 'rápido', 'económico'], 333, 43, 18, 22, 7, 2, 2, '/assets/img/recetas/018-tilapia-crocante.jpeg'],
+ ['alto en proteína', 'ligero', 'rápido', 'económico'], 264, 41, 18, 10, 7, 1, 1, '/assets/img/recetas/018-tilapia-crocante.jpeg'],
 
 ['Calamares Apanados', 'cena',
- ['anillos de calamar|150 g', 'Harina|al gusto', 'huevo|1/2', 'Panko|al gusto', 'Sal|al gusto'],
+ ['anillos de calamar|150 g', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal|al gusto'],
  ['Lava los calamares y sécalos completamente con papel absorbente.', 'Prepara tres bowls: harina, huevo batido y panko con especias.', 'Pasa cada anillo por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Colócalos separados en la canasta.', 'Cocina 6 min. Gira cada anillo con pinzas. Cocina 5 min más hasta dorar.', '(Tip: Los calamares deben cocinarse rápido; demasiado tiempo hará que queden duros y gomosos.)'],
- ['alto en proteína', 'rápido'], 398, 33, 12, 50, 6, 2, 3, '/assets/img/recetas/019-calamares-apanados.jpeg'],
+ ['alto en proteína', 'ligero', 'rápido'], 333, 31, 12, 37, 6, 1, 2, '/assets/img/recetas/019-calamares-apanados.jpeg'],
 
 ['Filete de Pescado Limón Pimienta', 'cena',
- ['filetes de pescado blanco|1', 'limón|1/2', 'Sal y pimienta negra|al gusto', 'Aceite de oliva|al gusto'],
+ ['filetes de pescado blanco|1', 'limón|1', 'Sal y pimienta negra|al gusto', 'Aceite de oliva|al gusto'],
  ['Lava los filetes y sécalos bien con papel absorbente.', 'Exprime el limón sobre ambos lados del pescado.', 'Agrega sal y bastante pimienta negra. Añade unas gotas de aceite de oliva.', 'Precalienta el Air Fryer 3 min. Coloca los filetes en la canasta.', 'Cocina 7 min. Voltea con espátula. Cocina 5-6 min más hasta dorar.', '(Tip: El pescado blanco se cocina rápido; si lo dejas demasiado tiempo puede quedar seco.)'],
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 189, 29, 14, 3, 7, 1, 1, '/assets/img/recetas/020-filete-de-pescado-limon-pimienta.jpeg'],
 
 ['Camarones Coco Crunch', 'cena',
- ['camarones|150 g', 'huevo|1/2', 'Coco|al gusto', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
+ ['camarones|150 g', 'huevo|1', 'Coco|al gusto', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
  ['Lava y seca completamente los camarones.', 'Mezcla coco rallado y panko en un bowl. En otro, coloca el huevo batido.', 'Pasa cada camarón por huevo, luego cúbrelo con la mezcla de coco y panko.', 'Presiona ligeramente para que la cobertura se pegue bien. Rocía aceite en spray.', 'Cocina 7 min. Voltea cada camarón. Cocina 5 min más hasta dorar.', '(Tip: El coco se dora muy rápido, así que revisa constantemente los últimos minutos.)'],
- ['alto en proteína', 'rápido'], 460, 44, 15, 29, 19, 5, 5, '/assets/img/recetas/021-camarones-coco-crunch.jpeg'],
+ ['alto en proteína', 'rápido'], 394, 42, 15, 17, 19, 4, 5, '/assets/img/recetas/021-camarones-coco-crunch.jpeg'],
 
 ['Salmón Parmesano', 'cena',
  ['filetes de salmón|1', 'queso parmesano|1/4 taza', 'Ajo en polvo y perejil|al gusto', 'Sal y pimienta|al gusto'],
@@ -4261,7 +4271,7 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten'], 412, 39, 16, 1, 26, 0, 0, '/assets/img/recetas/022-salmon-parmesano.jpeg'],
 
 ['Brochetas de Camarón', 'cena',
- ['camarones|200 g', 'pimentón|1/2', 'cebolla|1/4', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
+ ['camarones|200 g', 'pimentón|1', 'cebolla|1', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
  ['Corta el pimentón y la cebolla en cuadros medianos.', 'Inserta camarones y vegetales alternando en los palillos.', 'Agrega aceite de oliva, sal y pimienta sobre las brochetas.', 'Precalienta el Air Fryer. Coloca las brochetas en la canasta.', 'Cocina 6 min. Gira cada brocheta. Cocina 5 min más.', '(Tip: No pegues demasiado las brochetas para que el aire caliente circule bien.)'],
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 273, 49, 12, 7, 6, 4, 2, '/assets/img/recetas/023-brochetas-de-camaron.jpeg'],
 
@@ -4273,7 +4283,7 @@ return [
 ['Palitos de Pescado Caseros', 'cena',
  ['Filetes de pescado blanco|al gusto', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal y ajo en polvo|al gusto'],
  ['Corta el pescado en tiras gruesas del mismo tamaño. Agrega sal y ajo en polvo.', 'Prepara tres bowls: harina, huevo batido y panko.', 'Pasa cada tira por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Cocina 10 min.', 'Voltea cada palito cuidadosamente. Cocina 6 min más hasta dorar.', '(Tip: El pescado debe estar bien seco antes de apanarlo para que quede crujiente.)'],
- ['alto en proteína', 'rápido', 'económico'], 663, 48, 18, 92, 11, 4, 5, '/assets/img/recetas/025-palitos-de-pescado-caseros.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 532, 43, 18, 67, 10, 2, 4, '/assets/img/recetas/025-palitos-de-pescado-caseros.jpeg'],
 
 ['Pulpo Crocante al Ajo', 'cena',
  ['pulpo|200 g', 'Ajo|al gusto', 'Aceite de oliva|al gusto', 'Paprika y sal|al gusto'],
@@ -4283,7 +4293,7 @@ return [
 ['Pescado BBQ Picante', 'cena',
  ['filetes de pescado|1', 'Salsa BBQ|al gusto', 'Salsa picante|al gusto', 'Sal y pimienta|al gusto'],
  ['Mezcla salsa BBQ y salsa picante en un bowl pequeño.', 'Sazona el pescado con sal y pimienta.', 'Usa una brocha para cubrir el pescado con la salsa.', 'Precalienta el Air Fryer. Cocina 8 min. Voltea cuidadosamente.', 'Agrega más salsa encima. Cocina 5 min más.', '(Tip: La salsa carameliza mejor cuando se agrega también al final.)'],
- ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 214, 29, 15, 15, 3, 12, 1, '/assets/img/recetas/027-pescado-bbq-picante.jpeg'],
+ ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 162, 29, 15, 5, 2, 4, 0, '/assets/img/recetas/027-pescado-bbq-picante.jpeg'],
 
 ['Camarones Picantes', 'cena',
  ['camarones|200 g', 'Paprika picante|al gusto', 'Ajo en polvo|al gusto', 'Mantequilla y sal|al gusto'],
@@ -4296,9 +4306,9 @@ return [
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 185, 27, 16, 4, 7, 1, 1, '/assets/img/recetas/029-merluza-dorada.jpeg'],
 
 ['Camarones Empanizados', 'cena',
- ['camarones|150 g', 'Harina|al gusto', 'huevo|1/2', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
+ ['camarones|150 g', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal y pimienta|al gusto'],
  ['Lava y seca completamente los camarones.', 'Prepara tres bowls: harina, huevo batido y panko.', 'Pasa cada camarón por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Precalienta el Air Fryer.', 'Cocina 7 min. Voltea con pinzas. Cocina 5 min más hasta dorados y crocantes.', '(Tip: El aceite en spray ayuda muchísimo a lograr color dorado tipo frito tradicional.)'],
- ['alto en proteína', 'rápido'], 410, 45, 14, 46, 5, 2, 3, '/assets/img/recetas/030-camarones-empanizados.jpeg'],
+ ['alto en proteína', 'ligero', 'rápido'], 345, 43, 14, 33, 4, 1, 2, '/assets/img/recetas/030-camarones-empanizados.jpeg'],
 
 ['Pollo Entero Estilo Rotisserie', 'cena',
  ['pollo de 1.2 kg|1', 'aceite de oliva|1 cda', 'paprika ahumada|1 cdta', 'ajo en polvo|1 cdta', 'cebolla en polvo|1 cdta', 'Tomillo|al gusto', 'limón para el interior|1'],
@@ -4306,17 +4316,17 @@ return [
  ['alto en proteína', 'sin gluten', 'económico'], 459, 57, 60, 8, 22, 2, 2],
 
 ['Chuletas de Cerdo con Ajo y Limón', 'cena',
- ['chuletas de cerdo de 200g c/u|1', 'ajo machacados|1 1/2 dientes', 'Jugo de 1 limón|al gusto', 'tomillo|1/2 cdta', 'Sal y pimienta negra|al gusto', 'Aceite en spray|al gusto'],
+ ['chuletas de cerdo de 200g c/u|1', 'ajo machacados|2 dientes', 'Jugo de 1 limón|al gusto', 'tomillo|1/2 cdta', 'Sal y pimienta negra|al gusto', 'Aceite en spray|al gusto'],
  ['Marina las chuletas en ajo, limón, tomillo, sal y pimienta mínimo 30 minutos.', 'Seca el exceso de marinada con papel antes de cocinar.', 'Rocía con spray y cocina a 195°C por 8 minutos.', 'Voltea y cocina 8 minutos más. Temperatura interna: 63°C. Reposa 3 minutos.'],
  ['alto en proteína', 'sin gluten', 'económico'], 420, 39, 30, 8, 26, 1, 2],
 
 ['Hamburguesa Clásica de Res', 'cena',
  ['carne molida 80/20|200 g', 'Sal gruesa y pimienta negra|al gusto', 'queso americano o mozarela|1 rebanadas', 'Pan para hamburgues a|al gusto', 'Lechuga|al gusto'],
  ['Forma 2 hamburguesas sin amasar demasiado — eso las endurece. Haz un hueco en el centro de cada una.', 'Sazona generosamente con sal gruesa y pimienta.', 'Cocina a 190°C por 6 minutos. Voltea, agrega el queso y cocina 5-6 minutos más.', 'Reposa 2 minutos. Arma con los acompañamientos.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 516, 50, 12, 2, 34, 0, 1, '/assets/img/recetas/013-hamburguesa-clasica-de-res.jpeg'],
+ ['alto en proteína', 'rápido', 'económico'], 516, 50, 12, 2, 34, 0, 1, '/assets/img/recetas/013-hamburguesa-clasica-de-res.jpeg'],
 
 ['Pechuga Rellena de Jamón y Queso', 'cena',
- ['pechugas de pollo|1/2', 'lonjas de jamón|1', 'queso mozarela en lonjas|20 g', 'Sal|al gusto', 'Palillos de madera|al gusto', 'Aceite en spray|al gusto'],
+ ['pechugas de pollo|1', 'lonjas de jamón|1', 'queso mozarela en lonjas|20 g', 'Sal|al gusto', 'Palillos de madera|al gusto', 'Aceite en spray|al gusto'],
  ['Abre cada pechuga en mariposa sin cortar del todo. Aplana ligeramente.', 'Rellena con el jamón y el queso. Cierra y asegura con palillos.', 'Sazona el exterior con sal, pimienta y ajo. Rocía con spray.', 'Cocina a 185°C por 22 minutos hasta temperatura interna de 74°C.'],
  ['alto en proteína', 'sin gluten', 'económico'], 372, 57, 22, 4, 13, 2, 0],
 
@@ -4326,7 +4336,7 @@ return [
  ['alto en proteína', 'rápido', 'económico'], 587, 54, 7, 40, 23, 4, 3],
 
 ['Alitas Teriyaki', 'cena',
- ['alitas de pollo|166 2/3 g', 'soja baja en sodio|1 cdas', 'miel|1/3 cda', 'jengibre|1/3 cdta', 'ajo|1/3 diente', 'maicena|1/3 cdta', 'Sésamo y cebollín para decorar|al gusto'],
+ ['alitas de pollo|165 g', 'soja baja en sodio|1 cdas', 'miel|1/3 cda', 'jengibre|1/3 cdta', 'ajo|1 diente', 'maicena|1/3 cdta', 'Sésamo y cebollín para decorar|al gusto'],
  ['Seca las alitas y cocina a 200°C por 12 minutos. Voltea y cocina 10 minutos más.', 'Mientras tanto cocina la salsa teriyaki en olla pequeña hasta espesar.', 'Baña las alitas en la salsa teriyaki caliente.', 'Devuelve al air fryer 3 minutos para que la salsa caramelice.'],
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 339, 43, 12, 10, 14, 6, 1],
 
@@ -4336,7 +4346,7 @@ return [
  ['alto en proteína', 'ligero', 'rápido', 'sin gluten'], 345, 53, 20, 6, 11, 4, 1],
 
 ['Pollo al Curry Colombiano', 'cena',
- ['muslos de pollo sin piel|166 2/3 g', 'curry en polvo|2/3 cdas', 'cúrcuma|1/3 cdta', 'yogur natural|50 g', 'ajo|2/3 dientes', 'jengibre en polvo|1/3 cdta', 'Sal y aceite en spray|al gusto'],
+ ['muslos de pollo sin piel|165 g', 'curry en polvo|2/3 cdas', 'cúrcuma|1/3 cdta', 'yogur natural|50 g', 'ajo|1 dientes', 'jengibre en polvo|1/3 cdta', 'Sal y aceite en spray|al gusto'],
  ['Mezcla el yogur con el curry, la cúrcuma, el ajo, el jengibre y la sal.', 'Marina el pollo mínimo 2 horas — overnight es ideal.', 'Rocía con spray y cocina a 190°C por 12 minutos. Voltea.', 'Cocina 10 minutos más hasta bordes dorados. Sirve con arroz blanco.'],
  ['alto en proteína', 'sin gluten', 'económico'], 399, 45, 22, 10, 20, 3, 4],
 
@@ -4361,7 +4371,7 @@ return [
  ['alto en proteína', 'rápido', 'sin gluten'], 384, 31, 12, 7, 25, 2, 2],
 
 ['Mojarra Frita Entera', 'cena',
- ['mojarras de 300g c/u|2/3', 'ajo machacados|1 dientes', 'Jugo de 1 limón|al gusto', 'comino|1/3 cdta', 'Sal|al gusto', 'Aceite en spray|al gusto', 'Patacones y ensalada para acompañar|al gusto'],
+ ['mojarras de 300g c/u|1', 'ajo machacados|1 dientes', 'Jugo de 1 limón|al gusto', 'comino|1/3 cdta', 'Sal|al gusto', 'Aceite en spray|al gusto', 'Patacones y ensalada para acompañar|al gusto'],
  ['Haz 3-4 cortes profundos en cada lado de las mojarras. Marina en ajo, limón, comino, sal y color 30 minutos.', 'Seca bien el exceso de marinada. Rocía con spray por todos los lados.', 'Cocina a 200°C por 11 minutos, voltea con cuidado.', 'Cocina 11 minutos más hasta piel dorada y crujiente.'],
  ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 212, 33, 30, 5, 7, 1, 1],
 
@@ -4371,12 +4381,12 @@ return [
  ['alto en proteína', 'rápido'], 428, 43, 10, 51, 7, 33, 2],
 
 ['Tilapia con Costra de Ajo y Hierbas', 'cena',
- ['filetes de tilapia de 180g c/u|1', 'mantequilla|1 cdas', 'ajo muy fino|1 1/2 dientes', 'pan|1 cdas', 'Perejil y cilantro|al gusto', 'Sal|al gusto'],
+ ['filetes de tilapia de 180g c/u|1', 'mantequilla|1 cdas', 'ajo muy fino|2 dientes', 'pan|1 cdas', 'Perejil y cilantro|al gusto', 'Sal|al gusto'],
  ['Sazona los filetes con sal y pimienta.', 'Mezcla la mantequilla con el ajo, el pan rallado y las hierbas. Extiende sobre la parte superior de cada filete.', 'Cocina a 195°C por 12-14 minutos sin voltear.', 'La costra debe estar dorada. Sirve con limón.'],
  ['alto en proteína', 'rápido', 'económico'], 351, 39, 13, 13, 16, 1, 1],
 
 ['Brochetas de Camarón y Chorizo', 'cena',
- ['camarones pelados|100 g', 'chorizo colombiano|75 g', 'pimentón rojo en cuadros|1/2', 'aceite de oliva|1/2 cda', 'Ajo|al gusto', 'Palitos remojados 30 minutos|al gusto'],
+ ['camarones pelados|100 g', 'chorizo colombiano|75 g', 'pimentón rojo en cuadros|1', 'aceite de oliva|1/2 cda', 'Ajo|al gusto', 'Palitos remojados 30 minutos|al gusto'],
  ['Marina los camarones y el chorizo en aceite, ajo, comino y sal 15 minutos.', 'Ensarta alternando camarón, chorizo y pimentón.', 'Cocina a 195°C por 6 minutos, voltea.', 'Cocina 5-6 minutos más hasta que el chorizo esté dorado y los camarones rosados.'],
  ['alto en proteína', 'rápido', 'sin gluten'], 439, 38, 12, 7, 29, 3, 1],
 
@@ -4388,12 +4398,12 @@ return [
 ['Bagre Apanado con Limón', 'cena',
  ['filetes de bagre o pescado de río|200 g', 'huevos|1', 'harina de maíz o pan|50 g', 'ajo en polvo|1/2 cdta', 'comino|1/2 cdta', 'Sal|al gusto', 'Aceite en spray|al gusto'],
  ['Sazona el bagre con sal, pimienta, ajo y comino. Pasa por huevo y luego por harina de maíz.', 'Rocía con spray generosamente.', 'Cocina a 200°C por 8 minutos, voltea con cuidado.', 'Cocina 7-8 minutos más hasta cobertura dorada. Sirve con limón y patacones.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 497, 49, 8, 42, 15, 1, 3],
+ ['alto en proteína', 'rápido', 'económico'], 497, 49, 8, 42, 15, 1, 3],
 
 ['Langostinos con Mantequilla de Ajo', 'cena',
  ['langostinos con cáscara|200 g', 'mantequilla|1 1/2 cdas', 'ajo|2 dientes', 'Jugo de 1 limón|al gusto', 'Perejil|al gusto', 'Sal y pimienta|al gusto', 'Pan para el jugo|al gusto'],
  ['Haz un corte en el lomo de cada langostino sin retirar la cáscara.', 'Mezcla la mantequilla con el ajo, el limón y la sal. Unta sobre los langostinos.', 'Cocina a 200°C por 5 minutos, bañalos con el jugo que queda en la canasta.', 'Cocina 4-5 minutos más. Sirve con pan para mojar en el jugo.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 387, 49, 5, 7, 19, 1, 1],
+ ['alto en proteína', 'rápido'], 387, 49, 5, 7, 19, 1, 1],
 
 ['Tacos de Pescado con Repollo', 'cena',
  ['tilapia o corvina|200 g', 'comino|1/2 cdta', 'Aceite en spray|al gusto', 'tortillas de maíz|4', 'Repollo morado|al gusto', 'Yogur griego|al gusto'],
@@ -5354,7 +5364,7 @@ return [
 ['Cheescake de calabaza sin azucar', 'snack',
  ['galleta integral|1 taza', 'mantequilla|3 cucharadas', 'queso crema|250 g', 'calabaza|1 taza', 'edulcorante|1/2 taza', 'huevo|2 unidades', 'especia de calabaza|al gusto'],
  ['Precalienta el horno a 180°C (350°F). En un tazón, mezcla las galletas trituradas y la mantequilla derretida hasta que estén bien combinadas.', 'Presiona la mezcla de galletas en el fondo de un molde para tarta y hornea durante 10 minutos. Luego, retira del horno y deja enfriar.', 'En otro tazón, bate el queso crema, el puré de calabaza, el edulcorante y las especias de calabaza hasta obtener una mezcla suave.', 'Agrega los huevos y bate nuevamente hasta que estén bien incorporados.', 'Vierte la mezcla de queso y calabaza sobre la base de galletas en el molde.', 'Hornea durante aproximadamente 30-35 minutos o hasta que el centro esté casi firme.', 'Apaga el horno y deja que el cheesecake se enfríe dentro del horno durante 1 hora.', 'Luego, refrigera durante al menos 4 horas o durante toda la noche antes de servir.'],
- ['vegetariano', 'sin gluten'], 250, 10, 240, 19, 15, 4, 2, '/assets/img/recetas/193-cheescake-de-calabaza-sin-azucar.jpeg'],
+ ['vegetariano'], 250, 10, 240, 19, 15, 4, 2, '/assets/img/recetas/193-cheescake-de-calabaza-sin-azucar.jpeg'],
 
 ['Cuajada de chocolate sin azúcar', 'snack',
  ['leche descremada|2 tazas', 'cacao en polvo sin azúcar|2 cucharadas', 'edulcorante sin calorías|1/4 taza', 'gelatina sin azúcar|1 sobre'],
@@ -5394,14 +5404,14 @@ return [
 ['Gelatina de frutas sin azúcar', 'snack',
  ['gelatina|1 sobre', 'agua|al gusto', 'fruta|al gusto'],
  ['Prepara la gelatina según las instrucciones del paquete, utilizando la cantidad de agua recomendada.', 'Vierte la gelatina líquida en moldes individuales o en un recipiente para gelatina.', 'Agrega los trozos de frutas a la gelatina líquida.', 'Refrigera hasta que la gelatina se haya cuajado por completo. Sirve fría.'],
- ['ligero'], 20, 2, 10, 3, 0, 8, 2, '/assets/img/recetas/187-gelatina-de-frutas-sin-azucar.jpeg'],
+ ['ligero'], 40, 2, 10, 8, 0, 8, 2, '/assets/img/recetas/187-gelatina-de-frutas-sin-azucar.jpeg'],
 
 ['Gelatina de limon picosito', 'snack',
  ['agua|4 tazas', 'gelatina de limón|1 caja', 'pepino|2 unidades', 'chile en polvo|1 cdta'],
  ['Prepara la Gelatina de Limón Light . Vacía la gelatina en 2 tazas de agua fría, espera 5 minutos a que se hidrate.', 'Agrega 2 tazas de agua muy caliente, mezcla a que se disuelva por completo y agrega el pepino rallado.', 'Vierte la gelatina en un molde y refrigera hasta que cuaje.', 'Corta el otro pepino en tiritas con ayuda de un pelador, reserva.', 'Decora la gelatina con las tiritas de pepino y espolvorea el chile en polvo. Sirve.'],
  ['ligero'], 32, 0, 10, 8, 0, 2, 1, '/assets/img/recetas/170-gelatina-de-limon-picosito-valor-n-depende-de-la-marca-de-ge.jpeg'],
 
-['Gelina de manzan verde', 'snack',
+['Gelatina de manzana verde', 'snack',
  ['agua|1 litro', 'gelatina de manzana verde|1 sobre', 'chia|1/4 taza', 'manzana verde|2 unidades'],
  ['Prepara la Gelatina de Sabor Manzana Verde según las instrucciones del empaque.', 'Vierte 3 cucharadas de la gelatina sobre un molde de silicón para cupcakes, refrigera hasta que cuaje. Coloca las láminas de manzana y presiona ligeramente, agrega un poco de chía y rellena con el resto de la gelatina.', 'Refrigera hasta que cuaje por completo, desmolda y disfruta.'],
  ['ligero'], 52, 1, 10, 12, 0, 4, 2, '/assets/img/recetas/171-gelina-de-manzan-verde-valor-n-depende-de-la-marca-de-gelati.jpeg'],
@@ -5429,7 +5439,7 @@ return [
 ['Helado de platano con nueces', 'snack',
  ['plátano|3 unidades', 'nuez|1/4 taza', 'leche descremada|1/2 taza', 'edulcorante|al gusto'],
  ['Pela los plátanos y córtalos en rodajas.', 'Colócalos en una bolsa de plástico y congélalos durante al menos 2 horas o hasta que estén completamente congelados.', 'En una licuadora, agrega los plátanos congelados y la leche descremada.', 'Mezcla hasta obtener una textura cremosa y suave.', 'Si deseas un sabor más dulce, puedes agregar edulcorante sin calorías al gusto y mezclar nuevamente.', 'Añade las nueces picadas a la mezcla y revuelve suavemente.', 'Vierte la mezcla en un recipiente apto para congelador y congela durante al menos 1 hora para que adquiera consistencia de helado.'],
- ['vegetariano', 'ligero'], 150, 17, 15, 4, 7, 10, 3, '/assets/img/recetas/189-helado-de-platano-con-nueces.jpeg'],
+ ['vegetariano', 'ligero'], 174, 17, 15, 10, 7, 10, 3, '/assets/img/recetas/189-helado-de-platano-con-nueces.jpeg'],
 
 ['Helado de yogurt con frutas', 'snack',
  ['yogur natural|2 tazas', 'fresa|1/2 taza', 'arándano|1/4 taza', 'mango|1/4 taza', 'edulcorante|al gusto'],
@@ -5484,7 +5494,7 @@ return [
 ['Ponche huracanado', 'snack',
  ['piña|1 1/2 taza', 'jugo de citrus|2 taza', 'limón|1', 'jugo de arándanos rojos|8 onzas', 'hielo|1 taza'],
  ['Coloca todos los ingredientes excepto el hielo en una licuadora y mezcla hasta que tome una consistencia muy suave.', 'Agrega 1 taza de hielo y licua hasta que tome una consistencia suave. Si se desea, verter sobre hielo.', 'Adornar con rodajas de naranja o trozos de piña.'],
- ['rápido', 'vegetariano'], 100, 2, 10, 25, 0, 30, 2, '/assets/img/recetas/169-ponche-huracanado.jpeg'],
+ ['rápido', 'vegetariano'], 120, 2, 10, 30, 0, 30, 2, '/assets/img/recetas/169-ponche-huracanado.jpeg'],
 
 ['Postre de durazno', 'snack',
  ['durazno|8 unidades', 'limón|1', 'canela|1/3 cucharadita', 'nuez moscada|1/4 cucharadita', 'harina integral|Media taza', 'stevia|1/4 taza', 'margarina|2 cucharadas', 'avena integral|1/4 taza'],
@@ -5646,6 +5656,21 @@ return [
  ['Pela las batatas.', 'Córtalas en bastones.', 'Sécalas bien.', 'Mézclalas con aceite, canela y sal.', 'Cocina 18 minutos, sacudiendo a mitad de tiempo.', '(Tip: No las amontones para que no queden blandas.)'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 317, 4, 18, 54, 10, 11, 9, '/assets/img/recetas/006-batatas-crocantes.jpeg'],
 
+['Mini Pizzitas Integrales', 'snack',
+ ['Pan integral o tortilla|al gusto', 'Salsa de tomate natural|al gusto', 'Queso mozzarella|al gusto', 'Orégano|al gusto'],
+ ['Coloca la salsa sobre el pan.', 'Agrega queso.', 'Espolvorea orégano.', 'Cocina hasta que el queso se derrita.', 'Sirve caliente.', '(Tip: Usa poca salsa para que la base no se humedezca.)'],
+ ['alto en proteína', 'rápido', 'vegetariano', 'económico'], 424, 26, 7, 39, 18, 12, 6, '/assets/img/recetas/009-mini-pizzitas-integrales.jpeg'],
+
+['Rollitos de Jamón y Queso', 'snack',
+ ['Lonjas de jamón|al gusto', 'Queso mozzarella|al gusto', 'Orégano|al gusto'],
+ ['Coloca queso sobre cada lonja de jamón.', 'Enrolla con cuidado.', 'Asegura con palillo si hace falta.', 'Cocina hasta que el queso se derrita.', 'Deja reposar 1 minuto antes de comer.', '(Tip: No uses demasiado queso para evitar que se derrame.)'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 375, 43, 8, 6, 19, 2, 0, '/assets/img/recetas/010-rollitos-de-jamon-y-queso.jpeg'],
+
+['Calabacín Crocante', 'snack',
+ ['calabacín|1', 'huevo|1', 'Pan integral|al gusto', 'Queso parmesano|al gusto'],
+ ['Corta el calabacín en bastones.', 'Pásalos por huevo batido.', 'Cúbrelos con pan rallado y parmesano.', 'Rocía aceite en spray.', 'Cocina hasta dorar.', '(Tip: Sécalos antes de apanarlos para que no queden aguados.)'],
+ ['ligero', 'rápido'], 338, 24, 12, 32, 13, 9, 6, '/assets/img/recetas/011-calabacin-crocante.jpeg'],
+
 ['Coliflor Buffalo Saludable', 'snack',
  ['coliflor|1', 'Salsa buffalo|al gusto', 'Aceite de oliva|al gusto', 'Ajo en polvo|al gusto'],
  ['Corta la coliflor en trozos.', 'Mezcla con aceite, sal y ajo.', 'Cocina 10 minutos.', 'Agrega salsa buffalo.', 'Cocina 8 minutos más.', '(Tip: Agrega la salsa a mitad de cocción para que no se queme.)'],
@@ -5666,6 +5691,11 @@ return [
  ['Tritura el banano.', 'Mezcla con avena, canela y mantequilla de maní.', 'Forma bolitas pequeñas.', 'Cocina hasta que estén firmes y doradas.', '(Tip: Son ideales cuando quieres algo dulce y saciante.)'],
  ['rápido', 'vegetariano', 'sin gluten', 'económico'], 381, 13, 10, 62, 11, 16, 10, '/assets/img/recetas/015-bolitas-de-avena-y-banano.jpeg'],
 
+['Chips de Zucchini con Parmesano', 'snack',
+ ['zucchini|1', 'Queso parmesano|al gusto', 'Ajo en polvo|al gusto'],
+ ['Corta el zucchini en rodajas finas.', 'Sécalo con papel absorbente.', 'Agrega parmesano, ajo y sal.', 'Cocina en una sola capa.', 'Retira cuando esté dorado.', '(Tip: No lo cortes muy grueso para que no quede blando.)'],
+ ['alto en proteína', 'ligero', 'rápido', 'vegetariano'], 120, 10, 12, 8, 6, 5, 2, '/assets/img/recetas/016-chips-de-zucchini-con-parmesano.jpeg'],
+
 ['Hojuelas de Yuca Saludables', 'snack',
  ['yuca|1', 'Aceite en spray|al gusto', 'Ajo en polvo|al gusto'],
  ['Corta la yuca cocida en láminas o bastones.', 'Retira la vena central.', 'Agrega sal y ajo.', 'Rocía aceite.', 'Cocina hasta que dore.', '(Tip: La yuca fría del día anterior queda más crocante.)'],
@@ -5676,10 +5706,20 @@ return [
  ['Limpia los champiñones.', 'Retira el centro.', 'Mezcla queso crema, espinaca y ajo.', 'Rellena cada champiñón.', 'Cocina hasta que estén suaves.', '(Tip: No los laves demasiado; absorben mucha agua.)'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 244, 8, 12, 9, 21, 4, 2, '/assets/img/recetas/018-champinones-rellenos-fit.jpeg'],
 
+['Palitos de Queso Apanados', 'snack',
+ ['Queso mozzarella en bastones|al gusto', 'huevo|1', 'Panko integral|al gusto', 'Orégano|al gusto'],
+ ['Pasa el queso por huevo.', 'Cubre con panko y orégano.', 'Repite el apanado.', 'Congela 15 minutos.', 'Cocina hasta dorar.', '(Tip: Congelar antes evita que el queso se derrita demasiado rápido.)'],
+ ['alto en proteína', 'rápido', 'económico'], 397, 27, 10, 21, 22, 3, 1, '/assets/img/recetas/019-palitos-de-queso-apanados.jpeg'],
+
 ['Brochetas de Fruta Tibia', 'snack',
  ['Piña|al gusto', 'Banano|al gusto', 'Fresas|al gusto', 'Canela|al gusto'],
  ['Corta las frutas en trozos.', 'Insértalas en palillos.', 'Espolvorea canela.', 'Cocina hasta que estén tibias y ligeramente doradas.', '(Tip: Perfectas para calmar antojo dulce de forma natural.)'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 142, 2, 8, 37, 1, 21, 6, '/assets/img/recetas/020-brochetas-de-fruta-tibia.jpeg'],
+
+['Nuggets de Coliflor', 'snack',
+ ['Coliflor|al gusto', 'huevo|1', 'Pan integral|al gusto', 'Queso parmesano|al gusto'],
+ ['Tritura la coliflor cocida.', 'Mezcla con huevo, sal y parmesano.', 'Forma nuggets.', 'Pasa por pan rallado.', 'Cocina hasta dorar.', '(Tip: Exprime bien la coliflor para quitar exceso de agua.)'],
+ ['ligero', 'rápido'], 322, 23, 15, 29, 13, 5, 6, '/assets/img/recetas/023-nuggets-de-coliflor.jpeg'],
 
 ['Chips de Remolacha', 'snack',
  ['remolacha|1', 'Aceite en spray|al gusto'],
@@ -5702,102 +5742,102 @@ return [
  ['ligero', 'rápido', 'vegetariano', 'económico'], 268, 15, 6, 30, 10, 5, 5, '/assets/img/recetas/030-tostaditas-de-pan-integral-con-ricotta.jpeg'],
 
 ['Barras de Avena y Banano', 'snack',
- ['bananos|1/4', 'avena|1/8 taza', 'canela|1/8 cdta', 'mantequilla de maní|1/4 cdas'],
+ ['bananos|1', 'avena|2 cdas', 'canela|1/8 cdta', 'mantequilla de maní|1/4 cdas'],
  ['Tritura los bananos hasta formar puré.', 'Agrega avena, canela y mantequilla de maní.', 'Mezcla muy bien.', 'Coloca la mezcla en molde pequeño de silicona.', 'Lleva al Air Fryer.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 93, 3, 12, 15, 3, 4, 2, '/assets/img/recetas/001-barras-de-avena-y-banano.jpeg'],
 
 ['Barras de Chocolate y Avena', 'snack',
- ['avena|1/8 taza', 'cacao sin azúcar|1/4 cdas', 'bananos|1/4', 'vainilla|1/8 cdta'],
+ ['avena|2 cdas', 'cacao sin azúcar|1/4 cdas', 'bananos|1', 'vainilla|1/8 cdta'],
  ['Tritura los bananos.', 'Mezcla con avena, cacao y vainilla.', 'Coloca la mezcla en molde pequeño.', 'Cocina en Air Fryer durante 12 minutos.', 'Deja enfriar antes de desmoldar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 81, 3, 12, 17, 1, 4, 3, '/assets/img/recetas/002-barras-de-chocolate-y-avena.jpeg'],
 
 ['Barras de Coco y Almendras', 'snack',
- ['coco|1/8 taza', 'almendras|0.1 taza', 'claras de huevo|1/4', 'miel|1/4 cdas'],
+ ['coco|2 cdas', 'almendras|1 cda', 'claras de huevo|1', 'miel|1/4 cdas'],
  ['Mezcla todos los ingredientes.', 'Coloca en molde apto para Air Fryer.', 'Cocina durante 10 minutos.', 'Retira cuando estén ligeramente doradas.', 'Deja enfriar antes de cortar.'],
  ['ligero', 'rápido', 'sin gluten'], 156, 3, 10, 9, 13, 5, 3, '/assets/img/recetas/003-barras-de-coco-y-almendras.jpeg'],
 
 ['Barras de Manzana y Canela', 'snack',
- ['manzana|1/8', 'avena|1/8 taza', 'Canela|al gusto', 'miel|1/4 cdas'],
+ ['manzana|1', 'avena|2 cdas', 'Canela|al gusto', 'miel|1/4 cdas'],
  ['Ralla la manzana.', 'Mezcla con avena, canela y miel.', 'Coloca en molde pequeño.', 'Cocina durante 12 minutos.', 'Deja reposar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 67, 2, 12, 14, 1, 5, 2, '/assets/img/recetas/004-barras-de-manzana-y-canela.jpeg'],
 
 ['Barras de Mantequilla de Maní', 'snack',
- ['mantequilla de maní|0.1 taza', 'avena|1/8 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta'],
+ ['mantequilla de maní|1 cda', 'avena|2 cdas', 'miel|1/4 cdas', 'vainilla|1/8 cdta'],
  ['Mezcla todos los ingredientes.', 'Presiona la mezcla dentro del molde.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 145, 6, 10, 14, 8, 5, 2, '/assets/img/recetas/005-barras-de-mantequilla-de-mani.jpeg'],
 
 ['Barras de Arándanos y Avena', 'snack',
- ['avena|1/8 taza', 'arándanos|0.1 taza', 'bananos|1/4', 'Canela|al gusto'],
+ ['avena|2 cdas', 'arándanos|1 cda', 'bananos|1', 'Canela|al gusto'],
  ['Tritura los bananos.', 'Mezcla con avena y canela.', 'Incorpora arándanos suavemente.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 80, 2, 12, 17, 1, 5, 2, '/assets/img/recetas/006-barras-de-arandanos-y-avena.jpeg'],
 
 ['Barras de Zanahoria y Coco', 'snack',
- ['zanahoria|1/8', 'avena|1/8 taza', 'Coco|al gusto', 'Canela|al gusto', 'miel|1/4 cdas'],
+ ['zanahoria|1', 'avena|2 cdas', 'Coco|al gusto', 'Canela|al gusto', 'miel|1/4 cdas'],
  ['Mezcla todos los ingredientes.', 'Coloca la mezcla en molde pequeño.', 'Cocina durante 12 minutos.', 'Retira y deja enfriar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 99, 2, 12, 13, 5, 4, 3, '/assets/img/recetas/007-barras-de-zanahoria-y-coco.jpeg'],
 
 ['Barras de Café y Cacao', 'snack',
- ['avena|1/8 taza', 'café instantáneo|1/8 cda', 'cacao|1/4 cdas', 'bananos|1/4'],
+ ['avena|2 cdas', 'café instantáneo|1/8 cda', 'cacao|1/4 cdas', 'bananos|1'],
  ['Tritura el banano.', 'Agrega avena, café y cacao.', 'Mezcla muy bien.', 'Cocina durante 11 minutos.', 'Deja reposar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 79, 3, 11, 16, 1, 4, 3, '/assets/img/recetas/008-barras-de-cafe-y-cacao.jpeg'],
 
 ['Barras de Chía y Limón', 'snack',
- ['avena|1/8 taza', 'chía|1/8 cda', 'Jugo de 1 limón|al gusto', 'miel|1/4 cdas'],
+ ['avena|2 cdas', 'chía|1/8 cda', 'Jugo de 1 limón|al gusto', 'miel|1/4 cdas'],
  ['Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 64, 2, 10, 12, 1, 3, 2, '/assets/img/recetas/009-barras-de-chia-y-limon.jpeg'],
 
 ['Barras de Fresa y Yogur', 'snack',
- ['fresas|0.1 taza', 'yogur griego|1/8', 'avena|1/8 taza', 'miel|1/4 cdas'],
+ ['fresas|1 cda', 'yogur griego|1', 'avena|2 cdas', 'miel|1/4 cdas'],
  ['Corta las fresas en trozos pequeños.', 'Mezcla todos los ingredientes.', 'Cocina durante 12 minutos.', 'Enfría antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 67, 3, 12, 12, 1, 4, 2, '/assets/img/recetas/010-barras-de-fresa-y-yogur.jpeg'],
 
 ['Barras de Nueces y Canela', 'snack',
- ['avena|1/8 taza', 'nueces|0.1 taza', 'Canela|al gusto', 'miel|1/4 cdas'],
+ ['avena|2 cdas', 'nueces|1 cda', 'Canela|al gusto', 'miel|1/4 cdas'],
  ['Pica las nueces.', 'Mezcla todos los ingredientes.', 'Coloca en molde.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 97, 3, 10, 12, 5, 3, 2, '/assets/img/recetas/011-barras-de-nueces-y-canela.jpeg'],
 
 ['Barras Tropicales de Mango', 'snack',
- ['mango|0.1 taza', 'avena|1/8 taza', 'Coco|al gusto', 'miel|1/4 cdas'],
+ ['mango|1 cda', 'avena|2 cdas', 'Coco|al gusto', 'miel|1/4 cdas'],
  ['Tritura ligeramente el mango.', 'Mezcla todos los ingredientes.', 'Cocina durante 12 minutos.', 'Retira y deja enfriar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 104, 2, 12, 15, 5, 6, 2, '/assets/img/recetas/012-barras-tropicales-de-mango.jpeg'],
 
 ['Barras de Almendras y Vainilla', 'snack',
- ['almendras|0.1 taza', 'avena|1/8 taza', 'vainilla|1/8 cdta', 'miel|1/4 cdas'],
+ ['almendras|1 cda', 'avena|2 cdas', 'vainilla|1/8 cdta', 'miel|1/4 cdas'],
  ['Pica las almendras.', 'Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 10 minutos.', 'Enfría antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 91, 3, 10, 12, 4, 3, 2, '/assets/img/recetas/013-barras-de-almendras-y-vainilla.jpeg'],
 
 ['Barras de Batata y Canela', 'snack',
- ['puré de batata|1/8 taza', 'avena|1/8 taza', 'Canela|al gusto', 'miel|1/4 cdas'],
+ ['puré de batata|2 cdas', 'avena|2 cdas', 'Canela|al gusto', 'miel|1/4 cdas'],
  ['Tritura la batata cocida.', 'Mezcla con avena y canela.', 'Coloca en molde.', 'Cocina durante 12 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 82, 2, 12, 17, 1, 4, 2, '/assets/img/recetas/014-barras-de-batata-y-canela.jpeg'],
 
 ['Barras de Mora y Avena', 'snack',
- ['moras|0.1 taza', 'avena|1/8 taza', 'bananos|1/4'],
+ ['moras|1 cda', 'avena|2 cdas', 'bananos|1'],
  ['Tritura los bananos.', 'Mezcla con avena.', 'Agrega las moras suavemente.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 77, 2, 12, 16, 1, 4, 3, '/assets/img/recetas/015-barras-de-mora-y-avena.jpeg'],
 
 ['Barras de Piña y Coco', 'snack',
- ['piña|0.1 taza', 'Coco|al gusto', 'avena|1/8 taza', 'miel|1/4 cdas'],
+ ['piña|1 cda', 'Coco|al gusto', 'avena|2 cdas', 'miel|1/4 cdas'],
  ['Corta la piña en cubitos pequeños.', 'Mezcla todos los ingredientes.', 'Coloca en molde pequeño.', 'Cocina durante 11 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 102, 2, 11, 14, 5, 5, 2, '/assets/img/recetas/016-barras-de-pina-y-coco.jpeg'],
 
 ['Barras de Yogur y Chocolate', 'snack',
- ['yogur griego|1/8', 'avena|1/8 taza', 'cacao|1/4 cdas', 'miel|1/4 cdas'],
+ ['yogur griego|1', 'avena|2 cdas', 'cacao|1/4 cdas', 'miel|1/4 cdas'],
  ['Mezcla todos los ingredientes.', 'Coloca en molde apto para Air Fryer.', 'Cocina durante 12 minutos.', 'Deja reposar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 71, 3, 12, 13, 2, 3, 3, '/assets/img/recetas/017-barras-de-yogur-y-chocolate.jpeg'],
 
 ['Barras de Avena y Pera', 'snack',
- ['pera|1/8', 'avena|1/8 taza', 'Canela|al gusto', 'miel|1/4 cdas'],
+ ['pera|1', 'avena|2 cdas', 'Canela|al gusto', 'miel|1/4 cdas'],
  ['Ralla la pera.', 'Mezcla con avena, miel y canela.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 69, 2, 10, 14, 1, 5, 2, '/assets/img/recetas/018-barras-de-avena-y-pera.jpeg'],
 
 ['Barras de Cacao y Almendras', 'snack',
- ['avena|1/8 taza', 'cacao|1/4 cdas', 'almendras|0.1 taza', 'bananos|1/4'],
+ ['avena|2 cdas', 'cacao|1/4 cdas', 'almendras|1 cda', 'bananos|1'],
  ['Tritura los bananos.', 'Mezcla con cacao y avena.', 'Agrega almendras picadas.', 'Cocina durante 12 minutos.', 'Deja enfriar antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 113, 4, 12, 18, 4, 4, 4, '/assets/img/recetas/019-barras-de-cacao-y-almendras.jpeg'],
 
 ['Barras de Banano y Chía', 'snack',
- ['bananos|1/4', 'avena|1/8 taza', 'semillas de chía|1/8 cda', 'Canela|al gusto'],
+ ['bananos|1', 'avena|2 cdas', 'semillas de chía|1/8 cda', 'Canela|al gusto'],
  ['Tritura los bananos.', 'Mezcla con avena, chía y canela.', 'Coloca la mezcla en molde pequeño.', 'Cocina durante 10 minutos.', 'Deja enfriar completamente antes de cortar.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 77, 2, 10, 15, 1, 4, 3, '/assets/img/recetas/020-barras-de-banano-y-chia.jpeg'],
 
@@ -5907,152 +5947,152 @@ return [
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 206, 5, 3, 35, 5, 18, 7, '/assets/img/recetas/025-batido-de-vainilla-banano-y-chia.jpeg'],
 
 ['Torta de Banano y Avena', 'snack',
- ['bananos|3/8', 'huevos|1/4', 'avena en hojuelas|1/8 taza', 'harina de avena|0.1 taza', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta', 'esencia de vainilla|1/8 cdta', 'miel o endulzante natural|1/4 cdas'],
+ ['bananos|1', 'huevos|1', 'avena en hojuelas|2 cdas', 'harina de avena|1 cda', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta', 'esencia de vainilla|1/8 cdta', 'miel o endulzante natural|1/4 cdas'],
  ['Precalienta el horno a 180°C.', 'Pela los bananos y tritúralos con un tenedor hasta formar un puré suave.', 'Agrega los huevos y mezcla muy bien.', 'Añade la vainilla y la miel.', 'Incorpora la avena, harina de avena, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar todo.', 'Engrasa un molde, vierte la mezcla y hornea 35-40 minutos.', 'Inserta un palillo; si sale limpio, está lista. Deja enfriar antes de cortar.'],
  ['ligero', 'sin gluten', 'económico'], 139, 5, 38, 25, 3, 9, 3, '/assets/img/recetas/001-torta-de-banano-y-avena.jpeg'],
 
 ['Torta de Zanahoria Saludable', 'snack',
- ['zanahorias|1/4', 'huevos|3/8', 'aceite de coco|0.1 taza', 'harina de avena|1/8 taza', 'avena|0.1 taza', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['zanahorias|1', 'huevos|1', 'aceite de coco|1 cda', 'harina de avena|2 cdas', 'avena|1 cda', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Lava, pela y ralla las zanahorias.', 'En un bowl agrega huevos, miel, vainilla y aceite. Mezcla con batidor manual.', 'Añade la zanahoria rallada.', 'Incorpora la harina de avena, avena en hojuelas, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar.', 'Coloca en molde engrasado y hornea 35-40 minutos. Deja enfriar.'],
  ['ligero', 'sin gluten'], 250, 5, 38, 17, 18, 4, 2, '/assets/img/recetas/002-torta-de-zanahoria-saludable.jpeg'],
 
 ['Torta de Manzana y Canela', 'snack',
- ['manzanas|1/4', 'huevos|1/4', 'avena|1/8 taza', 'harina integral|0.1 taza', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['manzanas|1', 'huevos|1', 'avena|2 cdas', 'harina integral|1 cda', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Pela y corta las manzanas en cubos pequeños.', 'Precalienta el horno a 180°C.', 'En un bowl mezcla huevos, miel y vainilla.', 'Agrega avena y harina integral.', 'Añade canela y polvo para hornear.', 'Incorpora las manzanas y mezcla suavemente.', 'Vierte en molde engrasado y hornea 35 minutos. Deja enfriar antes de desmoldar.'],
  ['ligero', 'económico'], 126, 5, 35, 23, 2, 8, 3, '/assets/img/recetas/004-torta-de-manzana-y-canela.jpeg'],
 
 ['Torta de Coco y Almendras', 'snack',
- ['huevos|3/8', 'harina de almendras|1/8 taza', 'coco sin azúcar|0.1 taza', 'leche de coco|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de almendras|2 cdas', 'coco sin azúcar|1 cda', 'leche de coco|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'En un bowl bate los huevos.', 'Añade leche de coco, vainilla y miel.', 'Agrega harina de almendras y coco rallado.', 'Incorpora polvo para hornear y mezcla lentamente.', 'Coloca la mezcla en un molde pequeño.', 'Hornea durante 303-5 minutos. Retira y deja enfriar.'],
  ['ligero', 'sin gluten'], 194, 5, 154, 19, 12, 17, 1, '/assets/img/recetas/005-torta-de-coco-y-almendras.jpeg'],
 
 ['Torta Integral de Yogur', 'snack',
- ['yogur griego natural|1/8', 'huevos|1/4', 'harina integral|1/8 taza', 'avena|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['yogur griego natural|1', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Coloca el yogur en un bowl.', 'Agrega huevos y mezcla bien.', 'Añade miel y vainilla.', 'Incorpora harina integral y avena.', 'Agrega polvo para hornear y mezcla hasta integrar.', 'Vierte en molde engrasado y hornea 35 minutos. Deja reposar antes de cortar.'],
  ['ligero', 'económico'], 110, 5, 35, 18, 2, 4, 2, '/assets/img/recetas/006-torta-integral-de-yogur.jpeg'],
 
 ['Torta de Naranja Casera Saludable', 'snack',
- ['naranjas|1/4', 'huevos|3/8', 'harina de avena|1/8 taza', 'avena|0.1 taza', 'miel|1/4 cdas', 'aceite de coco|0.1 taza', 'polvo para hornear|1/8 cdta'],
+ ['naranjas|1', 'huevos|1', 'harina de avena|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'aceite de coco|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Lava bien las naranjas. Extrae el jugo y un poco de ralladura.', 'Precalienta el horno.', 'Mezcla huevos, miel y aceite.', 'Agrega jugo de naranja.', 'Incorpora harina y avena.', 'Añade polvo para hornear y mezcla suavemente.', 'Hornea durante 35-40 minutos.'],
  ['ligero', 'sin gluten'], 261, 6, 38, 20, 18, 8, 3, '/assets/img/recetas/007-torta-de-naranja-casera-saludable.jpeg'],
 
 ['Torta de Avena y Arándanos', 'snack',
- ['huevos|1/4', 'avena|1/8 taza', 'harina de avena|0.1 taza', 'arándanos|0.1 taza', 'yogur natural|1/8', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'avena|2 cdas', 'harina de avena|1 cda', 'arándanos|1 cda', 'yogur natural|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos, yogur y miel.', 'Añade avena y harina.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Vierte en un molde y hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
  ['ligero', 'sin gluten', 'económico'], 110, 5, 35, 17, 3, 5, 2, '/assets/img/recetas/008-torta-de-avena-y-arandanos.jpeg'],
 
 ['Torta de Calabaza y Canela', 'snack',
- ['puré de calabaza|1/8 taza', 'huevos|1/4', 'harina integral|1/8 taza', 'canela|1/8 cdta', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['puré de calabaza|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Cocina la calabaza hasta que esté suave y tritúrala formando puré.', 'Mezcla con huevos, miel y vainilla.', 'Agrega harina y canela.', 'Incorpora polvo para hornear.', 'Coloca en molde engrasado.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 92, 4, 35, 16, 2, 4, 2, '/assets/img/recetas/009-torta-de-calabaza-y-canela.jpeg'],
 
 ['Torta de Café y Cacao', 'snack',
- ['huevos|1/4', 'harina de avena|1/8 taza', 'café instantáneo|1/8 cda', 'cacao sin azúcar|1/4 cdas', 'yogur natural|0.1 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de avena|2 cdas', 'café instantáneo|1/8 cda', 'cacao sin azúcar|1/4 cdas', 'yogur natural|1 cda', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos y yogur.', 'Agrega miel.', 'Disuelve el café en una cucharada de agua caliente y añádelo a la mezcla.', 'Incorpora cacao y harina.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 93, 5, 35, 14, 3, 4, 3, '/assets/img/recetas/010-torta-de-cafe-y-cacao.jpeg'],
 
 ['Torta de Limón y Yogur', 'snack',
- ['huevos|1/4', 'yogur griego natural|1/8', 'harina de avena|1/8 taza', 'Jugo de 2 limones|al gusto', 'Ralladura de limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'yogur griego natural|1', 'harina de avena|2 cdas', 'Jugo de 2 limones|al gusto', 'Ralladura de limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Coloca los huevos en un bowl grande.', 'Agrega el yogur y mezcla muy bien.', 'Añade miel, jugo y ralladura de limón.', 'Incorpora harina de avena.', 'Agrega polvo para hornear y mezcla hasta eliminar grumos.', 'Engrasa un molde y hornea 35 minutos. Deja enfriar antes de servir.'],
  ['ligero', 'sin gluten', 'económico'], 84, 4, 35, 13, 2, 4, 2, '/assets/img/recetas/011-torta-de-limon-y-yogur.jpeg'],
 
 ['Torta de Fresas Saludable', 'snack',
- ['fresas|1/8 taza', 'huevos|1/4', 'harina integral|1/8 taza', 'avena|0.1 taza', 'yogur natural|1/8', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['fresas|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'yogur natural|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta las fresas.', 'Mezcla huevos, yogur y miel.', 'Añade harina integral y avena.', 'Agrega polvo para hornear.', 'Incorpora las fresas suavemente.', 'Vierte en un molde y hornea 35 minutos.', 'Deja reposar antes de cortar.'],
  ['ligero', 'económico'], 118, 5, 35, 21, 2, 5, 3, '/assets/img/recetas/012-torta-de-fresas-saludable.jpeg'],
 
 ['Torta de Pera y Canela', 'snack',
- ['peras|1/4', 'huevos|1/4', 'harina de avena|1/8 taza', 'canela|1/8 cdta', 'miel|1/4 cdas', 'yogur natural|0.1 taza', 'polvo para hornear|1/8 cdta'],
+ ['peras|1', 'huevos|1', 'harina de avena|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'yogur natural|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Pela y corta las peras en cubos.', 'Mezcla huevos, yogur y miel.', 'Añade harina y canela.', 'Agrega polvo para hornear.', 'Incorpora las peras y mezcla suavemente.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 110, 4, 35, 19, 3, 8, 3, '/assets/img/recetas/013-torta-de-pera-y-canela.jpeg'],
 
 ['Torta de Avena y Nueces', 'snack',
- ['huevos|1/4', 'avena|1/8 taza', 'harina integral|0.1 taza', 'nueces|0.1 taza', 'miel|1/4 cdas', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'avena|2 cdas', 'harina integral|1 cda', 'nueces|1 cda', 'miel|1/4 cdas', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos y miel.', 'Añade avena y harina.', 'Incorpora nueces y canela.', 'Agrega polvo para hornear.', 'Coloca la mezcla en un molde.', 'Hornea durante 35-40 minutos.'],
  ['ligero', 'económico'], 142, 5, 38, 17, 6, 3, 3, '/assets/img/recetas/014-torta-de-avena-y-nueces.jpeg'],
 
 ['Torta Marmoleada Fit', 'snack',
- ['huevos|3/8', 'harina de avena|1/8 taza', 'cacao sin azúcar|1/4 cdas', 'yogur natural|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de avena|2 cdas', 'cacao sin azúcar|1/4 cdas', 'yogur natural|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Añade harina y polvo para hornear.', 'Divide la mezcla en dos bowls.', 'En uno agrega cacao.', 'Vierte ambas mezclas alternando en el molde.', 'Usa un cuchillo para hacer movimientos suaves y crear el efecto marmoleado.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 104, 6, 35, 14, 4, 4, 3, '/assets/img/recetas/015-torta-marmoleada-fit.jpeg'],
 
 ['Torta de Piña y Coco', 'snack',
- ['piña|1/8 taza', 'coco|0.1 taza', 'huevos|1/4', 'harina integral|1/8 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['piña|2 cdas', 'coco|1 cda', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Seca ligeramente la piña.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Incorpora la piña.', 'Hornea durante 35 minutos.'],
  ['ligero'], 150, 4, 35, 20, 7, 7, 3, '/assets/img/recetas/016-torta-de-pina-y-coco.jpeg'],
 
 ['Torta de Almendras y Vainilla', 'snack',
- ['huevos|3/8', 'harina de almendras|1/8 taza', 'yogur griego|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de almendras|2 cdas', 'yogur griego|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega vainilla.', 'Incorpora harina de almendras.', 'Añade polvo para hornear.', 'Hornea durante 30 minutos.'],
  ['ligero', 'sin gluten'], 126, 6, 30, 7, 9, 4, 1, '/assets/img/recetas/017-torta-de-almendras-y-vainilla.jpeg'],
 
 ['Torta de Avena y Cacao', 'snack',
- ['huevos|1/4', 'avena|1/8 taza', 'cacao|1/4 cdas', 'banano|1/8', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'avena|2 cdas', 'cacao|1/4 cdas', 'banano|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura el banano.', 'Mezcla con huevos y miel.', 'Añade avena y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 97, 4, 35, 16, 3, 5, 3, '/assets/img/recetas/018-torta-de-avena-y-cacao.jpeg'],
 
 ['Torta de Mandarina', 'snack',
- ['mandarinas|1/4', 'huevos|3/8', 'harina integral|1/8 taza', 'miel|1/4 cdas', 'yogur|0.1 taza', 'polvo para hornear|1/8 cdta'],
+ ['mandarinas|1', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'yogur|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Extrae el jugo de las mandarinas.', 'Mezcla huevos, yogur y miel.', 'Agrega jugo de mandarina.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 114, 5, 35, 18, 3, 7, 2, '/assets/img/recetas/019-torta-de-mandarina.jpeg'],
 
 ['Torta de Yogur y Arándanos', 'snack',
- ['yogur natural|1/8', 'huevos|1/4', 'harina de avena|1/8 taza', 'arándanos|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['yogur natural|1', 'huevos|1', 'harina de avena|2 cdas', 'arándanos|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla yogur, huevos y miel.', 'Añade harina y vainilla.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 90, 4, 35, 13, 2, 5, 2, '/assets/img/recetas/020-torta-de-yogur-y-arandanos.jpeg'],
 
 ['Torta de Ciruelas y Canela', 'snack',
- ['ciruelas|1/8 taza', 'huevos|1/4', 'harina integral|1/8 taza', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['ciruelas|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta las ciruelas.', 'Mezcla huevos y miel.', 'Añade harina y canela.', 'Incorpora ciruelas y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 155, 4, 35, 34, 2, 15, 4, '/assets/img/recetas/021-torta-de-ciruelas-y-canela.jpeg'],
 
 ['Torta de Batata y Coco', 'snack',
- ['puré de batata|1/8 taza', 'huevos|1/4', 'coco|0.1 taza', 'harina de avena|1/8 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['puré de batata|2 cdas', 'huevos|1', 'coco|1 cda', 'harina de avena|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Cocina y tritura la batata.', 'Mezcla con huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten'], 154, 5, 35, 19, 7, 5, 3, '/assets/img/recetas/022-torta-de-batata-y-coco.jpeg'],
 
 ['Torta de Maracuyá Saludable', 'snack',
- ['Pulpa de 2 maracuyás|al gusto', 'huevos|1/4', 'yogur natural|1/8', 'harina integral|1/8 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['Pulpa de 2 maracuyás|al gusto', 'huevos|1', 'yogur natural|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega pulpa de maracuyá.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 98, 4, 35, 17, 2, 5, 3, '/assets/img/recetas/023-torta-de-maracuya-saludable.jpeg'],
 
 ['Torta de Cacao y Café', 'snack',
- ['huevos|1/4', 'harina de avena|1/8 taza', 'cacao|1/4 cdas', 'café instantáneo|1/8 cda', 'miel|1/4 cdas', 'yogur natural|1/8', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de avena|2 cdas', 'cacao|1/4 cdas', 'café instantáneo|1/8 cda', 'miel|1/4 cdas', 'yogur natural|1', 'polvo para hornear|1/8 cdta'],
  ['Disuelve el café en poca agua caliente.', 'Mezcla huevos, yogur y miel.', 'Agrega café y cacao.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 88, 5, 35, 13, 3, 4, 3, '/assets/img/recetas/024-torta-de-cacao-y-cafe.jpeg'],
 
 ['Torta de Mango y Coco', 'snack',
- ['mango|1/8 taza', 'coco|0.1 taza', 'huevos|1/4', 'harina integral|1/8 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['mango|2 cdas', 'coco|1 cda', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura ligeramente el mango.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Incorpora mango y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero'], 153, 4, 35, 21, 7, 8, 3, '/assets/img/recetas/025-torta-de-mango-y-coco.jpeg'],
 
 ['Torta de Chía y Limón', 'snack',
- ['huevos|1/4', 'harina de avena|1/8 taza', 'semillas de chía|1/4 cdas', 'Jugo de 1 limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina de avena|2 cdas', 'semillas de chía|1/4 cdas', 'Jugo de 1 limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos y miel.', 'Agrega limón y chía.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 96, 4, 35, 13, 3, 3, 3, '/assets/img/recetas/026-torta-de-chia-y-limon.jpeg'],
 
 ['Torta de Durazno Casera', 'snack',
- ['duraznos|1/4', 'huevos|1/4', 'harina integral|1/8 taza', 'avena|0.1 taza', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
+ ['duraznos|1', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta los duraznos.', 'Mezcla huevos, miel y vainilla.', 'Agrega harina y avena.', 'Incorpora duraznos y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 120, 5, 35, 22, 2, 7, 3, '/assets/img/recetas/027-torta-de-durazno-casera.jpeg'],
 
 ['Torta Integral de Banano y Chocolate', 'snack',
- ['bananos|1/4', 'huevos|1/4', 'harina integral|1/8 taza', 'cacao|1/4 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['bananos|1', 'huevos|1', 'harina integral|2 cdas', 'cacao|1/4 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura los bananos.', 'Mezcla con huevos y miel.', 'Añade harina y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'económico'], 117, 5, 35, 23, 2, 7, 4, '/assets/img/recetas/028-torta-integral-de-banano-y-chocolate.jpeg'],
 
 ['Torta de Coco y Limón', 'snack',
- ['coco|0.1 taza', 'Jugo de 1 limón|al gusto', 'huevos|1/4', 'harina de avena|1/8 taza', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['coco|1 cda', 'Jugo de 1 limón|al gusto', 'huevos|1', 'harina de avena|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos y miel.', 'Añade limón y coco.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
  ['ligero', 'sin gluten'], 130, 4, 35, 14, 7, 4, 3, '/assets/img/recetas/029-torta-de-coco-y-limon.jpeg'],
 
 ['Torta de Vainilla y Canela', 'snack',
- ['huevos|3/8', 'harina integral|1/8 taza', 'yogur natural|0.1 taza', 'vainilla|1/8 cdta', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
+ ['huevos|1', 'harina integral|2 cdas', 'yogur natural|1 cda', 'vainilla|1/8 cdta', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega vainilla y canela.', 'Incorpora harina y polvo para hornear.', 'Mezcla lentamente.', 'Coloca en un molde engrasado.', 'Hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
  ['ligero', 'económico'], 103, 5, 35, 15, 3, 4, 2, '/assets/img/recetas/030-torta-de-vainilla-y-canela.jpeg'],
 
 ['Alitas de Pollo Buffalo', 'snack',
- ['alitas de pollo|166 2/3 g', 'Aceite en spray|al gusto', 'Sal y pimienta|al gusto', 'Salsa buffalo: 4 cdas de salsa picante|al gusto'],
+ ['alitas de pollo|165 g', 'Aceite en spray|al gusto', 'Sal y pimienta|al gusto', 'Salsa buffalo: 4 cdas de salsa picante|al gusto'],
  ['Seca las alitas muy bien con papel absorbente. Sazona con sal y pimienta.', 'Rocía con spray. Cocina a 200°C por 12 minutos, voltea.', 'Cocina 12 minutos más hasta piel crujiente.', 'Mezcla los ingredientes de la salsa buffalo y baña las alitas calientes. Sirve de inmediato.'],
  ['alto en proteína', 'ligero', 'sin gluten', 'económico'], 325, 41, 25, 0, 17, 0, 0, '/assets/img/recetas/004-alitas-de-pollo-buffalo.jpeg'],
 
@@ -6062,7 +6102,7 @@ return [
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 276, 11, 10, 52, 5, 29, 8, '/assets/img/recetas/batido-de-arandanos-ciruela-y-fresa.jpeg'],
 
 ['Pico de Gallo', 'snack',
- ['hojas de albahaca|1/4 tazas', 'fresca|al gusto', 'queso parmesano|0.1 taza', 'rallado|al gusto', 'aceite de oliva|0.1 taza', 'virgen extra|al gusto', 'piñones|0 taza', 'sustituir por nueces o|al gusto', 'almendras)|al gusto', 'ajo|1/4 dientes', 'Sal y pimienta|al gusto'],
+ ['hojas de albahaca|1/4 tazas', 'fresca|al gusto', 'queso parmesano|1 cda', 'rallado|al gusto', 'aceite de oliva|1 cda', 'virgen extra|al gusto', 'piñones|3/4 cdas', 'sustituir por nueces o|al gusto', 'almendras)|al gusto', 'ajo|1 dientes', 'Sal y pimienta|al gusto'],
  ['Preparar los ingredientes: Lava las', 'hojas de albahaca y sécalas bien.', 'Pela los dientes de ajo.', 'Procesar: En un procesador de', 'alimentos o licuadora, coloca las', 'albahaca,', 'parmesano, los piñones (o nueces),', 'y los dientes de ajo.', 'Añadir aceite: Con el procesador', 'funcionamiento,', 'lentamente el aceite de oliva hasta', 'que la mezcla se convierta en una', 'pasta suave.', 'Sazonar: Añade sal y pimienta al', 'gusto y mezcla nuevamente.', 'Ajustar la consistencia: Si el pesto', 'está demasiado espeso, puedes', 'añadir un poco más de aceite de', 'oliva o una cucharada de agua', 'alcanzar', 'consistencia', 'deseada.', '8 Porción', '1= 2 cucharadas'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 256, 6, 10, 4, 25, 1, 2, '/assets/img/recetas/pico-de-gallo.jpeg'],
 
@@ -6072,7 +6112,7 @@ return [
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 125, 5, 15, 11, 9, 3, 4, '/assets/img/recetas/029-chips-de-kale-al-horno.jpeg'],
 
 ['Chips de calabacín al horno', 'snack',
- ['calabacín|1/2', 'aceite de oliva|1/2 cucharada', 'Sal y pimienta|al gusto'],
+ ['calabacín|1', 'aceite de oliva|1/2 cucharada', 'Sal y pimienta|al gusto'],
  ['Corta el calabacín en rodajas finas. Mezcla con aceite de oliva, sal y pimienta. Hornea a 180°C por 15-20 minutos hasta que estén crujientes.'],
  ['ligero', 'rápido', 'vegetariano', 'sin gluten'], 85, 1, 20, 3, 8, 3, 1, '/assets/img/recetas/035-chips-de-calabacin-al-horno.jpeg'],
 
@@ -6082,7 +6122,7 @@ return [
  ['ligero', 'vegetariano', 'sin gluten', 'económico'], 96, 1, 25, 7, 8, 3, 2, '/assets/img/recetas/041-chips-de-zanahoria-crocantes.jpeg'],
 
 ['Flan de coco y vainilla', 'snack',
- ['leche de coco|1/2 tazas', 'huevos|1/2', 'esencia de vainilla|1/4 cucharadita', 'miel o stevia|1/4 cucharada'],
+ ['leche de coco|1/2 tazas', 'huevos|1', 'esencia de vainilla|1/4 cucharadita', 'miel o stevia|1/4 cucharada'],
  ['Mezcla todos los ingredientes y vierte en moldes individuales. Cocina a baño maría en horno a 160°C por 25 minutos.'],
  ['ligero', 'sin gluten', 'económico'], 318, 6, 30, 7, 32, 4, 0, '/assets/img/recetas/135-flan-de-coco-y-vainilla.jpeg'],
 
@@ -6112,17 +6152,17 @@ return [
  ['tradicional', 'sin gluten', 'económico'], 424, 14, 30, 43, 22, 2, 2],
 
 ['Pandebono', 'snack',
- ['cuajada|37 1/2 g', 'harina de maíz precocida|1/4 taza', 'huevo|1/4', 'queso costeño|7 1/2 g', 'polvo de hornear|1/4 cdta'],
+ ['cuajada|40 g', 'harina de maíz precocida|1/4 taza', 'huevo|1', 'queso costeño|10 g', 'polvo de hornear|1/4 cdta'],
  ['Precalienta el horno a 190°C.', 'Desmenuza la cuajada y mezcla con el queso rallado.', 'Agrega la harina de maíz, el huevo y el polvo de hornear; amasa hasta integrar.', 'Forma bolitas u óvalos y colócalos en una bandeja.', 'Hornea 15-18 minutos hasta que doren por fuera.'],
  ['tradicional', 'ligero', 'sin gluten', 'económico'], 276, 13, 25, 27, 13, 0, 2],
 
 ['Mazamorra con panela', 'snack',
- ['maíz trillado|1/4 taza', 'leche|1/2 taza', 'panela raspada|1/2 cda', 'astilla de canela|1/2'],
+ ['maíz trillado|1/4 taza', 'leche|1/2 taza', 'panela raspada|1/2 cda', 'astilla de canela|1'],
  ['Cocina el maíz trillado en agua hasta que esté muy blando (o usa maíz ya cocido).', 'Agrega la leche, la panela y la canela; cocina a fuego bajo 8-10 minutos revolviendo.', 'Retira la canela y sirve tibia o fría.'],
  ['tradicional', 'ligero', 'vegetariano', 'sin gluten'], 154, 6, 30, 25, 5, 14, 2],
 
 ['Salpicón de frutas', 'snack',
- ['piña|1/4 taza', 'papaya|1/4 taza', 'banano|1/4', 'sandía|1/4 taza', 'agua|1/4 taza', 'miel|1/2 cdta'],
+ ['piña|1/4 taza', 'papaya|1/4 taza', 'banano|1', 'sandía|1/4 taza', 'agua|1/4 taza', 'miel|1/2 cdta'],
  ['Pica todas las frutas en cubos pequeños.', 'Mezcla en un bol con el agua y la miel.', 'Refrigera 10 minutos antes de servir bien frío.'],
  ['tradicional', 'ligero', 'rápido', 'vegetariano'], 108, 1, 15, 28, 0, 20, 3],
 
