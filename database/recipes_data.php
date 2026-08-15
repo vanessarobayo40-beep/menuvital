@@ -26,7 +26,7 @@ return [
 ['Huevos al horno sobre aguacate con queso', 'desayuno',
  ['aguacate|1 unidad', 'huevo|2 unidades', 'queso|30 g', 'sal|al gusto', 'pimienta|al gusto', 'perejil fresco|al gusto'],
  ['Precalienta el horno a 200°C (392°F).', 'Corta el aguacate por la mitad y quita la semilla.', 'Con una cuchara, saca un poco de la pulpa del aguacate para hacer espacio para los huevos.', 'Coloca las mitades de aguacate en una fuente apta para horno para que queden estables.', 'Rompe un huevo en cada mitad de aguacate.', 'Espolvorea sal y pimienta al gusto sobre los huevos.', 'Distribuye el queso desmenuzado sobre los huevos.', 'Hornea los aguacates rellenos en el horno precalentado durante 12-15 minutos o hasta que las claras de los huevos estén cocidas pero las yemas aún estén líquidas.', 'Retira los aguacates rellenos del horno y decora con perejil picado si lo deseas.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 475, 21, 25, 14, 38, 2, 9, 'https://images.pexels.com/photos/31823015/pexels-photo-31823015.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 475, 21, 25, 14, 38, 2, 9, 'https://images.pexels.com/photos/31823015/pexels-photo-31823015.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Huevos revueltos con espinacas y tomate', 'desayuno',
  ['tomate|1 unidad', 'huevo|4 unidades', 'espinaca fresca|2 tazas', 'aceite de oliva|1/2 cdas', 'sal|al gusto', 'pimienta|al gusto', 'queso rallado bajo en grasa|2 cdas', 'perejil fresco|al gusto'],
@@ -56,17 +56,17 @@ return [
 ['Tortilla de espinacas y champiñones', 'desayuno',
  ['huevo|4 unidades', 'espinaca|100 g', 'champiñón|100 g', 'cebolla|1/2 unidad', 'ajo|1 diente', 'aceite de oliva|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto', 'queso rallado bajo en grasa|30 g', 'perejil fresco|al gusto'],
  ['Lava y escurre bien las espinacas; córtalas en tiras finas', 'Lava, seca y rebana los champiñones', 'Bate los 4 huevos en un bol y sazona con sal y pimienta', 'Calienta 1 cucharadita de aceite de oliva en una sartén antiadherente a fuego medio y sofríe la cebolla picada y el ajo hasta que estén dorados', 'Añade los champiñones y cocínalos 3‑4 min hasta que adquieran un tono dorado ligero', 'Incorpora las espinacas y saltea 1‑2 min hasta que se marchiten', 'Vierte los huevos batidos sobre la mezcla y cocina a fuego medio‑bajo 5‑7 min, sin mover, hasta que los bordes cuajen y el centro esté firme', 'Espolvorea el queso rallado (opcional) y cocina 1 min más hasta que se funda', 'Decora con perejil picado y sirve caliente, cortada en porciones'],
- ['alto en proteína', 'ligero', 'sin gluten'], 275, 24, 25, 8, 17, 3, 2, '/assets/img/recetas/tortilla-de-espinacas-y-champinones.jpg'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'vegetariano'], 275, 24, 25, 8, 17, 3, 2, '/assets/img/recetas/tortilla-de-espinacas-y-champinones.jpg'],
 
 ['Tortilla de espinacas y queso', 'desayuno',
  ['huevo|2 unidades', 'espinaca|50 g', 'queso rallado|30 g', 'aceite de oliva|1/4 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Lava, escurre y corta las espinacas en tiras finas', 'Bate 2 huevos en un bol, agrega sal, pimienta y el queso rallado; mezcla bien', 'Calienta 1/4 cucharadita de aceite de oliva en una sartén a fuego medio', 'Saltea las espinacas 2‑3 min hasta que se marchiten', 'Vierte la mezcla de huevo y queso sobre las espinacas y distribúyela uniformemente', 'Cocina a fuego medio 5‑7 min sin mover, hasta que los bordes estén firmes y el centro casi cuajado', 'Precalienta el horno a 200 °C y coloca la sartén (aptas para horno) dentro durante 2‑3 min, o hasta que la superficie esté dorada', 'Retira del horno, corta en porciones y sirve caliente'],
- ['alto en proteína', 'ligero', 'sin gluten'], 375, 29, 20, 6, 26, 3, 1, 'https://images.pexels.com/photos/5639284/pexels-photo-5639284.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'vegetariano'], 375, 29, 20, 6, 26, 3, 1, 'https://images.pexels.com/photos/5639284/pexels-photo-5639284.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Tortilla de zanahoria al estilo keto', 'desayuno',
  ['huevo|4 unidades', 'zanahoria|2 medianas', 'queso rallado|2 cucharadas', 'sal|al gusto', 'pimienta|al gusto', 'aceite de coco|al gusto'],
  ['Ralla las 2 zanahorias medianas y reserva', 'En un tazón grande bate 4 huevos y añade el queso rallado; sazona con sal y pimienta', 'Incorpora las zanahorias ralladas a la mezcla de huevo y queso y mezcla homogéneamente', 'Calienta una cucharada de aceite de coco o de oliva en una sartén antiadherente a fuego medio', 'Vierte la mezcla en la sartén, distribuyéndola uniformemente', 'Cocina 3‑4 min sin mover, hasta que los bordes empiecen a dorarse y el centro esté casi cuajado', 'Con una espátula voltea la tortilla y cocina otros 3‑4 min hasta que esté dorada y completamente cocida por dentro', 'Retira del fuego, corta la tortilla por la mitad y sirve caliente'],
- ['alto en proteína', 'rápido'], 225, 16, 15, 8, 14, 4, 3, '/assets/img/recetas/tortilla-de-zanahoria-al-estilo-keto.jpg'],
+ ['alto en proteína', 'rápido', 'vegetariano'], 225, 16, 15, 8, 14, 4, 3, '/assets/img/recetas/tortilla-de-zanahoria-al-estilo-keto.jpg'],
 
 ['Tortillas de Huevo con Espinacas y Tomate', 'desayuno',
  ['huevo|4 unidades', 'espinaca|1 taza', 'tomate|1 unidad', 'sal|al gusto', 'pimienta|al gusto', 'aceite de coco|al gusto'],
@@ -111,7 +111,7 @@ return [
 ['Avena con aguacate y huevo escalfado', 'desayuno',
  ['avena en copos|40 g', 'agua|100 ml', 'leche|150 ml', 'aguacate|1/2 unidad', 'orégano|1/4 cdta', 'huevo|1 unidad'],
  ['En un bol combina 100 ml de agua con 150 ml de leche; mezcla bien', 'Agrega los 40 g de copos de avena y revuelve para que se hidraten uniformemente', 'Cocina la mezcla en el microondas a máxima potencia 2 minutos; saca, revuelve y vuelve a calentar 1 minuto; repite una tercera vez durante 30 segundos y deja reposar 2 minutos con el microondas apagado', 'Mientras la avena se cocina, corta el aguacate en tiras finas y reserva', 'Escalfar el huevo: lleva a ebullición una cacerola con agua, reduce a fuego lento y crea un remolino; vierte el huevo sin romper la yema y cocina 3‑4 minutos hasta que la clara esté firme y la yema ligeramente líquida; retira con una espumadera', 'Una vez reposada la avena, mézclala suavemente con una cuchara para alisar la textura y colócala en un plato', 'Distribuye encima las tiras de aguacate y el huevo escalfado', 'Espolvorea orégano, sal y pimienta al gusto y sirve caliente'],
- ['ligero', 'alto en proteína', 'rápido'], 298, 13, 12, 30, 14, 3, 5, '/assets/img/recetas/avena-con-aguacate-y-huevo-escalfado-1.jpg'],
+ ['ligero', 'alto en proteína', 'rápido', 'vegetariano'], 298, 13, 12, 30, 14, 3, 5, '/assets/img/recetas/avena-con-aguacate-y-huevo-escalfado-1.jpg'],
 
 ['Avena con compota de arandanos', 'desayuno',
  ['bebida vegetal|1 taza', 'avena|1/2 taza', 'sal|una pizca', 'arándano|1 taza', 'miel|2 cucharadas', 'limón|al gusto'],
@@ -241,7 +241,7 @@ return [
 ['Fritata de Verduras', 'desayuno',
  ['aceite de oliva|1 cucharada', 'calabacín|½ unidad', 'pimiento rojo|½ unidad', 'cebolla|½ unidad', 'tomillo fresco|1 cucharada', 'diente de ajo|1 unidad', 'tomate|1 unidad', 'huevo|2 unidades', 'sal|al gusto', 'pimienta|al gusto'],
  ['Calienta 1 cucharada de aceite de oliva en una sartén a fuego medio.', 'Agrega ½ calabacín, ½ pimiento rojo y ½ cebolla picados a la sartén, cocinando hasta que las verduras estén tiernas, unos 5-7 minutos.', 'Añade 1 cucharada de tomillo fresco y 1 diente de ajo picado a la sartén, cocinando durante 1 minuto más.', 'Agrega 1 tomate mediano picado a la sartén y cocina hasta que el líquido se evapore, unos 2-3 minutos.', 'Bate 2 huevos en un tazón hasta que estén espumosos y añade sal y pimienta al gusto.', 'Añade los huevos batidos a la sartén con las verduras y revuelve suavemente para combinar.', 'Cubre la sartén y reduce el fuego, cocinando durante 15 minutos más, o hasta que la frittata esté casi cuajada.', 'Invierte la frittata en un plato y sirve caliente.'],
- ['ligero', 'alto en proteína', 'rápido'], 240, 14, 20, 10, 16, 4, 3, '/assets/img/recetas/fritata-de-verduras.jpg'],
+ ['ligero', 'alto en proteína', 'rápido', 'vegetariano'], 240, 14, 20, 10, 16, 4, 3, '/assets/img/recetas/fritata-de-verduras.jpg'],
 
 ['Frittata de clara de huevo con salmón ahumado y rúcula', 'desayuno',
  ['clara de huevo|3 unidades', 'salmón ahumado|170 g', 'limón|1 unidad', 'aceite de oliva|2 cucharadas', 'sal marina|1/2 cucharadita', 'pimienta|1/2 cucharadita', 'rúcula|60 g', 'ajo|1 diente'],
@@ -301,12 +301,12 @@ return [
 ['Huevo Horneado en Aguacate', 'desayuno',
  ['aguacate|1 unidad grande', 'huevo|2 unidades', 'sal|al gusto', 'pimienta negra|al gusto'],
  ['Precalienta el horno a 180°C.', 'Corta el aguacate por la mitad y retira el hueso.', 'Rompe cada huevo en un tazón pequeño para asegurarte de que no haya cascara y luego viértelos cuidadosamente sobre cada mitad de aguacate.', 'Espolvorea sal y pimienta molida negra sobre los huevos.', 'Coloca las mitades de aguacate con los huevos en una bandeja para horno y hornea durante 15 minutos, o hasta que los blancos estén set y las yemas estén cocidas al punto deseado.', 'Retira del horno y sirve caliente, disfrutando del huevo horneado en aguacate.'],
- ['alto en proteína', 'ligero', 'sin gluten'], 270, 6, 12, 12, 22, 1, 7, '/assets/img/recetas/huevo-horneado-en-aguacate.jpg'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'vegetariano'], 270, 6, 12, 12, 22, 1, 7, '/assets/img/recetas/huevo-horneado-en-aguacate.jpg'],
 
 ['Huevo Horneado en Pimiento', 'desayuno',
  ['pimiento rojo|1 unidad pequeña', 'cebolla|1 unidad pequeña', 'ajo|1 diente', 'champiñón|1 taza', 'huevo|2 unidades', 'sal|al gusto', 'pimienta negra|al gusto'],
  ['Precalienta el horno a 180°C. Lava y corta el pimiento rojo por la mitad, retirando las semillas y las partes blancas.', 'Coloca las mitades de pimiento en una bandeja para hornear y hornea durante 20 minutos, o hasta que estén ligeramente ablandados.', 'Mientras tanto, calienta una sartén a fuego medio-alto con un poco de aceite. Agrega la cebolla picada y cocina hasta que comience a ablandarse, unos 3-4 minutos.', 'Agrega el ajo picado y los champiñones en cubitos a la sartén. Cocina hasta que los champiñones estén bien cocidos y sueltan su líquido, unos 5 minutos.', 'Saca los pimientos del horno y rellena cada mitad con una cucharada grande de la preparación de cebolla, ajo y champiñones.', 'Rompe un huevo en cada mitad de pimiento, sazona con sal y pimienta al gusto.', 'Cubre los pimientos con papel de aluminio y hornea durante 20-30 minutos, o hasta que las claras de huevo estén cocinadas y las yemas estén a tu gusto.', 'Sirve caliente, decorado con cilantro fresco si lo deseas.'],
- ['alto en proteína', 'ligero', 'sin gluten'], 206, 12, 15, 8, 14, 3, 3, '/assets/img/recetas/huevo-horneado-en-pimiento.jpg'],
+ ['alto en proteína', 'ligero', 'sin gluten', 'vegetariano'], 206, 12, 15, 8, 14, 3, 3, '/assets/img/recetas/huevo-horneado-en-pimiento.jpg'],
 
 ['Huevos Escalfados Mexicanos', 'desayuno',
  ['chile poblano|1 unidad', 'chile jalapeño|2 unidades', 'tomatito|5 unidades', 'aceite de oliva virgen extra|3 cucharaditas', 'tortilla de trigo integral|1 unidad', 'cebolla|1 unidad grande', 'ajo|2 dientes', 'tomate cherry|2 tazas', 'comino molido|1 cucharada', 'pimentón|1 pizca', 'agua|2 cucharadas', 'huevo|2 unidades grandes', 'queso fresco|4 onzas', 'cilantro fresco|2 cucharadas'],
@@ -316,12 +316,12 @@ return [
 ['Huevos Rancheros con pico de gallo', 'desayuno',
  ['tortilla de nopal|2 unidades', 'aceite vegetal|1/2 cucharadita', 'huevo|2 unidades', 'tomate rojo|1 unidad', 'cebolla|1/2 taza', 'chile|1 unidad', 'pimienta negra|1/2 cucharadita'],
  ['Precalienta el horno a 180°C. Unta ligeramente con aceite las tortillas por ambos lados y colócalas en una charola para horno.', 'Cocina las tortillas en el horno durante 5-10 minutos, o hasta que los bordes estén crujientes y comiencen a dorarse. Retíralas del horno y déjalas a un lado.', 'Calienta un sartén grande a fuego medio con un poco de aceite de oliva. Agrega el huevo y cocina durante 2-3 minutos, o hasta que esté cocido a tu gusto.', 'Coloca cantidades iguales de huevo en cada tortilla.', 'Para hacer el pico de gallo, coloca el tomate picado, la cebolla picada y el chile picado en un recipiente. Revuelve y reserva.', 'Coloca una cucharada de pico de gallo sobre cada tortilla, y espolvorea con pimienta negra molida.', 'Sirve caliente, decorado con un poco de cilantro fresco si lo deseas.', 'Acompaña con una infusión o jugo de tu preferencia, si lo deseas.'],
- ['tradicional', 'rápido', 'alto en proteína'], 338, 14, 15, 30, 18, 5, 5, '/assets/img/recetas/huevos-rancheros-con-pico-de-gallo.jpg'],
+ ['tradicional', 'rápido', 'alto en proteína', 'vegetariano'], 338, 14, 15, 30, 18, 5, 5, '/assets/img/recetas/huevos-rancheros-con-pico-de-gallo.jpg'],
 
 ['Huevos Revueltos', 'desayuno',
  ['huevo|2 unidades', 'mantequilla|1 cucharada', 'sal|al gusto', 'pimienta|al gusto', 'cebolleta|al gusto', 'infusión|al gusto'],
  ['Bate suavemente los huevos en un tazón pequeño.', 'Calienta una sartén antiadherente a fuego medio-alto con un poco de mantequilla. Vierte la mezcla de huevo en la sartén.', 'Cocina los huevos durante 2-3 minutos, o hasta que estén casi cuajados. No cocines demasiado, ya que los huevos deben quedar suaves y cremosos.', 'Sazona con sal y pimienta al gusto, y revuelve suavemente para distribuir los sabores.', 'Decora con cebolleta picada, si lo deseas.', 'Sirve caliente, acompañado de una infusión o jugo de tu preferencia.', 'Disfruta de tus huevos revueltos frescos y deliciosos.'],
- ['rápido', 'tradicional', 'alto en proteína'], 232, 12, 5, 1, 20, 1, 0, '/assets/img/recetas/huevos-revueltos.jpg'],
+ ['rápido', 'tradicional', 'alto en proteína', 'vegetariano'], 232, 12, 5, 1, 20, 1, 0, '/assets/img/recetas/huevos-revueltos.jpg'],
 
 ['Huevos Revueltos, taquitos de jamón y aceitunas', 'desayuno',
  ['huevo|2 unidades', 'mantequilla|1 cucharada', 'ghee|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'cebollita|al gusto', 'aceituna|10 g', 'jamón|30 g', 'serrano|al gusto'],
@@ -331,7 +331,7 @@ return [
 ['Huevos a la mexicana', 'desayuno',
  ['huevo|2 unidades', 'tomate|1 unidad', 'cebolla|1/2 unidad', 'chile|1 unidad', 'aceite de oliva|1 cucharada', 'sal|al gusto', 'pimienta|al gusto'],
  ['Corte el tomate, la cebolla y el chile en daditos pequeños, retirando las semillas del chile si lo prefiere menos picante.', 'En un tazón, bata los huevos y agregue sal y pimienta al gusto.', 'Caliente una sartén antiadherente con aceite de oliva a fuego medio y agregue la cebolla, sofriendo hasta que esté transparente.', 'Agregue el tomate a la sartén y cocine durante unos minutos hasta que esté suave.', 'Agregue los huevos batidos a la sartén y revuelva constantemente hasta que estén casi cuajados.', 'Continúe cocinando y revolviendo durante unos 5 minutos, hasta que los huevos estén completamente cuajados y listos para servir.', 'Sirva caliente y acompañe con una infusión de su preferencia.'],
- ['rápido', 'ligero', 'alto en proteína'], 250, 16, 12, 6, 18, 3, 2, '/assets/img/recetas/huevos-a-la-mexicana.jpg'],
+ ['rápido', 'ligero', 'alto en proteína', 'vegetariano'], 250, 16, 12, 6, 18, 3, 2, '/assets/img/recetas/huevos-a-la-mexicana.jpg'],
 
 ['Huevos con verduras', 'desayuno',
  ['huevo|1 unidad', 'tomate|1/2 unidad', 'espinaca|un puñado', 'cebolla|1 unidad', 'calabacín|1/2 unidad', 'brócoli|1 pequeño', 'champiñón|un puñado', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|al gusto'],
@@ -351,22 +351,22 @@ return [
 ['Menemen', 'desayuno',
  ['aceite de oliva|1 cucharada', 'mantequilla|1 cucharada', 'cebolla|1 pequeña', 'pimiento|2 unidades', 'hojuelas de chile|½ cucharadita', 'ajo|1 diente', 'tomate|2 unidades', 'huevo|2 unidades', 'sal|al gusto', 'pimienta|al gusto', 'perejil|al gusto'],
  ['Calienta una sartén grande a fuego medio y agrega el aceite de oliva y la mantequilla', 'Cuando la mantequilla esté derretida, agrega la cebolla y los pimientos picados, una pizca de sal y las hojuelas de chile verde', 'Cocina revolviendo ocasionalmente durante 5 minutos, hasta que las cebollas y los pimientos estén cocidos', 'Agrega el ajo picado y cocina durante 1 minuto más', 'Agrega los tomates picados y cocina revolviendo de vez en cuando, hasta que los tomates hayan perdido algo de líquido', 'Mezcla todo para integrar bien los ingredientes y cocina durante 15 minutos más, dependiendo de la jugosidad de los tomates', 'Mientras, bate ligeramente los huevos en un bol', 'Agrega los huevos a la sartén y revuelve cuidadosamente con los otros ingredientes, cocina durante 1-2 minutos hasta que las claras de huevo se opaquen ligeramente', 'Retira la sartén del fuego y sirve el menemen caliente'],
- ['rápido', 'alto en proteína', 'ligero'], 336, 18, 20, 12, 24, 5, 4, '/assets/img/recetas/menemen.jpg'],
+ ['rápido', 'alto en proteína', 'ligero', 'vegetariano'], 336, 18, 20, 12, 24, 5, 4, '/assets/img/recetas/menemen.jpg'],
 
 ['Mini Tortilla Española con Calabacín', 'desayuno',
  ['patata|1 unidad', 'aceite de oliva|2 cucharadas', 'cebolla|1 unidad', 'calabacín|½ unidad', 'sal|al gusto', 'pimienta negra|al gusto', 'huevo|3 unidades'],
  ['Precalienta el horno a 180 °C (convección) y coloca una sartén pequeña apta para horno sobre la hornalla a fuego medio.', 'Hierve la patata entera en una olla con agua suficiente para cubrirla 2 cm; cocínala 22‑25 min hasta que al pincharla con un tenedor quede tierna. Escúrrela, enfríala ligeramente y córtala en rodajas finas.', 'En la sartén caliente, agrega el aceite de oliva y sofríe la cebolla y el calabacín en rodajas finas 4 min, salpimentando al gusto, hasta que estén tiernos pero sin dorarse.', 'Añade las rodajas de patata a la sartén y saltea 5‑7 min, removiendo ocasionalmente, hasta que las verduras adquieran un ligero color dorado.', 'Retira la sartén del fuego, bate los 3 huevos con una pizca de sal y pimienta y viértelos uniformemente sobre la cama de verduras; distribuye bien.', 'Si deseas, espolvorea queso rallado u otro queso de tu preferencia sobre la superficie.', 'Introduce la sartén en el horno precalentado y hornea 12‑15 min, o hasta que los huevos estén cuajados y la parte superior adquiera un tono dorado.', 'Retira del horno, deja reposar 2 min y sirve la mini tortilla tibia a temperatura ambiente.'],
- ['ligero', 'rápido', 'tradicional'], 338, 14, 15, 30, 18, 4, 4, '/assets/img/recetas/mini-tortilla-espanola-con-calabacin.jpg'],
+ ['ligero', 'rápido', 'tradicional', 'vegetariano'], 338, 14, 15, 30, 18, 4, 4, '/assets/img/recetas/mini-tortilla-espanola-con-calabacin.jpg'],
 
 ['Mini frittatas de claras y champiñones', 'desayuno',
  ['calabacín|1 unidad', 'pimiento rojo|1 unidad', 'cebolla|1 unidad', 'cúrcuma|1 cucharadita', 'queso fresco|5 g', 'levadura nutricional|10 g', 'perejil|al gusto', 'clara de huevo|2 unidades', 'bebida vegetal|2 cucharadas', 'sal|una pizca', 'aceite de oliva|al gusto', 'champiñón|20 g'],
  ['Precalienta el horno a 170 °C con calor arriba y abajo; engrasa una bandeja de muffins antiadherente con aceite de oliva virgen extra.', 'Lava y corta en cubitos pequeños 1 calabacín, 1 pimiento rojo italiano y 20 g de champiñones; pica finamente la cebolla y el perejil fresco.', 'En una sartén a fuego medio, pocha la cebolla con una pizca de sal 5 min hasta que esté transparente; incorpora el calabacín, el pimiento y los champiñones y cocina 20‑25 min, removiendo, hasta que reduzcan su volumen y estén tiernos; salpimienta al gusto y añade 1 cucharadita de cúrcuma.', 'En un bol grande bate 2 claras de huevo con 2 cucharadas de bebida vegetal, una pizca de sal y, si deseas, 5 g de queso fresco desmenuzado; incorpora la mezcla de verduras y mezcla suavemente para que queden bien integradas.', 'Distribuye la preparación en los moldes de la bandeja, llenándolos ¾ de su capacidad; hornea 12‑15 min hasta que los bordes estén dorados y el centro firme al pinchar con un palillo.', 'Retira del horno, deja reposar 2 min, desmolda y sirve caliente, decorado con perejil fresco picado.'],
- ['ligero', 'alto en proteína', 'rápido'], 204, 18, 20, 6, 12, 2, 2, '/assets/img/recetas/mini-frittatas-de-claras-y-champinones.jpg'],
+ ['ligero', 'alto en proteína', 'rápido', 'vegetariano'], 204, 18, 20, 6, 12, 2, 2, '/assets/img/recetas/mini-frittatas-de-claras-y-champinones.jpg'],
 
 ['Mini tortita de espárrago con huevo', 'desayuno',
  ['espárrago|cantidad necesaria', 'ajo|al gusto', 'huevo|3 unidades', 'sal marina con hierbas|al gusto', 'aceite de oliva|2 cucharadas'],
  ['Corta los espárragos verdes en trozos de 3‑4 cm y pica finamente el ajo; colócalos en un recipiente apto para microondas con 2 cucharadas soperas de aceite de oliva virgen extra y cocina 2 min a potencia alta, hasta que estén tiernos.', 'En una sartén antiadherente calienta a fuego medio‑bajo un chorrito de aceite y agrega los espárragos y el ajo previamente cocidos; sazona con sal marina integral con hierbas de Provenza y saltea 1 min.', 'Bate 3 huevos de corral en un bol con una pizca de sal hasta que la mezcla quede homogénea y ligeramente espumosa.', 'Vierte los huevos batidos sobre los espárragos en la sartén, distribuyéndolos uniformemente; reduce el fuego a bajo y cocina 2‑3 min sin mover, hasta que los bordes empiecen a cuajar.', 'Con la ayuda de una espátula, cubre la sartén con un plato plano y, con cuidado, voltea la tortilla; vuelve a colocarla en la sartén y cocina 3 min más hasta que el otro lado esté completamente cuajado y ligeramente dorado.', 'Retira del fuego, corta en porciones y sirve caliente, decorada con un chorrito extra de aceite de oliva si lo deseas.'],
- ['ligero', 'rápido', 'alto en proteína'], 236, 18, 12, 5, 16, 1, 2, '/assets/img/recetas/mini-tortita-de-esparrago-con-huevo.jpg'],
+ ['ligero', 'rápido', 'alto en proteína', 'vegetariano'], 236, 18, 12, 5, 16, 1, 2, '/assets/img/recetas/mini-tortita-de-esparrago-con-huevo.jpg'],
 
 ['Mini tosta de salmón con huevo y cebolla', 'desayuno',
  ['huevo|2 unidades', 'cebolla|1 unidad', 'pan integral|2 rebanadas', 'salmón marinado|30 g', 'aceite de oliva|al gusto'],
@@ -411,7 +411,7 @@ return [
 ['Muffins de Huevo', 'desayuno',
  ['huevo|6 unidades', 'pimiento rojo|½ unidad', 'espinaca|1 taza', 'calabacita|½ unidad', 'mantequilla|al gusto'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente 6 moldes para muffins con mantequilla.', 'En un bol grande combina los huevos batidos, el pimiento rojo picado, la espinaca troceada y la calabacita en cubos; sazona con sal y pimienta al gusto y mezcla bien.', 'Vierte la mezcla en los moldes, llenándolos hasta tres cuartos de su capacidad para permitir que suban.', 'Hornea 8‑10 minutos, vigilando que la superficie esté firme y un palillo insertado en el centro salga limpio.', 'Una vez cocidos, retira los muffins del horno, deja reposar 2 minutos y desmóldalos; sirve caliente con una infusión.'],
- ['alto en proteína', 'rápido', 'económico'], 420, 36, 15, 6, 28, 3, 2, '/assets/img/recetas/muffins-de-huevo-1.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 420, 36, 15, 6, 28, 3, 2, '/assets/img/recetas/muffins-de-huevo-1.jpg'],
 
 ['Muffins de Huevo, con crema de aguacate', 'desayuno',
  ['huevo|4 unidades', 'pimiento rojo|½ unidad', 'espinaca|1 taza', 'calabacita|½ unidad', 'mantequilla|al gusto', 'aguacate|2 unidades', 'zumo de limón|2 unidades', 'cilantro|1 manojo', 'jalapeño|1 unidad', 'ajo|2 dientes', 'comino molido|1 cdta', 'sal|al gusto'],
@@ -451,27 +451,27 @@ return [
 ['Omelette con verduras', 'desayuno',
  ['huevo|2 unidades', 'calabacín|1 unidad', 'zanahoria|1 unidad', 'pimiento rojo|1 unidad', 'jitomate|1 unidad', 'cebolla|1 unidad', 'chile serrano|1 unidad', 'aceite de oliva|2 cucharadas', 'sal|1 pizca', 'pimienta|1 pizca'],
  ['Lava y corta el calabacín, la zanahoria, el pimiento rojo, el jitomate, la cebolla y el chile serrano en cubos pequeños de tamaño uniforme.', 'Calienta 2 cucharadas de aceite de oliva en una sartén antiadherente a fuego medio; agrega la cebolla y sofríe 2‑3 min hasta que esté translúcida.', 'Añade la zanahoria y el pimiento, cocina 3‑4 min hasta que empiecen a ablandarse; incorpora el calabacín, el jitomate y el chile, y saltea 2 min más manteniendo la mezcla jugosa.', 'Mientras se cocinan las verduras, bate los 2 huevos en un bol con una pizca de sal y pimienta hasta que la mezcla quede ligeramente espumosa.', 'Vierte los huevos batidos sobre las verduras en la sartén, distribuye uniformemente y reduce el fuego a bajo; cubre y cocina 3‑4 min hasta que el centro esté casi cuajado.', 'Con una espátula, dobla la omelette a la mitad, vuelve a tapar y cocina 1‑2 min más hasta que el interior esté completamente cuajado y ligeramente dorado en los bordes.', 'Desliza la omelette en un plato, espolvorea una pizca extra de sal y pimienta al gusto y sirve acompañada de una infusión.'],
- ['alto en proteína', 'rápido', 'ligero'], 188, 12, 15, 8, 12, 4, 2, '/assets/img/recetas/omelette-con-verduras.jpg'],
+ ['alto en proteína', 'rápido', 'ligero', 'vegetariano'], 188, 12, 15, 8, 12, 4, 2, '/assets/img/recetas/omelette-con-verduras.jpg'],
 
 ['Pan de plátano con chocolate sin azúcar añadido', 'desayuno',
  ['harina de almendras|180 g', 'plátano|1', 'huevos|2', 'chocolate negro|100 g', 'leche de almendras|50 ml', 'levadura en polvo|6 g'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente un molde rectangular de 19 × 9 cm con aceite de coco fundido.', 'En un bol grande machaca los dos plátanos maduros con un tenedor hasta obtener un puré sin grumos; añade los huevos y bate hasta integrar.', 'Incorpora la harina de almendras, la leche de almendras y la levadura en polvo; mezcla con una espátula hasta lograr una masa homogénea y sin grumos.', 'Derrite el chocolate negro al baño maría, dejando que alcance una temperatura de 45‑50 °C; viértelo sobre la masa y remueve suavemente hasta que quede bien incorporado.', 'Vierte la masa en el molde preparado, alisando la superficie con la espátula; hornea 40‑45 min, o hasta que al insertar la punta de un cuchillo en el centro salga limpia y la superficie esté dorada.', 'Retira del horno y deja enfriar a temperatura ambiente antes de desmoldar; corta en porciones y sirve como snack o postre.'],
- ['ligero', 'sin gluten'], 380, 10, 30, 40, 20, 25, 5, '/assets/img/recetas/pan-de-platano-con-chocolate-sin-azucar-anadido.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 380, 10, 30, 40, 20, 25, 5, '/assets/img/recetas/pan-de-platano-con-chocolate-sin-azucar-anadido.jpg'],
 
 ['Panqueques de Almendras', 'desayuno',
  ['almendras|1/2 taza', 'manzana|1/2 taza', 'huevos|2', 'agua|1/4 taza', 'aceite de coco|1/4 cucharadita', 'fresas|5', 'sal|1 pizca'],
  ['En un bol mediano combina la harina de almendras, el puré de manzana, los huevos, el agua y la pizca de sal; bate con un tenedor hasta obtener una mezcla uniforme y sin grumos.', 'Calienta una sartén antiadherente a fuego medio y, si lo deseas, unta ligeramente con aceite de coco para evitar que se pegue.', 'Vierte aproximadamente ¼ de taza de la masa en la sartén caliente, distribuyéndola de manera uniforme; cocina hasta que aparezcan burbujas en la superficie, unos 2‑3 min.', 'Con una espátula, voltea el panqueque y cocina el otro lado 1‑2 min más, hasta que esté dorado y firme al tacto.', 'Repite el proceso con el resto de la masa, añadiendo más aceite de coco a la sartén cuando sea necesario para mantener la superficie lubricada.', 'Apila los panqueques en un plato, espolvorea con una pizca de sal y decora con las fresas cortadas en rodajas o en cuartos.', 'Sirve caliente, acompañados de miel, yogur o la fruta que prefieras.'],
- ['ligero'], 355, 15, 20, 40, 15, 20, 5, '/assets/img/recetas/panqueques-de-almendras.jpg'],
+ ['ligero', 'vegetariano'], 355, 15, 20, 40, 15, 20, 5, '/assets/img/recetas/panqueques-de-almendras.jpg'],
 
 ['Panqueques de Crema de cacahuete y platano', 'desayuno',
  ['plátano|1', 'avena|1/2 taza', 'crema de cacahuate|3 cucharadas', 'huevos|2', 'canela|al gusto', 'mantequilla clarificada|al gusto'],
  ['Pela el plátano maduro y córtalo en trozos; colócalo en la licuadora junto con los huevos y licúa a velocidad alta hasta obtener una mezcla homogénea.', 'Añade la crema de cacahuate y vuelve a licuar hasta que no queden grumos, luego incorpora la avena y la canela y mezcla brevemente para integrar.', 'Calienta una sartén antiadherente a fuego medio-bajo y unta ligeramente con mantequilla clarificada o aceite de coco.', 'Vierte porciones de la masa (aprox. ¼ de taza) formando 4 pancakes de tamaño uniforme; cocina 2‑3 minutos hasta que aparezcan burbujas en la superficie.', 'Con una espátula, voltea los pancakes y cocina otros 1‑2 minutos hasta que estén dorados por ambos lados.', 'Retira los pancakes y mantenlos tibios mientras terminas el lote, si es necesario.', 'Sirve los pancakes apilados, decora con frutas frescas (arándanos, fresas, manzana) y rocía ligeramente con miel al gusto.'],
- ['ligero'], 460, 20, 20, 50, 20, 25, 5, '/assets/img/recetas/panqueques-de-crema-de-cacahuete-y-platano.jpg'],
+ ['ligero', 'vegetariano'], 460, 20, 20, 50, 20, 25, 5, '/assets/img/recetas/panqueques-de-crema-de-cacahuete-y-platano.jpg'],
 
 ['Panqueques de quinoa y banana', 'desayuno',
  ['quinoa|1/2 taza', 'harina de almendras|2 cucharadas', 'proteina|2 cucharadas', 'banana|1', 'huevos|2', 'canela|al gusto', 'stevia|al gusto'],
  ['Corta la banana congelada en trozos y colócala en un recipiente; enjuaga la quinoa cruda y déjala en remojo con agua suficiente durante al menos 8 horas o toda la noche.', 'Escurre bien la quinoa y colócala en la licuadora junto con la banana, la harina de almendras, la proteína de banana (si usas), las claras y yemas de huevo, la canela y la stevia; licúa 1‑2 minutos hasta obtener una masa espesa y sin granos visibles.', 'Si la masa está demasiado densa, agrega una cucharada de agua a la vez hasta lograr una consistencia similar a la de una masa de pancake tradicional.', 'Calienta una sartén antiadherente a fuego medio y unta con una mínima cantidad de aceite o spray de cocina.', 'Vierte ¼ de taza de masa por cada pancake; cocina 2‑3 minutos hasta que se formen burbujas en la superficie y los bordes se vean firmes.', 'Voltea con una espátula y cocina 1‑2 minutos más hasta que estén dorados y esponjosos.', 'Mientras se cocinan los pancakes, prepara el sirope de chocolate: en una taza de agua muy caliente disuelve 2 cucharadas de cacao en polvo y endulza con stevia al gusto, mezcla hasta obtener una salsa lisa.', 'Sirve los pancakes apilados, vierte el sirope de chocolate por encima y acompaña con fruta fresca si lo deseas.'],
- ['ligero'], 395, 25, 20, 40, 15, 20, 5, '/assets/img/recetas/panqueques-de-quinoa-y-banana.jpg'],
+ ['ligero', 'vegetariano'], 395, 25, 20, 40, 15, 20, 5, '/assets/img/recetas/panqueques-de-quinoa-y-banana.jpg'],
 
 ['Porridge De avena y boniato', 'desayuno',
  ['boniato|1', 'copos de avena|70 g', 'zanahoria|35 g', 'bebida vegetal|250 ml', 'agua|250 ml', 'canela|2 cucharaditas', 'aceite de coco|3 cucharaditas', 'semillas de calabaza|al gusto'],
@@ -531,7 +531,7 @@ return [
 ['Quiche sin corteza con espinacas', 'desayuno',
  ['harina de avena|1 taza', 'aceite de oliva|50 g', 'agua|65 g', 'levadura|25 g', 'sal|1/2 cucharadita', 'azúcar|1 cucharadita', 'aceite de oliva|50 g', 'ajos|2 dientes', 'espinacas|300 g', 'huevos|3', 'queso|15 g', 'sal|1/2 cucharada', 'nuez moscada|al gusto'],
  ['Precalienta el horno a 180 °C y prepara una bandeja con papel vegetal.', 'En un bol mezcla el agua tibia, el aceite de oliva y la levadura fresca; deja reposar 5 min hasta que burbujee. Incorpora la harina de avena, la sal y el azúcar; amasa hasta obtener una masa homogénea y sin grumos. Extiende la masa entre dos plásticos con un rodillo hasta que quede muy fina y colócala en un molde redondo, pincha la base con un tenedor y hornea 15 min hasta que empiece a dorarse.', 'Mientras la masa se hornea, pica finamente los ajos (o, si prefieres, los piñones y pasas o el bacon) y sofríelos en una sartén con 50 g de aceite de oliva a fuego medio durante 2 min. Añade las espinacas limpias (escurridas si son congeladas) y cocina 5‑8 min, removiendo, hasta que reduzcan su volumen y suelten su humedad.', 'En un bol grande bate los 3 huevos, agrega ½ cucharada de sal, la pimienta o nuez moscada al gusto y mezcla bien hasta que quede una emulsión ligera.', 'Vierte la mezcla de huevo y espinacas sobre la masa precocida, distribuye uniformemente y espolvorea por encima los 15 g de queso fresco desmenuzado.', 'Hornea la quiche 20‑25 min a 180 °C, o hasta que al insertar un palillo este salga limpio y la superficie esté dorada y gratinada.', 'Retira del horno, deja reposar 5 min, corta en porciones y sirve caliente o a temperatura ambiente.'],
- ['tradicional', 'alto en proteína'], 425, 30, 45, 20, 25, 5, 5, '/assets/img/recetas/quiche-sin-corteza-con-espinacas.jpg'],
+ ['tradicional', 'alto en proteína', 'vegetariano'], 425, 30, 45, 20, 25, 5, 5, '/assets/img/recetas/quiche-sin-corteza-con-espinacas.jpg'],
 
 ['Revuelta de Espinaca Huevo, y champiñones', 'desayuno',
  ['huevos|2', 'cebolla|1', 'champiñones|1/2 taza', 'tomates|1/2 taza', 'jamón|1 loncha'],
@@ -576,7 +576,7 @@ return [
 ['Tortilla crujiente con gambas, aguacate y espinacas', 'desayuno',
  ['huevo|1 unidad', 'tortilla mexicana|1 unidad', 'mayonesa|1 cda', 'gamba|6 unidades', 'espinaca baby|1 puñado', 'aguacate|¼ unidad', 'cebolla morada|3-4 aros', 'shichimi togarashi|una pizca', 'sal|al gusto', 'aceite de oliva|1 cda'],
  ['Calienta una sartén antiadherente del tamaño de la tortilla mexicana a fuego medio con 1 cucharada de aceite de oliva virgen extra.', 'Casca el huevo en un bol, añade una pizca de sal y bátelo ligeramente; vierte el huevo batido en la sartén y deja que cuaje por un lado, aproximadamente 1‑2 minutos.', 'Coloca la tortilla mexicana sobre el huevo parcialmente cuajado, presionando ligeramente para que se adhiera; cocina 1‑2 minutos más hasta que la base esté dorada y crujiente.', 'Voltea la tortilla con cuidado y cocina el otro lado 1‑2 minutos hasta que la tortilla mexicana quede crujiente y el huevo esté completamente cocido.', 'Retira la tortilla de la sartén y úntala uniformemente con la mayonesa.', 'Sobre la mayonesa coloca una capa de espinacas baby, distribuye las gambas a la plancha, los aros de cebolla morada y el aguacate en cubos.', 'Espolvorea una pizca de shichimi togarashi y ajusta de sal si es necesario; sirve inmediatamente mientras está caliente y crujiente.'],
- ['alto en proteína', 'rápido'], 382, 14, 12, 23, 26, 2, 5, '/assets/img/recetas/tortilla-crujiente-con-gambas-aguacate-y-espinacas.jpg'],
+ ['alto en proteína', 'rápido', 'vegetariano'], 382, 14, 12, 23, 26, 2, 5, '/assets/img/recetas/tortilla-crujiente-con-gambas-aguacate-y-espinacas.jpg'],
 
 ['Tortilla de Vegetales', 'desayuno',
  ['huevo|4 unidades', 'cebolla cabezona|1 taza', 'zanahoria|1 taza', 'perejil|al gusto', 'cilantro|al gusto', 'leche|½ vaso', 'habichuela|1 taza', 'pimiento verde|½ taza', 'pimiento rojo|½ taza', 'aceite de girasol|2 cda', 'sal|al gusto', 'pimienta|al gusto', 'especia|al gusto'],
@@ -656,7 +656,7 @@ return [
 ['bistec y huevos con chimichurri', 'desayuno',
  ['aceite de oliva|1 cucharada', 'sal|al gusto', 'pimienta|al gusto', 'tomate|4', 'huevo|4', 'chimichurri|al gusto'],
  ['Caliente 1⁄2 cucharada de aceite de oliva en una parrilla o sartén de hierro fundido a fuego alto.', 'Sazone el bistec por todas partes con sal y pimienta.', 'Cocine, volteando el bistec cada minuto más o menos, durante 7 a 8 minutos en total, hasta que esté dorado.', 'Retire a una tabla de cortar y descanse durante 5 minutos antes de rebanar.', 'Mientras reposa el bistec, coloque los tomates con el lado cortado hacia abajo en la misma sartén y cocine durante unos 2 minutos, hasta que la parte inferior esté ligeramente ennegrecida.', 'Caliente la 1⁄2 cucharada de aceite de oliva restante en una sartén antiadherente grande.', 'Trabajando en tandas, rompe los huevos en la sartén y fríelos hasta que queden dorados, las claras recién cuajadas y las yemas aún sueltas. Sazone con sal y pimienta negro.', 'Cortar el bistec en contra de la veta natural de la carne.', 'Divida entre 4 platos calientes con los huevos y los tomates.', 'Vierta generosamente el chimichurri sobre el bistec y los huevos.'],
- ['tradicional', 'alto en proteína'], 255, 20, 15, 10, 15, 5, 2, '/assets/img/recetas/bistec-y-huevos-con-chimichurri.jpg'],
+ ['tradicional', 'alto en proteína', 'vegetariano'], 255, 20, 15, 10, 15, 5, 2, '/assets/img/recetas/bistec-y-huevos-con-chimichurri.jpg'],
 
 ['Avena nocturna con manzana y canela', 'desayuno',
  ['avena|½ taza', 'leche de almendras|1 taza', 'manzana|½', 'canela|½ cucharadita', 'semillas de chía|1 cucharadita', 'miel|al gusto'],
@@ -681,32 +681,32 @@ return [
 ['Hash browns de batata', 'desayuno',
  ['batata|1 unidad', 'huevo|1 unidad', 'harina de almendras|1 cucharada', 'sal|al gusto', 'pimienta|al gusto'],
  ['En un tazón grande, mezcla la 1 batata rallada, el 1 huevo, y la 1 cucharada de harina de almendras.', 'Agrega sal y pimienta al gusto, y mezcla hasta que todos los ingredientes estén bien combinados.', 'Amasa la mezcla con las manos hasta que esté suave y homogénea.', 'Divide la masa en 4-6 porciones, dependiendo del tamaño deseado para los hash browns.', 'Forma cada porción en un disco pequeño y plano.', 'Calienta una sartén con aceite de oliva a fuego medio-alto.', 'Cocina los hash browns en la sartén durante 4-5 minutos por lado, o hasta que estén dorados y crujientes.'],
- ['tradicional'], 176, 6, 20, 20, 8, 2, 2, '/assets/img/recetas/019-hash-browns-de-batata.jpg'],
+ ['tradicional', 'vegetariano'], 176, 6, 20, 20, 8, 2, 2, '/assets/img/recetas/019-hash-browns-de-batata.jpg'],
 
 ['Huevos revueltos con espinaca y cúrcuma', 'desayuno',
  ['huevo|2 unidades', 'espinaca|½ taza', 'cúrcuma|½ cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Bate los 2 huevos en un bol hasta que la clara y la yema estén completamente integradas', 'Agrega la cúrcuma, sal y pimienta y sigue batiendo hasta que el color sea uniforme', 'Calienta una sartén antiadherente a fuego medio (≈180 °C) y añade una cucharadita de aceite de oliva', 'Vierte la mezcla de huevo en la sartén y, sin dejar de mover, cocina 1‑2 min hasta que empiece a cuajar', 'Incorpora la espinaca picada y continúa revolviendo hasta que el huevo esté completamente cocido y la espinaca tierna, sin que se reseque', 'Retira del fuego y sirve inmediatamente, decorando con una pizca extra de pimienta si lo deseas'],
- ['tradicional'], 128, 12, 10, 2, 8, 1, 1, '/assets/img/recetas/013-huevos-revueltos-con-espinaca-y-curcuma.jpg'],
+ ['tradicional', 'vegetariano'], 128, 12, 10, 2, 8, 1, 1, '/assets/img/recetas/013-huevos-revueltos-con-espinaca-y-curcuma.jpg'],
 
 ['Omelette de espinaca y queso de cabra', 'desayuno',
  ['huevo|2', 'espinaca|½ taza', 'queso de cabra|30 g', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|1 cucharadita'],
  ['Bate los huevos con sal y pimienta en un tazón hasta que la mezcla sea homogénea.', 'Calienta una sartén antiadherente a fuego medio y añade la cucharadita de aceite de oliva; deja que el aceite se caliente sin llegar a humear.', 'Vierte los huevos batidos en la sartén y deja que se asienten durante 30 segundos sin moverlos.', 'Añade la espinaca picada sobre la superficie de los huevos y cocina por 1 minuto, revolviendo ligeramente para que se marchite.', 'Espolvorea el queso de cabra desmenuzado sobre la mezcla y deja que se funda durante 30 segundos.', 'Dobla el omelette por la mitad con una espátula y cocina 1 minuto más, asegurándote de que el centro esté cocido pero aún jugoso.', 'Sirve caliente, decorado con una pizca de pimienta recién molida.'],
- ['ligero', 'rápido'], 188, 15, 10, 5, 12, 2, 2, '/assets/img/recetas/005-omelette-de-espinaca-y-queso-de-cabra.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 188, 15, 10, 5, 12, 2, 2, '/assets/img/recetas/005-omelette-de-espinaca-y-queso-de-cabra.jpg'],
 
 ['Omelette de palta y tomate seco', 'desayuno',
  ['huevo|2', 'palta|½', 'tomate seco|2', 'vegetales|al gusto'],
  ['Bate los huevos en un tazón hasta que la mezcla sea homogénea y ligeramente espumosa.', 'Incorpora los tomates secos picados y mezcla suavemente para distribuirlos sin romperlos.', 'Calienta una sartén antiadherente a fuego medio y añade un chorrito de aceite o mantequilla.', 'Vierte la mezcla de huevo en la sartén, distribuyéndola uniformemente para que quede de unos 2 cm de grosor.', 'Cocina 2‑3 minutos o hasta que los bordes comiencen a cuajar y la superficie esté casi firme.', 'Con una espátula, voltea la tortilla con cuidado y cocina 1‑2 minutos más, hasta que el centro esté cocido pero aún jugoso.', 'Retira la omelette del fuego y coloca las rodajas de palta sobre ella.', 'Sirve inmediatamente, añadiendo sal y pimienta al gusto y, si lo deseas, un chorrito de aceite de oliva virgen extra.'],
- ['ligero', 'rápido'], 214, 12, 10, 10, 14, 4, 4, '/assets/img/recetas/014-omelette-de-palta-y-tomate-seco.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 214, 12, 10, 10, 14, 4, 4, '/assets/img/recetas/014-omelette-de-palta-y-tomate-seco.jpg'],
 
 ['Panqueques de avena y banana', 'desayuno',
  ['banana|1', 'huevo|2', 'avena|½ taza', 'canela|½ cucharadita', 'polvo de hornear|1 cucharadita', 'esencia de vainilla|1 chorrito', 'aceite de coco|al gusto'],
  ['En un bol grande, aplasta la banana madura con un tenedor hasta obtener un puré homogéneo.', 'Añade los huevos y bate con un batidor de mano hasta que la mezcla quede esponjosa.', 'Incorpora la avena (o harina de avena), la canela y el polvo de hornear, mezclando con una espátula hasta que la masa quede sin grumos.', 'Calienta una sartén antiadherente a fuego medio-bajo y rocía con un chorrito de aceite de coco.', 'Vierte cucharadas de la masa en la sartén, formando círculos de 8‑10 cm de diámetro.', 'Cocina 2‑3 min hasta que aparezcan burbujas en la superficie y los bordes se vean firmes.', 'Da la vuelta con una espátula y cocina 1 min más hasta dorar ligeramente.', 'Retira y sirve caliente, acompañando con frutas frescas o yogur natural.'],
- ['ligero'], 290, 10, 10, 40, 10, 20, 5, '/assets/img/recetas/001-panqueques-de-avena-y-banana.jpg'],
+ ['ligero', 'vegetariano'], 290, 10, 10, 40, 10, 20, 5, '/assets/img/recetas/001-panqueques-de-avena-y-banana.jpg'],
 
 ['Panqueques de manzana y canela', 'desayuno',
  ['avena|1 taza', 'huevo|1', 'manzana|1', 'canela|½ cucharadita', 'polvo de hornear|1 cucharadita', 'leche de almendras|½ taza'],
  ['En un recipiente, mezcla la avena molida, el huevo, la manzana rallada, la canela y el polvo de hornear con la leche de almendras hasta obtener una masa homogénea.', 'Calienta una sartén antiadherente a fuego medio y rocía ligeramente con aceite de coco.', 'Vierte porciones de la mezcla en la sartén, formando panqueques de 8 cm de diámetro.', 'Cocina 2‑3 min hasta que la superficie se vea firme y aparezcan burbujas.', 'Voltea con una espátula y cocina 1 min más hasta que el otro lado esté dorado.', 'Sirve caliente, decorado con rodajas de manzana y un toque de canela.'],
- ['ligero'], 253, 8, 15, 35, 9, 20, 5, '/assets/img/recetas/010-panqueques-de-manzana-y-canela.jpg'],
+ ['ligero', 'vegetariano'], 253, 8, 15, 35, 9, 20, 5, '/assets/img/recetas/010-panqueques-de-manzana-y-canela.jpg'],
 
 ['Parfait de yogur y granola casera', 'desayuno',
  ['yogur|1 taza', 'granola|½ taza', 'frutos rojos|½ taza'],
@@ -736,7 +736,7 @@ return [
 ['Tostadas de batata (camote) con palta y huevo', 'desayuno',
  ['batata|1 grande', 'palta|1 madura', 'huevo|2 unidades', 'limón|½'],
  ['Lava la batata y córtala en rodajas gruesas de 1 cm.', 'Precalienta el horno a 180 °C y hornea las rodajas de batata durante 10 min, hasta que estén tiernas pero firmes.', 'Mientras se hornean, aplasta la palta madura con un tenedor, agrega jugo de medio limón, sal y pimienta al gusto y mezcla bien.', 'Cocina los huevos a la plancha o poché, salpimienta ligeramente y reserva.', 'Unta la mezcla de palta sobre cada tostada de batata horneada.', 'Coloca el huevo encima de la palta.', 'Espolvorea semillas de sésamo opcionalmente y sirve caliente.'],
- ['ligero', 'alto en proteína'], 414, 18, 15, 45, 18, 8, 7, '/assets/img/recetas/003-tostadas-de-batata-camote-con-palta-y-huevo.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 414, 18, 15, 45, 18, 8, 7, '/assets/img/recetas/003-tostadas-de-batata-camote-con-palta-y-huevo.jpg'],
 
 ['Tostadas de pan integral con hummus y pepino', 'desayuno',
  ['pan integral|1 rebanada', 'hummus|2 cucharadas', 'pepino|½'],
@@ -751,12 +751,12 @@ return [
 ['Waffles de batata sin gluten', 'desayuno',
  ['batata|1', 'huevo|2 unidades', 'harina de almendras|½ taza', 'canela|½ cucharadita', 'polvo de hornear|1 cucharadita'],
  ['Precalienta la waflera a temperatura media (aprox. 180 °C).', 'En un bol grande, bate los huevos hasta que estén espumosos.', 'Añade el puré de batata, la harina de almendras, la canela y el polvo de hornear. Mezcla con una espátula hasta obtener una masa homogénea y sin grumos.', 'Engrasa ligeramente la waflera con aceite o spray antiadherente.', 'Vierte cucharadas de masa en la waflera, cerrando la tapa. Cocina 3‑4 minutos o hasta que los bordes estén dorados y la superficie firme.', 'Retira los waffles con una espátula y sirve calientes, acompañados de sirope, fruta o yogurt.'],
- ['sin gluten', 'ligero'], 350, 12, 20, 35, 18, 5, 4, '/assets/img/recetas/011-waffles-de-batata-sin-gluten.jpg'],
+ ['sin gluten', 'ligero', 'vegetariano'], 350, 12, 20, 35, 18, 5, 4, '/assets/img/recetas/011-waffles-de-batata-sin-gluten.jpg'],
 
 ['Bowl energético de huevos revueltos con vegetales', 'desayuno',
  ['huevo|2 unidades', 'aguacate|1/2 unidad', 'pepino|1/2 unidad', 'pimiento|1/2 unidad', 'cebolla morada|1/4 unidad', 'cebollín|1 cucharada', 'semilla de sésamo|1 cucharadita', 'aceite de oliva|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Calienta una sartén antiadherente a fuego medio y agrega un chorrito de aceite de oliva.', 'Añade el pimiento rojo y amarillo junto con la cebolla morada picada; saltea 4‑5 minutos hasta que estén tiernos, brillantes y ligeramente caramelizados.', 'Retira los vegetales a un lado y bate los huevos con sal y pimienta. Vierte la mezcla en la sartén y cocina a fuego bajo, removiendo suavemente hasta que los huevos queden cremosos y jugosos, aproximadamente 3‑4 minutos.', 'Mientras tanto, corta el aguacate en gajos y el pepino en rodajas finas para conservar su textura crujiente.', 'En un bowl grande, coloca los huevos revueltos, los vegetales salteados, el pepino y el aguacate en capas ordenadas y coloridas.', 'Espolvorea semillas de sésamo y cebollín picado sobre el bowl.', 'Finaliza con un chorrito de aceite de oliva extra virgen y unas gotas de limón para realzar los sabores.'],
- ['ligero', 'rápido'], 350, 18, 10, 20, 22, 5, 6, '/assets/img/recetas/bowl-energetico-de-huevos-revueltos-con-vegetales.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 350, 18, 10, 20, 22, 5, 6, '/assets/img/recetas/bowl-energetico-de-huevos-revueltos-con-vegetales.jpg'],
 
 ['Arepa De Quinoa Y Cilantro', 'desayuno',
  ['quinoa|1 taza', 'harina de avena|3 cucharadas', 'huevo|1 unidad', 'linaza molida|1 cucharada', 'cilantro|al gusto', 'sal|al gusto', 'agua|al gusto', 'queso mozzarella|3 lonjas', 'tomate|al gusto', 'rúcula|al gusto', 'yogur griego|1 cucharada', 'mostaza|1/2 cucharada', 'orégano|al gusto', 'pimienta|al gusto'],
@@ -856,47 +856,47 @@ return [
 ['Pan De Zucchini Con Huevos Revueltos', 'desayuno',
  ['huevo|2 unidades', 'harina de almendras|1 cda', 'harina de avena|2 cdas', 'zucchini|2 cdas', 'aceite de oliva|1 cda', 'polvo de hornear|½ cdita', 'sal|al gusto', 'pimienta|al gusto', 'tomate|1 unidad', 'cebolla|¼ unidad', 'perejil|al gusto'],
  ['Precalienta el horno o air fryer a 180°C durante 5 minutos.', 'En un tazón grande, mezcla todos los ingredientes secos (harina de almendras, harina de avena, polvo de hornear, sal y pimienta) hasta obtener una mezcla homogénea.', 'Agrega el aceite de oliva, el zucchini rallado y los huevos a la mezcla seca, y revuelve hasta obtener una masa compacta y uniforme.', 'Vierte la masa en una taza apta para microondas y cocina en el microondas durante 1 minuto, o hasta que esté cocida y suave.', 'Retira la taza del microondas y coloca la masa en una rejilla para enfriar.', 'Mientras tanto, pica los vegetales (tomate, cebolla y perejil) en pequeños cubitos y sofríelos en una sartén con un poco de aceite de aguacate durante 2-3 minutos.', 'Agrega los huevos batidos a la sartén y cocina hasta que estén revueltos y tengan la consistencia deseada.', 'Sirve el pan de zucchini acompañado de los huevos revueltos y decora con perejil fresco.'],
- ['ligero', 'rápido'], 300, 18, 20, 30, 12, 4, 5, '/assets/img/recetas/004-pan-de-zuccchini-con-huevos-revueltos.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 300, 18, 20, 30, 12, 4, 5, '/assets/img/recetas/004-pan-de-zuccchini-con-huevos-revueltos.jpg'],
 
 ['Pancakes De Blueberries', 'desayuno',
  ['huevo|2 unidades', 'ricota|1 cda', 'yogurt griego|1 cda', 'harina de avena|3 cdas', 'polvo de hornear|1 cucharadita', 'blueberries|½ taza', 'monk fruit|al gusto', 'aceite de aguacate|al gusto'],
  ['En una licuadora, procesa los huevos hasta que estén bien batidos.', 'Agrega la ricota, el yogurt griego, la harina de avena, el polvo de hornear, la canela (si se utiliza) y el monk fruit a la licuadora, y procesa hasta obtener una mezcla suave y homogénea.', 'Agrega las blueberries frescas a la mezcla y procesa solo un poco, hasta que estén distribuidas de manera uniforme y no se desintegren.', 'Deja reposar la mezcla durante 10 minutos para que tome cuerpo.', 'Calienta una sartén antiadherente con un poco de aceite de aguacate a fuego medio.', 'Vierte una porción de la mezcla en la sartén y cocina durante 2-3 minutos por cada lado, o hasta que estén dorados y cocidos.', 'Repite el proceso hasta terminar con la mezcla.', 'Sirve los pancakes calientes y disfruta.'],
- ['ligero', 'rápido'], 281, 15, 15, 35, 9, 8, 4, '/assets/img/recetas/035-pancakes-de-blueberries.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 281, 15, 15, 35, 9, 8, 4, '/assets/img/recetas/035-pancakes-de-blueberries.jpg'],
 
 ['Pancakes De Zanahoria Con Crema De Coco', 'desayuno',
  ['huevo|3 unidades', 'hojuelas de avena|3 cdas', 'leche de almendra|¼ taza', 'polvo de hornear|½ cucharadita', 'nuez moscada|al gusto', 'zanahoria|½ unidad', 'monk fruit|al gusto', 'aceite de coco|al gusto', 'yogurt griego|2 cdas', 'vainilla|1 cdita', 'coco rallado|1 cda'],
  ['Pela y ralla la zanahoria, y licúa las hojuelas de avena en una licuadora hasta obtener una harina fina.', 'Agrega la leche de almendra, los huevos, el polvo de hornear, la nuez moscada y el monk fruit a la licuadora, y procesa hasta obtener una mezcla suave y homogénea.', 'Agrega la zanahoria rallada a la mezcla y procesa hasta que esté bien incorporada.', 'Si la mezcla es demasiado espesa, agrega un poco de leche o agua para obtener la consistencia deseada.', 'Calienta una sartén antiadherente con un poco de aceite de coco a fuego medio.', 'Vierte una porción de la mezcla en la sartén y cocina durante 2-3 minutos por cada lado, o hasta que estén dorados y cocidos.', 'Repite el proceso hasta terminar con la mezcla.', 'Sirve los pancakes calientes y acompaña con la crema de coco (mezcla de yogurt griego, vainilla, coco rallado y monk fruit).'],
- ['ligero', 'rápido'], 316, 14, 20, 38, 12, 6, 5, '/assets/img/recetas/022-pancakes-de-zanahoria-con-crema-de-coco.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 316, 14, 20, 38, 12, 6, 5, '/assets/img/recetas/022-pancakes-de-zanahoria-con-crema-de-coco.jpg'],
 
 ['Pancakes Moka', 'desayuno',
  ['huevo|3 unidades', 'avena|3 cucharadas', 'banana|½ unidad', 'café líquido|2-3 cdas', 'cacao en polvo|½ cda', 'harina de almendra|1 cda', 'polvo de hornear|1 cdta', 'vainilla|1 cda', 'monk fruit|al gusto', 'aceite de coco|al gusto', 'yogurt griego|2 cdas', 'café líquido|1 cda', 'cacao sin azúcar|½ cdta'],
  ['Hidrata la avena en agua durante 5 minutos, o hasta que esté suave y esponjosa.', 'Retira el exceso de agua y vierte la avena en una licuadora.', 'Agrega los huevos, la banana, el café líquido concentrado, el cacao en polvo, la harina de almendra, el polvo de hornear y el extracto de vainilla a la licuadora.', 'Procesa la mezcla hasta obtener una mezcla suave y homogénea.', 'Calienta una sartén antiadherente con un poco de aceite de coco a fuego medio.', 'Vierte una porción de la mezcla en la sartén y cocina durante 2-3 minutos por cada lado, o hasta que estén dorados y cocidos.', 'Repite el proceso hasta terminar con la mezcla.', 'Sirve los pancakes calientes y baña con el topping (mezcla de yogurt griego, café líquido concentrado, cacao en polvo y monk fruit).'],
- ['ligero', 'rápido'], 311, 13, 20, 40, 11, 7, 4, '/assets/img/recetas/024-pancakes-moka.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 311, 13, 20, 40, 11, 7, 4, '/assets/img/recetas/024-pancakes-moka.jpg'],
 
 ['Pancitos Encantados', 'desayuno',
  ['huevo|6 unidades', 'hojuelas de avena|6 cdas', 'leche de almendras|al gusto', 'yogurt griego|1 cda', 'polvo de hornear|1 cdita', 'pasitas|1 puño', 'jengibre|al gusto', 'monk fruit|al gusto', 'yogurt griego|3 cucharadas', 'canela|al gusto', 'vainilla|1 cda'],
  ['Precalienta el horno a 180°C. En un tazón, hidrata las hojuelas de avena con un poco de agua hasta que esponjen, luego retira el exceso de líquido.', 'En una licuadora, combina los huevos, la avena hidratada, leche de almendras o coco, yogurt griego, polvo de hornear, pasitas, jengibre molido, vainilla y Monk fruit al gusto. Mezcla hasta obtener una mezcla homogénea y sin grumos.', 'Agrega más leche si es necesario para alcanzar la consistencia deseada, que no sea demasiado espesa pero con cuerpo. Vierte la mezcla en moldes para cupcake.', 'Hornea durante aproximadamente 25 minutos o hasta que estén listos. Puedes verificar si están listos introduciendo un palillo de madera, que debería salir limpio.', 'Mientras se hornean los pancitos, prepara el topping. En un sartén a fuego medio, combina los ingredientes del topping (excepto el yogurt) con un chorrito de agua y cocina hasta que estén caramelizados.', 'Una vez que el topping esté listo, retira del fuego y deja enfriar. Luego, agrega el yogurt griego y mezcla bien.', 'Una vez que los pancitos estén listos, déjalos enfriar y desmolda. Sirve los pancitos y cubre con el topping de cremita.'],
- ['ligero', 'rápido'], 408, 20, 25, 55, 12, 9, 6, '/assets/img/recetas/030-pancitos-encantados.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 408, 20, 25, 55, 12, 9, 6, '/assets/img/recetas/030-pancitos-encantados.jpg'],
 
 ['Papilla De Chocolate Y Naranja', 'desayuno',
  ['leche de almendras|1 taza', 'claras de huevo|4 unidades', 'hojuelas de avena|3 cdas', 'vainilla|1 cda', 'manzana|1 unidad', 'almendras tostadas|1 puño', 'ralladura de naranja|al gusto', 'cacao en polvo|1 cda', 'sal|una pizca', 'monk fruit|al gusto'],
  ['En una olla, combina la leche de almendras, Monk fruit, cacao en polvo y avena en hojuelas. Lleva a fuego medio y cocina, revolviendo constantemente.', 'Agrega la ralladura de naranja y la vainilla a la olla. Continúa cocinando hasta que la mezcla tome cuerpo y textura, revolviendo constantemente.', 'Una vez que la mezcla esté lista, retira del fuego y deja enfriar un poco hasta que esté tibia. Esto es importante para evitar que las claras de huevo se cocinen de inmediato.', 'Agrega las claras de huevo, la manzana picada en cubitos y una pizca de sal a la mezcla. Revuelve constantemente hasta que todos los ingredientes estén bien integrados.', 'Vierte la preparación en un tazón y agrega las almendras tostadas encima. Sirve caliente o frío, según preferencia.'],
- ['ligero', 'rápido'], 260, 12, 20, 35, 8, 10, 4, '/assets/img/recetas/033-papilla-de-chocolate-y-naranja.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 260, 12, 20, 35, 8, 10, 4, '/assets/img/recetas/033-papilla-de-chocolate-y-naranja.jpg'],
 
 ['Pastel De Avena Y Manzana', 'desayuno',
  ['huevo|3 unidades', 'yogurt griego|1 cda', 'leche de almendras|2 cdas', 'hojuelas de avena|3 cdas', 'manzana|½ unidad', 'monk fruit|al gusto', 'canela|al gusto', 'polvo de hornear|1 cdita', 'puré de manzana|¼ taza'],
  ['Precalienta el horno a 180°C. En un tazón, mezcla los huevos batidos, yogurt griego, leche de almendras, Monk fruit, canela en polvo y el puré de manzana.', 'Incorpora la avena en hojuelas y el polvo de hornear a la mezcla. Mezcla bien hasta que estén bien combinados.', 'Agrega la manzana picada en cubos a la mezcla y mezcla suavemente.', 'Vierte la preparación en un molde apto para horno, previamente engrasado o preferiblemente de silicona.', 'Hornea durante 20-25 minutos a 160°C o hasta que esté listo. Puedes verificar si está listo introduciendo un palillo de madera, que debería salir limpio.', 'Una vez listo, retira del horno y deja enfriar un poco. Sirve caliente o frío, según preferencia.'],
- ['ligero', 'rápido'], 259, 11, 20, 38, 7, 12, 5, '/assets/img/recetas/034-pastel-de-avena-y-manzana.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 259, 11, 20, 38, 7, 12, 5, '/assets/img/recetas/034-pastel-de-avena-y-manzana.jpg'],
 
 ['Pastel De Quinoa', 'desayuno',
  ['huevo|4 unidades', 'quinoa|1 taza', 'queso mozzarella|3 cdas', 'cebolla|½ unidad', 'ajo|2 dientes', 'champiñones|1 ½ taza', 'espinaca|2 puños', 'sal|al gusto', 'pimienta|al gusto', 'aceite de coco|al gusto'],
  ['Precalienta el horno o el air fryer a 180°C. Cocina la quínoa según las instrucciones del empaque y reserva.', 'En una sartén con un poco de aceite de coco, sofríe la cebolla, el ajo y los champiñones rebanados. Salpimienta al gusto.', 'Agrega las espinacas frescas y limpias a la sartén y cocina un poco más hasta que estén cocidas. Retira del fuego y reserva.', 'En un tazón, bate los huevos, agrega la quínoa cocida, queso mozzarella rallado y las especias de tu preferencia. Mezcla muy bien.', 'Agrega la mezcla de vegetales sofritos al tazón con el huevo y mezcla hasta integrar todos los ingredientes.', 'Vierte la mezcla en moldes individuales o en un molde grande para luego picar en trozos.', 'Cocina en el horno o air fryer durante aproximadamente 25 minutos o hasta que los bordes estén doraditos y el centro se note cuajado.', 'Retira del horno o air fryer y espera unos minutos antes de desmoldar. Guarda en un envase hermético en la nevera y calienta al otro día en el microondas o en el air fryer.'],
- ['ligero', 'rápido'], 360, 18, 25, 45, 12, 5, 6, '/assets/img/recetas/042-pastel-de-quinoa.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 360, 18, 25, 45, 12, 5, 6, '/assets/img/recetas/042-pastel-de-quinoa.jpg'],
 
 ['Pizza En Taza', 'desayuno',
  ['huevo|2 unidades', 'queso mozzarella|2 cdas', 'leche de almendras|2 cdas', 'harina de avena|3 cdas', 'pimentón|¼ taza', 'aceite de oliva|1 cda', 'polvo para hornear|1 cucharadita'],
  ['Precalienta el microondas a potencia máxima.', 'En un taza apta para microondas, bate los huevos y la leche de almendras o coco hasta que estén bien mezclados.', 'Incorpora la harina de avena, el polvo de hornear y mezcla hasta que esté suave y sin grumos.', 'Agrega el queso mozzarella rallado, el aceite de oliva, el pimentón en cuadritos pequeños, la sal, la pimienta y el orégano. Mezcla hasta que todos los ingredientes estén bien integrados.', 'Espolvorea un poco más de orégano por encima de la mezcla.', 'Lleva la taza al microondas y cocina durante aproximadamente 2 minutos, o hasta que esté cocido y esponjoso. El tiempo de cocción puede variar dependiendo de la potencia del microondas.', 'Retira del microondas y sirve caliente.'],
- ['ligero', 'alto en proteína', 'sin gluten'], 410, 24, 15, 29, 22, 3, 5, '/assets/img/recetas/005-pizza-en-taza.jpg'],
+ ['ligero', 'alto en proteína', 'sin gluten', 'vegetariano'], 410, 24, 15, 29, 22, 3, 5, '/assets/img/recetas/005-pizza-en-taza.jpg'],
 
 ['Quesadillas', 'desayuno',
  ['harina|1 taza', 'agua|1 taza', 'aceite de oliva|3 cdas', 'polvo de hornear|1 cdita', 'sal|al gusto', 'pechuga de pollo|6 onz', 'tomate|2', 'cebolla|¼', 'pimentón|¼', 'zanahoria|½', 'ajo|2 dientes', 'especias|al gusto', 'queso mozzarella|5 cdas'],
@@ -946,7 +946,7 @@ return [
 ['Sándwich De Huevo', 'desayuno',
  ['huevo|3', 'yogur griego|2 cdas', 'pan integral|2 rebanadas', 'mostaza|1 cda', 'perejil|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'pepino|al gusto', 'vinagre|al gusto'],
  ['Cocina los huevos en una olla con agua y un chorrito de vinagre a fuego medio durante 10 minutos, para evitar que se rompan.', 'Una vez cocidos, retira los huevos del agua, déjalos enfriar y quita la cáscara.', 'Separa las claras de las yemas y pica las claras en pequeños cuadritos, reservándolas.', 'En un tazón, mezcla las yemas trituradas con el yogur griego, la mostaza orgánica, el perejil picadito, sal y pimienta al gusto.', 'Mezcla hasta integrar muy bien todos los ingredientes.', 'Incorpora las claras picaditas a la mezcla y revuelve muy bien.', 'Rectifica los sabores según sea necesario.', 'Tuesta las rebanadas de pan integral a una temperatura moderada durante unos minutos, hasta que estén ligeramente doradas.', 'Rellena el sándwich con la mezcla de huevo preparada y sirve inmediatamente.'],
- ['ligero', 'alto en proteína'], 275, 20, 25, 15, 15, 5, 3, '/assets/img/recetas/001-sandwich-de-huevo.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 275, 20, 25, 15, 15, 5, 3, '/assets/img/recetas/001-sandwich-de-huevo.jpg'],
 
 ['Sándwich Del Reino', 'desayuno',
  ['salmón ahumado|4 onz', 'pan integral|2 rebanadas', 'yogur griego|2 cdas', 'cebolla|¼', 'pimentón rojo|¼', 'ajo|1 diente', 'aceituna|al gusto', 'pepino|al gusto', 'mostaza|½ cda', 'zumo de limón|½', 'perejil|1 cda', 'sal|al gusto', 'pimienta|al gusto'],
@@ -961,12 +961,12 @@ return [
 ['Tortilla De Arroz', 'desayuno',
  ['huevo|5', 'arroz integral cocido|1 taza', 'queso mozzarella|2 cdas', 'queso parmesano|1 cda', 'leche de almendras|¼ taza', 'sal|al gusto', 'pimienta|al gusto', 'aceite de aguacate|al gusto'],
  ['Cocina el arroz integral según las instrucciones del paquete y déjalo enfriar.', 'En un tazón grande, bate los huevos con un tenedor hasta que estén bien mezclados.', 'Agrega la leche de almendras o coco, el queso parmesano, el queso mozzarella rallado, sal y pimienta al gusto, y mezcla hasta que todos los ingredientes estén bien integrados.', 'Incorpora el arroz cocido y enfriado a la mezcla de huevo, y revuelve hasta que esté bien combinado.', 'Calienta un poco de aceite de aguacate en una sartén a fuego medio, vierte la mezcla de arroz y huevo, y cocina a fuego bajo con la sartén tapada durante 10-12 minutos, o hasta que se forme una costra dorada en la parte inferior.', 'Voltea la tortilla con cuidado y cocina por el otro lado durante unos minutos más, hasta que esté cocida y dorada.', 'Sirve caliente o fría, según tu preferencia, y guarda cualquier sobrante en un envase hermético en la nevera.'],
- ['ligero', 'alto en proteína'], 414, 28, 30, 35, 18, 3, 4, '/assets/img/recetas/039-tortilla-de-arroz.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 414, 28, 30, 35, 18, 3, 4, '/assets/img/recetas/039-tortilla-de-arroz.jpg'],
 
 ['Tortilla Italianisima', 'desayuno',
  ['huevo|5', 'queso mozzarella|3 cdas', 'albahaca|¼ taza', 'tomate|2', 'cebolla blanca|½ taza', 'pimentón rojo|¼ taza', 'pimentón verde|¼ taza', 'aceituna|1 cda', 'sal|al gusto', 'pimienta|al gusto', 'orégano|al gusto', 'aceite de aguacate|al gusto'],
  ['Bate los huevos en un tazón grande con un tenedor hasta que estén bien mezclados.', 'Agrega el queso mozzarella rallado, la albahaca picada, orégano, sal y pimienta al gusto, y mezcla hasta que todos los ingredientes estén bien integrados.', 'En una sartén con un poco de aceite de aguacate a fuego medio, saltea la cebolla blanca picada, los tomates picados y los pimentones rojo y verde picados, hasta que estén tiernos.', 'Agrega las aceitunas picadas a la sartén y cocina durante un minuto más.', 'Incorpora la mezcla de huevo batido a la sartén con las verduras y cocina a fuego bajo con la sartén tapada durante 3-5 minutos, o hasta que la tortilla esté casi cocida.', 'Voltea la tortilla con cuidado y cocina por el otro lado durante unos minutos más, hasta que esté cocida y dorada.', 'Corta la tortilla en triángulos y sirve caliente, decorada con un poco más de orégano fresco si lo deseas.'],
- ['ligero', 'alto en proteína'], 398, 30, 35, 20, 22, 4, 3, '/assets/img/recetas/002-tortilla-italianisima.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 398, 30, 35, 20, 22, 4, 3, '/assets/img/recetas/002-tortilla-italianisima.jpg'],
 
 ['Tortitas De Calabaza Y Chocolate', 'desayuno',
  ['calabaza horneada|4 onz', 'harina de avena|4 cdas', 'huevo|6', 'mantequilla de maní|1 cda', 'chips de chocolate|2 cdas', 'nuez moscada|al gusto', 'cacao en polvo|1 cda', 'sal|una pizca', 'monk fruit|al gusto', 'aceite de coco|al gusto'],
@@ -976,7 +976,7 @@ return [
 ['Tostadas De Avena', 'desayuno',
  ['banana|3 unidades', 'avena|1 taza', 'polvo de hornear|1 cdta', 'nuez|2 puños', 'pasita|1 puño', 'canela|al gusto', 'monk fruit|al gusto', 'aceite de aguacate|para engrasar', 'huevo|3 unidades'],
  ['Pela y tritura las bananas en un tazón hasta obtener un puré suave.', 'Agrega el polvo de hornear, la canela, el monk fruit, las pasitas y las nueces troceadas al puré de banana. Mezcla hasta integrar todos los ingredientes.', 'Calienta una sartén antiadherente a fuego medio con un poco de aceite de aguacate.', 'Coloca un par de cucharadas de la mezcla en la sartén y cocina hasta que estén doradas por un lado, aproximadamente 2-3 minutos.', 'Voltea las tostadas y cocina por el otro lado hasta que estén doradas y crujientes, otros 2-3 minutos.', 'Retira las tostadas de la sartén y decora con un poco más de canela en polvo.', 'Para los huevos \'tipo fritos\', calienta una sartén con un poco de aceite de coco o aguacate y cocina los huevos según tu preferencia.', 'Sirve las tostadas de avena acompañadas de los huevos y ajusta el sabor con sal y pimienta al gusto.'],
- ['ligero', 'rápido'], 376, 12, 15, 55, 12, 20, 8, '/assets/img/recetas/021-tostadas-de-avena.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 376, 12, 15, 55, 12, 20, 8, '/assets/img/recetas/021-tostadas-de-avena.jpg'],
 
 ['Tostadas Francesas Tiramisú', 'desayuno',
  ['pan integral|2 rebanadas', 'huevo|1 unidad', 'leche de almendras|3-4 cdas', 'café|2 cdas', 'monk fruit|al gusto', 'vainilla|1 cda', 'sal|1 pizca', 'yogurt griego|2 cdas', 'ricota|2 cdas', 'cacao en polvo|½ cda', 'aceite de coco|para engrasar'],
@@ -1001,7 +1001,7 @@ return [
 ['Waffles De Sweet Potato Con Topping De Cacao', 'desayuno',
  ['clara de huevo|4 unidades', 'sweet potato|4 onz', 'harina de avena|1 cda', 'monk fruit|al gusto', 'yogurt griego|2 cdas', 'cacao en polvo|½ cda'],
  ['Precalienta la wafflera según las instrucciones del fabricante.', 'En un tazón grande, tritura la sweet potato horneada con un tenedor hasta obtener un puré suave.', 'Agrega las claras de huevo, la harina de avena o arroz y el edulcorante Monk fruit al gusto al puré de sweet potato. Mezcla hasta que todos los ingredientes estén bien integrados.', 'Vierte la mezcla en la wafflera precalentada y cocina según tus preferencias de textura y dorado.', 'Mientras se cocinan los waffles, prepara la crema de cacao mezclando el yogurt griego, el cacao en polvo sin azúcar y el Monk fruit al gusto en un tazón pequeño hasta obtener una mezcla uniforme.', 'Una vez que los waffles estén listos, colócalos en un plato y baña con la crema de cacao preparada.'],
- ['ligero', 'alto en proteína'], 217, 18, 25, 25, 5, 6, 4, '/assets/img/recetas/029-waffles-de-sweet-potato-con-topping-de-cacao.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 217, 18, 25, 25, 5, 6, 4, '/assets/img/recetas/029-waffles-de-sweet-potato-con-topping-de-cacao.jpg'],
 
 ['Arroz con cerdo', 'desayuno',
  ['cerdo|1/4 libra', 'aceite|1/2 cucharada', 'ajo|1/2 diente', 'salsa|1 cucharada', 'jengibre|pizca', 'agua|1/4 taza', 'maicena|3/4 cucharadita', 'arroz|al gusto'],
@@ -1066,7 +1066,7 @@ return [
 ['Huevos a la cazuela', 'desayuno',
  ['aceite de coco|1 cucharada', 'ajo|2 dientes', 'cebolla|½ taza', 'seta|3 tazas', 'espinaca baby|2 tazas', 'sal|½ cucharadita', 'pimienta|¼ cucharadita', 'lechuga|1 taza', 'huevo|8', 'salsa verde|1 taza'],
  ['Precalienta el horno a 180°C Calienta un sartén a fuego medio con el aceite de coco y cocina el ajo y la cebolla hasta que queden de color transparente.', 'Agrega las setas, las espinacas y la Lechuga mini romaine.', 'Cocina 5 minutos o hasta que estén suaves. Sazona y reserva.', 'En el mismo sartén agrega los huevos y sazona.', 'Hornea durante 5 minutos o hasta que esté bien cocida la clara. Retira del horno. Baña con salsa verde. Sirve y disfruta.'],
- ['ligero', 'rápido'], 240, 13, 25, 8, 20, 4, 3, '/assets/img/recetas/031-huevos-a-la-cazuela.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 240, 13, 25, 8, 20, 4, 3, '/assets/img/recetas/031-huevos-a-la-cazuela.jpg'],
 
 ['Mousaka', 'desayuno',
  ['berenjena|2', 'ajo|1', 'cebolla|1', 'brócoli|1', 'champiñón|4-6', 'tomate|3', 'frijol adzuki|½ bote', 'bebida de avena|500 ml', 'aceite de oliva|al gusto', 'harina|1 cda', 'pimienta|al gusto', 'sal|al gusto'],
@@ -1086,7 +1086,7 @@ return [
 ['Pan de Plátano y Calabacín', 'desayuno',
  ['harina|¾ taza', 'harina|¾ taza', 'canela|1 cucharadita', 'bicarbonato|¾ cucharadita', 'sal|½ cucharadita', 'huevo|2 unidades', 'endulcorante|¾ taza', 'aceite|¼ taza', 'vainilla|1 ½ cucharadita', 'calabacín|1 taza', 'plátano|1 taza'],
  ['Precalienta el horno a 350 grados Fahrenheit (aproximadamente 175 grados Celsius).', 'Cubre un molde para pan de 9 por 5 pulgadas con spray antiadherente.', 'En un tazón grande, bate la harina para todo uso, la harina integral, la canela, el bicarbonato de sodio y la sal; reserva.', 'En un tazón mediano, bate los huevos, el azúcar, el aceite (o la mantequilla derretida) y la vainilla.', 'Agrega el calabacín y los plátanos y revuelve hasta que estén bien combinados.', 'Añade los ingredientes húmedos a la mezcla de harina y revuelve hasta que estén apenas combinados. Vierte la masa en el molde preparado.', 'Hornea hasta que un palillo insertado en el centro del pan salga limpio, de 50 a 60 minutos.', 'Deja enfriar en el molde durante 10 minutos, luego saca el pan y déjalo enfriar completamente sobre una rejilla. Sirve tibio o a temperatura ambiente.'],
- ['tradicional', 'ligero'], 200, 5, 60, 29, 7, 14, 5, 'https://images.pexels.com/photos/5441027/pexels-photo-5441027.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['tradicional', 'ligero', 'vegetariano'], 200, 5, 60, 29, 7, 14, 5, 'https://images.pexels.com/photos/5441027/pexels-photo-5441027.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Pan tostado con aguacate', 'desayuno',
  ['huevo|4 unidades', 'pan|4 rebanadas', 'aguacate|1 unidad', 'sal|al gusto', 'pimienta|al gusto', 'yogur|1 cucharada'],
@@ -1121,7 +1121,7 @@ return [
 ['Sandwixh de huevo y espinacas', 'desayuno',
  ['huevo|1', 'leche descremada|1 cucharada', 'crema de maíz|31.25 g', 'aceite de oliva|1/4 cucharadita', 'espinaca bebé|5 g', 'pan de masa madre integral de centeno|1 rebanada'],
  ['Batir los huevos y la leche en un bol mediano hasta que estén combinados.', 'Agregar el maíz y sazonar con sal y pimienta.', 'Calentar el aceite en una sartén mediana antiadherente a fuego medio.', 'Verter la mezcla de huevo en la sartén y cocinar durante 10 segundos.', 'Usando una espátula, llevar los bordes cuajados del huevo hacia el centro.', 'Cocinar, revolviendo lentamente, durante 30 segundos o hasta que los huevos estén cremosos y casi cuajados. Incorporar suavemente las espinacas. Retirar del fuego.', 'Servir el pan tostado cubierto con los huevos revueltos.'],
- ['ligero', 'alto en proteína'], 200, 8, 20, 17, 11, 3, 2, '/assets/img/recetas/016-sandwixh-de-huevo-y-espinacas.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 200, 8, 20, 17, 11, 3, 2, '/assets/img/recetas/016-sandwixh-de-huevo-y-espinacas.jpg'],
 
 ['Sopa de Calabacín', 'desayuno',
  ['puerro|1', 'aceite de oliva|1/2 cucharadita', 'calabacín|1/2', 'pepino|1/2', 'cilantro|un puñado pequeño', 'cebolla|1 cucharada', 'comino|una pizca', 'sal|al gusto', 'pimienta|al gusto', 'leche de coco|1/4 taza', 'agua|1/4-1/3 taza', 'aguacate|1/2'],
@@ -1156,7 +1156,7 @@ return [
 ['Wrap con claras de queso feta', 'desayuno',
  ['huevo|1 taza', 'tortilla|4', 'queso|200 g', 'cebollín|4 cucharaditas', 'lechuga|al gusto', 'aceite|al gusto', 'pimienta|al gusto', 'sal|al gusto'],
  ['Cortar el queso feta en cubos. Colocar en un sartén un chorrito de aceite y agregar las claras, cocinarlas.', 'Calentar las tortillas y posteriormente armar el wrap. Agregar primero la lechuga, luego las claras y el queso feta.', 'Servir un poquito de aceite de oliva y salpimentar. Enrollar el wrap y disfrutarlo.'],
- ['ligero', 'sin gluten'], 350, 20, 23, 30, 15, 2, 2, '/assets/img/recetas/023-wrap-con-claras-de-queso-feta.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 350, 20, 23, 30, 15, 2, 2, '/assets/img/recetas/023-wrap-con-claras-de-queso-feta.jpg'],
 
 ['hotcake de platano y chia', 'desayuno',
  ['plátano|1', 'harina de amaranto|1 taza', 'harina integral|½ taza', 'amaranto|½ taza', 'chía|4 cucharadas', 'canela|1 cucharadita', 'stevia|2 sobres', 'huevo|2', 'vainilla líquida|1 cucharada', 'polvo para hornear|1 cucharadita', 'leche descremada|1 taza', 'aceite en aerosol|al gusto'],
@@ -1186,7 +1186,7 @@ return [
 ['Tortilla de huevo a la capresa', 'desayuno',
  ['huevo|4', 'queso mozzarella|60 g', 'albahaca|al gusto', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|2 cucharadas', 'tomate seco|al gusto'],
  ['Bate los huevos, agrega sal y pimienta al gusto, coloca trocitos de tomates secos (preparados y macerados previamente con aceite de oliva y especias italianas), agrega albahaca fresca picadita.', 'Engrasar el sartén con un poquito de aceite de oliva, coloca la mezcla, tapa y luego, antes de voltear, agrega el queso mozzarella para dorar de ambos lados. ¡Lista para comer!', 'Se puede emplatar con trocitos de tomate y albahaca.'],
- ['ligero', 'alto en proteína'], 315, 27, 20, 7, 20, 3, 1, '/assets/img/recetas/043-tortilla-de-huevo-a-la-capresa.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 315, 27, 20, 7, 20, 3, 1, '/assets/img/recetas/043-tortilla-de-huevo-a-la-capresa.jpg'],
 
 ['Batido de aguacate y cacao', 'desayuno',
  ['aguacate|1/2 unidad', 'leche de almendras|1 taza', 'cacao en polvo|1 cucharada', 'eritritol|1 cucharadita', 'extracto de vainilla|1/2 cucharadita', 'hielo|al gusto'],
@@ -1196,7 +1196,7 @@ return [
 ['Chaffles, waffles de queso y huevo', 'desayuno',
  ['huevo|2 unidades', 'queso rallado|1 taza', 'harina de almendras|1 cucharada', 'polvo para hornear|1/2 cucharadita'],
  ['Precaliente la waflera y engrásela si es necesario. Mezcle los ingredientes en un bol.', 'Vierta porciones de la mezcla en la waflera.', 'Cocine hasta que esté dorado y crujiente.'],
- ['ligero', 'rápido'], 372, 22, 10, 8, 28, 2, 1, '/assets/img/recetas/005-chaffles-waffles-de-queso-y-huevo.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 372, 22, 10, 8, 28, 2, 1, '/assets/img/recetas/005-chaffles-waffles-de-queso-y-huevo.jpg'],
 
 ['Muffins de huevo con tocino y espinacas', 'desayuno',
  ['huevo|4 unidades', 'espinaca|1/2 taza', 'tocino|4 tiras', 'queso|1/4 taza', 'sal|al gusto', 'pimienta|al gusto'],
@@ -1206,7 +1206,7 @@ return [
 ['Pan cetogénico de harina de coco', 'desayuno',
  ['harina|1/2 taza', 'huevo|4 unidades', 'mantequilla|1/4 taza', 'polvo|1 cucharadita', 'sal|1/2 cucharadita'],
  ['Precalentar el horno a 180°C (350°F). Mezcla todos los ingredientes hasta obtener una masa suave.', 'Verter en un molde engrasado y hornear durante 30 minutos. Dejar enfriar antes de cortar.'],
- ['sin gluten', 'ligero'], 436, 16, 40, 12, 36, 2, 1, '/assets/img/recetas/007-pan-cetogenico-de-harina-de-coco.jpg'],
+ ['sin gluten', 'ligero', 'vegetariano'], 436, 16, 40, 12, 36, 2, 1, '/assets/img/recetas/007-pan-cetogenico-de-harina-de-coco.jpg'],
 
 ['Panqueques Calientes de Ricota y Almendras', 'desayuno',
  ['queso|1/2 taza', 'huevo|2 unidades', 'harina|1/4 taza', 'polvo|1 cucharadita', 'extracto|1 cucharadita', 'eritritol|1 cucharada', 'mantequilla|al gusto'],
@@ -1221,7 +1221,7 @@ return [
 ['Tostada de aguacate con pan keto', 'desayuno',
  ['pan keto|2 rebanadas', 'aguacate|1/2 pieza', 'aceite de oliva|1 cucharada', 'sal|al gusto', 'pimienta|al gusto', 'huevo|1 pieza (opcional)', 'semillas de sésamo|al gusto', 'semillas de chía|al gusto'],
  ['Calienta una sartén antiadherente a fuego medio y tuesta las rebanadas de pan keto hasta que estén doradas y crujientes, aproximadamente 2 minutos por lado.', 'En un bol, machaca el aguacate hasta obtener una consistencia cremosa, añadiendo aceite de oliva, sal y pimienta al gusto.', 'Unta generosamente la mezcla de aguacate sobre cada rebanada de pan tostado.', 'Si lo deseas, coloca un huevo escalfado o frito encima de cada tostada para añadir proteína y textura.', 'Espolvorea semillas de sésamo o chía sobre la tostada para un toque crujiente y nutritivo.', 'Sirve inmediatamente, acompañada de una pizca de sal marina y, opcionalmente, un chorrito de aceite de oliva extra virgen.'],
- ['tradicional', 'ligero'], 288, 10, 10, 8, 24, 2, 3, '/assets/img/recetas/008-tostada-de-aguacate-con-pan-keto.jpg'],
+ ['tradicional', 'ligero', 'vegetariano'], 288, 10, 10, 8, 24, 2, 3, '/assets/img/recetas/008-tostada-de-aguacate-con-pan-keto.jpg'],
 
 ['Yogur griego con frutos secos y semillas', 'desayuno',
  ['yogur griego|1 taza', 'almendras|1 cucharada', 'nueces|1 cucharada', 'semillas de chía|1 cucharada', 'canela|1/2 cucharadita'],
@@ -1231,7 +1231,7 @@ return [
 ['Tostada con Aguacate y Huevo Revuelto', 'desayuno',
  ['pan integral|2 rebanadas', 'huevos|2', 'aguacate|1/2', 'Sal|al gusto', 'Aceite de oliva|al gusto', 'Hojuelas de chile|al gusto'],
  ['Tuesta el pan y machaca el aguacate con sal, limón y pimienta.', 'Unta el aguacate sobre las tostadas.', 'Revuelve los huevos en sartén con aceite a fuego medio 2 minutos.', 'Coloca los huevos sobre las tostadas y termina con chile.'],
- ['rápido', 'económico'], 552, 23, 8, 34, 38, 5, 11, '/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg'],
+ ['rápido', 'económico', 'vegetariano'], 552, 23, 8, 34, 38, 5, 11, '/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg'],
 
 ['Cottage Cheese Bowl con Fruta', 'desayuno',
  ['queso cottage|200 g', 'fresas o arándanitos|1 taza', 'miel|1 cda', 'semillas de chía|1 cda', 'Canela|al gusto'],
@@ -1246,12 +1246,12 @@ return [
 ['Huevos Revueltos con Queso y Pan', 'desayuno',
  ['huevos|3', 'queso mozarella o manchego|30 g', 'pan integral|2 rebanadas', 'mantequilla|1 cdta', 'Sal y pimienta|al gusto'],
  ['Bate los huevos con sal y pimienta.', 'Calienta la mantequilla en sartén a fuego bajo.', 'Vierte los huevos y revuelve despacio hasta casi cuajar.', 'Agrega el queso, retira del fuego y sirve sobre el pan tostado.'],
- ['alto en proteína', 'rápido', 'económico'], 503, 34, 7, 28, 29, 5, 4, '/assets/img/recetas/huevos-revueltos-con-queso-y-pan.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 503, 34, 7, 28, 29, 5, 4, '/assets/img/recetas/huevos-revueltos-con-queso-y-pan.jpg'],
 
 ['Perico Venezolano', 'desayuno',
  ['huevos|3', 'tomate|1/2', 'cebolla cabezona|1/4', 'pimentón verde o rojo|1/4', 'Aceite vegetal|al gusto', 'Sal y pimienta|al gusto'],
  ['Sofríe la cebolla y el pimentón en aceite a fuego medio 3 minutos.', 'Agrega el tomate y cocina 2 minutos más.', 'Bate los huevos, viértelos sobre el sofrito.', 'Revuelve a fuego bajo hasta cuajar. Sirve con arepa o pan.'],
- ['rápido', 'sin gluten', 'económico'], 355, 21, 10, 9, 27, 6, 2, '/assets/img/recetas/perico-venezolano.jpg'],
+ ['rápido', 'sin gluten', 'económico', 'vegetariano'], 355, 21, 10, 9, 27, 6, 2, '/assets/img/recetas/perico-venezolano.jpg'],
 
 ['Chía Pudding de Proteína', 'desayuno',
  ['semillas de chía|3 cdas', 'leche|250 ml', 'scoop de proteína en polvo sabor vainilla|1', 'miel o stevia|1 cda', 'Fruta para decorar|al gusto'],
@@ -1261,7 +1261,7 @@ return [
 ['Tostada Griega con Yogur y Huevo', 'desayuno',
  ['pan integral|2 rebanadas', 'yogur griego natural|150 g', 'huevos|2', 'pepino|1/2', 'Eneldo o perejil|al gusto', 'Aceite de oliva|al gusto'],
  ['Tuesta el pan hasta dorar.', 'Mezcla el yogur con sal, un chorrito de limón y eneldo.', 'Extiende el yogur sobre las tostadas.', 'Fríe los huevos y colócalos encima. Añade el pepino.'],
- ['alto en proteína', 'rápido', 'económico'], 507, 27, 8, 39, 28, 14, 5, '/assets/img/recetas/007-tostada-griega-con-yogur-y-huevo.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 507, 27, 8, 39, 28, 14, 5, '/assets/img/recetas/007-tostada-griega-con-yogur-y-huevo.jpg'],
 
 ['Smoothie de Banano y Proteína', 'desayuno',
  ['banano|1', 'scoop de proteína en polvo|1', 'leche|250 ml', 'mantequilla de maní|1 cda', 'Hielo|al gusto'],
@@ -1276,17 +1276,17 @@ return [
 ['Arepa con Queso y Huevo', 'desayuno',
  ['arepa precocida o hecha la noche anterior|1', 'queso blanco o mozzarella|50 g', 'huevos|2', 'aguacate|1/2', 'Aceite para la sartén|al gusto', 'Sal y pimienta|al gusto'],
  ['Calienta la arepa en sartén o tostadora hasta dorar.', 'Fríe los huevos en aceite a fuego medio.', 'Abre la arepa por la mitad y rellena con el queso.', 'Sirve con los huevos fritos y el aguacate al lado.', 'CLÁSICOS ELEVADOS', 'Clásicos Elevados', 'Recetas de siempre, optimizadas para proteína'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 546, 26, 10, 11, 46, 2, 7, '/assets/img/recetas/010-arepa-con-queso-y-huevo.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 546, 26, 10, 11, 46, 2, 7, '/assets/img/recetas/010-arepa-con-queso-y-huevo.jpg'],
 
 ['Shakshuka Clásica', 'desayuno',
  ['huevos|4', 'tomates triturados|400 g', 'pimentón rojo|1', 'cebolla mediana|1', 'ajo|3 dientes', 'Comino|al gusto', 'Aceite de oliva|al gusto'],
  ['Sofríe la cebolla y el pimentón en aceite de oliva 5 minutos. Agrega el ajo y las especias 1 minuto más.', 'Incorpora los tomates triturados y cocina a fuego bajo 10 minutos hasta espesar.', 'Haz 4 huecos en la salsa y rompe un huevo en cada uno.', 'Cubre la sartén y cocina 5-7 minutos hasta que las claras estén firmes. Sirve con pan pita.'],
- ['alto en proteína', 'sin gluten', 'económico'], 578, 33, 25, 41, 34, 22, 10, '/assets/img/recetas/shakshuka-clasica.jpg'],
+ ['alto en proteína', 'sin gluten', 'económico', 'vegetariano'], 578, 33, 25, 41, 34, 22, 10, '/assets/img/recetas/shakshuka-clasica.jpg'],
 
 ['Frittata de Espinacas y Ricotta', 'desayuno',
  ['huevos|4', 'ricotta o queso campesino|100 g', 'espinacas baby|100 g', 'queso parmesano o manchego|50 g', 'ajo|1 diente', 'Aceite de oliva|al gusto'],
  ['Precalienta el horno a 180°C. Sofríe el ajo en aceite, agrega las espinacas 2 minutos.', 'Bate los huevos y mezcla con la ricotta, el parmesano y las espinacas. Sazona bien.', 'Vierte en una sartén apta para horno engrasada.', 'Hornea 12-15 minutos hasta que cuaje y dore. Corta en porciones.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 889, 65, 20, 12, 65, 3, 2, '/assets/img/recetas/frittata-de-espinacas-y-ricotta.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 889, 65, 20, 12, 65, 3, 2, '/assets/img/recetas/frittata-de-espinacas-y-ricotta.jpg'],
 
 ['Omelette Clásico con Queso y Jamón', 'desayuno',
  ['huevos|3', 'jamón|50 g', 'queso|40 g', 'cebolla cabezona|1/4', 'pimentón|1/2', 'Mantequilla|al gusto'],
@@ -1296,7 +1296,7 @@ return [
 ['Tortilla Española', 'desayuno',
  ['huevos|4', 'papas medianas peladas finas|2', 'cebolla en juliana|1/2', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
  ['Fríe las papas y la cebolla en aceite a fuego bajo 15 minutos hasta blandas. Escurre el exceso de aceite.', 'Bate los huevos con sal y mezcla con las papas y la cebolla.', 'Cocina en sartén a fuego medio 3-4 minutos hasta cuajar el fondo.', 'Voltea con un plato y cocina el otro lado 3 minutos. Sirve tibia o fría.'],
- ['alto en proteína', 'sin gluten', 'económico'], 654, 33, 25, 60, 32, 7, 7],
+ ['alto en proteína', 'sin gluten', 'económico', 'vegetariano'], 654, 33, 25, 60, 32, 7, 7],
 
 ['Full English Saludable', 'desayuno',
  ['huevos|1', 'salchichas de pavo o pollo|1', 'champiñones|25 g', 'tomates en mitades|1', 'frijoles en salsa de tomate|50 g', 'Pan integral|al gusto', 'Aceite de oliva|al gusto'],
@@ -1311,17 +1311,17 @@ return [
 ['Panneer Bhurji (Revuelto de Queso Indio)', 'desayuno',
  ['queso campesino o paneer|200 g', 'huevos|2', 'cebolla|1', 'tomate|1', 'pimentón verde|1', 'Comino|al gusto', 'Aceite o mantequilla clarificada|al gusto'],
  ['Sofríe la cebolla con el comino en aceite o mantequilla 3 minutos.', 'Agrega el tomate y el pimentón; cocina 4 minutos más.', 'Incorpora las especias y el queso desmenuzado.', 'Bate los huevos y vierte sobre la mezcla. Revuelve hasta cuajar.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 861, 53, 20, 30, 60, 14, 6, '/assets/img/recetas/panneer-bhurji-revuelto-de-queso-indio.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 861, 53, 20, 30, 60, 14, 6, '/assets/img/recetas/panneer-bhurji-revuelto-de-queso-indio.jpg'],
 
 ['Menemen Turco', 'desayuno',
  ['huevos|4', 'tomates|2', 'pimientos verdes en aros|2', 'queso blanco|80 g', 'Mantequilla|al gusto', 'Sal y pimienta roja molida|al gusto'],
  ['Saltea los pimientos en mantequilla 3 minutos.', 'Agrega los tomates y cocina 5 minutos hasta reducir.', 'Bate los huevos e incorpora a la sartén. Revuelve suavemente.', 'Cuando casi cuajen, agrega el queso desmenuzado. Retira del fuego y sirve.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 766, 48, 15, 28, 52, 19, 8, '/assets/img/recetas/menemen-turco.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 766, 48, 15, 28, 52, 19, 8, '/assets/img/recetas/menemen-turco.jpg'],
 
 ['Changua con Queso y Pan', 'desayuno',
  ['leche entera|500 ml', 'huevos|2', 'queso blanco|50 g', 'pan o mogolla|2 rebanadas', 'Cilantro|al gusto', 'Sal|al gusto'],
  ['Hierve la leche a fuego medio con sal.', 'Rompe los huevos directamente en la leche hirviendo y cocina 3-4 minutos.', 'Añade el queso en cubos y retira del fuego cuando empiece a ablandarse.', 'Sirve en un tazón con el pan y el cilantro fresco.'],
- ['alto en proteína', 'rápido', 'económico'], 774, 48, 15, 51, 43, 29, 4, '/assets/img/recetas/changua-con-queso-y-pan.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 774, 48, 15, 51, 43, 29, 4, '/assets/img/recetas/changua-con-queso-y-pan.jpg'],
 
 ['Gallo Pinto Costarricense', 'desayuno',
  ['arroz|1 taza', 'frijoles negros con caldo|1 taza', 'cebolla|1/4', 'pimentón|1/4', 'Salsa lizano o salsa inglesa|al gusto', 'Aceite|al gusto'],
@@ -1331,12 +1331,12 @@ return [
 ['Calentado Bogotano Fitness', 'desayuno',
  ['arroz y frijoles del día anterior|1 taza', 'huevos|2', 'hogao|1/4', 'queso campesino|50 g', 'Aceite|al gusto'],
  ['Calienta el hogao en sartén y agrega el arroz y los frijoles. Saltea 5 minutos.', 'Empuja la mezcla hacia los bordes y fríe los huevos en el centro.', 'Sirve con el queso campesino desmenuzado encima.', 'Acompaña con arepa o pan.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 639, 40, 15, 49, 33, 2, 13, '/assets/img/recetas/calentado-bogotano-fitness.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 639, 40, 15, 49, 33, 2, 13, '/assets/img/recetas/calentado-bogotano-fitness.jpg'],
 
 ['Chilaquiles Rojos con Huevo', 'desayuno',
  ['tortillas de maíz en triángulos y fritas o|2', 'salsa roja|200 ml', 'huevos|2', 'queso blanco|50 g', 'Crema agria o yogur griego|al gusto', 'Cebolla morada y cilantro|al gusto'],
  ['Prepara la salsa roja licuando tomates, ajo, cebolla y chile. Cocina 10 minutos.', 'Agrega las tortillas a la salsa y deja que absorban 2-3 minutos.', 'Fríe los huevos aparte.', 'Sirve los chilaquiles con el huevo encima, queso, crema y cilantro.', 'PROTEICOS', 'Proteicos', 'Avena, quinoa y bases nutritivas que sacian'],
- ['alto en proteína', 'rápido', 'económico'], 803, 40, 20, 86, 34, 31, 6, '/assets/img/recetas/chilaquiles-rojos-con-huevo.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 803, 40, 20, 86, 34, 31, 6, '/assets/img/recetas/chilaquiles-rojos-con-huevo.jpg'],
 
 ['Overnight Oats de Chocolate y Proteína', 'desayuno',
  ['avena en hojuelas|80 g', 'leche|250 ml', 'scoop de proteína en polvo sabor chocolate|1', 'cacao en polvo sin azúcar|1 cda', 'miel|1 cda', 'Fruta para servir|al gusto'],
@@ -1356,7 +1356,7 @@ return [
 ['Loaded Protein Bowl', 'desayuno',
  ['huevos revueltos|3', 'frijoles negros|1/2 taza', 'aguacate|1/2', 'queso campesino|50 g', 'arroz integral|1/2 taza', 'Salsa|al gusto', 'Cilantro|al gusto'],
  ['Calienta los frijoles y el arroz en sartén o microondas.', 'Revuelve los huevos en sartén con aceite.', 'Arma el bowl: arroz y frijoles de base, huevos encima.', 'Añade el aguacate, el queso y la salsa. Termina con cilantro.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 784, 43, 15, 61, 43, 3, 17, '/assets/img/recetas/loaded-protein-bowl.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 784, 43, 15, 61, 43, 3, 17, '/assets/img/recetas/loaded-protein-bowl.jpg'],
 
 ['Porridge de Quinoa con Canela', 'desayuno',
  ['quinoa|150 g', 'leche|400 ml', 'canela molida|1 cdta', 'miel|2 cdas', 'arándanos o moras|50 g', 'almendras laminadas|30 g'],
@@ -1376,7 +1376,7 @@ return [
 ['Desayuno Costeño Completo', 'desayuno',
  ['huevos fritos|2', 'arepa de maíz blanco|1', 'queso costeño o blanco|100 g', 'banano asado|1 tajada', 'aguacate|1/2', 'Jugo de naranja o maracuyá|al gusto'],
  ['Prepara la arepa en sartén caliente hasta dorar por ambos lados.', 'Asa el banano maduro en sartén con poco aceite.', 'Fríe los huevos al gusto.', 'Sirve todo junto con el queso y el aguacate al lado.'],
- ['alto en proteína', 'sin gluten', 'económico'], 898, 42, 25, 66, 53, 12, 10, '/assets/img/recetas/033-desayuno-costeno-completo.jpg'],
+ ['alto en proteína', 'sin gluten', 'económico', 'vegetariano'], 898, 42, 25, 66, 53, 12, 10, '/assets/img/recetas/033-desayuno-costeno-completo.jpg'],
 
 ['Steak and Eggs', 'desayuno',
  ['bistec de res o lomo de cerdo|150 g', 'huevos|3', 'espinacas o kale|1 taza', 'cebolla en aros|1/2', 'Aceite|al gusto'],
@@ -1391,7 +1391,7 @@ return [
 ['Bowl de Huevo, Frijoles y Arroz', 'desayuno',
  ['huevos fritos|2', 'frijoles negros o rojos|1 taza', 'arroz blanco|1/2 taza', 'hogao|1 cda', 'queso blanco|50 g', 'Aguacate y cilantro|al gusto'],
  ['Calienta los frijoles con un poco de su caldo y el hogao.', 'Calienta el arroz.', 'Fríe los huevos.', 'Sirve en bowl con arroz y frijoles de base, huevos encima, queso, aguacate y cilantro.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 805, 45, 15, 81, 35, 3, 17, '/assets/img/recetas/042-bowl-de-huevo-frijoles-y-arroz.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 805, 45, 15, 81, 35, 3, 17, '/assets/img/recetas/042-bowl-de-huevo-frijoles-y-arroz.jpg'],
 
 ['Quiche de Verduras y Jamón', 'desayuno',
  ['huevos|4', 'leche|200 ml', 'jamón|100 g', 'queso|80 g', 'espinacas o brócoli|1/2 taza', 'Base de masa para tarta|al gusto', 'Sal|al gusto'],
@@ -1401,17 +1401,17 @@ return [
 ['Pancakes de Proteína (2 ingredientes)', 'desayuno',
  ['bananos muy|2', 'huevos|3', 'scoop de proteína en polvo|1', 'Canela|al gusto', 'Aceite de coco o mantequilla|al gusto'],
  ['Aplasta los bananos en un tazón con un tenedor hasta obtener puré.', 'Agrega los huevos y la proteína en polvo si la usas. Mezcla bien.', 'Calienta una sartén con poco aceite a fuego medio.', 'Vierte porciones y cocina 2 minutos por lado hasta dorar.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 629, 45, 10, 60, 26, 32, 8, '/assets/img/recetas/pancakes-de-proteina-2-ingredientes.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 629, 45, 10, 60, 26, 32, 8, '/assets/img/recetas/pancakes-de-proteina-2-ingredientes.jpg'],
 
 ['French Toast Proteico', 'desayuno',
  ['gruesas de pan integral o brioche|2 rebanadas', 'huevos|2', 'leche|100 ml', 'scoop de proteína en polvo sabor vainilla|1', 'Canela y vainilla|al gusto', 'Fruta y miel para servir|al gusto'],
  ['Bate los huevos con la leche, la proteína, la canela y la vainilla.', 'Sumerge el pan en la mezcla y deja que absorba 30 segundos por lado.', 'Cocina en sartén con mantequilla 3 minutos por lado hasta dorar.', 'Sirve con fruta fresca y un hilo de miel.'],
- ['alto en proteína', 'rápido'], 755, 48, 12, 107, 18, 85, 5, '/assets/img/recetas/french-toast-proteico.jpg'],
+ ['alto en proteína', 'rápido', 'vegetariano'], 755, 48, 12, 107, 18, 85, 5, '/assets/img/recetas/french-toast-proteico.jpg'],
 
 ['Pancakes de Avena y Proteína', 'desayuno',
  ['avena en hojuelas|80 g', 'huevos|2', 'leche|150 ml', 'scoop de proteína en polvo|1', 'polvo de hornear|1 cdta', 'Canela y vainilla|al gusto'],
  ['Licúa la avena, los huevos, la leche, la proteína, el polvo de hornear y los aromatizantes.', 'Deja reposar la mezcla 5 minutos.', 'Cocina en sartén con poco aceite, porciones de 1/4 taza a fuego medio.', 'Voltea cuando aparezcan burbujas en la superficie. Sirve con fruta y miel.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 677, 55, 15, 65, 23, 10, 9, '/assets/img/recetas/pancakes-de-avena-y-proteina.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 677, 55, 15, 65, 23, 10, 9, '/assets/img/recetas/pancakes-de-avena-y-proteina.jpg'],
 
 ['Muffins de Huevo y Espinacas con Base Dulce', 'desayuno',
  ['huevos|4', 'espinacas|100 g', 'queso|80 g', 'jamón o tocineta de pavo|50 g', 'Sal|al gusto', 'Spray antiadherente|al gusto'],
@@ -1421,7 +1421,7 @@ return [
 ['Banana Protein Pancakes con Mantequilla de Maní', 'desayuno',
  ['banano|1', 'huevos|2', 'scoop de proteína en polvo|1', 'mantequilla de maní|2 cdas', 'Fresas para servir|al gusto', 'Miel|al gusto'],
  ['Aplasta el banano y mezcla con los huevos y la proteína hasta integrar.', 'Cocina en sartén con poco aceite a fuego medio-bajo.', 'Voltea cuando los bordes estén firmes.', 'Sirve con mantequilla de maní, fresas y un hilo de miel.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 848, 47, 12, 116, 28, 97, 7, '/assets/img/recetas/049-banana-protein-pancakes-con-mantequilla-de-mani.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 848, 47, 12, 116, 28, 97, 7, '/assets/img/recetas/049-banana-protein-pancakes-con-mantequilla-de-mani.jpg'],
 
 ['Avena Colombiana Dulce con Proteína', 'desayuno',
  ['leche|500 ml', 'avena en hojuelas|60 g', 'scoop de proteína en polvo sabor vainilla|1', 'Canela|al gusto', 'panela o miel|2 cdas', 'Fruta de temporada|al gusto'],
@@ -1431,22 +1431,22 @@ return [
 ['Huevos En Cazuela', 'desayuno',
  ['huevos|3', 'queso parmesano|½ cda', 'champiñones|1 taza', 'puño de espárragos o green beans|½', 'cebolla|¼', 'pimentón|¼', 'Tomillo al|al gusto', 'Sal y pimienta|al gusto', 'Aceite de aguacate o coco|al gusto'],
  ['Lava y pica los champiñones, cebolla, espár- ragos y pimentón según tu preferencia.', 'Coloca todos los vegetales en un bowl y re- serva.', 'Calienta un poco de aceite de aguacate en una sartén, a fuego medio, añade los vegetales y saltea durante 3-5 minutos, removiendo a menudo. Salpimienta al gusto. Reserva', 'Precalienta el horno a 160 - 180 °C.', 'Coloca en una cazuela o recipiente apto para horno los vegetales salteados.', 'Seguidamente, coloca los huevos sobre los vegetales procurando que la yema no se rompa; y espolvorea el queso parmesano por encima.', 'Introduce la cazuela en el horno y cocina de 10-12 minutos o hasta que el huevo esté cuaja- do según tu preferencia.'],
- ['alto en proteína', 'rápido', 'sin gluten'], 417, 29, 4, 17, 28, 10, 5, '/assets/img/recetas/016-huevos-en-cazuela.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 417, 29, 4, 17, 28, 10, 5, '/assets/img/recetas/016-huevos-en-cazuela.jpg'],
 
 ['Changua santafereña', 'desayuno',
  ['leche|1 taza', 'agua|1 taza', 'huevo|1', 'cebolla larga|1 rama', 'cilantro|1 cda', 'pan blanco|1 rebanada', 'Sal|al gusto'],
  ['Pon a hervir el agua con la leche, la cebolla larga y sal.', 'Cuando rompa el hervor, baja el fuego y agrega el huevo entero con cuidado de no romper la yema.', 'Cocina 3-4 minutos a fuego suave hasta que la clara cuaje.', 'Retira del fuego y espolvorea el cilantro picado.', 'Sirve caliente con el pan tostado partido dentro o al lado.'],
- ['tradicional', 'ligero', 'rápido', 'económico'], 307, 17, 15, 27, 14, 14, 1, '/assets/img/recetas/changua-santaferena.jpg'],
+ ['tradicional', 'ligero', 'rápido', 'económico', 'vegetariano'], 307, 17, 15, 27, 14, 14, 1, '/assets/img/recetas/changua-santaferena.jpg'],
 
 ['Calentado paisa aligerado', 'desayuno',
  ['arroz blanco|1 taza', 'fríjol rojo|1/2 taza', 'huevo|1', 'arepa de maíz|1', 'cebolla larga|1/4 taza', 'aceite|1 cdta', 'Sal|al gusto'],
  ['Calienta el aceite en un sartén antiadherente a fuego medio.', 'Sofríe la cebolla larga 1 minuto.', 'Agrega el arroz y los fríjoles y revuelve 4-5 minutos hasta que se calienten parejo.', 'En otro sartén, cocina el huevo al gusto (de preferencia poché o frito con poco aceite).', 'Tuesta la arepa en un sartén seco o en el air fryer 4 minutos.', 'Sirve el arroz con fríjoles, el huevo encima y la arepa al lado.'],
- ['tradicional', 'alto en proteína', 'rápido', 'sin gluten'], 716, 26, 15, 123, 13, 3, 11, '/assets/img/recetas/calentado-paisa-aligerado.jpg'],
+ ['tradicional', 'alto en proteína', 'rápido', 'sin gluten', 'vegetariano'], 716, 26, 15, 123, 13, 3, 11, '/assets/img/recetas/calentado-paisa-aligerado.jpg'],
 
 ['Arepa de huevo al horno', 'desayuno',
  ['arepa de maíz cruda|1', 'huevo|1', 'Aceite en spray|al gusto', 'Sal|al gusto'],
  ['Precalienta el horno a 200°C.', 'Extiende la masa de arepa y forma un disco de 1 cm de grosor; sella los bordes dejando el centro más fino.', 'Cocina 6 minutos por cada lado en sartén caliente hasta que dore y se pueda abrir una bolsa por un costado.', 'Abre con cuidado un espacio en el centro y vierte el huevo crudo dentro.', 'Sella el borde y lleva al horno 10-12 minutos hasta que el huevo cuaje.', 'Sazona con sal y sirve caliente.'],
- ['tradicional', 'sin gluten', 'económico'], 360, 11, 25, 41, 17, 1, 2, '/assets/img/recetas/arepa-de-huevo-al-horno.jpg'],
+ ['tradicional', 'sin gluten', 'económico', 'vegetariano'], 360, 11, 25, 41, 17, 1, 2, '/assets/img/recetas/arepa-de-huevo-al-horno.jpg'],
 
 ['Caldo de costilla', 'desayuno',
  ['costilla de res|150 g', 'papa pastusa|1', 'arveja|1/4 taza', 'cebolla larga|2 cdas', 'ajo|1 diente', 'cilantro|1/2 rama', 'agua|3 tazas', 'Sal|al gusto'],
@@ -1461,7 +1461,7 @@ return [
 ['Huevos pericos con arepa', 'desayuno',
  ['huevos|2', 'tomate|1/2', 'cebolla larga|2 cdas', 'aceite|1 cdta', 'arepa de maíz|1', 'Sal|al gusto'],
  ['Calienta el aceite en un sartén antiadherente y sofríe la cebolla y el tomate 3 minutos.', 'Bate los huevos con sal y viértelos en el sartén.', 'Revuelve a fuego medio-bajo hasta que cuajen sin secarse.', 'Tuesta la arepa aparte y sirve junto a los huevos.'],
- ['tradicional', 'rápido', 'sin gluten', 'económico'], 414, 18, 12, 46, 18, 4, 3, '/assets/img/recetas/huevos-pericos-con-arepa.jpg'],
+ ['tradicional', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 414, 18, 12, 46, 18, 4, 3, '/assets/img/recetas/huevos-pericos-con-arepa.jpg'],
 
 ['Tamal tolimense en porción', 'desayuno',
  ['harina de maíz precocida|1/2 taza', 'pechuga de pollo|75 g', 'arveja|1/4 taza', 'papa criolla|1', 'aceite|1/2 cda', 'caldo de pollo|2 cdas', 'Sal|al gusto'],
@@ -1471,7 +1471,7 @@ return [
 ['Almojábana horneada', 'desayuno',
  ['cuajada|35 g', 'harina de maíz precocida|2 3/4 cdas', 'huevo|1', 'mantequilla|0.2 cda', 'polvo de hornear|0.2 cdta', 'azúcar|0.2 cda'],
  ['Precalienta el horno a 190°C y engrasa una bandeja.', 'Desmenuza la cuajada con un tenedor hasta que quede cremosa.', 'Mezcla con la harina de maíz, el huevo, la mantequilla, el azúcar y el polvo de hornear hasta integrar.', 'Forma bolitas medianas y colócalas en la bandeja.', 'Hornea 15-18 minutos hasta que doren ligeramente por fuera.'],
- ['tradicional', 'ligero', 'sin gluten', 'económico'], 217, 9, 25, 20, 11, 2, 1, '/assets/img/recetas/almojabana-horneada.jpg'],
+ ['tradicional', 'ligero', 'sin gluten', 'económico', 'vegetariano'], 217, 9, 25, 20, 11, 2, 1, '/assets/img/recetas/almojabana-horneada.jpg'],
 
 ['Chocolate santafereño con queso', 'desayuno',
  ['leche|1 taza', 'cuadro de chocolate de mesa|1/2', 'queso campesino|30 g', 'pan blanco|1 rebanada'],
@@ -1502,7 +1502,7 @@ return [
 ['Calamares a la romana keto', 'almuerzo',
  ['anilla de calamar|250 g', 'harina de almendra|1/2 taza', 'queso parmesano|1/4 taza', 'ajo en polvo|1 cucharadita', 'pimentón ahumado|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto', 'huevo|1 unidad', 'aceite de coco|1/4 taza'],
  ['En un tazón, mezcla la harina de almendra, el queso parmesano rallado, el ajo en polvo, el pimentón ahumado, la sal y la pimienta.', 'Esta mezcla se utilizará como cobertura. En otro tazón, bate el huevo.', 'Sumerge las anillas de calamar en el huevo, asegurándote de que estén bien cubiertas.', 'Luego, pásalas por la mezcla de harina y especias, presionando suavemente para que se adhiera la cobertura.', 'Coloca los calamares empanizados en un plato mientras calientas el aceite.', 'En una sartén grande, calienta el aceite a fuego medio-alto.', 'Cuando el aceite esté caliente (alrededor de 180°C o 350°F), agrega los calamares empanizados con cuidado.', 'Fríe los calamares durante aproximadamente 2-3 minutos hasta que estén dorados y crujientes.', 'Coloca los calamares con papel absorbente para eliminar el exceso de aceite.', 'Sirve los calamares a la romana keto con una salsa de tomate baja en carbohidratos o una mayonesa keto.', 'También puedes acompañarlos con una ensalada de hojas verdes para una comida más completa.'],
- ['alto en proteína', 'sin gluten'], 375, 31, 25, 7, 25, 2, 4, '/assets/img/recetas/calamares-a-la-romana-keto.jpg'],
+ ['alto en proteína', 'sin gluten', 'vegetariano'], 375, 31, 25, 7, 25, 2, 4, '/assets/img/recetas/calamares-a-la-romana-keto.jpg'],
 
 ['Camarones al ajillo', 'almuerzo',
  ['camarón|300 g', 'aceite de oliva|3 cucharadas', 'diente de ajo|4 unidades', 'pimiento rojo|1/2 cucharadita', 'sal|al gusto', 'pimienta negra|al gusto', 'jugo de limón|1 unidad', 'caldo de pollo|2 cucharadas', 'mantequilla|2 cucharadas'],
@@ -1722,7 +1722,7 @@ return [
 ['Bollito hervido valenciano/ Caldo de verduras', 'almuerzo',
  ['judía plana|50 g', 'zanahoria|1', 'cebolla|1', 'patata|1', 'alcachofa|1', 'acelga|100 g', 'hojas laurel|2', 'ajos|3 dientes', 'limón|al gusto', 'vinagre de vino blanco|al gusto', 'huevos|2', 'sal|al gusto', 'pimienta negra|al gusto', 'aceite de oliva virgen extra|al gusto'],
  ['Lava y pela las verduras: judía plana, zanahoria, cebolla, patata, alcachofa y acelga.', 'Corta las judías y acelgas en trozos grandes, la zanahoria y la patata por la mitad, la cebolla y la alcachofa en cuartos.', 'En una cazuela grande, coloca todas las verduras y cúbrelo con agua fría.', 'Añade sal, pimienta negra, dos hojas de laurel y un chorrito de aceite de oliva virgen extra.', 'Cocina a fuego medio durante 30 minutos o hasta que la patata esté tierna.', 'Cuela el caldo y reserva para otra preparación.', 'Sirve la sopa caliente con huevo duro, ajo picado y un chorrito de limón o vinagre de vino blanco.'],
- ['tradicional', 'económico'], 270, 15, 40, 30, 10, 10, 10, '/assets/img/recetas/bollito-hervido-valenciano-caldo-de-verduras.jpg'],
+ ['tradicional', 'económico', 'vegetariano'], 270, 15, 40, 30, 10, 10, 10, '/assets/img/recetas/bollito-hervido-valenciano-caldo-de-verduras.jpg'],
 
 ['Burrito con Guacamole', 'almuerzo',
  ['pollo|150 g', 'cebolla|1 unidad', 'pimiento|1 unidad', 'ajo|2 unidades', 'alubia|100 g', 'tomate|2 unidades', 'lechuga|300 g', 'guacamole|c/n', 'salsa picante|c/n'],
@@ -1832,7 +1832,7 @@ return [
 ['Ensalada de espinacas, garbanzos tostados, tomate, huevo y aguacate', 'almuerzo',
  ['garbanzo|20 g', 'aguacate|1 unidad', 'tomate|2 unidades', 'huevo|2 unidades', 'espinaca|1 puñado', 'almendra|1 puñado', 'semilla de sésamo|1 cucharada', 'comino|al gusto', 'ajo en polvo|al gusto', 'pimienta|al gusto', 'hierbas provenzales|al gusto', 'albahaca|al gusto', 'ajo|1 diente', 'aceite de oliva|al gusto', 'sal|al gusto'],
  ['Precalienta el horno a 180 °C con ventilador para tostar los garbanzos.', 'Escurre los garbanzos cocidos y sécalos con papel absorbente.', 'En un tazón, mezcla los garbanzos con comino, pimienta, ajo en polvo y hierbas provenzales. Agrega sal al gusto.', 'Extiende los garbanzos en una bandeja forrada con papel vegetal y hornea 15‑20 min, removiendo a mitad de cocción, hasta que estén dorados y crujientes.', 'Mientras tanto, corta el aguacate por la mitad, retira el hueso y corta la pulpa en cubos. Reserva.', 'Corta los tomates en rodajas y saltéalos en una plancha con un chorrito de aceite de oliva hasta que estén ligeramente dorados, cuidando que la yema del huevo no se cuaje si decides freírlo.', 'En un mortero, machaca el diente de ajo con sal, almendras tostadas y albahaca fresca. Añade aceite de oliva y mezcla hasta obtener una pasta aromática.', 'En un plato grande, coloca una cama de espinacas frescas. Distribuye las rodajas de tomate, los cubos de aguacate y los garbanzos tostados. Coloca el huevo frito encima.', 'Aliña la ensalada con la pasta de ajo y albahaca, espolvorea semillas de sésamo y sirve inmediatamente.'],
- ['alto en proteína', 'ligero', 'tradicional'], 887, 30, 10, 50, 63, 10, 15, '/assets/img/recetas/ensalada-de-espinacas-garbanzos-tostados-tomate-huevo-y-agua.jpg'],
+ ['alto en proteína', 'ligero', 'tradicional', 'vegetariano'], 887, 30, 10, 50, 63, 10, 15, '/assets/img/recetas/ensalada-de-espinacas-garbanzos-tostados-tomate-huevo-y-agua.jpg'],
 
 ['Ensalada de papaya, aguacate, tomate y semillas', 'almuerzo',
  ['papaya|1 trozo', 'aguacate|1 unidad', 'tomate|1 puñado', 'semilla|mezcla', 'nuez|1 puñado', 'aceite|1 cucharada', 'vinagre de módena|al gusto', 'sal|al gusto'],
@@ -1952,7 +1952,7 @@ return [
 ['Shakshuka', 'almuerzo',
  ['huevo|2', 'tomate|500 g', 'ajo|1', 'cebolla|200 g', 'pimiento rojo|150 g', 'tomillo|al gusto', 'laurel|1 hoja', 'comino|al gusto', 'pimentón|al gusto', 'pimienta negra|al gusto', 'aceite de oliva|al gusto', 'sal|al gusto', 'cilantro|al gusto'],
  ['Pica finamente el ajo; corta la cebolla y el pimiento rojo en juliana; pela y corta los tomates en cubos pequeños.', 'Calienta 2 cucharadas de aceite de oliva virgen extra en una sartén grande a fuego medio‑alto; cuando el aceite brille, agrega el ajo y la cebolla, cocinando 5 min hasta que la cebolla quede translúcida.', 'Añade el pimiento rojo y sofríe 6‑7 min, removiendo ocasionalmente, hasta que esté tierno; incorpora tomillo, laurel, comino, pimentón dulce y pimienta negra, mezclando bien los aromas.', 'Vierte los tomates picados, agrega una pizca de sal y reduce el fuego a medio‑bajo; cocina la salsa 30 min, removiendo cada 5 min, hasta que espese y los sabores se integren; retira la hoja de laurel y el tomillo.', 'Con una cuchara, crea en la salsa tantos huecos como huevos vayas a usar; rompe un huevo en cada hueco con cuidado de no romper la yema.', 'Cubre la sartén y cocina 6‑8 min a fuego bajo, o hasta que las claras estén cuajadas y las yemas alcancen el punto deseado (más líquidas o más firmes según preferencia).', 'Espolvorea cilantro fresco picado al final, ajusta de sal si es necesario y sirve la shakshuka caliente, acompañada de pan crujiente.'],
- ['tradicional', 'alto en proteína', 'rápido'], 440, 25, 30, 40, 20, 10, 5, '/assets/img/recetas/shakshuka.jpg'],
+ ['tradicional', 'alto en proteína', 'rápido', 'vegetariano'], 440, 25, 30, 40, 20, 10, 5, '/assets/img/recetas/shakshuka.jpg'],
 
 ['Sundaes de superfrutas', 'almuerzo',
  ['mango|1 unidad', 'fruta de la pasión|1 unidad', 'leche de coco|1 taza', 'semilla de chía|1 cucharada', 'lima|1 unidad', 'frutos secos|1 puñado', 'semilla mixta|al gusto', 'avena|1 cucharada', 'miel líquida|1 cucharada', 'bayas congeladas|1 taza', 'pan integral|1 rebanada', 'yogur natural|100 g', 'fruta fresca mixta|1 taza'],
@@ -2017,7 +2017,7 @@ return [
 ['Tortitas de Zanahoria y Manzana con nueces', 'almuerzo',
  ['manzana|1', 'zanahoria|1', 'huevo|1', 'harina de avena|40 g', 'nueces|al gusto', 'polvo para hornear|1 cucharadita'],
  ['Ralla la manzana verde y la zanahoria con un rallador grueso; coloca el rallado en un colador y presiona suavemente para eliminar el exceso de líquido sin deshidratar demasiado la fruta.', 'En un bol grande, bate el huevo y añádelo al puré de manzana‑zanahoria; mezcla hasta integrar completamente.', 'Incorpora la harina de avena, el polvo para hornear y las nueces picadas; mezcla con una espátula hasta obtener una masa espesa pero manejable, sin sobrebatir.', 'Calienta una plancha o sartén antiadherente a fuego medio y engrásala ligeramente con una gota de aceite; cuando esté caliente, vierte cucharadas de masa formando tortitas de 10 mm de grosor.', 'Cocina cada lado 2 minutos o hasta que estén doradas y firmes al tacto; la superficie debe presentar burbujas pequeñas antes de voltear.', 'Retira las tortitas y mantenlas calientes bajo papel aluminio mientras terminas el lote.', 'Sirve las tortitas apiladas, espolvorea un poco más de nueces picadas por encima y acompaña con miel o yogur si lo deseas.'],
- ['tradicional', 'económico'], 250, 10, 20, 30, 10, 10, 5, '/assets/img/recetas/tortitas-de-zanahoria-y-manzana-con-nueces.jpg'],
+ ['tradicional', 'económico', 'vegetariano'], 250, 10, 20, 30, 10, 10, 5, '/assets/img/recetas/tortitas-de-zanahoria-y-manzana-con-nueces.jpg'],
 
 ['Tortitas de Zanahoria y calabaza', 'almuerzo',
  ['calabaza|1/2 pieza', 'zanahoria|1 pieza', 'huevo|1 unidad', 'harina de avena|40 g', 'canela|al gusto', 'polvo para hornear|1 cucharadita'],
@@ -2387,7 +2387,7 @@ return [
 ['Fideos de harina de almendras', 'almuerzo',
  ['harina de almendras|1 taza', 'huevo|1', 'aceite de oliva|1 cucharada', 'sal|½ cucharadita'],
  ['En un bol, combina la harina de almendras, el huevo, la sal y el aceite de oliva; bate hasta obtener una masa homogénea.', 'Extiende la masa sobre una superficie ligeramente enharinada con un rodillo hasta que quede fina, de unos 2 mm de grosor.', 'Corta la masa en tiras finas con un cuchillo o cortador de pasta.', 'Calienta agua con sal en una olla hasta que hierva; agrega las tiras de fideos y cocina por 3 minutos, o hasta que floten y estén tiernos.', 'Escurre los fideos y sirve inmediatamente, acompañados de tu salsa o condimento favorito.'],
- ['sin gluten', 'económico'], 295, 10, 40, 30, 15, 2, 5, '/assets/img/recetas/159-fideos-de-harina-de-almendras.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 295, 10, 40, 30, 15, 2, 5, '/assets/img/recetas/159-fideos-de-harina-de-almendras.jpg'],
 
 ['Guacamole con un toque de lima', 'snack',
  ['palta|2', 'jugo de lima|1', 'cebolla morada|½', 'tomate|½', 'sal|al gusto', 'pimienta|al gusto'],
@@ -2417,7 +2417,7 @@ return [
 ['Masa de pizza con harina de arroz integral', 'almuerzo',
  ['harina de arroz integral|1 taza', 'agua|½ taza', 'polvo de hornear|1 cucharadita', 'huevo|1 unidad', 'aceite de oliva|1 cucharada', 'sal|al gusto'],
  ['Precalienta el horno a 180°C.', 'Mezcla la harina de arroz integral, el polvo de hornear y la sal en un bol.', 'Agrega el agua, el huevo y el aceite de oliva al bol.', 'Mezcla todos los ingredientes hasta obtener una masa suave y homogénea.', 'Estira la masa en una superficie enharinada hasta obtener el grosor deseado.', 'Coloca la masa en una bandeja para hornear y hornea durante 15 minutos, o hasta que esté ligeramente dorada.', 'Agrega los ingredientes deseados para la pizza y hornea durante 10 minutos más, o hasta que estén calientes y la masa esté crujiente.'],
- ['sin gluten', 'económico'], 290, 10, 40, 40, 10, 2, 5, '/assets/img/recetas/154-masa-de-pizza-con-harina-de-arroz-integral.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 290, 10, 40, 40, 10, 2, 5, '/assets/img/recetas/154-masa-de-pizza-con-harina-de-arroz-integral.jpg'],
 
 ['Masa de pizza con harina de sarraceno', 'almuerzo',
  ['harina de sarraceno|1 taza', 'agua|½ taza', 'polvo de hornear|1 cucharadita', 'aceite de oliva|1 cucharada', 'sal|al gusto'],
@@ -2427,17 +2427,17 @@ return [
 ['Masa de pizza con yogur y harina de almendras', 'almuerzo',
  ['harina de almendras|1 taza', 'yogur natural|½ taza', 'huevo|1 unidad', 'polvo de hornear|½ cucharadita'],
  ['Precalienta el horno a 180°C.', 'En un recipiente combina la harina de almendras, el polvo de hornear y una pizca de sal.', 'Incorpora el huevo, el yogur natural y mezcla hasta lograr una masa homogénea y ligeramente pegajosa.', 'Extiende la masa entre dos papeles de hornear hasta obtener el grosor deseado y colócala en una bandeja.', 'Hornea la base 15 minutos o hasta que los bordes estén firmes y ligeramente dorados.', 'Saca la base, añade los ingredientes de cobertura y vuelve a hornear 10 minutos hasta que el queso se derrita y los bordes se doren.'],
- ['sin gluten', 'económico'], 315, 15, 25, 30, 15, 2, 5, '/assets/img/recetas/156-masa-de-pizza-con-yogur-y-harina-de-almendras.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 315, 15, 25, 30, 15, 2, 5, '/assets/img/recetas/156-masa-de-pizza-con-yogur-y-harina-de-almendras.jpg'],
 
 ['Masa de pizza de batata', 'almuerzo',
  ['puré de batata|1 taza', 'harina de almendras|1 taza', 'huevo|1 unidad', 'sal|½ cucharadita'],
  ['Precalienta el horno a 180°C.', 'En un bol mezcla el puré de batata con la harina de almendras y la sal hasta integrar bien.', 'Añade el huevo y bate ligeramente hasta obtener una masa homogénea y manejable.', 'Coloca la masa sobre una bandeja forrada con papel vegetal y extiéndela formando un círculo de 0,5 cm de grosor.', 'Hornea la base 20 minutos o hasta que los bordes estén dorados y la superficie firme al tacto.'],
- ['sin gluten', 'económico'], 335, 10, 25, 40, 15, 3, 5, '/assets/img/recetas/152-masa-de-pizza-de-batata.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 335, 10, 25, 40, 15, 3, 5, '/assets/img/recetas/152-masa-de-pizza-de-batata.jpg'],
 
 ['Masa de pizza de coliflor', 'almuerzo',
  ['coliflor|1 unidad', 'huevo|1 unidad', 'queso|½ taza', 'orégano|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precalienta el horno a 200°C.', 'Procesa la coliflor cruda en un procesador hasta obtener una textura similar al arroz y extiéndela en una bandeja.', 'Cocina al vapor la coliflor picada 5 minutos, luego transfiérela a un paño limpio y exprime para eliminar el exceso de agua.', 'En un bol combina la coliflor escurrida, el huevo, el queso rallado (si lo usas), el orégano, la sal y la pimienta, mezclando hasta obtener una masa uniforme.', 'Extiende la masa sobre una bandeja forrada con papel pergamino, formando una base de 0,5 cm de grosor.', 'Hornea 15 minutos o hasta que los bordes estén dorados y crujientes.'],
- ['sin gluten', 'económico'], 230, 15, 30, 20, 10, 2, 5, '/assets/img/recetas/148-masa-de-pizza-de-coliflor.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 230, 15, 30, 20, 10, 2, 5, '/assets/img/recetas/148-masa-de-pizza-de-coliflor.jpg'],
 
 ['Masa de pizza de espinaca y quinoa', 'almuerzo',
  ['quinoa|1 taza', 'espinaca|1 taza', 'huevo|1', 'orégano|1 cucharadita', 'sal|al gusto'],
@@ -2457,7 +2457,7 @@ return [
 ['Masa de pizza de zanahoria y avena sin gluten', 'almuerzo',
  ['zanahoria|1 taza', 'harina de avena|½ taza', 'huevo|1', 'polvo de hornear|½ cucharadita', 'sal|al gusto'],
  ['En un bol grande, mezcla la zanahoria rallada, la harina de avena sin gluten, el huevo, el polvo de hornear y la sal hasta obtener una masa homogénea y firme.', 'Precalienta el horno a 180 °C y forra una bandeja con papel pergamino. Estira la masa con las manos o un rodillo hasta obtener el grosor deseado y colócala en la bandeja.', 'Hornea la base durante 15 min o hasta que esté ligeramente dorada. Retira del horno, añade la cobertura que prefieras y vuelve a hornear 10 min más, o hasta que la cobertura esté cocida y burbujeante.'],
- ['económico', 'sin gluten'], 290, 10, 30, 40, 10, 5, 8, '/assets/img/recetas/157-masa-de-pizza-de-zanahoria-y-avena-sin-gluten.jpg'],
+ ['económico', 'sin gluten', 'vegetariano'], 290, 10, 30, 40, 10, 5, 8, '/assets/img/recetas/157-masa-de-pizza-de-zanahoria-y-avena-sin-gluten.jpg'],
 
 ['Masa de pizza de zapallo', 'almuerzo',
  ['zapallo|1 taza', 'harina de almendras|1 taza', 'huevo|1', 'polvo de hornear|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
@@ -2467,7 +2467,7 @@ return [
 ['Masa de pizza keto (sin carbohidratos)', 'almuerzo',
  ['queso mozzarella|1 taza', 'harina de almendras|½ taza', 'huevo|1', 'polvo de hornear|½ cucharadita'],
  ['Precalienta el horno a 200 °C.', 'En un recipiente, derrite el queso mozzarella a fuego bajo hasta que esté completamente fundido.', 'Añade la harina de almendras, el huevo y el polvo de hornear al queso fundido; mezcla bien hasta que la masa quede compacta y sin grumos.', 'Forma una bola con la masa y extiéndela sobre una bandeja de horno forrada con papel vegetal, logrando un grosor de 0.5 cm.', 'Hornea la base durante 10 min o hasta que los bordes estén ligeramente dorados.', 'Retira la bandeja', 'agrega los toppings que desees y vuelve a hornear 5 min más para que los ingredientes se cocinen y se integren.'],
- ['alto en proteína', 'rápido'], 365, 25, 25, 10, 25, 5, 5, '/assets/img/recetas/155-masa-de-pizza-keto-sin-carbohidratos.jpg'],
+ ['alto en proteína', 'rápido', 'vegetariano'], 365, 25, 25, 10, 25, 5, 5, '/assets/img/recetas/155-masa-de-pizza-keto-sin-carbohidratos.jpg'],
 
 ['Pan de avena sin gluten y yogur', 'almuerzo',
  ['harina de avena|1 taza', 'huevo|1 unidad', 'yogur natural|½ taza', 'polvo de hornear|1 cucharadita', 'semilla de lino|1 cucharada', 'rebanada|8 unidades'],
@@ -2482,12 +2482,12 @@ return [
 ['Pan de garbanzo sin harina', 'almuerzo',
  ['garbanzo|1 taza', 'huevo|2', 'aceite de oliva|1 cucharada', 'polvo de hornear|½ cucharadita', 'sal|al gusto'],
  ['Coloca los garbanzos cocidos, los huevos, el aceite de oliva, el polvo de hornear y la sal en una licuadora o procesador de alimentos.', 'Procesa hasta obtener una mezcla homogénea y sin grumos, con una textura ligeramente espesa.', 'Vierte la mezcla en un molde pequeño engrasado o forrado con papel vegetal, nivelando la superficie con una espátula.', 'Precalienta el horno a 180 °C y hornea durante 25 min o hasta que la superficie esté dorada y al insertar un palillo este salga limpio.', 'Deja enfriar 5 min en el molde, luego transfiérelo a una rejilla para que se enfríe completamente antes de cortar en 6 rebanadas.'],
- ['económico', 'sin gluten'], 250, 10, 35, 30, 10, 5, 5, '/assets/img/recetas/142-pan-de-garbanzo-sin-harina.jpg'],
+ ['económico', 'sin gluten', 'vegetariano'], 250, 10, 35, 30, 10, 5, 5, '/assets/img/recetas/142-pan-de-garbanzo-sin-harina.jpg'],
 
 ['Pan de harina de almendras y semillas', 'almuerzo',
  ['harina de almendras|1 taza', 'semillas|¼ taza', 'huevo|3', 'aceite de oliva|1 cucharada', 'polvo de hornear|1 cucharadita', 'sal|al gusto'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente un molde para pan.', 'En un bol grande, bate los huevos con el aceite de oliva hasta que la mezcla sea homogénea.', 'Añade la harina de almendras, el polvo de hornear, la sal y las semillas, mezclando con una espátula hasta integrar sin grumos.', 'Vierte la masa en el molde, alisando la superficie con una espátula.', 'Hornea durante 35 min, hasta que la corteza esté dorada y al insertar un palillo este salga limpio.', 'Deja enfriar 10 min en el molde, luego desmolda y corta en 10 rebanadas.'],
- ['sin gluten', 'alto en proteína'], 302, 15, 40, 20, 18, 5, 5, '/assets/img/recetas/139-pan-de-harina-de-almendras-y-semillas.jpg'],
+ ['sin gluten', 'alto en proteína', 'vegetariano'], 302, 15, 40, 20, 18, 5, 5, '/assets/img/recetas/139-pan-de-harina-de-almendras-y-semillas.jpg'],
 
 ['Pan de harina de quinoa', 'almuerzo',
  ['harina de quinoa|1 taza', 'semilla de chía|½ taza', 'polvo de hornear|½ cucharadita', 'agua|½ taza', 'aceite de oliva|1 cucharada', 'rebanada|8 unidades'],
@@ -2527,7 +2527,7 @@ return [
 ['Pasta de harina de arroz integral', 'almuerzo',
  ['harina de arroz integral|1 taza', 'huevo|1', 'aceite de oliva|1 cucharada', 'sal|½ cucharadita'],
  ['En un bol grande, combina la harina de arroz integral, el huevo, el aceite de oliva y la sal.', 'Mezcla con las manos o una cuchara de madera hasta que la masa quede homogénea y firme, sin grumos.', 'Coloca la masa sobre una superficie ligeramente enharinada y estírala con un rodillo hasta obtener un grosor de 2‑3 mm.', 'Corta la lámina con un cortador o cuchillo en tiras finas de 1 cm de ancho.', 'Lleva a ebullición una olla grande con agua salada y agrega las tiras de pasta.', 'Cocina 3 minutos, removiendo ocasionalmente, hasta que la pasta flote y esté al dente.', 'Escurre y sirve inmediatamente, acompañada de tu salsa favorita.'],
- ['sin gluten'], 196, 6, 40, 25, 8, 2, 3, '/assets/img/recetas/165-pasta-de-harina-de-arroz-integral.jpg'],
+ ['sin gluten', 'vegetariano'], 196, 6, 40, 25, 8, 2, 3, '/assets/img/recetas/165-pasta-de-harina-de-arroz-integral.jpg'],
 
 ['Pesto de albahaca y almendras', 'snack',
  ['albahaca|1 taza', 'almendra|¼ taza', 'aceite de oliva|¼ taza', 'ajo|1 diente', 'limón|½', 'sal|al gusto', 'frasco|1'],
@@ -2552,12 +2552,12 @@ return [
 ['Ravioles de harina de arroz', 'almuerzo',
  ['harina de arroz|1 taza', 'huevo|1', 'agua|¼ taza', 'sal|½ cucharadita', 'ricota|al gusto', 'espinaca|al gusto', 'nuez moscada|al gusto'],
  ['En un bol grande, combina la harina de arroz, el huevo, el agua y la sal. Mezcla con las manos hasta obtener una masa homogénea y elástica.', 'Coloca la masa sobre una superficie ligeramente enharinada y estírala con un rodillo hasta que tenga un grosor de aproximadamente 2 mm.', 'Corta la masa en cuadrados de 6 cm. Coloca una cucharadita de relleno (ricota, espinaca y nuez moscada) en el centro de cada cuadrado.', 'Cubre cada cuadrado con otro de masa y sella los bordes presionando con un tenedor, asegurándote de que no queden fugas.', 'Lleva a ebullición una olla grande con agua salada. Cuando el agua esté hirviendo, introduce los ravioles y cocina 4‑5 minutos, o hasta que floten y la masa se vea firme.'],
- ['tradicional', 'sin gluten'], 395, 15, 50, 50, 15, 5, 5, '/assets/img/recetas/166-ravioles-de-harina-de-arroz.jpg'],
+ ['tradicional', 'sin gluten', 'vegetariano'], 395, 15, 50, 50, 15, 5, 5, '/assets/img/recetas/166-ravioles-de-harina-de-arroz.jpg'],
 
 ['Ravioles de harina de sarraceno', 'almuerzo',
  ['harina de sarraceno|1 taza', 'huevo|1', 'agua|2 cucharadas', 'sal|½ cucharadita', 'ricota|al gusto', 'espinaca|al gusto', 'nuez moscada|al gusto'],
  ['Mezcla la harina de sarraceno, el huevo, el agua y la sal en un bol hasta formar una masa homogénea.', 'Estira la masa sobre una superficie enharinada con un rodillo hasta que tenga un grosor de 2 mm.', 'Corta la masa en cuadrados de 6 cm y coloca una cucharadita de relleno (ricota, espinaca y nuez moscada) en cada uno.', 'Cubre con otro cuadrado y sella los bordes con un tenedor, asegurándote de que no haya fugas.', 'Hierve agua con sal en una olla grande. Cuando hierva, añade los ravioles y cocina 4‑5 minutos, o hasta que floten y la masa esté firme.'],
- ['tradicional', 'sin gluten'], 395, 15, 50, 50, 15, 5, 5, '/assets/img/recetas/162-ravioles-de-harina-de-sarraceno.jpg'],
+ ['tradicional', 'sin gluten', 'vegetariano'], 395, 15, 50, 50, 15, 5, 5, '/assets/img/recetas/162-ravioles-de-harina-de-sarraceno.jpg'],
 
 ['Risotto de quinoa con champiñones', 'almuerzo',
  ['quinoa|1 taza', 'champiñones|1 taza', 'cebolla|½ taza', 'ajo|1 diente', 'caldo de verduras|2 tazas', 'aceite de oliva|1 cucharada'],
@@ -2592,7 +2592,7 @@ return [
 ['Ñoquis de batata sin harina', 'almuerzo',
  ['batata|1', 'harina de almendras|½ taza', 'huevo|1', 'sal|½ cucharadita'],
  ['Precalienta una olla grande con agua y sal hasta ebullición.', 'En un bol, mezcla el puré de batata, la harina de almendras, el huevo y la sal hasta obtener una masa suave y elástica.', 'Con la masa, forma cilindros de 1 cm de diámetro y corta en piezas de 2 cm de longitud.', 'Cuando el agua esté hirviendo, introduce los ñoquis y cocina 3‑4 minutos o hasta que floten en la superficie.', 'Retira los ñoquis con una espumadera y escúrrelos bien.', 'Sirve inmediatamente con salsa de tu preferencia, como salsa de tomate casera o mantequilla de ajo.'],
- ['sin gluten', 'ligero'], 322, 10, 40, 30, 18, 4, 3, '/assets/img/recetas/161-noquis-de-batata-sin-harina.jpg'],
+ ['sin gluten', 'ligero', 'vegetariano'], 322, 10, 40, 30, 18, 4, 3, '/assets/img/recetas/161-noquis-de-batata-sin-harina.jpg'],
 
 ['Ñoquis de coliflor', 'almuerzo',
  ['coliflor|1 taza', 'harina de almendras|½ taza', 'huevo|1', 'sal|al gusto'],
@@ -2712,7 +2712,7 @@ return [
 ['Ensalada de Huevo', 'almuerzo',
  ['aceite de oliva|1 cucharada', 'cebolla|1/4 taza', 'apio|1 tallo', 'romero|1/4 cucharadita', 'pimienta roja|1/4 cucharadita', 'sal|al gusto', 'ajo|1/2 cucharadita', 'huevo|1 unidad', 'tomate cherry|5 unidades', 'queso feta|1 cucharada', 'espinaca|1 taza'],
  ['Calienta el aceite en una sartén grande a fuego medio.', 'Agrega la cebolla, el apio, el romero, las hojuelas de pimiento rojo, la sal y la pimienta.', 'Cocina y revuelve con una cuchara de madera o una espátula hasta que la cebolla comience a ponerse translúcida, aproximadamente 4 minutos. Añade el ajo y cocina durante 1 minuto.', 'Empuja la mezcla de cebolla hacia los bordes de la sartén y rompe el huevo en el centro.', 'Rompe la yema con la cuchara de madera y revuélvela con la mezcla de cebolla.', 'Agrega los tomates; cocina y revuelve hasta que el huevo esté casi cocido, alrededor de 3 minutos.', 'Incorpora el queso feta y cocina hasta que se derrita ligeramente, aproximadamente 1 minuto. Agrega las espinacas.', 'Retira del fuego y revuelve hasta que se marchiten ligeramente, unos 30 segundos.'],
- ['ligero', 'alto en proteína'], 180, 6, 15, 8, 14, 3, 2, '/assets/img/recetas/063-ensalada-de-huevo.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 180, 6, 15, 8, 14, 3, 2, '/assets/img/recetas/063-ensalada-de-huevo.jpg'],
 
 ['Ensalada de Pollo Fresca y Crujiente', 'almuerzo',
  ['mayonesa|2 cucharadas', 'perejil|1/2 cucharada', 'jugo de limón|1/2 cucharadita', 'vinagre de sidra|1/2 cucharadita', 'mostaza picante|1/4 cucharadita', 'sal|una pizca', 'pimienta|una pizca', 'pollo|3/4 taza', 'uva roja|1/4 taza', 'apio|1/4 taza', 'nuez de pecán|1/4 taza', 'lechuga|al gusto'],
@@ -2802,7 +2802,7 @@ return [
 ['Muffins de Avena y manzana', 'almuerzo',
  ['avena|3 tazas', 'leche|1 ½ tazas', 'plátano|2 unidades', 'stevia|1/3 taza', 'huevo|2 unidades', 'polvo de hornear|1 cucharadita', 'canela|1 cucharadita', 'extracto de vainilla|1 cucharadita', 'sal|½ cucharadita', 'nuez pecana|½ taza', 'manzana|20 g'],
  ['En un bol pequeño, ponemos la leche y el aceite de coco o la mantequilla (líquido) y mezclamos bien.', 'Añadimos los copos de avena y los dejamos hidratar durante media hora.', 'En otro bol, batimos los huevos junto con el edulcorante, hasta que doblen su tamaño.', 'Como se tarda poco en preparar, podemos ir precalentando el horno a 180º.', 'Añadimos la mezcla de copos de avena y batimos.', 'Tamizamos la harina y la levadura y la añadimos poquito a poco, sin dejar de mezclar.', 'Por último, añadimos la manzana troceada y mezclamos con una espátula para repartirla bien por toda la masa.', 'Repartimos la mezcla en moldes para muffins, con papelitos puestos (yo pongo 2 en cada uno).', 'Para que te sea más fácil, puedes poner la mezcla en una jarra o colocarla con un par de cucharas.', 'Horneamos a 180º durante unos 35min, con calor arriba y abajo, hasta que veamos que se doran.', 'Dejamos enfriar por completo sobre una rejilla.'],
- ['ligero', 'alto en proteína'], 240, 8, 50, 32, 9, 14, 5, 'https://images.pexels.com/photos/6625812/pexels-photo-6625812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 240, 8, 50, 32, 9, 14, 5, 'https://images.pexels.com/photos/6625812/pexels-photo-6625812.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Muslos de pollo con chalotes y espinacas', 'almuerzo',
  ['muslo de pollo|6 unidades', 'sal|1 cucharadita', 'pimienta|1 cucharadita', 'aceite de oliva|1 1/2 cucharaditas', 'chalote|4 unidades', 'caldo de pollo|1/3 taza', 'espinaca|1 paquete (10 oz)', 'crema agria|¼ taza'],
@@ -2937,7 +2937,7 @@ return [
 ['Salteado de Verduras de Verano y Huevos revuelto', 'almuerzo',
  ['aceite de oliva|2 cucharadas', 'papa|340 g', 'verdura mixto|4 tazas', 'cebolla verde|3 cebolletas', 'hierba fresca|1 cucharadita', 'huevo|6', 'hoja verde|2 tazas', 'sal|1/2 cucharadita'],
  ['Calienta el aceite en una sartén grande de hierro fundido o antiadherente a fuego medio.', 'Agrega las papas; cubre y cocina, revolviendo varias veces, hasta que comiencen a ablandarse, aproximadamente 8 minutos.', 'Añade las verduras cortadas en rodajas y las partes blancas de las cebolletas; cocina sin tapar, revolviendo ocasionalmente, hasta que las verduras estén tiernas y ligeramente doradas, de 8 a 10 minutos. Agrega las hierbas picadas.', 'Mueve la mezcla de verduras hacia el borde de la sartén. Reduce el fuego a medio-bajo.', 'Agrega los huevos y las partes verdes de las cebolletas al centro de la sartén.', 'Cocina, revolviendo, hasta que los huevos estén revueltos suavemente, aproximadamente 2 minutos.', 'Incorpora las hojas verdes a los huevos.', 'Retira del fuego y revuelve para combinar bien. Añade la sal y mezcla.'],
- ['ligero', 'alto en proteína'], 280, 10, 30, 20, 18, 5, 6, 'https://images.pexels.com/photos/15797949/pexels-photo-15797949.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 280, 10, 30, 20, 18, 5, 6, 'https://images.pexels.com/photos/15797949/pexels-photo-15797949.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Sandwich de portabello y pollo', 'almuerzo',
  ['aguacate|1', 'chile serrano|1', 'cebolla|2 cucharadas', 'jitomate|4 cucharadas', 'cilantro|1 cucharada', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|2 cucharaditas', 'ajo|1 cucharada', 'orégano|1 cucharada', 'hongo portobello|8', 'pechuga de pollo|400 g', 'espinaca|1 taza', 'jitomate|1'],
@@ -2972,7 +2972,7 @@ return [
 ['Soufflé de barata', 'almuerzo',
  ['pan molido|1/2 taza', 'batata|4 tazas', 'ghee|1/2 cucharadita', 'tomillo|1 cucharadita', 'pimienta negra|1/4 cucharadita', 'nuez moscada|una pizca', 'leche descremada|1 1/3 taza', 'almidón de maíz|1 1/2 cucharada', 'queso gruyere|1/2 taza', 'huevo|3 claras'],
  ['Calienta el horno a 375 °F (190 °C). Rocía ligeramente 6 moldes individuales (de 8 onzas [230 g]) con aceite en aerosol y espolvorea el pan pan molido.', 'Coloca los moldes individuales en una bandeja de horno.', 'Calienta una sartén mediana a fuego medio.', 'Añade las batatas, ghee, el tomillo, la sal, la pimienta y la nuez moscada.', 'En un bol pequeño, mezcla la leche y el almidón de maíz para formar una lechada.', 'Añade la lechada a la sartén y hazla hervir lentamente, batiéndola con frecuencia. Reduce el fuego y añade el queso.', 'Cuando el queso se haya derretido, retira la mezcla del fuego y deja que se enfríe.', 'En un bol mediano, bate las claras de huevo con una batidora eléctrica hasta que se formen picos firmes.', 'Incorpora cuidadosamente la mezcla de batata en las claras de huevo.', 'Coloca cantidades iguales de la mezcla en los moldes individuales y hornea durante 20 minutos aproximadamente o hasta que el centro esté firme y ligeramente dorado.'],
- ['ligero', 'alto en proteína'], 250, 7, 60, 32, 11, 4, 3, 'https://images.pexels.com/photos/5023042/pexels-photo-5023042.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 250, 7, 60, 32, 11, 4, 3, 'https://images.pexels.com/photos/5023042/pexels-photo-5023042.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Tacos de Pescado al Desnudo', 'almuerzo',
  ['mezcla de ensalada de col|1 taza', 'cilantro|1/4 taza', 'cebolla verde|1 unidad', 'jalapeño|1 cucharadita', 'aceite de canola|4 cucharaditas', 'jugo de lima|2 cucharaditas', 'comino|1/2 cucharadita', 'sal|1/2 cucharadita', 'pimienta|1/4 cucharadita', 'filete de tilapia|2 unidades', 'aguacate|1/2 unidad'],
@@ -3217,7 +3217,7 @@ return [
 ['Ensalada Kikiriki', 'almuerzo',
  ['huevo|2', 'pan integral|1 rebanada', 'arúgula|Un puño', 'lechuga|Un par', 'tomate|1', 'cebolla morada|¼', 'maíz desgranado|¼ taza', 'kiwi|1', 'semilla de girasol|1 cucharada', 'vinagre blanco|al gusto', 'aceite de oliva|2 cucharadas', 'vinagre balsámico|2 cdas', 'limón|1 unidad', 'sal|al gusto', 'pimienta|al gusto'],
  ['Colocar en una ollita con agua, sal y un chorrito de vinagre blanco a cocinar los huevos aproximadamente 12-15 minutos.', 'Una vez listos, retirar, dejar refrescar y pelar. Reserva.', 'Pelar y cortar el kiwi en pequeños cuadritos o rebanadas.', 'Recuerda que una forma muy fácil de pelarlo es cortando las puntas y despegando la piel con una cuchara.', 'Pica los vegetales según tu preferencia en julianas o cuadritos.', 'Lleva el pan a una tostadora o a la plancha hasta que quede bien tostado, corta en cuadritos pequeños y reserva.', 'Para hacer el montaje de la ensalada, lleva a un bowl las hojas verdes, luego agrega el maíz, los vegetales ya picados, los cubos de pan tostado y el kiwi.', 'Marina la ensalada con: el aceite de oliva, vinagre balsámico, limón, sal y pimenta.', 'Sirve la ensalada decorando con las semillas de girasol.'],
- ['ligero', 'alto en proteína'], 330, 20, 15, 22, 18, 10, 5, '/assets/img/recetas/042-kikiriki.jpg'],
+ ['ligero', 'alto en proteína', 'vegetariano'], 330, 20, 15, 22, 18, 10, 5, '/assets/img/recetas/042-kikiriki.jpg'],
 
 ['Ensalada Ligera Con Aderezo De Maní', 'almuerzo',
  ['kale|1 puño', 'coliflor|1 taza', 'repollo morado|1 taza', 'zanahoria|¼', 'apio|al gusto', 'mantequilla de maní|1 cda', 'zumo de limón|1 cucharada', 'coconut aminos|2 cucharadas', 'ajo en polvo|al gusto', 'leche de coco|1-2 cdas', 'sal|al gusto', 'aceite de oliva|1 cda'],
@@ -3532,7 +3532,7 @@ return [
 ['Proteína Express', 'almuerzo',
  ['Huevos|al gusto', 'Aguacate|al gusto', 'Tomate cherry|al gusto', 'Espinaca|al gusto', 'Queso|al gusto'],
  ['Cocina los huevos.', 'Coloca espinaca en la base.', 'Agrega tomate y aguacate.', 'Añade huevo en mitades.', 'Termina con queso fresco.', '(Tip: Ideal para cenas rápidas y ligeras.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/007-proteina-express.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/007-proteina-express.jpg'],
 
 ['Crunchy Air Fryer', 'almuerzo',
  ['Garbanzos crocantes|al gusto', 'Lechuga|al gusto', 'Pepino|al gusto', 'Zanahoria|al gusto', 'Salsa de yogur|al gusto'],
@@ -3572,7 +3572,7 @@ return [
 ['Huevo y Aguacate', 'almuerzo',
  ['Huevos|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Tomate|al gusto', 'Queso|al gusto'],
  ['Cocina los huevos.', 'Coloca espinaca en el bowl.', 'Agrega tomate y aguacate.', 'Añade huevo en mitades.', 'Termina con queso fresco.', '(Tip: Perfecto para desayuno o cena ligera.)'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/015-huevo-y-aguacate.jpg'],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 614, 39, 10, 16, 46, 3, 6, '/assets/img/recetas/015-huevo-y-aguacate.jpg'],
 
 ['Pollo Teriyaki', 'almuerzo',
  ['Pollo|al gusto', 'Arroz blanco|al gusto', 'Zanahoria|al gusto', 'Pepino|al gusto', 'Salsa teriyaki|al gusto', 'Ajonjolí|al gusto'],
@@ -3592,7 +3592,7 @@ return [
 ['Arroz, Huevo y Vegetales', 'almuerzo',
  ['Arroz|al gusto', 'Huevos|al gusto', 'Pepino|al gusto', 'Zanahoria|al gusto', 'Aguacate|al gusto'],
  ['Cocina los huevos.', 'Coloca arroz caliente en el bowl.', 'Agrega vegetales frescos.', 'Añade huevo en mitades.', 'Termina con aguacate.', '(Tip: Puedes agregar salsa soya baja en sodio.)'],
- ['ligero', 'rápido', 'sin gluten', 'económico'], 345, 13, 10, 40, 16, 6, 7, '/assets/img/recetas/019-arroz-huevo-y-vegetales.jpg'],
+ ['ligero', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 345, 13, 10, 40, 16, 6, 7, '/assets/img/recetas/019-arroz-huevo-y-vegetales.jpg'],
 
 ['Crunchy de Pollo Apanado', 'almuerzo',
  ['Pollo apanado Air Fryer|al gusto', 'Lechuga|al gusto', 'Tomate|al gusto', 'Maíz|al gusto', 'Salsa honey mustard|al gusto'],
@@ -3647,7 +3647,7 @@ return [
 ['Huevos, Papa y Aguacate', 'almuerzo',
  ['Huevos|al gusto', 'Papitas Air Fryer|al gusto', 'Aguacate|al gusto', 'Espinaca|al gusto', 'Salsa de yogur|al gusto'],
  ['Cocina las papitas en Air Fryer.', 'Cocina los huevos.', 'Coloca espinaca en el bowl.', 'Añade papitas y aguacate.', 'Agrega huevo en mitades y termina con salsa cremosa.', '(Tip: Perfecto para desayuno, brunch o cena rápida.)'],
- ['ligero', 'rápido', 'sin gluten', 'económico'], 242, 13, 12, 11, 18, 4, 6, '/assets/img/recetas/030-huevos-papa-y-aguacate.jpg'],
+ ['ligero', 'rápido', 'sin gluten', 'económico', 'vegetariano'], 242, 13, 12, 11, 18, 4, 6, '/assets/img/recetas/030-huevos-papa-y-aguacate.jpg'],
 
 ['Coliflor Entera Asada', 'almuerzo',
  ['coliflor mediana entera|1', 'aceite de oliva|2 cdas', 'cúrcuma|1 cdta', 'comino|1 cdta', 'ajo en polvo|1 cdta', 'Sal|al gusto', 'Yogur con limón y cilantro para servir|al gusto'],
@@ -3828,12 +3828,12 @@ return [
 ['Pancakes de Brocoli y queso', 'cena',
  ['brócoli|1 taza', 'huevo|1 unidad', 'queso cottage bajo en grasa|2 cucharadas', 'sal|al gusto', 'pimienta|al gusto', 'aceite en aerosol|al gusto'],
  ['Hierva el brócoli en agua con sal durante 4-5 minutos hasta que esté tierno y escúrralo bien', 'Triture el brócoli cocido con un tenedor hasta obtener un puré grueso', 'Incopore el huevo, el queso cottage, sal y pimienta al gusto y mezcle hasta lograr una masa homogénea', 'Caliente una sartén antiadherente a fuego medio y rocíe con aceite en aerosol', 'Vierta porciones de 2-3 cucharadas de masa en la sartén, formando pancakes de 8‑10 cm de diámetro', 'Cocine 2‑3 minutos por lado, volteando cuando los bordes se vean firmes y la superficie presente burbujas doradas', 'Retire los pancakes y sírvalos calientes, ajustando la sazón si es necesario'],
- ['alto en proteína', 'ligero', 'rápido'], 175, 14, 15, 8, 9, 2, 3, '/assets/img/recetas/pancakes-de-brocoli-y-queso.jpg'],
+ ['alto en proteína', 'ligero', 'rápido', 'vegetariano'], 175, 14, 15, 8, 9, 2, 3, '/assets/img/recetas/pancakes-de-brocoli-y-queso.jpg'],
 
 ['Pizza de Coliflor', 'cena',
  ['coliflor rallada|1 taza', 'huevo|1 unidad', 'queso mozzarella|1/4 taza', 'sal|1/4 cucharadita', 'ajo en polvo|1/4 cucharadita', 'orégano seco|1/4 cucharadita', 'salsa de tomate sin azúcar|2 cucharadas', 'champiñón|1/4 taza', 'pimiento morrón|1/4 taza', 'queso mozzarella adicional|2 cucharadas'],
  ['Precalienta el horno a 200 °C (390 °F).', 'En un tazón grande mezcla la coliflor rallada, el huevo, ¼ taza de queso mozzarella rallado, la sal, el ajo en polvo y el orégano seco hasta obtener una masa homogénea.', 'Forra una bandeja de horno con papel pergamino y extiende la mezcla formando un círculo delgado y uniforme, presionando ligeramente para compactar la base.', 'Hornea la base 15‑18 minutos, o hasta que esté dorada y firme al tacto.', 'Retira la base del horno y unta 2 cucharadas de salsa de tomate sin azúcar sobre ella, distribuyendo uniformemente.', 'Coloca las rodajas de champiñón y las tiras de pimiento morrón sobre la salsa y espolvorea los 2 cucharadas de mozzarella rallado adicional.', 'Vuelve a meter la pizza en el horno y hornea 5‑7 minutos, o hasta que el queso se derrita y las verduras estén tiernas.', 'Saca la pizza, deja reposar 2 minutos, corta en porciones y sirve.'],
- ['ligero', 'rápido', 'económico'], 275, 16, 30, 14, 17, 5, 5, '/assets/img/recetas/pizza-de-coliflor.jpg'],
+ ['ligero', 'rápido', 'económico', 'vegetariano'], 275, 16, 30, 14, 17, 5, 5, '/assets/img/recetas/pizza-de-coliflor.jpg'],
 
 ['Salmón con costra de hierbas', 'cena',
  ['salmón|4 filetes', 'perejil|2 cucharadas', 'cilantro|2 cucharadas', 'eneldo|2 cucharadas', 'aceite de oliva|2 cucharadas', 'limón|2 cucharadas', 'sal|al gusto', 'pimienta|al gusto'],
@@ -3843,7 +3843,7 @@ return [
 ['Tortilla de Tomate y Huevo', 'cena',
  ['tomate|1 grande', 'huevo|2 unidades', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|1 cucharadita'],
  ['Bate los huevos en un bol grande, incorporando sal y pimienta al gusto hasta que la mezcla esté homogénea y ligeramente espumosa.', 'Añade los cubitos de tomate a los huevos batidos y revuelve suavemente para distribuirlos sin deshacerlos.', 'Calienta 1 cucharadita de aceite de oliva en una sartén antiadherente a fuego medio (≈160 °C).', 'Vierte la mezcla de huevo y tomate en la sartén, distribuyéndola uniformemente; cocina 3‑4 min hasta que los bordes empiecen a cuajar y el centro aún esté ligeramente líquido.', 'Con una espátula, levanta los bordes y voltea la tortilla; cocina 2‑3 min más hasta que esté completamente cuajada y dorada por ambos lados.', 'Retira la tortilla del fuego, deslíjala en un plato y sírvela caliente, acompañada si lo deseas de una guarnición ligera.'],
- ['rápido', 'ligero', 'sin gluten'], 225, 12, 10, 6, 16, 4, 2, '/assets/img/recetas/tortilla-de-tomate-y-huevo.jpg'],
+ ['rápido', 'ligero', 'sin gluten', 'vegetariano'], 225, 12, 10, 6, 16, 4, 2, '/assets/img/recetas/tortilla-de-tomate-y-huevo.jpg'],
 
 ['Tostada de huevo y aguacate', 'cena',
  ['pan integral|2 rebanadas', 'huevo|2 unidades', 'aguacate|1 unidad', 'sal|al gusto', 'pimienta|al gusto', 'pimentón|al gusto', 'pimiento rojo|al gusto', 'cebolla roja|al gusto', 'cilantro|al gusto', 'yogur|al gusto', 'espinaca|al gusto', 'rúcula|al gusto', 'tomate cherry|al gusto', 'queso feta|al gusto', 'queso de cabra|al gusto', 'jamón|al gusto', 'tocino|al gusto', 'pepino encurtido|al gusto', 'fruta|al gusto'],
@@ -4008,7 +4008,7 @@ return [
 ['Berenjenas rellenas', 'cena',
  ['berenjena|2 unidades', 'pimiento rojo|1 unidad', 'pimiento amarillo|1 unidad', 'pimiento verde|1 unidad', 'calabacín|1 unidad', 'cebolla|1 cebolleta', 'salsa de tomate|100 ml', 'huevo|4 unidades', 'queso|50 g', 'aceite|al gusto', 'sal|al gusto'],
  ['Lava las berenjenas, córtalas longitudinalmente por la mitad y, con una cuchara, retira parte de la pulpa; reserva la pulpa y coloca las mitades en una bandeja al vapor, cocinándolas 5 minutos hasta que estén tiernas.', 'Mientras se cuecen, pica finamente la cebolleta, los tres pimientos y el calabacín; sofríe todo en una cazuela con aceite a fuego medio 10 minutos, hasta que los vegetales estén dorados y tiernos.', 'Añade la pulpa de berenjena picada y el calabacín a la cazuela, cocina 10 minutos más, sazona con sal al gusto y agrega la salsa de tomate; mezcla bien y retira del fuego.', 'Precalienta el horno a 200 °C. Rellena cada mitad de berenjena con la mezcla de verduras, coloca en una bandeja de horno y, con cuidado, casca un huevo sobre cada una; espolvorea el queso rallado por encima.', 'Hornea 12‑15 minutos, o hasta que el huevo esté cuajado y el queso dorado; retira del horno, deja reposar 2 minutos y sirve caliente.'],
- ['tradicional', 'ligero'], 250, 7, 120, 11, 20, 7, 6, '/assets/img/recetas/136-berenjenas-rellenas-2.jpg'],
+ ['tradicional', 'ligero', 'vegetariano'], 250, 7, 120, 11, 20, 7, 6, '/assets/img/recetas/136-berenjenas-rellenas-2.jpg'],
 
 ['Crema de calabaza', 'cena',
  ['calabaza|1 grande', 'cebolla|1 mediana', 'papa|1', 'ajo|2 dientes', 'caldo de verduras|1 litro', 'sal|al gusto', 'pimienta|al gusto', 'aceite de oliva|al gusto', 'queso rallado|opcional'],
@@ -4098,7 +4098,7 @@ return [
 ['Snaacks de granola', 'cena',
  ['calabaza|1 taza', 'mantequilla de cacahuate|1/2 taza', 'huevo|1', 'avena|1 taza', 'cereal de salvado|1 taza', 'almendra|1/2 paquete', 'manzana|1'],
  ['Precalienta el horno a 180°C. Mezcla todos los ingredientes juntos.', 'Extiende la mezcla en una bandeja para hornear.', 'Cocina durante 20 a 25 minutos, hasta que esté ligeramente dorado.'],
- ['ligero', 'económico'], 150, 4, 40, 15, 8, 10, 4, '/assets/img/recetas/159-snaacks-de-granola.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 150, 4, 40, 15, 8, 10, 4, '/assets/img/recetas/159-snaacks-de-granola.jpg'],
 
 ['Sopa de Res y Frijoles Sabrosa', 'cena',
  ['cebolla|1', 'ajo|2 dientes', 'zanahoria|2', 'apio|3 ramas', 'pimentón ahumado|1/2 cucharadita', 'carne de res|400 g', 'pasta de tomate|50 g', 'caldo de res|4 tazas', 'frijol rojo|1 lata', 'espinaca|100 g'],
@@ -4253,7 +4253,7 @@ return [
 ['Calamares Apanados', 'cena',
  ['anillos de calamar|150 g', 'Harina|al gusto', 'huevo|1', 'Panko|al gusto', 'Sal|al gusto'],
  ['Lava los calamares y sécalos completamente con papel absorbente.', 'Prepara tres bowls: harina, huevo batido y panko con especias.', 'Pasa cada anillo por harina, luego por huevo, finalmente por panko.', 'Rocía aceite en spray. Colócalos separados en la canasta.', 'Cocina 6 min. Gira cada anillo con pinzas. Cocina 5 min más hasta dorar.', '(Tip: Los calamares deben cocinarse rápido; demasiado tiempo hará que queden duros y gomosos.)'],
- ['alto en proteína', 'ligero', 'rápido'], 333, 31, 12, 37, 6, 1, 2, '/assets/img/recetas/019-calamares-apanados.jpg'],
+ ['alto en proteína', 'ligero', 'rápido', 'vegetariano'], 333, 31, 12, 37, 6, 1, 2, '/assets/img/recetas/019-calamares-apanados.jpg'],
 
 ['Filete de Pescado Limón Pimienta', 'cena',
  ['filetes de pescado blanco|1', 'limón|1', 'Sal y pimienta negra|al gusto', 'Aceite de oliva|al gusto'],
@@ -4579,17 +4579,17 @@ return [
 ['Pan de Coliflor sin Gluten', 'snack',
  ['coliflor|1 cabeza grande', 'huevo|2 unidades', 'queso|1/2 taza', 'parmesano|1 cucharada', 'ajo|1 cucharadita', 'orégano|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precalienta el horno a 200°C (390°F) y cubre una bandeja con papel pergamino.', 'Lava, seca y corta la coliflor en trozos pequeños; tritúrala hasta obtener una textura similar al arroz.', 'Coloca la coliflor triturada en un bol y cocínala en microondas 5‑6 minutos, hasta que esté tierna; deja que se enfríe ligeramente y exprime el exceso de agua con un paño limpio.', 'En un bol grande combina la coliflor escurrida, los huevos, el queso, el parmesano rallado, el ajo en polvo, el orégano, sal y pimienta; mezcla hasta lograr una masa homogénea.', 'Extiende la masa sobre la bandeja formando un rectángulo de aproximadamente 1 cm de grosor.', 'Hornea 20‑25 minutos, hasta que la superficie esté dorada y la masa firme al tacto.', 'Retira del horno, deja reposar 5 minutos y corta en porciones para servir.'],
- ['tradicional', 'sin gluten', 'ligero'], 135, 8, 45, 9, 8, 2, 2, '/assets/img/recetas/pan-de-coliflor-sin-gluten-ingredientes.jpg'],
+ ['tradicional', 'sin gluten', 'ligero', 'vegetariano'], 135, 8, 45, 9, 8, 2, 2, '/assets/img/recetas/pan-de-coliflor-sin-gluten-ingredientes.jpg'],
 
 ['Pan de Espinacas y Parmesano', 'snack',
  ['espinacas|2 tazas', 'huevo|3', 'aceite de oliva|1/4 taza', 'queso parmesano|1/2 taza', 'harina de almendras|1 taza', 'levadura en polvo|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Precalienta el horno a 180°C (350°F) y engrasa ligeramente un molde para pan.', 'En un procesador, pulsa las espinacas frescas hasta picarlas finamente, luego añade los huevos, el aceite de oliva y el queso parmesano; procesa hasta obtener una mezcla homogénea.', 'Transfiere la mezcla a un bol y agrega la harina de almendra, la levadura en polvo, sal y pimienta; mezcla con una espátula hasta integrar sin grumos.', 'Vierte la masa en el molde preparado y alisa la superficie con una espátula húmeda.', 'Hornea 35‑40 minutos, hasta que la parte superior esté dorada y al insertar un palillo este salga limpio.', 'Deja enfriar el pan en el molde 10 minutos, luego desmóldalo y colócalo sobre una rejilla para que se enfríe completamente antes de cortar.'],
- ['sin gluten', 'alto en proteína'], 120, 7, 40, 8, 7, 2, 2, '/assets/img/recetas/pan-de-espinacas-y-parmesano.jpg'],
+ ['sin gluten', 'alto en proteína', 'vegetariano'], 120, 7, 40, 8, 7, 2, 2, '/assets/img/recetas/pan-de-espinacas-y-parmesano.jpg'],
 
 ['Pan de Papas Sin Gluten', 'snack',
  ['papa|600 g', 'huevo|2 unidades', 'queso|1/4 taza', 'polvo de hornear|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto', 'hierba seca|al gusto'],
  ['Precalienta el horno a 180 °C (350 °F) y engrasa un molde para pan con aceite o mantequilla.', 'Ralla las papas y escúrrelas ligeramente para eliminar el exceso de humedad.', 'En un bol grande bate los huevos y añade el queso rallado, el polvo de hornear, sal, pimienta y, si deseas, las hierbas secas; mezcla bien.', 'Incorpora las papas ralladas al bol y mezcla hasta que queden uniformemente cubiertas por la masa.', 'Vierte la mezcla en el molde, alisando la superficie con una espátula.', 'Hornea 25‑30 minutos, vigilando que la superficie adquiera un color dorado y que al insertar un palillo este salga limpio.', 'Retira del horno, deja reposar 5 minutos en el molde y luego desmolda para cortar en porciones.'],
- ['sin gluten', 'ligero', 'económico'], 70, 2, 30, 13, 1, 1, 2, 'https://images.pexels.com/photos/37238854/pexels-photo-37238854.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
+ ['sin gluten', 'ligero', 'económico', 'vegetariano'], 70, 2, 30, 13, 1, 1, 2, 'https://images.pexels.com/photos/37238854/pexels-photo-37238854.jpeg?auto=compress&cs=tinysrgb&h=650&w=940'],
 
 ['Pan de Pera y Canela', 'snack',
  ['pera|2 unidades', 'huevo|3 unidades', 'aceite de coco|1/4 taza', 'miel|1/4 taza', 'extracto de vainilla|1 cucharadita', 'harina de almendra|2 tazas', 'canela|1 cucharadita', 'bicarbonato de sodio|1 cucharadita', 'sal|una pizca'],
@@ -4854,7 +4854,7 @@ return [
 ['Mini brownie SOP', 'snack',
  ['harina de avena|30 g', 'proteína en polvo|10 g', 'cacao puro|10 g', 'levadura|2 g', 'bebida vegetal|30 g', 'clara de huevo|70 g'],
  ['Precalienta el microondas a potencia alta y prepara un recipiente apto de 15 cm de diámetro.', 'En un bol, combina 30 g de harina de avena, 10 g de proteína en polvo (o harina de almendra), 10 g de cacao puro, 2 g de levadura y mezcla bien para evitar grumos.', 'Agrega 30 g de bebida vegetal y 70 g de claras de huevo; bate vigorosamente hasta obtener una masa homogénea y ligeramente espesa.', 'Vierte la mezcla en el recipiente preparado, alisando la superficie con una espátula.', 'Cocina en el microondas 40 s; verifica que el centro esté firme y ligeramente esponjoso, de lo contrario añade 10 s adicionales.', 'Deja reposar 1 min para que termine de asentarse la textura, corta en porciones y sirve acompañado de una infusión caliente.'],
- ['alto en proteína', 'sin gluten'], 252, 25, 20, 20, 8, 2, 3, '/assets/img/recetas/mini-brownie-sop.jpg'],
+ ['alto en proteína', 'sin gluten', 'vegetariano'], 252, 25, 20, 20, 8, 2, 3, '/assets/img/recetas/mini-brownie-sop.jpg'],
 
 ['Smoothie bowl bicolor', 'snack',
  ['queso fresco|50 g', 'plátano|1', 'vainilla|unas gotas', 'cacao puro|1 cucharada', 'coco rallado|al gusto', 'frambuesas|al gusto', 'crema de cacahuete|al gusto'],
@@ -4974,12 +4974,12 @@ return [
 ['Brownies de batata y cacao sin harina', 'snack',
  ['batata|1 taza', 'cacao|½ taza', 'miel|2 cucharadas', 'huevos|2', 'polvo de hornear|½ cucharadita', 'esencia de vainilla|1 cucharadita'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente un molde cuadrado de 20 cm con aceite vegetal o forra con papel pergamino.', 'En un bol grande, combina el puré de batata cocida, el cacao amargo en polvo, la miel (o jarabe de arce) y la esencia de vainilla; mezcla con una espátula hasta lograr una masa homogénea y sin grumos.', 'Incorpora los dos huevos batidos y el polvo de hornear, mezclando suavemente hasta que todo quede bien integrado, evitando sobrebatir.', 'Vierte la masa en el molde preparado, alisando la superficie con la espátula para que quede uniforme.', 'Hornea durante 18‑22 minutos, o hasta que al insertar un palillo este salga limpio y la superficie haya adquirido un leve tono crujiente. Deja enfriar 10 minutos antes de cortar en porciones y servir.'],
- ['tradicional', 'económico'], 246, 4, 30, 35, 10, 20, 3, '/assets/img/recetas/116-brownies-de-batata-y-cacao-sin-harina.jpg'],
+ ['tradicional', 'económico', 'vegetariano'], 246, 4, 30, 35, 10, 20, 3, '/assets/img/recetas/116-brownies-de-batata-y-cacao-sin-harina.jpg'],
 
 ['Brownies de chocolate amargo y batata', 'snack',
  ['batata|1 taza', 'cacao|2 cucharadas', 'mantequilla de almendras|2 cucharadas', 'miel|1 cucharada', 'huevo|1'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente un molde cuadrado de 20 cm.', 'En un bol grande, combina la taza de puré de batata con las 2 cucharadas de cacao amargo, 2 cucharadas de mantequilla de almendras y 1 cucharada de miel; mezcla hasta obtener una masa homogénea y sin grumos.', 'Incorpora el huevo batido a la mezcla anterior y revuelve rápidamente para que se integre sin cocinarlo.', 'Vierte la masa en el molde preparado, alisando la superficie con una espátula.', 'Hornea durante 18‑20 minutos, o hasta que al insertar un palillo este salga con unas migas húmedas y la superficie esté firme al tacto.', 'Retira del horno, deja reposar 5 minutos, corta en porciones y sirve tibio o a temperatura ambiente.'],
- ['tradicional', 'económico'], 271, 4, 25, 30, 15, 20, 3, '/assets/img/recetas/036-brownies-de-chocolate-amargo-y-batata.jpg'],
+ ['tradicional', 'económico', 'vegetariano'], 271, 4, 25, 30, 15, 20, 3, '/assets/img/recetas/036-brownies-de-chocolate-amargo-y-batata.jpg'],
 
 ['Cheesecake sin horno de frutos rojos', 'snack',
  ['almendras|1 taza', 'dátiles|1 taza', 'yogur natural|1 taza', 'frutos rojos|1/2 taza', 'miel|1 cucharada'],
@@ -5019,27 +5019,27 @@ return [
 ['Flan de cacao sin azúcar', 'snack',
  ['leche de almendras|2 tazas', 'cacao amargo|2 cucharadas', 'miel|2 cucharadas', 'huevo|2', 'esencia de vainilla|1 cucharadita'],
  ['En un cazo a fuego medio calienta la leche de almendras sin que llegue a hervir, agrega el cacao amargo y revuelve hasta que se disuelva completamente y la mezcla adquiera un color homogéneo', 'Retira del fuego y deja templar unos 2 minutos; incorpora la miel o stevia al gusto y la esencia de vainilla, mezclando bien', 'En un bol aparte bate los huevos y viértelos lentamente a la mezcla de cacao, batiendo constantemente para evitar que se cuajen', 'Vierte la preparación en moldes individuales previamente engrasados ligeramente', 'Coloca los moldes en una bandeja para baño María, lleva al horno precalentado a 160 °C y hornea 25 minutos o hasta que al insertar un palillo este salga limpio', 'Retira del horno, deja enfriar a temperatura ambiente y luego refrigera al menos 2 horas antes de desmoldar y servir'],
- ['económico'], 250, 10, 30, 30, 10, 10, 5, '/assets/img/recetas/123-flan-de-cacao-sin-azucar.jpg'],
+ ['económico', 'vegetariano'], 250, 10, 30, 30, 10, 10, 5, '/assets/img/recetas/123-flan-de-cacao-sin-azucar.jpg'],
 
 ['Flan de coco sin azúcar', 'snack',
  ['leche de coco|2 tazas', 'huevo|2', 'miel|1 cucharada', 'esencia de vainilla|1 cucharadita'],
  ['Calienta la leche de coco en una cacerola a fuego medio sin dejar que hierva, removiendo ocasionalmente', 'Retira del fuego y deja reposar 2 minutos; incorpora la miel o stevia y la esencia de vainilla, mezclando hasta que se integren', 'Bate los huevos en un bol aparte y viértelos poco a poco a la leche de coco, batiendo constantemente para obtener una mezcla lisa y sin grumos', 'Vierte la mezcla en moldes individuales previamente engrasados ligeramente', 'Dispón los moldes en una bandeja para baño María, hornea en horno precalentado a 160 °C durante 25 minutos o hasta que al probar con un palillo este salga limpio', 'Enfría a temperatura ambiente y refrigera al menos 2 horas antes de servir'],
- ['económico'], 295, 10, 30, 30, 15, 10, 5, '/assets/img/recetas/129-flan-de-coco-sin-azucar.jpg'],
+ ['económico', 'vegetariano'], 295, 10, 30, 30, 15, 10, 5, '/assets/img/recetas/129-flan-de-coco-sin-azucar.jpg'],
 
 ['Galletas de avellana y cacao sin azúcar', 'snack',
  ['harina de almendras|1 taza', 'avellana|½ taza', 'cacao amargo|2 cucharadas', 'miel|2 cucharadas', 'huevo|1'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente una bandeja de hornear con aceite de coco o papel pergamino.', 'En un bol grande, combina la harina de almendras, las avellanas molidas y el cacao amargo; mezcla bien para distribuir los ingredientes secos.', 'Añade la miel (o stevia) y el huevo, batiendo hasta obtener una masa homogénea y sin grumos. Si la masa está demasiado pegajosa, agrega una cucharada más de harina de almendras.', 'Con una cucharita, toma porciones de masa y forma pequeñas bolitas; colócalas en la bandeja y aplánalas con el dorso de la cuchara hasta que tengan un grosor de 0.5 cm.', 'Hornea durante 12‑15 min, hasta que los bordes de las galletas se vean ligeramente dorados y la superficie esté firme.', 'Retira del horno y deja reposar 5 min sobre la bandeja antes de transferirlas a una rejilla para que se enfríen completamente.'],
- ['económico'], 362, 15, 20, 35, 18, 10, 8, '/assets/img/recetas/040-galletas-de-avellana-y-cacao-sin-azucar.jpg'],
+ ['económico', 'vegetariano'], 362, 15, 20, 35, 18, 10, 8, '/assets/img/recetas/040-galletas-de-avellana-y-cacao-sin-azucar.jpg'],
 
 ['Galletas de cacao y almendras sin azúcar', 'snack',
  ['harina de almendras|1 taza', 'cacao amargo|¼ taza', 'miel|2 cucharadas', 'huevo|1', 'polvo de hornear|1 cucharadita'],
  ['Precalienta el horno a 180 °C y prepara una bandeja con papel pergamino.', 'En un bol, mezcla la harina de almendras, el cacao amargo y el polvo de hornear hasta que quede bien combinado.', 'Incorpora el huevo y la miel (o stevia), batiendo hasta que la masa sea homogénea y sin grumos.', 'Forma pequeñas bolitas con la masa y colócalas en la bandeja; aplánalas ligeramente con la palma de la mano o el dorso de una cuchara.', 'Hornea durante 12‑15 min, observando que los bordes se doren ligeramente y la superficie quede firme al tacto.', 'Saca las galletas y deja enfriar sobre una rejilla antes de servir o almacenar.'],
- ['económico'], 332, 12, 20, 35, 16, 10, 6, '/assets/img/recetas/120-galletas-de-cacao-y-almendras-sin-azucar.jpg'],
+ ['económico', 'vegetariano'], 332, 12, 20, 35, 16, 10, 6, '/assets/img/recetas/120-galletas-de-cacao-y-almendras-sin-azucar.jpg'],
 
 ['Galletas de mantequilla de maní y avena', 'snack',
  ['avena|1 taza', 'mantequilla de maní|½ taza', 'miel|1 cucharada', 'huevo|1 unidad', 'uvas pasas|10 unidades'],
  ['Precalienta el horno a 180 °C y prepara una bandeja con papel pergamino o una ligera capa de aceite de coco.', 'En un bol, combina la avena, la mantequilla de maní y la miel (o stevia); bate hasta obtener una mezcla homogénea.', 'Añade el huevo y mezcla bien hasta que la masa se una y sea fácil de manejar.', 'Con una cuchara, forma pequeñas bolitas y colócalas en la bandeja; aplánalas con el dorso de la cuchara para que tengan un grosor uniforme de 0.5 cm.', 'Hornea durante 12‑15 min, hasta que los bordes estén dorados y la superficie firme.', 'Retira del horno y deja reposar 5 min antes de transferir a una rejilla para que se enfríen completamente.'],
- ['tradicional'], 244, 4, 20, 30, 12, 10, 2, '/assets/img/recetas/131-galletas-de-mantequilla-de-mani-y-avena.jpg'],
+ ['tradicional', 'vegetariano'], 244, 4, 20, 30, 12, 10, 2, '/assets/img/recetas/131-galletas-de-mantequilla-de-mani-y-avena.jpg'],
 
 ['Guacamole con bastones de zanahoria', 'snack',
  ['palta|1', 'jugo de limón|½', 'sal|al gusto', 'pimienta|al gusto', 'zanahoria|1'],
@@ -5069,7 +5069,7 @@ return [
 ['Huevos revueltos con palta y tomate', 'snack',
  ['huevo|2', 'palta|½', 'tomate|½'],
  ['Bate los 2 huevos en un bol con una pizca de sal hasta que queden espumosos', 'Calienta una sartén antiadherente a fuego medio y agrega una cucharadita de aceite o mantequilla', 'Vierte los huevos batidos y, con una espátula, revuelve suavemente, creando tiras suaves, durante 1‑2 min hasta que alcancen la consistencia deseada', 'Retira la sartén del fuego y coloca los huevos revueltos en un plato', 'Distribuye las rodajas de palta sobre los huevos y espolvorea los cubos de tomate por encima', 'Añade una pizca de sal y pimienta al gusto y sirve caliente'],
- ['alto en proteína', 'ligero'], 262, 15, 10, 10, 18, 3, 2, '/assets/img/recetas/024-huevos-revueltos-con-palta-y-tomate.jpg'],
+ ['alto en proteína', 'ligero', 'vegetariano'], 262, 15, 10, 10, 18, 3, 2, '/assets/img/recetas/024-huevos-revueltos-con-palta-y-tomate.jpg'],
 
 ['Infusión de jengibre y cúrcuma', 'snack',
  ['jengibre|1 rodaja', 'cúrcuma|½ cucharadita', 'agua caliente|1 taza', 'jugo de limón|1 cucharada'],
@@ -5119,7 +5119,7 @@ return [
 ['Muffins de chocolate y banana', 'snack',
  ['banana|1', 'huevo|2', 'harina de almendras|½ taza', 'cacao amargo|¼ taza', 'polvo de hornear|1 cucharadita'],
  ['Pela y aplasta la banana madura hasta obtener una puré homogéneo.', 'Añade los huevos y bate con un tenedor hasta que la mezcla quede uniforme.', 'Incorpora la harina de almendras, el cacao amargo y el polvo de hornear; mezcla con una espátula hasta que no queden grumos.', 'Divide la masa en moldes de muffins previamente engrasados o con papel de hornear.', 'Hornea a 180 °C durante 20 minutos o hasta que al insertar un palillo en el centro, éste salga limpio.', 'Saca los muffins del horno y deja enfriar 5 minutos antes de desmoldar.', 'Sirve tibio o a temperatura ambiente, decorado con virutas de chocolate si lo deseas.'],
- ['ligero', 'rápido'], 246, 4, 25, 35, 10, 15, 2, '/assets/img/recetas/122-muffins-de-chocolate-y-banana.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 246, 4, 25, 35, 10, 15, 2, '/assets/img/recetas/122-muffins-de-chocolate-y-banana.jpg'],
 
 ['Muffins de zanahoria y almendras', 'snack',
  ['zanahoria|1 taza', 'huevo|2 unidades', 'harina de almendra|½ taza', 'canela|1 cucharadita', 'miel|1 cucharada'],
@@ -5189,7 +5189,7 @@ return [
 ['Torta de chocolate sin azúcar y sin harina', 'snack',
  ['huevos|3', 'cacao amargo|½ taza', 'almendras|½ taza', 'miel|¼ taza', 'polvo de hornear|1 cucharadita'],
  ['Precalienta el horno a 180 °C y engrasa un molde redondo de 20 cm con mantequilla o aceite en aerosol.', 'En un bol, bate los huevos con el cacao amargo hasta que la mezcla sea uniforme y sin grumos.', 'Añade las almendras molidas, la miel (o stevia) y el polvo de hornear; mezcla con movimientos envolventes hasta integrar todos los ingredientes.', 'Vierte la masa en el molde y alisa la superficie con una espátula.', 'Hornea durante 30 min, comprobando la cocción con un palillo; debe salir limpio y la corteza ligeramente firme.', 'Deja enfriar 10 min antes de desmoldar. Puedes decorar con virutas de chocolate sin azúcar o una pizca de cacao en polvo.'],
- ['sin gluten', 'económico'], 275, 15, 35, 20, 15, 15, 5, '/assets/img/recetas/124-torta-de-chocolate-sin-azucar-y-sin-harina.jpg'],
+ ['sin gluten', 'económico', 'vegetariano'], 275, 15, 35, 20, 15, 15, 5, '/assets/img/recetas/124-torta-de-chocolate-sin-azucar-y-sin-harina.jpg'],
 
 ['Tortitas de batata y coco', 'snack',
  ['batata|1 unidad', 'coco rallado|½ taza', 'huevo|1 unidad', 'miel|1 cucharadita'],
@@ -5359,7 +5359,7 @@ return [
 ['Brownie sin azucar', 'snack',
  ['harina|1 taza', 'cacao|1/2 taza', 'edulcorante|1/2 taza', 'huevo|2 unidades', 'aceite de coco|1/4 taza', 'esencia de vainilla|1 cucharadita', 'nuez|1/2 taza'],
  ['Precalienta el horno a 180 °C y engrasa ligeramente un molde cuadrado o rectangular.', 'En un bol grande, tamiza la harina de almendras, el cacao en polvo y el edulcorante sin calorías; mezcla hasta que no queden grumos.', 'Añade los huevos, el aceite de coco y la esencia de vainilla; bate con una espátula hasta obtener una masa homogénea.', 'Incorpora las nueces picadas (si las usas) y mezcla suavemente para distribuirlas sin romperlas.', 'Vierte la masa en el molde preparado y alisa la superficie con una espátula.', 'Hornea durante 20‑25  minutos, o hasta que al insertar un palillo en el centro salga con unas migas húmedas.', 'Retira del horno y deja enfriar 10 min antes de desmoldar.', 'Corta en cuadrados y sirve, decorando con un toque de cacao en polvo o nueces adicionales si lo deseas.'],
- ['ligero', 'sin gluten', 'alto en proteína'], 150, 5, 35, 12, 9, 0, 4, '/assets/img/recetas/184-brownie-sin-azucar.jpg'],
+ ['ligero', 'sin gluten', 'alto en proteína', 'vegetariano'], 150, 5, 35, 12, 9, 0, 4, '/assets/img/recetas/184-brownie-sin-azucar.jpg'],
 
 ['Cheescake de calabaza sin azucar', 'snack',
  ['galleta integral|1 taza', 'mantequilla|3 cucharadas', 'queso crema|250 g', 'calabaza|1 taza', 'edulcorante|1/2 taza', 'huevo|2 unidades', 'especia de calabaza|al gusto'],
@@ -5374,12 +5374,12 @@ return [
 ['Flan de Café Aromático', 'snack',
  ['yema|4 unidades', 'claras|8 unidades', 'leche|2 tazas', 'agua|1 taza', 'café|1 1/2 cucharadas', 'endulzante|2 1/2 cucharadas', 'vainilla|1 cucharada'],
  ['Batimos con batidor de alambre manual las claras y las yemas con el endulzante para diabéticos Agregamos la esencia, el almidón disuelto en la leche descremada y el café previamente disuelto en la taza de agua caliente.', 'Volcamos toda la preparación en la budinera y cocinamos en horno convencional a baño María o en molde adecuado para microondas, sin baño María.', 'Cuando está cuajado, retiramos, dejamos enfriar y desmoldamos.'],
- ['sin gluten'], 110, 5, 60, 4, 8, 3, 1, '/assets/img/recetas/068-flan-de-cafe-aromatico.jpg'],
+ ['sin gluten', 'vegetariano'], 110, 5, 60, 4, 8, 3, 1, '/assets/img/recetas/068-flan-de-cafe-aromatico.jpg'],
 
 ['Flan de huevo sin azucar', 'snack',
  ['huevo|4 unidades', 'leche|2 tazas', 'edulcorante|al gusto', 'vainilla|1 cucharadita'],
  ['Precalienta el horno a 180°C. En un recipiente, bate los huevos, la leche descremada, el edulcorante y la esencia de vainilla.', 'Vierte la mezcla en moldes individuales para flan previamente caramelizados con edulcorante líquido.', 'Coloca los moldes en una bandeja para horno con agua caliente hasta la mitad de su altura.', 'Hornea durante 30-35 minutos, o hasta que al insertar un palillo en el centro del flan, este salga limpio.', 'Deja enfriar y refrigera durante al menos 2 horas antes de desmoldar. Sirve frío.'],
- ['sin gluten'], 120, 5, 60, 7, 8, 1, 0, '/assets/img/recetas/181-flan-de-huevo-sin-azucar.jpg'],
+ ['sin gluten', 'vegetariano'], 120, 5, 60, 7, 8, 1, 0, '/assets/img/recetas/181-flan-de-huevo-sin-azucar.jpg'],
 
 ['Galletas con avena y chocolate', 'snack',
  ['chocolate|90 g', 'leche|20 ml', 'harina de avena|120 g', 'copos de avena|40 g', 'edulcorante|al gusto'],
@@ -5389,17 +5389,17 @@ return [
 ['Galletas de almendra sin azúcar', 'snack',
  ['harina de almendra|1 taza', 'edulcorante|1/4 taza', 'huevo|1 unidad', 'esencia de vainilla|1 cdta', 'almendra|1/4 taza'],
  ['Precalienta el horno a 180°C (350°F) y cubre una bandeja para hornear con papel pergamino.', 'En un tazón, mezcla la harina de almendras, el edulcorante, el huevo y la esencia de vainilla hasta formar una masa.', 'Divide la masa en porciones y forma galletas redondas del tamaño deseado. Colócalas en la bandeja para hornear.', 'Espolvorea las almendras picadas sobre las galletas y presiónalas ligeramente.', 'Hornea durante aproximadamente 12-15 minutos o hasta que estén doradas. Deja enfriar antes de disfrutar.'],
- ['ligero', 'sin gluten'], 80, 2, 25, 2, 7, 0, 1, '/assets/img/recetas/185-galletas-de-almendra-sin-azucar.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 80, 2, 25, 2, 7, 0, 1, '/assets/img/recetas/185-galletas-de-almendra-sin-azucar.jpg'],
 
 ['Galletas de avena y pasas sin azúcar', 'snack',
  ['harina de avena|1 taza', 'copos de avena|1/2 taza', 'edulcorante|1/4 taza', 'pasas|1/2 taza', 'aceite de coco|1/4 taza', 'huevo|1 unidad', 'esencia de vainilla|1 cdta', 'canela|1 cdta'],
  ['Precalienta el horno a 180°C. En un bol, mezcla la harina de avena, los copos de avena, el edulcorante, las pasas, el aceite de coco, el huevo, la esencia de vainilla y la canela en polvo.', 'Forma pequeñas bolitas con la masa y colócalas en una bandeja para hornear previamente engrasada o forrada con papel de horno.', 'Aplana ligeramente las bolitas con una espátula o tenedor.', 'Hornea durante 10-12 minutos, o hasta que estén doradas. Deja enfriar antes de servir.'],
- ['ligero', 'sin gluten'], 120, 2, 30, 13, 7, 5, 3, '/assets/img/recetas/183-galletas-de-avena-y-pasas-sin-azucar.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 120, 2, 30, 13, 7, 5, 3, '/assets/img/recetas/183-galletas-de-avena-y-pasas-sin-azucar.jpg'],
 
 ['Galletas de yogur sin azúcar', 'snack',
  ['yogur|125 ml', 'aceite de coco|45 ml', 'huevo|1 unidad', 'harina de avena|250 g', 'edulcorante|1 cdta'],
  ['En un bol, batimos el yogur con el huevo y el aceite de coco líquido.', 'Añadimos la harina tamizada poco a poco y la sucralosa.', 'Quedará una masa pegajosa que no se puede trabajar.', 'La guardaremos en la nevera por lo menos durante 30min, para que esté consistente.', 'Formamos bolitas con la masa fría y las aplastamos sobre la bandeja del horno, forrada con papel de hornear.', 'Si queremos, podemos añadir cerezas, pepitas de chocolate, etc.', 'Con el horno previamente precalentado y calor arriba y abajo, horneamos nuestras galletas durante 15-20min a 180º C, hasta que se doren ligeramente.', 'Dejamos enfriar por completo sobre una rejilla, decoramos con los toques finales.'],
- ['ligero', 'sin gluten'], 130, 3, 35, 13, 7, 2, 2, '/assets/img/recetas/174-galletas-de-yogur-sin-azucar.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 130, 3, 35, 13, 7, 2, 2, '/assets/img/recetas/174-galletas-de-yogur-sin-azucar.jpg'],
 
 ['Gelatina de frutas sin azúcar', 'snack',
  ['gelatina|1 sobre', 'agua|al gusto', 'fruta|al gusto'],
@@ -5589,7 +5589,7 @@ return [
 ['Flan de coco keto', 'snack',
  ['crema espesa|1 taza', 'leche de coco|1/2 taza', 'huevo|2', 'eritritol|1/4 taza', 'extracto de vainilla|1 cucharadita', 'coco rallado|1/2 taza'],
  ['Precalienta el horno a 180°C (350°F). En un bol, bate los huevos con el eritritol hasta que estén bien mezclados.', 'Agrega la crema espesa, la leche de coco, la vainilla y el coco rallado. Mezcla bien.', 'Vierte la mezcla en moldes individuales.', 'Coloca los moldes en una fuente para horno con agua caliente (baño maría) y hornea por 40 minutos.', 'Dejar enfriar y refrigerar por al menos 2 horas antes de servir.'],
- ['alto en proteína', 'sin gluten'], 380, 20, 120, 12, 28, 2, 4, '/assets/img/recetas/028-flan-de-coco-keto.jpg'],
+ ['alto en proteína', 'sin gluten', 'vegetariano'], 380, 20, 120, 12, 28, 2, 4, '/assets/img/recetas/028-flan-de-coco-keto.jpg'],
 
 ['Galletas de almendras y canela', 'snack',
  ['harina de almendra|1 taza', 'eritritol|1/4 taza', 'canela|1 cucharadita', 'huevo|1', 'mantequilla|2 cucharadas', 'extracto de vainilla|1/2 cucharadita', 'polvo para hornear|1/2 cucharadita'],
@@ -5609,7 +5609,7 @@ return [
 ['Huevos Rellenos con Mayonesa y Mostaza', 'snack',
  ['huevo|4 duros', 'mayonesa|2 cucharadas', 'mostaza|1 cucharadita', 'sal|al gusto', 'pimienta|al gusto'],
  ['Corta los huevos por la mitad y retira las yemas.', 'Mezclar las yemas con la mayonesa y la mostaza.', 'Rellena las claras de huevo con la mezcla.'],
- ['ligero', 'sin gluten'], 200, 12, 15, 2, 16, 1, 0, '/assets/img/recetas/023-huevos-rellenos-con-mayonesa-y-mostaza.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 200, 12, 15, 2, 16, 1, 0, '/assets/img/recetas/023-huevos-rellenos-con-mayonesa-y-mostaza.jpg'],
 
 ['Mousse de limón cetogénico', 'snack',
  ['crema espesa|1 taza', 'queso crema|1/4 taza', 'jugo de limón|2 cucharadas', 'raspadura de limón|1 cucharada', 'eritritol|2 cucharadas', 'extracto de vainilla|1/2 cucharadita'],
@@ -5669,7 +5669,7 @@ return [
 ['Calabacín Crocante', 'snack',
  ['calabacín|1', 'huevo|1', 'Pan integral|al gusto', 'Queso parmesano|al gusto'],
  ['Corta el calabacín en bastones.', 'Pásalos por huevo batido.', 'Cúbrelos con pan rallado y parmesano.', 'Rocía aceite en spray.', 'Cocina hasta dorar.', '(Tip: Sécalos antes de apanarlos para que no queden aguados.)'],
- ['ligero', 'rápido'], 338, 24, 12, 32, 13, 9, 6, '/assets/img/recetas/011-calabacin-crocante.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 338, 24, 12, 32, 13, 9, 6, '/assets/img/recetas/011-calabacin-crocante.jpg'],
 
 ['Coliflor Buffalo Saludable', 'snack',
  ['coliflor|1', 'Salsa buffalo|al gusto', 'Aceite de oliva|al gusto', 'Ajo en polvo|al gusto'],
@@ -5709,7 +5709,7 @@ return [
 ['Palitos de Queso Apanados', 'snack',
  ['Queso mozzarella en bastones|al gusto', 'huevo|1', 'Panko integral|al gusto', 'Orégano|al gusto'],
  ['Pasa el queso por huevo.', 'Cubre con panko y orégano.', 'Repite el apanado.', 'Congela 15 minutos.', 'Cocina hasta dorar.', '(Tip: Congelar antes evita que el queso se derrita demasiado rápido.)'],
- ['alto en proteína', 'rápido', 'económico'], 397, 27, 10, 21, 22, 3, 1, '/assets/img/recetas/019-palitos-de-queso-apanados.jpg'],
+ ['alto en proteína', 'rápido', 'económico', 'vegetariano'], 397, 27, 10, 21, 22, 3, 1, '/assets/img/recetas/019-palitos-de-queso-apanados.jpg'],
 
 ['Brochetas de Fruta Tibia', 'snack',
  ['Piña|al gusto', 'Banano|al gusto', 'Fresas|al gusto', 'Canela|al gusto'],
@@ -5719,7 +5719,7 @@ return [
 ['Nuggets de Coliflor', 'snack',
  ['Coliflor|al gusto', 'huevo|1', 'Pan integral|al gusto', 'Queso parmesano|al gusto'],
  ['Tritura la coliflor cocida.', 'Mezcla con huevo, sal y parmesano.', 'Forma nuggets.', 'Pasa por pan rallado.', 'Cocina hasta dorar.', '(Tip: Exprime bien la coliflor para quitar exceso de agua.)'],
- ['ligero', 'rápido'], 322, 23, 15, 29, 13, 5, 6, '/assets/img/recetas/023-nuggets-de-coliflor.jpg'],
+ ['ligero', 'rápido', 'vegetariano'], 322, 23, 15, 29, 13, 5, 6, '/assets/img/recetas/023-nuggets-de-coliflor.jpg'],
 
 ['Chips de Remolacha', 'snack',
  ['remolacha|1', 'Aceite en spray|al gusto'],
@@ -5729,7 +5729,7 @@ return [
 ['Huevitos de Codorniz Crocantes', 'snack',
  ['Huevos de codorniz|al gusto', 'huevo|1', 'Pan integral|al gusto'],
  ['Pela los huevos de codorniz.', 'Pásalos por huevo batido.', 'Cúbrelos con pan rallado.', 'Rocía aceite.', 'Cocina hasta dorar.', '(Tip: Son perfectos como snack alto en proteína.)'],
- ['ligero', 'rápido', 'económico'], 319, 22, 8, 26, 14, 5, 4, '/assets/img/recetas/026-huevitos-de-codorniz-crocantes.jpg'],
+ ['ligero', 'rápido', 'económico', 'vegetariano'], 319, 22, 8, 26, 14, 5, 4, '/assets/img/recetas/026-huevitos-de-codorniz-crocantes.jpg'],
 
 ['Chips de Plátano Maduro', 'snack',
  ['plátano firme|1', 'Aceite en spray|al gusto', 'Canela|al gusto'],
@@ -5754,7 +5754,7 @@ return [
 ['Barras de Coco y Almendras', 'snack',
  ['coco|2 cdas', 'almendras|1 cda', 'claras de huevo|1', 'miel|1/4 cdas'],
  ['Mezcla todos los ingredientes.', 'Coloca en molde apto para Air Fryer.', 'Cocina durante 10 minutos.', 'Retira cuando estén ligeramente doradas.', 'Deja enfriar antes de cortar.'],
- ['ligero', 'rápido', 'sin gluten'], 156, 3, 10, 9, 13, 5, 3, '/assets/img/recetas/003-barras-de-coco-y-almendras.jpg'],
+ ['ligero', 'rápido', 'sin gluten', 'vegetariano'], 156, 3, 10, 9, 13, 5, 3, '/assets/img/recetas/003-barras-de-coco-y-almendras.jpg'],
 
 ['Barras de Manzana y Canela', 'snack',
  ['manzana|1', 'avena|2 cdas', 'Canela|al gusto', 'miel|1/4 cdas'],
@@ -5949,147 +5949,147 @@ return [
 ['Torta de Banano y Avena', 'snack',
  ['bananos|1', 'huevos|1', 'avena en hojuelas|2 cdas', 'harina de avena|1 cda', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta', 'esencia de vainilla|1/8 cdta', 'miel o endulzante natural|1/4 cdas'],
  ['Precalienta el horno a 180°C.', 'Pela los bananos y tritúralos con un tenedor hasta formar un puré suave.', 'Agrega los huevos y mezcla muy bien.', 'Añade la vainilla y la miel.', 'Incorpora la avena, harina de avena, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar todo.', 'Engrasa un molde, vierte la mezcla y hornea 35-40 minutos.', 'Inserta un palillo; si sale limpio, está lista. Deja enfriar antes de cortar.'],
- ['ligero', 'sin gluten', 'económico'], 139, 5, 38, 25, 3, 9, 3, '/assets/img/recetas/001-torta-de-banano-y-avena.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 139, 5, 38, 25, 3, 9, 3, '/assets/img/recetas/001-torta-de-banano-y-avena.jpg'],
 
 ['Torta de Zanahoria Saludable', 'snack',
  ['zanahorias|1', 'huevos|1', 'aceite de coco|1 cda', 'harina de avena|2 cdas', 'avena|1 cda', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Lava, pela y ralla las zanahorias.', 'En un bowl agrega huevos, miel, vainilla y aceite. Mezcla con batidor manual.', 'Añade la zanahoria rallada.', 'Incorpora la harina de avena, avena en hojuelas, canela y polvo para hornear.', 'Mezcla lentamente hasta integrar.', 'Coloca en molde engrasado y hornea 35-40 minutos. Deja enfriar.'],
- ['ligero', 'sin gluten'], 250, 5, 38, 17, 18, 4, 2, '/assets/img/recetas/002-torta-de-zanahoria-saludable.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 250, 5, 38, 17, 18, 4, 2, '/assets/img/recetas/002-torta-de-zanahoria-saludable.jpg'],
 
 ['Torta de Manzana y Canela', 'snack',
  ['manzanas|1', 'huevos|1', 'avena|2 cdas', 'harina integral|1 cda', 'canela|1/8 cdta', 'vainilla|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Pela y corta las manzanas en cubos pequeños.', 'Precalienta el horno a 180°C.', 'En un bowl mezcla huevos, miel y vainilla.', 'Agrega avena y harina integral.', 'Añade canela y polvo para hornear.', 'Incorpora las manzanas y mezcla suavemente.', 'Vierte en molde engrasado y hornea 35 minutos. Deja enfriar antes de desmoldar.'],
- ['ligero', 'económico'], 126, 5, 35, 23, 2, 8, 3, '/assets/img/recetas/004-torta-de-manzana-y-canela.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 126, 5, 35, 23, 2, 8, 3, '/assets/img/recetas/004-torta-de-manzana-y-canela.jpg'],
 
 ['Torta de Coco y Almendras', 'snack',
  ['huevos|1', 'harina de almendras|2 cdas', 'coco sin azúcar|1 cda', 'leche de coco|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'En un bowl bate los huevos.', 'Añade leche de coco, vainilla y miel.', 'Agrega harina de almendras y coco rallado.', 'Incorpora polvo para hornear y mezcla lentamente.', 'Coloca la mezcla en un molde pequeño.', 'Hornea durante 303-5 minutos. Retira y deja enfriar.'],
- ['ligero', 'sin gluten'], 194, 5, 154, 19, 12, 17, 1, '/assets/img/recetas/005-torta-de-coco-y-almendras.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 194, 5, 154, 19, 12, 17, 1, '/assets/img/recetas/005-torta-de-coco-y-almendras.jpg'],
 
 ['Torta Integral de Yogur', 'snack',
  ['yogur griego natural|1', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Coloca el yogur en un bowl.', 'Agrega huevos y mezcla bien.', 'Añade miel y vainilla.', 'Incorpora harina integral y avena.', 'Agrega polvo para hornear y mezcla hasta integrar.', 'Vierte en molde engrasado y hornea 35 minutos. Deja reposar antes de cortar.'],
- ['ligero', 'económico'], 110, 5, 35, 18, 2, 4, 2, '/assets/img/recetas/006-torta-integral-de-yogur.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 110, 5, 35, 18, 2, 4, 2, '/assets/img/recetas/006-torta-integral-de-yogur.jpg'],
 
 ['Torta de Naranja Casera Saludable', 'snack',
  ['naranjas|1', 'huevos|1', 'harina de avena|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'aceite de coco|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Lava bien las naranjas. Extrae el jugo y un poco de ralladura.', 'Precalienta el horno.', 'Mezcla huevos, miel y aceite.', 'Agrega jugo de naranja.', 'Incorpora harina y avena.', 'Añade polvo para hornear y mezcla suavemente.', 'Hornea durante 35-40 minutos.'],
- ['ligero', 'sin gluten'], 261, 6, 38, 20, 18, 8, 3, '/assets/img/recetas/007-torta-de-naranja-casera-saludable.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 261, 6, 38, 20, 18, 8, 3, '/assets/img/recetas/007-torta-de-naranja-casera-saludable.jpg'],
 
 ['Torta de Avena y Arándanos', 'snack',
  ['huevos|1', 'avena|2 cdas', 'harina de avena|1 cda', 'arándanos|1 cda', 'yogur natural|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos, yogur y miel.', 'Añade avena y harina.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Vierte en un molde y hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
- ['ligero', 'sin gluten', 'económico'], 110, 5, 35, 17, 3, 5, 2, '/assets/img/recetas/008-torta-de-avena-y-arandanos.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 110, 5, 35, 17, 3, 5, 2, '/assets/img/recetas/008-torta-de-avena-y-arandanos.jpg'],
 
 ['Torta de Calabaza y Canela', 'snack',
  ['puré de calabaza|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Cocina la calabaza hasta que esté suave y tritúrala formando puré.', 'Mezcla con huevos, miel y vainilla.', 'Agrega harina y canela.', 'Incorpora polvo para hornear.', 'Coloca en molde engrasado.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 92, 4, 35, 16, 2, 4, 2, '/assets/img/recetas/009-torta-de-calabaza-y-canela.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 92, 4, 35, 16, 2, 4, 2, '/assets/img/recetas/009-torta-de-calabaza-y-canela.jpg'],
 
 ['Torta de Café y Cacao', 'snack',
  ['huevos|1', 'harina de avena|2 cdas', 'café instantáneo|1/8 cda', 'cacao sin azúcar|1/4 cdas', 'yogur natural|1 cda', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos y yogur.', 'Agrega miel.', 'Disuelve el café en una cucharada de agua caliente y añádelo a la mezcla.', 'Incorpora cacao y harina.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 93, 5, 35, 14, 3, 4, 3, '/assets/img/recetas/010-torta-de-cafe-y-cacao.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 93, 5, 35, 14, 3, 4, 3, '/assets/img/recetas/010-torta-de-cafe-y-cacao.jpg'],
 
 ['Torta de Limón y Yogur', 'snack',
  ['huevos|1', 'yogur griego natural|1', 'harina de avena|2 cdas', 'Jugo de 2 limones|al gusto', 'Ralladura de limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno a 180°C.', 'Coloca los huevos en un bowl grande.', 'Agrega el yogur y mezcla muy bien.', 'Añade miel, jugo y ralladura de limón.', 'Incorpora harina de avena.', 'Agrega polvo para hornear y mezcla hasta eliminar grumos.', 'Engrasa un molde y hornea 35 minutos. Deja enfriar antes de servir.'],
- ['ligero', 'sin gluten', 'económico'], 84, 4, 35, 13, 2, 4, 2, '/assets/img/recetas/011-torta-de-limon-y-yogur.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 84, 4, 35, 13, 2, 4, 2, '/assets/img/recetas/011-torta-de-limon-y-yogur.jpg'],
 
 ['Torta de Fresas Saludable', 'snack',
  ['fresas|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'yogur natural|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta las fresas.', 'Mezcla huevos, yogur y miel.', 'Añade harina integral y avena.', 'Agrega polvo para hornear.', 'Incorpora las fresas suavemente.', 'Vierte en un molde y hornea 35 minutos.', 'Deja reposar antes de cortar.'],
- ['ligero', 'económico'], 118, 5, 35, 21, 2, 5, 3, '/assets/img/recetas/012-torta-de-fresas-saludable.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 118, 5, 35, 21, 2, 5, 3, '/assets/img/recetas/012-torta-de-fresas-saludable.jpg'],
 
 ['Torta de Pera y Canela', 'snack',
  ['peras|1', 'huevos|1', 'harina de avena|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'yogur natural|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Pela y corta las peras en cubos.', 'Mezcla huevos, yogur y miel.', 'Añade harina y canela.', 'Agrega polvo para hornear.', 'Incorpora las peras y mezcla suavemente.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 110, 4, 35, 19, 3, 8, 3, '/assets/img/recetas/013-torta-de-pera-y-canela.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 110, 4, 35, 19, 3, 8, 3, '/assets/img/recetas/013-torta-de-pera-y-canela.jpg'],
 
 ['Torta de Avena y Nueces', 'snack',
  ['huevos|1', 'avena|2 cdas', 'harina integral|1 cda', 'nueces|1 cda', 'miel|1/4 cdas', 'canela|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Precalienta el horno.', 'Mezcla huevos y miel.', 'Añade avena y harina.', 'Incorpora nueces y canela.', 'Agrega polvo para hornear.', 'Coloca la mezcla en un molde.', 'Hornea durante 35-40 minutos.'],
- ['ligero', 'económico'], 142, 5, 38, 17, 6, 3, 3, '/assets/img/recetas/014-torta-de-avena-y-nueces.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 142, 5, 38, 17, 6, 3, 3, '/assets/img/recetas/014-torta-de-avena-y-nueces.jpg'],
 
 ['Torta Marmoleada Fit', 'snack',
  ['huevos|1', 'harina de avena|2 cdas', 'cacao sin azúcar|1/4 cdas', 'yogur natural|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Añade harina y polvo para hornear.', 'Divide la mezcla en dos bowls.', 'En uno agrega cacao.', 'Vierte ambas mezclas alternando en el molde.', 'Usa un cuchillo para hacer movimientos suaves y crear el efecto marmoleado.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 104, 6, 35, 14, 4, 4, 3, '/assets/img/recetas/015-torta-marmoleada-fit.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 104, 6, 35, 14, 4, 4, 3, '/assets/img/recetas/015-torta-marmoleada-fit.jpg'],
 
 ['Torta de Piña y Coco', 'snack',
  ['piña|2 cdas', 'coco|1 cda', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Seca ligeramente la piña.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Incorpora la piña.', 'Hornea durante 35 minutos.'],
- ['ligero'], 150, 4, 35, 20, 7, 7, 3, '/assets/img/recetas/016-torta-de-pina-y-coco.jpg'],
+ ['ligero', 'vegetariano'], 150, 4, 35, 20, 7, 7, 3, '/assets/img/recetas/016-torta-de-pina-y-coco.jpg'],
 
 ['Torta de Almendras y Vainilla', 'snack',
  ['huevos|1', 'harina de almendras|2 cdas', 'yogur griego|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega vainilla.', 'Incorpora harina de almendras.', 'Añade polvo para hornear.', 'Hornea durante 30 minutos.'],
- ['ligero', 'sin gluten'], 126, 6, 30, 7, 9, 4, 1, '/assets/img/recetas/017-torta-de-almendras-y-vainilla.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 126, 6, 30, 7, 9, 4, 1, '/assets/img/recetas/017-torta-de-almendras-y-vainilla.jpg'],
 
 ['Torta de Avena y Cacao', 'snack',
  ['huevos|1', 'avena|2 cdas', 'cacao|1/4 cdas', 'banano|1', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura el banano.', 'Mezcla con huevos y miel.', 'Añade avena y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 97, 4, 35, 16, 3, 5, 3, '/assets/img/recetas/018-torta-de-avena-y-cacao.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 97, 4, 35, 16, 3, 5, 3, '/assets/img/recetas/018-torta-de-avena-y-cacao.jpg'],
 
 ['Torta de Mandarina', 'snack',
  ['mandarinas|1', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'yogur|1 cda', 'polvo para hornear|1/8 cdta'],
  ['Extrae el jugo de las mandarinas.', 'Mezcla huevos, yogur y miel.', 'Agrega jugo de mandarina.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 114, 5, 35, 18, 3, 7, 2, '/assets/img/recetas/019-torta-de-mandarina.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 114, 5, 35, 18, 3, 7, 2, '/assets/img/recetas/019-torta-de-mandarina.jpg'],
 
 ['Torta de Yogur y Arándanos', 'snack',
  ['yogur natural|1', 'huevos|1', 'harina de avena|2 cdas', 'arándanos|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Mezcla yogur, huevos y miel.', 'Añade harina y vainilla.', 'Agrega polvo para hornear.', 'Incorpora arándanos suavemente.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 90, 4, 35, 13, 2, 5, 2, '/assets/img/recetas/020-torta-de-yogur-y-arandanos.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 90, 4, 35, 13, 2, 5, 2, '/assets/img/recetas/020-torta-de-yogur-y-arandanos.jpg'],
 
 ['Torta de Ciruelas y Canela', 'snack',
  ['ciruelas|2 cdas', 'huevos|1', 'harina integral|2 cdas', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta las ciruelas.', 'Mezcla huevos y miel.', 'Añade harina y canela.', 'Incorpora ciruelas y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 155, 4, 35, 34, 2, 15, 4, '/assets/img/recetas/021-torta-de-ciruelas-y-canela.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 155, 4, 35, 34, 2, 15, 4, '/assets/img/recetas/021-torta-de-ciruelas-y-canela.jpg'],
 
 ['Torta de Batata y Coco', 'snack',
  ['puré de batata|2 cdas', 'huevos|1', 'coco|1 cda', 'harina de avena|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Cocina y tritura la batata.', 'Mezcla con huevos y miel.', 'Añade harina y coco.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten'], 154, 5, 35, 19, 7, 5, 3, '/assets/img/recetas/022-torta-de-batata-y-coco.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 154, 5, 35, 19, 7, 5, 3, '/assets/img/recetas/022-torta-de-batata-y-coco.jpg'],
 
 ['Torta de Maracuyá Saludable', 'snack',
  ['Pulpa de 2 maracuyás|al gusto', 'huevos|1', 'yogur natural|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega pulpa de maracuyá.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 98, 4, 35, 17, 2, 5, 3, '/assets/img/recetas/023-torta-de-maracuya-saludable.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 98, 4, 35, 17, 2, 5, 3, '/assets/img/recetas/023-torta-de-maracuya-saludable.jpg'],
 
 ['Torta de Cacao y Café', 'snack',
  ['huevos|1', 'harina de avena|2 cdas', 'cacao|1/4 cdas', 'café instantáneo|1/8 cda', 'miel|1/4 cdas', 'yogur natural|1', 'polvo para hornear|1/8 cdta'],
  ['Disuelve el café en poca agua caliente.', 'Mezcla huevos, yogur y miel.', 'Agrega café y cacao.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 88, 5, 35, 13, 3, 4, 3, '/assets/img/recetas/024-torta-de-cacao-y-cafe.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 88, 5, 35, 13, 3, 4, 3, '/assets/img/recetas/024-torta-de-cacao-y-cafe.jpg'],
 
 ['Torta de Mango y Coco', 'snack',
  ['mango|2 cdas', 'coco|1 cda', 'huevos|1', 'harina integral|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura ligeramente el mango.', 'Mezcla huevos y miel.', 'Añade harina y coco.', 'Incorpora mango y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero'], 153, 4, 35, 21, 7, 8, 3, '/assets/img/recetas/025-torta-de-mango-y-coco.jpg'],
+ ['ligero', 'vegetariano'], 153, 4, 35, 21, 7, 8, 3, '/assets/img/recetas/025-torta-de-mango-y-coco.jpg'],
 
 ['Torta de Chía y Limón', 'snack',
  ['huevos|1', 'harina de avena|2 cdas', 'semillas de chía|1/4 cdas', 'Jugo de 1 limón|al gusto', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos y miel.', 'Agrega limón y chía.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 96, 4, 35, 13, 3, 3, 3, '/assets/img/recetas/026-torta-de-chia-y-limon.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 96, 4, 35, 13, 3, 3, 3, '/assets/img/recetas/026-torta-de-chia-y-limon.jpg'],
 
 ['Torta de Durazno Casera', 'snack',
  ['duraznos|1', 'huevos|1', 'harina integral|2 cdas', 'avena|1 cda', 'miel|1/4 cdas', 'vainilla|1/8 cdta', 'polvo para hornear|1/8 cdta'],
  ['Lava y corta los duraznos.', 'Mezcla huevos, miel y vainilla.', 'Agrega harina y avena.', 'Incorpora duraznos y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 120, 5, 35, 22, 2, 7, 3, '/assets/img/recetas/027-torta-de-durazno-casera.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 120, 5, 35, 22, 2, 7, 3, '/assets/img/recetas/027-torta-de-durazno-casera.jpg'],
 
 ['Torta Integral de Banano y Chocolate', 'snack',
  ['bananos|1', 'huevos|1', 'harina integral|2 cdas', 'cacao|1/4 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Tritura los bananos.', 'Mezcla con huevos y miel.', 'Añade harina y cacao.', 'Agrega polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'económico'], 117, 5, 35, 23, 2, 7, 4, '/assets/img/recetas/028-torta-integral-de-banano-y-chocolate.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 117, 5, 35, 23, 2, 7, 4, '/assets/img/recetas/028-torta-integral-de-banano-y-chocolate.jpg'],
 
 ['Torta de Coco y Limón', 'snack',
  ['coco|1 cda', 'Jugo de 1 limón|al gusto', 'huevos|1', 'harina de avena|2 cdas', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos y miel.', 'Añade limón y coco.', 'Incorpora harina y polvo para hornear.', 'Hornea durante 35 minutos.'],
- ['ligero', 'sin gluten'], 130, 4, 35, 14, 7, 4, 3, '/assets/img/recetas/029-torta-de-coco-y-limon.jpg'],
+ ['ligero', 'sin gluten', 'vegetariano'], 130, 4, 35, 14, 7, 4, 3, '/assets/img/recetas/029-torta-de-coco-y-limon.jpg'],
 
 ['Torta de Vainilla y Canela', 'snack',
  ['huevos|1', 'harina integral|2 cdas', 'yogur natural|1 cda', 'vainilla|1/8 cdta', 'canela|1/8 cdta', 'miel|1/4 cdas', 'polvo para hornear|1/8 cdta'],
  ['Mezcla huevos, yogur y miel.', 'Agrega vainilla y canela.', 'Incorpora harina y polvo para hornear.', 'Mezcla lentamente.', 'Coloca en un molde engrasado.', 'Hornea durante 35 minutos.', 'Deja enfriar antes de servir.'],
- ['ligero', 'económico'], 103, 5, 35, 15, 3, 4, 2, '/assets/img/recetas/030-torta-de-vainilla-y-canela.jpg'],
+ ['ligero', 'económico', 'vegetariano'], 103, 5, 35, 15, 3, 4, 2, '/assets/img/recetas/030-torta-de-vainilla-y-canela.jpg'],
 
 ['Alitas de Pollo Buffalo', 'snack',
  ['alitas de pollo|165 g', 'Aceite en spray|al gusto', 'Sal y pimienta|al gusto', 'Salsa buffalo: 4 cdas de salsa picante|al gusto'],
@@ -6124,7 +6124,7 @@ return [
 ['Flan de coco y vainilla', 'snack',
  ['leche de coco|1/2 tazas', 'huevos|1', 'esencia de vainilla|1/4 cucharadita', 'miel o stevia|1/4 cucharada'],
  ['Mezcla todos los ingredientes y vierte en moldes individuales. Cocina a baño maría en horno a 160°C por 25 minutos.'],
- ['ligero', 'sin gluten', 'económico'], 318, 6, 30, 7, 32, 4, 0, '/assets/img/recetas/135-flan-de-coco-y-vainilla.jpg'],
+ ['ligero', 'sin gluten', 'económico', 'vegetariano'], 318, 6, 30, 7, 32, 4, 0, '/assets/img/recetas/135-flan-de-coco-y-vainilla.jpg'],
 
 ['Leche de avena casero', 'snack',
  ['agua fría|3 ½ tazas', 'avena en hojuelas tradicional|½ taza', 'extracto de vainilla|¾ cucharadita', 'canela molida|¼ cucharadita', 'sal|⅛ cucharadita'],
@@ -6139,7 +6139,7 @@ return [
 ['Aborrajado al horno', 'snack',
  ['plátano|1/2', 'queso campesino|30 g', 'huevo|1', 'harina de trigo|2 cdas', 'Aceite en spray|al gusto'],
  ['Precalienta el horno a 190°C.', 'Corta el plátano maduro a lo largo y rellena con el queso.', 'Pasa por harina y luego por huevo batido.', 'Coloca en bandeja, rocía con aceite en spray y hornea 15-18 minutos volteando a la mitad, hasta dorar.'],
- ['tradicional', 'económico'], 446, 16, 25, 48, 22, 12, 3, '/assets/img/recetas/aborrajado-al-horno.jpg'],
+ ['tradicional', 'económico', 'vegetariano'], 446, 16, 25, 48, 22, 12, 3, '/assets/img/recetas/aborrajado-al-horno.jpg'],
 
 ['Empanada de pipián en air fryer', 'snack',
  ['empanada de masa de maíz rellena de pipián|1', 'Aceite en spray|al gusto', 'Ají|al gusto'],
@@ -6149,12 +6149,12 @@ return [
 ['Carimañola', 'snack',
  ['yuca|110 g', 'queso costeño|25 g', 'huevo|1', 'Aceite en spray|al gusto', 'Sal|al gusto'],
  ['Machaca la yuca cocida caliente hasta formar una masa suave; sazona con sal.', 'Forma un óvalo con la masa y rellena con el queso costeño.', 'Sella bien la forma de carimañola.', 'Pasa por huevo batido, rocía con aceite en spray y hornea o cocina en air fryer a 200°C 12-15 minutos hasta dorar.'],
- ['tradicional', 'sin gluten', 'económico'], 424, 14, 30, 43, 22, 2, 2, '/assets/img/recetas/carimanola.jpg'],
+ ['tradicional', 'sin gluten', 'económico', 'vegetariano'], 424, 14, 30, 43, 22, 2, 2, '/assets/img/recetas/carimanola.jpg'],
 
 ['Pandebono', 'snack',
  ['cuajada|40 g', 'harina de maíz precocida|1/4 taza', 'huevo|1', 'queso costeño|10 g', 'polvo de hornear|1/4 cdta'],
  ['Precalienta el horno a 190°C.', 'Desmenuza la cuajada y mezcla con el queso rallado.', 'Agrega la harina de maíz, el huevo y el polvo de hornear; amasa hasta integrar.', 'Forma bolitas u óvalos y colócalos en una bandeja.', 'Hornea 15-18 minutos hasta que doren por fuera.'],
- ['tradicional', 'ligero', 'sin gluten', 'económico'], 276, 13, 25, 27, 13, 0, 2, '/assets/img/recetas/pandebono.jpg'],
+ ['tradicional', 'ligero', 'sin gluten', 'económico', 'vegetariano'], 276, 13, 25, 27, 13, 0, 2, '/assets/img/recetas/pandebono.jpg'],
 
 ['Mazamorra con panela', 'snack',
  ['maíz trillado|1/4 taza', 'leche|1/2 taza', 'panela raspada|1/2 cda', 'astilla de canela|1'],

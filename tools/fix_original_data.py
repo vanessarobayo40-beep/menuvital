@@ -144,6 +144,190 @@ REMOVE_SIN_GLUTEN = [
     'Cheescake de calabaza sin azucar',
 ]
 
+# ---------- 7. Tag "vegetariano" que faltaba solo por llevar huevo ----------
+# ANIMAL_PROTEIN_KEYS/_MEAT_WORDS en nutrition_flags.py tenían el huevo
+# contando como "no vegetariano" — decisión de producto que Vanessa corrigió
+# en la conversación: en MenúVital "vegetariano" es ovo-vegetariano (el uso
+# común en Colombia/Latinoamérica). Ya se corrigió la causa raíz para las
+# recetas nuevas; esta lista son las que ya existían sin la etiqueta por
+# ese motivo (llevan huevo, no llevan carne/pescado real).
+ADD_VEGETARIANO_EGG = [
+    'Huevos al horno sobre aguacate con queso',
+    'Tortilla de espinacas y champiñones',
+    'Tortilla de espinacas y queso',
+    'Tortilla de zanahoria al estilo keto',
+    'Avena con aguacate y huevo escalfado',
+    'Fritata de Verduras',
+    'Huevo Horneado en Aguacate',
+    'Huevo Horneado en Pimiento',
+    'Huevos Rancheros con pico de gallo',
+    'Huevos Revueltos',
+    'Huevos a la mexicana',
+    'Menemen',
+    'Mini Tortilla Española con Calabacín',
+    'Mini frittatas de claras y champiñones',
+    'Mini tortita de espárrago con huevo',
+    'Muffins de Huevo',
+    'Omelette con verduras',
+    'Pan de plátano con chocolate sin azúcar añadido',
+    'Panqueques de Almendras',
+    'Panqueques de Crema de cacahuete y platano',
+    'Panqueques de quinoa y banana',
+    'Quiche sin corteza con espinacas',
+    'Tortilla crujiente con gambas, aguacate y espinacas',
+    'bistec y huevos con chimichurri',
+    'Hash browns de batata',
+    'Huevos revueltos con espinaca y cúrcuma',
+    'Omelette de espinaca y queso de cabra',
+    'Omelette de palta y tomate seco',
+    'Panqueques de avena y banana',
+    'Panqueques de manzana y canela',
+    'Tostadas de batata (camote) con palta y huevo',
+    'Waffles de batata sin gluten',
+    'Bowl energético de huevos revueltos con vegetales',
+    'Pan De Zucchini Con Huevos Revueltos',
+    'Pancakes De Blueberries',
+    'Pancakes De Zanahoria Con Crema De Coco',
+    'Pancakes Moka',
+    'Pancitos Encantados',
+    'Papilla De Chocolate Y Naranja',
+    'Pastel De Avena Y Manzana',
+    'Pastel De Quinoa',
+    'Pizza En Taza',
+    'Sándwich De Huevo',
+    'Tortilla De Arroz',
+    'Tortilla Italianisima',
+    'Tostadas De Avena',
+    'Waffles De Sweet Potato Con Topping De Cacao',
+    'Huevos a la cazuela',
+    'Pan de Plátano y Calabacín',
+    'Sandwixh de huevo y espinacas',
+    'Wrap con claras de queso feta',
+    'Tortilla de huevo a la capresa',
+    'Chaffles, waffles de queso y huevo',
+    'Pan cetogénico de harina de coco',
+    'Tostada de aguacate con pan keto',
+    'Tostada con Aguacate y Huevo Revuelto',
+    'Huevos Revueltos con Queso y Pan',
+    'Perico Venezolano',
+    'Tostada Griega con Yogur y Huevo',
+    'Arepa con Queso y Huevo',
+    'Shakshuka Clásica',
+    'Frittata de Espinacas y Ricotta',
+    'Tortilla Española',
+    'Panneer Bhurji (Revuelto de Queso Indio)',
+    'Menemen Turco',
+    'Changua con Queso y Pan',
+    'Calentado Bogotano Fitness',
+    'Chilaquiles Rojos con Huevo',
+    'Loaded Protein Bowl',
+    'Desayuno Costeño Completo',
+    'Bowl de Huevo, Frijoles y Arroz',
+    'Pancakes de Proteína (2 ingredientes)',
+    'French Toast Proteico',
+    'Pancakes de Avena y Proteína',
+    'Banana Protein Pancakes con Mantequilla de Maní',
+    'Huevos En Cazuela',
+    'Changua santafereña',
+    'Calentado paisa aligerado',
+    'Arepa de huevo al horno',
+    'Huevos pericos con arepa',
+    'Almojábana horneada',
+    'Calamares a la romana keto',
+    'Bollito hervido valenciano/ Caldo de verduras',
+    'Ensalada de espinacas, garbanzos tostados, tomate, huevo y aguacate',
+    'Shakshuka',
+    'Tortitas de Zanahoria y Manzana con nueces',
+    'Fideos de harina de almendras',
+    'Masa de pizza con harina de arroz integral',
+    'Masa de pizza con yogur y harina de almendras',
+    'Masa de pizza de batata',
+    'Masa de pizza de coliflor',
+    'Masa de pizza de zanahoria y avena sin gluten',
+    'Masa de pizza keto (sin carbohidratos)',
+    'Pan de garbanzo sin harina',
+    'Pan de harina de almendras y semillas',
+    'Pasta de harina de arroz integral',
+    'Ravioles de harina de arroz',
+    'Ravioles de harina de sarraceno',
+    'Ñoquis de batata sin harina',
+    'Ensalada de Huevo',
+    'Muffins de Avena y manzana',
+    'Salteado de Verduras de Verano y Huevos revuelto',
+    'Soufflé de barata',
+    'Ensalada Kikiriki',
+    'Proteína Express',
+    'Huevo y Aguacate',
+    'Arroz, Huevo y Vegetales',
+    'Huevos, Papa y Aguacate',
+    'Pancakes de Brocoli y queso',
+    'Pizza de Coliflor',
+    'Tortilla de Tomate y Huevo',
+    'Berenjenas rellenas',
+    'Snaacks de granola',
+    'Calamares Apanados',
+    'Pan de Coliflor sin Gluten',
+    'Pan de Espinacas y Parmesano',
+    'Pan de Papas Sin Gluten',
+    'Mini brownie SOP',
+    'Brownies de batata y cacao sin harina',
+    'Brownies de chocolate amargo y batata',
+    'Flan de cacao sin azúcar',
+    'Flan de coco sin azúcar',
+    'Galletas de avellana y cacao sin azúcar',
+    'Galletas de cacao y almendras sin azúcar',
+    'Galletas de mantequilla de maní y avena',
+    'Huevos revueltos con palta y tomate',
+    'Muffins de chocolate y banana',
+    'Torta de chocolate sin azúcar y sin harina',
+    'Brownie sin azucar',
+    'Flan de Café Aromático',
+    'Flan de huevo sin azucar',
+    'Galletas de almendra sin azúcar',
+    'Galletas de avena y pasas sin azúcar',
+    'Galletas de yogur sin azúcar',
+    'Flan de coco keto',
+    'Huevos Rellenos con Mayonesa y Mostaza',
+    'Calabacín Crocante',
+    'Palitos de Queso Apanados',
+    'Nuggets de Coliflor',
+    'Huevitos de Codorniz Crocantes',
+    'Barras de Coco y Almendras',
+    'Torta de Banano y Avena',
+    'Torta de Zanahoria Saludable',
+    'Torta de Manzana y Canela',
+    'Torta de Coco y Almendras',
+    'Torta Integral de Yogur',
+    'Torta de Naranja Casera Saludable',
+    'Torta de Avena y Arándanos',
+    'Torta de Calabaza y Canela',
+    'Torta de Café y Cacao',
+    'Torta de Limón y Yogur',
+    'Torta de Fresas Saludable',
+    'Torta de Pera y Canela',
+    'Torta de Avena y Nueces',
+    'Torta Marmoleada Fit',
+    'Torta de Piña y Coco',
+    'Torta de Almendras y Vainilla',
+    'Torta de Avena y Cacao',
+    'Torta de Mandarina',
+    'Torta de Yogur y Arándanos',
+    'Torta de Ciruelas y Canela',
+    'Torta de Batata y Coco',
+    'Torta de Maracuyá Saludable',
+    'Torta de Cacao y Café',
+    'Torta de Mango y Coco',
+    'Torta de Chía y Limón',
+    'Torta de Durazno Casera',
+    'Torta Integral de Banano y Chocolate',
+    'Torta de Coco y Limón',
+    'Torta de Vainilla y Canela',
+    'Flan de coco y vainilla',
+    'Aborrajado al horno',
+    'Carimañola',
+    'Pandebono',
+]
+
 
 def load(path):
     # newline='' es obligatorio: sin esto, Python traduce \r\n -> \n al leer
@@ -188,6 +372,26 @@ def remove_tag(text, name, tag):
     if tag not in items:
         return text, 0
     items = [t for t in items if t != tag]
+    new_blob = ', '.join(f"'{t}'" for t in items)
+    new_text = text[:m.start()] + prefix + new_blob + suffix + text[m.end():]
+    return new_text, 1
+
+
+def add_tag(text, name, tag):
+    """Agrega `tag` al array de tags de la receta `name`, si no lo tiene ya."""
+    block_re = re.compile(
+        r"(\['" + re.escape(name) + r"', '\w+',\r?\n"
+        r" \[.*?\],\r?\n \[.*?\],\r?\n \[)((?:'[^']*'(?:, )?)*)(\])",
+        re.S,
+    )
+    m = block_re.search(text)
+    if not m:
+        return text, 0
+    prefix, tags_blob, suffix = m.groups()
+    items = re.findall(r"'([^']*)'", tags_blob)
+    if tag in items:
+        return text, 0
+    items.append(tag)
     new_blob = ', '.join(f"'{t}'" for t in items)
     new_text = text[:m.start()] + prefix + new_blob + suffix + text[m.end():]
     return new_text, 1
@@ -251,6 +455,10 @@ def main():
     for name in REMOVE_SIN_GLUTEN:
         text, n = remove_tag(text, name, 'sin gluten')
         report.append((f"tag 'sin gluten' quitado: {name!r}", n))
+
+    for name in ADD_VEGETARIANO_EGG:
+        text, n = add_tag(text, name, 'vegetariano')
+        report.append((f"tag 'vegetariano' agregado: {name!r}", n))
 
     save(PATH, text)
 

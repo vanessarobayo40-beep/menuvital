@@ -10,8 +10,11 @@ ANIMAL_PROTEIN_KEYS = {
     'chorizo', 'morcilla', 'jamón de pavo', 'pechuga de pavo', 'pavo molido',
     'tilapia', 'mojarra', 'trucha', 'salmón', 'atún en agua', 'sardinas',
     'camarones', 'calamar', 'mariscos mixtos', 'pescado blanco', 'merluza',
-    'pargo', 'bacalao', 'huevo', 'clara de huevo', 'yema de huevo',
+    'pargo', 'bacalao',
     'pulpo cocido', 'langostinos', 'albóndigas de res',
+    # El huevo NO está aquí a propósito: en MenúVital "vegetariano" es
+    # ovo-vegetariano (el uso común en Colombia/Latinoamérica), decisión
+    # explícita — ver conversación. "Vegano" sería una etiqueta aparte.
 }
 
 GLUTEN_KEYS = {
@@ -46,8 +49,10 @@ _MEAT_WORDS = {
     'lomo', 'bistec', 'panceta', 'chicharron', 'albondigas', 'salchicha',
     'anchoas', 'sardinas', 'pulpo', 'calamares', 'langostinos', 'gambas',
     'cordero', 'ternera', 'morcilla', 'bacon', 'pechuga', 'pechugas', 'muslos',
-    'muslo', 'alitas', 'nuggets', 'hamburguesa', 'huevo', 'huevos', 'clara',
-    'yema', 'bagre', 'merluza', 'pargo', 'bacalao', 'anchoa',
+    'muslo', 'alitas', 'nuggets', 'hamburguesa',
+    'bagre', 'merluza', 'pargo', 'bacalao', 'anchoa',
+    # huevo/clara/yema NO cuentan como carne aquí — "vegetariano" en
+    # MenúVital es ovo-vegetariano, decisión explícita (ver ANIMAL_PROTEIN_KEYS).
 }
 _GLUTEN_WORDS = {
     'pan', 'panko', 'espagueti', 'macarrones', 'macarron', 'galleta', 'galletas',
