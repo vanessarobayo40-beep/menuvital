@@ -228,7 +228,8 @@ document.addEventListener('click', (e) => {
 });
 
 document.getElementById('btn-clear').addEventListener('click', async () => {
-  if (!confirm('¿Vaciar toda tu despensa?')) return;
+  const ok = await MV.confirmDialog('¿Vaciar toda tu despensa?', { confirmText: 'Sí, vaciar', cancelText: 'Cancelar' });
+  if (!ok) return;
   const res = await MV.api('/api/pantry.php?action=clear', { method: 'POST' });
   applyPantryResponse(res);
 });

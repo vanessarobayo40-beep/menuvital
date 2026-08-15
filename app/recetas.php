@@ -435,8 +435,10 @@ async function submitSchedule(overwrite) {
       },
     });
     if (res.conflicts && res.conflicts.length) {
-      const names = res.conflicts.map(c => `${c.date} (ya tienes "${c.current_name}")`).join(', ');
-      if (confirm(`Ya tienes algo elegido para: ${names}. ¿Reemplazar?`)) {
+      const fmtDate = (iso) => new Date(iso + 'T00:00:00').toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long' });
+      const names = res.conflicts.map(c => `${fmtDate(c.date)} (ya tienes "${escapeHtml(c.current_name)}")`).join(', ');
+      const ok = await MV.confirmDialog(`Ya tienes algo elegido para: ${names}. ¿Reemplazar?`, { confirmText: 'Sí, reemplazar', cancelText: 'Cancelar' });
+      if (ok) {
         await submitSchedule(true);
       }
       return;
@@ -454,7 +456,9 @@ async function submitSchedule(overwrite) {
 document.getElementById('sch-confirm').addEventListener('click', () => submitSchedule(false));
 
 document.getElementById('detail-delete').addEventListener('click', async () => {
-  if (!currentDetail || !confirm(`¿Eliminar "${currentDetail.name}" de tu recetario? No se puede deshacer.`)) return;
+  if (!currentDetail) return;
+  const ok = await MV.confirmDialog(`¿Eliminar "${escapeHtml(currentDetail.name)}" de tu recetario? No se puede deshacer.`, { confirmText: 'Sí, eliminar', cancelText: 'Cancelar' });
+  if (!ok) return;
   try {
     await MV.api('/api/recipes.php?action=delete', { method: 'POST', body: { recipe_id: currentDetail.id } });
     allRecipes = allRecipes.filter(r => r.id !== currentDetail.id);
