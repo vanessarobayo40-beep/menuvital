@@ -75,7 +75,7 @@ require __DIR__ . '/../includes/layout_top.php';
   <div id="shopping-reminder-banner" class="card-soft" style="display:none;margin-bottom:14px;">
     <div style="display:flex;align-items:center;gap:10px;">
       <span style="font-size:20px;">🔔</span>
-      <p style="margin:0;flex:1;font-size:13px;" id="shopping-reminder-text">Actívanos para recordarte armar tu lista de compras los fines de semana.</p>
+      <p style="margin:0;flex:1;font-size:13px;" id="shopping-reminder-text">Actívalos para recordarte armar tu lista de compras los fines de semana.</p>
       <button type="button" id="btn-shopping-reminder" class="btn btn-outline btn-sm">Activar</button>
     </div>
   </div>
@@ -93,7 +93,7 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 
 <div id="review-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:60;align-items:flex-end;justify-content:center;">
-  <div style="background:#fff;border-radius:20px 20px 0 0;padding:20px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;">
+  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;padding:20px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;">
     <h3 style="margin:0 0 4px;font-size:16px;">Esto fue lo que encontramos</h3>
     <p class="muted" style="margin:0 0 6px;font-size:13px;">Toca un ingrediente para quitarlo si no es correcto.</p>
     <p id="review-transcript" class="muted" style="display:none;margin:0 0 10px;font-size:12px;font-style:italic;"></p>
@@ -483,7 +483,7 @@ async function refreshShoppingReminderUI() {
       shoppingReminderText.textContent = 'Recordatorios activados: te avisamos los fines de semana para armar tu lista de compras.';
       btnShoppingReminder.textContent = 'Desactivar';
     } else {
-      shoppingReminderText.textContent = 'Actívanos para recordarte armar tu lista de compras los fines de semana.';
+      shoppingReminderText.textContent = 'Actívalos para recordarte armar tu lista de compras los fines de semana.';
       btnShoppingReminder.textContent = 'Activar';
     }
   } catch (e) {

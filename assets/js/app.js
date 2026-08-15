@@ -232,7 +232,7 @@ const MV = (() => {
 
     const overlay = document.createElement('div');
     overlay.id = 'cook-mode-overlay';
-    overlay.style.cssText = 'position:fixed;inset:0;background:#fff;z-index:90;display:flex;flex-direction:column;';
+    overlay.style.cssText = 'position:fixed;inset:0;background:var(--card-bg);z-index:90;display:flex;flex-direction:column;';
     overlay.innerHTML = `
       <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);">
         <button type="button" id="cm-close" aria-label="Cerrar" style="background:var(--surface-2);border:none;width:34px;height:34px;border-radius:50%;font-size:17px;color:var(--t2);">×</button>
