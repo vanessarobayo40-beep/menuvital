@@ -1291,12 +1291,12 @@ return [
 ['Omelette Clásico con Queso y Jamón', 'desayuno',
  ['huevos|3', 'jamón|50 g', 'queso|40 g', 'cebolla cabezona|1/4', 'pimentón|1/2', 'Mantequilla|al gusto'],
  ['Bate los huevos con sal y pimienta. Sofríe la cebolla y el pimentón en mantequilla 2 minutos.', 'Vierte los huevos sobre el sofrito. No revolver — dejar cuajar los bordes.', 'Cuando el centro esté casi cuajado, agrega el jamón y el queso en un lado.', 'Dobla el omelette a la mitad y sirve de inmediato.'],
- ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 489, 36, 10, 10, 34, 6, 2],
+ ['alto en proteína', 'rápido', 'sin gluten', 'económico'], 489, 36, 10, 10, 34, 6, 2, '/assets/img/recetas/omelette-clasico-con-queso-y-jamon.jpg'],
 
 ['Tortilla Española', 'desayuno',
  ['huevos|4', 'papas medianas peladas finas|2', 'cebolla en juliana|1/2', 'Aceite de oliva|al gusto', 'Sal y pimienta|al gusto'],
  ['Fríe las papas y la cebolla en aceite a fuego bajo 15 minutos hasta blandas. Escurre el exceso de aceite.', 'Bate los huevos con sal y mezcla con las papas y la cebolla.', 'Cocina en sartén a fuego medio 3-4 minutos hasta cuajar el fondo.', 'Voltea con un plato y cocina el otro lado 3 minutos. Sirve tibia o fría.'],
- ['alto en proteína', 'sin gluten', 'económico', 'vegetariano'], 654, 33, 25, 60, 32, 7, 7],
+ ['alto en proteína', 'sin gluten', 'económico', 'vegetariano'], 654, 33, 25, 60, 32, 7, 7, '/assets/img/recetas/tortilla-espanola.jpg'],
 
 ['Full English Saludable', 'desayuno',
  ['huevos|1', 'salchichas de pavo o pollo|1', 'champiñones|25 g', 'tomates en mitades|1', 'frijoles en salsa de tomate|50 g', 'Pan integral|al gusto', 'Aceite de oliva|al gusto'],
@@ -4443,7 +4443,7 @@ return [
 ['Trucha al ajillo del Eje Cafetero', 'cena',
  ['filete de trucha|1', 'ajo|1 diente', 'aceite de oliva|1 cdta', 'perejil|1 cda', 'Limón|al gusto', 'Sal|al gusto'],
  ['Sazona la trucha con sal y limón.', 'Calienta el aceite en un sartén y dora el ajo 30 segundos sin quemar.', 'Agrega la trucha y cocina 3-4 minutos por lado hasta que esté firme.', 'Espolvorea perejil fresco y sirve con ensalada.'],
- ['tradicional', 'alto en proteína', 'ligero', 'rápido'], 315, 43, 20, 9, 12, 2, 3],
+ ['tradicional', 'alto en proteína', 'ligero', 'rápido'], 315, 43, 20, 9, 12, 2, 3, '/assets/img/recetas/trucha-al-ajillo-del-eje-cafetero.jpg'],
 
 ['Mojarra al vapor con ensalada', 'cena',
  ['mojarra entera|1', 'cebolla en pluma|1/4 taza', 'tomate|1/2', 'Limón|al gusto', 'lechuga|1 taza', 'Sal|al gusto'],

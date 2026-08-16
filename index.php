@@ -142,7 +142,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 
 <section class="gallery-section">
   <h2>Esto es lo que vas a cocinar</h2>
-  <p class="lead">Fotos reales de recetas del recetario — no imágenes de banco genéricas.</p>
+  <p class="lead">100% fotos reales de nuestras recetas. Cero bancos de imágenes genéricos.</p>
   <div class="gallery-grid">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/ajiaco-santafereno-aligerado.jpg" alt="Ajiaco santafereño aligerado, una de las recetas del recetario" loading="lazy"></a>
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg" alt="Tostada con aguacate y huevo revuelto" loading="lazy"></a>
