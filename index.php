@@ -18,21 +18,21 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MenúVital — Nunca más pienses qué cocinar hoy</title>
-<meta name="description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, y te acompaña como tu coach de nutrición. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
+<meta name="description" content="La app que arma tu menú semanal, aprovecha tu mercado y te acompaña con un coach de nutrición — hecha para el paladar colombiano. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
 <meta name="theme-color" content="#0E6B45">
 <!-- Sin esto, compartir el link por WhatsApp (el canal de venta) no mostraba
      ninguna previsualización — solo la URL pelada. -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?= e(APP_URL) ?>/">
 <meta property="og:title" content="MenúVital — Nunca más pienses qué cocinar hoy">
-<meta property="og:description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, hecha para el paladar colombiano. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
+<meta property="og:description" content="La app que arma tu menú semanal, aprovecha tu mercado y te acompaña con un coach de nutrición — hecha para el paladar colombiano. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
 <meta property="og:image" content="<?= e(APP_URL) ?>/assets/img/recetas/ajiaco-santafereno-aligerado.jpg">
 <meta property="og:image:width" content="640">
 <meta property="og:image:height" content="427">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MenúVital — Nunca más pienses qué cocinar hoy">
-<meta name="twitter:description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, hecha para el paladar colombiano.">
+<meta name="twitter:description" content="La app que arma tu menú semanal, aprovecha tu mercado y te acompaña con un coach de nutrición — hecha para el paladar colombiano.">
 <meta name="twitter:image" content="<?= e(APP_URL) ?>/assets/img/recetas/ajiaco-santafereno-aligerado.jpg">
 <link rel="manifest" href="/assets/manifest.json">
 <link rel="apple-touch-icon" href="/assets/img/icon-192-v3.png">
@@ -132,7 +132,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <section class="hero">
   <span class="badge-pill">🥗 Menú diario + coach de nutrición</span>
   <h1>Nunca más pienses<br>"¿qué hago hoy de comida?"</h1>
-  <p class="sub">Ingresa lo que ya tienes en tu mercado y recibe un menú saludable, delicioso y sin complicaciones — hecho para el paladar colombiano.</p>
+  <p class="sub">Arma tu semana, aprovecha tu mercado y cuenta con tu coach de nutrición para todo lo demás — hecho para el paladar colombiano.</p>
   <p class="price-tag"><?= e(APP_PRICE) ?> <span>pago único · sin mensualidades</span></p>
   <div class="cta-group">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener" class="btn btn-white btn-block" id="cta-comprar">Quiero mi acceso por <?= e(APP_PRICE) ?></a>
@@ -159,7 +159,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 
   <div class="feature-card">
     <div class="icon">🛒</div>
-    <div><h3>Parte de tu mercado real</h3><p>Escribes lo que ya compraste y armamos el menú con eso — no al revés.</p></div>
+    <div><h3>Parte de tu mercado real</h3><p>Si ya tienes ingredientes en casa, los aprovechamos en tu menú — nada se desperdicia.</p></div>
   </div>
   <div class="feature-card">
     <div class="icon">📅</div>
