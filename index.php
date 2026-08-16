@@ -200,7 +200,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
     <tbody>
       <tr><td>Pago</td><td class="highlight yes">Único, <?= e(APP_PRICE) ?></td><td class="no">Mensual/anual</td></tr>
       <tr><td>Comida</td><td class="highlight yes">Colombiana/latina real</td><td class="no">Americanizada</td></tr>
-      <tr><td>Parte de</td><td class="highlight yes">Lo que ya tienes</td><td class="no">Lista ideal genérica</td></tr>
+      <tr><td>Se adapta a</td><td class="highlight yes">Tu despensa y tu semana</td><td class="no">Una lista genérica</td></tr>
       <tr><td>Coach IA</td><td class="highlight yes">Incluido</td><td class="no">Aparte o no incluido</td></tr>
       <tr><td>Idioma</td><td class="highlight yes">100% español</td><td class="no">Traducido</td></tr>
     </tbody>
