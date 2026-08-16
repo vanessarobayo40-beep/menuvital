@@ -62,9 +62,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
   .btn-white { background: #fff; color: var(--green-dark); }
   .btn-ghost-white { background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); box-shadow: none; }
 
-  .gallery-section { padding: 8px 20px 4px; max-width: 480px; margin: 0 auto; }
-  .gallery-section h2 { font-size: 19px; text-align: center; margin: 0 0 4px; }
-  .gallery-section p.lead { text-align: center; color: var(--t2); font-size: 13px; margin: 0 0 18px; }
+  .gallery-section { padding: 32px 20px 4px; max-width: 480px; margin: 0 auto; }
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .gallery-grid img {
     width: 100%; aspect-ratio: 3 / 2.6; object-fit: cover; border-radius: 12px;
@@ -141,8 +139,6 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 </section>
 
 <section class="gallery-section">
-  <h2>Tendrás platos deliciosos como estos para preparar</h2>
-  <p class="lead">Cientos de recetas reales, listas en tu recetario cuando las necesites.</p>
   <div class="gallery-grid">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/ajiaco-santafereno-aligerado.jpg" alt="Ajiaco santafereño aligerado, una de las recetas del recetario" loading="lazy"></a>
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg" alt="Tostada con aguacate y huevo revuelto" loading="lazy"></a>
