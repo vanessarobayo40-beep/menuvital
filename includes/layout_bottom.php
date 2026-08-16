@@ -26,7 +26,6 @@ $navItems = [
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 }
-MV.lockBackButton();
 </script>
 </body>
 </html>

@@ -93,7 +93,7 @@ require __DIR__ . '/../includes/layout_top.php';
 </div>
 
 <div id="review-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:60;align-items:flex-end;justify-content:center;">
-  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;padding:20px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;">
+  <div style="background:var(--card-bg);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:20px;width:100%;max-width:520px;max-height:80vh;overflow-y:auto;">
     <h3 style="margin:0 0 4px;font-size:16px;">Esto fue lo que encontramos</h3>
     <p class="muted" style="margin:0 0 6px;font-size:13px;">Toca un ingrediente para quitarlo si no es correcto.</p>
     <p id="review-transcript" class="muted" style="display:none;margin:0 0 10px;font-size:12px;font-style:italic;"></p>
@@ -530,4 +530,6 @@ if (INITIAL_TAB === 'compras') {
 } else {
   loadPantry();
 }
+
+MV.enhanceModal(document.getElementById('review-backdrop'));
 </script>

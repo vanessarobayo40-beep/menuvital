@@ -90,18 +90,18 @@ function renderMealRow(type, meal, dateStr, idx) {
       <div style="flex:1;min-width:0;">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;">
           <span class="badge badge-green">${MEAL_LABELS[type]}${meal.servings > 1 ? ` · ${meal.servings}p` : ''}</span>
-          <div style="display:flex;gap:8px;flex-shrink:0;">
-            <a href="/app/recetas.php" style="color:var(--green-dark);font-size:11px;font-weight:600;text-decoration:none;padding:2px;">🍽 Elegir</a>
-            <button class="btn-swap-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;">🔄 Cambiar</button>
-            <button class="btn-remove-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:2px;">🗑 Quitar</button>
+          <div style="display:flex;gap:10px;flex-shrink:0;">
+            <a href="/app/recetas.php" style="color:var(--green-dark);font-size:11px;font-weight:600;text-decoration:none;padding:8px 4px;">🍽 Elegir</a>
+            <button class="btn-swap-week" data-entry-id="${meal.entry_id}" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:8px 4px;">🔄 Cambiar</button>
+            <button class="btn-remove-week" data-entry-id="${meal.entry_id}" aria-label="Quitar este plato del menú" style="background:none;border:none;color:var(--t3);font-size:11px;font-weight:600;padding:8px 4px;">🗑 Quitar</button>
           </div>
         </div>
         <h4 style="margin:6px 0 4px;font-size:15px;">${escapeHtml(meal.name)}</h4>
         <p class="muted" style="font-size:11px;margin:0 0 6px;">⏱ ${meal.time_min} min · 🔥 ${meal.kcal_porcion} kcal · 💪 ${meal.protein_porcion}g prot · 🌾 ${meal.carbs_porcion}g carbos · 🧈 ${meal.fat_porcion}g grasa</p>
         <p style="font-size:13px;margin:0 0 8px;"><strong>Ingredientes:</strong> ${meal.ingredients.map(i => escapeHtml(i.item)).join(', ')}</p>
         <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <button class="btn-cook-mode-week" data-entry-id="${meal.entry_id}" style="border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;background:var(--grad-soft);color:var(--green-dark);">👩‍🍳 Modo Cocina</button>
-          <button class="btn-cooked-week" data-entry-id="${meal.entry_id}" style="border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
+          <button class="btn-cook-mode-week" data-entry-id="${meal.entry_id}" style="border:none;border-radius:var(--radius-sm);padding:7px 12px;font-size:12px;font-weight:600;background:var(--grad-soft);color:var(--green-dark);">👩‍🍳 Modo Cocina</button>
+          <button class="btn-cooked-week" data-entry-id="${meal.entry_id}" style="border:none;border-radius:var(--radius-sm);padding:7px 12px;font-size:12px;font-weight:600;${done ? 'background:var(--green-light);color:var(--green-dark);' : 'background:var(--surface);color:var(--t2);'}" ${done ? 'disabled' : ''}>${done ? '✅ Hecha' : '🍳 Ya la hice'}</button>
         </div>
       </div>
     </div>`;
@@ -150,6 +150,7 @@ function findMealByEntryId(entryId) {
 
 async function swapWeekMeal(btn, entryId) {
   btn.disabled = true;
+  btn.style.opacity = '0.55';
   btn.textContent = '...';
   try {
     const res = await MV.api('/api/menu.php?action=swap', { method: 'POST', body: { entry_id: entryId } });
@@ -162,6 +163,7 @@ async function swapWeekMeal(btn, entryId) {
     MV.toast(err.message, true);
   } finally {
     btn.disabled = false;
+    btn.style.opacity = '';
     btn.textContent = '🔄 Cambiar';
   }
 }

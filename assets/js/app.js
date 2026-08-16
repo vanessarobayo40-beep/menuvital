@@ -90,7 +90,12 @@ const MV = (() => {
     } catch (e) { return fallback; }
   }
 
-  // Evita que el botón "atrás" del celular saque de la app (SPA-like within pages)
+  // SOLO para flujos de un único paso-a-paso en UNA página (como onboarding,
+  // que cambia de "paso" con JS y no tiene páginas reales para cada uno):
+  // evita que el botón físico "atrás" abandone el flujo a mitad de camino.
+  // NO llamar esto en el shell de la app (layout_bottom.php) — ahí cada
+  // pantalla es una página real con su propia URL, y bloquear "atrás" le
+  // quita a la usuaria la forma normal de volver de Recetas a Hoy, etc.
   function lockBackButton() {
     if (!history.state || !history.state.mvLocked) {
       history.pushState({ mvLocked: true }, '');
@@ -479,6 +484,44 @@ const MV = (() => {
     imgEl.addEventListener('click', () => imageZoom.open(imgEl.currentSrc || imgEl.src, imgEl.alt));
   }
 
+  /**
+   * Cablea accesibilidad básica en un diálogo creado al vuelo (askPortions,
+   * confirmDialog): foco atrapado + Escape cierra (como cancelar) + el foco
+   * vuelve a quien abrió el diálogo al cerrarlo. Se usa en el momento de
+   * crear el backdrop, antes de que exista lógica propia de apertura/cierre
+   * que el enfoque por MutationObserver de enhanceModal() pueda observar
+   * (aquí el nodo se crea y se destruye entero cada vez, no se oculta).
+   */
+  function wireTransientDialog(backdrop, onCancel) {
+    backdrop.setAttribute('role', 'dialog');
+    backdrop.setAttribute('aria-modal', 'true');
+    const lastFocused = document.activeElement;
+    document.body.style.overflow = 'hidden';
+
+    function focusable() {
+      return Array.from(backdrop.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input:not([type="hidden"]), select, [tabindex]:not([tabindex="-1"])'
+      ));
+    }
+    function onKeydown(e) {
+      if (e.key === 'Escape') { e.preventDefault(); onCancel(); return; }
+      if (e.key !== 'Tab') return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    document.addEventListener('keydown', onKeydown);
+    (focusable()[0] || backdrop).focus({ preventScroll: true });
+
+    return function cleanup() {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKeydown);
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    };
+  }
+
   /** Pregunta cuántas porciones se cocinaron, para descontar la despensa exacta. */
   function askPortions(defaultN = 1) {
     return new Promise((resolve) => {
@@ -488,7 +531,7 @@ const MV = (() => {
       backdrop.id = 'mv-portions-backdrop';
       backdrop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:90;display:flex;align-items:flex-end;justify-content:center;';
       backdrop.innerHTML = `
-        <div class="card" style="width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:20px;">
+        <div class="card" style="width:100%;max-width:480px;border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:20px;">
           <h3 style="margin:0 0 4px;">¿Cuántas porciones hiciste?</h3>
           <p class="muted" style="margin:0 0 16px;font-size:13px;">Así descontamos justo lo que usaste de tu despensa.</p>
           <div style="display:flex;align-items:center;gap:14px;justify-content:center;margin-bottom:18px;">
@@ -501,7 +544,8 @@ const MV = (() => {
         </div>`;
       document.body.appendChild(backdrop);
       const input = backdrop.querySelector('#mv-portions-input');
-      const finish = (value) => { backdrop.remove(); resolve(value); };
+      const cleanup = wireTransientDialog(backdrop, () => finish(null));
+      const finish = (value) => { cleanup(); backdrop.remove(); resolve(value); };
       backdrop.querySelector('#mv-portions-minus').addEventListener('click', () => {
         input.value = Math.max(1, (parseInt(input.value, 10) || 1) - 1);
       });
@@ -528,18 +572,81 @@ const MV = (() => {
       backdrop.id = 'mv-confirm-backdrop';
       backdrop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:95;display:flex;align-items:flex-end;justify-content:center;';
       backdrop.innerHTML = `
-        <div class="card" style="width:100%;max-width:480px;border-radius:20px 20px 0 0;padding:20px;">
+        <div class="card" style="width:100%;max-width:480px;border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:20px;">
           <p style="margin:0 0 18px;font-size:15px;line-height:1.4;">${message}</p>
           <button type="button" id="mv-confirm-ok" class="btn btn-primary btn-block">${opts.confirmText || 'Sí, continuar'}</button>
           <button type="button" id="mv-confirm-cancel" class="btn btn-secondary btn-block" style="margin-top:8px;">${opts.cancelText || 'Cancelar'}</button>
         </div>`;
       document.body.appendChild(backdrop);
-      const finish = (value) => { backdrop.remove(); resolve(value); };
+      const cleanup = wireTransientDialog(backdrop, () => finish(false));
+      const finish = (value) => { cleanup(); backdrop.remove(); resolve(value); };
       backdrop.querySelector('#mv-confirm-ok').addEventListener('click', () => finish(true));
       backdrop.querySelector('#mv-confirm-cancel').addEventListener('click', () => finish(false));
       backdrop.addEventListener('click', (e) => { if (e.target === backdrop) finish(false); });
     });
   }
 
-  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions, imageZoom, makeZoomable, confirmDialog };
+  // ---------- Accesibilidad de hojas inferiores / modales ----------
+  // Las hojas (detalle de receta, agendar, crear receta, revisar mercado por
+  // voz...) ya abren/cierran cambiando backdrop.style.display en cada
+  // página — esta función se "engancha" a ESE mismo cambio con un
+  // MutationObserver, así que no hay que tocar el código de apertura/cierre
+  // de cada pantalla. Mientras está abierta: Escape la cierra, Tab no se
+  // escapa hacia el contenido de atrás (foco atrapado), el fondo deja de
+  // hacer scroll, y el foco vuelve a quien la abrió al cerrarla — nada de
+  // esto existía antes, así que con teclado o lector de pantalla la hoja
+  // era invisible y el contenido de atrás seguía siendo alcanzable.
+  function enhanceModal(backdrop) {
+    if (!backdrop || backdrop._mvEnhanced) return;
+    backdrop._mvEnhanced = true;
+    backdrop.setAttribute('role', 'dialog');
+    backdrop.setAttribute('aria-modal', 'true');
+    if (!backdrop.hasAttribute('tabindex')) backdrop.tabIndex = -1;
+
+    let isOpen = false;
+    let lastFocused = null;
+
+    function focusable() {
+      return Array.from(backdrop.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input:not([type="hidden"]), select, [tabindex]:not([tabindex="-1"])'
+      )).filter((el) => el.offsetParent !== null);
+    }
+
+    function onKeydown(e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        backdrop.style.display = 'none';
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    }
+
+    const observer = new MutationObserver(() => {
+      const nowOpen = getComputedStyle(backdrop).display !== 'none';
+      if (nowOpen && !isOpen) {
+        isOpen = true;
+        lastFocused = document.activeElement;
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', onKeydown);
+        const items = focusable();
+        (items[0] || backdrop).focus({ preventScroll: true });
+      } else if (!nowOpen && isOpen) {
+        isOpen = false;
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onKeydown);
+        if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+      }
+    });
+    observer.observe(backdrop, { attributes: true, attributeFilter: ['style'] });
+  }
+
+  return { toast, api, debounce, saveLocal, loadLocal, csrfToken, lockBackButton, install, push, cookMode, theme, askPortions, imageZoom, makeZoomable, confirmDialog, enhanceModal };
 })();

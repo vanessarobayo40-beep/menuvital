@@ -93,32 +93,32 @@ function json_error(string $message, int $status = 400): void {
  */
 function rate_limit_check(string $bucket, int $max, int $windowSec): bool {
     $pdo = db();
-    $now = time();
-    $stmt = $pdo->prepare('SELECT window_start, hits FROM rate_limits WHERE bucket = ?');
-    $stmt->execute([$bucket]);
-    $row = $stmt->fetch();
+    $now = gmdate('Y-m-d H:i:s');
 
-    if ($row) {
-        $start = strtotime($row['window_start'] . ' UTC');
-        if (($now - $start) < $windowSec) {
-            if ((int)$row['hits'] >= $max) {
-                return false;
-            }
-            $pdo->prepare('UPDATE rate_limits SET hits = hits + 1 WHERE bucket = ?')->execute([$bucket]);
-            return true;
-        }
-        $pdo->prepare('UPDATE rate_limits SET window_start = ?, hits = 1 WHERE bucket = ?')
-            ->execute([gmdate('Y-m-d H:i:s', $now), $bucket]);
-        return true;
+    // Todo en una sola sentencia atómica (UPSERT), en vez de SELECT+UPDATE
+    // separados: dos peticiones simultáneas del mismo bucket (ej. el coach,
+    // que cuesta dinero en Groq) ya no pueden leer el mismo "hits" y las dos
+    // pasar el límite — la fila se bloquea durante el propio INSERT/UPDATE.
+    if (DB_DRIVER === 'sqlite') {
+        $pdo->prepare(
+            'INSERT INTO rate_limits (bucket, window_start, hits) VALUES (?, ?, 1)
+             ON CONFLICT(bucket) DO UPDATE SET
+               hits = CASE WHEN (julianday(?) - julianday(window_start)) * 86400 < ? THEN hits + 1 ELSE 1 END,
+               window_start = CASE WHEN (julianday(?) - julianday(window_start)) * 86400 < ? THEN window_start ELSE ? END'
+        )->execute([$bucket, $now, $now, $windowSec, $now, $windowSec, $now]);
+    } else {
+        $pdo->prepare(
+            'INSERT INTO rate_limits (bucket, window_start, hits) VALUES (?, ?, 1)
+             ON DUPLICATE KEY UPDATE
+               hits = IF(TIMESTAMPDIFF(SECOND, window_start, ?) < ?, hits + 1, 1),
+               window_start = IF(TIMESTAMPDIFF(SECOND, window_start, ?) < ?, window_start, ?)'
+        )->execute([$bucket, $now, $now, $windowSec, $now, $windowSec, $now]);
     }
 
-    try {
-        $pdo->prepare('INSERT INTO rate_limits (bucket, window_start, hits) VALUES (?, ?, 1)')
-            ->execute([$bucket, gmdate('Y-m-d H:i:s', $now)]);
-    } catch (PDOException $e) {
-        // Carrera: otra petición lo insertó al mismo tiempo. No es grave.
-    }
-    return true;
+    $row = $pdo->prepare('SELECT hits FROM rate_limits WHERE bucket = ?');
+    $row->execute([$bucket]);
+    $hits = (int)($row->fetchColumn() ?: 0);
+    return $hits <= $max;
 }
 
 // ---------- Validaciones comunes ----------

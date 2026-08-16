@@ -118,13 +118,13 @@ function renderMeal(type, meal) {
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="meal-photo-fallback" style="display:none;">${MEAL_EMOJI[type] || '🍽️'}</div>
       </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 14px 0;">
+      <div style="margin:14px 14px 0;">
         <span class="meal-tag" style="margin:0;">${MEAL_LABELS[type] || type}${meal.servings > 1 ? ` · ${meal.servings} porciones` : ''}</span>
-        <div style="display:flex;gap:10px;">
-          <a href="/app/recetas.php" style="color:var(--green-dark);font-size:12px;font-weight:600;text-decoration:none;padding:4px;">🍽 Elegir</a>
-          <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🔄 Cambiar plato</button>
-          <button class="btn-remove" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="background:none;border:none;color:var(--t3);font-size:12px;font-weight:600;padding:4px;">🗑 Quitar</button>
-        </div>
+      </div>
+      <div style="display:flex;gap:6px;margin:8px 14px 0;">
+        <a href="/app/recetas.php" style="flex:1;min-height:44px;display:flex;align-items:center;justify-content:center;gap:4px;color:var(--green-dark);font-size:12px;font-weight:600;text-decoration:none;border-radius:var(--radius-sm);background:var(--grad-soft);">🍽 Elegir</a>
+        <button class="btn-swap" data-entry-id="${meal.entry_id}" data-meal-type="${type}" style="flex:1;min-height:44px;background:var(--surface-2);border:none;border-radius:var(--radius-sm);color:var(--t2);font-size:12px;font-weight:600;">🔄 Cambiar</button>
+        <button class="btn-remove" data-entry-id="${meal.entry_id}" data-meal-type="${type}" aria-label="Quitar este plato del menú" style="flex:1;min-height:44px;background:var(--surface-2);border:none;border-radius:var(--radius-sm);color:var(--t2);font-size:12px;font-weight:600;">🗑 Quitar</button>
       </div>
       <h3>${escapeHtml(meal.name)}</h3>
       <div class="meal-meta">
@@ -264,6 +264,7 @@ function renderNutritionSummary() {
 
 async function swapMeal(btn, entryId, type) {
   btn.disabled = true;
+  btn.style.opacity = '0.55';
   btn.textContent = '...';
   try {
     const res = await MV.api('/api/menu.php?action=swap', { method: 'POST', body: { entry_id: entryId } });
@@ -272,7 +273,8 @@ async function swapMeal(btn, entryId, type) {
     MV.toast('¡Listo! Cambiamos ese plato.');
   } catch (err) {
     btn.disabled = false;
-    btn.textContent = '🔄 Cambiar plato';
+    btn.style.opacity = '';
+    btn.textContent = '🔄 Cambiar';
     MV.toast(err.message, true);
   }
 }
@@ -281,6 +283,7 @@ async function removeMeal(btn, entryId, type) {
   const ok = await MV.confirmDialog('¿Quitar este plato del menú? No afecta tu despensa ni lo que ya compraste — solo deja ese espacio libre para elegir o sugerir otro.', { confirmText: 'Sí, quitar' });
   if (!ok) return;
   btn.disabled = true;
+  btn.style.opacity = '0.55';
   try {
     await MV.api('/api/menu.php?action=remove', { method: 'POST', body: { entry_id: entryId } });
     delete currentMeals[type];
@@ -288,6 +291,7 @@ async function removeMeal(btn, entryId, type) {
     MV.toast('Listo, quitamos ese plato.');
   } catch (err) {
     btn.disabled = false;
+    btn.style.opacity = '';
     MV.toast(err.message, true);
   }
 }

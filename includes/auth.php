@@ -7,6 +7,12 @@ require_once __DIR__ . '/security.php';
 
 const DEVICE_COOKIE = 'mvdevice';
 const MAX_DEVICES_PER_CODE = 2;
+// Sin esto, un celular prestado/robado o un computador compartido conservan
+// acceso por los 2 años completos de la cookie de dispositivo, aunque nadie
+// vuelva a usarlo. A los 90 días sin actividad, el dispositivo se trata como
+// vencido y hay que volver a entrar con el código.
+const SESSION_IDLE_TIMEOUT = 60 * 60 * 24 * 30; // sesión PHP: 30 días sin actividad
+const DEVICE_IDLE_TIMEOUT = 60 * 60 * 24 * 90;  // cookie de dispositivo: 90 días sin uso
 
 /** Usuario actual (o null si no hay sesión). Si no hay sesión pero sí una
  *  cookie de dispositivo válida (acceso solo con código), reingresa sola. */
@@ -17,6 +23,10 @@ function current_user(): ?array {
     }
     secure_session_start();
     $uid = $_SESSION['uid'] ?? null;
+    if ($uid && !empty($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > SESSION_IDLE_TIMEOUT) {
+        logout_user();
+        $uid = null;
+    }
     if (!$uid) {
         $device = find_device_by_cookie();
         if ($device === null) {
@@ -25,6 +35,7 @@ function current_user(): ?array {
         $uid = (int)$device['user_id'];
         login_user($uid);
     }
+    $_SESSION['last_activity'] = time();
     $stmt = db()->prepare('SELECT id, name, email, is_admin, is_blocked, created_at FROM users WHERE id = ?');
     $stmt->execute([$uid]);
     $row = $stmt->fetch();
@@ -239,6 +250,14 @@ function find_device_by_cookie(): ?array {
     $stmt->execute([device_token_hash($token)]);
     $row = $stmt->fetch();
     if (!$row || (int)$row['code_active'] !== 1) {
+        return null;
+    }
+    $lastSeen = strtotime(($row['last_seen_at'] ?: $row['created_at']) . ' UTC') ?: 0;
+    if ((time() - $lastSeen) > DEVICE_IDLE_TIMEOUT) {
+        // Dispositivo inactivo hace más de 90 días: se borra su registro y se
+        // exige volver a entrar con el código, en vez de seguir confiando en
+        // una cookie que pudo quedar en un celular prestado o robado.
+        db()->prepare('DELETE FROM code_devices WHERE id = ?')->execute([$row['id']]);
         return null;
     }
     db()->prepare('UPDATE code_devices SET last_seen_at = ? WHERE id = ?')->execute([db_now(), $row['id']]);

@@ -32,6 +32,7 @@
 
   --radius: 16px;
   --radius-sm: 10px;
+  --radius-sheet: 20px; /* esquinas superiores de las hojas inferiores — antes "20px 20px 0 0" repetido suelto en 5 sitios distintos */
   --shadow: 0 2px 10px rgba(16, 32, 27, 0.06);
   --shadow-md: 0 8px 24px rgba(16, 32, 27, 0.10);
   --ease: 0.2s ease;
@@ -247,12 +248,23 @@ input, textarea, select { font-family: inherit; }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 
 .btn-primary { background: var(--grad-v); color: #fff; }
-.btn-primary:hover { box-shadow: var(--shadow-md); }
 .btn-secondary { background: var(--surface-2); color: var(--t1); }
 .btn-outline { background: transparent; color: var(--green-dark); border: 1.5px solid var(--green); box-shadow: none; }
 .btn-danger { background: var(--danger-light); color: var(--danger); box-shadow: none; }
 .btn-block { width: 100%; }
 .btn-sm { padding: 8px 14px; font-size: 13px; }
+
+/* (hover: hover) evita que el estado quede "pegado" al tocar en celular —
+   antes solo .btn-primary tenía :hover, así que en escritorio las otras 3
+   variantes (y las tarjetas de receta, con cursor:pointer pero sin ninguna
+   reacción) se sentían "muertas". */
+@media (hover: hover) {
+  .btn-primary:hover { box-shadow: var(--shadow-md); }
+  .btn-secondary:hover { filter: brightness(0.96); }
+  .btn-outline:hover { background: var(--green-light); }
+  .btn-danger:hover { filter: brightness(0.95); }
+  [data-open-recipe]:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+}
 
 /* ---------- Cards ---------- */
 .card {
@@ -261,6 +273,7 @@ input, textarea, select { font-family: inherit; }
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: var(--shadow);
+  transition: box-shadow var(--ease), transform var(--ease);
 }
 
 .card-soft {
@@ -294,6 +307,23 @@ input, textarea, select { font-family: inherit; }
   background: var(--card-bg);
   transition: border-color var(--ease);
 }
+/* Versión compacta de .field input: para filas de varios campos lado a lado
+   (ej. ingrediente/cantidad/unidad al crear una receta), donde el tamaño
+   normal (padding 13px 14px, 15px) no cabe en 3 columnas en un celular.
+   Antes esto vivía como un string de JS duplicado por cada input en vez de
+   una clase — con esto queda una sola definición, documentada como una
+   variante a propósito y no un descuido. */
+.input-compact {
+  min-width: 0;
+  padding: 11px 8px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  background: var(--card-bg);
+  color: var(--t1);
+}
+.input-compact:focus { outline: none; border-color: var(--green); }
+
 .field input:focus, .field select:focus, .field textarea:focus {
   outline: none;
   border-color: var(--green);

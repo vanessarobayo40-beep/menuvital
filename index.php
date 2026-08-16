@@ -20,6 +20,20 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <title>MenúVital — Nunca más pienses qué cocinar hoy</title>
 <meta name="description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, y te acompaña como tu coach de nutrición. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
 <meta name="theme-color" content="#0E6B45">
+<!-- Sin esto, compartir el link por WhatsApp (el canal de venta) no mostraba
+     ninguna previsualización — solo la URL pelada. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?= e(APP_URL) ?>/">
+<meta property="og:title" content="MenúVital — Nunca más pienses qué cocinar hoy">
+<meta property="og:description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, hecha para el paladar colombiano. Pago único de <?= e(APP_PRICE) ?>, sin mensualidades.">
+<meta property="og:image" content="<?= e(APP_URL) ?>/assets/img/recetas/ajiaco-santafereno-aligerado.jpg">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="427">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MenúVital — Nunca más pienses qué cocinar hoy">
+<meta name="twitter:description" content="La app que arma tu menú saludable con lo que ya tienes en el mercado, hecha para el paladar colombiano.">
+<meta name="twitter:image" content="<?= e(APP_URL) ?>/assets/img/recetas/ajiaco-santafereno-aligerado.jpg">
 <link rel="manifest" href="/assets/manifest.json">
 <link rel="apple-touch-icon" href="/assets/img/icon-192-v3.png">
 <link rel="icon" href="/assets/img/icon-192-v3.png">
@@ -47,6 +61,17 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
   .cta-group { display: flex; flex-direction: column; gap: 10px; max-width: 340px; margin: 24px auto 0; }
   .btn-white { background: #fff; color: var(--green-dark); }
   .btn-ghost-white { background: rgba(255,255,255,0.15); color: #fff; border: 1.5px solid rgba(255,255,255,0.5); box-shadow: none; }
+
+  .gallery-section { padding: 8px 20px 4px; max-width: 480px; margin: 0 auto; }
+  .gallery-section h2 { font-size: 19px; text-align: center; margin: 0 0 4px; }
+  .gallery-section p.lead { text-align: center; color: var(--t2); font-size: 13px; margin: 0 0 18px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .gallery-grid img {
+    width: 100%; aspect-ratio: 3 / 2.6; object-fit: cover; border-radius: 12px;
+    box-shadow: var(--shadow); display: block;
+  }
+  .gallery-grid a:first-child { grid-column: span 2; grid-row: span 2; }
+  .gallery-grid a:first-child img { aspect-ratio: 1 / 1; height: 100%; }
 
   section.section { padding: 46px 20px; max-width: 480px; margin: 0 auto; }
   .section h2 { font-size: 22px; text-align: center; margin: 0 0 8px; letter-spacing: -0.3px; }
@@ -112,6 +137,19 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
   <div class="cta-group">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener" class="btn btn-white btn-block" id="cta-comprar">Quiero mi acceso por <?= e(APP_PRICE) ?></a>
     <a href="/login.php" class="btn btn-ghost-white btn-block">Ya tengo mi código de acceso</a>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <h2>Esto es lo que vas a cocinar</h2>
+  <p class="lead">Fotos reales de recetas del recetario — no imágenes de banco genéricas.</p>
+  <div class="gallery-grid">
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/ajiaco-santafereno-aligerado.jpg" alt="Ajiaco santafereño aligerado, una de las recetas del recetario" loading="lazy"></a>
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg" alt="Tostada con aguacate y huevo revuelto" loading="lazy"></a>
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/bandeja-paisa-en-porcion-real.jpg" alt="Bandeja paisa en porción real" loading="lazy"></a>
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/006-bowl-de-yogur-con-frutos-secos-y-miel.jpg" alt="Bowl de yogur con frutos secos y miel" loading="lazy"></a>
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/sancocho-de-gallina-valluno.jpg" alt="Sancocho de gallina valluno" loading="lazy"></a>
+    <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/064-pollo-al-limon-con-quinoa-y-esparragos.jpg" alt="Pollo al limón con quinoa y espárragos" loading="lazy"></a>
   </div>
 </section>
 

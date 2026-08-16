@@ -27,7 +27,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
   <button type="button" class="chip tag" data-filter="batidos">🥤 Batidos</button>
   <button type="button" class="chip tag" data-filter="airfryer">🍳 Air Fryer</button>
   <button type="button" class="chip tag" data-filter="rapidas">⏱ Rápidas</button>
-  <button type="button" class="chip tag" data-filter="favoritas">❤ Favoritas</button>
+  <button type="button" class="chip tag" data-filter="favoritas">❤️ Favoritas</button>
   <button type="button" class="chip tag" data-filter="mias">👩‍🍳 Mías</button>
 </div>
 
@@ -44,11 +44,11 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
 
 <!-- ---------- Detalle de receta (hoja inferior) ---------- -->
 <div id="detail-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:70;align-items:flex-end;justify-content:center;">
-  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;">
+  <div style="background:var(--card-bg);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;">
     <div style="position:relative;">
       <img id="detail-image" src="" alt="" style="width:100%;height:200px;object-fit:cover;background:var(--grad-soft);">
       <button type="button" id="detail-close" aria-label="Cerrar" style="position:absolute;top:12px;right:12px;background:rgba(16,32,27,0.55);color:#fff;border:none;width:32px;height:32px;border-radius:50%;font-size:16px;">×</button>
-      <button type="button" id="detail-fav" aria-label="Favorita" style="position:absolute;top:12px;left:12px;background:rgba(16,32,27,0.55);color:#fff;border:none;width:36px;height:36px;border-radius:50%;font-size:17px;">🤍</button>
+      <button type="button" id="detail-fav" aria-label="Marcar como favorita" aria-pressed="false" style="position:absolute;top:12px;left:12px;background:rgba(16,32,27,0.55);color:#fff;border:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;"></button>
     </div>
     <div style="padding:18px;">
       <span class="meal-tag" id="detail-tag" style="margin:0 0 8px;"></span>
@@ -77,7 +77,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
 
 <!-- ---------- Agregar a mi menú (hoja inferior) ---------- -->
 <div id="schedule-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:80;align-items:flex-end;justify-content:center;">
-  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:20px;">
+  <div style="background:var(--card-bg);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:20px;">
     <h3 style="margin:0 0 4px;font-size:17px;">Agregar a mi menú</h3>
     <p class="muted" id="schedule-recipe-name" style="margin:0 0 16px;font-size:13px;"></p>
 
@@ -120,7 +120,7 @@ $officialRecipeCount = (int)db()->query('SELECT COUNT(*) FROM recipes WHERE user
 
 <!-- ---------- Crear receta propia (hoja inferior) ---------- -->
 <div id="create-backdrop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:75;align-items:flex-end;justify-content:center;">
-  <div style="background:var(--card-bg);border-radius:20px 20px 0 0;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:20px;">
+  <div style="background:var(--card-bg);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:20px;">
     <h3 style="margin:0 0 4px;font-size:17px;">Agrega tu receta</h3>
     <p class="muted" style="margin:0 0 16px;font-size:13px;">Escribe el nombre e ingredientes — la IA calcula la nutrición y le busca una foto real, igual que las demás recetas.</p>
 
@@ -172,6 +172,23 @@ let currentDetail = null;
 
 const BATIDO_RE = /batido|smoothie|licuado|jugo/i;
 
+// Un solo ícono de corazón (SVG), relleno o solo contorno según el estado —
+// antes se alternaba entre los emojis ❤ (U+2764, se pinta negro/monocromo en
+// varias plataformas) y 🤍 (U+1F90D, siempre a color): al marcar favorita se
+// veía como si el botón se hubiera roto en vez de ponerse rojo.
+function heartSvg(filled) {
+  return `<svg width="17" height="17" viewBox="0 0 24 24" fill="${filled ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="color:${filled ? '#ff5a6e' : '#fff'};">
+    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+  </svg>`;
+}
+
+function setDetailFavButton(filled) {
+  const btn = document.getElementById('detail-fav');
+  btn.innerHTML = heartSvg(filled);
+  btn.setAttribute('aria-pressed', filled ? 'true' : 'false');
+  btn.setAttribute('aria-label', filled ? 'Quitar de favoritas' : 'Marcar como favorita');
+}
+
 function matchesFilter(r) {
   if (currentFilter === 'todas') return true;
   if (currentFilter === 'batidos') return BATIDO_RE.test(r.name);
@@ -204,7 +221,7 @@ function cardHtml(r) {
              onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22110%22%3E%3Crect width=%22200%22 height=%22110%22 fill=%22%23EFF6F3%22/%3E%3C/svg%3E';">
         <span style="position:absolute;top:6px;left:6px;background:rgba(255,255,255,0.92);color:var(--green-dark);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;text-transform:uppercase;">${MEAL_LABELS[r.meal_type] || r.meal_type}</span>
         ${r.is_own ? '<span style="position:absolute;bottom:6px;left:6px;background:rgba(255,255,255,0.92);color:var(--accent-dark);font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;">👩‍🍳 Mía</span>' : ''}
-        ${r.is_favorite ? '<span style="position:absolute;top:6px;right:6px;font-size:16px;">❤</span>' : ''}
+        ${r.is_favorite ? `<span style="position:absolute;top:6px;right:6px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35));">${heartSvg(true)}</span>` : ''}
       </div>
       <div style="padding:10px;">
         <h3 style="margin:0 0 4px;font-size:13px;line-height:1.3;">${escapeHtml(r.name)}</h3>
@@ -287,7 +304,7 @@ async function openDetail(id) {
     document.getElementById('detail-protein').textContent = currentDetail.protein_porcion;
     document.getElementById('detail-carbs').textContent = currentDetail.carbs_porcion;
     document.getElementById('detail-fat').textContent = currentDetail.fat_porcion;
-    document.getElementById('detail-fav').textContent = currentDetail.is_favorite ? '❤' : '🤍';
+    setDetailFavButton(currentDetail.is_favorite);
     document.getElementById('detail-ingredients').innerHTML = currentDetail.ingredients
       .map(i => `<li>${escapeHtml(i.item)}${i.qty ? ' — ' + escapeHtml(i.qty) : ''}</li>`).join('');
     document.getElementById('detail-steps').innerHTML = currentDetail.steps
@@ -311,11 +328,11 @@ document.getElementById('detail-fav').addEventListener('click', async () => {
   try {
     const res = await MV.api('/api/recipes.php?action=toggle_favorite', { method: 'POST', body: { recipe_id: currentDetail.id } });
     currentDetail.is_favorite = res.is_favorite;
-    document.getElementById('detail-fav').textContent = res.is_favorite ? '❤' : '🤍';
+    setDetailFavButton(res.is_favorite);
     const item = allRecipes.find(r => r.id === currentDetail.id);
     if (item) item.is_favorite = res.is_favorite;
     renderGrid();
-    MV.toast(res.is_favorite ? 'Agregada a tus favoritas ❤' : 'Quitada de favoritas');
+    MV.toast(res.is_favorite ? 'Agregada a tus favoritas ❤️' : 'Quitada de favoritas');
   } catch (err) {
     MV.toast(err.message, true);
   }
@@ -478,11 +495,10 @@ function addIngredientRow(item, qtyNum, qtyUnit) {
   const wrap = document.getElementById('cr-ingredients');
   const row = document.createElement('div');
   row.style.cssText = 'display:flex;gap:6px;margin-bottom:8px;';
-  const inputStyle = 'min-width:0;padding:11px 8px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:13px;background:var(--card-bg);color:var(--t1);';
   row.innerHTML = `
-    <input type="text" placeholder="Ingrediente" class="cr-ing-item" style="flex:1.7;${inputStyle}">
-    <input type="text" inputmode="decimal" placeholder="Cant." class="cr-ing-num" style="flex:0.6;${inputStyle}">
-    <select class="cr-ing-unit" style="flex:0.95;${inputStyle}">
+    <input type="text" placeholder="Ingrediente" class="cr-ing-item input-compact" style="flex:1.7;">
+    <input type="text" inputmode="decimal" placeholder="Cant." class="cr-ing-num input-compact" style="flex:0.6;">
+    <select class="cr-ing-unit input-compact" style="flex:0.95;">
       ${CR_UNITS.map(u => `<option value="${u}">${u}</option>`).join('')}
     </select>
     <button type="button" class="cr-remove-row" aria-label="Quitar" style="background:var(--surface-2);border:none;width:32px;flex:none;border-radius:var(--radius-sm);color:var(--t3);font-size:16px;">×</button>`;
@@ -576,4 +592,8 @@ document.getElementById('cr-submit').addEventListener('click', async () => {
 });
 
 loadRecipes();
+
+MV.enhanceModal(document.getElementById('detail-backdrop'));
+MV.enhanceModal(document.getElementById('schedule-backdrop'));
+MV.enhanceModal(document.getElementById('create-backdrop'));
 </script>

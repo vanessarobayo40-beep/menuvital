@@ -167,6 +167,13 @@ if ($action === 'consume_recipe' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($recipeId <= 0) {
         json_error('Receta no válida.');
     }
+    // Sin esto, se podía pasar el id de una receta PRIVADA de otra usuaria y
+    // igual se descontaba de la despensa propia según sus ingredientes —
+    // mismo guard que usan recipes.php y menu.php para cualquier receta.
+    $recipeCheck = recipe_by_id($recipeId);
+    if (!$recipeCheck || ($recipeCheck['user_id'] !== null && (int)$recipeCheck['user_id'] !== $userId)) {
+        json_error('Esa receta no existe.', 404);
+    }
     $consumed = consume_recipe_from_pantry($userId, $recipeId, $portions);
     mark_meal_done($userId, $recipeId);
     json_response(['ok' => true, 'consumed' => $consumed, 'items' => load_pantry($userId), 'grouped' => load_pantry_detailed($userId)]);
