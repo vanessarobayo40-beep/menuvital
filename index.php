@@ -154,8 +154,8 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 </section>
 
 <section class="section">
-  <h2>Todo lo que necesitas para comer rico y sano</h2>
-  <p class="lead">Sin dietas extrañas. Sin listas imposibles. Solo comida real, con lo que ya compraste.</p>
+  <h2>Tu menú resuelto, pienses en él o no</h2>
+  <p class="lead">Arma tu semana completa, aprovecha lo que ya compraste y, si te quedas en blanco, tu coach de nutrición te dice qué cocinar al instante.</p>
 
   <div class="feature-card">
     <div class="icon">🛒</div>
