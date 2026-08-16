@@ -132,7 +132,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <section class="hero">
   <span class="badge-pill">🥗 Menú diario + coach de nutrición</span>
   <h1>Nunca más pienses<br>"¿qué hago hoy de comida?"</h1>
-  <p class="sub">Arma tu semana, aprovecha tu mercado y cuenta con tu coach de nutrición para todo lo demás — hecho para el paladar colombiano.</p>
+  <p class="sub">Tu menú semanal, tu lista de mercado y un coach de nutrición — todo en una sola app, hecha para el paladar colombiano.</p>
   <p class="price-tag"><?= e(APP_PRICE) ?> <span>pago único · sin mensualidades</span></p>
   <div class="cta-group">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener" class="btn btn-white btn-block" id="cta-comprar">Quiero mi acceso por <?= e(APP_PRICE) ?></a>
@@ -141,8 +141,8 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 </section>
 
 <section class="gallery-section">
-  <h2>Comida real, no promesas de app</h2>
-  <p class="lead">Así de bien te van a quedar tus platos.</p>
+  <h2>Así se ve lo que vas a cocinar</h2>
+  <p class="lead">Recetas reales de nuestro recetario, tal como te van a quedar.</p>
   <div class="gallery-grid">
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/ajiaco-santafereno-aligerado.jpg" alt="Ajiaco santafereño aligerado, una de las recetas del recetario" loading="lazy"></a>
     <a href="<?= e($waLink) ?>" target="_blank" rel="noopener"><img src="/assets/img/recetas/001-tostada-con-aguacate-y-huevo-revuelto.jpg" alt="Tostada con aguacate y huevo revuelto" loading="lazy"></a>
@@ -154,8 +154,8 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 </section>
 
 <section class="section">
-  <h2>Tu menú resuelto, pienses en él o no</h2>
-  <p class="lead">Arma tu semana completa, aprovecha lo que ya compraste y, si te quedas en blanco, tu coach de nutrición te dice qué cocinar al instante.</p>
+  <h2>Menos decisiones, más buena comida</h2>
+  <p class="lead">Un sistema completo que planea tu semana, aprovecha tu mercado y te acompaña con un coach — para que solo te preocupes de disfrutar.</p>
 
   <div class="feature-card">
     <div class="icon">🛒</div>
