@@ -217,7 +217,12 @@ $csrf = csrf_token();
 <script src="/assets/js/app.js?v=<?= ASSET_VER ?>"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+  // scope: '/admin/' (no '/', como en la app principal) — con el mismo alcance
+  // que la app de menú, el navegador confundía las dos PWAs entre sí: al
+  // instalar el panel de admin, decía "ya está instalada" (por la app de
+  // menú, que ya cubre ese alcance) y el ícono nuevo terminaba abriendo la
+  // app de menú en vez del panel. Cada una necesita su propio alcance.
+  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js', { scope: '/admin/' }).catch(() => {}));
 }
 
 // ---------- Instalar el panel de admin como app aparte (ícono distinto) ----------
