@@ -249,17 +249,39 @@ if (!column_exists($pdo, $isMysql, 'activation_codes', 'code_enc')) {
 $pendingPlain = (int)$pdo->query("SELECT COUNT(*) AS c FROM activation_codes
                                    WHERE code_plain IS NOT NULL AND code_plain <> ''")->fetch()['c'];
 if ($pendingPlain > 0) {
-    if (!code_encryption_available()) {
-        $log[] = "ATENCIÓN: hay $pendingPlain códigos guardados en texto plano de una versión "
-            . 'anterior. Agrega CODE_ENCRYPTION_KEY en config.php (ver config.sample.php) y vuelve '
-            . 'a entrar a esta página para cifrarlos y borrar el texto plano.';
+    // Diagnóstico exacto de por qué no se puede cifrar todavía, para no
+    // tener que adivinar entre "la clave no quedó bien puesta" y "el
+    // hosting no tiene sodium" — y NUNCA borrar code_plain si el cifrado
+    // no se pudo confirmar de verdad (antes se llamaba a
+    // encrypt_activation_code() dentro del propio UPDATE: si la clave
+    // tenía un formato inválido, esa función devolvía null en silencio y
+    // el UPDATE igual ponía code_plain = NULL, perdiendo el código para
+    // siempre sin haber quedado cifrado en ningún lado).
+    $hasSodium = function_exists('sodium_crypto_secretbox');
+    $keyDefined = defined('CODE_ENCRYPTION_KEY') && CODE_ENCRYPTION_KEY !== '';
+    $validKey = $keyDefined ? code_encryption_key() : null;
+
+    if (!$hasSodium) {
+        $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
+            . 'tu hosting no tiene disponible la extensión sodium de PHP (esto no se arregla desde config.php).';
+    } elseif (!$keyDefined) {
+        $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
+            . 'CODE_ENCRYPTION_KEY sigue vacía o no está definida en config.php.';
+    } elseif ($validKey === null) {
+        $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
+            . 'CODE_ENCRYPTION_KEY no decodifica a una clave válida — revisa que la copiaste completa, '
+            . 'sin espacios ni saltos de línea de más.';
     } else {
         $rows = $pdo->query("SELECT id, code_plain FROM activation_codes
                               WHERE code_plain IS NOT NULL AND code_plain <> ''")->fetchAll();
         $upd = $pdo->prepare('UPDATE activation_codes SET code_enc = ?, code_plain = NULL WHERE id = ?');
         $migrated = 0;
         foreach ($rows as $r) {
-            $upd->execute([encrypt_activation_code($r['code_plain']), $r['id']]);
+            $enc = encrypt_activation_code($r['code_plain']);
+            if ($enc === null) {
+                continue; // no debería pasar con una clave ya validada, pero por si acaso: no se toca la fila
+            }
+            $upd->execute([$enc, $r['id']]);
             $migrated++;
         }
         $log[] = "Migración: $migrated códigos cifrados y borrados de texto plano";
