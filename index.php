@@ -34,7 +34,7 @@ $waLink = 'https://wa.me/' . preg_replace('/\D/', '', WHATSAPP_NUMBER) . '?text=
 <meta name="twitter:title" content="MenúVital — Nunca más pienses qué cocinar hoy">
 <meta name="twitter:description" content="La app que arma tu menú semanal, aprovecha tu mercado y te acompaña con un coach de nutrición — hecha para el paladar colombiano.">
 <meta name="twitter:image" content="<?= e(APP_URL) ?>/assets/img/recetas/ajiaco-santafereno-aligerado.jpg">
-<link rel="manifest" href="/assets/manifest.json">
+<link rel="manifest" href="/assets/manifest.json?v=<?= ASSET_VER ?>">
 <link rel="apple-touch-icon" href="/assets/img/icon-192-v3.png">
 <link rel="icon" href="/assets/img/icon-192-v3.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">

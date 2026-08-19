@@ -15,7 +15,7 @@ $csrf = csrf_token();
 <meta name="csrf-token" content="<?= e($csrf) ?>">
 <meta name="theme-color" content="#0E6B45">
 <?= theme_init_script() ?>
-<link rel="manifest" href="/assets/manifest.json">
+<link rel="manifest" href="/assets/manifest.json?v=<?= ASSET_VER ?>">
 <link rel="apple-touch-icon" href="/assets/img/icon-192-v3.png">
 <link rel="icon" href="/assets/img/icon-192-v3.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">

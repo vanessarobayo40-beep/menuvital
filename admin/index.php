@@ -14,7 +14,7 @@ $csrf = csrf_token();
 <title>Panel de administración — MenúVital</title>
 <meta name="csrf-token" content="<?= e($csrf) ?>">
 <meta name="theme-color" content="#0B0F14">
-<link rel="manifest" href="/assets/manifest-admin.json">
+<link rel="manifest" href="/assets/manifest-admin.json?v=<?= ASSET_VER ?>">
 <link rel="apple-touch-icon" href="/assets/img/admin-icon-192.png">
 <link rel="icon" href="/assets/img/admin-icon-192.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
