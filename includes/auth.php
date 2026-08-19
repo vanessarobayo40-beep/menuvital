@@ -149,6 +149,12 @@ function code_encryption_available(): bool {
 }
 
 function code_encryption_key(): ?string {
+    // Usa SODIUM_CRYPTO_SECRETBOX_KEYBYTES, que solo existe con la extensión
+    // sodium cargada — sin este guard, en un hosting sin sodium esto tira un
+    // error fatal de "constante indefinida" en vez de devolver null.
+    if (!function_exists('sodium_crypto_secretbox') || !defined('CODE_ENCRYPTION_KEY') || CODE_ENCRYPTION_KEY === '') {
+        return null;
+    }
     $key = base64_decode(CODE_ENCRYPTION_KEY, true);
     return ($key !== false && strlen($key) === SODIUM_CRYPTO_SECRETBOX_KEYBYTES) ? $key : null;
 }

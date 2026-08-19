@@ -259,7 +259,11 @@ if ($pendingPlain > 0) {
     // siempre sin haber quedado cifrado en ningún lado).
     $hasSodium = function_exists('sodium_crypto_secretbox');
     $keyDefined = defined('CODE_ENCRYPTION_KEY') && CODE_ENCRYPTION_KEY !== '';
-    $validKey = $keyDefined ? code_encryption_key() : null;
+    // code_encryption_key() usa SODIUM_CRYPTO_SECRETBOX_KEYBYTES, una constante
+    // que solo existe si la extensión sodium está cargada — sin este segundo
+    // guard, en un hosting sin sodium esto tira un error fatal (constante
+    // indefinida) en vez de mostrar el diagnóstico.
+    $validKey = ($hasSodium && $keyDefined) ? code_encryption_key() : null;
 
     if (!$hasSodium) {
         $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
