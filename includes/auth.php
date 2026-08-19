@@ -142,53 +142,62 @@ function activation_code_hash(string $code): string {
 // plano) con la clave de includes/config.php. Si esa clave no está puesta,
 // simplemente no se guarda copia legible — nunca se cae de vuelta a texto plano.
 
-/** ¿Hay clave de cifrado configurada y disponible la extensión sodium? */
+// Se usa openssl (AES-256-GCM) en vez de sodium: sodium es más moderna,
+// pero varios hostings compartidos (incluido el de producción de esta app)
+// no la traen habilitada por defecto. openssl sí está presente en
+// prácticamente cualquier instalación de PHP.
+const CODE_CIPHER = 'aes-256-gcm';
+
+/** ¿Hay clave de cifrado configurada y disponible openssl con AES-256-GCM? */
 function code_encryption_available(): bool {
-    return function_exists('sodium_crypto_secretbox')
+    return function_exists('openssl_encrypt')
+        && in_array(CODE_CIPHER, openssl_get_cipher_methods(), true)
         && defined('CODE_ENCRYPTION_KEY') && CODE_ENCRYPTION_KEY !== '';
 }
 
 function code_encryption_key(): ?string {
-    // Usa SODIUM_CRYPTO_SECRETBOX_KEYBYTES, que solo existe con la extensión
-    // sodium cargada — sin este guard, en un hosting sin sodium esto tira un
-    // error fatal de "constante indefinida" en vez de devolver null.
-    if (!function_exists('sodium_crypto_secretbox') || !defined('CODE_ENCRYPTION_KEY') || CODE_ENCRYPTION_KEY === '') {
+    if (!code_encryption_available()) {
         return null;
     }
     $key = base64_decode(CODE_ENCRYPTION_KEY, true);
-    return ($key !== false && strlen($key) === SODIUM_CRYPTO_SECRETBOX_KEYBYTES) ? $key : null;
+    return ($key !== false && strlen($key) === 32) ? $key : null; // AES-256 = clave de 32 bytes
 }
 
 /** Cifra un código de activación para guardarlo. Devuelve null si no se puede cifrar. */
 function encrypt_activation_code(string $code): ?string {
-    if (!code_encryption_available()) {
-        return null;
-    }
     $key = code_encryption_key();
     if ($key === null) {
         return null;
     }
-    $nonce = random_bytes(SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    $cipher = sodium_crypto_secretbox($code, $nonce, $key);
-    return base64_encode($nonce . $cipher);
+    $ivLen = openssl_cipher_iv_length(CODE_CIPHER);
+    $iv = random_bytes($ivLen);
+    $tag = '';
+    $cipher = openssl_encrypt($code, CODE_CIPHER, $key, OPENSSL_RAW_DATA, $iv, $tag);
+    if ($cipher === false) {
+        return null;
+    }
+    return base64_encode($iv . $tag . $cipher);
 }
 
 /** Descifra un código guardado con encrypt_activation_code(). Devuelve null si falla. */
 function decrypt_activation_code(?string $encoded): ?string {
-    if ($encoded === null || $encoded === '' || !code_encryption_available()) {
+    if ($encoded === null || $encoded === '') {
         return null;
     }
     $key = code_encryption_key();
     if ($key === null) {
         return null;
     }
+    $ivLen = openssl_cipher_iv_length(CODE_CIPHER);
+    $tagLen = 16; // longitud estándar del tag de autenticación en GCM
     $raw = base64_decode($encoded, true);
-    if ($raw === false || strlen($raw) <= SODIUM_CRYPTO_SECRETBOX_NONCEBYTES) {
+    if ($raw === false || strlen($raw) <= $ivLen + $tagLen) {
         return null;
     }
-    $nonce = substr($raw, 0, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    $cipher = substr($raw, SODIUM_CRYPTO_SECRETBOX_NONCEBYTES);
-    $plain = sodium_crypto_secretbox_open($cipher, $nonce, $key);
+    $iv = substr($raw, 0, $ivLen);
+    $tag = substr($raw, $ivLen, $tagLen);
+    $cipher = substr($raw, $ivLen + $tagLen);
+    $plain = openssl_decrypt($cipher, CODE_CIPHER, $key, OPENSSL_RAW_DATA, $iv, $tag);
     return $plain === false ? null : $plain;
 }
 

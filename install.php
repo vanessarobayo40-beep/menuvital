@@ -251,23 +251,19 @@ $pendingPlain = (int)$pdo->query("SELECT COUNT(*) AS c FROM activation_codes
 if ($pendingPlain > 0) {
     // Diagnóstico exacto de por qué no se puede cifrar todavía, para no
     // tener que adivinar entre "la clave no quedó bien puesta" y "el
-    // hosting no tiene sodium" — y NUNCA borrar code_plain si el cifrado
+    // hosting no tiene openssl" — y NUNCA borrar code_plain si el cifrado
     // no se pudo confirmar de verdad (antes se llamaba a
     // encrypt_activation_code() dentro del propio UPDATE: si la clave
     // tenía un formato inválido, esa función devolvía null en silencio y
     // el UPDATE igual ponía code_plain = NULL, perdiendo el código para
     // siempre sin haber quedado cifrado en ningún lado).
-    $hasSodium = function_exists('sodium_crypto_secretbox');
+    $hasOpenssl = function_exists('openssl_encrypt') && in_array(CODE_CIPHER, openssl_get_cipher_methods(), true);
     $keyDefined = defined('CODE_ENCRYPTION_KEY') && CODE_ENCRYPTION_KEY !== '';
-    // code_encryption_key() usa SODIUM_CRYPTO_SECRETBOX_KEYBYTES, una constante
-    // que solo existe si la extensión sodium está cargada — sin este segundo
-    // guard, en un hosting sin sodium esto tira un error fatal (constante
-    // indefinida) en vez de mostrar el diagnóstico.
-    $validKey = ($hasSodium && $keyDefined) ? code_encryption_key() : null;
+    $validKey = code_encryption_key(); // ya se protege sola sin importar el orden de estas comprobaciones
 
-    if (!$hasSodium) {
+    if (!$hasOpenssl) {
         $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
-            . 'tu hosting no tiene disponible la extensión sodium de PHP (esto no se arregla desde config.php).';
+            . 'tu hosting no tiene disponible AES-256-GCM en openssl (esto no se arregla desde config.php).';
     } elseif (!$keyDefined) {
         $log[] = "ATENCIÓN: hay $pendingPlain códigos en texto plano y no se pudieron cifrar porque "
             . 'CODE_ENCRYPTION_KEY sigue vacía o no está definida en config.php.';
